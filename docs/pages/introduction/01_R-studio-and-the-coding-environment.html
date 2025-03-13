@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Mitchell Stares">
 
-<title>About – BIOL340 - Autumn 2025</title>
+<title>R Studio &amp; Coding Environment – BIOL340 - Autumn 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,60 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../pages/introduction/02_Setting-up-your-workspace.html" rel="next">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,7 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="About – BIOL340 - Autumn 2025">
+<meta property="og:title" content="R Studio &amp; Coding Environment – BIOL340 - Autumn 2025">
 <meta property="og:description" content="Homepage for BIOL340 Dry Pracs, University of Wollongong, Autumn 2025.">
 <meta property="og:site_name" content="BIOL340 - Autumn 2025">
 </head>
@@ -117,7 +85,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">About</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/introduction/01_R-studio-and-the-coding-environment.html">Introduction</a></li><li class="breadcrumb-item"><a href="../../pages/introduction/01_R-studio-and-the-coding-environment.html">01 R studio and the coding environment</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -131,8 +99,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/2025_header.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/2025_header.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -147,22 +115,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pages/introduction/01_R-studio-and-the-coding-environment.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/introduction/01_R-studio-and-the-coding-environment.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">01 R studio and the coding environment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pages/introduction/02_Setting-up-your-workspace.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/introduction/02_Setting-up-your-workspace.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01 Setting up your workspace</span></a>
   </div>
 </li>
@@ -189,21 +157,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#what-is-r" id="toc-what-is-r" class="nav-link" data-scroll-target="#what-is-r">What is R?</a></li>
+  <li><a href="#why-r" id="toc-why-r" class="nav-link" data-scroll-target="#why-r">Why R?</a></li>
+  <li><a href="#r-studio" id="toc-r-studio" class="nav-link" data-scroll-target="#r-studio">R Studio</a></li>
+  <li><a href="#layout" id="toc-layout" class="nav-link" data-scroll-target="#layout">Layout</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/edit/main/pages/introduction/01_R-studio-and-the-coding-environment.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/introduction/01_R-studio-and-the-coding-environment.html">Introduction</a></li><li class="breadcrumb-item"><a href="../../pages/introduction/01_R-studio-and-the-coding-environment.html">01 R studio and the coding environment</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">R Studio &amp; Coding Environment</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mitchell Stares </p>
+          </div>
+  </div>
     
   
     
@@ -214,15 +200,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>About this site</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This module will provide an introduction into the R statisitical environment, going through the basics of data analysis and graphing for publication quality results. By the end of this module, you should be able to:</p>
+<ul>
+<li>Understand and use the R studio working environment</li>
+<li>Import and manipulate data files</li>
+<li>Undertake linear (ANOVA, regression) and generalised linear (logistic regression) models and associated assumptions/comparisons</li>
+<li>Undertake basic multivariate techniques (PCA, MDS)</li>
+<li>Construct bar plots and scatterplots in ggplot</li>
+</ul>
+<section id="what-is-r" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-r">What is R?</h3>
+<p>R is a language and environment for statistical computing and graphics. R is free/open source software and as a result, has a community of dedicated statisticans, coders and developers increasing the capabilities and usability of the platform. R primarily runs as a command-line program.</p>
+<p>This is a big entry barrier to many starting to learn R, so most people have turned to “R Studio”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/r_cmd.png" class="img-fluid figure-img"></p>
+<figcaption><em>Base R</em></figcaption>
+</figure>
 </div>
+</section>
+<section id="why-r" class="level3">
+<h3 class="anchored" data-anchor-id="why-r">Why R?</h3>
+<p>Since R is free and open source, it is a program and skill that can be carried with you across many institutions and jobs and is for many, the single solution for <strong>statistical analysis, graphing</strong> and even <strong>GIS/spatial analysis</strong>. Programs like JMP, SPSS and ARCGIS cost 100s if not 1000s of dollars and are quickly outdated by new versions.</p>
+<p>However, the biggest uses of R come from its sharability and openness. Collaborating and sharing data analysis with R requires only the script and raw data. All data manipulations are done within R, requiring no editing or manipulating of your raw excel data.</p>
+</section>
+<section id="r-studio" class="level3">
+<h3 class="anchored" data-anchor-id="r-studio">R Studio</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/rstudio.png" class="img-fluid figure-img"></p>
+<figcaption><em>The R Studio Environment</em></figcaption>
+</figure>
 </div>
+<p>R studio “reskins” the standard R environment, giving space for script writing, help, graphics output and tracking of data files. Due to the ease of working in R studio, thats what we will be using. R studio can provide an array of functions from statistical analysis and graphing, GIS/spatial analysis, presentations, document preparation (all of these tutorials are written in R) and even novel functions like interacive graphs and tweeting.</p>
+</section>
+<section id="layout" class="level3">
+<h3 class="anchored" data-anchor-id="layout">Layout</h3>
+<p>R studio is separated into 4 panels:</p>
+<ul>
+<li><p>The top-left panel (blue) is the editor (or script window) where you can view and write your R script. This is a saveable document of code. Running code is as simple as Ctrl+Enter on a line of code or pressing the run button in the top-right of this window.</p></li>
+<li><p>The bottom-left (red) is the console. This is the standard R environment where you can run code directly, or view the output of your script as you run it.</p></li>
+<li><p>The top-right (green) is your workspace. This lists each “object” as you create them through your analyses. Clicking a data-frame object will allow you to view it.</p></li>
+<li><p>The bottom-left (black) has lists of <em>files</em> and <em>packages</em> as well as the <em>help</em> window (quickly access by typing ? before any command) and <em>plots</em> which shows any graphical output.</p></li>
+</ul>
+<p>Now we have an idea of what R is, it is time to install <strong>R &amp; R Studio</strong> onto your computer.</p>
+<blockquote class="blockquote">
+<p><strong>Install Instructions</strong><br>
+1. Click <a href="https://cran.r-project.org/mirrors.html">Here</a> to visit the R webpage and select one of the Australian mirrors to download (CSIRO, University of Melbourne etc.)<br>
+2. Select your version (Windows or Mac), then download the <strong>base</strong> subdirectory<br>
+3. Once installed, visit <a href="https://www.rstudio.com/products/rstudio/">R studio</a> to download R studio desktop.</p>
+</blockquote>
+<p>Once both of those are installed, you can now proceed to open up Rstudio</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -789,6 +823,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../pages/introduction/02_Setting-up-your-workspace.html" class="pagination-link" aria-label="01 Setting up your workspace">
+        <span class="nav-page-text">01 Setting up your workspace</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -797,7 +840,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/edit/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/edit/main/pages/introduction/01_R-studio-and-the-coding-environment.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
