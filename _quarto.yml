@@ -10,16 +10,16 @@ website:
 
   repo-url: https://github.com/nikolasjohnston/BIOL340_DP
   repo-actions: [edit, issue]
-
+  
   open-graph: true
 
   page-footer:
     right: "This page is built with [Quarto](https://quarto.org/)."
     left: "&copy; Copyright 2025, Nikolas Johnston"
-    background: "#de2626"
+    background: "#960e0c"
 
   sidebar:
-    background: "#de2626"
+    background: "#960e0c"
     logo: "images/2025_header.png"
     pinned: true
     align: center
@@ -31,22 +31,72 @@ website:
       - section: "Introduction"
         contents:
           - href: pages/introduction/01_R-studio-and-the-coding-environment.qmd
-            text: 01 R studio and the coding environment
+            text: R studio and the coding environment
           - href: pages/introduction/02_Setting-up-your-workspace.qmd
-            text: 02 Setting up your workspace
-      - section: "Data exploration and manipulation"
+            text: Setting up your workspace
+          - href: pages/introduction/03_Creating-a-project.qmd
+            text: Creating a project
+          - href: pages/introduction/4_notebooks.qmd
+            text: Notbooks in R studio
+            
+      - section: "Data exploration"
         contents:
+          - href: pages/1/1_packages.qmd
+            text: Packages
+          - href: pages/1/2_viewingdata.qmd
+            text: Viewing Data
+          - href: pages/1/3_columns.qmd
+            text: Columns
+            
 
-      - section: "Grammar of Graphics"
-        contents:
+            
+            
+      - section: "Dry Prac 1"
+        contents: 
+        - href: pages/DP1/DP1_Final.qmd
+          text: Dry Prac 1 Notes
 
-      - section: "Dry Prac 1 Activites"
+      - section: "Extra help with Graphics"
         contents:
-    
-       
-      - section: "Supplemental notes"
-        contents:
+        - href: pages/2/1_ggplotgrammar.qmd
+          text: Graphics in ggplot2
+        - href: pages/2/2_basicplots.qmd
+          text: Basic plots
+            
+        - section: "Themes a customisation in ggplot2"
+          contents:        
+          - href: pages/2/Themes/3_themes.qmd
+            text: Themes introduction
+          - href: pages/2/Themes/4_gridsbackground.qmd
+            text: Backgrounds
+          - href: pages/2/Themes/5_axislines.qmd
+            text: Axis lines
+          - href: pages/2/Themes/6_grids.qmd
+            text: Grids
+          - href: pages/2/Themes/7_axislabels.qmd
+            text: Axis labels
+          - href: pages/2/Themes/8_properexamples.qmd
+            text: Examples
 
+        - section: "Data Manipulation"
+          contents:
+          - href: pages/1/1_rename.qmd
+            text: Renaming data
+          - href: pages/1/2_mutate.qmd
+            text: The Mutate function
+          - href: pages/1/4_select.qmd
+            text: The Select function
+          - href: pages/1/5_joins.qmd
+            text: The Joins function
+          - href: pages/1/7_summarise.qmd
+            text: The Summarise function
+          - href: pages/1/8_pipe.qmd
+            text: The Pipe function
+            
+      - section: "Extra help!"
+        contents:
+        - href: pages/supplementary/cheetsheet.qmd
+          text: Additional ggplot2 support
 
 format:
   html:
@@ -57,9 +107,31 @@ format:
     code-copy: true
     code-overflow: wrap
     toc: true
+    
+include-in-header:
 
+  text: |
+    <style type="text/css">
+    .quarto-reader-toggle .bi::before, .quarto-color-scheme-toggle .bi::before {
+      display: flex;
+      height: 2rem;
+      width: 2rem;
+      gap: 0.5rem;
+      background-size: 2rem 2rem;
+      font-size: 1rem;
+      font-family: sans-serif;
+      display: inline-block;
+    }
+
+    .quarto-reader-toggle::before, .quarto-color-scheme-toggle::before {
+        content: "Dark Mode";
+        display: flex;
+        font-size: 1rem;
+        gap: 0.5rem;
+        font-family: Atkinson Hyperlegible, sans-serif;
+    </style>
+    
 freeze: auto
 
 editor: visual
-
 

@@ -1,0 +1,561 @@
+---
+title: "Dry Prac 1 — Data analysis in R"
+author: "Dr Nikolas Johnston, University of Wollongong"
+date: "2025-24-03"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+# Objectives
+
+1.  Understand the basics of R including importing data, basic data manipulation, and generating simple plots.
+2.  Use R to generate Boxplots and Scatter plots of large datasets generated in your Wet Labs.
+3.  Learn to write simple custom lines of R code and utilize generative AI to improve code and correct errors.
+4.  Understand the differences between analysis in Microsoft Excel and R, and appreciate situations in which each tool is most useful.
+5.  Assess and compare cell viability between ‘diseased’ and ‘healthy’ populations, evaluating the sensitivity and characteristics of each of the microplate assays you completed in Wet Lab 2.
+
+# Introduction and Welcome to R!
+
+In this dry prac, we will learn how to use the `ggplot2` and `tidyverse` packages to create publication-quality bar and scatter plots from the data you generated in Wet Lab 1 & 2. Along the way, we will practice data manipulation, such as removing background absorbance and reshaping data for analysis.
+
+R is a powerful tool for analyzing data, creating visualizations, and performing statistical tests. In cell biology, you can use R to analyze experimental results, such as cell growth rates, gene expression levels, or protein abundance.
+
+Let's dive into the basics of R, starting with something fun: exploring cells and their data!
+
+## Getting Started
+
+### Why R?
+
+R is like the mitochondria of data analysis—it's the powerhouse! It can:
+
+-   Analyze large datasets (like transcriptomics data).
+-   Create stunning visualizations (like protein localization heatmaps).
+-   Perform complex statistical tests (like comparing cell survival rates).
+-   Automate repetitive tasks for better reproducibility.
+
+## How to Read This Guide
+
+In the instructions below, there will be chunks of code for you to read and copy into RStudio. The code chunks look like this:
+
+```{r}
+#Just a poor empty chunk with no code
+```
+
+Anything following a `#` in an R code chunk is a **comment**, which means R will ignore it. These comments are there to help explain what the code is doing.
+
+## How to Write Code in R
+
+You write commands (called **functions**) in the **console** or a **script** in RStudio. Below each code chunk, there may be output (often preceded by `#` if you’re looking at raw code). Let's start with a simple one:
+
+```{r}
+# This calculates a simple sum
+2 + 2
+```
+
+When you run this code in R, you should see the result, **4**, printed beneath.
+
+Try running this yourself in RStudio! If you get 4, you've written and executed your first piece of R code. Now things get exciting.
+
+## Working with Variables
+
+Variables are like labeled containers for your data.
+
+```{r}
+# Size of the nucleus
+nucleus_size <- 5.6  # in micrometers
+nucleus_size
+```
+
+Here, `nucleus_size` is a variable that stores the numeric value **5.6**.
+
+For multiple measurements, you can store a group of values in a **vector**:
+
+```{r}
+# Nucleus sizes of five cells
+nucleus_sizes <- c(5.6, 6.1, 5.8, 6.2, 5.9)
+nucleus_sizes
+```
+
+`c()` (short for combine) creates a vector, which is a basic data structure in R.
+
+## Basic Statistics
+
+Biologists often need to analyze data with simple statistical functions.
+
+```{r}
+# Mean size
+mean_nucleus <- mean(nucleus_sizes)
+mean_nucleus
+```
+
+The `mean()` function calculates the average. Similarly, you can find other basic stats:
+
+```{r}
+# Maximum size
+max(nucleus_sizes)
+```
+
+These straightforward functions allow you to summarize your data quickly.
+
+## Visualizing Data
+
+R can make many types of plots. Let's plot our nucleus sizes using **ggplot2**, which is included in the **tidyverse**.
+
+### Installing and Loading Packages
+
+If you haven't installed the **tidyverse** package yet, you can do so via:
+
+```{r install-packages, eval=FALSE}
+install.packages("tidyverse")
+```
+
+Then load it:
+
+```{r}
+library(tidyverse)  # Loads ggplot2, dplyr, tidyr, and more
+```
+
+### Example: A Simple Bar Plot
+
+```{r}
+# Create a bar plot of nucleus sizes
+# First, create a data frame with cell numbers and sizes
+nucleus_data <- data.frame(Cell = 1:5, Size = nucleus_sizes)
+
+# Use ggplot2 for plotting
+ggplot(nucleus_data, aes(x = factor(Cell), y = Size)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = "Nucleus Sizes in Cells", x = "Cell Number", y = "Nucleus Size (µm)") +
+  theme_minimal()
+```
+
+`geom_bar(stat = "identity")` tells ggplot2 to create bars whose heights are determined by the `Size` value.
+
+## 1. Loading Libraries
+
+We rely on `tidyverse` (which includes **dplyr** and **ggplot2**) for data manipulation and visualization.
+
+```{r load-libraries}
+library(tidyverse)  # Loads ggplot2, dplyr, tidyr, and more
+```
+
+## 2. Simulating a Dataset
+
+In this example, we simulate a dataset to explore how absorbance might vary with cell concentration for three groups: *Control*, *Treatment A*, and *Treatment B*. We also include a background absorbance value to remove during preprocessing.
+
+```{r create-dataset}
+# set a seed for the randomisation of data
+set.seed(123) # For reproducibility
+
+# Create a tibble (tidyverse's modern dataframe)
+data <- tibble::tibble(
+  Cell_Concentration = rep(seq(1, 100, by = 5), times = 3),
+  Absorbance = c(
+    runif(20, min = 0.1, max = 0.5), # Control data points
+    runif(20, min = 0.4, max = 1.0), # Treatment A data points
+    runif(20, min = 0.8, max = 1.5)  # Treatment B data points
+  ) + 0.05,  # Add background noise
+  Treatment = rep(c("Control", "Treatment A", "Treatment B"), each = 20),
+  Background = 0.05
+)
+
+# Preview the data
+head(data)  # Shows the first few rows
+```
+
+-   `seq(1, 100, by = 5) generates numbers from 1 to 100, in increments of 5.`
+
+-   `runif() creates random values between a minimum and maximum.`
+
+-   `head() displays the first 6 rows of a dataset, which helps you quickly inspect its structure.`
+
+> ### Tibbles vs Data Frames
+>
+> In base R, data is often stored in **data frames**, which are 2D structures (rows and columns) where each column can have a different data type. **Tibbles** are a modern take on data frames provided by the **tibble** package (part of the tidyverse). They have a few advantages:
+>
+> **Printing**: Tibbles show only the first few rows and columns by default, making large datasets easier to inspect.
+>
+> **Strictness**: Tibbles don’t change variable names or types without asking, and never partially match them.
+>
+> **Compatibility**: They still function just like data frames in most situations, so you can use standard functions like `head()`, `str()`, and `summary()`.
+
+## 3. Remove Background Absorbance
+
+We subtract the background absorbance to isolate the absorbance caused by the treatments alone.
+
+```{r remove-background}
+data <- data %>%
+  mutate(Adjusted_Absorbance = Absorbance - Background)
+
+head(data)
+```
+
+Here, `%>%` (the *pipe*) let's us chain commands for readability.
+
+## 4. Basic Scatter Plot
+
+Let's create a scatter plot using **ggplot2** to visualize how Adjusted Absorbance changes with Cell Concentration.
+
+```{r basic-scatter}
+p <- ggplot(data, aes(x = Cell_Concentration, y = Adjusted_Absorbance)) +
+  geom_point() +
+  labs(
+    title = "Adjusted Absorbance by Cell Concentration",
+    x = "Cell Concentration",
+    y = "Adjusted Absorbance"
+  ) +
+  theme_minimal()
+
+p
+```
+
+-   `geom_point()` adds scatter plot points.
+-   `labs()` adds titles and axis labels.
+-   `theme_minimal()` is a clean, modern theme.
+
+## 5. Grouping by Treatment
+
+We can make comparisons clearer by coloring points by their treatment group.
+
+```{r group-scatter}
+p <- ggplot(data, aes(x = Cell_Concentration, y = Adjusted_Absorbance, color = Treatment)) +
+  geom_point(size = 3) +
+  labs(
+    title = "Adjusted Absorbance by Cell Concentration and Treatment",
+    x = "Cell Concentration",
+    y = "Adjusted Absorbance",
+    color = "Treatment"
+  )
+
+p
+```
+
+## 6. Adding a Trend Line
+
+We can add a trend line to see if there’s a linear relationship.
+
+```{r smooth-trend}
+p <- ggplot(data, aes(x = Cell_Concentration, y = Adjusted_Absorbance, color = Treatment)) +
+  geom_point(size = 3) +
+  geom_smooth(se = FALSE, method = "lm") +
+  labs(
+    title = "Trends in Adjusted Absorbance",
+    x = "Cell Concentration",
+    y = "Adjusted Absorbance",
+    color = "Treatment"
+  )
+
+p
+```
+
+-   `geom_smooth(method = "lm")` fits a linear model.
+-   `se = FALSE` hides the shaded confidence interval.
+
+## 7. Customizing Plots
+
+You can customize colors, fonts, and more.
+
+```{r customized-plot}
+p <- ggplot(data, aes(x = Cell_Concentration, y = Adjusted_Absorbance, color = Treatment)) +
+  geom_point(size = 3, alpha = 0.8) +  # Adjust transparency with alpha
+  geom_smooth(se = FALSE, method = "lm", linetype = "dashed") +
+  scale_color_brewer(palette = "Dark2") +
+  labs(
+    title = "Customized Adjusted Absorbance Trends",
+    subtitle = "Data Adjusted for Background Noise",
+    x = "Cell Concentration",
+    y = "Adjusted Absorbance",
+    color = "Treatment Group"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold"),
+    plot.subtitle = element_text(face = "italic"),
+    axis.text.x = element_text(angle = 0, vjust = 0.5)
+  )
+
+p
+```
+
+\newpage
+
+# Visualizing Cell Counts and Concentration from Wet Lab 1
+
+In Wet Practical 1, you determined cell concentration and the number of live and dead cells for *healthy* and *diseased* samples.
+
+We can now import this data for the entire class and visualize it using **ggplot2**. Remember, *working directories* are important in R.
+
+## Setting a Working Directory and Importing Data
+
+```{r}
+# Example: Setting working directory
+# e.g. for pc: setwd("C:/Users/.../Biol340_981/2025/Practicals/Dry_Pracs")
+
+# Load your data using read.csv e.g. from a mac:
+Class_data <- read.csv("~/Library/CloudStorage/OneDrive-Personal/Research/Teaching/Biol340_981/2025/Practicals and Prac manual/Dry practicals/DP_1_data_analysis/cell_count.csv") %>%
+  dplyr::mutate(
+    cell.concentration = stringr::str_remove_all(cell.concentration, ",")
+  )
+
+head(Class_data)
+```
+
+-   `setwd()` sets your working directory.
+-   `read.csv()` imports a CSV file.
+-   `mutate()` modifies or adds columns.
+-   `head(Class_data)` prints the first 6 rows, so you can quickly inspect your dataset.
+
+## Making a Boxplot
+
+Now we can analyse this data in interesting ways using ggplot2 as you learnt above. Feel free to play around with labels, colours and themes.
+
+```{r box-plots}
+p <- ggplot(Class_data, aes(x = treatment, y = as.numeric(cell.concentration))) +
+  geom_boxplot() +
+  labs(
+    title = "Concentration of Viable vs. Treatment",
+    x = "Treatment",
+    y = "Cell Concentration"
+  ) +
+  theme_minimal()
+
+p
+```
+
+A boxplot helps compare data distributions across categories.
+
+We can also tidy up this graph and improve how it looks by using options under `labels()` which allows us to add axes and figure labels. We can also use `theme()` which allows us to manipulate different visuals in the graph, in this instance I will use theme_minimal which is a theme included with ggplot, but there are a huge number of customisations you can do by manipulating options within `theme()`.
+
+Observe the below changes
+
+```{r}
+#coloured boxplot
+p <- ggplot(Class_data, aes(x = treatment, y = as.numeric(cell.concentration), color = treatment)) +
+  geom_boxplot() +
+  labs(
+    title = "Concentration of viable vs. treatment",
+    x = "treatment",
+    y = "Cell concentration"
+  ) +
+  theme_minimal()
+# Display the plot
+p
+```
+
+## Question 1 {style="color: red"}
+
+> What changed between the first and second box plots you created? How is this reflected in the code?
+
+## Activity 1 {style="color: red"}
+
+> Make a custom graph with interesting aesthetics. Use generative AI (e.g., ChatGPT or Copilot) to get ideas on what to change (colors, theme, legend placement, etc.).
+
+# Graphing Wet Lab 2 Microplate Data in R
+
+Prior to this dry lab we have run through the data analysis in Excel, we are now going to try importing the data into R and graphing using the skills you have developed in ggplot2
+
+## Question 3
+
+> **Reflect:** What do you think a barrier to analysis the Excel processed data in R will be? What do you think the advantages of using R could be?
+
+### Thinking outside the cell
+
+So far you have been working with your data in cells, using the tools available in Excel and the tables provided in your prac manual. When it comes to importing data into R we have to think a little differently as we no longer work with the data *visually* using a Graphical User Interface (i.e. a GUI).
+
+First we need to convert our excel data from a spreadsheet (or .xls) file to a comma seperated text file (or csv.). This is fairly straight forward - you can use `save as` in Excel and choose the option to save as a comma seperated file.
+
+This should save your data with the file extension `.csv`. Now if you open the data in `Visual Studio Code` on your computer you will see that all our 'nice' formatting we did to make the data easier to understand actually makes it very confusing for the computer to intepret what each data point means. We need to simplify things so that the software can distinguish between our different variables.
+
+I.e. we need to make it clear what each cell represents in terms of **treatment**, **cell concentration** and **absorbance**. We should also label our **background** as well.
+
+The easiest way to do this is to make each of these variables the headings of the columns in your data, then input the information for each data point.
+
+This is also sometimes referred to as "long format" data.
+
+## Read and Format the Data
+
+We often need to convert Excel data (spreadsheet .xls files) to CSV format so R can interpret it easily.
+
+```{r}
+plate_data <- read.csv("~/Library/CloudStorage/OneDrive-Personal/Research/Teaching/Biol340_981/2025/Practicals and Prac manual/Dry practicals/DP_1_data_analysis/plate_assay.csv", row.names = 1, check.names = FALSE)
+
+plate_data <- plate_data %>%
+  rownames_to_column(var = "Row")
+
+head(plate_data)
+```
+
+-   `row.names = 1` treats the first column as row names.
+-   `check.names = FALSE` avoids automatic renaming.
+-   `rownames_to_column()` turns row names into a column.
+
+```{r}
+# Convert wide data to long format
+plate_long <- plate_data %>%
+  pivot_longer(-Row, names_to = "Column", values_to = "Absorbance") %>%
+  mutate(Column = as.numeric(Column))
+
+# Classify cell types
+plate_long <- plate_long %>%
+  mutate(
+    Cell_Type = case_when(
+      Row %in% c("A", "B", "C") ~ "Healthy",
+      Row %in% c("D", "E", "F") ~ "Diseased",
+      Row %in% c("G", "H")       ~ "Blank"
+    )
+  )
+
+# Remove Blanks
+plate_long <- plate_long %>%
+  filter(Cell_Type != "Blank")
+
+# Add dilution info (example)
+starting_concentration <- 2000000  # First column concentration
+plate_long <- plate_long %>% mutate(
+  Dilution = starting_concentration * (1 / 2)^(Column - 1)
+)
+
+head(plate_long)
+```
+
+## Subtract Background
+
+Here, we compute background as the mean absorbance of wells in the last column (Column 12) and subtract it.
+
+```{r}
+background_absorbance <- plate_long %>%
+  filter(Column == 12) %>%
+  summarize(Mean_Background = mean(Absorbance, na.rm = TRUE)) %>%
+  pull(Mean_Background)
+
+plate_long_corrected <- plate_long %>%
+  mutate(Adjusted_Absorbance = Absorbance - background_absorbance)
+
+head(plate_long_corrected)
+```
+
+## Question 4 {style="color: red"}
+
+> Which data frame should we plot?
+
+## Plotting the Results
+
+```{r}
+# Scatter plot of Adjusted Absorbance vs. Dilution
+# Colored by Cell_Type
+
+ggplot(plate_long_corrected, aes(x = Dilution, y = Adjusted_Absorbance, color = Cell_Type)) +
+  geom_point(alpha = 0.6, size = 2) +
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed") +
+  labs(
+    title = "Standard Curve of Absorbance vs Cell Concentration",
+    x = "Cell Concentration (cells/mL)",
+    y = "Adjusted Absorbance",
+    color = "Cell Type"
+  ) +
+  theme_minimal()
+```
+
+That plot looks pretty squashed in the left hand side (lower concentrations). Let's fix that by making it a log graph. This is very easy to do now that we have done all our data manipulation. We will just add in the line `scale_x_log10()`.
+
+### Log Scale Example
+
+```{r}
+ggplot(plate_long_corrected, aes(x = Dilution, y = Adjusted_Absorbance, color = Cell_Type)) +
+  geom_point(alpha = 0.6, size = 2) +
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed") +
+  scale_x_log10() +
+  labs(
+    title = "Standard Curve of Absorbance vs Cell Concentration (Log Scale)",
+    x = "Cell Concentration (cells/mL)",
+    y = "Adjusted Absorbance",
+    color = "Cell Type"
+  ) +
+  theme_minimal()
+```
+
+## Estimating the Linear Range
+
+We can improve our standard curves by finding the linear portion of the trendline to determine the sensitivity range of the assays.
+
+```{r}
+linear_data <- plate_long_corrected %>%
+  filter(Dilution >= 1000 & Dilution <= 500000)
+
+# Plot linear region
+ggplot(linear_data, aes(x = Dilution, y = Adjusted_Absorbance, color = Cell_Type)) +
+  geom_point(alpha = 0.6, size = 2) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(
+    title = "Linear Region of Standard Curve",
+    x = "Cell Concentration (cells/mL)",
+    y = "Adjusted Absorbance",
+    color = "Cell Type"
+  ) +
+  theme_minimal()
+```
+
+## Activity 3 {style="color: red"}
+
+> Customize your plot to improve its appearance. - Adjust point size and color - Modify or remove legends - Evaluate whether you need to show all data labels or tick marks - Explore other themes (e.g., `theme_bw()`, `theme_classic()`). Feel free to look at the ggplot2 cheat sheet available on Moodle.
+
+## Activity 4 {style="color: red"}
+
+> Choose an appropriate cell density within this range to compare the results of the ‘diseased’ cell suspension and calculate the difference in viability between these two populations of cells (assuming 100 % viability of the ‘healthy’ cell suspension).
+
+## Activity 5 {style="color: red"}
+
+> Repeat this plot for the other assay dataset. This should be simple as you will only need to change the input .csv file the code should remain the same. This is one powerful aspect of R, reproducibility!
+
+## Exporting Plots
+
+In RStudio, use the **Plots** pane (bottom-right) and click **Export** to save your plots as an image (PNG, JPEG) or PDF. You can also programmatically export using `ggsave()`.
+
+Example:
+
+```{r eval=FALSE}
+ggsave("myplot.png", plot = p, width = 6, height = 4)
+```
+
+## Activity 6 {style="color: red"}
+
+> Export your final R-generated figures for the MTS and Calcein-AM assays as PNG files. Try setting the file dimensions to 600×400.
+
+## Question 5 {style="color: red"}
+
+> Where do these files save on your computer? Why is that location used?
+
+## Question 6 {style="color: red"}
+
+> Write a brief comparison of the two assays you performed. Which was faster, more reproducible, or more sensitive?
+
+\newpage
+
+# Common Errors and How to Fix Them
+
+Beginners often encounter errors like:
+
+-   **Package not found** → Make sure you’ve installed and loaded the package.
+-   **Object not found** → Check for typos in function or variable names.
+-   **Incorrect file path** → Check for typos in the file path. Make sure you have set the correct working directory.
+-   **Mismatched column names** → R is case-sensitive.
+
+```{r debug-example, eval=FALSE}
+# Example: Fixing a missing package error
+if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2")
+library(ggplot2)
+```
+
+\newpage
+
+# Conclusion
+
+In this Dry Practical, we:
+
+-   Learned how to import and analyse data in both Excel and R.
+-   Learnt how to generate **box** and **scatter** plots in R
+-   Constructed **standard curves** in Excel and R.
+-   Determined the **linear range** using regression.
+-   Calculated **cell viability** for diseased vs. healthy cells.
