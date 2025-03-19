@@ -1,7 +1,7 @@
 ---
 title: "Dry Prac 1 — Data analysis in R"
 author: "Dr Nikolas Johnston, University of Wollongong"
-date: "2025-24-03"
+date: "March, 2025"
 ---
 
 ```{r setup, include=FALSE}
