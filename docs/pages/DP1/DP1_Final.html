@@ -171,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">Introduction</span></a>
+ <span class="menu-text">Pre-Lab - Introduction</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -206,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Data exploration</span></a>
+ <span class="menu-text">Pre-Lab - Data exploration</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -393,58 +393,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#introduction-and-welcome-to-r" id="toc-introduction-and-welcome-to-r" class="nav-link" data-scroll-target="#introduction-and-welcome-to-r">Introduction and Welcome to R!</a>
+  <li><a href="#introduction-and-welcome-to-r" id="toc-introduction-and-welcome-to-r" class="nav-link active" data-scroll-target="#introduction-and-welcome-to-r">Introduction and Welcome to R!</a></li>
+  <li><a href="#class-objectives" id="toc-class-objectives" class="nav-link" data-scroll-target="#class-objectives">Class Objectives</a>
   <ul class="collapse">
+  <li><a href="#how-to-read-this-guide" id="toc-how-to-read-this-guide" class="nav-link" data-scroll-target="#how-to-read-this-guide">How to Read This Guide</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a>
   <ul class="collapse">
   <li><a href="#why-r" id="toc-why-r" class="nav-link" data-scroll-target="#why-r">Why R?</a></li>
   </ul></li>
-  <li><a href="#how-to-read-this-guide" id="toc-how-to-read-this-guide" class="nav-link" data-scroll-target="#how-to-read-this-guide">How to Read This Guide</a></li>
   <li><a href="#how-to-write-code-in-r" id="toc-how-to-write-code-in-r" class="nav-link" data-scroll-target="#how-to-write-code-in-r">How to Write Code in R</a></li>
   <li><a href="#working-with-variables" id="toc-working-with-variables" class="nav-link" data-scroll-target="#working-with-variables">Working with Variables</a></li>
-  <li><a href="#basic-statistics" id="toc-basic-statistics" class="nav-link" data-scroll-target="#basic-statistics">Basic Statistics</a></li>
-  <li><a href="#visualizing-data" id="toc-visualizing-data" class="nav-link" data-scroll-target="#visualizing-data">Visualizing Data</a>
-  <ul class="collapse">
-  <li><a href="#installing-and-loading-packages" id="toc-installing-and-loading-packages" class="nav-link" data-scroll-target="#installing-and-loading-packages">Installing and Loading Packages</a></li>
-  <li><a href="#example-a-simple-bar-plot" id="toc-example-a-simple-bar-plot" class="nav-link" data-scroll-target="#example-a-simple-bar-plot">Example: A Simple Bar Plot</a></li>
-  </ul></li>
-  <li><a href="#loading-libraries" id="toc-loading-libraries" class="nav-link" data-scroll-target="#loading-libraries">1. Loading Libraries</a></li>
-  <li><a href="#simulating-a-dataset" id="toc-simulating-a-dataset" class="nav-link" data-scroll-target="#simulating-a-dataset">2. Simulating a Dataset</a></li>
-  <li><a href="#remove-background-absorbance" id="toc-remove-background-absorbance" class="nav-link" data-scroll-target="#remove-background-absorbance">3. Remove Background Absorbance</a></li>
-  <li><a href="#basic-scatter-plot" id="toc-basic-scatter-plot" class="nav-link" data-scroll-target="#basic-scatter-plot">4. Basic Scatter Plot</a></li>
-  <li><a href="#grouping-by-treatment" id="toc-grouping-by-treatment" class="nav-link" data-scroll-target="#grouping-by-treatment">5. Grouping by Treatment</a></li>
-  <li><a href="#adding-a-trend-line" id="toc-adding-a-trend-line" class="nav-link" data-scroll-target="#adding-a-trend-line">6. Adding a Trend Line</a></li>
-  <li><a href="#customizing-plots" id="toc-customizing-plots" class="nav-link" data-scroll-target="#customizing-plots">7. Customizing Plots</a></li>
+  <li><a href="#fun-with-functions" id="toc-fun-with-functions" class="nav-link" data-scroll-target="#fun-with-functions">Fun with functions</a></li>
+  <li><a href="#visualizing-data-and-installing-and-loading-packages" id="toc-visualizing-data-and-installing-and-loading-packages" class="nav-link" data-scroll-target="#visualizing-data-and-installing-and-loading-packages">Visualizing Data and Installing and Loading Packages</a></li>
   </ul></li>
   <li><a href="#visualizing-cell-counts-and-concentration-from-wet-lab-1" id="toc-visualizing-cell-counts-and-concentration-from-wet-lab-1" class="nav-link" data-scroll-target="#visualizing-cell-counts-and-concentration-from-wet-lab-1">Visualizing Cell Counts and Concentration from Wet Lab 1</a>
   <ul class="collapse">
-  <li><a href="#setting-a-working-directory-and-importing-data" id="toc-setting-a-working-directory-and-importing-data" class="nav-link" data-scroll-target="#setting-a-working-directory-and-importing-data">Setting a Working Directory and Importing Data</a></li>
   <li><a href="#making-a-boxplot" id="toc-making-a-boxplot" class="nav-link" data-scroll-target="#making-a-boxplot">Making a Boxplot</a></li>
   <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
   <li><a href="#activity-1" id="toc-activity-1" class="nav-link" data-scroll-target="#activity-1">Activity 1</a></li>
   </ul></li>
   <li><a href="#graphing-wet-lab-2-microplate-data-in-r" id="toc-graphing-wet-lab-2-microplate-data-in-r" class="nav-link" data-scroll-target="#graphing-wet-lab-2-microplate-data-in-r">Graphing Wet Lab 2 Microplate Data in R</a>
   <ul class="collapse">
-  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a>
-  <ul class="collapse">
-  <li><a href="#thinking-outside-the-cell" id="toc-thinking-outside-the-cell" class="nav-link" data-scroll-target="#thinking-outside-the-cell">Thinking outside the cell</a></li>
-  </ul></li>
-  <li><a href="#read-and-format-the-data" id="toc-read-and-format-the-data" class="nav-link" data-scroll-target="#read-and-format-the-data">Read and Format the Data</a></li>
-  <li><a href="#subtract-background" id="toc-subtract-background" class="nav-link" data-scroll-target="#subtract-background">Subtract Background</a></li>
-  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#thinking-outside-the-cell-reading-and-formatting-your-data" id="toc-thinking-outside-the-cell-reading-and-formatting-your-data" class="nav-link" data-scroll-target="#thinking-outside-the-cell-reading-and-formatting-your-data">Thinking outside the cell, reading and formatting your data</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
   <li><a href="#plotting-the-results" id="toc-plotting-the-results" class="nav-link" data-scroll-target="#plotting-the-results">Plotting the Results</a>
   <ul class="collapse">
+  <li><a href="#adding-a-trendline" id="toc-adding-a-trendline" class="nav-link" data-scroll-target="#adding-a-trendline">Adding a trendline</a></li>
   <li><a href="#log-scale-example" id="toc-log-scale-example" class="nav-link" data-scroll-target="#log-scale-example">Log Scale Example</a></li>
   </ul></li>
   <li><a href="#estimating-the-linear-range" id="toc-estimating-the-linear-range" class="nav-link" data-scroll-target="#estimating-the-linear-range">Estimating the Linear Range</a></li>
+  <li><a href="#activity-2" id="toc-activity-2" class="nav-link" data-scroll-target="#activity-2">Activity 2</a></li>
   <li><a href="#activity-3" id="toc-activity-3" class="nav-link" data-scroll-target="#activity-3">Activity 3</a></li>
-  <li><a href="#activity-4" id="toc-activity-4" class="nav-link" data-scroll-target="#activity-4">Activity 4</a></li>
-  <li><a href="#activity-5" id="toc-activity-5" class="nav-link" data-scroll-target="#activity-5">Activity 5</a></li>
   <li><a href="#exporting-plots" id="toc-exporting-plots" class="nav-link" data-scroll-target="#exporting-plots">Exporting Plots</a></li>
-  <li><a href="#activity-6" id="toc-activity-6" class="nav-link" data-scroll-target="#activity-6">Activity 6</a></li>
+  <li><a href="#activity-4" id="toc-activity-4" class="nav-link" data-scroll-target="#activity-4">Activity 4</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
-  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
   </ul></li>
   <li><a href="#common-errors-and-how-to-fix-them" id="toc-common-errors-and-how-to-fix-them" class="nav-link" data-scroll-target="#common-errors-and-how-to-fix-them">Common Errors and How to Fix Them</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
@@ -485,21 +469,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="objectives" class="level1">
-<h1>Objectives</h1>
-<ol type="1">
-<li>Understand the basics of R including importing data, basic data manipulation, and generating simple plots.</li>
-<li>Use R to generate Boxplots and Scatter plots of large datasets generated in your Wet Labs.</li>
-<li>Learn to write simple custom lines of R code and utilize generative AI to improve code and correct errors.</li>
-<li>Understand the differences between analysis in Microsoft Excel and R, and appreciate situations in which each tool is most useful.</li>
-<li>Assess and compare cell viability between ‘diseased’ and ‘healthy’ populations, evaluating the sensitivity and characteristics of each of the microplate assays you completed in Wet Lab 2.</li>
-</ol>
-</section>
 <section id="introduction-and-welcome-to-r" class="level1">
 <h1>Introduction and Welcome to R!</h1>
 <p>In this dry prac, we will learn how to use the <code>ggplot2</code> and <code>tidyverse</code> packages to create publication-quality bar and scatter plots from the data you generated in Wet Lab 1 &amp; 2. Along the way, we will practice data manipulation, such as removing background absorbance and reshaping data for analysis.</p>
 <p>R is a powerful tool for analyzing data, creating visualizations, and performing statistical tests. In cell biology, you can use R to analyze experimental results, such as cell growth rates, gene expression levels, or protein abundance.</p>
 <p>Let’s dive into the basics of R, starting with something fun: exploring cells and their data!</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ACTION REQUIRED
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Open R studio on your computer and create a new r script for this class. If you are confused about how to do this refer to the <strong>introduction</strong> section of the BIOL340 practical website.</p>
+</div>
+</div>
+</section>
+<section id="class-objectives" class="level1">
+<h1>Class Objectives</h1>
+<ol type="1">
+<li>Understand the basics of R including importing data, basic data manipulation, and generating simple plots.</li>
+<li>Use R to generate Boxplots and Scatter plots of large datasets generated in your Wet Labs.</li>
+<li>Learn to write simple custom lines of R code and utilize generative AI to improve code and correct errors.</li>
+<li>Understand the differences between analysis in Microsoft Excel and R, and appreciate situations in which each tool is most useful.</li>
+<li>Assess and compare cell viability between ‘diseased’ and ‘healthy’ populations, evaluating the sensitivity and characteristics of each of the microplate assays you completed in Wet Lab</li>
+</ol>
+<section id="how-to-read-this-guide" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-read-this-guide">How to Read This Guide</h2>
+<p>In the instructions below, there will be chunks of code for you to read and copy into RStudio. The code chunks look like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Just a poor empty chunk with no code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Anything following a <code>#</code> in an R code chunk is a <strong>comment</strong>, which means R will ignore it. These comments are there to help explain what the code is doing.</p>
+<section id="we-encourage-you-to-copy-and-paste-the-code-we-provide-in-these-blocks-into-r-studio-on-your-computer." class="level4" style="color: red">
+<h4 style="color: red" class="anchored" data-anchor-id="we-encourage-you-to-copy-and-paste-the-code-we-provide-in-these-blocks-into-r-studio-on-your-computer.">We encourage you to copy and paste the code we provide in these blocks into R studio on your computer.</h4>
+</section>
+</section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
 <section id="why-r" class="level3">
@@ -513,17 +521,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 </section>
-<section id="how-to-read-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-read-this-guide">How to Read This Guide</h2>
-<p>In the instructions below, there will be chunks of code for you to read and copy into RStudio. The code chunks look like this:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Just a poor empty chunk with no code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Anything following a <code>#</code> in an R code chunk is a <strong>comment</strong>, which means R will ignore it. These comments are there to help explain what the code is doing.</p>
-</section>
 <section id="how-to-write-code-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-write-code-in-r">How to Write Code in R</h2>
-<p>You write commands (called <strong>functions</strong>) in the <strong>console</strong> or a <strong>script</strong> in RStudio. Below each code chunk, there may be output (often preceded by <code>#</code> if you’re looking at raw code). Let’s start with a simple one:</p>
+<p>You write commands (called <strong>functions</strong>) in the <strong>console</strong> or a <strong>script</strong> in RStudio. Below each code chunk, there may be output (often preceded by <code>#</code> if you’re looking at raw code). Let’s start with a simple one.</p>
+<p>Try running this yourself in RStudio! You can either <strong>copy and paste</strong> the code below or type it out manually. I recommend copying for the rest of this guide as it will make it harder to make mistakes, spelling is very important with code as the computer will take everything you write very literally.</p>
+<p>We can then run this code using the <strong>run</strong> button in the top right corner.</p>
+<p><img src="run_button.png" class="img-fluid"></p>
+<p>Or by pressing <code>control + enter</code> on your keyboard.</p>
+<p>When you run this code in R, you should see the result, <strong>4</strong>, printed beneath.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This calculates a simple sum</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -531,333 +536,176 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] 4</code></pre>
 </div>
 </div>
-<p>When you run this code in R, you should see the result, <strong>4</strong>, printed beneath.</p>
-<p>Try running this yourself in RStudio! If you get 4, you’ve written and executed your first piece of R code. Now things get exciting.</p>
+<p>If you get 4, you’ve written and executed your first piece of R code. Now things get exciting.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Test your understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Can you use any other mathematical symbols here? Test it out.</p>
+</div>
+</div>
 </section>
 <section id="working-with-variables" class="level2">
 <h2 class="anchored" data-anchor-id="working-with-variables">Working with Variables</h2>
-<p>Variables are like labeled containers for your data.</p>
+<p>Variables are like labeled containers for your data. These are important because we can use them to store all sorts of things in R. Lets store our calculation as the variable <strong>calc</strong> we do this by writing out the variable name, then using a <strong>&lt;-</strong> symbol then typing what we want to store. Copy the below and test it out for yourself.</p>
+<p>We can also check what is stored in a variable by just typing its name and running the code. Let’s write <strong>calc</strong> again and see what we have stored. :</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Test your understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Spelling and capitalization are really important. If we captilise the “C” in calc what will happen?</p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Size of the nucleus</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>nucleus_size <span class="ot">&lt;-</span> <span class="fl">5.6</span>  <span class="co"># in micrometers</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>nucleus_size</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>calc <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span>  <span class="co"># in micrometers</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>calc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5.6</code></pre>
+<pre><code>[1] 4</code></pre>
 </div>
 </div>
-<p>Here, <code>nucleus_size</code> is a variable that stores the numeric value <strong>5.6</strong>.</p>
-<p>For multiple measurements, you can store a group of values in a <strong>vector</strong>:</p>
+<p>It’s also possible to store a list of things as a variable. We do this by writing out the list proceeded by a ‘c’ (for combine), and then seperate every value with a comma. As in the below where we store a list of cool bugs. Because we are using words here(or strings in computer talk) we will use quotations so the computer knows we want it to store exactly the letters we provide it.</p>
+<p>You’ll notice that i do not use a space between the words ‘cool’ and ‘bugs’, in general spaces are not read well by your computer, it doesn’t know what to do with them and it will cause your code to fail.</p>
+<p>It is best practice to never use spaces in any of your file names or code if possible.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nucleus sizes of five cells</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>nucleus_sizes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">5.6</span>, <span class="fl">6.1</span>, <span class="fl">5.8</span>, <span class="fl">6.2</span>, <span class="fl">5.9</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>nucleus_sizes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#List Nik's favourite bugs</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>cool_bugs<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'flies'</span>, <span class="st">'katydids'</span>, <span class="st">'beetles'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#if we list the variable again remeber it will tell us what it contains. </span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>cool_bugs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5.6 6.1 5.8 6.2 5.9</code></pre>
+<pre><code>[1] "flies"    "katydids" "beetles" </code></pre>
 </div>
 </div>
-<p><code>c()</code> (short for combine) creates a vector, which is a basic data structure in R.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Test your understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Add in two of your favorite bugs into the <code>cool_bugs</code> variable. Then run it to make sure it works.</p>
+</div>
+</div>
 </section>
-<section id="basic-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="basic-statistics">Basic Statistics</h2>
-<p>Biologists often need to analyze data with simple statistical functions.</p>
+<section id="fun-with-functions" class="level2">
+<h2 class="anchored" data-anchor-id="fun-with-functions">Fun with functions</h2>
+<p>Functions are one of the most powerful tools in R. They allow us to perform tasks without having to write the same code over and over. A function takes an <strong>input</strong>, does something with it, and then gives back an <strong>output</strong>. You’ve already used one function without realizing it— <strong><code>+</code></strong>, which is the addition function!</p>
+<p>For example, let’s use the function <code>sqrt()</code> to calculate the square root of our <code>calc</code> variable.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mean size</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>mean_nucleus <span class="ot">&lt;-</span> <span class="fu">mean</span>(nucleus_sizes)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>mean_nucleus</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(calc)  <span class="co"># This finds the square root of 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5.92</code></pre>
+<pre><code>[1] 2</code></pre>
 </div>
 </div>
-<p>The <code>mean()</code> function calculates the average. Similarly, you can find other basic stats:</p>
+<p>Many functions take arguments that you can customize. For example, the <code>round()</code> function rounds numbers to a specified number of decimal places:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Maximum size</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(nucleus_sizes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.14159</span>, <span class="at">digits =</span> <span class="dv">2</span>)  <span class="co"># Rounds to 2 decimal places</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 6.2</code></pre>
+<pre><code>[1] 3.14</code></pre>
 </div>
 </div>
-<p>These straightforward functions allow you to summarize your data quickly.</p>
+<p>We will use a lot of different functions to do powerful things in our data analysis!</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Test your understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Calculate the square root of your <code>calc</code> variable then round it to 4 decimal places.</p>
+</div>
+</div>
 </section>
-<section id="visualizing-data" class="level2">
-<h2 class="anchored" data-anchor-id="visualizing-data">Visualizing Data</h2>
+<section id="visualizing-data-and-installing-and-loading-packages" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-data-and-installing-and-loading-packages">Visualizing Data and Installing and Loading Packages</h2>
 <p>R can make many types of plots. Let’s plot our nucleus sizes using <strong>ggplot2</strong>, which is included in the <strong>tidyverse</strong>.</p>
-<section id="installing-and-loading-packages" class="level3">
-<h3 class="anchored" data-anchor-id="installing-and-loading-packages">Installing and Loading Packages</h3>
-<p>If you haven’t installed the <strong>tidyverse</strong> package yet, you can do so via:</p>
+<p>If you haven’t installed the <strong>tidyverse</strong> package yet, you can do so via copying and running:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Then load it:</p>
+<p>We also have to load the library by copying and running this line of code:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)  <span class="co"># Loads ggplot2, dplyr, tidyr, and more</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="example-a-simple-bar-plot" class="level3">
-<h3 class="anchored" data-anchor-id="example-a-simple-bar-plot">Example: A Simple Bar Plot</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bar plot of nucleus sizes</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># First, create a data frame with cell numbers and sizes</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>nucleus_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Cell =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">Size =</span> nucleus_sizes)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Use ggplot2 for plotting</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nucleus_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(Cell), <span class="at">y =</span> Size)) <span class="sc">+</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>) <span class="sc">+</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Nucleus Sizes in Cells"</span>, <span class="at">x =</span> <span class="st">"Cell Number"</span>, <span class="at">y =</span> <span class="st">"Nucleus Size (µm)"</span>) <span class="sc">+</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="DP1_Final_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><code>geom_bar(stat = "identity")</code> tells ggplot2 to create bars whose heights are determined by the <code>Size</code> value.</p>
-</section>
-</section>
-<section id="loading-libraries" class="level2">
-<h2 class="anchored" data-anchor-id="loading-libraries">1. Loading Libraries</h2>
-<p>We rely on <code>tidyverse</code> (which includes <strong>dplyr</strong> and <strong>ggplot2</strong>) for data manipulation and visualization.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)  <span class="co"># Loads ggplot2, dplyr, tidyr, and more</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="simulating-a-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="simulating-a-dataset">2. Simulating a Dataset</h2>
-<p>In this example, we simulate a dataset to explore how absorbance might vary with cell concentration for three groups: <em>Control</em>, <em>Treatment A</em>, and <em>Treatment B</em>. We also include a background absorbance value to remove during preprocessing.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set a seed for the randomisation of data</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># For reproducibility</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a tibble (tidyverse's modern dataframe)</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Cell_Concentration =</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>), <span class="at">times =</span> <span class="dv">3</span>),</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Absorbance =</span> <span class="fu">c</span>(</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">runif</span>(<span class="dv">20</span>, <span class="at">min =</span> <span class="fl">0.1</span>, <span class="at">max =</span> <span class="fl">0.5</span>), <span class="co"># Control data points</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">runif</span>(<span class="dv">20</span>, <span class="at">min =</span> <span class="fl">0.4</span>, <span class="at">max =</span> <span class="fl">1.0</span>), <span class="co"># Treatment A data points</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">runif</span>(<span class="dv">20</span>, <span class="at">min =</span> <span class="fl">0.8</span>, <span class="at">max =</span> <span class="fl">1.5</span>)  <span class="co"># Treatment B data points</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> <span class="fl">0.05</span>,  <span class="co"># Add background noise</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Treatment =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Control"</span>, <span class="st">"Treatment A"</span>, <span class="st">"Treatment B"</span>), <span class="at">each =</span> <span class="dv">20</span>),</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Background =</span> <span class="fl">0.05</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Preview the data</span></span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)  <span class="co"># Shows the first few rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 4
-  Cell_Concentration Absorbance Treatment Background
-               &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;
-1                  1      0.265 Control         0.05
-2                  6      0.465 Control         0.05
-3                 11      0.314 Control         0.05
-4                 16      0.503 Control         0.05
-5                 21      0.526 Control         0.05
-6                 26      0.168 Control         0.05</code></pre>
-</div>
-</div>
-<ul>
-<li><p><code>seq(1, 100, by = 5) generates numbers from 1 to 100, in increments of 5.</code></p></li>
-<li><p><code>runif() creates random values between a minimum and maximum.</code></p></li>
-<li><p><code>head() displays the first 6 rows of a dataset, which helps you quickly inspect its structure.</code></p></li>
-</ul>
-<blockquote class="blockquote">
-<h3 id="tibbles-vs-data-frames" class="anchored">Tibbles vs Data Frames</h3>
-<p>In base R, data is often stored in <strong>data frames</strong>, which are 2D structures (rows and columns) where each column can have a different data type. <strong>Tibbles</strong> are a modern take on data frames provided by the <strong>tibble</strong> package (part of the tidyverse). They have a few advantages:</p>
-<p><strong>Printing</strong>: Tibbles show only the first few rows and columns by default, making large datasets easier to inspect.</p>
-<p><strong>Strictness</strong>: Tibbles don’t change variable names or types without asking, and never partially match them.</p>
-<p><strong>Compatibility</strong>: They still function just like data frames in most situations, so you can use standard functions like <code>head()</code>, <code>str()</code>, and <code>summary()</code>.</p>
-</blockquote>
-</section>
-<section id="remove-background-absorbance" class="level2">
-<h2 class="anchored" data-anchor-id="remove-background-absorbance">3. Remove Background Absorbance</h2>
-<p>We subtract the background absorbance to isolate the absorbance caused by the treatments alone.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Adjusted_Absorbance =</span> Absorbance <span class="sc">-</span> Background)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 5
-  Cell_Concentration Absorbance Treatment Background Adjusted_Absorbance
-               &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;               &lt;dbl&gt;
-1                  1      0.265 Control         0.05               0.215
-2                  6      0.465 Control         0.05               0.415
-3                 11      0.314 Control         0.05               0.264
-4                 16      0.503 Control         0.05               0.453
-5                 21      0.526 Control         0.05               0.476
-6                 26      0.168 Control         0.05               0.118</code></pre>
-</div>
-</div>
-<p>Here, <code>%&gt;%</code> (the <em>pipe</em>) let’s us chain commands for readability.</p>
-</section>
-<section id="basic-scatter-plot" class="level2">
-<h2 class="anchored" data-anchor-id="basic-scatter-plot">4. Basic Scatter Plot</h2>
-<p>Let’s create a scatter plot using <strong>ggplot2</strong> to visualize how Adjusted Absorbance changes with Cell Concentration.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Cell_Concentration, <span class="at">y =</span> Adjusted_Absorbance)) <span class="sc">+</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Adjusted Absorbance by Cell Concentration"</span>,</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cell Concentration"</span>,</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adjusted Absorbance"</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="DP1_Final_files/figure-html/basic-scatter-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li><code>geom_point()</code> adds scatter plot points.</li>
-<li><code>labs()</code> adds titles and axis labels.</li>
-<li><code>theme_minimal()</code> is a clean, modern theme.</li>
-</ul>
-</section>
-<section id="grouping-by-treatment" class="level2">
-<h2 class="anchored" data-anchor-id="grouping-by-treatment">5. Grouping by Treatment</h2>
-<p>We can make comparisons clearer by coloring points by their treatment group.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Cell_Concentration, <span class="at">y =</span> Adjusted_Absorbance, <span class="at">color =</span> Treatment)) <span class="sc">+</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Adjusted Absorbance by Cell Concentration and Treatment"</span>,</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cell Concentration"</span>,</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adjusted Absorbance"</span>,</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Treatment"</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="DP1_Final_files/figure-html/group-scatter-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="adding-a-trend-line" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-trend-line">6. Adding a Trend Line</h2>
-<p>We can add a trend line to see if there’s a linear relationship.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Cell_Concentration, <span class="at">y =</span> Adjusted_Absorbance, <span class="at">color =</span> Treatment)) <span class="sc">+</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Trends in Adjusted Absorbance"</span>,</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cell Concentration"</span>,</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adjusted Absorbance"</span>,</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Treatment"</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="DP1_Final_files/figure-html/smooth-trend-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li><code>geom_smooth(method = "lm")</code> fits a linear model.</li>
-<li><code>se = FALSE</code> hides the shaded confidence interval.</li>
-</ul>
-</section>
-<section id="customizing-plots" class="level2">
-<h2 class="anchored" data-anchor-id="customizing-plots">7. Customizing Plots</h2>
-<p>You can customize colors, fonts, and more.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Cell_Concentration, <span class="at">y =</span> Adjusted_Absorbance, <span class="at">color =</span> Treatment)) <span class="sc">+</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span>  <span class="co"># Adjust transparency with alpha</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Customized Adjusted Absorbance Trends"</span>,</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Data Adjusted for Background Noise"</span>,</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cell Concentration"</span>,</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adjusted Absorbance"</span>,</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Treatment Group"</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>),</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>)</span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="DP1_Final_files/figure-html/customized-plot-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div style="page-break-after: always;"></div>
+<p>We are now set up to start looking at our data from <strong>Wet Lab 1</strong></p>
 </section>
 </section>
 <section id="visualizing-cell-counts-and-concentration-from-wet-lab-1" class="level1">
 <h1>Visualizing Cell Counts and Concentration from Wet Lab 1</h1>
 <p>In Wet Practical 1, you determined cell concentration and the number of live and dead cells for <em>healthy</em> and <em>diseased</em> samples.</p>
 <p>We can now import this data for the entire class and visualize it using <strong>ggplot2</strong>. Remember, <em>working directories</em> are important in R.</p>
-<section id="setting-a-working-directory-and-importing-data" class="level2">
-<h2 class="anchored" data-anchor-id="setting-a-working-directory-and-importing-data">Setting a Working Directory and Importing Data</h2>
+<p>Remember for this class it’s not important to understand everything that is happening in the code, just to be able to run it and use Gen AI to edit it.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Action required
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Copy the below code and change the location of the file in the <code>read.csv</code> function to where you file is stored on your computer. Remember we keep the text in quotations so the computer interprets it literally as what we type.</p>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Setting working directory</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># e.g. for pc: setwd("C:/Users/.../Biol340_981/2025/Practicals/Dry_Pracs")</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load your data using read.csv e.g. from a mac:</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>Class_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Library/CloudStorage/OneDrive-Personal/Research/Teaching/Biol340_981/2025/Practicals and Prac manual/Dry practicals/DP_1_data_analysis/cell_count.csv"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">cell.concentration =</span> stringr<span class="sc">::</span><span class="fu">str_remove_all</span>(cell.concentration, <span class="st">","</span>)</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Class_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Setting working directory</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># e.g. for pc: setwd("C:/Users/.../Biol340_981/2025/Practicals/Dry_Pracs")</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load your data using read.csv e.g. from a mac:</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>Class_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Library/CloudStorage/OneDrive-Personal/Research/Teaching/Biol340_981/2025/Practicals and Prac manual/Dry practicals/DP_1_data_analysis/cell_count_data.csv"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Class_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       treatment Raw.counts cell.concentration Number.of.cells.in.20.uL.sample
-1 healthy, alive        195            3900000                              78
-2 healthy, alive        202            4040000                              81
-3 healthy, alive        198            3960000                              79
-4 healthy, alive        205            4100000                              82
-5 healthy, alive        192            3840000                              77
-6 healthy, alive        210            4200000                              84
-  Proportion.of.total.cells....
-1                         4.20%
-2                         4.40%
-3                         4.30%
-4                         4.50%
-5                         4.10%
-6                         4.60%</code></pre>
+<pre><code>  group      treatment raw_counts cell_concentration X20ul_cell_number
+1 G1_G2 healthy, alive       94.5            1890000             37800
+2 G1_G2  healthy, dead        4.5              90000              1800
+3 G1_G2 disease, alive      94.25            1885000             37700
+4 G3_G4 healthy, alive         47             940000             18800
+5 G3_G4  healthy, dead       1.25              25000               500
+6 G3_G4 disease, alive     107.75            2155000             43100
+  proportion_total_cells
+1                  95.24
+2                   4.76
+3                    100
+4                   97.4
+5                    2.6
+6                   96.4</code></pre>
 </div>
 </div>
-<ul>
-<li><code>setwd()</code> sets your working directory.</li>
-<li><code>read.csv()</code> imports a CSV file.</li>
-<li><code>mutate()</code> modifies or adds columns.</li>
-<li><code>head(Class_data)</code> prints the first 6 rows, so you can quickly inspect your dataset.</li>
-</ul>
-</section>
+<p>If you are curious the functions in the above code chunk do the following: - <code>setwd()</code> sets your working directory. - <code>read.csv()</code> imports a CSV file. - <code>mutate()</code> modifies or adds columns. - <code>head(Class_data)</code> prints the first 6 rows, so you can quickly inspect your dataset.</p>
 <section id="making-a-boxplot" class="level2">
 <h2 class="anchored" data-anchor-id="making-a-boxplot">Making a Boxplot</h2>
-<p>Now we can analyse this data in interesting ways using ggplot2 as you learnt above. Feel free to play around with labels, colours and themes.</p>
+<p>Now we can analyse this data in interesting ways using ggplot2 a package specifically for graphing included in <code>tidyverse</code>. Feel free to play around with labels, colours and themes.</p>
+<p>A boxplot helps compare data distributions across categories.</p>
+<p>The below packge function <code>ggplot()</code> required a few things first we give it our data variable also known as the data frame <code>ggplot(Class_data)</code>. Then we need to tell it what we actually want plotted from this data set, or the asthetics of the graph, this is shortened to list <code>aes()</code>, i.e.&nbsp;<code>ggplot(Class_data, aes(x = x-axis, y = y axis)</code>. In the below we also tell it to treat the column <code>cell_concentration</code> in our data as a numeric factor this just means it will plot it correctly.</p>
+<p>We also will add a <strong>geom</strong> to our plot, this is short for a geometric object - which basically means dots, lines, curves or any other thing we might like to plot. For now we will add a boxplot geom using <code>geom_boxplot</code>. &gt;Data scientists are not very creative when it comes to naming things, but this means with a bit of thinking, googling or AI searching we can pretty quickly work out what a function or option is doing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(Class_data, <span class="fu">aes</span>(<span class="at">x =</span> treatment, <span class="at">y =</span> <span class="fu">as.numeric</span>(cell.concentration))) <span class="sc">+</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Concentration of Viable vs. Treatment"</span>,</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Treatment"</span>,</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Cell Concentration"</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(Class_data, <span class="fu">aes</span>(<span class="at">x =</span> treatment, <span class="at">y =</span> <span class="fu">as.numeric</span>(cell_concentration))) <span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -866,25 +714,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>A boxplot helps compare data distributions across categories.</p>
-<p>We can also tidy up this graph and improve how it looks by using options under <code>labels()</code> which allows us to add axes and figure labels. We can also use <code>theme()</code> which allows us to manipulate different visuals in the graph, in this instance I will use theme_minimal which is a theme included with ggplot, but there are a huge number of customisations you can do by manipulating options within <code>theme()</code>.</p>
-<p>Observe the below changes</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Test your understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you are curious, try changing the aesthetics for the y axis to just be y = cell_concentration to see how it tries to plot the data. What is going on?</p>
+</div>
+</div>
+<p>We can also tidy up this graph and improve how it looks by using options under <code>labels()</code> which allows us to add axes and figure labels. We can also use <code>theme()</code> which allows us to manipulate different visuals in the graph, in this instance I will use theme_minimal which is a theme included with ggplot, but there are a huge number of customisations you can do by manipulating options within <code>theme()</code>. Observe the below changes.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#coloured boxplot</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(Class_data, <span class="fu">aes</span>(<span class="at">x =</span> treatment, <span class="at">y =</span> <span class="fu">as.numeric</span>(cell.concentration), <span class="at">color =</span> treatment)) <span class="sc">+</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Concentration of viable vs. treatment"</span>,</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"treatment"</span>,</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Cell concentration"</span></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plot</span></span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#coloured boxplot</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(Class_data, <span class="fu">aes</span>(<span class="at">x =</span> treatment, <span class="at">y =</span> <span class="fu">as.numeric</span>(cell_concentration), <span class="at">color =</span> treatment)) <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Concentration of viable vs. treatment"</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"treatment"</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Cell concentration"</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plot</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DP1_Final_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="DP1_Final_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -899,171 +758,251 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="activity-1" class="level2" style="color: red">
 <h2 style="color: red" class="anchored" data-anchor-id="activity-1">Activity 1</h2>
 <blockquote class="blockquote">
-<p>Make a custom graph with interesting aesthetics. Use generative AI (e.g., ChatGPT or Copilot) to get ideas on what to change (colors, theme, legend placement, etc.).</p>
+<p>Make a custom graph with interesting aesthetics. Use generative AI (e.g., ChatGPT or Copilot) to get ideas on what to change (colors, theme, legend placement, etc.). You can copy and paste your code into co-pilot and chatGTP and ask for it to change things based on what you would like to see.</p>
 </blockquote>
 </section>
 </section>
 <section id="graphing-wet-lab-2-microplate-data-in-r" class="level1">
 <h1>Graphing Wet Lab 2 Microplate Data in R</h1>
 <p>Prior to this dry lab we have run through the data analysis in Excel, we are now going to try importing the data into R and graphing using the skills you have developed in ggplot2</p>
-<section id="question-3" class="level2">
-<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<section id="question-2" class="level2" style="color: red">
+<h2 style="color: red" class="anchored" data-anchor-id="question-2">Question 2</h2>
 <blockquote class="blockquote">
 <p><strong>Reflect:</strong> What do you think a barrier to analysis the Excel processed data in R will be? What do you think the advantages of using R could be?</p>
 </blockquote>
-<section id="thinking-outside-the-cell" class="level3">
-<h3 class="anchored" data-anchor-id="thinking-outside-the-cell">Thinking outside the cell</h3>
+</section>
+<section id="thinking-outside-the-cell-reading-and-formatting-your-data" class="level2">
+<h2 class="anchored" data-anchor-id="thinking-outside-the-cell-reading-and-formatting-your-data">Thinking outside the cell, reading and formatting your data</h2>
 <p>So far you have been working with your data in cells, using the tools available in Excel and the tables provided in your prac manual. When it comes to importing data into R we have to think a little differently as we no longer work with the data <em>visually</em> using a Graphical User Interface (i.e.&nbsp;a GUI).</p>
-<p>First we need to convert our excel data from a spreadsheet (or .xls) file to a comma seperated text file (or csv.). This is fairly straight forward - you can use <code>save as</code> in Excel and choose the option to save as a comma seperated file.</p>
-<p>This should save your data with the file extension <code>.csv</code>. Now if you open the data in <code>Visual Studio Code</code> on your computer you will see that all our ‘nice’ formatting we did to make the data easier to understand actually makes it very confusing for the computer to intepret what each data point means. We need to simplify things so that the software can distinguish between our different variables.</p>
-<p>I.e. we need to make it clear what each cell represents in terms of <strong>treatment</strong>, <strong>cell concentration</strong> and <strong>absorbance</strong>. We should also label our <strong>background</strong> as well.</p>
-<p>The easiest way to do this is to make each of these variables the headings of the columns in your data, then input the information for each data point.</p>
-<p>This is also sometimes referred to as “long format” data.</p>
-</section>
-</section>
-<section id="read-and-format-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="read-and-format-the-data">Read and Format the Data</h2>
-<p>We often need to convert Excel data (spreadsheet .xls files) to CSV format so R can interpret it easily.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ACTION REQUIRED
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>First we need to convert our excel data from a spreadsheet (or .xls) file to a comma seperated text file (or csv.).</p>
+<p>Open the class data from wetlab 2 and open it in Excel. You can now use <code>save as</code> in Excel and choose the option to save as a comma separated file.</p>
+<p>This should save your data with the file extension <code>.csv</code>. Now open the data in <code>Visual Studio Code</code> on your computer, you will see that all our ‘nice’ formatting we did to make the data easier to understand actually makes it very confusing for the computer to interpret what each data point means.</p>
+</div>
+</div>
+<p>We need to simplify things so that the software can distinguish between our different variables.</p>
+<p>I.e. we need to make it clear what each cell represents in terms of <strong>treatment</strong>, <strong>cell concentration</strong> and <strong>absorbance</strong>. We should also remove our <strong>background</strong> from our absorbance as well.</p>
+<p>The easiest way to do this is to make each of these variables the headings of the columns in your data, then input the information for each data point. This is also sometimes referred to as “long format” data. For todays dry prac, we have done this for you.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ACTION REQUIRED
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Download the plate data .csv filea for both assays from moodle. This data has already been formatted into “long format” for you.</p>
+<p>Open the data for both assays in R and store them as seperate variables using the code below. Remember to change the location in <code>read.csv()</code> to where the file is stored on your computer.</p>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>plate_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Library/CloudStorage/OneDrive-Personal/Research/Teaching/Biol340_981/2025/Practicals and Prac manual/Dry practicals/DP_1_data_analysis/plate_assay.csv"</span>, <span class="at">row.names =</span> <span class="dv">1</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>plate_data <span class="ot">&lt;-</span> plate_data <span class="sc">%&gt;%</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">"Row"</span>)</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(plate_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>plate_data_cAM <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Library/CloudStorage/OneDrive-Personal/Research/Teaching/Biol340_981/2025/Practicals and Prac manual/Dry practicals/DP_1_data_analysis/corrected_class_data_cAM.csv"</span>, <span class="at">row.names =</span> <span class="dv">1</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>plate_data_MTS <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Library/CloudStorage/OneDrive-Personal/Research/Teaching/Biol340_981/2025/Practicals and Prac manual/Dry practicals/DP_1_data_analysis/corrected_class_data_MTS.csv"</span>, <span class="at">row.names =</span> <span class="dv">1</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(plate_data_cAM)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  Row      1      2      3      4      5     6     7     8     9    10    11
-1   A 234638 187876 135865 110923  79043 71551 60742 55209 56095 55784 50266
-2   B 237329 251471 177995 134888 109490 81295 72256 69348 61904 55070 62208
-3   C 260000 253403 202066 142151  98816 84420 66989 64180 58341 57809 53425
-4   D 220862 170740 125864  99798  65767 54054 41551 35483 43790 43308 35739
-5   E 226793 237859 164632 120421  94399 69086 61250 55252 42034 36285 52078
-6   F 240179 242925 190130 131232  79451 67181 50684 52038 40665 38387 42372
-    12
-1 3582
-2 3582
-3 3582
-4 3582
-5 3577
-6 3556</code></pre>
+<pre><code>  Well Absorbance Cell_Type Dilution
+1   A1  45634.083   Healthy  2000000
+2   A2  27520.083   Healthy  1000000
+3   A3  15916.083   Healthy   500000
+4   A4  13197.083   Healthy   250000
+5   A5   9155.083   Healthy   125000
+6   A6   6470.083   Healthy    62500</code></pre>
 </div>
-</div>
-<ul>
-<li><code>row.names = 1</code> treats the first column as row names.</li>
-<li><code>check.names = FALSE</code> avoids automatic renaming.</li>
-<li><code>rownames_to_column()</code> turns row names into a column.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert wide data to long format</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>plate_long <span class="ot">&lt;-</span> plate_data <span class="sc">%&gt;%</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>Row, <span class="at">names_to =</span> <span class="st">"Column"</span>, <span class="at">values_to =</span> <span class="st">"Absorbance"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Column =</span> <span class="fu">as.numeric</span>(Column))</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Classify cell types</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>plate_long <span class="ot">&lt;-</span> plate_long <span class="sc">%&gt;%</span></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Cell_Type =</span> <span class="fu">case_when</span>(</span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>      Row <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>) <span class="sc">~</span> <span class="st">"Healthy"</span>,</span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>      Row <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>) <span class="sc">~</span> <span class="st">"Diseased"</span>,</span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>      Row <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"G"</span>, <span class="st">"H"</span>)       <span class="sc">~</span> <span class="st">"Blank"</span></span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove Blanks</span></span>
-<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>plate_long <span class="ot">&lt;-</span> plate_long <span class="sc">%&gt;%</span></span>
-<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Cell_Type <span class="sc">!=</span> <span class="st">"Blank"</span>)</span>
-<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Add dilution info (example)</span></span>
-<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>starting_concentration <span class="ot">&lt;-</span> <span class="dv">2000000</span>  <span class="co"># First column concentration</span></span>
-<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>plate_long <span class="ot">&lt;-</span> plate_long <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
-<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">Dilution =</span> starting_concentration <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">^</span>(Column <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(plate_long)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(plate_data_MTS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 5
-  Row   Column Absorbance Cell_Type Dilution
-  &lt;chr&gt;  &lt;dbl&gt;      &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;
-1 A          1     234638 Healthy    2000000
-2 A          2     187876 Healthy    1000000
-3 A          3     135865 Healthy     500000
-4 A          4     110923 Healthy     250000
-5 A          5      79043 Healthy     125000
-6 A          6      71551 Healthy      62500</code></pre>
+<pre><code>  Well Absorbance Cell_Type Dilution GROUP ID
+1   A1    2.49175   Healthy  2000000  G1 &amp; G2
+2   A2    1.96275   Healthy  1000000  G1 &amp; G2
+3   A3    1.23175   Healthy   500000  G1 &amp; G2
+4   A4    0.81075   Healthy   250000  G1 &amp; G2
+5   A5    0.26875   Healthy   125000  G1 &amp; G2
+6   A6    0.14275   Healthy    62500  G1 &amp; G2</code></pre>
 </div>
 </div>
 </section>
-<section id="subtract-background" class="level2">
-<h2 class="anchored" data-anchor-id="subtract-background">Subtract Background</h2>
-<p>Here, we compute background as the mean absorbance of wells in the last column (Column 12) and subtract it.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>background_absorbance <span class="ot">&lt;-</span> plate_long <span class="sc">%&gt;%</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Column <span class="sc">==</span> <span class="dv">12</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Mean_Background =</span> <span class="fu">mean</span>(Absorbance, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Mean_Background)</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>plate_long_corrected <span class="ot">&lt;-</span> plate_long <span class="sc">%&gt;%</span></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Adjusted_Absorbance =</span> Absorbance <span class="sc">-</span> background_absorbance)</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(plate_long_corrected)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 6
-  Row   Column Absorbance Cell_Type Dilution Adjusted_Absorbance
-  &lt;chr&gt;  &lt;dbl&gt;      &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;               &lt;dbl&gt;
-1 A          1     234638 Healthy    2000000             231061.
-2 A          2     187876 Healthy    1000000             184299.
-3 A          3     135865 Healthy     500000             132288.
-4 A          4     110923 Healthy     250000             107346.
-5 A          5      79043 Healthy     125000              75466.
-6 A          6      71551 Healthy      62500              67974.</code></pre>
-</div>
-</div>
-</section>
-<section id="question-4" class="level2" style="color: red">
-<h2 style="color: red" class="anchored" data-anchor-id="question-4">Question 4</h2>
+<section id="question-3" class="level2" style="color: red">
+<h2 style="color: red" class="anchored" data-anchor-id="question-3">Question 3</h2>
 <blockquote class="blockquote">
-<p>Which data frame should we plot?</p>
+<p>What can you notice is different between how your data was formatted in excel compared to the data we have prepared for you to import into R? Why might this be important.</p>
 </blockquote>
 </section>
 <section id="plotting-the-results" class="level2">
 <h2 class="anchored" data-anchor-id="plotting-the-results">Plotting the Results</h2>
+<p>Now lets make a different type of plot. Let’s create a scatter plot of *<strong>the calcein-AM</strong> using <strong>ggplot2</strong> to visualize how Adjusted Absorbance changes with Cell Concentration.</p>
+<p>In the below plot: - <code>geom_point()</code> adds scatter plot points. - <code>labs()</code> adds titles and axis labels. - <code>theme_minimal()</code> is a clean, modern theme that removes a lot of unnecessary formating.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will notice that we have some options within <code>geom_point()</code> play around with them and see what happens. Why not check other options you could include here by googling or asking AI. You can do some pretty crazy things with custom points or by using <code>jitter</code>.</p>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot of Adjusted Absorbance vs. Dilution</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Colored by Cell_Type</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plate_long_corrected, <span class="fu">aes</span>(<span class="at">x =</span> Dilution, <span class="at">y =</span> Adjusted_Absorbance, <span class="at">color =</span> Cell_Type)) <span class="sc">+</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Standard Curve of Absorbance vs Cell Concentration"</span>,</span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cell Concentration (cells/mL)"</span>,</span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adjusted Absorbance"</span>,</span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cell Type"</span></span>
-<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot of Adjusted Absorbance vs. Dilution</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Colored by Cell_Type</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plate_data_cAM, <span class="fu">aes</span>(<span class="at">x =</span> Dilution, <span class="at">y =</span> Absorbance)) <span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Standard Curve of Absorbance vs Cell Concentration"</span>,</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cell Concentration (cells/mL)"</span>,</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adjusted Absorbance"</span>,</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cell Type"</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DP1_Final_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="DP1_Final_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>That plot looks pretty squashed in the left hand side (lower concentrations). Let’s fix that by making it a log graph. This is very easy to do now that we have done all our data manipulation. We will just add in the line <code>scale_x_log10()</code>.</p>
+<p>Our plot now has points! But it would also be great to colour by the cell line type.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ACTION REQUIRED
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Based on the code you made for boxplots above, how would you colour the data in this plot by cell type?</p>
+</div>
+</div>
+<section id="adding-a-trendline" class="level3">
+<h3 class="anchored" data-anchor-id="adding-a-trendline">Adding a trendline</h3>
+<p>Our plot could also be improved by adding in a trendline to visualise the data. We can do this using the function <code>geom_smooth()</code>. Here we are going to apply a linear model or <strong>‘lm’</strong> as our method because we want a straight line. We will also set the option <code>se</code> or standard error to = <strong>FALSE</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot of Adjusted Absorbance vs. Dilution</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Colored by Cell_Type</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plate_data_cAM, <span class="fu">aes</span>(<span class="at">x =</span> Dilution, <span class="at">y =</span> Absorbance, <span class="at">color =</span> Cell_Type)) <span class="sc">+</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span><span class="st">'lm'</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Standard Curve of Absorbance vs Cell Concentration"</span>,</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cell Concentration (cells/mL)"</span>,</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adjusted Absorbance"</span>,</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cell Type"</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DP1_Final_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Test your understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Have a look (using google or AI) at some of the other types of methods you can use to add a line geom to your plots. One to get you started is <code>method = "loess"</code></p>
+</div>
+</div>
+</section>
 <section id="log-scale-example" class="level3">
 <h3 class="anchored" data-anchor-id="log-scale-example">Log Scale Example</h3>
+<p>Our plot looks pretty squashed in the left hand side (lower concentrations). Let’s fix that by making it a log graph. This is very easy to do!</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ACTION REQUIRED
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let’s add in a lione of code for <code>scale_x_log10()</code>. Don’t forget to put a <code>+</code> at the end so that the computer reads it as part of you graph function. You will notice I also changed the geom for the line below to dashed, because <em>why not</em>. Feel free to change it back or look at other options.</p>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plate_long_corrected, <span class="fu">aes</span>(<span class="at">x =</span> Dilution, <span class="at">y =</span> Adjusted_Absorbance, <span class="at">color =</span> Cell_Type)) <span class="sc">+</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Standard Curve of Absorbance vs Cell Concentration (Log Scale)"</span>,</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cell Concentration (cells/mL)"</span>,</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adjusted Absorbance"</span>,</span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cell Type"</span></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plate_data_cAM, <span class="fu">aes</span>(<span class="at">x =</span> Dilution, <span class="at">y =</span> Absorbance, <span class="at">color =</span> Cell_Type)) <span class="sc">+</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Standard Curve of Absorbance vs Cell Concentration (Log Scale)"</span>,</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cell Concentration (cells/mL)"</span>,</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adjusted Absorbance"</span>,</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cell Type"</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DP1_Final_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="estimating-the-linear-range" class="level2">
+<h2 class="anchored" data-anchor-id="estimating-the-linear-range">Estimating the Linear Range</h2>
+<p>We can also further improve our standard curves by finding the linear portion of the trendline to determine the sensitivity range of the assays. Let’s do this by filtering our data for specific dilutions using the function <code>filter()</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ACTION REQUIRED
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Copy the below code and change the filtering range to something suitable for your data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>linear_data_cAM <span class="ot">&lt;-</span> plate_data_cAM <span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Dilution <span class="sc">&gt;=</span> <span class="dv">1000</span> <span class="sc">&amp;</span> Dilution <span class="sc">&lt;=</span> <span class="dv">500000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s try reploting our graph using the new <code>linear_data_cAM</code> variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot linear region</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(linear_data_cAM, <span class="fu">aes</span>(<span class="at">x =</span> Dilution, <span class="at">y =</span> Absorbance, <span class="at">color =</span> Cell_Type)) <span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Linear Region of Standard Curve"</span>,</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cell Concentration (cells/mL)"</span>,</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adjusted Absorbance"</span>,</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cell Type"</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1073,50 +1012,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-</section>
-<section id="estimating-the-linear-range" class="level2">
-<h2 class="anchored" data-anchor-id="estimating-the-linear-range">Estimating the Linear Range</h2>
-<p>We can improve our standard curves by finding the linear portion of the trendline to determine the sensitivity range of the assays.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>linear_data <span class="ot">&lt;-</span> plate_long_corrected <span class="sc">%&gt;%</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Dilution <span class="sc">&gt;=</span> <span class="dv">1000</span> <span class="sc">&amp;</span> Dilution <span class="sc">&lt;=</span> <span class="dv">500000</span>)</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot linear region</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(linear_data, <span class="fu">aes</span>(<span class="at">x =</span> Dilution, <span class="at">y =</span> Adjusted_Absorbance, <span class="at">color =</span> Cell_Type)) <span class="sc">+</span></span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Linear Region of Standard Curve"</span>,</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cell Concentration (cells/mL)"</span>,</span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adjusted Absorbance"</span>,</span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cell Type"</span></span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="DP1_Final_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="activity-2" class="level2" style="color: red">
+<h2 style="color: red" class="anchored" data-anchor-id="activity-2">Activity 2</h2>
+<blockquote class="blockquote">
+<p>Customize your plot to improve its appearance. - Adjust point size and color - Modify or remove legends - Evaluate whether you need to show all data labels or tick marks - Explore other themes (e.g., <code>theme_bw()</code>, <code>theme_classic()</code>). Feel free to look at the ggplot2 cheat sheet available on the dry prac website, we have also provided extra information for plotting under “extra help with graphics”</p>
+</blockquote>
 </section>
 <section id="activity-3" class="level2" style="color: red">
 <h2 style="color: red" class="anchored" data-anchor-id="activity-3">Activity 3</h2>
 <blockquote class="blockquote">
-<p>Customize your plot to improve its appearance. - Adjust point size and color - Modify or remove legends - Evaluate whether you need to show all data labels or tick marks - Explore other themes (e.g., <code>theme_bw()</code>, <code>theme_classic()</code>). Feel free to look at the ggplot2 cheat sheet available on Moodle.</p>
-</blockquote>
-</section>
-<section id="activity-4" class="level2" style="color: red">
-<h2 style="color: red" class="anchored" data-anchor-id="activity-4">Activity 4</h2>
-<blockquote class="blockquote">
-<p>Choose an appropriate cell density within this range to compare the results of the ‘diseased’ cell suspension and calculate the difference in viability between these two populations of cells (assuming 100 % viability of the ‘healthy’ cell suspension).</p>
-</blockquote>
-</section>
-<section id="activity-5" class="level2" style="color: red">
-<h2 style="color: red" class="anchored" data-anchor-id="activity-5">Activity 5</h2>
-<blockquote class="blockquote">
-<p>Repeat this plot for the other assay dataset. This should be simple as you will only need to change the input .csv file the code should remain the same. This is one powerful aspect of R, reproducibility!</p>
+<p>Repeat this plot for the MTS dataset. This should be simple as you will only need to change what variable is plotted by code you already have! The code should remain the same. This is one powerful aspect of R, reproducibility!</p>
 </blockquote>
 </section>
 <section id="exporting-plots" class="level2">
@@ -1124,23 +1029,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In RStudio, use the <strong>Plots</strong> pane (bottom-right) and click <strong>Export</strong> to save your plots as an image (PNG, JPEG) or PDF. You can also programmatically export using <code>ggsave()</code>.</p>
 <p>Example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"myplot.png"</span>, <span class="at">plot =</span> p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"myplot.png"</span>, <span class="at">plot =</span> p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="activity-6" class="level2" style="color: red">
-<h2 style="color: red" class="anchored" data-anchor-id="activity-6">Activity 6</h2>
+<section id="activity-4" class="level2" style="color: red">
+<h2 style="color: red" class="anchored" data-anchor-id="activity-4">Activity 4</h2>
 <blockquote class="blockquote">
 <p>Export your final R-generated figures for the MTS and Calcein-AM assays as PNG files. Try setting the file dimensions to 600×400.</p>
 </blockquote>
 </section>
-<section id="question-5" class="level2" style="color: red">
-<h2 style="color: red" class="anchored" data-anchor-id="question-5">Question 5</h2>
+<section id="question-4" class="level2" style="color: red">
+<h2 style="color: red" class="anchored" data-anchor-id="question-4">Question 4</h2>
 <blockquote class="blockquote">
 <p>Where do these files save on your computer? Why is that location used?</p>
 </blockquote>
 </section>
-<section id="question-6" class="level2" style="color: red">
-<h2 style="color: red" class="anchored" data-anchor-id="question-6">Question 6</h2>
+<section id="question-5" class="level2" style="color: red">
+<h2 style="color: red" class="anchored" data-anchor-id="question-5">Question 5</h2>
 <blockquote class="blockquote">
 <p>Write a brief comparison of the two assays you performed. Which was faster, more reproducible, or more sensitive?</p>
 </blockquote>
@@ -1149,18 +1054,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="common-errors-and-how-to-fix-them" class="level1">
 <h1>Common Errors and How to Fix Them</h1>
-<p>Beginners often encounter errors like:</p>
+<p>Some commonly encountered errors include:</p>
 <ul>
 <li><strong>Package not found</strong> → Make sure you’ve installed and loaded the package.</li>
 <li><strong>Object not found</strong> → Check for typos in function or variable names.</li>
 <li><strong>Incorrect file path</strong> → Check for typos in the file path. Make sure you have set the correct working directory.</li>
 <li><strong>Mismatched column names</strong> → R is case-sensitive.</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Fixing a missing package error</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"ggplot2"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) <span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <div style="page-break-after: always;"></div>
 </section>
 <section id="conclusion" class="level1">

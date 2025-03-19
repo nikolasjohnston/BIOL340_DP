@@ -108,7 +108,7 @@
     "section": "",
     "text": "Now we have become acquainted with our working directories and the R environment, its time to explore our newely imported data. For this, we will be using the weeds dataset. Ensure your data is loaded in and then either use the View() command:\n\nweeds &lt;- read.csv(\"weeds.csv\")\nView(weeds)\n# This will open up a new tab to view your data\n\nor click the variable name in the environment window.\n\nThis should bring up a separate tab in Rstudio which you should be able to see the 4 columns (weeds, soil, species & flowers.m3).\nNow we can see our data, we can investigate the way R has input our data. The best thing to do is to ensure your categorical variables are categorical, and our continuous are continuous, much like we do in programs like JMP.\n\nIn JMP, we have the icons to identify categorical/nominal, ordinal or continuous. In R, all we do is run a single line of code to view the same thing across the different columns.\n\nstr(weeds)\n\n'data.frame':   48 obs. of  4 variables:\n $ weeds     : chr  \"weed\" \"weed\" \"weed\" \"weed\" ...\n $ soil      : chr  \"sandstone\" \"sandstone\" \"sandstone\" \"sandstone\" ...\n $ species   : chr  \"Coprosma\" \"Coprosma\" \"Coprosma\" \"Coprosma\" ...\n $ flowers.m3: int  14 17 23 26 35 45 36 28 28 39 ...\n\n# str stands for \"structure\" and will tell us the formats of each data column, as well as the number of levels when we have a factor (categorical) column\n\nstr() also shows us the number of levels we have in a factor. So if we put in a bad dataset with different capitalisations or misspellings on factor levels, we can identify here how many we want vs. how many we have. Its a quick and easy way to assess your data.\nAs you can see in the weeds example, we have weeds, soil & species as factors (categorical) and flowers.m3 as an integer (one of many continuous data types, in this case, whole numbers).\nWe will follow up on how to fix an incorrect column shortly\nOther data viewing commands can be used to view certain aspects of your data without bringing up the entire data set in a new tab. These are as follows:\n\nhead(weeds) # This will show the top few rows of your data so you can check it without loading the entire table\n\n  weeds      soil   species flowers.m3\n1  weed sandstone  Coprosma         14\n2  weed sandstone  Coprosma         17\n3  weed sandstone  Coprosma         23\n4  weed sandstone  Coprosma         26\n5  weed sandstone Pultenaea         35\n6  weed sandstone Pultenaea         45\n\ntail(weeds) # The same as head() but shows the bottom rows\n\n    weeds  soil   species flowers.m3\n43 native shale Pultenaea         49\n44 native shale Pultenaea         20\n45 native shale   Olearia         32\n46 native shale   Olearia         51\n47 native shale   Olearia         47\n48 native shale   Olearia         55\n\ndim(weeds) # This gives you the number of rows and columns\n\n[1] 48  4\n\n# You can also use nrow(weeds) or ncol(weeds) to get them separately\n\nnames(weeds) # Gives you the column names. \n\n[1] \"weeds\"      \"soil\"       \"species\"    \"flowers.m3\"\n\n# I use this when I want the exact name for a column when I am writing analyses (you will see later how useful this can be)\n\nsummary(weeds) # Gives you summary statistics for each column\n\n    weeds               soil             species            flowers.m3   \n Length:48          Length:48          Length:48          Min.   :13.00  \n Class :character   Class :character   Class :character   1st Qu.:22.50  \n Mode  :character   Mode  :character   Mode  :character   Median :33.00  \n                                                          Mean   :33.81  \n                                                          3rd Qu.:45.50  \n                                                          Max.   :57.00  \n\n# This will also come in handy later for statistical analysis \n\nAs you can see, there are many ways to view data within R. Some of these are useful for huge datasets (&gt; 10k rows) as the view() command can put strain on your computer. Using head() or tail() to view aspects of the data is useful as it reduces how much is displayed.\n::: callout After reading in dataset, use the summary() command with the “insecticide”” dataset to answer the following questions:\nQuestion: What is the minimum value for species richness? :::\n{{% expand Answer %}} 1 {{% /expand %}}\n\n\n\n\n\n\nQuestion: What is the maximum value for species richness?\n\n\n\n{{% expand Answer %}} 20 {{% /expand %}}",
     "crumbs": [
-      "Data exploration",
+      "Pre-Lab - Data exploration",
       "Viewing Data"
     ]
   },
@@ -143,7 +143,7 @@
     "section": "",
     "text": "Now that you have setup your R environment and read in your first data set, we can begin to modify and add to our data as necessary.\nNow for the majority of this module, we will be working with a package called Tidyverse. Packages are collections of data, R functions and complied code to add extra features outside of the general base R environment. Packages are central to expanding the possibilities of R. The ability to do advanced graphing, GIS, complicated analyses, multivariate analyses etc. are all due to contributed packages.\nTidyverse is a unique case as it is a collection of R packages that all use similar coding syntax\n\nTo install a package into R there are two options:\nOption 1 is to select the packages tab in the help/viewer window & click the install button.\n\nThen type the package name in the packages box (note: ensure that it is installing from Repository/CRAN)\n\nOption 2 is to use the following code, replacing the “tidyverse” with the package of your choice. This should be used in the console, rather than the script window as you only need to install the package once.\n\ninstall.packages(\"tidyverse\")\n\nOnce you have installed tidyverse, simply load it into your current workspace with the following command (in your script)\n\nlibrary(tidyverse)\n\n\n\n\n\n\n\nIn general, it is good practice to place the library() commands for your whole document at the top before anything else. This allows people reading your code to load in any packages they will need at the beginning before anything else.\n\n\n\nFor example, here is the first few lines of one of my own scripts:\n\nThis shows the reader of my code what packages need to be installed to run my analysis. I also write notes to myself to remind myself what specific packages are for. Once you start accumulating packages, its hard to remember what each one does. I find this particularly useful for packages I only use for a particular function (such as the agricolae package which I use for tukeys letter reports).",
     "crumbs": [
-      "Data exploration",
+      "Pre-Lab - Data exploration",
       "Packages"
     ]
   },
@@ -154,7 +154,7 @@
     "section": "",
     "text": "The first step when opening a new R studio environment or project is creating a script or notebook for working in. Scripts are basic text files where all code is executable. Writing non-code in a script requires the use of #’s (which can look messy and confusing) like so:\n\nread.csv(\"datafile.csv\") \n# this code reads a csv (data) file into R. The command read.csv requires brackets with the filepath to the file in quotations. \n# in this code, none of the #'s will run. so if I # the read.csv command, it will not run. like so:\n# read.csv(\"datafile.csv\")\n\nA whole document of the above example can get messy and hard to understand.\nIn a notebook, we separate normal text from code by inserting “code chunks” (insert &gt; R in the top right of the window). Chunks are specialised areas in the notebook for code only. Chunks separate code from text, making it easier to write notes and read. These tutorials have been written in a notebook.\n\n\n\n\n\n\n\nTo create a notebook or script, simply use the pulldown menus file &gt; new file and select either a script, markdown or notebook one. Then save the document by hitting the disk icon (or file &gt; save)\n\nR studio will prompt you to install some packages to use a notebook. Do so and then read the text in the notebook. Once you understand, then clear everything below the “output:” — area.\n\nAs stated above, click the insert pulldown menu in the script window and click R to insert a code chunk. All code in a notebook must be written in a chunk\n\n\n\n\n\nIMPORTANT!\n\nWhen working in a project, wherever you save your project will become the default “directory”. R will look here for files first. If you want to set your working directory elsewhere, use the below code.\n\n\n# Only if you have not created a project\n\nsetwd(\"Drive:/Folder1/Folder2\")\n\n# insert your folders path in the brackets\n# this will tell R to look here for files and \"generally\" save things here as well.\n# e.g. C:/Users/Mitch/Documents/R/\n\n\n\n\n\n\n\nAfter writing your code, you can click run, run selected line(s), run current chunk or press Ctrl + Enter on the line your cursor is on\n\n\n\nGet used to this, you will do this A LOT",
     "crumbs": [
-      "Introduction",
+      "Pre-Lab - Introduction",
       "Notbooks in R studio"
     ]
   },
@@ -165,7 +165,7 @@
     "section": "",
     "text": "Now that we have our folder setup, lets move into R studio and create our project.\nIn R, a project file stores your current Rstudio working environment in a file within your file system. This means, if you finish your work for the day halfway through an analysis, you can open up your project file the next day and continue straight from where you left off. The other major benefit is that a project file sets your default working directory. This means, when you need to open a file, you only need to do so from the place of your project file. This will make sense in a moment.\n\nCreating your project\n\n\n\n\n\n\nTo create a project, click file &gt; new project and select existing directory\n\n\n\n\n\n\n\n\n\n\nThen, browse to your new file system we just created and save the project into the base/root of that directory.\n\n\n\nThe real advantage to using project files is simplifying file opening and saving. We will cover this in more detail in the next page, but essentially, when reading data into R we normally have to specify the entire filepath\n\nsurveydata &lt;- read.csv(\"C:/Users/Mitch/Documents/surveydata.csv\")\n\nor, set a working directory\n\nsetwd(\"C:/Users/Mitch/Documents\")\nsurveydata &lt;- read.csv(\"surveydata.csv\")\n\nThe creation of a project cuts out this step by setting our working directory. This means, anytime we want to open a file, we just need to specify the folders within our project directory. So using our new filing system, we would just need to specify the following:\n\nsurveydata &lt;- read.csv(\"Data/surveydata.csv\")\n\nIf you have multiple projects, or want to close the current one, simply click the project name in the top right of R studio",
     "crumbs": [
-      "Introduction",
+      "Pre-Lab - Introduction",
       "Creating a project"
     ]
   },
@@ -177,20 +177,13 @@
     "text": "Welcome to Biol340 Dry Practicals for 2025\n\n\nStaring At R\nThis site is a series of tutorials on using the R statistical package for data manipulation, analysis and visualisation including the following:\n\nSetting up your file system and working environment in a reproducable manner\n\nViewing and manipulating your data\nStatistical analysis, covering analysis of variance, linear regressions and generalised linear models (more to come!)\n\nVisualisation of your results using an iterative graphing approach\n\nSpatial analysis and map creation (work in progress)\n\nIt also includes specific tutorials to complete within the Dry Practical timeslot during session.\nI am entirely self-taught through online tutorials, textbooks and advice from colleagues. The best advice I can give is to put in the time and effort. Force yourself to work through problems in R, rather than resorting to excel or your known statistical package. Spending the time to learn R and using it frequently will reinforce lessons and how to utilise code, this goes for all coding languages.\nThis site has been large developed as an offshot and extension of staringatr.com created by Dr. Mitchell Stares. The initial focus of this site is data science techniques for biology based research, however, this will hopefully improve in scope in the future. Tutorials have been developed as part of a teaching module for undergraduate students in the School of science at the University of Wollongong but have been expanded beyond that initial development.\nThis website was created using Quarto. To learn more about Quarto websites visit https://quarto.org/docs/websites.\nSite administrator: Dr. Nikolas Johnston Last updated: March 2025."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
     "objectID": "pages/introduction/02_Setting-up-your-workspace.html",
     "href": "pages/introduction/02_Setting-up-your-workspace.html",
     "title": "Setting up your workspace",
     "section": "",
     "text": "There are very quick ways to open R and begin coding, however, having an organised, well-structured working directory in your computer can save you hours of hassle and make your code much easier to share. As biology and data science are becoming increasingly complex many are turning to computer intensive, coding based software (like you!). With this movement in data science and open access, having our code reproducible, transparent and understandable is key. So why not start off like that.",
     "crumbs": [
-      "Introduction",
+      "Pre-Lab - Introduction",
       "Setting up your workspace"
     ]
   },
@@ -201,7 +194,7 @@
     "section": "File system",
     "text": "File system\nBefore we jump into R, we are going to create a clean and managable folder system.\n\n\n\n\n\n\nCreate a new folder in a location of your choosing (e.g. My Documents or Desktop) called R-tutorials\n\n\n\n\nThis can be named anything you like, but try to keep it relevant and understandable (for future you).\n\n\n\n\n\n\nIn this new folder, create a series of new folders called:\n- data\n- doc\n- figs\n- output\n- R\n\n\n\nHere is the basic outline for these folders:\n\n\n\nThe data folder if where you store your raw/input data\n\n\nThe doc folder is where you store the manuscript for the project\n\n\nThe figs folder is where all of your figures will be stored from the analyses\n\n\nThe output folder is where you keep any intermediate datasets generated by your analysis, result reports etc.\n\n\nThe R folder is pretty self-explanatory but it is where we will store all of our R scripts, notebooks etc.\n\n\nNow, let’s move on to the next step. ::::",
     "crumbs": [
-      "Introduction",
+      "Pre-Lab - Introduction",
       "Setting up your workspace"
     ]
   },
@@ -212,7 +205,7 @@
     "section": "",
     "text": "This module will provide an introduction into the R statisitical environment, going through the basics of data analysis and graphing for publication quality results. By the end of this module, you should be able to:\n\nUnderstand and use the R studio working environment\nImport and manipulate data files\nUndertake linear (ANOVA, regression) and generalised linear (logistic regression) models and associated assumptions/comparisons\nUndertake basic multivariate techniques (PCA, MDS)\nConstruct bar plots and scatterplots in ggplot\n\n\n\nR is a language and environment for statistical computing and graphics. R is free/open source software and as a result, has a community of dedicated statisticans, coders and developers increasing the capabilities and usability of the platform. R primarily runs as a command-line program.\nThis is a big entry barrier to many starting to learn R, so most people have turned to “R Studio”.\n\n\n\nBase R\n\n\n\n\n\nSince R is free and open source, it is a program and skill that can be carried with you across many institutions and jobs and is for many, the single solution for statistical analysis, graphing and even GIS/spatial analysis. Programs like JMP, SPSS and ARCGIS cost 100s if not 1000s of dollars and are quickly outdated by new versions.\nHowever, the biggest uses of R come from its sharability and openness. Collaborating and sharing data analysis with R requires only the script and raw data. All data manipulations are done within R, requiring no editing or manipulating of your raw excel data.\n\n\n\n\n\n\nThe R Studio Environment\n\n\nR studio “reskins” the standard R environment, giving space for script writing, help, graphics output and tracking of data files. Due to the ease of working in R studio, thats what we will be using. R studio can provide an array of functions from statistical analysis and graphing, GIS/spatial analysis, presentations, document preparation (all of these tutorials are written in R) and even novel functions like interacive graphs and tweeting.\n\n\n\nR studio is separated into 4 panels:\n\nThe top-left panel (blue) is the editor (or script window) where you can view and write your R script. This is a saveable document of code. Running code is as simple as Ctrl+Enter on a line of code or pressing the run button in the top-right of this window.\nThe bottom-left (red) is the console. This is the standard R environment where you can run code directly, or view the output of your script as you run it.\nThe top-right (green) is your workspace. This lists each “object” as you create them through your analyses. Clicking a data-frame object will allow you to view it.\nThe bottom-left (black) has lists of files and packages as well as the help window (quickly access by typing ? before any command) and plots which shows any graphical output.\n\nNow we have an idea of what R is, it is time to install R & R Studio onto your computer.\n\nInstall Instructions\n1. Click Here to visit the R webpage and select one of the Australian mirrors to download (CSIRO, University of Melbourne etc.)\n2. Select your version (Windows or Mac), then download the base subdirectory\n3. Once installed, visit R studio to download R studio desktop.\n\nOnce both of those are installed, you can now proceed to open up Rstudio",
     "crumbs": [
-      "Introduction",
+      "Pre-Lab - Introduction",
       "R studio and the coding environment"
     ]
   },
@@ -223,7 +216,7 @@
     "section": "",
     "text": "This module will provide an introduction into the R statisitical environment, going through the basics of data analysis and graphing for publication quality results. By the end of this module, you should be able to:\n\nUnderstand and use the R studio working environment\nImport and manipulate data files\nUndertake linear (ANOVA, regression) and generalised linear (logistic regression) models and associated assumptions/comparisons\nUndertake basic multivariate techniques (PCA, MDS)\nConstruct bar plots and scatterplots in ggplot\n\n\n\nR is a language and environment for statistical computing and graphics. R is free/open source software and as a result, has a community of dedicated statisticans, coders and developers increasing the capabilities and usability of the platform. R primarily runs as a command-line program.\nThis is a big entry barrier to many starting to learn R, so most people have turned to “R Studio”.\n\n\n\nBase R\n\n\n\n\n\nSince R is free and open source, it is a program and skill that can be carried with you across many institutions and jobs and is for many, the single solution for statistical analysis, graphing and even GIS/spatial analysis. Programs like JMP, SPSS and ARCGIS cost 100s if not 1000s of dollars and are quickly outdated by new versions.\nHowever, the biggest uses of R come from its sharability and openness. Collaborating and sharing data analysis with R requires only the script and raw data. All data manipulations are done within R, requiring no editing or manipulating of your raw excel data.\n\n\n\n\n\n\nThe R Studio Environment\n\n\nR studio “reskins” the standard R environment, giving space for script writing, help, graphics output and tracking of data files. Due to the ease of working in R studio, thats what we will be using. R studio can provide an array of functions from statistical analysis and graphing, GIS/spatial analysis, presentations, document preparation (all of these tutorials are written in R) and even novel functions like interacive graphs and tweeting.\n\n\n\nR studio is separated into 4 panels:\n\nThe top-left panel (blue) is the editor (or script window) where you can view and write your R script. This is a saveable document of code. Running code is as simple as Ctrl+Enter on a line of code or pressing the run button in the top-right of this window.\nThe bottom-left (red) is the console. This is the standard R environment where you can run code directly, or view the output of your script as you run it.\nThe top-right (green) is your workspace. This lists each “object” as you create them through your analyses. Clicking a data-frame object will allow you to view it.\nThe bottom-left (black) has lists of files and packages as well as the help window (quickly access by typing ? before any command) and plots which shows any graphical output.\n\nNow we have an idea of what R is, it is time to install R & R Studio onto your computer.\n\nInstall Instructions\n1. Click Here to visit the R webpage and select one of the Australian mirrors to download (CSIRO, University of Melbourne etc.)\n2. Select your version (Windows or Mac), then download the base subdirectory\n3. Once installed, visit R studio to download R studio desktop.\n\nOnce both of those are installed, you can now proceed to open up Rstudio",
     "crumbs": [
-      "Introduction",
+      "Pre-Lab - Introduction",
       "R studio and the coding environment"
     ]
   },
@@ -246,7 +239,7 @@
     "section": "",
     "text": "Another important aspect of R coding syntax is refering to specific columns. This is done by using a $ sign after specifying our dataset and then calling the column. Like so:\n\nhead(weeds$flowers.m3) # This says to run the head() command but only on the flowers.m3 column\n\n[1] 14 17 23 26 35 45\n\n\nTry this with some of the other commands above. Note: Some of them will not work and will show NULL. This is because these are designed to view aspects of the data frame (e.g. names() )\nNow we know how to refer to a column, we can fix any issues with importing incorrect data\nPretend for a moment our data was input incorrectly:\n\nweeds$species&lt;-factor(weeds$species)\n\nThis would simply save the command factor() on the column species to our weeds object.\nIf we wanted an ordered factor, e.g. small &lt; medium &lt; large we can use the following\n\n## example dataset ##\nsizes &lt;- factor(c(\"small\", \"large\", \"large\", \"small\", \"medium\", \"medium\")) # creating a single column factor with 3 levels\nsizes\n\n[1] small  large  large  small  medium medium\nLevels: large medium small\n\n\nHere we have just created a new example dataset which consists of a single column, containing the words: small, large and medium in a random order.\nWe can order these into a logical order, so R will know that medium is bigger than small and large is bigger than medium\n\nsizes &lt;- ordered(sizes, levels = c(\"small\", \"medium\", \"large\")) # ordering levels from small through to large.\n# Note: I did not need to specify column as this is a single column dataset. \nsizes # Now the factor is ordered.\n\n[1] small  large  large  small  medium medium\nLevels: small &lt; medium &lt; large\n\n\nWe can then do this with our weeds dataset, ordering them in a nonsensical order.\n\nweeds$species&lt;-ordered(weeds$species, levels=c(\"Pultenaea\", \"Olearia\", \"Coprosma\"))\n\nThis is useful when the dataset you are working with has an ordered factor.\nThe main use for this is in graphing\nBy default, R will always sort in alphabetical order, which can be a pain when graphing. If you want ordered factors, or want to present factors along an X axis in a more logical order then the ordered() command or even factor() command where you specify levels is a good option.\n\n\n\n\n\n\nI recommend using the factor() command and specifying the levels using the same syntax as the ordered() command unless your factor is truely ordered. This way we just sort the factor the way we want, but are not messing with the way R views our variable (as an ordinal variable rather than a logically ordered factor).\n\n\n\nIf you want to change something to a continuous (numeric, integer etc.) its a little more complicated, but in general R shouldn’t mess this up too often. A quick google search or ?numeric will help answer this.",
     "crumbs": [
-      "Data exploration",
+      "Pre-Lab - Data exploration",
       "Columns"
     ]
   },
@@ -279,7 +272,18 @@
     "href": "pages/DP1/DP1_Final.html",
     "title": "Dry Prac 1 — Data analysis in R",
     "section": "",
-    "text": "Understand the basics of R including importing data, basic data manipulation, and generating simple plots.\nUse R to generate Boxplots and Scatter plots of large datasets generated in your Wet Labs.\nLearn to write simple custom lines of R code and utilize generative AI to improve code and correct errors.\nUnderstand the differences between analysis in Microsoft Excel and R, and appreciate situations in which each tool is most useful.\nAssess and compare cell viability between ‘diseased’ and ‘healthy’ populations, evaluating the sensitivity and characteristics of each of the microplate assays you completed in Wet Lab 2.",
+    "text": "In this dry prac, we will learn how to use the ggplot2 and tidyverse packages to create publication-quality bar and scatter plots from the data you generated in Wet Lab 1 & 2. Along the way, we will practice data manipulation, such as removing background absorbance and reshaping data for analysis.\nR is a powerful tool for analyzing data, creating visualizations, and performing statistical tests. In cell biology, you can use R to analyze experimental results, such as cell growth rates, gene expression levels, or protein abundance.\nLet’s dive into the basics of R, starting with something fun: exploring cells and their data!\n\n\n\n\n\n\nACTION REQUIRED\n\n\n\nOpen R studio on your computer and create a new r script for this class. If you are confused about how to do this refer to the introduction section of the BIOL340 practical website.",
+    "crumbs": [
+      "Dry Prac 1",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP1/DP1_Final.html#how-to-read-this-guide",
+    "href": "pages/DP1/DP1_Final.html#how-to-read-this-guide",
+    "title": "Dry Prac 1 — Data analysis in R",
+    "section": "How to Read This Guide",
+    "text": "How to Read This Guide\nIn the instructions below, there will be chunks of code for you to read and copy into RStudio. The code chunks look like this:\n\n#Just a poor empty chunk with no code\n\nAnything following a # in an R code chunk is a comment, which means R will ignore it. These comments are there to help explain what the code is doing.\n\nWe encourage you to copy and paste the code we provide in these blocks into R studio on your computer.",
     "crumbs": [
       "Dry Prac 1",
       "Dry Prac 1 Notes"
@@ -297,22 +301,11 @@
     ]
   },
   {
-    "objectID": "pages/DP1/DP1_Final.html#how-to-read-this-guide",
-    "href": "pages/DP1/DP1_Final.html#how-to-read-this-guide",
-    "title": "Dry Prac 1 — Data analysis in R",
-    "section": "How to Read This Guide",
-    "text": "How to Read This Guide\nIn the instructions below, there will be chunks of code for you to read and copy into RStudio. The code chunks look like this:\n\n#Just a poor empty chunk with no code\n\nAnything following a # in an R code chunk is a comment, which means R will ignore it. These comments are there to help explain what the code is doing.",
-    "crumbs": [
-      "Dry Prac 1",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
     "objectID": "pages/DP1/DP1_Final.html#how-to-write-code-in-r",
     "href": "pages/DP1/DP1_Final.html#how-to-write-code-in-r",
     "title": "Dry Prac 1 — Data analysis in R",
     "section": "How to Write Code in R",
-    "text": "How to Write Code in R\nYou write commands (called functions) in the console or a script in RStudio. Below each code chunk, there may be output (often preceded by # if you’re looking at raw code). Let’s start with a simple one:\n\n# This calculates a simple sum\n2 + 2\n\n[1] 4\n\n\nWhen you run this code in R, you should see the result, 4, printed beneath.\nTry running this yourself in RStudio! If you get 4, you’ve written and executed your first piece of R code. Now things get exciting.",
+    "text": "How to Write Code in R\nYou write commands (called functions) in the console or a script in RStudio. Below each code chunk, there may be output (often preceded by # if you’re looking at raw code). Let’s start with a simple one.\nTry running this yourself in RStudio! You can either copy and paste the code below or type it out manually. I recommend copying for the rest of this guide as it will make it harder to make mistakes, spelling is very important with code as the computer will take everything you write very literally.\nWe can then run this code using the run button in the top right corner.\n\nOr by pressing control + enter on your keyboard.\nWhen you run this code in R, you should see the result, 4, printed beneath.\n\n# This calculates a simple sum\n2 + 2\n\n[1] 4\n\n\nIf you get 4, you’ve written and executed your first piece of R code. Now things get exciting.\n\n\n\n\n\n\nTest your understanding\n\n\n\nCan you use any other mathematical symbols here? Test it out.",
     "crumbs": [
       "Dry Prac 1",
       "Dry Prac 1 Notes"
@@ -323,117 +316,29 @@
     "href": "pages/DP1/DP1_Final.html#working-with-variables",
     "title": "Dry Prac 1 — Data analysis in R",
     "section": "Working with Variables",
-    "text": "Working with Variables\nVariables are like labeled containers for your data.\n\n# Size of the nucleus\nnucleus_size &lt;- 5.6  # in micrometers\nnucleus_size\n\n[1] 5.6\n\n\nHere, nucleus_size is a variable that stores the numeric value 5.6.\nFor multiple measurements, you can store a group of values in a vector:\n\n# Nucleus sizes of five cells\nnucleus_sizes &lt;- c(5.6, 6.1, 5.8, 6.2, 5.9)\nnucleus_sizes\n\n[1] 5.6 6.1 5.8 6.2 5.9\n\n\nc() (short for combine) creates a vector, which is a basic data structure in R.",
+    "text": "Working with Variables\nVariables are like labeled containers for your data. These are important because we can use them to store all sorts of things in R. Lets store our calculation as the variable calc we do this by writing out the variable name, then using a &lt;- symbol then typing what we want to store. Copy the below and test it out for yourself.\nWe can also check what is stored in a variable by just typing its name and running the code. Let’s write calc again and see what we have stored. :\n\n\n\n\n\n\nTest your understanding\n\n\n\nSpelling and capitalization are really important. If we captilise the “C” in calc what will happen?\n\n\n\n# Size of the nucleus\ncalc &lt;- 2 + 2  # in micrometers\n\ncalc\n\n[1] 4\n\n\nIt’s also possible to store a list of things as a variable. We do this by writing out the list proceeded by a ‘c’ (for combine), and then seperate every value with a comma. As in the below where we store a list of cool bugs. Because we are using words here(or strings in computer talk) we will use quotations so the computer knows we want it to store exactly the letters we provide it.\nYou’ll notice that i do not use a space between the words ‘cool’ and ‘bugs’, in general spaces are not read well by your computer, it doesn’t know what to do with them and it will cause your code to fail.\nIt is best practice to never use spaces in any of your file names or code if possible.\n\n#List Nik's favourite bugs\ncool_bugs&lt;- c('flies', 'katydids', 'beetles')\n\n#if we list the variable again remeber it will tell us what it contains. \ncool_bugs\n\n[1] \"flies\"    \"katydids\" \"beetles\" \n\n\n\n\n\n\n\n\nTest your understanding\n\n\n\nAdd in two of your favorite bugs into the cool_bugs variable. Then run it to make sure it works.",
     "crumbs": [
       "Dry Prac 1",
       "Dry Prac 1 Notes"
     ]
   },
   {
-    "objectID": "pages/DP1/DP1_Final.html#basic-statistics",
-    "href": "pages/DP1/DP1_Final.html#basic-statistics",
+    "objectID": "pages/DP1/DP1_Final.html#fun-with-functions",
+    "href": "pages/DP1/DP1_Final.html#fun-with-functions",
     "title": "Dry Prac 1 — Data analysis in R",
-    "section": "Basic Statistics",
-    "text": "Basic Statistics\nBiologists often need to analyze data with simple statistical functions.\n\n# Mean size\nmean_nucleus &lt;- mean(nucleus_sizes)\nmean_nucleus\n\n[1] 5.92\n\n\nThe mean() function calculates the average. Similarly, you can find other basic stats:\n\n# Maximum size\nmax(nucleus_sizes)\n\n[1] 6.2\n\n\nThese straightforward functions allow you to summarize your data quickly.",
+    "section": "Fun with functions",
+    "text": "Fun with functions\nFunctions are one of the most powerful tools in R. They allow us to perform tasks without having to write the same code over and over. A function takes an input, does something with it, and then gives back an output. You’ve already used one function without realizing it— +, which is the addition function!\nFor example, let’s use the function sqrt() to calculate the square root of our calc variable.\n\nsqrt(calc)  # This finds the square root of 4\n\n[1] 2\n\n\nMany functions take arguments that you can customize. For example, the round() function rounds numbers to a specified number of decimal places:\n\nround(3.14159, digits = 2)  # Rounds to 2 decimal places\n\n[1] 3.14\n\n\nWe will use a lot of different functions to do powerful things in our data analysis!\n\n\n\n\n\n\nTest your understanding\n\n\n\nCalculate the square root of your calc variable then round it to 4 decimal places.",
     "crumbs": [
       "Dry Prac 1",
       "Dry Prac 1 Notes"
     ]
   },
   {
-    "objectID": "pages/DP1/DP1_Final.html#visualizing-data",
-    "href": "pages/DP1/DP1_Final.html#visualizing-data",
+    "objectID": "pages/DP1/DP1_Final.html#visualizing-data-and-installing-and-loading-packages",
+    "href": "pages/DP1/DP1_Final.html#visualizing-data-and-installing-and-loading-packages",
     "title": "Dry Prac 1 — Data analysis in R",
-    "section": "Visualizing Data",
-    "text": "Visualizing Data\nR can make many types of plots. Let’s plot our nucleus sizes using ggplot2, which is included in the tidyverse.\n\nInstalling and Loading Packages\nIf you haven’t installed the tidyverse package yet, you can do so via:\n\ninstall.packages(\"tidyverse\")\n\nThen load it:\n\nlibrary(tidyverse)  # Loads ggplot2, dplyr, tidyr, and more\n\n\n\nExample: A Simple Bar Plot\n\n# Create a bar plot of nucleus sizes\n# First, create a data frame with cell numbers and sizes\nnucleus_data &lt;- data.frame(Cell = 1:5, Size = nucleus_sizes)\n\n# Use ggplot2 for plotting\nggplot(nucleus_data, aes(x = factor(Cell), y = Size)) +\n  geom_bar(stat = \"identity\", fill = \"skyblue\") +\n  labs(title = \"Nucleus Sizes in Cells\", x = \"Cell Number\", y = \"Nucleus Size (µm)\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\ngeom_bar(stat = \"identity\") tells ggplot2 to create bars whose heights are determined by the Size value.",
-    "crumbs": [
-      "Dry Prac 1",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP1/DP1_Final.html#loading-libraries",
-    "href": "pages/DP1/DP1_Final.html#loading-libraries",
-    "title": "Dry Prac 1 — Data analysis in R",
-    "section": "1. Loading Libraries",
-    "text": "1. Loading Libraries\nWe rely on tidyverse (which includes dplyr and ggplot2) for data manipulation and visualization.\n\nlibrary(tidyverse)  # Loads ggplot2, dplyr, tidyr, and more",
-    "crumbs": [
-      "Dry Prac 1",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP1/DP1_Final.html#simulating-a-dataset",
-    "href": "pages/DP1/DP1_Final.html#simulating-a-dataset",
-    "title": "Dry Prac 1 — Data analysis in R",
-    "section": "2. Simulating a Dataset",
-    "text": "2. Simulating a Dataset\nIn this example, we simulate a dataset to explore how absorbance might vary with cell concentration for three groups: Control, Treatment A, and Treatment B. We also include a background absorbance value to remove during preprocessing.\n\n# set a seed for the randomisation of data\nset.seed(123) # For reproducibility\n\n# Create a tibble (tidyverse's modern dataframe)\ndata &lt;- tibble::tibble(\n  Cell_Concentration = rep(seq(1, 100, by = 5), times = 3),\n  Absorbance = c(\n    runif(20, min = 0.1, max = 0.5), # Control data points\n    runif(20, min = 0.4, max = 1.0), # Treatment A data points\n    runif(20, min = 0.8, max = 1.5)  # Treatment B data points\n  ) + 0.05,  # Add background noise\n  Treatment = rep(c(\"Control\", \"Treatment A\", \"Treatment B\"), each = 20),\n  Background = 0.05\n)\n\n# Preview the data\nhead(data)  # Shows the first few rows\n\n# A tibble: 6 × 4\n  Cell_Concentration Absorbance Treatment Background\n               &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n1                  1      0.265 Control         0.05\n2                  6      0.465 Control         0.05\n3                 11      0.314 Control         0.05\n4                 16      0.503 Control         0.05\n5                 21      0.526 Control         0.05\n6                 26      0.168 Control         0.05\n\n\n\nseq(1, 100, by = 5) generates numbers from 1 to 100, in increments of 5.\nrunif() creates random values between a minimum and maximum.\nhead() displays the first 6 rows of a dataset, which helps you quickly inspect its structure.\n\n\nTibbles vs Data Frames\nIn base R, data is often stored in data frames, which are 2D structures (rows and columns) where each column can have a different data type. Tibbles are a modern take on data frames provided by the tibble package (part of the tidyverse). They have a few advantages:\nPrinting: Tibbles show only the first few rows and columns by default, making large datasets easier to inspect.\nStrictness: Tibbles don’t change variable names or types without asking, and never partially match them.\nCompatibility: They still function just like data frames in most situations, so you can use standard functions like head(), str(), and summary().",
-    "crumbs": [
-      "Dry Prac 1",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP1/DP1_Final.html#remove-background-absorbance",
-    "href": "pages/DP1/DP1_Final.html#remove-background-absorbance",
-    "title": "Dry Prac 1 — Data analysis in R",
-    "section": "3. Remove Background Absorbance",
-    "text": "3. Remove Background Absorbance\nWe subtract the background absorbance to isolate the absorbance caused by the treatments alone.\n\ndata &lt;- data %&gt;%\n  mutate(Adjusted_Absorbance = Absorbance - Background)\n\nhead(data)\n\n# A tibble: 6 × 5\n  Cell_Concentration Absorbance Treatment Background Adjusted_Absorbance\n               &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;               &lt;dbl&gt;\n1                  1      0.265 Control         0.05               0.215\n2                  6      0.465 Control         0.05               0.415\n3                 11      0.314 Control         0.05               0.264\n4                 16      0.503 Control         0.05               0.453\n5                 21      0.526 Control         0.05               0.476\n6                 26      0.168 Control         0.05               0.118\n\n\nHere, %&gt;% (the pipe) let’s us chain commands for readability.",
-    "crumbs": [
-      "Dry Prac 1",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP1/DP1_Final.html#basic-scatter-plot",
-    "href": "pages/DP1/DP1_Final.html#basic-scatter-plot",
-    "title": "Dry Prac 1 — Data analysis in R",
-    "section": "4. Basic Scatter Plot",
-    "text": "4. Basic Scatter Plot\nLet’s create a scatter plot using ggplot2 to visualize how Adjusted Absorbance changes with Cell Concentration.\n\np &lt;- ggplot(data, aes(x = Cell_Concentration, y = Adjusted_Absorbance)) +\n  geom_point() +\n  labs(\n    title = \"Adjusted Absorbance by Cell Concentration\",\n    x = \"Cell Concentration\",\n    y = \"Adjusted Absorbance\"\n  ) +\n  theme_minimal()\n\np\n\n\n\n\n\n\n\n\n\ngeom_point() adds scatter plot points.\nlabs() adds titles and axis labels.\ntheme_minimal() is a clean, modern theme.",
-    "crumbs": [
-      "Dry Prac 1",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP1/DP1_Final.html#grouping-by-treatment",
-    "href": "pages/DP1/DP1_Final.html#grouping-by-treatment",
-    "title": "Dry Prac 1 — Data analysis in R",
-    "section": "5. Grouping by Treatment",
-    "text": "5. Grouping by Treatment\nWe can make comparisons clearer by coloring points by their treatment group.\n\np &lt;- ggplot(data, aes(x = Cell_Concentration, y = Adjusted_Absorbance, color = Treatment)) +\n  geom_point(size = 3) +\n  labs(\n    title = \"Adjusted Absorbance by Cell Concentration and Treatment\",\n    x = \"Cell Concentration\",\n    y = \"Adjusted Absorbance\",\n    color = \"Treatment\"\n  )\n\np",
-    "crumbs": [
-      "Dry Prac 1",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP1/DP1_Final.html#adding-a-trend-line",
-    "href": "pages/DP1/DP1_Final.html#adding-a-trend-line",
-    "title": "Dry Prac 1 — Data analysis in R",
-    "section": "6. Adding a Trend Line",
-    "text": "6. Adding a Trend Line\nWe can add a trend line to see if there’s a linear relationship.\n\np &lt;- ggplot(data, aes(x = Cell_Concentration, y = Adjusted_Absorbance, color = Treatment)) +\n  geom_point(size = 3) +\n  geom_smooth(se = FALSE, method = \"lm\") +\n  labs(\n    title = \"Trends in Adjusted Absorbance\",\n    x = \"Cell Concentration\",\n    y = \"Adjusted Absorbance\",\n    color = \"Treatment\"\n  )\n\np\n\n\n\n\n\n\n\n\n\ngeom_smooth(method = \"lm\") fits a linear model.\nse = FALSE hides the shaded confidence interval.",
-    "crumbs": [
-      "Dry Prac 1",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP1/DP1_Final.html#customizing-plots",
-    "href": "pages/DP1/DP1_Final.html#customizing-plots",
-    "title": "Dry Prac 1 — Data analysis in R",
-    "section": "7. Customizing Plots",
-    "text": "7. Customizing Plots\nYou can customize colors, fonts, and more.\n\np &lt;- ggplot(data, aes(x = Cell_Concentration, y = Adjusted_Absorbance, color = Treatment)) +\n  geom_point(size = 3, alpha = 0.8) +  # Adjust transparency with alpha\n  geom_smooth(se = FALSE, method = \"lm\", linetype = \"dashed\") +\n  scale_color_brewer(palette = \"Dark2\") +\n  labs(\n    title = \"Customized Adjusted Absorbance Trends\",\n    subtitle = \"Data Adjusted for Background Noise\",\n    x = \"Cell Concentration\",\n    y = \"Adjusted Absorbance\",\n    color = \"Treatment Group\"\n  ) +\n  theme_minimal(base_size = 14) +\n  theme(\n    plot.title = element_text(face = \"bold\"),\n    plot.subtitle = element_text(face = \"italic\"),\n    axis.text.x = element_text(angle = 0, vjust = 0.5)\n  )\n\np",
-    "crumbs": [
-      "Dry Prac 1",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP1/DP1_Final.html#setting-a-working-directory-and-importing-data",
-    "href": "pages/DP1/DP1_Final.html#setting-a-working-directory-and-importing-data",
-    "title": "Dry Prac 1 — Data analysis in R",
-    "section": "Setting a Working Directory and Importing Data",
-    "text": "Setting a Working Directory and Importing Data\n\n# Example: Setting working directory\n# e.g. for pc: setwd(\"C:/Users/.../Biol340_981/2025/Practicals/Dry_Pracs\")\n\n# Load your data using read.csv e.g. from a mac:\nClass_data &lt;- read.csv(\"~/Library/CloudStorage/OneDrive-Personal/Research/Teaching/Biol340_981/2025/Practicals and Prac manual/Dry practicals/DP_1_data_analysis/cell_count.csv\") %&gt;%\n  dplyr::mutate(\n    cell.concentration = stringr::str_remove_all(cell.concentration, \",\")\n  )\n\nhead(Class_data)\n\n       treatment Raw.counts cell.concentration Number.of.cells.in.20.uL.sample\n1 healthy, alive        195            3900000                              78\n2 healthy, alive        202            4040000                              81\n3 healthy, alive        198            3960000                              79\n4 healthy, alive        205            4100000                              82\n5 healthy, alive        192            3840000                              77\n6 healthy, alive        210            4200000                              84\n  Proportion.of.total.cells....\n1                         4.20%\n2                         4.40%\n3                         4.30%\n4                         4.50%\n5                         4.10%\n6                         4.60%\n\n\n\nsetwd() sets your working directory.\nread.csv() imports a CSV file.\nmutate() modifies or adds columns.\nhead(Class_data) prints the first 6 rows, so you can quickly inspect your dataset.",
+    "section": "Visualizing Data and Installing and Loading Packages",
+    "text": "Visualizing Data and Installing and Loading Packages\nR can make many types of plots. Let’s plot our nucleus sizes using ggplot2, which is included in the tidyverse.\nIf you haven’t installed the tidyverse package yet, you can do so via copying and running:\n\ninstall.packages(\"tidyverse\")\n\nWe also have to load the library by copying and running this line of code:\n\nlibrary(tidyverse)  # Loads ggplot2, dplyr, tidyr, and more\n\nWe are now set up to start looking at our data from Wet Lab 1",
     "crumbs": [
       "Dry Prac 1",
       "Dry Prac 1 Notes"
@@ -444,7 +349,7 @@
     "href": "pages/DP1/DP1_Final.html#making-a-boxplot",
     "title": "Dry Prac 1 — Data analysis in R",
     "section": "Making a Boxplot",
-    "text": "Making a Boxplot\nNow we can analyse this data in interesting ways using ggplot2 as you learnt above. Feel free to play around with labels, colours and themes.\n\np &lt;- ggplot(Class_data, aes(x = treatment, y = as.numeric(cell.concentration))) +\n  geom_boxplot() +\n  labs(\n    title = \"Concentration of Viable vs. Treatment\",\n    x = \"Treatment\",\n    y = \"Cell Concentration\"\n  ) +\n  theme_minimal()\n\np\n\n\n\n\n\n\n\n\nA boxplot helps compare data distributions across categories.\nWe can also tidy up this graph and improve how it looks by using options under labels() which allows us to add axes and figure labels. We can also use theme() which allows us to manipulate different visuals in the graph, in this instance I will use theme_minimal which is a theme included with ggplot, but there are a huge number of customisations you can do by manipulating options within theme().\nObserve the below changes\n\n#coloured boxplot\np &lt;- ggplot(Class_data, aes(x = treatment, y = as.numeric(cell.concentration), color = treatment)) +\n  geom_boxplot() +\n  labs(\n    title = \"Concentration of viable vs. treatment\",\n    x = \"treatment\",\n    y = \"Cell concentration\"\n  ) +\n  theme_minimal()\n# Display the plot\np",
+    "text": "Making a Boxplot\nNow we can analyse this data in interesting ways using ggplot2 a package specifically for graphing included in tidyverse. Feel free to play around with labels, colours and themes.\nA boxplot helps compare data distributions across categories.\nThe below packge function ggplot() required a few things first we give it our data variable also known as the data frame ggplot(Class_data). Then we need to tell it what we actually want plotted from this data set, or the asthetics of the graph, this is shortened to list aes(), i.e. ggplot(Class_data, aes(x = x-axis, y = y axis). In the below we also tell it to treat the column cell_concentration in our data as a numeric factor this just means it will plot it correctly.\nWe also will add a geom to our plot, this is short for a geometric object - which basically means dots, lines, curves or any other thing we might like to plot. For now we will add a boxplot geom using geom_boxplot. &gt;Data scientists are not very creative when it comes to naming things, but this means with a bit of thinking, googling or AI searching we can pretty quickly work out what a function or option is doing.\n\np &lt;- ggplot(Class_data, aes(x = treatment, y = as.numeric(cell_concentration))) +\n  geom_boxplot() +\n  theme_minimal()\n\np\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTest your understanding\n\n\n\nIf you are curious, try changing the aesthetics for the y axis to just be y = cell_concentration to see how it tries to plot the data. What is going on?\n\n\nWe can also tidy up this graph and improve how it looks by using options under labels() which allows us to add axes and figure labels. We can also use theme() which allows us to manipulate different visuals in the graph, in this instance I will use theme_minimal which is a theme included with ggplot, but there are a huge number of customisations you can do by manipulating options within theme(). Observe the below changes.\n\n#coloured boxplot\np &lt;- ggplot(Class_data, aes(x = treatment, y = as.numeric(cell_concentration), color = treatment)) +\n  geom_boxplot() +\n  labs(\n    title = \"Concentration of viable vs. treatment\",\n    x = \"treatment\",\n    y = \"Cell concentration\"\n  ) +\n  theme_minimal()\n# Display the plot\np",
     "crumbs": [
       "Dry Prac 1",
       "Dry Prac 1 Notes"
@@ -466,7 +371,29 @@
     "href": "pages/DP1/DP1_Final.html#activity-1",
     "title": "Dry Prac 1 — Data analysis in R",
     "section": "Activity 1",
-    "text": "Activity 1\n\nMake a custom graph with interesting aesthetics. Use generative AI (e.g., ChatGPT or Copilot) to get ideas on what to change (colors, theme, legend placement, etc.).",
+    "text": "Activity 1\n\nMake a custom graph with interesting aesthetics. Use generative AI (e.g., ChatGPT or Copilot) to get ideas on what to change (colors, theme, legend placement, etc.). You can copy and paste your code into co-pilot and chatGTP and ask for it to change things based on what you would like to see.",
+    "crumbs": [
+      "Dry Prac 1",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP1/DP1_Final.html#question-2",
+    "href": "pages/DP1/DP1_Final.html#question-2",
+    "title": "Dry Prac 1 — Data analysis in R",
+    "section": "Question 2",
+    "text": "Question 2\n\nReflect: What do you think a barrier to analysis the Excel processed data in R will be? What do you think the advantages of using R could be?",
+    "crumbs": [
+      "Dry Prac 1",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP1/DP1_Final.html#thinking-outside-the-cell-reading-and-formatting-your-data",
+    "href": "pages/DP1/DP1_Final.html#thinking-outside-the-cell-reading-and-formatting-your-data",
+    "title": "Dry Prac 1 — Data analysis in R",
+    "section": "Thinking outside the cell, reading and formatting your data",
+    "text": "Thinking outside the cell, reading and formatting your data\nSo far you have been working with your data in cells, using the tools available in Excel and the tables provided in your prac manual. When it comes to importing data into R we have to think a little differently as we no longer work with the data visually using a Graphical User Interface (i.e. a GUI).\n\n\n\n\n\n\nACTION REQUIRED\n\n\n\nFirst we need to convert our excel data from a spreadsheet (or .xls) file to a comma seperated text file (or csv.).\nOpen the class data from wetlab 2 and open it in Excel. You can now use save as in Excel and choose the option to save as a comma separated file.\nThis should save your data with the file extension .csv. Now open the data in Visual Studio Code on your computer, you will see that all our ‘nice’ formatting we did to make the data easier to understand actually makes it very confusing for the computer to interpret what each data point means.\n\n\nWe need to simplify things so that the software can distinguish between our different variables.\nI.e. we need to make it clear what each cell represents in terms of treatment, cell concentration and absorbance. We should also remove our background from our absorbance as well.\nThe easiest way to do this is to make each of these variables the headings of the columns in your data, then input the information for each data point. This is also sometimes referred to as “long format” data. For todays dry prac, we have done this for you.\n\n\n\n\n\n\nACTION REQUIRED\n\n\n\nDownload the plate data .csv filea for both assays from moodle. This data has already been formatted into “long format” for you.\nOpen the data for both assays in R and store them as seperate variables using the code below. Remember to change the location in read.csv() to where the file is stored on your computer.\n\n\n\nplate_data_cAM &lt;- read.csv(\"~/Library/CloudStorage/OneDrive-Personal/Research/Teaching/Biol340_981/2025/Practicals and Prac manual/Dry practicals/DP_1_data_analysis/corrected_class_data_cAM.csv\", row.names = 1, check.names = FALSE)\n\nplate_data_MTS &lt;- read.csv(\"~/Library/CloudStorage/OneDrive-Personal/Research/Teaching/Biol340_981/2025/Practicals and Prac manual/Dry practicals/DP_1_data_analysis/corrected_class_data_MTS.csv\", row.names = 1, check.names = FALSE)\n\n\n\nhead(plate_data_cAM)\n\n  Well Absorbance Cell_Type Dilution\n1   A1  45634.083   Healthy  2000000\n2   A2  27520.083   Healthy  1000000\n3   A3  15916.083   Healthy   500000\n4   A4  13197.083   Healthy   250000\n5   A5   9155.083   Healthy   125000\n6   A6   6470.083   Healthy    62500\n\nhead(plate_data_MTS)\n\n  Well Absorbance Cell_Type Dilution GROUP ID\n1   A1    2.49175   Healthy  2000000  G1 & G2\n2   A2    1.96275   Healthy  1000000  G1 & G2\n3   A3    1.23175   Healthy   500000  G1 & G2\n4   A4    0.81075   Healthy   250000  G1 & G2\n5   A5    0.26875   Healthy   125000  G1 & G2\n6   A6    0.14275   Healthy    62500  G1 & G2",
     "crumbs": [
       "Dry Prac 1",
       "Dry Prac 1 Notes"
@@ -477,40 +404,7 @@
     "href": "pages/DP1/DP1_Final.html#question-3",
     "title": "Dry Prac 1 — Data analysis in R",
     "section": "Question 3",
-    "text": "Question 3\n\nReflect: What do you think a barrier to analysis the Excel processed data in R will be? What do you think the advantages of using R could be?\n\n\nThinking outside the cell\nSo far you have been working with your data in cells, using the tools available in Excel and the tables provided in your prac manual. When it comes to importing data into R we have to think a little differently as we no longer work with the data visually using a Graphical User Interface (i.e. a GUI).\nFirst we need to convert our excel data from a spreadsheet (or .xls) file to a comma seperated text file (or csv.). This is fairly straight forward - you can use save as in Excel and choose the option to save as a comma seperated file.\nThis should save your data with the file extension .csv. Now if you open the data in Visual Studio Code on your computer you will see that all our ‘nice’ formatting we did to make the data easier to understand actually makes it very confusing for the computer to intepret what each data point means. We need to simplify things so that the software can distinguish between our different variables.\nI.e. we need to make it clear what each cell represents in terms of treatment, cell concentration and absorbance. We should also label our background as well.\nThe easiest way to do this is to make each of these variables the headings of the columns in your data, then input the information for each data point.\nThis is also sometimes referred to as “long format” data.",
-    "crumbs": [
-      "Dry Prac 1",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP1/DP1_Final.html#read-and-format-the-data",
-    "href": "pages/DP1/DP1_Final.html#read-and-format-the-data",
-    "title": "Dry Prac 1 — Data analysis in R",
-    "section": "Read and Format the Data",
-    "text": "Read and Format the Data\nWe often need to convert Excel data (spreadsheet .xls files) to CSV format so R can interpret it easily.\n\nplate_data &lt;- read.csv(\"~/Library/CloudStorage/OneDrive-Personal/Research/Teaching/Biol340_981/2025/Practicals and Prac manual/Dry practicals/DP_1_data_analysis/plate_assay.csv\", row.names = 1, check.names = FALSE)\n\nplate_data &lt;- plate_data %&gt;%\n  rownames_to_column(var = \"Row\")\n\nhead(plate_data)\n\n  Row      1      2      3      4      5     6     7     8     9    10    11\n1   A 234638 187876 135865 110923  79043 71551 60742 55209 56095 55784 50266\n2   B 237329 251471 177995 134888 109490 81295 72256 69348 61904 55070 62208\n3   C 260000 253403 202066 142151  98816 84420 66989 64180 58341 57809 53425\n4   D 220862 170740 125864  99798  65767 54054 41551 35483 43790 43308 35739\n5   E 226793 237859 164632 120421  94399 69086 61250 55252 42034 36285 52078\n6   F 240179 242925 190130 131232  79451 67181 50684 52038 40665 38387 42372\n    12\n1 3582\n2 3582\n3 3582\n4 3582\n5 3577\n6 3556\n\n\n\nrow.names = 1 treats the first column as row names.\ncheck.names = FALSE avoids automatic renaming.\nrownames_to_column() turns row names into a column.\n\n\n# Convert wide data to long format\nplate_long &lt;- plate_data %&gt;%\n  pivot_longer(-Row, names_to = \"Column\", values_to = \"Absorbance\") %&gt;%\n  mutate(Column = as.numeric(Column))\n\n# Classify cell types\nplate_long &lt;- plate_long %&gt;%\n  mutate(\n    Cell_Type = case_when(\n      Row %in% c(\"A\", \"B\", \"C\") ~ \"Healthy\",\n      Row %in% c(\"D\", \"E\", \"F\") ~ \"Diseased\",\n      Row %in% c(\"G\", \"H\")       ~ \"Blank\"\n    )\n  )\n\n# Remove Blanks\nplate_long &lt;- plate_long %&gt;%\n  filter(Cell_Type != \"Blank\")\n\n# Add dilution info (example)\nstarting_concentration &lt;- 2000000  # First column concentration\nplate_long &lt;- plate_long %&gt;% mutate(\n  Dilution = starting_concentration * (1 / 2)^(Column - 1)\n)\n\nhead(plate_long)\n\n# A tibble: 6 × 5\n  Row   Column Absorbance Cell_Type Dilution\n  &lt;chr&gt;  &lt;dbl&gt;      &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;\n1 A          1     234638 Healthy    2000000\n2 A          2     187876 Healthy    1000000\n3 A          3     135865 Healthy     500000\n4 A          4     110923 Healthy     250000\n5 A          5      79043 Healthy     125000\n6 A          6      71551 Healthy      62500",
-    "crumbs": [
-      "Dry Prac 1",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP1/DP1_Final.html#subtract-background",
-    "href": "pages/DP1/DP1_Final.html#subtract-background",
-    "title": "Dry Prac 1 — Data analysis in R",
-    "section": "Subtract Background",
-    "text": "Subtract Background\nHere, we compute background as the mean absorbance of wells in the last column (Column 12) and subtract it.\n\nbackground_absorbance &lt;- plate_long %&gt;%\n  filter(Column == 12) %&gt;%\n  summarize(Mean_Background = mean(Absorbance, na.rm = TRUE)) %&gt;%\n  pull(Mean_Background)\n\nplate_long_corrected &lt;- plate_long %&gt;%\n  mutate(Adjusted_Absorbance = Absorbance - background_absorbance)\n\nhead(plate_long_corrected)\n\n# A tibble: 6 × 6\n  Row   Column Absorbance Cell_Type Dilution Adjusted_Absorbance\n  &lt;chr&gt;  &lt;dbl&gt;      &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;               &lt;dbl&gt;\n1 A          1     234638 Healthy    2000000             231061.\n2 A          2     187876 Healthy    1000000             184299.\n3 A          3     135865 Healthy     500000             132288.\n4 A          4     110923 Healthy     250000             107346.\n5 A          5      79043 Healthy     125000              75466.\n6 A          6      71551 Healthy      62500              67974.",
-    "crumbs": [
-      "Dry Prac 1",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP1/DP1_Final.html#question-4",
-    "href": "pages/DP1/DP1_Final.html#question-4",
-    "title": "Dry Prac 1 — Data analysis in R",
-    "section": "Question 4",
-    "text": "Question 4\n\nWhich data frame should we plot?",
+    "text": "Question 3\n\nWhat can you notice is different between how your data was formatted in excel compared to the data we have prepared for you to import into R? Why might this be important.",
     "crumbs": [
       "Dry Prac 1",
       "Dry Prac 1 Notes"
@@ -521,7 +415,7 @@
     "href": "pages/DP1/DP1_Final.html#plotting-the-results",
     "title": "Dry Prac 1 — Data analysis in R",
     "section": "Plotting the Results",
-    "text": "Plotting the Results\n\n# Scatter plot of Adjusted Absorbance vs. Dilution\n# Colored by Cell_Type\n\nggplot(plate_long_corrected, aes(x = Dilution, y = Adjusted_Absorbance, color = Cell_Type)) +\n  geom_point(alpha = 0.6, size = 2) +\n  geom_smooth(method = \"lm\", se = FALSE, linetype = \"dashed\") +\n  labs(\n    title = \"Standard Curve of Absorbance vs Cell Concentration\",\n    x = \"Cell Concentration (cells/mL)\",\n    y = \"Adjusted Absorbance\",\n    color = \"Cell Type\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nThat plot looks pretty squashed in the left hand side (lower concentrations). Let’s fix that by making it a log graph. This is very easy to do now that we have done all our data manipulation. We will just add in the line scale_x_log10().\n\nLog Scale Example\n\nggplot(plate_long_corrected, aes(x = Dilution, y = Adjusted_Absorbance, color = Cell_Type)) +\n  geom_point(alpha = 0.6, size = 2) +\n  geom_smooth(method = \"lm\", se = FALSE, linetype = \"dashed\") +\n  scale_x_log10() +\n  labs(\n    title = \"Standard Curve of Absorbance vs Cell Concentration (Log Scale)\",\n    x = \"Cell Concentration (cells/mL)\",\n    y = \"Adjusted Absorbance\",\n    color = \"Cell Type\"\n  ) +\n  theme_minimal()",
+    "text": "Plotting the Results\nNow lets make a different type of plot. Let’s create a scatter plot of *the calcein-AM using ggplot2 to visualize how Adjusted Absorbance changes with Cell Concentration.\nIn the below plot: - geom_point() adds scatter plot points. - labs() adds titles and axis labels. - theme_minimal() is a clean, modern theme that removes a lot of unnecessary formating.\n\n\n\n\n\n\nNote\n\n\n\nYou will notice that we have some options within geom_point() play around with them and see what happens. Why not check other options you could include here by googling or asking AI. You can do some pretty crazy things with custom points or by using jitter.\n\n\n\n# Scatter plot of Adjusted Absorbance vs. Dilution\n# Colored by Cell_Type\n\nggplot(plate_data_cAM, aes(x = Dilution, y = Absorbance)) +\n  geom_point(alpha = 0.6, size = 2) +\n  labs(\n    title = \"Standard Curve of Absorbance vs Cell Concentration\",\n    x = \"Cell Concentration (cells/mL)\",\n    y = \"Adjusted Absorbance\",\n    color = \"Cell Type\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nOur plot now has points! But it would also be great to colour by the cell line type.\n\n\n\n\n\n\nACTION REQUIRED\n\n\n\nBased on the code you made for boxplots above, how would you colour the data in this plot by cell type?\n\n\n\nAdding a trendline\nOur plot could also be improved by adding in a trendline to visualise the data. We can do this using the function geom_smooth(). Here we are going to apply a linear model or ‘lm’ as our method because we want a straight line. We will also set the option se or standard error to = FALSE\n\n# Scatter plot of Adjusted Absorbance vs. Dilution\n# Colored by Cell_Type\n\nggplot(plate_data_cAM, aes(x = Dilution, y = Absorbance, color = Cell_Type)) +\n  geom_point(alpha = 0.6, size = 2) +\n  geom_smooth(method ='lm', se = FALSE) +\n  labs(\n    title = \"Standard Curve of Absorbance vs Cell Concentration\",\n    x = \"Cell Concentration (cells/mL)\",\n    y = \"Adjusted Absorbance\",\n    color = \"Cell Type\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTest your understanding\n\n\n\nHave a look (using google or AI) at some of the other types of methods you can use to add a line geom to your plots. One to get you started is method = \"loess\"\n\n\n\n\nLog Scale Example\nOur plot looks pretty squashed in the left hand side (lower concentrations). Let’s fix that by making it a log graph. This is very easy to do!\n\n\n\n\n\n\nACTION REQUIRED\n\n\n\nLet’s add in a lione of code for scale_x_log10(). Don’t forget to put a + at the end so that the computer reads it as part of you graph function. You will notice I also changed the geom for the line below to dashed, because why not. Feel free to change it back or look at other options.\n\n\n\nggplot(plate_data_cAM, aes(x = Dilution, y = Absorbance, color = Cell_Type)) +\n  geom_point(alpha = 0.6, size = 2) +\n  geom_smooth(method = \"lm\", se = TRUE, linetype = \"dashed\") +\n  scale_x_log10() +\n  labs(\n    title = \"Standard Curve of Absorbance vs Cell Concentration (Log Scale)\",\n    x = \"Cell Concentration (cells/mL)\",\n    y = \"Adjusted Absorbance\",\n    color = \"Cell Type\"\n  ) +\n  theme_minimal()",
     "crumbs": [
       "Dry Prac 1",
       "Dry Prac 1 Notes"
@@ -532,7 +426,18 @@
     "href": "pages/DP1/DP1_Final.html#estimating-the-linear-range",
     "title": "Dry Prac 1 — Data analysis in R",
     "section": "Estimating the Linear Range",
-    "text": "Estimating the Linear Range\nWe can improve our standard curves by finding the linear portion of the trendline to determine the sensitivity range of the assays.\n\nlinear_data &lt;- plate_long_corrected %&gt;%\n  filter(Dilution &gt;= 1000 & Dilution &lt;= 500000)\n\n# Plot linear region\nggplot(linear_data, aes(x = Dilution, y = Adjusted_Absorbance, color = Cell_Type)) +\n  geom_point(alpha = 0.6, size = 2) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(\n    title = \"Linear Region of Standard Curve\",\n    x = \"Cell Concentration (cells/mL)\",\n    y = \"Adjusted Absorbance\",\n    color = \"Cell Type\"\n  ) +\n  theme_minimal()",
+    "text": "Estimating the Linear Range\nWe can also further improve our standard curves by finding the linear portion of the trendline to determine the sensitivity range of the assays. Let’s do this by filtering our data for specific dilutions using the function filter().\n\n\n\n\n\n\nACTION REQUIRED\n\n\n\nCopy the below code and change the filtering range to something suitable for your data.\n\nlinear_data_cAM &lt;- plate_data_cAM %&gt;%\n  filter(Dilution &gt;= 1000 & Dilution &lt;= 500000)\n\n\n\nNow let’s try reploting our graph using the new linear_data_cAM variable.\n\n# Plot linear region\nggplot(linear_data_cAM, aes(x = Dilution, y = Absorbance, color = Cell_Type)) +\n  geom_point(alpha = 0.6, size = 2) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(\n    title = \"Linear Region of Standard Curve\",\n    x = \"Cell Concentration (cells/mL)\",\n    y = \"Adjusted Absorbance\",\n    color = \"Cell Type\"\n  ) +\n  theme_minimal()",
+    "crumbs": [
+      "Dry Prac 1",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP1/DP1_Final.html#activity-2",
+    "href": "pages/DP1/DP1_Final.html#activity-2",
+    "title": "Dry Prac 1 — Data analysis in R",
+    "section": "Activity 2",
+    "text": "Activity 2\n\nCustomize your plot to improve its appearance. - Adjust point size and color - Modify or remove legends - Evaluate whether you need to show all data labels or tick marks - Explore other themes (e.g., theme_bw(), theme_classic()). Feel free to look at the ggplot2 cheat sheet available on the dry prac website, we have also provided extra information for plotting under “extra help with graphics”",
     "crumbs": [
       "Dry Prac 1",
       "Dry Prac 1 Notes"
@@ -543,29 +448,7 @@
     "href": "pages/DP1/DP1_Final.html#activity-3",
     "title": "Dry Prac 1 — Data analysis in R",
     "section": "Activity 3",
-    "text": "Activity 3\n\nCustomize your plot to improve its appearance. - Adjust point size and color - Modify or remove legends - Evaluate whether you need to show all data labels or tick marks - Explore other themes (e.g., theme_bw(), theme_classic()). Feel free to look at the ggplot2 cheat sheet available on Moodle.",
-    "crumbs": [
-      "Dry Prac 1",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP1/DP1_Final.html#activity-4",
-    "href": "pages/DP1/DP1_Final.html#activity-4",
-    "title": "Dry Prac 1 — Data analysis in R",
-    "section": "Activity 4",
-    "text": "Activity 4\n\nChoose an appropriate cell density within this range to compare the results of the ‘diseased’ cell suspension and calculate the difference in viability between these two populations of cells (assuming 100 % viability of the ‘healthy’ cell suspension).",
-    "crumbs": [
-      "Dry Prac 1",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP1/DP1_Final.html#activity-5",
-    "href": "pages/DP1/DP1_Final.html#activity-5",
-    "title": "Dry Prac 1 — Data analysis in R",
-    "section": "Activity 5",
-    "text": "Activity 5\n\nRepeat this plot for the other assay dataset. This should be simple as you will only need to change the input .csv file the code should remain the same. This is one powerful aspect of R, reproducibility!",
+    "text": "Activity 3\n\nRepeat this plot for the MTS dataset. This should be simple as you will only need to change what variable is plotted by code you already have! The code should remain the same. This is one powerful aspect of R, reproducibility!",
     "crumbs": [
       "Dry Prac 1",
       "Dry Prac 1 Notes"
@@ -583,11 +466,22 @@
     ]
   },
   {
-    "objectID": "pages/DP1/DP1_Final.html#activity-6",
-    "href": "pages/DP1/DP1_Final.html#activity-6",
+    "objectID": "pages/DP1/DP1_Final.html#activity-4",
+    "href": "pages/DP1/DP1_Final.html#activity-4",
     "title": "Dry Prac 1 — Data analysis in R",
-    "section": "Activity 6",
-    "text": "Activity 6\n\nExport your final R-generated figures for the MTS and Calcein-AM assays as PNG files. Try setting the file dimensions to 600×400.",
+    "section": "Activity 4",
+    "text": "Activity 4\n\nExport your final R-generated figures for the MTS and Calcein-AM assays as PNG files. Try setting the file dimensions to 600×400.",
+    "crumbs": [
+      "Dry Prac 1",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP1/DP1_Final.html#question-4",
+    "href": "pages/DP1/DP1_Final.html#question-4",
+    "title": "Dry Prac 1 — Data analysis in R",
+    "section": "Question 4",
+    "text": "Question 4\n\nWhere do these files save on your computer? Why is that location used?",
     "crumbs": [
       "Dry Prac 1",
       "Dry Prac 1 Notes"
@@ -598,18 +492,7 @@
     "href": "pages/DP1/DP1_Final.html#question-5",
     "title": "Dry Prac 1 — Data analysis in R",
     "section": "Question 5",
-    "text": "Question 5\n\nWhere do these files save on your computer? Why is that location used?",
-    "crumbs": [
-      "Dry Prac 1",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP1/DP1_Final.html#question-6",
-    "href": "pages/DP1/DP1_Final.html#question-6",
-    "title": "Dry Prac 1 — Data analysis in R",
-    "section": "Question 6",
-    "text": "Question 6\n\nWrite a brief comparison of the two assays you performed. Which was faster, more reproducible, or more sensitive?",
+    "text": "Question 5\n\nWrite a brief comparison of the two assays you performed. Which was faster, more reproducible, or more sensitive?",
     "crumbs": [
       "Dry Prac 1",
       "Dry Prac 1 Notes"

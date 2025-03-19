@@ -28,7 +28,7 @@ website:
     search: true
     collapse-level: 1
     contents:
-      - section: "Introduction"
+      - section: "Pre-Lab - Introduction"
         contents:
           - href: pages/introduction/01_R-studio-and-the-coding-environment.qmd
             text: R studio and the coding environment
@@ -39,7 +39,7 @@ website:
           - href: pages/introduction/4_notebooks.qmd
             text: Notbooks in R studio
             
-      - section: "Data exploration"
+      - section: "Pre-Lab - Data exploration"
         contents:
           - href: pages/1/1_packages.qmd
             text: Packages
