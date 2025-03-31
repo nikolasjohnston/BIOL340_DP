@@ -1,0 +1,192 @@
+---
+title: "Dry Prac 2 — Subcellular Fractionation Analysis"
+author: "Dr Nikolas Johnston, University of Wollongong"
+date: "March, 2025"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+## Background and Purpose
+
+In Dry Practical 1, you were introduced to the basics of handling biological data in R, using tidyverse functions and `ggplot2` to visualise simple trends. That session was designed to help you become comfortable navigating RStudio, working with tabular data, and generating figures that communicate biological patterns clearly.
+
+In this second dry practical, we’ll extend those skills by working with **real experimental data** that you generated in the wet lab. Specifically, we’ll use your results from the **subcellular fractionation practical**, where you separated healthy and diseased cells into mitochondrial and cytosolic fractions, then measured protein concentration and enzyme activity.
+
+This practical will focus on:
+
+-   Calculating **specific enzyme activity** for each sample
+-   Comparing the mitochondrial and cytosolic fractions from healthy vs diseased cells
+-   Using `dplyr` tools to filter, summarise, and interpret biological data
+-   Visualising patterns across individual and class-wide datasets
+
+By the end of this session, you'll have created professional-quality plots and learned how data wrangling tools in R can help you test biological hypotheses.
+
+::: callout-note
+### ACTION REQUIRED {style="color: red"}
+
+Open R studio on your computer and create a new r script for this class. If you are confused about how to do this refer to the **introduction** section of the BIOL340 practical website.
+:::
+
+## Visualizing Data and Installing and Loading Packages
+
+R can make many types of plots. Let's plot our nucleus sizes using **ggplot2**, which is included in the **tidyverse**.
+
+If you haven't installed the **tidyverse** package yet, you can do so via copying and running:
+
+```{r install-packages, eval=FALSE}
+install.packages("tidyverse")
+```
+
+We also have to load the library by copying and running this line of code:
+
+```{r}
+library(tidyverse)  # Loads ggplot2, dplyr, tidyr, and more
+```
+
+We are now set up to start looking at our data from **Wet Lab 3**
+
+## Load the Class Dataset
+
+> This dataset has: - Absorbance readings every 10 seconds for each sample - The reaction rate already calculated - Protein concentration from the Bradford assay
+
+::: callout-note
+**Task:** Load the class dataset and view the column names.
+:::
+
+```{r}
+data <- read_csv("frac_data.csv")
+head(data)
+```
+
+## Plot the Absorbance Over Time
+
+This shows how absorbance (A412) changes during the reaction. It helps us understand how fast the reaction is happening.
+
+::: callout-note
+**Task:** Make a long version of the data and plot absorbance vs time.
+:::
+
+```{r}
+data_long <- data %>%
+  pivot_longer(cols = c(`0`:`120`), names_to = "time", values_to = "absorbance") %>%
+  mutate(time = as.numeric(time))
+
+ggplot(data_long, aes(x = time, y = absorbance, colour = Sample)) +
+  geom_point(alpha = 0.6, size = 2) +
+  geom_smooth(method ='l') +
+  labs(title = "Absorbance Over Time",
+       x = "Time (s)",
+       y = "Absorbance") +
+  theme_minimal()
+```
+
+### [What does this tell you about the rate of the reaction?]{style="color:red"}
+
+## Calculating Specific Enzyme Activity
+
+One of the key goals of the wet lab was to measure **citrate synthase activity**, a marker for mitochondrial function. However, raw absorbance rates don’t mean much on their own—we need to normalise them to protein content to make meaningful comparisons.
+
+We calculate **specific activity** as follows:
+
+``` text
+Specific activity = Amount TNB / min / mg protein
+```
+
+::: callout-note
+**Task:** Use `mutate()` to make a new column for Specific Activity.
+:::
+
+```{r}
+data <- data %>%
+  mutate(Specific_Activity = `Amount TNB/min (nM)` / `Protein (mg/mL) - from Bradford assay`)
+```
+
+## Class Data Analysis: Specific Activity of Citrate Synthase
+
+Now that you've calculated specific activity, we can move on to analysing the **class-wide dataset**. This combined data allows us to evaluate trends across all groups and gain a broader perspective on variation.
+
+## Make a Bar Plot of Class Results
+
+This plot shows how enzyme activity changes between samples in the class dataset.
+
+```{r}
+ggplot(data, aes(x = Sample, y = Specific_Activity, color = Sample)) +
+  geom_boxplot() +
+  labs(title = "Citrate Synthase Activity by Sample (Class Data)",
+       x = 'Sample',
+       y = "Specific Activity (nmol/min/mg)") +
+  theme_minimal() +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
+```
+
+### [Which samples had the highest activity?]{style="color:red"}
+
+------------------------------------------------------------------------
+
+## Compare Groups Using Faceting
+
+In R we have the ability to create a lot of graphs very quickly using something called **faceting**. Faceting creates a separate plot panel for each category in a grouping variable—this makes it easier to compare groups side-by-side without crowding the same graph.
+
+In this case, we can use `facet_wrap(~ GROUP)` to generate one boxplot per group. Each panel will show the different sample types (cytosol vs mitochondria) within that group. This helps us quickly spot patterns across the class, like whether healthy samples consistently show higher activity than diseased ones.
+
+```{r}
+ggplot(data, aes(x = Sample, y = Specific_Activity, color = Sample)) +
+  geom_boxplot() +
+  labs(title = "Citrate Synthase Activity by Sample (Faceted by GROUP)",
+       x = "Sample",
+       y = "Specific Activity (nmol/min/mg)") +
+  theme_minimal() +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank()) +
+  facet_wrap(~ GROUP)
+```
+
+We can facet in all sort so different ways, here in the below code we change our plot so we have every group togeather and facet by sample instead.
+
+```{r}
+ggplot(data, aes(x = GROUP, y = Specific_Activity)) +
+  geom_boxplot() +
+  labs(title = "Citrate Synthase Activity by Sample (Faceted by GROUP)",
+       x = "Sample",
+       y = "Specific Activity (nmol/min/mg)") +
+  theme_minimal() +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank()) +
+  facet_wrap(~ Sample)
+```
+
+## Compare Healthy vs Diseased Cells
+
+Group the class data by sample type (healthy or diseased) and fraction (cytosol or mitochondria) to get averages.
+
+
+::: callout-note
+**Task:** Make a table showing mean and standard deviation for each sample type across all groups.
+:::
+
+```{r}
+data %>%
+  group_by(Sample) %>%
+  summarise(mean = mean(Specific_Activity), sd = sd(Specific_Activity))
+```
+
+### [Question: What sample had the highest enzyme activity?]{style="color:red"}
+
+### [Question: What does this show about mitochondrial function?]{style="color:red"}
+
+### [Question: Can you detect an effect of disease?]{style="color:red"}
+
+## Summary
+
+By working with your own experimental data and combining it with class-wide results, you’ve learned how to:
+
+-   Import and explore real experimental datasets
+-   Calculate and interpret specific enzyme activity
+-   Use R to summarise biological variation
+-   Visualise group-level trends using scatter plots and boxplots
+-   Quickly analyse trends across data by using *faceting*
+
+This approach not only gives you hands-on experience with data science tools but also helps you understand how bioinformatics pipelines are used in real molecular biology research—from raw numbers to biological insight.
