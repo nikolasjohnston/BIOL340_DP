@@ -568,5 +568,137 @@
       "Themes a customisation in ggplot2",
       "Backgrounds"
     ]
+  },
+  {
+    "objectID": "pages/DP2/DP2_Final.html",
+    "href": "pages/DP2/DP2_Final.html",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysi",
+    "section": "",
+    "text": "In Dry Practical 1, you were introduced to the basics of handling biological data in R, using tidyverse functions and ggplot2 to visualise simple trends. That session was designed to help you become comfortable navigating RStudio, working with tabular data, and generating figures that communicate biological patterns clearly.\nIn this second dry practical, we’ll extend those skills by working with real experimental data that you generated in the wet lab. Specifically, we’ll use your results from the subcellular fractionation practical, where you separated healthy and diseased cells into mitochondrial and cytosolic fractions, then measured protein concentration and enzyme activity.\nThis practical will focus on:\n\nCalculating specific enzyme activity for each sample\nComparing the mitochondrial and cytosolic fractions from healthy vs diseased cells\nUsing dplyr tools to filter, summarise, and interpret biological data\nVisualising patterns across individual and class-wide datasets\n\nBy the end of this session, you’ll have created professional-quality plots and learned how data wrangling tools in R can help you test biological hypotheses.\n\n\n\n\n\n\nACTION REQUIRED\n\n\n\nOpen R studio on your computer and create a new r script for this class. If you are confused about how to do this refer to the introduction section of the BIOL340 practical website.",
+    "crumbs": [
+      "Dry Prac 2",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP2/DP2_Final.html#background-and-purpose",
+    "href": "pages/DP2/DP2_Final.html#background-and-purpose",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysi",
+    "section": "",
+    "text": "In Dry Practical 1, you were introduced to the basics of handling biological data in R, using tidyverse functions and ggplot2 to visualise simple trends. That session was designed to help you become comfortable navigating RStudio, working with tabular data, and generating figures that communicate biological patterns clearly.\nIn this second dry practical, we’ll extend those skills by working with real experimental data that you generated in the wet lab. Specifically, we’ll use your results from the subcellular fractionation practical, where you separated healthy and diseased cells into mitochondrial and cytosolic fractions, then measured protein concentration and enzyme activity.\nThis practical will focus on:\n\nCalculating specific enzyme activity for each sample\nComparing the mitochondrial and cytosolic fractions from healthy vs diseased cells\nUsing dplyr tools to filter, summarise, and interpret biological data\nVisualising patterns across individual and class-wide datasets\n\nBy the end of this session, you’ll have created professional-quality plots and learned how data wrangling tools in R can help you test biological hypotheses.\n\n\n\n\n\n\nACTION REQUIRED\n\n\n\nOpen R studio on your computer and create a new r script for this class. If you are confused about how to do this refer to the introduction section of the BIOL340 practical website.",
+    "crumbs": [
+      "Dry Prac 2",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP2/DP2_Final.html#visualizing-data-and-installing-and-loading-packages",
+    "href": "pages/DP2/DP2_Final.html#visualizing-data-and-installing-and-loading-packages",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysi",
+    "section": "Visualizing Data and Installing and Loading Packages",
+    "text": "Visualizing Data and Installing and Loading Packages\nR can make many types of plots. Let’s plot our nucleus sizes using ggplot2, which is included in the tidyverse.\nIf you haven’t installed the tidyverse package yet, you can do so via copying and running:\n\ninstall.packages(\"tidyverse\")\n\nWe also have to load the library by copying and running this line of code:\n\nlibrary(tidyverse)  # Loads ggplot2, dplyr, tidyr, and more\n\nWe are now set up to start looking at our data from Wet Lab 3",
+    "crumbs": [
+      "Dry Prac 2",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP2/DP2_Final.html#load-the-class-dataset",
+    "href": "pages/DP2/DP2_Final.html#load-the-class-dataset",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysi",
+    "section": "Load the Class Dataset",
+    "text": "Load the Class Dataset\n\nThis dataset has: - Absorbance readings every 10 seconds for each sample - The reaction rate already calculated - Protein concentration from the Bradford assay\n\n\n\n\n\n\n\nNote\n\n\n\nTask: Load the class dataset and view the column names.\n\n\n\ndata &lt;- read_csv(\"frac_data.csv\")\nhead(data)\n\n# A tibble: 6 × 22\n  GROUP  Sample    `0`   `10`   `20`   `30`   `40`  `50`  `60`  `70`  `80`  `90`\n  &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 G1 & … Negat…  0.001  0.001  0.002  0.002  0.002 0.002 0.002 0.002 0.002 0.002\n2 G1 & … Healt…  0.003  0.011  0.016  0.019  0.022 0.025 0.027 0.028 0.029 0.03 \n3 G1 & … Healt…  0      0.016  0.031  0.048  0.066 0.083 0.101 0.118 0.135 0.152\n4 G1 & … Disea… -0.012 -0.01  -0.007 -0.004 -0.002 0     0.002 0.005 0.007 0.009\n5 G1 & … Disea…  0      0.008  0.016  0.024  0.033 0.042 0.051 0.059 0.068 0.076\n6 G1 & … Posit…  0.178  0.408  0.498  0.544  0.58  0.61  0.637 0.663 0.688 0.708\n# ℹ 10 more variables: `100` &lt;dbl&gt;, `110` &lt;dbl&gt;, `120` &lt;dbl&gt;,\n#   `Equation of trendline` &lt;lgl&gt;, `Rate of Change (ΔA412/s)` &lt;dbl&gt;,\n#   `Rate of Change (ΔC)` &lt;dbl&gt;, `Amount TNB/s (M)` &lt;dbl&gt;,\n#   `Amount TNB/s (nM)` &lt;dbl&gt;, `Amount TNB/min (nM)` &lt;dbl&gt;,\n#   `Protein (mg/mL) - from Bradford assay` &lt;dbl&gt;",
+    "crumbs": [
+      "Dry Prac 2",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP2/DP2_Final.html#plot-the-absorbance-over-time",
+    "href": "pages/DP2/DP2_Final.html#plot-the-absorbance-over-time",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysi",
+    "section": "Plot the Absorbance Over Time",
+    "text": "Plot the Absorbance Over Time\nThis shows how absorbance (A412) changes during the reaction. It helps us understand how fast the reaction is happening.\n\n\n\n\n\n\nNote\n\n\n\nTask: Make a long version of the data and plot absorbance vs time.\n\n\n\ndata_long &lt;- data %&gt;%\n  pivot_longer(cols = c(`0`:`120`), names_to = \"time\", values_to = \"absorbance\") %&gt;%\n  mutate(time = as.numeric(time))\n\nggplot(data_long, aes(x = time, y = absorbance, colour = Sample)) +\n  geom_point(alpha = 0.6, size = 2) +\n  geom_smooth(method ='l') +\n  labs(title = \"Absorbance Over Time\",\n       x = \"Time (s)\",\n       y = \"Absorbance\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nWhat does this tell you about the rate of the reaction?",
+    "crumbs": [
+      "Dry Prac 2",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP2/DP2_Final.html#calculating-specific-enzyme-activity",
+    "href": "pages/DP2/DP2_Final.html#calculating-specific-enzyme-activity",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysi",
+    "section": "Calculating Specific Enzyme Activity",
+    "text": "Calculating Specific Enzyme Activity\nOne of the key goals of the wet lab was to measure citrate synthase activity, a marker for mitochondrial function. However, raw absorbance rates don’t mean much on their own—we need to normalise them to protein content to make meaningful comparisons.\nWe calculate specific activity as follows:\nSpecific activity = Amount TNB / min / mg protein\n\n\n\n\n\n\nNote\n\n\n\nTask: Use mutate() to make a new column for Specific Activity.\n\n\n\ndata &lt;- data %&gt;%\n  mutate(Specific_Activity = `Amount TNB/min (nM)` / `Protein (mg/mL) - from Bradford assay`)",
+    "crumbs": [
+      "Dry Prac 2",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP2/DP2_Final.html#class-data-analysis-specific-activity-of-citrate-synthase",
+    "href": "pages/DP2/DP2_Final.html#class-data-analysis-specific-activity-of-citrate-synthase",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysi",
+    "section": "Class Data Analysis: Specific Activity of Citrate Synthase",
+    "text": "Class Data Analysis: Specific Activity of Citrate Synthase\nNow that you’ve calculated specific activity, we can move on to analysing the class-wide dataset. This combined data allows us to evaluate trends across all groups and gain a broader perspective on variation.",
+    "crumbs": [
+      "Dry Prac 2",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP2/DP2_Final.html#make-a-bar-plot-of-class-results",
+    "href": "pages/DP2/DP2_Final.html#make-a-bar-plot-of-class-results",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysi",
+    "section": "Make a Bar Plot of Class Results",
+    "text": "Make a Bar Plot of Class Results\nThis plot shows how enzyme activity changes between samples in the class dataset.\n\nggplot(data, aes(x = Sample, y = Specific_Activity, color = Sample)) +\n  geom_boxplot() +\n  labs(title = \"Citrate Synthase Activity by Sample (Class Data)\",\n       x = 'Sample',\n       y = \"Specific Activity (nmol/min/mg)\") +\n  theme_minimal() +\n  theme(axis.text.x = element_blank(),\n        axis.ticks.x = element_blank())\n\n\n\n\n\n\n\n\n\nWhich samples had the highest activity?",
+    "crumbs": [
+      "Dry Prac 2",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP2/DP2_Final.html#compare-groups-using-faceting",
+    "href": "pages/DP2/DP2_Final.html#compare-groups-using-faceting",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysi",
+    "section": "Compare Groups Using Faceting",
+    "text": "Compare Groups Using Faceting\nIn R we have the ability to create a lot of graphs very quickly using something called faceting. Faceting creates a separate plot panel for each category in a grouping variable—this makes it easier to compare groups side-by-side without crowding the same graph.\nIn this case, we can use facet_wrap(~ GROUP) to generate one boxplot per group. Each panel will show the different sample types (cytosol vs mitochondria) within that group. This helps us quickly spot patterns across the class, like whether healthy samples consistently show higher activity than diseased ones.\n\nggplot(data, aes(x = Sample, y = Specific_Activity, color = Sample)) +\n  geom_boxplot() +\n  labs(title = \"Citrate Synthase Activity by Sample (Faceted by GROUP)\",\n       x = \"Sample\",\n       y = \"Specific Activity (nmol/min/mg)\") +\n  theme_minimal() +\n  theme(axis.text.x = element_blank(),\n        axis.ticks.x = element_blank()) +\n  facet_wrap(~ GROUP)\n\n\n\n\n\n\n\n\nWe can facet in all sort so different ways, here in the below code we change our plot so we have every group togeather and facet by sample instead.\n\nggplot(data, aes(x = GROUP, y = Specific_Activity)) +\n  geom_boxplot() +\n  labs(title = \"Citrate Synthase Activity by Sample (Faceted by GROUP)\",\n       x = \"Sample\",\n       y = \"Specific Activity (nmol/min/mg)\") +\n  theme_minimal() +\n  theme(axis.text.x = element_blank(),\n        axis.ticks.x = element_blank()) +\n  facet_wrap(~ Sample)",
+    "crumbs": [
+      "Dry Prac 2",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP2/DP2_Final.html#compare-healthy-vs-diseased-cells",
+    "href": "pages/DP2/DP2_Final.html#compare-healthy-vs-diseased-cells",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysi",
+    "section": "Compare Healthy vs Diseased Cells",
+    "text": "Compare Healthy vs Diseased Cells\nGroup the class data by sample type (healthy or diseased) and fraction (cytosol or mitochondria) to get averages.\n\n\n\n\n\n\nNote\n\n\n\nTask: Make a table showing mean and standard deviation for each sample type across all groups.\n\n\n\ndata %&gt;%\n  group_by(Sample) %&gt;%\n  summarise(mean = mean(Specific_Activity), sd = sd(Specific_Activity))\n\n# A tibble: 6 × 3\n  Sample                                   mean    sd\n  &lt;chr&gt;                                   &lt;dbl&gt; &lt;dbl&gt;\n1 Diseased cells - cytosolic fraction      4.42  1.01\n2 Diseased cells - mitochondrial fraction 21.6   6.44\n3 Healthy cells - cytosolic fraction       6.30  1.94\n4 Healthy cells - mitochondrial fraction  40.0  12.3 \n5 Negative control                        75.5  45.7 \n6 Positive control                        86.9  29.4 \n\n\n\nQuestion: What sample had the highest enzyme activity?\n\n\nQuestion: What does this show about mitochondrial function?\n\n\nQuestion: Can you detect an effect of disease?",
+    "crumbs": [
+      "Dry Prac 2",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP2/DP2_Final.html#summary",
+    "href": "pages/DP2/DP2_Final.html#summary",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysi",
+    "section": "Summary",
+    "text": "Summary\nBy working with your own experimental data and combining it with class-wide results, you’ve learned how to:\n\nImport and explore real experimental datasets\nCalculate and interpret specific enzyme activity\nUse R to summarise biological variation\nVisualise group-level trends using scatter plots and boxplots\nQuickly analyse trends across data by using faceting\n\nThis approach not only gives you hands-on experience with data science tools but also helps you understand how bioinformatics pipelines are used in real molecular biology research—from raw numbers to biological insight.",
+    "crumbs": [
+      "Dry Prac 2",
+      "Dry Prac 1 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/1/3_filter.html",
+    "href": "pages/1/3_filter.html",
+    "title": "The Filter Function",
+    "section": "",
+    "text": "The filter() command is used to remove rows from your data. This can be useful for removing zeros or “no data/NA’s”, or for restricting certain variables in a dataset for an analysis.\nThis follows the similar syntax as mutate() whereby we specify what dataset we want to filter, followed by how we want to filter.\n\n#The following examples will just keep overwriting the new object \"weeds_filtered\"\n\nweeds_filtered &lt;- filter(weeds, weeds == \"native\") \n# Gives us only the rows which are exactly \"native\" in the weeds column. \n\nweeds_filtered &lt;- filter(weeds, weeds != \"weed\") \n# This gives us the same result as their are only two levels of that column. The != means \"not equal to\"\n\nweeds_filtered &lt;- filter(weeds ,flowers &gt; 20) \n# Flowers greater than 20 m3\n\nSo far, we have covered renaming columns, adding new columns and filtering by rows. The next two commands are focused on selecting specific columns and creating new data tables.",
+    "crumbs": [
+      "Pre-Lab 2 - Data manipulation",
+      "The Filter function"
+    ]
   }
 ]

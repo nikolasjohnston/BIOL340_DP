@@ -49,13 +49,36 @@ website:
             text: Columns
             
 
-            
+         
             
       - section: "Dry Prac 1"
         contents: 
         - href: pages/DP1/DP1_Final.qmd
           text: Dry Prac 1 Notes
 
+
+      - section: "Pre-Lab 2 - Data manipulation"
+        contents:
+          - href: pages/1/1_rename.qmd
+            text: The Rename function
+          - href: pages/1/2_mutate.qmd
+            text: The Mutate function
+          - href: pages/1/3_filter.qmd
+            text: The Filter function
+          - href: pages/1/4_Select.qmd
+            text: The Select function
+          - href: pages/1/5_joins.qmd
+            text: The Joins function
+          - href: pages/1/7_summarise.qmd
+            text: The Summarise function
+          - href: pages/1/8_pipe.qmd
+            text: The Pipe function
+          
+      - section: "Dry Prac 2"
+        contents: 
+          - href: pages/DP2/DP2_Final.qmd
+            text: Dry Prac 1 Notes
+  
       - section: "Extra help with Graphics"
         contents:
         - href: pages/2/1_ggplotgrammar.qmd
