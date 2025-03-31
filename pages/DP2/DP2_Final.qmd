@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 In Dry Practical 1, you were introduced to the basics of handling biological data in R, using tidyverse functions and `ggplot2` to visualise simple trends. That session was designed to help you become comfortable navigating RStudio, working with tabular data, and generating figures that communicate biological patterns clearly.
 
-In this second dry practical, we’ll extend those skills by working with **real experimental data** that you generated in the wet lab. Specifically, we’ll use your results from the **subcellular fractionation practical**, where you separated healthy and diseased cells into mitochondrial and cytosolic fractions, then measured protein concentration and enzyme activity.
+In this second dry practical, we’ll extend those skills by working with **experimental data** that you generated in the wet lab. Specifically, we’ll use your results from the **subcellular fractionation practical**, where you separated healthy and diseased cells into mitochondrial and cytosolic fractions, then measured protein concentration and enzyme activity.
 
 This practical will focus on:
 
@@ -75,14 +75,14 @@ data_long <- data %>%
 
 ggplot(data_long, aes(x = time, y = absorbance, colour = Sample)) +
   geom_point(alpha = 0.6, size = 2) +
-  geom_smooth(method ='l') +
+  geom_smooth(method ='lm') +
   labs(title = "Absorbance Over Time",
        x = "Time (s)",
        y = "Absorbance") +
   theme_minimal()
 ```
 
-### [What does this tell you about the rate of the reaction?]{style="color:red"}
+### [What does this tell you about the rate of the reactions for the different sample types?]{style="color:red"}
 
 ## Calculating Specific Enzyme Activity
 
@@ -149,7 +149,7 @@ We can facet in all sort so different ways, here in the below code we change our
 ```{r}
 ggplot(data, aes(x = GROUP, y = Specific_Activity)) +
   geom_boxplot() +
-  labs(title = "Citrate Synthase Activity by Sample (Faceted by GROUP)",
+  labs(title = "Citrate Synthase Activity by Sample (Faceted by SAMPLE)",
        x = "Sample",
        y = "Specific Activity (nmol/min/mg)") +
   theme_minimal() +

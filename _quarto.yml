@@ -67,8 +67,6 @@ website:
             text: The Filter function
           - href: pages/1/4_Select.qmd
             text: The Select function
-          - href: pages/1/5_joins.qmd
-            text: The Joins function
           - href: pages/1/7_summarise.qmd
             text: The Summarise function
           - href: pages/1/8_pipe.qmd
@@ -85,6 +83,8 @@ website:
           text: Graphics in ggplot2
         - href: pages/2/2_basicplots.qmd
           text: Basic plots
+        - href: pages/supplementary/cheetsheet.qmd
+          text: Additional ggplot2 support
             
         - section: "Themes a customisation in ggplot2"
           contents:        
@@ -101,25 +101,6 @@ website:
           - href: pages/2/Themes/8_properexamples.qmd
             text: Examples
 
-        - section: "Data Manipulation"
-          contents:
-          - href: pages/1/1_rename.qmd
-            text: Renaming data
-          - href: pages/1/2_mutate.qmd
-            text: The Mutate function
-          - href: pages/1/4_select.qmd
-            text: The Select function
-          - href: pages/1/5_joins.qmd
-            text: The Joins function
-          - href: pages/1/7_summarise.qmd
-            text: The Summarise function
-          - href: pages/1/8_pipe.qmd
-            text: The Pipe function
-            
-      - section: "Extra help!"
-        contents:
-        - href: pages/supplementary/cheetsheet.qmd
-          text: Additional ggplot2 support
 
 format:
   html:

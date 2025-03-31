@@ -2,6 +2,7 @@
 title: "Columns"
 weight: 9
 date: '2018-10-26'
+author: "Mitchell Stares"
 output: blogdown::html_page
 editor_options:
   chunk_output_type: console
@@ -73,4 +74,3 @@ I recommend using the **factor()** command and specifying the levels using the s
 :::
 
 If you want to change something to a continuous (numeric, integer etc.) its a little more complicated, but in general R shouldn't mess this up too often. A quick google search or `?numeric` will help answer this.
-

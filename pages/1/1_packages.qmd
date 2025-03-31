@@ -2,6 +2,7 @@
 title: "Packages"
 weight: 7
 date: '2018-10-26'
+author: "Mitchell Stares"
 output: blogdown::html_page
 editor_options:
   chunk_output_type: console
