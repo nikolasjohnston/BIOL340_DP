@@ -47,9 +47,19 @@ library(tidyverse)  # Loads ggplot2, dplyr, tidyr, and more
 
 We are now set up to start looking at our data from **Wet Lab 3**
 
-## Load the Class Dataset
+## Experiment reminder
 
-> This dataset has: - Absorbance readings every 10 seconds for each sample - The reaction rate already calculated - Protein concentration from the Bradford assay
+To remind you of what you completed during wet lab 3 and what data we will be dealing with today we have the below experimental workflow. ![](subcellular_prac.png)
+
+You should have two types of experimental data.
+
+1.   The results of the bradford assay that will allow us to work out the protein concentration of each sample. *This is important for calculating the specific activity of Citrate Synthase in each sample*.
+
+2.  The Citrate Synthase activity assay data, which is in the form of absorbance over time. We will use this to calculate a rate of activity.
+
+    ## Load the Class Dataset
+
+> This dataset has: 1) Protein concentration from the Bradford assay, 2) Absorbance readings every 10 seconds for each sample, 3) The reaction rate already calculated
 
 ::: callout-note
 **Task:** Load the class dataset and view the column names.
@@ -161,7 +171,6 @@ ggplot(data, aes(x = GROUP, y = Specific_Activity)) +
 ## Compare Healthy vs Diseased Cells
 
 Group the class data by sample type (healthy or diseased) and fraction (cytosol or mitochondria) to get averages.
-
 
 ::: callout-note
 **Task:** Make a table showing mean and standard deviation for each sample type across all groups.

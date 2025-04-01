@@ -193,10 +193,9 @@ Now we can analyse this data in interesting ways using ggplot2 a package specifi
 
 A boxplot helps compare data distributions across categories.
 
-The below packge function `ggplot()` required a few things first we give it our data variable also known as the data frame `ggplot(Class_data)`. Then we need to tell it what we actually want plotted from this data set, or the asthetics of the graph, this is shortened to list `aes()`, i.e. `ggplot(Class_data, aes(x = x-axis, y = y axis)`. In the below we also tell it to treat the column `cell_concentration` in our data as a numeric factor this just means it will plot it correctly. 
+The below packge function `ggplot()` required a few things first we give it our data variable also known as the data frame `ggplot(Class_data)`. Then we need to tell it what we actually want plotted from this data set, or the asthetics of the graph, this is shortened to list `aes()`, i.e. `ggplot(Class_data, aes(x = x-axis, y = y axis)`. In the below we also tell it to treat the column `cell_concentration` in our data as a numeric factor this just means it will plot it correctly.
 
-We also will add a **geom** to our plot, this is short for a geometric object - which basically means dots, lines, curves or any other thing we might like to plot. For now we will add a boxplot geom using `geom_boxplot`.
->Data scientists are not very creative when it comes to naming things, but this means with a bit of thinking, googling or AI searching we can pretty quickly work out what a function or option is doing. 
+We also will add a **geom** to our plot, this is short for a geometric object - which basically means dots, lines, curves or any other thing we might like to plot. For now we will add a boxplot geom using `geom_boxplot`. \>Data scientists are not very creative when it comes to naming things, but this means with a bit of thinking, googling or AI searching we can pretty quickly work out what a function or option is doing.
 
 ```{r box-plots}
 p <- ggplot(Class_data, aes(x = treatment, y = as.numeric(cell_concentration))) +
@@ -206,14 +205,13 @@ p <- ggplot(Class_data, aes(x = treatment, y = as.numeric(cell_concentration))) 
 p
 ```
 
-
 ::: callout-note
 ### Test your understanding {style="color: red"}
-If you are curious, try changing the aesthetics for the y axis to just be y = cell_concentration to see how it tries to plot the data. What is going on? 
+
+If you are curious, try changing the aesthetics for the y axis to just be y = cell_concentration to see how it tries to plot the data. What is going on?
 :::
 
-We can also tidy up this graph and improve how it looks by using options under `labels()` which allows us to add axes and figure labels. We can also use `theme()` which allows us to manipulate different visuals in the graph, in this instance I will use theme_minimal which is a theme included with ggplot, but there are a huge number of customisations you can do by manipulating options within `theme()`. 
-Observe the below changes.
+We can also tidy up this graph and improve how it looks by using options under `labels()` which allows us to add axes and figure labels. We can also use `theme()` which allows us to manipulate different visuals in the graph, in this instance I will use theme_minimal which is a theme included with ggplot, but there are a huge number of customisations you can do by manipulating options within `theme()`. Observe the below changes.
 
 ```{r}
 #coloured boxplot
@@ -237,15 +235,13 @@ p
 
 > Make a custom graph with interesting aesthetics. Use generative AI (e.g., ChatGPT or Copilot) to get ideas on what to change (colors, theme, legend placement, etc.). You can copy and paste your code into co-pilot and chatGTP and ask for it to change things based on what you would like to see.
 
-
 # Graphing Wet Lab 2 Microplate Data in R
 
 Prior to this dry lab we have run through the data analysis in Excel, we are now going to try importing the data into R and graphing using the skills you have developed in ggplot2
 
-## Question 2{style="color: red"}
+## Question 2 {style="color: red"}
 
 > **Reflect:** What do you think a barrier to analysis the Excel processed data in R will be? What do you think the advantages of using R could be?
-
 
 ## Thinking outside the cell, reading and formatting your data
 
@@ -254,7 +250,7 @@ So far you have been working with your data in cells, using the tools available 
 ::: callout-note
 ### ACTION REQUIRED {style="color: red"}
 
-First we need to convert our excel data from a spreadsheet (or .xls) file to a comma seperated text file (or csv.). 
+First we need to convert our excel data from a spreadsheet (or .xls) file to a comma seperated text file (or csv.).
 
 Open the class data from wetlab 2 and open it in Excel. You can now use `save as` in Excel and choose the option to save as a comma separated file.
 
@@ -290,14 +286,11 @@ head(plate_data_MTS)
 
 > What can you notice is different between how your data was formatted in excel compared to the data we have prepared for you to import into R? Why might this be important.
 
-
 ## Plotting the Results
-Now lets make a different type of plot. Let’s create a scatter plot of ***the calcein-AM** using **ggplot2** to visualize how Adjusted Absorbance changes with Cell Concentration.
 
-In the below plot:
-- `geom_point()` adds scatter plot points.
-- `labs()` adds titles and axis labels.
-- `theme_minimal()` is a clean, modern theme that removes a lot of unnecessary formating.
+Now lets make a different type of plot. Let’s create a scatter plot of \***the calcein-AM** using **ggplot2** to visualize how Adjusted Absorbance changes with Cell Concentration.
+
+In the below plot: - `geom_point()` adds scatter plot points. - `labs()` adds titles and axis labels. - `theme_minimal()` is a clean, modern theme that removes a lot of unnecessary formating.
 
 ::: callout-note
 You will notice that we have some options within `geom_point()` play around with them and see what happens. Why not check other options you could include here by googling or asking AI. You can do some pretty crazy things with custom points or by using `jitter`.
@@ -322,14 +315,13 @@ Our plot now has points! But it would also be great to colour by the cell line t
 
 ::: callout-note
 ### ACTION REQUIRED {style="color: red"}
+
 Based on the code you made for boxplots above, how would you colour the data in this plot by cell type?
 :::
-
 
 ### Adding a trendline
 
 Our plot could also be improved by adding in a trendline to visualise the data. We can do this using the function `geom_smooth()`. Here we are going to apply a linear model or **'lm'** as our method because we want a straight line. We will also set the option `se` or standard error to = **FALSE**
-
 
 ```{r}
 # Scatter plot of Adjusted Absorbance vs. Dilution
@@ -349,18 +341,18 @@ ggplot(plate_data_cAM, aes(x = Dilution, y = Absorbance, color = Cell_Type)) +
 
 ::: callout-note
 ### Test your understanding {style="color: red"}
+
 Have a look (using google or AI) at some of the other types of methods you can use to add a line geom to your plots. One to get you started is `method = "loess"`
 :::
 
-
-
 ### Log Scale Example
-Our plot looks pretty squashed in the left hand side (lower concentrations). Let's fix that by making it a log graph. This is very easy to do! 
+
+Our plot looks pretty squashed in the left hand side (lower concentrations). Let's fix that by making it a log graph. This is very easy to do!
 
 ::: callout-note
-### ACTION REQUIRED 
-Let's add in a lione of code for `scale_x_log10()`. Don't forget to put a `+` at the end so that the computer reads it as part of you graph function. 
-You will notice I also changed the geom for the line below to dashed, because *why not*. Feel free to change it back or look at other options. 
+### ACTION REQUIRED
+
+Let's add in a lione of code for `scale_x_log10()`. Don't forget to put a `+` at the end so that the computer reads it as part of you graph function. You will notice I also changed the geom for the line below to dashed, because *why not*. Feel free to change it back or look at other options.
 :::
 
 ```{r}
@@ -379,19 +371,20 @@ ggplot(plate_data_cAM, aes(x = Dilution, y = Absorbance, color = Cell_Type)) +
 
 ## Estimating the Linear Range
 
-We can also further improve our standard curves by finding the linear portion of the trendline to determine the sensitivity range of the assays. Let's do this by filtering our data for specific dilutions using the function `filter()`. 
+We can also further improve our standard curves by finding the linear portion of the trendline to determine the sensitivity range of the assays. Let's do this by filtering our data for specific dilutions using the function `filter()`.
 
 ::: callout-note
-### ACTION REQUIRED 
+### ACTION REQUIRED
+
 Copy the below code and change the filtering range to something suitable for your data.
+
 ```{r}
 linear_data_cAM <- plate_data_cAM %>%
   filter(Dilution >= 1000 & Dilution <= 500000)
 ```
 :::
 
-
-Now let's try reploting our graph using the new `linear_data_cAM` variable. 
+Now let's try reploting our graph using the new `linear_data_cAM` variable.
 
 ```{r}
 # Plot linear region
@@ -410,7 +403,6 @@ ggplot(linear_data_cAM, aes(x = Dilution, y = Absorbance, color = Cell_Type)) +
 ## Activity 2 {style="color: red"}
 
 > Customize your plot to improve its appearance. - Adjust point size and color - Modify or remove legends - Evaluate whether you need to show all data labels or tick marks - Explore other themes (e.g., `theme_bw()`, `theme_classic()`). Feel free to look at the ggplot2 cheat sheet available on the dry prac website, we have also provided extra information for plotting under "extra help with graphics"
-
 
 ## Activity 3 {style="color: red"}
 
