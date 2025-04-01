@@ -406,7 +406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#what-does-this-tell-you-about-the-rate-of-the-reactions-for-the-different-sample-types" id="toc-what-does-this-tell-you-about-the-rate-of-the-reactions-for-the-different-sample-types" class="nav-link" data-scroll-target="#what-does-this-tell-you-about-the-rate-of-the-reactions-for-the-different-sample-types"><span style="color:red">What does this tell you about the rate of the reactions for the different sample types?</span></a></li>
   </ul></li>
-  <li><a href="#calculating-specific-enzyme-activity" id="toc-calculating-specific-enzyme-activity" class="nav-link" data-scroll-target="#calculating-specific-enzyme-activity">Calculating Specific Enzyme Activity</a></li>
+  <li><a href="#calculation-help-and-determining-specific-enzyme-activity" id="toc-calculation-help-and-determining-specific-enzyme-activity" class="nav-link" data-scroll-target="#calculation-help-and-determining-specific-enzyme-activity">Calculation help and determining specific enzyme activity</a></li>
   <li><a href="#class-data-analysis-specific-activity-of-citrate-synthase" id="toc-class-data-analysis-specific-activity-of-citrate-synthase" class="nav-link" data-scroll-target="#class-data-analysis-specific-activity-of-citrate-synthase">Class Data Analysis: Specific Activity of Citrate Synthase</a></li>
   <li><a href="#make-a-bar-plot-of-class-results" id="toc-make-a-bar-plot-of-class-results" class="nav-link" data-scroll-target="#make-a-bar-plot-of-class-results">Make a Bar Plot of Class Results</a>
   <ul class="collapse">
@@ -535,10 +535,10 @@ Note
 5 G1 &amp; … Disea…  0      0.008  0.016  0.024  0.033 0.042 0.051 0.059 0.068 0.076
 6 G1 &amp; … Posit…  0.178  0.408  0.498  0.544  0.58  0.61  0.637 0.663 0.688 0.708
 # ℹ 10 more variables: `100` &lt;dbl&gt;, `110` &lt;dbl&gt;, `120` &lt;dbl&gt;,
-#   `Equation of trendline` &lt;lgl&gt;, `Rate of Change (ΔA412/s)` &lt;dbl&gt;,
-#   `Rate of Change (ΔC)` &lt;dbl&gt;, `Amount TNB/s (M)` &lt;dbl&gt;,
-#   `Amount TNB/s (nM)` &lt;dbl&gt;, `Amount TNB/min (nM)` &lt;dbl&gt;,
-#   `Protein (mg/mL) - from Bradford assay` &lt;dbl&gt;</code></pre>
+#   `rate of change` &lt;dbl&gt;, `concentration change` &lt;dbl&gt;,
+#   `amount TNB/s (M)` &lt;dbl&gt;, `amount TNB/s (nM)` &lt;dbl&gt;,
+#   `amount TNB/min (nM)` &lt;dbl&gt;, `protein concentration` &lt;dbl&gt;,
+#   `protein amount` &lt;dbl&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -582,11 +582,55 @@ Note
 <h3 class="anchored" data-anchor-id="what-does-this-tell-you-about-the-rate-of-the-reactions-for-the-different-sample-types"><span style="color:red">What does this tell you about the rate of the reactions for the different sample types?</span></h3>
 </section>
 </section>
-<section id="calculating-specific-enzyme-activity" class="level2">
-<h2 class="anchored" data-anchor-id="calculating-specific-enzyme-activity">Calculating Specific Enzyme Activity</h2>
+<section id="calculation-help-and-determining-specific-enzyme-activity" class="level2">
+<h2 class="anchored" data-anchor-id="calculation-help-and-determining-specific-enzyme-activity">Calculation help and determining specific enzyme activity</h2>
 <p>One of the key goals of the wet lab was to measure <strong>citrate synthase activity</strong>, a marker for mitochondrial function. However, raw absorbance rates don’t mean much on their own—we need to normalise them to protein content to make meaningful comparisons.</p>
 <p>We calculate <strong>specific activity</strong> as follows:</p>
 <pre class="text"><code>Specific activity = Amount TNB / min / mg protein</code></pre>
+<ol type="1">
+<li><p>We can use the <code>mutate()</code> function to do some of the maths for us on the data set as a whole. First we need to work out the rate, which we have completed for you based on the line equation <code>y = mx + b</code>, where m = rate of change.</p></li>
+<li><p>Once we know the rate of change we can then work our change in concentration over time by using the beer-lambert law or <strong><code>A = ϵ × l × c</code></strong>, we know our absorbance <code>A</code>, and our path length <code>l = 1</code>. The extinction co-efficient (e) for TNB (412) is <code>e = 13600 M-1 cm-1</code>. So here we just need to rearrange the equation such that it equals <strong><code>A/e = c</code></strong>. In other words we just divide our absorbance values by 13600</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">concentration change(ΔC/s)</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">rate of change</span><span class="st">`</span> <span class="sc">/</span> <span class="dv">13600</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>We can then convert this to an amount (in mole) of TNB produced/min. <code>Use A = C * V (note: 1 ml = 0.001 L)</code></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">amount TNB/s(M)</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">concentration change(ΔC/s)</span><span class="st">`</span> <span class="sc">*</span> <span class="fl">0.001</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>To get to nanomole nM we just times this by 10^9</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">amount TNB/s(nM)</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">amount TNB/s(M)</span><span class="st">`</span> <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="5" type="1">
+<li>We can then convert this to amount/min rather than seconds by multiplying by 60</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">amount TNB/min(nM))</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">amount TNB/s(nM)</span><span class="st">`</span> <span class="sc">*</span> <span class="dv">60</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="6" type="1">
+<li>Now to get to specific activity we need to tie this amount value back to the protein concentration in our samples. This we calculated using a standard curve as <code>mg/mL</code>. So to get to amount in <code>mg</code> we need to times by the volume added, which in our case was 50 uL or 0.05 mL.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">protein amount)</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">protein concentration</span><span class="st">`</span> <span class="sc">*</span> <span class="fl">0.05</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="7" type="1">
+<li>Finally we can devide dividing your final Amount TNB(nm) data by the Protein amount (mg) column. This means your new column will be Amount TNB/min/mg.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">specific_activity =</span> <span class="st">`</span><span class="at">amount TNB/s(nM)</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">protein amount</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here the code is dividing your final Amount TNB/min data by the Protein amount (mg) column. This means your new column will be Amount TNB/min/mg.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -597,12 +641,8 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Task:</strong> Use <code>mutate()</code> to make a new column for Specific Activity.</p>
+<p><strong>Task:</strong> Using the steps above calculate specific activity for the class data.</p>
 </div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Specific_Activity =</span> <span class="st">`</span><span class="at">Amount TNB/min (nM)</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">Protein (mg/mL) - from Bradford assay</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="class-data-analysis-specific-activity-of-citrate-synthase" class="level2">
@@ -613,18 +653,18 @@ Note
 <h2 class="anchored" data-anchor-id="make-a-bar-plot-of-class-results">Make a Bar Plot of Class Results</h2>
 <p>This plot shows how enzyme activity changes between samples in the class dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Sample, <span class="at">y =</span> Specific_Activity, <span class="at">color =</span> Sample)) <span class="sc">+</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Citrate Synthase Activity by Sample (Class Data)"</span>,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">'Sample'</span>,</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Specific Activity (nmol/min/mg)"</span>) <span class="sc">+</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Sample, <span class="at">y =</span> specific_activity, <span class="at">color =</span> Sample)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Citrate Synthase Activity by Sample (Class Data)"</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">'Sample'</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Specific Activity (nmol/min/mg)"</span>) <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DP2_Final_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="DP2_Final_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -639,38 +679,38 @@ Note
 <p>In R we have the ability to create a lot of graphs very quickly using something called <strong>faceting</strong>. Faceting creates a separate plot panel for each category in a grouping variable—this makes it easier to compare groups side-by-side without crowding the same graph.</p>
 <p>In this case, we can use <code>facet_wrap(~ GROUP)</code> to generate one boxplot per group. Each panel will show the different sample types (cytosol vs mitochondria) within that group. This helps us quickly spot patterns across the class, like whether healthy samples consistently show higher activity than diseased ones.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Sample, <span class="at">y =</span> Specific_Activity, <span class="at">color =</span> Sample)) <span class="sc">+</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Citrate Synthase Activity by Sample (Faceted by GROUP)"</span>,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Sample"</span>,</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Specific Activity (nmol/min/mg)"</span>) <span class="sc">+</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> GROUP)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Sample, <span class="at">y =</span> specific_activity, <span class="at">color =</span> Sample)) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Citrate Synthase Activity by Sample (Faceted by GROUP)"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Sample"</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Specific Activity (nmol/min/mg)"</span>) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> GROUP)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DP2_Final_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="DP2_Final_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>We can facet in all sort so different ways, here in the below code we change our plot so we have every group togeather and facet by sample instead.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> GROUP, <span class="at">y =</span> Specific_Activity)) <span class="sc">+</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Citrate Synthase Activity by Sample (Faceted by SAMPLE)"</span>,</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Sample"</span>,</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Specific Activity (nmol/min/mg)"</span>) <span class="sc">+</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Sample)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> GROUP, <span class="at">y =</span> specific_activity)) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Citrate Synthase Activity by Sample (Faceted by SAMPLE)"</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Sample"</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Specific Activity (nmol/min/mg)"</span>) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Sample)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DP2_Final_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="DP2_Final_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -693,19 +733,19 @@ Note
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Sample) <span class="sc">%&gt;%</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(Specific_Activity), <span class="at">sd =</span> <span class="fu">sd</span>(Specific_Activity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Sample) <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(specific_activity), <span class="at">sd =</span> <span class="fu">sd</span>(specific_activity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
-  Sample                                   mean    sd
-  &lt;chr&gt;                                   &lt;dbl&gt; &lt;dbl&gt;
-1 Diseased cells - cytosolic fraction      4.42  1.01
-2 Diseased cells - mitochondrial fraction 21.6   6.44
-3 Healthy cells - cytosolic fraction       6.30  1.94
-4 Healthy cells - mitochondrial fraction  40.0  12.3 
-5 Negative control                        75.5  45.7 
-6 Positive control                        86.9  29.4 </code></pre>
+  Sample                                   mean     sd
+  &lt;chr&gt;                                   &lt;dbl&gt;  &lt;dbl&gt;
+1 Diseased cells - cytosolic fraction      1.47  0.337
+2 Diseased cells - mitochondrial fraction  7.20  2.15 
+3 Healthy cells - cytosolic fraction       2.10  0.645
+4 Healthy cells - mitochondrial fraction  13.3   4.09 
+5 Negative control                        25.2  15.2  
+6 Positive control                        29.0   9.80 </code></pre>
 </div>
 </div>
 <section id="question-what-sample-had-the-highest-enzyme-activity" class="level3">

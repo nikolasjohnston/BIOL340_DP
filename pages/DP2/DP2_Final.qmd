@@ -53,7 +53,7 @@ To remind you of what you completed during wet lab 3 and what data we will be de
 
 You should have two types of experimental data.
 
-1.   The results of the bradford assay that will allow us to work out the protein concentration of each sample. *This is important for calculating the specific activity of Citrate Synthase in each sample*.
+1.  The results of the bradford assay that will allow us to work out the protein concentration of each sample. *This is important for calculating the specific activity of Citrate Synthase in each sample*.
 
 2.  The Citrate Synthase activity assay data, which is in the form of absorbance over time. We will use this to calculate a rate of activity.
 
@@ -94,7 +94,7 @@ ggplot(data_long, aes(x = time, y = absorbance, colour = Sample)) +
 
 ### [What does this tell you about the rate of the reactions for the different sample types?]{style="color:red"}
 
-## Calculating Specific Enzyme Activity
+## Calculation help and determining specific enzyme activity
 
 One of the key goals of the wet lab was to measure **citrate synthase activity**, a marker for mitochondrial function. However, raw absorbance rates don’t mean much on their own—we need to normalise them to protein content to make meaningful comparisons.
 
@@ -104,14 +104,56 @@ We calculate **specific activity** as follows:
 Specific activity = Amount TNB / min / mg protein
 ```
 
-::: callout-note
-**Task:** Use `mutate()` to make a new column for Specific Activity.
-:::
+1.  We can use the `mutate()` function to do some of the maths for us on the data set as a whole. First we need to work out the rate, which we have completed for you based on the line equation `y = mx + b`, where m = rate of change.
+
+2.  Once we know the rate of change we can then work our change in concentration over time by using the beer-lambert law or **`A = ϵ × l × c`**, we know our absorbance `A`, and our path length `l = 1`. The extinction co-efficient (e) for TNB (412) is `e = 13600 M-1 cm-1`. So here we just need to rearrange the equation such that it equals **`A/e = c`**. In other words we just divide our absorbance values by 13600
 
 ```{r}
 data <- data %>%
-  mutate(Specific_Activity = `Amount TNB/min (nM)` / `Protein (mg/mL) - from Bradford assay`)
+  mutate(`concentration change(ΔC/s)` = `rate of change` / 13600)
 ```
+
+3. We can then convert this to an amount (in mole) of TNB produced/min. `Use A = C * V (note: 1 ml = 0.001 L)`
+
+```{r}
+data <- data %>%
+  mutate(`amount TNB/s(M)` = `concentration change(ΔC/s)` * 0.001)
+```
+
+4. To get to nanomole nM we just times this by 10^9
+
+```{r}
+data <- data %>%
+  mutate(`amount TNB/s(nM)` = `amount TNB/s(M)` * 10^9)
+```
+
+5. We can then convert this to amount/min rather than seconds by multiplying by 60
+
+```{r}
+data <- data %>%
+  mutate(`amount TNB/min(nM))` = `amount TNB/s(nM)` * 60)
+```
+
+
+6. Now to get to specific activity we need to tie this amount value back to the protein concentration in our samples. This we calculated using a standard curve as `mg/mL`. So to get to amount in `mg` we need to times by the volume added, which in our case was 50 uL or 0.05 mL. 
+
+```{r}
+data <- data %>%
+  mutate(`protein amount)` = `protein concentration` * 0.05)
+```
+
+7. Finally we can devide dividing your final Amount TNB(nm) data by the Protein amount (mg) column. This means your new column will be Amount TNB/min/mg.
+
+```{r}
+data <- data %>%
+  mutate(specific_activity = `amount TNB/s(nM)` / `protein amount`)
+```
+
+Here the code is dividing your final Amount TNB/min data by the Protein amount (mg) column. This means your new column will be Amount TNB/min/mg.
+
+::: callout-note
+**Task:** Using the steps above calculate specific activity for the class data.
+:::
 
 ## Class Data Analysis: Specific Activity of Citrate Synthase
 
@@ -122,7 +164,7 @@ Now that you've calculated specific activity, we can move on to analysing the **
 This plot shows how enzyme activity changes between samples in the class dataset.
 
 ```{r}
-ggplot(data, aes(x = Sample, y = Specific_Activity, color = Sample)) +
+ggplot(data, aes(x = Sample, y = specific_activity, color = Sample)) +
   geom_boxplot() +
   labs(title = "Citrate Synthase Activity by Sample (Class Data)",
        x = 'Sample',
@@ -143,7 +185,7 @@ In R we have the ability to create a lot of graphs very quickly using something 
 In this case, we can use `facet_wrap(~ GROUP)` to generate one boxplot per group. Each panel will show the different sample types (cytosol vs mitochondria) within that group. This helps us quickly spot patterns across the class, like whether healthy samples consistently show higher activity than diseased ones.
 
 ```{r}
-ggplot(data, aes(x = Sample, y = Specific_Activity, color = Sample)) +
+ggplot(data, aes(x = Sample, y = specific_activity, color = Sample)) +
   geom_boxplot() +
   labs(title = "Citrate Synthase Activity by Sample (Faceted by GROUP)",
        x = "Sample",
@@ -157,7 +199,7 @@ ggplot(data, aes(x = Sample, y = Specific_Activity, color = Sample)) +
 We can facet in all sort so different ways, here in the below code we change our plot so we have every group togeather and facet by sample instead.
 
 ```{r}
-ggplot(data, aes(x = GROUP, y = Specific_Activity)) +
+ggplot(data, aes(x = GROUP, y = specific_activity)) +
   geom_boxplot() +
   labs(title = "Citrate Synthase Activity by Sample (Faceted by SAMPLE)",
        x = "Sample",
@@ -179,7 +221,7 @@ Group the class data by sample type (healthy or diseased) and fraction (cytosol 
 ```{r}
 data %>%
   group_by(Sample) %>%
-  summarise(mean = mean(Specific_Activity), sd = sd(Specific_Activity))
+  summarise(mean = mean(specific_activity), sd = sd(specific_activity))
 ```
 
 ### [Question: What sample had the highest enzyme activity?]{style="color:red"}
