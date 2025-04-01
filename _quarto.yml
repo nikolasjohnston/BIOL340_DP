@@ -63,7 +63,7 @@ website:
             text: The Mutate function
           - href: pages/1/3_filter.qmd
             text: The Filter function
-          - href: pages/1/4_Select.qmd
+          - href: pages/1/4_select.qmd
             text: The Select function
           - href: pages/1/7_summarise.qmd
             text: The Summarise function

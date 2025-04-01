@@ -9,17 +9,10 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r knitr options, message=FALSE, warning=FALSE, include=FALSE}
-library(knitr)
-knitr::opts_chunk$set(warning = FALSE, message = FALSE)
-```
-
 ```{r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 weeds<-read.csv("../../resources/datafiles/weeds.csv")
 library(tidyverse)
 weeds <- rename(weeds, flowers = flowers.m3)
-frogsp<-read.csv("../../resources/datafiles/frogs.csv", header=TRUE)
-enviro<-read.csv("../../resources/datafiles/frog_environmental.csv", header=TRUE)
 ```
 
 The `select()` function is used to select specific columns within your data and save them as a new data frame. You can use this if you have a large dataset and only want to use a few of the columns, to keep it simple and tidy. Or, you may want to take a column or two from multiple different datasets and combine them.
