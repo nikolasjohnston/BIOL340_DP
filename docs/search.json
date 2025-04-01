@@ -79,192 +79,124 @@
     "text": "For this section, we will be using the tadpoles.csv data set\n\n\n\nThe second dataset we analysed tadpole abundance in different sized ponds using a linear model/regression. Plotting linear regressions is really straightforward, but can be done a couple of different ways, depending on what you wish to accomplish.\nFirst, let’s run the basic analysis again (excluding the reeds factor).\n\ntadpoles.lm &lt;- lm(abundance ~ pondsize, data = tadpoles)\nsummary(tadpoles.lm)\n\n\nCall:\nlm(formula = abundance ~ pondsize, data = tadpoles)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-73.546 -29.752  -8.026  37.978  77.652 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)   \n(Intercept)  23.8251    25.8455   0.922  0.36662   \npondsize      1.7261     0.5182   3.331  0.00303 **\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 49.42 on 22 degrees of freedom\nMultiple R-squared:  0.3352,    Adjusted R-squared:  0.305 \nF-statistic: 11.09 on 1 and 22 DF,  p-value: 0.003032\n\n\nFor this, we will be setting up a scatter plot (geom_point) of our points and then adding the line separately.\n\nggplot(tadpoles, aes(x=pondsize, y=abundance)) +\n  geom_point()\n\n\n\n\n\n\n\n\nThats our basic scatter plot. Simply using the geom_point() we covered breifly in the basic plots section.\nFrom here, we can customise our points using a variety of arguments within geom_point().\n\nColour\nColouring our points can be done in two ways. We can use the colour commands within our aesthetics and colour by a factor in our dataset, or, we can colour all the points within geom_point(). Lets cover the aes() commands.\n\nggplot(tadpoles, aes(x=pondsize, y=abundance, colour=reeds, shape = reeds)) +\n  geom_point()\n\n\n\n\n\n\n\n\nAs we covered in the basic plotting section, changing the colour and shape of points can be done through the use of “colour” and “shape” arguments within the aesthetics of ggplot or any geometric object (e.g. geom_point). To change the colour of these manually simply use scale_colour_manual() or scale_shape_manual() like so:\n\nggplot(tadpoles, aes(x=pondsize, y=abundance, colour=reeds, shape = reeds)) +\n  geom_point()+\n  scale_colour_manual(values = c(\"mediumspringgreen\", \"forestgreen\", \"black\"))+\n  scale_shape_manual(values = c(15, 16, 17))\n\n\n\n\n\n\n\n\nEach of the scale commands requires you to list the colours/shapes within a concatenated (c) list. This will be all most of you will ever need so simply copy those lines and replace/add values as you need.\n\nColours can be found here\n\nShapes can be found here"
   },
   {
-    "objectID": "pages/supplementary/cheetsheet.html",
-    "href": "pages/supplementary/cheetsheet.html",
-    "title": "ggplot_cheatsheet",
+    "objectID": "pages/DP2/DP2_Final.html",
+    "href": "pages/DP2/DP2_Final.html",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
     "section": "",
-    "text": "#Graphing cheat sheets\nPosit, the company that marks Rstudio has created some really fantastic resources to help leverage the most out of ggplot2. Access cheatsheet documents for ggplot2. They are available here.\nIn particular I recommend looking at the PDF available on this website. PDF link.",
+    "text": "In Dry Practical 1, you were introduced to the basics of handling biological data in R, using tidyverse functions and ggplot2 to visualise simple trends. That session was designed to help you become comfortable navigating RStudio, working with tabular data, and generating figures that communicate biological patterns clearly.\nIn this second dry practical, we’ll extend those skills by working with experimental data that you generated in the wet lab. Specifically, we’ll use your results from the subcellular fractionation practical, where you separated healthy and diseased cells into mitochondrial and cytosolic fractions, then measured protein concentration and enzyme activity.\nThis practical will focus on:\n\nCalculating specific enzyme activity for each sample\nComparing the mitochondrial and cytosolic fractions from healthy vs diseased cells\nUsing dplyr tools to filter, summarise, and interpret biological data\nVisualising patterns across individual and class-wide datasets\n\nBy the end of this session, you’ll have created professional-quality plots and learned how data wrangling tools in R can help you test biological hypotheses.\n\n\n\n\n\n\nACTION REQUIRED\n\n\n\nOpen R studio on your computer and create a new r script for this class. If you are confused about how to do this refer to the introduction section of the BIOL340 practical website.",
     "crumbs": [
-      "Extra help!",
-      "Additional ggplot2 support"
+      "Dry Prac 2",
+      "Dry Prac 2 Notes"
     ]
   },
   {
-    "objectID": "pages/1/1_rename.html",
-    "href": "pages/1/1_rename.html",
-    "title": "The Rename Function",
+    "objectID": "pages/DP2/DP2_Final.html#background-and-purpose",
+    "href": "pages/DP2/DP2_Final.html#background-and-purpose",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
     "section": "",
-    "text": "By now, if you are like me, you are probably getting annoyed at writing “flowers.m3” or “species.richness” everytime you need to refer to one of those columns. This will happen ALOT with data you enter or obtain from others, as R converts any spaces to fullstops and people tend to capitilise most words. The rename() function allows us to simply rename a column name within our data frame.\nPersonally, this is my favourite function in R as I hate captials, fullstops and other annoying column name problems that slow down coding or generate errors. Trust me, when you spend an hour trying to fix a line of code only to find a single capital letter is missing, you will understand.\nTo do this with dplyr (a tidyverse package) we simply use the following command:\n\nweeds &lt;- rename(weeds, flowers = flowers.m3)\n# In the brackets we need to specify our data frame (weeds) followed by a second argument specifying the name we want for our column = the name we already have.\n# Again, if you run this by itself it will not save to your data frame, unless you direct it to your data frame variable using the &lt;- \n\nPretty simple and straightforward.\nIf you want to rename multiple columns, this is a pretty simple addition. For demonstrating purposes, I am going to rename all the columns of weeds to nonsensical crap.\n\ngrocerylist &lt;- rename(weeds, coopers = \"flowers\", asahi = \"species\", vb = \"soil\", littlecreatures = \"weeds\")\n# to specify multiple variables/columns, we simply add a comma after the first rename and keep going.",
+    "text": "In Dry Practical 1, you were introduced to the basics of handling biological data in R, using tidyverse functions and ggplot2 to visualise simple trends. That session was designed to help you become comfortable navigating RStudio, working with tabular data, and generating figures that communicate biological patterns clearly.\nIn this second dry practical, we’ll extend those skills by working with experimental data that you generated in the wet lab. Specifically, we’ll use your results from the subcellular fractionation practical, where you separated healthy and diseased cells into mitochondrial and cytosolic fractions, then measured protein concentration and enzyme activity.\nThis practical will focus on:\n\nCalculating specific enzyme activity for each sample\nComparing the mitochondrial and cytosolic fractions from healthy vs diseased cells\nUsing dplyr tools to filter, summarise, and interpret biological data\nVisualising patterns across individual and class-wide datasets\n\nBy the end of this session, you’ll have created professional-quality plots and learned how data wrangling tools in R can help you test biological hypotheses.\n\n\n\n\n\n\nACTION REQUIRED\n\n\n\nOpen R studio on your computer and create a new r script for this class. If you are confused about how to do this refer to the introduction section of the BIOL340 practical website.",
     "crumbs": [
-      "Extra help with Graphics",
-      "Data Manipulation",
-      "Renaming data"
+      "Dry Prac 2",
+      "Dry Prac 2 Notes"
     ]
   },
   {
-    "objectID": "pages/1/2_viewingdata.html",
-    "href": "pages/1/2_viewingdata.html",
-    "title": "Viewing your data",
-    "section": "",
-    "text": "Now we have become acquainted with our working directories and the R environment, its time to explore our newely imported data. For this, we will be using the weeds dataset. Ensure your data is loaded in and then either use the View() command:\n\nweeds &lt;- read.csv(\"weeds.csv\")\nView(weeds)\n# This will open up a new tab to view your data\n\nor click the variable name in the environment window.\n\nThis should bring up a separate tab in Rstudio which you should be able to see the 4 columns (weeds, soil, species & flowers.m3).\nNow we can see our data, we can investigate the way R has input our data. The best thing to do is to ensure your categorical variables are categorical, and our continuous are continuous, much like we do in programs like JMP.\n\nIn JMP, we have the icons to identify categorical/nominal, ordinal or continuous. In R, all we do is run a single line of code to view the same thing across the different columns.\n\nstr(weeds)\n\n'data.frame':   48 obs. of  4 variables:\n $ weeds     : chr  \"weed\" \"weed\" \"weed\" \"weed\" ...\n $ soil      : chr  \"sandstone\" \"sandstone\" \"sandstone\" \"sandstone\" ...\n $ species   : chr  \"Coprosma\" \"Coprosma\" \"Coprosma\" \"Coprosma\" ...\n $ flowers.m3: int  14 17 23 26 35 45 36 28 28 39 ...\n\n# str stands for \"structure\" and will tell us the formats of each data column, as well as the number of levels when we have a factor (categorical) column\n\nstr() also shows us the number of levels we have in a factor. So if we put in a bad dataset with different capitalisations or misspellings on factor levels, we can identify here how many we want vs. how many we have. Its a quick and easy way to assess your data.\nAs you can see in the weeds example, we have weeds, soil & species as factors (categorical) and flowers.m3 as an integer (one of many continuous data types, in this case, whole numbers).\nWe will follow up on how to fix an incorrect column shortly\nOther data viewing commands can be used to view certain aspects of your data without bringing up the entire data set in a new tab. These are as follows:\n\nhead(weeds) # This will show the top few rows of your data so you can check it without loading the entire table\n\n  weeds      soil   species flowers.m3\n1  weed sandstone  Coprosma         14\n2  weed sandstone  Coprosma         17\n3  weed sandstone  Coprosma         23\n4  weed sandstone  Coprosma         26\n5  weed sandstone Pultenaea         35\n6  weed sandstone Pultenaea         45\n\ntail(weeds) # The same as head() but shows the bottom rows\n\n    weeds  soil   species flowers.m3\n43 native shale Pultenaea         49\n44 native shale Pultenaea         20\n45 native shale   Olearia         32\n46 native shale   Olearia         51\n47 native shale   Olearia         47\n48 native shale   Olearia         55\n\ndim(weeds) # This gives you the number of rows and columns\n\n[1] 48  4\n\n# You can also use nrow(weeds) or ncol(weeds) to get them separately\n\nnames(weeds) # Gives you the column names. \n\n[1] \"weeds\"      \"soil\"       \"species\"    \"flowers.m3\"\n\n# I use this when I want the exact name for a column when I am writing analyses (you will see later how useful this can be)\n\nsummary(weeds) # Gives you summary statistics for each column\n\n    weeds               soil             species            flowers.m3   \n Length:48          Length:48          Length:48          Min.   :13.00  \n Class :character   Class :character   Class :character   1st Qu.:22.50  \n Mode  :character   Mode  :character   Mode  :character   Median :33.00  \n                                                          Mean   :33.81  \n                                                          3rd Qu.:45.50  \n                                                          Max.   :57.00  \n\n# This will also come in handy later for statistical analysis \n\nAs you can see, there are many ways to view data within R. Some of these are useful for huge datasets (&gt; 10k rows) as the view() command can put strain on your computer. Using head() or tail() to view aspects of the data is useful as it reduces how much is displayed.\n::: callout After reading in dataset, use the summary() command with the “insecticide”” dataset to answer the following questions:\nQuestion: What is the minimum value for species richness? :::\n{{% expand Answer %}} 1 {{% /expand %}}\n\n\n\n\n\n\nQuestion: What is the maximum value for species richness?\n\n\n\n{{% expand Answer %}} 20 {{% /expand %}}",
+    "objectID": "pages/DP2/DP2_Final.html#visualizing-data-and-installing-and-loading-packages",
+    "href": "pages/DP2/DP2_Final.html#visualizing-data-and-installing-and-loading-packages",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
+    "section": "Visualizing Data and Installing and Loading Packages",
+    "text": "Visualizing Data and Installing and Loading Packages\nR can make many types of plots. Let’s plot our nucleus sizes using ggplot2, which is included in the tidyverse.\nIf you haven’t installed the tidyverse package yet, you can do so via copying and running:\n\ninstall.packages(\"tidyverse\")\n\nWe also have to load the library by copying and running this line of code:\n\nlibrary(tidyverse)  # Loads ggplot2, dplyr, tidyr, and more\n\nWe are now set up to start looking at our data from Wet Lab 3",
     "crumbs": [
-      "Pre-Lab - Data exploration",
-      "Viewing Data"
+      "Dry Prac 2",
+      "Dry Prac 2 Notes"
     ]
   },
   {
-    "objectID": "pages/1/5_joins.html",
-    "href": "pages/1/5_joins.html",
-    "title": "Joining Data",
-    "section": "",
-    "text": "One of the most frequent data manipulations for working within R is joining multiple data sets together. The most common example of this is combining species abundance (or some other variable of interest) with external sources on the environmental conditions, such as BOM data (temperature, precipitation etc.) or GPS data.\nTo do most statistical analyses, data needs to be in the same data frame. So joining the datasets is an “easy” way to do so outside of excel.\n\n\n\n\n\n\nFor this exercise, we will be working with the BIOL365 Frog Data to combine the species matrix with environmental data.\nDownload the “frogs.csv” and “frog_environmental.csv”” files and read them in to R without the row.names argument\n\n\n\n\nfrogsp&lt;-read.csv(\"frogs.csv\", header=TRUE)\nenviro&lt;-read.csv(\"frog_environmental.csv\", header=TRUE)\n\nFor a complete join of both datasets, when there are the same number of rows in the exact same order, we can use the bind_cols() function.\n\nfrogcombine &lt;- bind_cols(frogsp, enviro) # In this example the \"site\" column has been added twice\n\nThere is a bind_rows() that will add rows to the bottom of a dataset, using the same syntax.\nWhile bind_cols() and bind_rows() are “cool”, they are limited in their usefulness. I find the most useful function is left_join().\n\nfrogjoin &lt;- left_join(frogsp, enviro, by=\"Site\") # This will join two datasets by a similar column (Site). \n\nThis will join the second dataset (enviro) to the first data set based on the shared column. right_join() will do the opposite, joining frogsp to enviro. Its pretty useless, just use left_join() remember to always put the data frame you want to keep first.\n\n# We can use the dim() to view the dimensions of the data\ndim(frogsp) # 11 columns\n\n[1] 42 11\n\ndim(enviro) # 16 columns\n\n[1] 42 16\n\ndim(frogjoin) # 26 colums (11 + 16 minus the 1 in common)\n\n[1] 42 26\n\n\nBoth of these examples so far have required the same rows for each dataset. Sometimes we might have more information in one dataset then we do in the other. For this dataset we don’t have this issue, so lets quickly create the issue to demonstrate.\nWe will simply use the filter() command to filter for rows that contain a value in the “Temp” column. We have 4 rows that have an NA in “Temp” so we will use a != (not equal to) to select all rows that are not equal to NA\n\nenviro_filter &lt;- filter(enviro, Temp != \"NA\") # This removes sites 14, 15, 35 & 36\ndim(enviro_filter)\n\n[1] 38 16\n\n# Now we can try the two new join types\n\nfroginner &lt;- inner_join(frogsp, enviro_filter, by=\"Site\") # Join data. Retain only rows that occur in both data sets\ndim(froginner) # 38 rows\n\n[1] 38 26\n\nfrogfull &lt;- full_join(frogsp, enviro_filter, by=\"Site\") # Join data. Retain all values, all rows\ndim(frogfull)\n\n[1] 42 26\n\n\nYou can also use semi_join() to combine all rows that have a match in the second dataset, or anti_join() to combine all rows that do not match have a match in the second dataset (this ones a little weird).\nI still find myself using left_join 90% of the time though.",
+    "objectID": "pages/DP2/DP2_Final.html#load-the-class-dataset",
+    "href": "pages/DP2/DP2_Final.html#load-the-class-dataset",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
+    "section": "Load the Class Dataset",
+    "text": "Load the Class Dataset\n\nThis dataset has: - Absorbance readings every 10 seconds for each sample - The reaction rate already calculated - Protein concentration from the Bradford assay\n\n\n\n\n\n\n\nNote\n\n\n\nTask: Load the class dataset and view the column names.\n\n\n\ndata &lt;- read_csv(\"frac_data.csv\")\nhead(data)\n\n# A tibble: 6 × 22\n  GROUP  Sample    `0`   `10`   `20`   `30`   `40`  `50`  `60`  `70`  `80`  `90`\n  &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 G1 & … Negat…  0.001  0.001  0.002  0.002  0.002 0.002 0.002 0.002 0.002 0.002\n2 G1 & … Healt…  0.003  0.011  0.016  0.019  0.022 0.025 0.027 0.028 0.029 0.03 \n3 G1 & … Healt…  0      0.016  0.031  0.048  0.066 0.083 0.101 0.118 0.135 0.152\n4 G1 & … Disea… -0.012 -0.01  -0.007 -0.004 -0.002 0     0.002 0.005 0.007 0.009\n5 G1 & … Disea…  0      0.008  0.016  0.024  0.033 0.042 0.051 0.059 0.068 0.076\n6 G1 & … Posit…  0.178  0.408  0.498  0.544  0.58  0.61  0.637 0.663 0.688 0.708\n# ℹ 10 more variables: `100` &lt;dbl&gt;, `110` &lt;dbl&gt;, `120` &lt;dbl&gt;,\n#   `Equation of trendline` &lt;lgl&gt;, `Rate of Change (ΔA412/s)` &lt;dbl&gt;,\n#   `Rate of Change (ΔC)` &lt;dbl&gt;, `Amount TNB/s (M)` &lt;dbl&gt;,\n#   `Amount TNB/s (nM)` &lt;dbl&gt;, `Amount TNB/min (nM)` &lt;dbl&gt;,\n#   `Protein (mg/mL) - from Bradford assay` &lt;dbl&gt;",
     "crumbs": [
-      "Extra help with Graphics",
-      "Data Manipulation",
-      "The Joins function"
+      "Dry Prac 2",
+      "Dry Prac 2 Notes"
     ]
   },
   {
-    "objectID": "pages/1/4_select.html",
-    "href": "pages/1/4_select.html",
-    "title": "The Select Function",
-    "section": "",
-    "text": "The select() function is used to select specific columns within your data and save them as a new data frame. You can use this if you have a large dataset and only want to use a few of the columns, to keep it simple and tidy. Or, you may want to take a column or two from multiple different datasets and combine them.\n\nweeds_select &lt;- select(weeds, soil) \n\nThis simply creates the weeds_select dataset, seleting one column - “soil”. As with most tidyverse functions we need to specify the dataset immediately after writing the select function. From here, its simple changes to do use select in new ways\n\nweeds_select &lt;- select(weeds,c(soil, species)) # select two columns, \"soil\" and \"species\"\n\nweeds_select &lt;- select(weeds,c(2:4)) # select columns using numbers. In this case, select columns 2 through to 4.\n\nweeds_select &lt;- select(weeds, c(soil:flowers)) # select columns \"soil\" through to \"flowers\"\n\nweeds_select &lt;- select(weeds, -soil) # remove \"soil\"\n# similar syntax applys for removing multiple columns, just place a - infront e.g. select(weeds, -c(2:4))\n\nweeds_select &lt;- select(weeds, starts_with(\"s\")) # select any column whose name starts with S. \n\nThere are many more like this above example, like “ends_with”, “contains” and “matches” all which refer to the column names.\n\n\n\n\n\n\nuse the help window ?select for more useful functions with select()",
+    "objectID": "pages/DP2/DP2_Final.html#plot-the-absorbance-over-time",
+    "href": "pages/DP2/DP2_Final.html#plot-the-absorbance-over-time",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
+    "section": "Plot the Absorbance Over Time",
+    "text": "Plot the Absorbance Over Time\nThis shows how absorbance (A412) changes during the reaction. It helps us understand how fast the reaction is happening.\n\n\n\n\n\n\nNote\n\n\n\nTask: Make a long version of the data and plot absorbance vs time.\n\n\n\ndata_long &lt;- data %&gt;%\n  pivot_longer(cols = c(`0`:`120`), names_to = \"time\", values_to = \"absorbance\") %&gt;%\n  mutate(time = as.numeric(time))\n\nggplot(data_long, aes(x = time, y = absorbance, colour = Sample)) +\n  geom_point(alpha = 0.6, size = 2) +\n  geom_smooth(method ='lm') +\n  labs(title = \"Absorbance Over Time\",\n       x = \"Time (s)\",\n       y = \"Absorbance\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nWhat does this tell you about the rate of the reactions for the different sample types?",
     "crumbs": [
-      "Extra help with Graphics",
-      "Data Manipulation",
-      "The Select function"
+      "Dry Prac 2",
+      "Dry Prac 2 Notes"
     ]
   },
   {
-    "objectID": "pages/1/1_packages.html",
-    "href": "pages/1/1_packages.html",
-    "title": "Packages",
-    "section": "",
-    "text": "Now that you have setup your R environment and read in your first data set, we can begin to modify and add to our data as necessary.\nNow for the majority of this module, we will be working with a package called Tidyverse. Packages are collections of data, R functions and complied code to add extra features outside of the general base R environment. Packages are central to expanding the possibilities of R. The ability to do advanced graphing, GIS, complicated analyses, multivariate analyses etc. are all due to contributed packages.\nTidyverse is a unique case as it is a collection of R packages that all use similar coding syntax\n\nTo install a package into R there are two options:\nOption 1 is to select the packages tab in the help/viewer window & click the install button.\n\nThen type the package name in the packages box (note: ensure that it is installing from Repository/CRAN)\n\nOption 2 is to use the following code, replacing the “tidyverse” with the package of your choice. This should be used in the console, rather than the script window as you only need to install the package once.\n\ninstall.packages(\"tidyverse\")\n\nOnce you have installed tidyverse, simply load it into your current workspace with the following command (in your script)\n\nlibrary(tidyverse)\n\n\n\n\n\n\n\nIn general, it is good practice to place the library() commands for your whole document at the top before anything else. This allows people reading your code to load in any packages they will need at the beginning before anything else.\n\n\n\nFor example, here is the first few lines of one of my own scripts:\n\nThis shows the reader of my code what packages need to be installed to run my analysis. I also write notes to myself to remind myself what specific packages are for. Once you start accumulating packages, its hard to remember what each one does. I find this particularly useful for packages I only use for a particular function (such as the agricolae package which I use for tukeys letter reports).",
+    "objectID": "pages/DP2/DP2_Final.html#calculating-specific-enzyme-activity",
+    "href": "pages/DP2/DP2_Final.html#calculating-specific-enzyme-activity",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
+    "section": "Calculating Specific Enzyme Activity",
+    "text": "Calculating Specific Enzyme Activity\nOne of the key goals of the wet lab was to measure citrate synthase activity, a marker for mitochondrial function. However, raw absorbance rates don’t mean much on their own—we need to normalise them to protein content to make meaningful comparisons.\nWe calculate specific activity as follows:\nSpecific activity = Amount TNB / min / mg protein\n\n\n\n\n\n\nNote\n\n\n\nTask: Use mutate() to make a new column for Specific Activity.\n\n\n\ndata &lt;- data %&gt;%\n  mutate(Specific_Activity = `Amount TNB/min (nM)` / `Protein (mg/mL) - from Bradford assay`)",
     "crumbs": [
-      "Pre-Lab - Data exploration",
-      "Packages"
+      "Dry Prac 2",
+      "Dry Prac 2 Notes"
     ]
   },
   {
-    "objectID": "pages/introduction/4_notebooks.html",
-    "href": "pages/introduction/4_notebooks.html",
-    "title": "Notebooks and Markdown",
-    "section": "",
-    "text": "The first step when opening a new R studio environment or project is creating a script or notebook for working in. Scripts are basic text files where all code is executable. Writing non-code in a script requires the use of #’s (which can look messy and confusing) like so:\n\nread.csv(\"datafile.csv\") \n# this code reads a csv (data) file into R. The command read.csv requires brackets with the filepath to the file in quotations. \n# in this code, none of the #'s will run. so if I # the read.csv command, it will not run. like so:\n# read.csv(\"datafile.csv\")\n\nA whole document of the above example can get messy and hard to understand.\nIn a notebook, we separate normal text from code by inserting “code chunks” (insert &gt; R in the top right of the window). Chunks are specialised areas in the notebook for code only. Chunks separate code from text, making it easier to write notes and read. These tutorials have been written in a notebook.\n\n\n\n\n\n\n\nTo create a notebook or script, simply use the pulldown menus file &gt; new file and select either a script, markdown or notebook one. Then save the document by hitting the disk icon (or file &gt; save)\n\nR studio will prompt you to install some packages to use a notebook. Do so and then read the text in the notebook. Once you understand, then clear everything below the “output:” — area.\n\nAs stated above, click the insert pulldown menu in the script window and click R to insert a code chunk. All code in a notebook must be written in a chunk\n\n\n\n\n\nIMPORTANT!\n\nWhen working in a project, wherever you save your project will become the default “directory”. R will look here for files first. If you want to set your working directory elsewhere, use the below code.\n\n\n# Only if you have not created a project\n\nsetwd(\"Drive:/Folder1/Folder2\")\n\n# insert your folders path in the brackets\n# this will tell R to look here for files and \"generally\" save things here as well.\n# e.g. C:/Users/Mitch/Documents/R/\n\n\n\n\n\n\n\nAfter writing your code, you can click run, run selected line(s), run current chunk or press Ctrl + Enter on the line your cursor is on\n\n\n\nGet used to this, you will do this A LOT",
+    "objectID": "pages/DP2/DP2_Final.html#class-data-analysis-specific-activity-of-citrate-synthase",
+    "href": "pages/DP2/DP2_Final.html#class-data-analysis-specific-activity-of-citrate-synthase",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
+    "section": "Class Data Analysis: Specific Activity of Citrate Synthase",
+    "text": "Class Data Analysis: Specific Activity of Citrate Synthase\nNow that you’ve calculated specific activity, we can move on to analysing the class-wide dataset. This combined data allows us to evaluate trends across all groups and gain a broader perspective on variation.",
     "crumbs": [
-      "Pre-Lab - Introduction",
-      "Notbooks in R studio"
+      "Dry Prac 2",
+      "Dry Prac 2 Notes"
     ]
   },
   {
-    "objectID": "pages/introduction/03_Creating-a-project.html",
-    "href": "pages/introduction/03_Creating-a-project.html",
-    "title": "Creating a project",
-    "section": "",
-    "text": "Now that we have our folder setup, lets move into R studio and create our project.\nIn R, a project file stores your current Rstudio working environment in a file within your file system. This means, if you finish your work for the day halfway through an analysis, you can open up your project file the next day and continue straight from where you left off. The other major benefit is that a project file sets your default working directory. This means, when you need to open a file, you only need to do so from the place of your project file. This will make sense in a moment.\n\nCreating your project\n\n\n\n\n\n\nTo create a project, click file &gt; new project and select existing directory\n\n\n\n\n\n\n\n\n\n\nThen, browse to your new file system we just created and save the project into the base/root of that directory.\n\n\n\nThe real advantage to using project files is simplifying file opening and saving. We will cover this in more detail in the next page, but essentially, when reading data into R we normally have to specify the entire filepath\n\nsurveydata &lt;- read.csv(\"C:/Users/Mitch/Documents/surveydata.csv\")\n\nor, set a working directory\n\nsetwd(\"C:/Users/Mitch/Documents\")\nsurveydata &lt;- read.csv(\"surveydata.csv\")\n\nThe creation of a project cuts out this step by setting our working directory. This means, anytime we want to open a file, we just need to specify the folders within our project directory. So using our new filing system, we would just need to specify the following:\n\nsurveydata &lt;- read.csv(\"Data/surveydata.csv\")\n\nIf you have multiple projects, or want to close the current one, simply click the project name in the top right of R studio",
+    "objectID": "pages/DP2/DP2_Final.html#make-a-bar-plot-of-class-results",
+    "href": "pages/DP2/DP2_Final.html#make-a-bar-plot-of-class-results",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
+    "section": "Make a Bar Plot of Class Results",
+    "text": "Make a Bar Plot of Class Results\nThis plot shows how enzyme activity changes between samples in the class dataset.\n\nggplot(data, aes(x = Sample, y = Specific_Activity, color = Sample)) +\n  geom_boxplot() +\n  labs(title = \"Citrate Synthase Activity by Sample (Class Data)\",\n       x = 'Sample',\n       y = \"Specific Activity (nmol/min/mg)\") +\n  theme_minimal() +\n  theme(axis.text.x = element_blank(),\n        axis.ticks.x = element_blank())\n\n\n\n\n\n\n\n\n\nWhich samples had the highest activity?",
     "crumbs": [
-      "Pre-Lab - Introduction",
-      "Creating a project"
+      "Dry Prac 2",
+      "Dry Prac 2 Notes"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BIOL340_DP",
-    "section": "",
-    "text": "Welcome to Biol340 Dry Practicals for 2025\n\n\nStaring At R\nThis site is a series of tutorials on using the R statistical package for data manipulation, analysis and visualisation including the following:\n\nSetting up your file system and working environment in a reproducable manner\n\nViewing and manipulating your data\nStatistical analysis, covering analysis of variance, linear regressions and generalised linear models (more to come!)\n\nVisualisation of your results using an iterative graphing approach\n\nSpatial analysis and map creation (work in progress)\n\nIt also includes specific tutorials to complete within the Dry Practical timeslot during session.\nI am entirely self-taught through online tutorials, textbooks and advice from colleagues. The best advice I can give is to put in the time and effort. Force yourself to work through problems in R, rather than resorting to excel or your known statistical package. Spending the time to learn R and using it frequently will reinforce lessons and how to utilise code, this goes for all coding languages.\nThis site has been large developed as an offshot and extension of staringatr.com created by Dr. Mitchell Stares. The initial focus of this site is data science techniques for biology based research, however, this will hopefully improve in scope in the future. Tutorials have been developed as part of a teaching module for undergraduate students in the School of science at the University of Wollongong but have been expanded beyond that initial development.\nThis website was created using Quarto. To learn more about Quarto websites visit https://quarto.org/docs/websites.\nSite administrator: Dr. Nikolas Johnston Last updated: March 2025."
-  },
-  {
-    "objectID": "pages/introduction/02_Setting-up-your-workspace.html",
-    "href": "pages/introduction/02_Setting-up-your-workspace.html",
-    "title": "Setting up your workspace",
-    "section": "",
-    "text": "There are very quick ways to open R and begin coding, however, having an organised, well-structured working directory in your computer can save you hours of hassle and make your code much easier to share. As biology and data science are becoming increasingly complex many are turning to computer intensive, coding based software (like you!). With this movement in data science and open access, having our code reproducible, transparent and understandable is key. So why not start off like that.",
+    "objectID": "pages/DP2/DP2_Final.html#compare-groups-using-faceting",
+    "href": "pages/DP2/DP2_Final.html#compare-groups-using-faceting",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
+    "section": "Compare Groups Using Faceting",
+    "text": "Compare Groups Using Faceting\nIn R we have the ability to create a lot of graphs very quickly using something called faceting. Faceting creates a separate plot panel for each category in a grouping variable—this makes it easier to compare groups side-by-side without crowding the same graph.\nIn this case, we can use facet_wrap(~ GROUP) to generate one boxplot per group. Each panel will show the different sample types (cytosol vs mitochondria) within that group. This helps us quickly spot patterns across the class, like whether healthy samples consistently show higher activity than diseased ones.\n\nggplot(data, aes(x = Sample, y = Specific_Activity, color = Sample)) +\n  geom_boxplot() +\n  labs(title = \"Citrate Synthase Activity by Sample (Faceted by GROUP)\",\n       x = \"Sample\",\n       y = \"Specific Activity (nmol/min/mg)\") +\n  theme_minimal() +\n  theme(axis.text.x = element_blank(),\n        axis.ticks.x = element_blank()) +\n  facet_wrap(~ GROUP)\n\n\n\n\n\n\n\n\nWe can facet in all sort so different ways, here in the below code we change our plot so we have every group togeather and facet by sample instead.\n\nggplot(data, aes(x = GROUP, y = Specific_Activity)) +\n  geom_boxplot() +\n  labs(title = \"Citrate Synthase Activity by Sample (Faceted by SAMPLE)\",\n       x = \"Sample\",\n       y = \"Specific Activity (nmol/min/mg)\") +\n  theme_minimal() +\n  theme(axis.text.x = element_blank(),\n        axis.ticks.x = element_blank()) +\n  facet_wrap(~ Sample)",
     "crumbs": [
-      "Pre-Lab - Introduction",
-      "Setting up your workspace"
+      "Dry Prac 2",
+      "Dry Prac 2 Notes"
     ]
   },
   {
-    "objectID": "pages/introduction/02_Setting-up-your-workspace.html#file-system",
-    "href": "pages/introduction/02_Setting-up-your-workspace.html#file-system",
-    "title": "Setting up your workspace",
-    "section": "File system",
-    "text": "File system\nBefore we jump into R, we are going to create a clean and managable folder system.\n\n\n\n\n\n\nCreate a new folder in a location of your choosing (e.g. My Documents or Desktop) called R-tutorials\n\n\n\n\nThis can be named anything you like, but try to keep it relevant and understandable (for future you).\n\n\n\n\n\n\nIn this new folder, create a series of new folders called:\n- data\n- doc\n- figs\n- output\n- R\n\n\n\nHere is the basic outline for these folders:\n\n\n\nThe data folder if where you store your raw/input data\n\n\nThe doc folder is where you store the manuscript for the project\n\n\nThe figs folder is where all of your figures will be stored from the analyses\n\n\nThe output folder is where you keep any intermediate datasets generated by your analysis, result reports etc.\n\n\nThe R folder is pretty self-explanatory but it is where we will store all of our R scripts, notebooks etc.\n\n\nNow, let’s move on to the next step. ::::",
+    "objectID": "pages/DP2/DP2_Final.html#compare-healthy-vs-diseased-cells",
+    "href": "pages/DP2/DP2_Final.html#compare-healthy-vs-diseased-cells",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
+    "section": "Compare Healthy vs Diseased Cells",
+    "text": "Compare Healthy vs Diseased Cells\nGroup the class data by sample type (healthy or diseased) and fraction (cytosol or mitochondria) to get averages.\n\n\n\n\n\n\nNote\n\n\n\nTask: Make a table showing mean and standard deviation for each sample type across all groups.\n\n\n\ndata %&gt;%\n  group_by(Sample) %&gt;%\n  summarise(mean = mean(Specific_Activity), sd = sd(Specific_Activity))\n\n# A tibble: 6 × 3\n  Sample                                   mean    sd\n  &lt;chr&gt;                                   &lt;dbl&gt; &lt;dbl&gt;\n1 Diseased cells - cytosolic fraction      4.42  1.01\n2 Diseased cells - mitochondrial fraction 21.6   6.44\n3 Healthy cells - cytosolic fraction       6.30  1.94\n4 Healthy cells - mitochondrial fraction  40.0  12.3 \n5 Negative control                        75.5  45.7 \n6 Positive control                        86.9  29.4 \n\n\n\nQuestion: What sample had the highest enzyme activity?\n\n\nQuestion: What does this show about mitochondrial function?\n\n\nQuestion: Can you detect an effect of disease?",
     "crumbs": [
-      "Pre-Lab - Introduction",
-      "Setting up your workspace"
+      "Dry Prac 2",
+      "Dry Prac 2 Notes"
     ]
   },
   {
-    "objectID": "pages/introduction/01_R-studio-and-the-coding-environment.html",
-    "href": "pages/introduction/01_R-studio-and-the-coding-environment.html",
-    "title": "R Studio & Coding Environment",
-    "section": "",
-    "text": "This module will provide an introduction into the R statisitical environment, going through the basics of data analysis and graphing for publication quality results. By the end of this module, you should be able to:\n\nUnderstand and use the R studio working environment\nImport and manipulate data files\nUndertake linear (ANOVA, regression) and generalised linear (logistic regression) models and associated assumptions/comparisons\nUndertake basic multivariate techniques (PCA, MDS)\nConstruct bar plots and scatterplots in ggplot\n\n\n\nR is a language and environment for statistical computing and graphics. R is free/open source software and as a result, has a community of dedicated statisticans, coders and developers increasing the capabilities and usability of the platform. R primarily runs as a command-line program.\nThis is a big entry barrier to many starting to learn R, so most people have turned to “R Studio”.\n\n\n\nBase R\n\n\n\n\n\nSince R is free and open source, it is a program and skill that can be carried with you across many institutions and jobs and is for many, the single solution for statistical analysis, graphing and even GIS/spatial analysis. Programs like JMP, SPSS and ARCGIS cost 100s if not 1000s of dollars and are quickly outdated by new versions.\nHowever, the biggest uses of R come from its sharability and openness. Collaborating and sharing data analysis with R requires only the script and raw data. All data manipulations are done within R, requiring no editing or manipulating of your raw excel data.\n\n\n\n\n\n\nThe R Studio Environment\n\n\nR studio “reskins” the standard R environment, giving space for script writing, help, graphics output and tracking of data files. Due to the ease of working in R studio, thats what we will be using. R studio can provide an array of functions from statistical analysis and graphing, GIS/spatial analysis, presentations, document preparation (all of these tutorials are written in R) and even novel functions like interacive graphs and tweeting.\n\n\n\nR studio is separated into 4 panels:\n\nThe top-left panel (blue) is the editor (or script window) where you can view and write your R script. This is a saveable document of code. Running code is as simple as Ctrl+Enter on a line of code or pressing the run button in the top-right of this window.\nThe bottom-left (red) is the console. This is the standard R environment where you can run code directly, or view the output of your script as you run it.\nThe top-right (green) is your workspace. This lists each “object” as you create them through your analyses. Clicking a data-frame object will allow you to view it.\nThe bottom-left (black) has lists of files and packages as well as the help window (quickly access by typing ? before any command) and plots which shows any graphical output.\n\nNow we have an idea of what R is, it is time to install R & R Studio onto your computer.\n\nInstall Instructions\n1. Click Here to visit the R webpage and select one of the Australian mirrors to download (CSIRO, University of Melbourne etc.)\n2. Select your version (Windows or Mac), then download the base subdirectory\n3. Once installed, visit R studio to download R studio desktop.\n\nOnce both of those are installed, you can now proceed to open up Rstudio",
+    "objectID": "pages/DP2/DP2_Final.html#summary",
+    "href": "pages/DP2/DP2_Final.html#summary",
+    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
+    "section": "Summary",
+    "text": "Summary\nBy working with your own experimental data and combining it with class-wide results, you’ve learned how to:\n\nImport and explore real experimental datasets\nCalculate and interpret specific enzyme activity\nUse R to summarise biological variation\nVisualise group-level trends using scatter plots and boxplots\nQuickly analyse trends across data by using faceting\n\nThis approach not only gives you hands-on experience with data science tools but also helps you understand how bioinformatics pipelines are used in real molecular biology research—from raw numbers to biological insight.",
     "crumbs": [
-      "Pre-Lab - Introduction",
-      "R studio and the coding environment"
-    ]
-  },
-  {
-    "objectID": "pages/introduction/01_R-studio-and-the-coding-environment.html#introduction",
-    "href": "pages/introduction/01_R-studio-and-the-coding-environment.html#introduction",
-    "title": "R Studio & Coding Environment",
-    "section": "",
-    "text": "This module will provide an introduction into the R statisitical environment, going through the basics of data analysis and graphing for publication quality results. By the end of this module, you should be able to:\n\nUnderstand and use the R studio working environment\nImport and manipulate data files\nUndertake linear (ANOVA, regression) and generalised linear (logistic regression) models and associated assumptions/comparisons\nUndertake basic multivariate techniques (PCA, MDS)\nConstruct bar plots and scatterplots in ggplot\n\n\n\nR is a language and environment for statistical computing and graphics. R is free/open source software and as a result, has a community of dedicated statisticans, coders and developers increasing the capabilities and usability of the platform. R primarily runs as a command-line program.\nThis is a big entry barrier to many starting to learn R, so most people have turned to “R Studio”.\n\n\n\nBase R\n\n\n\n\n\nSince R is free and open source, it is a program and skill that can be carried with you across many institutions and jobs and is for many, the single solution for statistical analysis, graphing and even GIS/spatial analysis. Programs like JMP, SPSS and ARCGIS cost 100s if not 1000s of dollars and are quickly outdated by new versions.\nHowever, the biggest uses of R come from its sharability and openness. Collaborating and sharing data analysis with R requires only the script and raw data. All data manipulations are done within R, requiring no editing or manipulating of your raw excel data.\n\n\n\n\n\n\nThe R Studio Environment\n\n\nR studio “reskins” the standard R environment, giving space for script writing, help, graphics output and tracking of data files. Due to the ease of working in R studio, thats what we will be using. R studio can provide an array of functions from statistical analysis and graphing, GIS/spatial analysis, presentations, document preparation (all of these tutorials are written in R) and even novel functions like interacive graphs and tweeting.\n\n\n\nR studio is separated into 4 panels:\n\nThe top-left panel (blue) is the editor (or script window) where you can view and write your R script. This is a saveable document of code. Running code is as simple as Ctrl+Enter on a line of code or pressing the run button in the top-right of this window.\nThe bottom-left (red) is the console. This is the standard R environment where you can run code directly, or view the output of your script as you run it.\nThe top-right (green) is your workspace. This lists each “object” as you create them through your analyses. Clicking a data-frame object will allow you to view it.\nThe bottom-left (black) has lists of files and packages as well as the help window (quickly access by typing ? before any command) and plots which shows any graphical output.\n\nNow we have an idea of what R is, it is time to install R & R Studio onto your computer.\n\nInstall Instructions\n1. Click Here to visit the R webpage and select one of the Australian mirrors to download (CSIRO, University of Melbourne etc.)\n2. Select your version (Windows or Mac), then download the base subdirectory\n3. Once installed, visit R studio to download R studio desktop.\n\nOnce both of those are installed, you can now proceed to open up Rstudio",
-    "crumbs": [
-      "Pre-Lab - Introduction",
-      "R studio and the coding environment"
-    ]
-  },
-  {
-    "objectID": "pages/1/8_pipe.html",
-    "href": "pages/1/8_pipe.html",
-    "title": "The Pipe Function",
-    "section": "",
-    "text": "This lets you run multiple different functions on one dataset without having to use the intermediate steps you would have to use in base R.\nYou start with the data you want to apply the functions to, followed by a pipe %&gt;%. After each pipe you must go to the next line.\nThis is useful for large messy functions with multiple nested parts. It separates everything out and makes it easier to follow.\nA pipe is simply a &gt; nested within two percentage, %, symbols. The keyboard shortcut for this is Ctrl + SHIFT + M\n\nsum_data &lt;- weeds %&gt;% \n  group_by(species, soil) %&gt;% \n  summarise(max(flowers))\n\nYou simply start with the data you want to apply the functions to, followed by a pipe. After each pipe you must go to the next line (sorta).\nIn this example, we grouped the data by species and soil, then performed the summarise function to generate the max number for each combination\n\n\n\n\n\n\nYou will notice, that because we specified the data in the first line, we did not have to specify the data in the other lines, only the columns\n\n\n\n\nnew_data &lt;- weeds %&gt;% \n  mutate(binary = soil == \"sandstone\") %&gt;% \n  filter(weeds == \"native\")\n\nAs you can see, we can do this with most of the functions we have already learnt. This above example will generate a binary outcome (true/false) for soil with TRUE as “sandstone”. Followed by filtering for “native” weeds. This will generate a a dataset with native weeds that have a true/false outcome based on soil.\nPiping is incredibly useful and much easier to read. It is a function I keep forgetting to use, until I look at my code later on, full of regrets. It shortens and simplifies code alot.",
-    "crumbs": [
-      "Extra help with Graphics",
-      "Data Manipulation",
-      "The Pipe function"
-    ]
-  },
-  {
-    "objectID": "pages/1/3_columns.html",
-    "href": "pages/1/3_columns.html",
-    "title": "Columns",
-    "section": "",
-    "text": "Another important aspect of R coding syntax is refering to specific columns. This is done by using a $ sign after specifying our dataset and then calling the column. Like so:\n\nhead(weeds$flowers.m3) # This says to run the head() command but only on the flowers.m3 column\n\n[1] 14 17 23 26 35 45\n\n\nTry this with some of the other commands above. Note: Some of them will not work and will show NULL. This is because these are designed to view aspects of the data frame (e.g. names() )\nNow we know how to refer to a column, we can fix any issues with importing incorrect data\nPretend for a moment our data was input incorrectly:\n\nweeds$species&lt;-factor(weeds$species)\n\nThis would simply save the command factor() on the column species to our weeds object.\nIf we wanted an ordered factor, e.g. small &lt; medium &lt; large we can use the following\n\n## example dataset ##\nsizes &lt;- factor(c(\"small\", \"large\", \"large\", \"small\", \"medium\", \"medium\")) # creating a single column factor with 3 levels\nsizes\n\n[1] small  large  large  small  medium medium\nLevels: large medium small\n\n\nHere we have just created a new example dataset which consists of a single column, containing the words: small, large and medium in a random order.\nWe can order these into a logical order, so R will know that medium is bigger than small and large is bigger than medium\n\nsizes &lt;- ordered(sizes, levels = c(\"small\", \"medium\", \"large\")) # ordering levels from small through to large.\n# Note: I did not need to specify column as this is a single column dataset. \nsizes # Now the factor is ordered.\n\n[1] small  large  large  small  medium medium\nLevels: small &lt; medium &lt; large\n\n\nWe can then do this with our weeds dataset, ordering them in a nonsensical order.\n\nweeds$species&lt;-ordered(weeds$species, levels=c(\"Pultenaea\", \"Olearia\", \"Coprosma\"))\n\nThis is useful when the dataset you are working with has an ordered factor.\nThe main use for this is in graphing\nBy default, R will always sort in alphabetical order, which can be a pain when graphing. If you want ordered factors, or want to present factors along an X axis in a more logical order then the ordered() command or even factor() command where you specify levels is a good option.\n\n\n\n\n\n\nI recommend using the factor() command and specifying the levels using the same syntax as the ordered() command unless your factor is truely ordered. This way we just sort the factor the way we want, but are not messing with the way R views our variable (as an ordinal variable rather than a logically ordered factor).\n\n\n\nIf you want to change something to a continuous (numeric, integer etc.) its a little more complicated, but in general R shouldn’t mess this up too often. A quick google search or ?numeric will help answer this.",
-    "crumbs": [
-      "Pre-Lab - Data exploration",
-      "Columns"
-    ]
-  },
-  {
-    "objectID": "pages/1/7_summarise.html",
-    "href": "pages/1/7_summarise.html",
-    "title": "The Summarise Function",
-    "section": "",
-    "text": "This is an extremely useful function that lets you create different summaries of columns. You can also nest other functions within it to apply them to your columns.\n\nsum_data &lt;- summarise(weeds, mean(flowers))  # We'll start simple. Generates the mean of the flower column\n\nsum_data &lt;- summarise(group_by(weeds, species), mean(flowers)) \n# Using the group_by() function within summarise lets you get summaries for groups, in this case \"species\"\n\nsum_data &lt;- summarise(group_by(weeds,species, soil), mean(flowers), sd(flowers), se=sd(flowers/sqrt(n())))\n# Grouped by with species & soil, generating mean, standard deviation & standard error of flowers\n\nThe last example generates the mean, sd and se for each factor combination in our dataset. This is pretty useful, particularly for generating bar graphs.\nHowever, its a little complex and can be in a much nicer format.\n\n\n\n\n\n\nUse the summarise() function on the “insecticide”” dataset to answer the following question\nQuestion: In the large fragment, what is the median species richness\n\n\n\n{{% expand Answer %}} 12 :::",
-    "crumbs": [
-      "Extra help with Graphics",
-      "Data Manipulation",
-      "The Summarise function"
-    ]
-  },
-  {
-    "objectID": "pages/1/2_mutate.html",
-    "href": "pages/1/2_mutate.html",
-    "title": "The Mutate Function",
-    "section": "",
-    "text": "One of the most common data manipulations is adding a new column to your dataset. This is great for transforming data, while also keeping the original. This could be used to combine multiple columns into one or perform mathematical calculations involving multiple columns with the results in a separate column.\nWe will start out with a few simple methods in base R, and then move to the dplyr method.\n\n##Log Transformation##\n\nweeds$log_flowers &lt;- log(weeds$flowers) # Base R\n\nweeds &lt;- mutate(weeds, log_flowers = log(flowers)) # Dplyr\n\n# Each of these creates a new column which is the log of the flowers column.\n\n## Basic math functions##\n\nweeds_mutate &lt;- mutate(weeds, flowers2 = flowers*2) \n# Simple multiplication of the flowers column by 2\n\nweeds_mutate &lt;- mutate(weeds_mutate, flowers_combined = flowers + flowers2) \n# This is a useless example but its just to show you how to combine multiple columns. \n\nweeds_mutate &lt;- mutate(weeds_mutate, binary = soil == \"sandstone\") \n# Using boolean logic to create a column called \"binary\" where soil is exactly (hence double ='s) sandstone. \n\nweeds_mutate &lt;- mutate(weeds, flowers2 = flowers*2,\n                      binary = soil == \"sandstone\") \n# You can also perform the functions multiple times on the same data within one line. \n\nThe arguments of mutate() are simply the name of the data frame followed by any number of expressions that create new variables.\nYou will notice throughout the mutate() commands that we have performed functions, creating new columns, while preserving the original. If you wish to drop/remove the original column, simply use the transmute() command.\n\n\n\n\n\n\nUse the Mutate() command on the insecticide dataset to answer the following question\nQuestion: What is the square of the number in the last row of species.richness (row 42)?\n\n\n\n{{% expand Answer %}} 225 :::",
-    "crumbs": [
-      "Extra help with Graphics",
-      "Data Manipulation",
-      "The Mutate function"
+      "Dry Prac 2",
+      "Dry Prac 2 Notes"
     ]
   },
   {
@@ -499,6 +431,192 @@
     ]
   },
   {
+    "objectID": "pages/1/2_mutate.html",
+    "href": "pages/1/2_mutate.html",
+    "title": "The Mutate Function",
+    "section": "",
+    "text": "One of the most common data manipulations is adding a new column to your dataset. This is great for transforming data, while also keeping the original. This could be used to combine multiple columns into one or perform mathematical calculations involving multiple columns with the results in a separate column.\nWe will start out with a few simple methods in base R, and then move to the dplyr method.\n\n##Log Transformation##\n\nweeds$log_flowers &lt;- log(weeds$flowers) # Base R\n\nweeds &lt;- mutate(weeds, log_flowers = log(flowers)) # Dplyr\n\n# Each of these creates a new column which is the log of the flowers column.\n\n## Basic math functions##\n\nweeds_mutate &lt;- mutate(weeds, flowers2 = flowers*2) \n# Simple multiplication of the flowers column by 2\n\nweeds_mutate &lt;- mutate(weeds_mutate, flowers_combined = flowers + flowers2) \n# This is a useless example but its just to show you how to combine multiple columns. \n\nweeds_mutate &lt;- mutate(weeds_mutate, binary = soil == \"sandstone\") \n# Using boolean logic to create a column called \"binary\" where soil is exactly (hence double ='s) sandstone. \n\nweeds_mutate &lt;- mutate(weeds, flowers2 = flowers*2,\n                      binary = soil == \"sandstone\") \n# You can also perform the functions multiple times on the same data within one line. \n\nThe arguments of mutate() are simply the name of the data frame followed by any number of expressions that create new variables.\nYou will notice throughout the mutate() commands that we have performed functions, creating new columns, while preserving the original. If you wish to drop/remove the original column, simply use the transmute() command.",
+    "crumbs": [
+      "Pre-Lab 2 - Data manipulation",
+      "The Mutate function"
+    ]
+  },
+  {
+    "objectID": "pages/1/7_summarise.html",
+    "href": "pages/1/7_summarise.html",
+    "title": "The Summarise Function",
+    "section": "",
+    "text": "This is an extremely useful function that lets you create different summaries of columns. You can also nest other functions within it to apply them to your columns.\n\nsum_data &lt;- summarise(weeds, mean(flowers))  # We'll start simple. Generates the mean of the flower column\n\nsum_data &lt;- summarise(group_by(weeds, species), mean(flowers)) \n# Using the group_by() function within summarise lets you get summaries for groups, in this case \"species\"\n\nsum_data &lt;- summarise(group_by(weeds,species, soil), mean(flowers), sd(flowers), se=sd(flowers/sqrt(n())))\n# Grouped by with species & soil, generating mean, standard deviation & standard error of flowers\n\nThe last example generates the mean, sd and se for each factor combination in our dataset. This is pretty useful, particularly for generating bar graphs.\nHowever, its a little complex and can be in a much nicer format.",
+    "crumbs": [
+      "Pre-Lab 2 - Data manipulation",
+      "The Summarise function"
+    ]
+  },
+  {
+    "objectID": "pages/1/3_filter.html",
+    "href": "pages/1/3_filter.html",
+    "title": "The Filter Function",
+    "section": "",
+    "text": "The filter() command is used to remove rows from your data. This can be useful for removing zeros or “no data/NA’s”, or for restricting certain variables in a dataset for an analysis.\nThis follows the similar syntax as mutate() whereby we specify what dataset we want to filter, followed by how we want to filter.\n\n#The following examples will just keep overwriting the new object \"weeds_filtered\"\n\nweeds_filtered &lt;- filter(weeds, weeds == \"native\") \n# Gives us only the rows which are exactly \"native\" in the weeds column. \n\nweeds_filtered &lt;- filter(weeds, weeds != \"weed\") \n# This gives us the same result as their are only two levels of that column. The != means \"not equal to\"\n\nweeds_filtered &lt;- filter(weeds ,flowers &gt; 20) \n# Flowers greater than 20 m3\n\nSo far, we have covered renaming columns, adding new columns and filtering by rows. The next two commands are focused on selecting specific columns and creating new data tables.",
+    "crumbs": [
+      "Pre-Lab 2 - Data manipulation",
+      "The Filter function"
+    ]
+  },
+  {
+    "objectID": "pages/1/4_select.html",
+    "href": "pages/1/4_select.html",
+    "title": "The Select Function",
+    "section": "",
+    "text": "The select() function is used to select specific columns within your data and save them as a new data frame. You can use this if you have a large dataset and only want to use a few of the columns, to keep it simple and tidy. Or, you may want to take a column or two from multiple different datasets and combine them.\n\nweeds_select &lt;- select(weeds, soil) \n\nThis simply creates the weeds_select dataset, seleting one column - “soil”. As with most tidyverse functions we need to specify the dataset immediately after writing the select function. From here, its simple changes to do use select in new ways\n\nweeds_select &lt;- select(weeds,c(soil, species)) # select two columns, \"soil\" and \"species\"\n\nweeds_select &lt;- select(weeds,c(2:4)) # select columns using numbers. In this case, select columns 2 through to 4.\n\nweeds_select &lt;- select(weeds, c(soil:flowers)) # select columns \"soil\" through to \"flowers\"\n\nweeds_select &lt;- select(weeds, -soil) # remove \"soil\"\n# similar syntax applys for removing multiple columns, just place a - infront e.g. select(weeds, -c(2:4))\n\nweeds_select &lt;- select(weeds, starts_with(\"s\")) # select any column whose name starts with S. \n\nThere are many more like this above example, like “ends_with”, “contains” and “matches” all which refer to the column names.\n\n\n\n\n\n\nuse the help window ?select for more useful functions with select()"
+  },
+  {
+    "objectID": "pages/1/1_packages.html",
+    "href": "pages/1/1_packages.html",
+    "title": "Packages",
+    "section": "",
+    "text": "Now that you have setup your R environment and read in your first data set, we can begin to modify and add to our data as necessary.\nNow for the majority of this module, we will be working with a package called Tidyverse. Packages are collections of data, R functions and complied code to add extra features outside of the general base R environment. Packages are central to expanding the possibilities of R. The ability to do advanced graphing, GIS, complicated analyses, multivariate analyses etc. are all due to contributed packages.\nTidyverse is a unique case as it is a collection of R packages that all use similar coding syntax\n\nTo install a package into R there are two options:\nOption 1 is to select the packages tab in the help/viewer window & click the install button.\n\nThen type the package name in the packages box (note: ensure that it is installing from Repository/CRAN)\n\nOption 2 is to use the following code, replacing the “tidyverse” with the package of your choice. This should be used in the console, rather than the script window as you only need to install the package once.\n\ninstall.packages(\"tidyverse\")\n\nOnce you have installed tidyverse, simply load it into your current workspace with the following command (in your script)\n\nlibrary(tidyverse)\n\n\n\n\n\n\n\nIn general, it is good practice to place the library() commands for your whole document at the top before anything else. This allows people reading your code to load in any packages they will need at the beginning before anything else.\n\n\n\nFor example, here is the first few lines of one of my own scripts:\n\nThis shows the reader of my code what packages need to be installed to run my analysis. I also write notes to myself to remind myself what specific packages are for. Once you start accumulating packages, its hard to remember what each one does. I find this particularly useful for packages I only use for a particular function (such as the agricolae package which I use for tukeys letter reports).",
+    "crumbs": [
+      "Pre-Lab - Data exploration",
+      "Packages"
+    ]
+  },
+  {
+    "objectID": "pages/introduction/4_notebooks.html",
+    "href": "pages/introduction/4_notebooks.html",
+    "title": "Notebooks and Markdown",
+    "section": "",
+    "text": "The first step when opening a new R studio environment or project is creating a script or notebook for working in. Scripts are basic text files where all code is executable. Writing non-code in a script requires the use of #’s (which can look messy and confusing) like so:\n\nread.csv(\"datafile.csv\") \n# this code reads a csv (data) file into R. The command read.csv requires brackets with the filepath to the file in quotations. \n# in this code, none of the #'s will run. so if I # the read.csv command, it will not run. like so:\n# read.csv(\"datafile.csv\")\n\nA whole document of the above example can get messy and hard to understand.\nIn a notebook, we separate normal text from code by inserting “code chunks” (insert &gt; R in the top right of the window). Chunks are specialised areas in the notebook for code only. Chunks separate code from text, making it easier to write notes and read. These tutorials have been written in a notebook.\n\n\n\n\n\n\n\nTo create a notebook or script, simply use the pulldown menus file &gt; new file and select either a script, markdown or notebook one. Then save the document by hitting the disk icon (or file &gt; save)\n\nR studio will prompt you to install some packages to use a notebook. Do so and then read the text in the notebook. Once you understand, then clear everything below the “output:” — area.\n\nAs stated above, click the insert pulldown menu in the script window and click R to insert a code chunk. All code in a notebook must be written in a chunk\n\n\n\n\n\nIMPORTANT!\n\nWhen working in a project, wherever you save your project will become the default “directory”. R will look here for files first. If you want to set your working directory elsewhere, use the below code.\n\n\n# Only if you have not created a project\n\nsetwd(\"Drive:/Folder1/Folder2\")\n\n# insert your folders path in the brackets\n# this will tell R to look here for files and \"generally\" save things here as well.\n# e.g. C:/Users/Mitch/Documents/R/\n\n\n\n\n\n\n\nAfter writing your code, you can click run, run selected line(s), run current chunk or press Ctrl + Enter on the line your cursor is on\n\n\n\nGet used to this, you will do this A LOT",
+    "crumbs": [
+      "Pre-Lab - Introduction",
+      "Notbooks in R studio"
+    ]
+  },
+  {
+    "objectID": "pages/introduction/03_Creating-a-project.html",
+    "href": "pages/introduction/03_Creating-a-project.html",
+    "title": "Creating a project",
+    "section": "",
+    "text": "Now that we have our folder setup, lets move into R studio and create our project.\nIn R, a project file stores your current Rstudio working environment in a file within your file system. This means, if you finish your work for the day halfway through an analysis, you can open up your project file the next day and continue straight from where you left off. The other major benefit is that a project file sets your default working directory. This means, when you need to open a file, you only need to do so from the place of your project file. This will make sense in a moment.\n\nCreating your project\n\n\n\n\n\n\nTo create a project, click file &gt; new project and select existing directory\n\n\n\n\n\n\n\n\n\n\nThen, browse to your new file system we just created and save the project into the base/root of that directory.\n\n\n\nThe real advantage to using project files is simplifying file opening and saving. We will cover this in more detail in the next page, but essentially, when reading data into R we normally have to specify the entire filepath\n\nsurveydata &lt;- read.csv(\"C:/Users/Mitch/Documents/surveydata.csv\")\n\nor, set a working directory\n\nsetwd(\"C:/Users/Mitch/Documents\")\nsurveydata &lt;- read.csv(\"surveydata.csv\")\n\nThe creation of a project cuts out this step by setting our working directory. This means, anytime we want to open a file, we just need to specify the folders within our project directory. So using our new filing system, we would just need to specify the following:\n\nsurveydata &lt;- read.csv(\"Data/surveydata.csv\")\n\nIf you have multiple projects, or want to close the current one, simply click the project name in the top right of R studio",
+    "crumbs": [
+      "Pre-Lab - Introduction",
+      "Creating a project"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BIOL340_DP",
+    "section": "",
+    "text": "Welcome to Biol340 Dry Practicals for 2025\n\n\nStaring At R\nThis site is a series of tutorials on using the R statistical package for data manipulation, analysis and visualisation including the following:\n\nSetting up your file system and working environment in a reproducable manner\n\nViewing and manipulating your data\nStatistical analysis, covering analysis of variance, linear regressions and generalised linear models (more to come!)\n\nVisualisation of your results using an iterative graphing approach\n\nSpatial analysis and map creation (work in progress)\n\nIt also includes specific tutorials to complete within the Dry Practical timeslot during session.\nI am entirely self-taught through online tutorials, textbooks and advice from colleagues. The best advice I can give is to put in the time and effort. Force yourself to work through problems in R, rather than resorting to excel or your known statistical package. Spending the time to learn R and using it frequently will reinforce lessons and how to utilise code, this goes for all coding languages.\nThis site has been large developed as an offshot and extension of staringatr.com created by Dr. Mitchell Stares. The initial focus of this site is data science techniques for biology based research, however, this will hopefully improve in scope in the future. Tutorials have been developed as part of a teaching module for undergraduate students in the School of science at the University of Wollongong but have been expanded beyond that initial development.\nThis website was created using Quarto. To learn more about Quarto websites visit https://quarto.org/docs/websites.\nSite administrator: Dr. Nikolas Johnston Last updated: March 2025."
+  },
+  {
+    "objectID": "pages/introduction/02_Setting-up-your-workspace.html",
+    "href": "pages/introduction/02_Setting-up-your-workspace.html",
+    "title": "Setting up your workspace",
+    "section": "",
+    "text": "There are very quick ways to open R and begin coding, however, having an organised, well-structured working directory in your computer can save you hours of hassle and make your code much easier to share. As biology and data science are becoming increasingly complex many are turning to computer intensive, coding based software (like you!). With this movement in data science and open access, having our code reproducible, transparent and understandable is key. So why not start off like that.",
+    "crumbs": [
+      "Pre-Lab - Introduction",
+      "Setting up your workspace"
+    ]
+  },
+  {
+    "objectID": "pages/introduction/02_Setting-up-your-workspace.html#file-system",
+    "href": "pages/introduction/02_Setting-up-your-workspace.html#file-system",
+    "title": "Setting up your workspace",
+    "section": "File system",
+    "text": "File system\nBefore we jump into R, we are going to create a clean and managable folder system.\n\n\n\n\n\n\nCreate a new folder in a location of your choosing (e.g. My Documents or Desktop) called R-tutorials\n\n\n\n\nThis can be named anything you like, but try to keep it relevant and understandable (for future you).\n\n\n\n\n\n\nIn this new folder, create a series of new folders called:\n- data\n- doc\n- figs\n- output\n- R\n\n\n\nHere is the basic outline for these folders:\n\n\n\nThe data folder if where you store your raw/input data\n\n\nThe doc folder is where you store the manuscript for the project\n\n\nThe figs folder is where all of your figures will be stored from the analyses\n\n\nThe output folder is where you keep any intermediate datasets generated by your analysis, result reports etc.\n\n\nThe R folder is pretty self-explanatory but it is where we will store all of our R scripts, notebooks etc.\n\n\nNow, let’s move on to the next step. ::::",
+    "crumbs": [
+      "Pre-Lab - Introduction",
+      "Setting up your workspace"
+    ]
+  },
+  {
+    "objectID": "pages/introduction/01_R-studio-and-the-coding-environment.html",
+    "href": "pages/introduction/01_R-studio-and-the-coding-environment.html",
+    "title": "R Studio & Coding Environment",
+    "section": "",
+    "text": "This module will provide an introduction into the R statisitical environment, going through the basics of data analysis and graphing for publication quality results. By the end of this module, you should be able to:\n\nUnderstand and use the R studio working environment\nImport and manipulate data files\nUndertake linear (ANOVA, regression) and generalised linear (logistic regression) models and associated assumptions/comparisons\nUndertake basic multivariate techniques (PCA, MDS)\nConstruct bar plots and scatterplots in ggplot\n\n\n\nR is a language and environment for statistical computing and graphics. R is free/open source software and as a result, has a community of dedicated statisticans, coders and developers increasing the capabilities and usability of the platform. R primarily runs as a command-line program.\nThis is a big entry barrier to many starting to learn R, so most people have turned to “R Studio”.\n\n\n\nBase R\n\n\n\n\n\nSince R is free and open source, it is a program and skill that can be carried with you across many institutions and jobs and is for many, the single solution for statistical analysis, graphing and even GIS/spatial analysis. Programs like JMP, SPSS and ARCGIS cost 100s if not 1000s of dollars and are quickly outdated by new versions.\nHowever, the biggest uses of R come from its sharability and openness. Collaborating and sharing data analysis with R requires only the script and raw data. All data manipulations are done within R, requiring no editing or manipulating of your raw excel data.\n\n\n\n\n\n\nThe R Studio Environment\n\n\nR studio “reskins” the standard R environment, giving space for script writing, help, graphics output and tracking of data files. Due to the ease of working in R studio, thats what we will be using. R studio can provide an array of functions from statistical analysis and graphing, GIS/spatial analysis, presentations, document preparation (all of these tutorials are written in R) and even novel functions like interacive graphs and tweeting.\n\n\n\nR studio is separated into 4 panels:\n\nThe top-left panel (blue) is the editor (or script window) where you can view and write your R script. This is a saveable document of code. Running code is as simple as Ctrl+Enter on a line of code or pressing the run button in the top-right of this window.\nThe bottom-left (red) is the console. This is the standard R environment where you can run code directly, or view the output of your script as you run it.\nThe top-right (green) is your workspace. This lists each “object” as you create them through your analyses. Clicking a data-frame object will allow you to view it.\nThe bottom-left (black) has lists of files and packages as well as the help window (quickly access by typing ? before any command) and plots which shows any graphical output.\n\nNow we have an idea of what R is, it is time to install R & R Studio onto your computer.\n\nInstall Instructions\n1. Click Here to visit the R webpage and select one of the Australian mirrors to download (CSIRO, University of Melbourne etc.)\n2. Select your version (Windows or Mac), then download the base subdirectory\n3. Once installed, visit R studio to download R studio desktop.\n\nOnce both of those are installed, you can now proceed to open up Rstudio",
+    "crumbs": [
+      "Pre-Lab - Introduction",
+      "R studio and the coding environment"
+    ]
+  },
+  {
+    "objectID": "pages/introduction/01_R-studio-and-the-coding-environment.html#introduction",
+    "href": "pages/introduction/01_R-studio-and-the-coding-environment.html#introduction",
+    "title": "R Studio & Coding Environment",
+    "section": "",
+    "text": "This module will provide an introduction into the R statisitical environment, going through the basics of data analysis and graphing for publication quality results. By the end of this module, you should be able to:\n\nUnderstand and use the R studio working environment\nImport and manipulate data files\nUndertake linear (ANOVA, regression) and generalised linear (logistic regression) models and associated assumptions/comparisons\nUndertake basic multivariate techniques (PCA, MDS)\nConstruct bar plots and scatterplots in ggplot\n\n\n\nR is a language and environment for statistical computing and graphics. R is free/open source software and as a result, has a community of dedicated statisticans, coders and developers increasing the capabilities and usability of the platform. R primarily runs as a command-line program.\nThis is a big entry barrier to many starting to learn R, so most people have turned to “R Studio”.\n\n\n\nBase R\n\n\n\n\n\nSince R is free and open source, it is a program and skill that can be carried with you across many institutions and jobs and is for many, the single solution for statistical analysis, graphing and even GIS/spatial analysis. Programs like JMP, SPSS and ARCGIS cost 100s if not 1000s of dollars and are quickly outdated by new versions.\nHowever, the biggest uses of R come from its sharability and openness. Collaborating and sharing data analysis with R requires only the script and raw data. All data manipulations are done within R, requiring no editing or manipulating of your raw excel data.\n\n\n\n\n\n\nThe R Studio Environment\n\n\nR studio “reskins” the standard R environment, giving space for script writing, help, graphics output and tracking of data files. Due to the ease of working in R studio, thats what we will be using. R studio can provide an array of functions from statistical analysis and graphing, GIS/spatial analysis, presentations, document preparation (all of these tutorials are written in R) and even novel functions like interacive graphs and tweeting.\n\n\n\nR studio is separated into 4 panels:\n\nThe top-left panel (blue) is the editor (or script window) where you can view and write your R script. This is a saveable document of code. Running code is as simple as Ctrl+Enter on a line of code or pressing the run button in the top-right of this window.\nThe bottom-left (red) is the console. This is the standard R environment where you can run code directly, or view the output of your script as you run it.\nThe top-right (green) is your workspace. This lists each “object” as you create them through your analyses. Clicking a data-frame object will allow you to view it.\nThe bottom-left (black) has lists of files and packages as well as the help window (quickly access by typing ? before any command) and plots which shows any graphical output.\n\nNow we have an idea of what R is, it is time to install R & R Studio onto your computer.\n\nInstall Instructions\n1. Click Here to visit the R webpage and select one of the Australian mirrors to download (CSIRO, University of Melbourne etc.)\n2. Select your version (Windows or Mac), then download the base subdirectory\n3. Once installed, visit R studio to download R studio desktop.\n\nOnce both of those are installed, you can now proceed to open up Rstudio",
+    "crumbs": [
+      "Pre-Lab - Introduction",
+      "R studio and the coding environment"
+    ]
+  },
+  {
+    "objectID": "pages/1/8_pipe.html",
+    "href": "pages/1/8_pipe.html",
+    "title": "The Pipe Function",
+    "section": "",
+    "text": "This lets you run multiple different functions on one dataset without having to use the intermediate steps you would have to use in base R.\nYou start with the data you want to apply the functions to, followed by a pipe %&gt;%. After each pipe you must go to the next line.\nThis is useful for large messy functions with multiple nested parts. It separates everything out and makes it easier to follow.\nA pipe is simply a &gt; nested within two percentage, %, symbols. The keyboard shortcut for this is Ctrl + SHIFT + M\n\nsum_data &lt;- weeds %&gt;% \n  group_by(species, soil) %&gt;% \n  summarise(max(flowers))\n\nYou simply start with the data you want to apply the functions to, followed by a pipe. After each pipe you must go to the next line (sorta).\nIn this example, we grouped the data by species and soil, then performed the summarise function to generate the max number for each combination\n\n\n\n\n\n\nYou will notice, that because we specified the data in the first line, we did not have to specify the data in the other lines, only the columns\n\n\n\n\nnew_data &lt;- weeds %&gt;% \n  mutate(binary = soil == \"sandstone\") %&gt;% \n  filter(weeds == \"native\")\n\nAs you can see, we can do this with most of the functions we have already learnt. This above example will generate a binary outcome (true/false) for soil with TRUE as “sandstone”. Followed by filtering for “native” weeds. This will generate a a dataset with native weeds that have a true/false outcome based on soil.\nPiping is incredibly useful and much easier to read. It is a function I keep forgetting to use, until I look at my code later on, full of regrets. It shortens and simplifies code alot.",
+    "crumbs": [
+      "Pre-Lab 2 - Data manipulation",
+      "The Pipe function"
+    ]
+  },
+  {
+    "objectID": "pages/1/3_columns.html",
+    "href": "pages/1/3_columns.html",
+    "title": "Columns",
+    "section": "",
+    "text": "Another important aspect of R coding syntax is refering to specific columns. This is done by using a $ sign after specifying our dataset and then calling the column. Like so:\n\nhead(weeds$flowers.m3) # This says to run the head() command but only on the flowers.m3 column\n\n[1] 14 17 23 26 35 45\n\n\nTry this with some of the other commands above. Note: Some of them will not work and will show NULL. This is because these are designed to view aspects of the data frame (e.g. names() )\nNow we know how to refer to a column, we can fix any issues with importing incorrect data\nPretend for a moment our data was input incorrectly:\n\nweeds$species&lt;-factor(weeds$species)\n\nThis would simply save the command factor() on the column species to our weeds object.\nIf we wanted an ordered factor, e.g. small &lt; medium &lt; large we can use the following\n\n## example dataset ##\nsizes &lt;- factor(c(\"small\", \"large\", \"large\", \"small\", \"medium\", \"medium\")) # creating a single column factor with 3 levels\nsizes\n\n[1] small  large  large  small  medium medium\nLevels: large medium small\n\n\nHere we have just created a new example dataset which consists of a single column, containing the words: small, large and medium in a random order.\nWe can order these into a logical order, so R will know that medium is bigger than small and large is bigger than medium\n\nsizes &lt;- ordered(sizes, levels = c(\"small\", \"medium\", \"large\")) # ordering levels from small through to large.\n# Note: I did not need to specify column as this is a single column dataset. \nsizes # Now the factor is ordered.\n\n[1] small  large  large  small  medium medium\nLevels: small &lt; medium &lt; large\n\n\nWe can then do this with our weeds dataset, ordering them in a nonsensical order.\n\nweeds$species&lt;-ordered(weeds$species, levels=c(\"Pultenaea\", \"Olearia\", \"Coprosma\"))\n\nThis is useful when the dataset you are working with has an ordered factor.\nThe main use for this is in graphing\nBy default, R will always sort in alphabetical order, which can be a pain when graphing. If you want ordered factors, or want to present factors along an X axis in a more logical order then the ordered() command or even factor() command where you specify levels is a good option.\n\n\n\n\n\n\nI recommend using the factor() command and specifying the levels using the same syntax as the ordered() command unless your factor is truely ordered. This way we just sort the factor the way we want, but are not messing with the way R views our variable (as an ordinal variable rather than a logically ordered factor).\n\n\n\nIf you want to change something to a continuous (numeric, integer etc.) its a little more complicated, but in general R shouldn’t mess this up too often. A quick google search or ?numeric will help answer this.",
+    "crumbs": [
+      "Pre-Lab - Data exploration",
+      "Columns"
+    ]
+  },
+  {
+    "objectID": "pages/1/5_joins.html",
+    "href": "pages/1/5_joins.html",
+    "title": "Joining Data",
+    "section": "",
+    "text": "One of the most frequent data manipulations for working within R is joining multiple data sets together. The most common example of this is combining species abundance (or some other variable of interest) with external sources on the environmental conditions, such as BOM data (temperature, precipitation etc.) or GPS data.\nTo do most statistical analyses, data needs to be in the same data frame. So joining the datasets is an “easy” way to do so outside of excel.\n\n\n\n\n\n\nFor this exercise, we will be working with the BIOL365 Frog Data to combine the species matrix with environmental data.\nDownload the “frogs.csv” and “frog_environmental.csv”” files and read them in to R without the row.names argument\n\n\n\n\nfrogsp&lt;-read.csv(\"frogs.csv\", header=TRUE)\nenviro&lt;-read.csv(\"frog_environmental.csv\", header=TRUE)\n\nFor a complete join of both datasets, when there are the same number of rows in the exact same order, we can use the bind_cols() function.\n\nfrogcombine &lt;- bind_cols(frogsp, enviro) # In this example the \"site\" column has been added twice\n\nThere is a bind_rows() that will add rows to the bottom of a dataset, using the same syntax.\nWhile bind_cols() and bind_rows() are “cool”, they are limited in their usefulness. I find the most useful function is left_join().\n\nfrogjoin &lt;- left_join(frogsp, enviro, by=\"Site\") # This will join two datasets by a similar column (Site). \n\nThis will join the second dataset (enviro) to the first data set based on the shared column. right_join() will do the opposite, joining frogsp to enviro. Its pretty useless, just use left_join() remember to always put the data frame you want to keep first.\n\n# We can use the dim() to view the dimensions of the data\ndim(frogsp) # 11 columns\n\n[1] 42 11\n\ndim(enviro) # 16 columns\n\n[1] 42 16\n\ndim(frogjoin) # 26 colums (11 + 16 minus the 1 in common)\n\n[1] 42 26\n\n\nBoth of these examples so far have required the same rows for each dataset. Sometimes we might have more information in one dataset then we do in the other. For this dataset we don’t have this issue, so lets quickly create the issue to demonstrate.\nWe will simply use the filter() command to filter for rows that contain a value in the “Temp” column. We have 4 rows that have an NA in “Temp” so we will use a != (not equal to) to select all rows that are not equal to NA\n\nenviro_filter &lt;- filter(enviro, Temp != \"NA\") # This removes sites 14, 15, 35 & 36\ndim(enviro_filter)\n\n[1] 38 16\n\n# Now we can try the two new join types\n\nfroginner &lt;- inner_join(frogsp, enviro_filter, by=\"Site\") # Join data. Retain only rows that occur in both data sets\ndim(froginner) # 38 rows\n\n[1] 38 26\n\nfrogfull &lt;- full_join(frogsp, enviro_filter, by=\"Site\") # Join data. Retain all values, all rows\ndim(frogfull)\n\n[1] 42 26\n\n\nYou can also use semi_join() to combine all rows that have a match in the second dataset, or anti_join() to combine all rows that do not match have a match in the second dataset (this ones a little weird).\nI still find myself using left_join 90% of the time though."
+  },
+  {
+    "objectID": "pages/1/2_viewingdata.html",
+    "href": "pages/1/2_viewingdata.html",
+    "title": "Viewing your data",
+    "section": "",
+    "text": "Now we have become acquainted with our working directories and the R environment, its time to explore our newely imported data. For this, we will be using the weeds dataset. Ensure your data is loaded in and then either use the View() command:\n\nweeds &lt;- read.csv(\"weeds.csv\")\nView(weeds)\n# This will open up a new tab to view your data\n\nor click the variable name in the environment window.\n\nThis should bring up a separate tab in Rstudio which you should be able to see the 4 columns (weeds, soil, species & flowers.m3).\nNow we can see our data, we can investigate the way R has input our data. The best thing to do is to ensure your categorical variables are categorical, and our continuous are continuous, much like we do in programs like JMP.\n\nIn JMP, we have the icons to identify categorical/nominal, ordinal or continuous. In R, all we do is run a single line of code to view the same thing across the different columns.\n\nstr(weeds)\n\n'data.frame':   48 obs. of  4 variables:\n $ weeds     : chr  \"weed\" \"weed\" \"weed\" \"weed\" ...\n $ soil      : chr  \"sandstone\" \"sandstone\" \"sandstone\" \"sandstone\" ...\n $ species   : chr  \"Coprosma\" \"Coprosma\" \"Coprosma\" \"Coprosma\" ...\n $ flowers.m3: int  14 17 23 26 35 45 36 28 28 39 ...\n\n# str stands for \"structure\" and will tell us the formats of each data column, as well as the number of levels when we have a factor (categorical) column\n\nstr() also shows us the number of levels we have in a factor. So if we put in a bad dataset with different capitalisations or misspellings on factor levels, we can identify here how many we want vs. how many we have. Its a quick and easy way to assess your data.\nAs you can see in the weeds example, we have weeds, soil & species as factors (categorical) and flowers.m3 as an integer (one of many continuous data types, in this case, whole numbers).\nWe will follow up on how to fix an incorrect column shortly\nOther data viewing commands can be used to view certain aspects of your data without bringing up the entire data set in a new tab. These are as follows:\n\nhead(weeds) # This will show the top few rows of your data so you can check it without loading the entire table\n\n  weeds      soil   species flowers.m3\n1  weed sandstone  Coprosma         14\n2  weed sandstone  Coprosma         17\n3  weed sandstone  Coprosma         23\n4  weed sandstone  Coprosma         26\n5  weed sandstone Pultenaea         35\n6  weed sandstone Pultenaea         45\n\ntail(weeds) # The same as head() but shows the bottom rows\n\n    weeds  soil   species flowers.m3\n43 native shale Pultenaea         49\n44 native shale Pultenaea         20\n45 native shale   Olearia         32\n46 native shale   Olearia         51\n47 native shale   Olearia         47\n48 native shale   Olearia         55\n\ndim(weeds) # This gives you the number of rows and columns\n\n[1] 48  4\n\n# You can also use nrow(weeds) or ncol(weeds) to get them separately\n\nnames(weeds) # Gives you the column names. \n\n[1] \"weeds\"      \"soil\"       \"species\"    \"flowers.m3\"\n\n# I use this when I want the exact name for a column when I am writing analyses (you will see later how useful this can be)\n\nsummary(weeds) # Gives you summary statistics for each column\n\n    weeds               soil             species            flowers.m3   \n Length:48          Length:48          Length:48          Min.   :13.00  \n Class :character   Class :character   Class :character   1st Qu.:22.50  \n Mode  :character   Mode  :character   Mode  :character   Median :33.00  \n                                                          Mean   :33.81  \n                                                          3rd Qu.:45.50  \n                                                          Max.   :57.00  \n\n# This will also come in handy later for statistical analysis \n\nAs you can see, there are many ways to view data within R. Some of these are useful for huge datasets (&gt; 10k rows) as the view() command can put strain on your computer. Using head() or tail() to view aspects of the data is useful as it reduces how much is displayed.\n::: callout After reading in dataset, use the summary() command with the “insecticide”” dataset to answer the following questions:\nQuestion: What is the minimum value for species richness? :::\n{{% expand Answer %}} 1 {{% /expand %}}\n\n\n\n\n\n\nQuestion: What is the maximum value for species richness?\n\n\n\n{{% expand Answer %}} 20 {{% /expand %}}",
+    "crumbs": [
+      "Pre-Lab - Data exploration",
+      "Viewing Data"
+    ]
+  },
+  {
+    "objectID": "pages/1/1_rename.html",
+    "href": "pages/1/1_rename.html",
+    "title": "The Rename Function",
+    "section": "",
+    "text": "You will often need to rename data you enter or obtain from others, as R converts any spaces to fullstops and people tend to capitilise most words. The rename() function allows us to simply rename a column name within our data frame.\n\nPersonally, this is my favourite function in R as I hate captials, fullstops and other annoying column name problems that slow down coding or generate errors. Trust me, when you spend an hour trying to fix a line of code only to find a single capital letter is missing, you will understand.\nTo do this with dplyr (a tidyverse package) we simply use the following command:\n\nweeds &lt;- rename(weeds, flowers = flowers.m3)\n# In the brackets we need to specify our data frame (weeds) followed by a second argument specifying the name we want for our column = the name we already have.\n# Again, if you run this by itself it will not save to your data frame, unless you direct it to your data frame variable using the &lt;- \n\nPretty simple and straightforward.\nIf you want to rename multiple columns, this is a pretty simple addition. For demonstrating purposes, I am going to rename all the columns of weeds to nonsensical crap.\n\ngrocerylist &lt;- rename(weeds, coopers = \"flowers\", asahi = \"species\", vb = \"soil\", littlecreatures = \"weeds\")\n# to specify multiple variables/columns, we simply add a comma after the first rename and keep going.",
+    "crumbs": [
+      "Pre-Lab 2 - Data manipulation",
+      "The Rename function"
+    ]
+  },
+  {
+    "objectID": "pages/supplementary/cheetsheet.html",
+    "href": "pages/supplementary/cheetsheet.html",
+    "title": "ggplot_cheatsheet",
+    "section": "",
+    "text": "#Graphing cheat sheets\nPosit, the company that marks Rstudio has created some really fantastic resources to help leverage the most out of ggplot2. Access cheatsheet documents for ggplot2. They are available here.\nIn particular I recommend looking at the PDF available on this website. PDF link.",
+    "crumbs": [
+      "Extra help with Graphics",
+      "Additional ggplot2 support"
+    ]
+  },
+  {
     "objectID": "pages/2/Scatter-plots/3_logisticregression.html",
     "href": "pages/2/Scatter-plots/3_logisticregression.html",
     "title": "Logistic regression",
@@ -567,138 +685,6 @@
       "Extra help with Graphics",
       "Themes a customisation in ggplot2",
       "Backgrounds"
-    ]
-  },
-  {
-    "objectID": "pages/DP2/DP2_Final.html",
-    "href": "pages/DP2/DP2_Final.html",
-    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
-    "section": "",
-    "text": "In Dry Practical 1, you were introduced to the basics of handling biological data in R, using tidyverse functions and ggplot2 to visualise simple trends. That session was designed to help you become comfortable navigating RStudio, working with tabular data, and generating figures that communicate biological patterns clearly.\nIn this second dry practical, we’ll extend those skills by working with experimental data that you generated in the wet lab. Specifically, we’ll use your results from the subcellular fractionation practical, where you separated healthy and diseased cells into mitochondrial and cytosolic fractions, then measured protein concentration and enzyme activity.\nThis practical will focus on:\n\nCalculating specific enzyme activity for each sample\nComparing the mitochondrial and cytosolic fractions from healthy vs diseased cells\nUsing dplyr tools to filter, summarise, and interpret biological data\nVisualising patterns across individual and class-wide datasets\n\nBy the end of this session, you’ll have created professional-quality plots and learned how data wrangling tools in R can help you test biological hypotheses.\n\n\n\n\n\n\nACTION REQUIRED\n\n\n\nOpen R studio on your computer and create a new r script for this class. If you are confused about how to do this refer to the introduction section of the BIOL340 practical website.",
-    "crumbs": [
-      "Dry Prac 2",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP2/DP2_Final.html#background-and-purpose",
-    "href": "pages/DP2/DP2_Final.html#background-and-purpose",
-    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
-    "section": "",
-    "text": "In Dry Practical 1, you were introduced to the basics of handling biological data in R, using tidyverse functions and ggplot2 to visualise simple trends. That session was designed to help you become comfortable navigating RStudio, working with tabular data, and generating figures that communicate biological patterns clearly.\nIn this second dry practical, we’ll extend those skills by working with experimental data that you generated in the wet lab. Specifically, we’ll use your results from the subcellular fractionation practical, where you separated healthy and diseased cells into mitochondrial and cytosolic fractions, then measured protein concentration and enzyme activity.\nThis practical will focus on:\n\nCalculating specific enzyme activity for each sample\nComparing the mitochondrial and cytosolic fractions from healthy vs diseased cells\nUsing dplyr tools to filter, summarise, and interpret biological data\nVisualising patterns across individual and class-wide datasets\n\nBy the end of this session, you’ll have created professional-quality plots and learned how data wrangling tools in R can help you test biological hypotheses.\n\n\n\n\n\n\nACTION REQUIRED\n\n\n\nOpen R studio on your computer and create a new r script for this class. If you are confused about how to do this refer to the introduction section of the BIOL340 practical website.",
-    "crumbs": [
-      "Dry Prac 2",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP2/DP2_Final.html#visualizing-data-and-installing-and-loading-packages",
-    "href": "pages/DP2/DP2_Final.html#visualizing-data-and-installing-and-loading-packages",
-    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
-    "section": "Visualizing Data and Installing and Loading Packages",
-    "text": "Visualizing Data and Installing and Loading Packages\nR can make many types of plots. Let’s plot our nucleus sizes using ggplot2, which is included in the tidyverse.\nIf you haven’t installed the tidyverse package yet, you can do so via copying and running:\n\ninstall.packages(\"tidyverse\")\n\nWe also have to load the library by copying and running this line of code:\n\nlibrary(tidyverse)  # Loads ggplot2, dplyr, tidyr, and more\n\nWe are now set up to start looking at our data from Wet Lab 3",
-    "crumbs": [
-      "Dry Prac 2",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP2/DP2_Final.html#load-the-class-dataset",
-    "href": "pages/DP2/DP2_Final.html#load-the-class-dataset",
-    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
-    "section": "Load the Class Dataset",
-    "text": "Load the Class Dataset\n\nThis dataset has: - Absorbance readings every 10 seconds for each sample - The reaction rate already calculated - Protein concentration from the Bradford assay\n\n\n\n\n\n\n\nNote\n\n\n\nTask: Load the class dataset and view the column names.\n\n\n\ndata &lt;- read_csv(\"frac_data.csv\")\nhead(data)\n\n# A tibble: 6 × 22\n  GROUP  Sample    `0`   `10`   `20`   `30`   `40`  `50`  `60`  `70`  `80`  `90`\n  &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 G1 & … Negat…  0.001  0.001  0.002  0.002  0.002 0.002 0.002 0.002 0.002 0.002\n2 G1 & … Healt…  0.003  0.011  0.016  0.019  0.022 0.025 0.027 0.028 0.029 0.03 \n3 G1 & … Healt…  0      0.016  0.031  0.048  0.066 0.083 0.101 0.118 0.135 0.152\n4 G1 & … Disea… -0.012 -0.01  -0.007 -0.004 -0.002 0     0.002 0.005 0.007 0.009\n5 G1 & … Disea…  0      0.008  0.016  0.024  0.033 0.042 0.051 0.059 0.068 0.076\n6 G1 & … Posit…  0.178  0.408  0.498  0.544  0.58  0.61  0.637 0.663 0.688 0.708\n# ℹ 10 more variables: `100` &lt;dbl&gt;, `110` &lt;dbl&gt;, `120` &lt;dbl&gt;,\n#   `Equation of trendline` &lt;lgl&gt;, `Rate of Change (ΔA412/s)` &lt;dbl&gt;,\n#   `Rate of Change (ΔC)` &lt;dbl&gt;, `Amount TNB/s (M)` &lt;dbl&gt;,\n#   `Amount TNB/s (nM)` &lt;dbl&gt;, `Amount TNB/min (nM)` &lt;dbl&gt;,\n#   `Protein (mg/mL) - from Bradford assay` &lt;dbl&gt;",
-    "crumbs": [
-      "Dry Prac 2",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP2/DP2_Final.html#plot-the-absorbance-over-time",
-    "href": "pages/DP2/DP2_Final.html#plot-the-absorbance-over-time",
-    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
-    "section": "Plot the Absorbance Over Time",
-    "text": "Plot the Absorbance Over Time\nThis shows how absorbance (A412) changes during the reaction. It helps us understand how fast the reaction is happening.\n\n\n\n\n\n\nNote\n\n\n\nTask: Make a long version of the data and plot absorbance vs time.\n\n\n\ndata_long &lt;- data %&gt;%\n  pivot_longer(cols = c(`0`:`120`), names_to = \"time\", values_to = \"absorbance\") %&gt;%\n  mutate(time = as.numeric(time))\n\nggplot(data_long, aes(x = time, y = absorbance, colour = Sample)) +\n  geom_point(alpha = 0.6, size = 2) +\n  geom_smooth(method ='lm') +\n  labs(title = \"Absorbance Over Time\",\n       x = \"Time (s)\",\n       y = \"Absorbance\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nWhat does this tell you about the rate of the reactions for the different sample types?",
-    "crumbs": [
-      "Dry Prac 2",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP2/DP2_Final.html#calculating-specific-enzyme-activity",
-    "href": "pages/DP2/DP2_Final.html#calculating-specific-enzyme-activity",
-    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
-    "section": "Calculating Specific Enzyme Activity",
-    "text": "Calculating Specific Enzyme Activity\nOne of the key goals of the wet lab was to measure citrate synthase activity, a marker for mitochondrial function. However, raw absorbance rates don’t mean much on their own—we need to normalise them to protein content to make meaningful comparisons.\nWe calculate specific activity as follows:\nSpecific activity = Amount TNB / min / mg protein\n\n\n\n\n\n\nNote\n\n\n\nTask: Use mutate() to make a new column for Specific Activity.\n\n\n\ndata &lt;- data %&gt;%\n  mutate(Specific_Activity = `Amount TNB/min (nM)` / `Protein (mg/mL) - from Bradford assay`)",
-    "crumbs": [
-      "Dry Prac 2",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP2/DP2_Final.html#class-data-analysis-specific-activity-of-citrate-synthase",
-    "href": "pages/DP2/DP2_Final.html#class-data-analysis-specific-activity-of-citrate-synthase",
-    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
-    "section": "Class Data Analysis: Specific Activity of Citrate Synthase",
-    "text": "Class Data Analysis: Specific Activity of Citrate Synthase\nNow that you’ve calculated specific activity, we can move on to analysing the class-wide dataset. This combined data allows us to evaluate trends across all groups and gain a broader perspective on variation.",
-    "crumbs": [
-      "Dry Prac 2",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP2/DP2_Final.html#make-a-bar-plot-of-class-results",
-    "href": "pages/DP2/DP2_Final.html#make-a-bar-plot-of-class-results",
-    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
-    "section": "Make a Bar Plot of Class Results",
-    "text": "Make a Bar Plot of Class Results\nThis plot shows how enzyme activity changes between samples in the class dataset.\n\nggplot(data, aes(x = Sample, y = Specific_Activity, color = Sample)) +\n  geom_boxplot() +\n  labs(title = \"Citrate Synthase Activity by Sample (Class Data)\",\n       x = 'Sample',\n       y = \"Specific Activity (nmol/min/mg)\") +\n  theme_minimal() +\n  theme(axis.text.x = element_blank(),\n        axis.ticks.x = element_blank())\n\n\n\n\n\n\n\n\n\nWhich samples had the highest activity?",
-    "crumbs": [
-      "Dry Prac 2",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP2/DP2_Final.html#compare-groups-using-faceting",
-    "href": "pages/DP2/DP2_Final.html#compare-groups-using-faceting",
-    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
-    "section": "Compare Groups Using Faceting",
-    "text": "Compare Groups Using Faceting\nIn R we have the ability to create a lot of graphs very quickly using something called faceting. Faceting creates a separate plot panel for each category in a grouping variable—this makes it easier to compare groups side-by-side without crowding the same graph.\nIn this case, we can use facet_wrap(~ GROUP) to generate one boxplot per group. Each panel will show the different sample types (cytosol vs mitochondria) within that group. This helps us quickly spot patterns across the class, like whether healthy samples consistently show higher activity than diseased ones.\n\nggplot(data, aes(x = Sample, y = Specific_Activity, color = Sample)) +\n  geom_boxplot() +\n  labs(title = \"Citrate Synthase Activity by Sample (Faceted by GROUP)\",\n       x = \"Sample\",\n       y = \"Specific Activity (nmol/min/mg)\") +\n  theme_minimal() +\n  theme(axis.text.x = element_blank(),\n        axis.ticks.x = element_blank()) +\n  facet_wrap(~ GROUP)\n\n\n\n\n\n\n\n\nWe can facet in all sort so different ways, here in the below code we change our plot so we have every group togeather and facet by sample instead.\n\nggplot(data, aes(x = GROUP, y = Specific_Activity)) +\n  geom_boxplot() +\n  labs(title = \"Citrate Synthase Activity by Sample (Faceted by SAMPLE)\",\n       x = \"Sample\",\n       y = \"Specific Activity (nmol/min/mg)\") +\n  theme_minimal() +\n  theme(axis.text.x = element_blank(),\n        axis.ticks.x = element_blank()) +\n  facet_wrap(~ Sample)",
-    "crumbs": [
-      "Dry Prac 2",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP2/DP2_Final.html#compare-healthy-vs-diseased-cells",
-    "href": "pages/DP2/DP2_Final.html#compare-healthy-vs-diseased-cells",
-    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
-    "section": "Compare Healthy vs Diseased Cells",
-    "text": "Compare Healthy vs Diseased Cells\nGroup the class data by sample type (healthy or diseased) and fraction (cytosol or mitochondria) to get averages.\n\n\n\n\n\n\nNote\n\n\n\nTask: Make a table showing mean and standard deviation for each sample type across all groups.\n\n\n\ndata %&gt;%\n  group_by(Sample) %&gt;%\n  summarise(mean = mean(Specific_Activity), sd = sd(Specific_Activity))\n\n# A tibble: 6 × 3\n  Sample                                   mean    sd\n  &lt;chr&gt;                                   &lt;dbl&gt; &lt;dbl&gt;\n1 Diseased cells - cytosolic fraction      4.42  1.01\n2 Diseased cells - mitochondrial fraction 21.6   6.44\n3 Healthy cells - cytosolic fraction       6.30  1.94\n4 Healthy cells - mitochondrial fraction  40.0  12.3 \n5 Negative control                        75.5  45.7 \n6 Positive control                        86.9  29.4 \n\n\n\nQuestion: What sample had the highest enzyme activity?\n\n\nQuestion: What does this show about mitochondrial function?\n\n\nQuestion: Can you detect an effect of disease?",
-    "crumbs": [
-      "Dry Prac 2",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP2/DP2_Final.html#summary",
-    "href": "pages/DP2/DP2_Final.html#summary",
-    "title": "Dry Prac 2 — Subcellular Fractionation Analysis",
-    "section": "Summary",
-    "text": "Summary\nBy working with your own experimental data and combining it with class-wide results, you’ve learned how to:\n\nImport and explore real experimental datasets\nCalculate and interpret specific enzyme activity\nUse R to summarise biological variation\nVisualise group-level trends using scatter plots and boxplots\nQuickly analyse trends across data by using faceting\n\nThis approach not only gives you hands-on experience with data science tools but also helps you understand how bioinformatics pipelines are used in real molecular biology research—from raw numbers to biological insight.",
-    "crumbs": [
-      "Dry Prac 2",
-      "Dry Prac 1 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/1/3_filter.html",
-    "href": "pages/1/3_filter.html",
-    "title": "The Filter Function",
-    "section": "",
-    "text": "The filter() command is used to remove rows from your data. This can be useful for removing zeros or “no data/NA’s”, or for restricting certain variables in a dataset for an analysis.\nThis follows the similar syntax as mutate() whereby we specify what dataset we want to filter, followed by how we want to filter.\n\n#The following examples will just keep overwriting the new object \"weeds_filtered\"\n\nweeds_filtered &lt;- filter(weeds, weeds == \"native\") \n# Gives us only the rows which are exactly \"native\" in the weeds column. \n\nweeds_filtered &lt;- filter(weeds, weeds != \"weed\") \n# This gives us the same result as their are only two levels of that column. The != means \"not equal to\"\n\nweeds_filtered &lt;- filter(weeds ,flowers &gt; 20) \n# Flowers greater than 20 m3\n\nSo far, we have covered renaming columns, adding new columns and filtering by rows. The next two commands are focused on selecting specific columns and creating new data tables.",
-    "crumbs": [
-      "Pre-Lab 2 - Data manipulation",
-      "The Filter function"
     ]
   }
 ]
