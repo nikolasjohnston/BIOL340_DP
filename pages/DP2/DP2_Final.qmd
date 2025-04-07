@@ -139,7 +139,7 @@ data <- data %>%
 
 ```{r}
 data <- data %>%
-  mutate(`protein amount)` = `protein concentration` * 0.05)
+  mutate(`protein amount` = as.numeric(`protein concentration`) * 0.05)
 ```
 
 7. Finally we can devide dividing your final Amount TNB(nm) data by the Protein amount (mg) column. This means your new column will be Amount TNB/min/mg.
