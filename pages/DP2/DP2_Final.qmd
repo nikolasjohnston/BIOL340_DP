@@ -113,36 +113,35 @@ data <- data %>%
   mutate(`concentration change(ΔC/s)` = `rate of change` / 13600)
 ```
 
-3. We can then convert this to an amount (in mole) of TNB produced/min. `Use A = C * V (note: 1 ml = 0.001 L)`
+3.  We can then convert this to an amount (in mole) of TNB produced/min. `Use A = C * V (note: 1 ml = 0.001 L)`
 
 ```{r}
 data <- data %>%
   mutate(`amount TNB/s(M)` = `concentration change(ΔC/s)` * 0.001)
 ```
 
-4. To get to nanomole nM we just times this by 10^9
+4.  To get to nanomole nM we just times this by 10\^9
 
 ```{r}
 data <- data %>%
   mutate(`amount TNB/s(nM)` = `amount TNB/s(M)` * 10^9)
 ```
 
-5. We can then convert this to amount/min rather than seconds by multiplying by 60
+5.  We can then convert this to amount/min rather than seconds by multiplying by 60
 
 ```{r}
 data <- data %>%
   mutate(`amount TNB/min(nM))` = `amount TNB/s(nM)` * 60)
 ```
 
-
-6. Now to get to specific activity we need to tie this amount value back to the protein concentration in our samples. This we calculated using a standard curve as `mg/mL`. So to get to amount in `mg` we need to times by the volume added, which in our case was 50 uL or 0.05 mL. 
+6.  Now to get to specific activity we need to tie this amount value back to the protein concentration in our samples. This we calculated using a standard curve as `mg/mL`. So to get to amount in `mg` we need to times by the volume added, which in our case was 50 uL or 0.05 mL.
 
 ```{r}
 data <- data %>%
   mutate(`protein amount` = as.numeric(`protein concentration`) * 0.05)
 ```
 
-7. Finally we can devide dividing your final Amount TNB(nm) data by the Protein amount (mg) column. This means your new column will be Amount TNB/min/mg.
+7.  Finally we can devide dividing your final Amount TNB(nm) data by the Protein amount (mg) column. This means your new column will be Amount TNB/min/mg.
 
 ```{r}
 data <- data %>%

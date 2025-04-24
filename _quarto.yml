@@ -74,6 +74,11 @@ website:
         contents: 
           - href: pages/DP2/DP2_Final.qmd
             text: Dry Prac 2 Notes
+
+      - section: "Dry Prac 3"
+        contents: 
+          - href: pages/DP3/DP3.qmd
+            text: Dry Prac 3 Notes
   
       - section: "Extra help with Graphics"
         contents:

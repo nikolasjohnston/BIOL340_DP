@@ -690,5 +690,125 @@
       "Themes a customisation in ggplot2",
       "Backgrounds"
     ]
+  },
+  {
+    "objectID": "pages/DP3/DP3.html",
+    "href": "pages/DP3/DP3.html",
+    "title": "DP3:Peer Review",
+    "section": "",
+    "text": "Below are four unlabeled scientific abstracts describing the same experiment: measuring citrate synthase activity in subcellular fractions of healthy and diseased cell lines.\nEach abstract is written to align with one of the four rubric categories: Outstanding, Excellent, Fair, and Developing.\nAll abstracts are approximately six sentences long and presented in random order.\n\n\n\n\n\n\nTask Instructions\n\n\n\n\nCarefully read each abstract.\nUse the provided rubric to evaluate each one.\nScore them independently from 1 (Developing) to 4 (Outstanding).\nWrite brief notes explaining the score for each abstract.\n\n\n\n\n\n\n\n\n\nCitrate synthase activity was investigated in healthy and diseased mammalian cell lines by measuring enzymatic function in cytosolic and mitochondrial fractions. Cells were lysed and separated using differential centrifugation, and activity was measured using a spectrophotometric assay. The mitochondrial fractions consistently showed higher activity, confirming the expected localization. Diseased cells exhibited lower activity overall, especially in the mitochondrial fraction. These results suggest mitochondrial function is compromised in the diseased condition. The experiment provides insight into cellular metabolic changes associated with disease.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\nWe tested citrate synthase activity in different parts of the cell. Healthy and diseased cells were used in the study. We broke the cells up and spun them to get different parts, like mitochondria and cytosol. Then we measured enzyme activity with a color test. There were some differences between the samples. It looks like mitochondria might be involved in this, but it’s not totally clear from the results.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\nThe purpose of this experiment was to analyze the specific activity of citrate synthase in subcellular fractions of two mammalian cell lines. Healthy and diseased cells were lysed and processed to separate mitochondria and cytosol using centrifugation. Enzyme activity was measured using a colorimetric assay and normalized to total protein content. Mitochondrial fractions had greater activity, and diseased cells showed lower activity in both compartments. These findings support the hypothesis that mitochondrial dysfunction contributes to disease. Clear trends were observed, although further validation and controls would strengthen the results.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\nIn this experiment, we analyzed citrate synthase activity in different subcellular fractions of healthy and diseased cell lines. Cells were disrupted and fractionated via centrifugation into cytosolic and mitochondrial compartments. We quantified enzyme activity using a spectrophotometric method based on TNB production and calculated specific activity using protein concentration data. Results showed clear differences in activity between the two fractions, with mitochondrial activity being highest. Notably, diseased cells demonstrated significantly reduced activity in both fractions. These results strongly support a hypothesis of mitochondrial enzyme impairment in disease and reinforce the method’s effectiveness for subcellular analysis.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\nThis experiment aimed to investigate citrate synthase activity in cell fractions from healthy and diseased cells. Cells were prepared and divided into cytosolic and mitochondrial fractions using standard lab procedures. Enzyme activity was assessed with a colorimetric method, and we compared levels across the fractions and cell types. While mitochondrial activity appeared higher, details about the data or significance were limited. The abstract touches on all sections but lacks depth in interpreting results and establishing relevance.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\n\n\n\n\n\n\nGenAI Prompt for Self-Assessment\n\n\n\nUse the following prompt with ChatGPT or another generative AI tool:\n\nYou are an expert in higher education assessment. Below are four student-written abstracts for a biochemistry lab. Each one is meant to represent one of four rubric categories: Outstanding, Excellent, Fair, and Developing. Please assign a category to each abstract and explain your reasoning based on writing clarity, scientific voice, structure, and detail. Here are the abstracts: [Insert Abstracts Here].",
+    "crumbs": [
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP3/DP3.html#abstract-1",
+    "href": "pages/DP3/DP3.html#abstract-1",
+    "title": "DP3:Peer Review",
+    "section": "",
+    "text": "Citrate synthase activity was investigated in healthy and diseased mammalian cell lines by measuring enzymatic function in cytosolic and mitochondrial fractions. Cells were lysed and separated using differential centrifugation, and activity was measured using a spectrophotometric assay. The mitochondrial fractions consistently showed higher activity, confirming the expected localization. Diseased cells exhibited lower activity overall, especially in the mitochondrial fraction. These results suggest mitochondrial function is compromised in the diseased condition. The experiment provides insight into cellular metabolic changes associated with disease.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer",
+    "crumbs": [
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP3/DP3.html#abstract-2",
+    "href": "pages/DP3/DP3.html#abstract-2",
+    "title": "DP3:Peer Review",
+    "section": "",
+    "text": "We tested citrate synthase activity in different parts of the cell. Healthy and diseased cells were used in the study. We broke the cells up and spun them to get different parts, like mitochondria and cytosol. Then we measured enzyme activity with a color test. There were some differences between the samples. It looks like mitochondria might be involved in this, but it’s not totally clear from the results.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer",
+    "crumbs": [
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP3/DP3.html#abstract-3",
+    "href": "pages/DP3/DP3.html#abstract-3",
+    "title": "DP3:Peer Review",
+    "section": "",
+    "text": "The purpose of this experiment was to analyze the specific activity of citrate synthase in subcellular fractions of two mammalian cell lines. Healthy and diseased cells were lysed and processed to separate mitochondria and cytosol using centrifugation. Enzyme activity was measured using a colorimetric assay and normalized to total protein content. Mitochondrial fractions had greater activity, and diseased cells showed lower activity in both compartments. These findings support the hypothesis that mitochondrial dysfunction contributes to disease. Clear trends were observed, although further validation and controls would strengthen the results.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer",
+    "crumbs": [
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP3/DP3.html#abstract-4",
+    "href": "pages/DP3/DP3.html#abstract-4",
+    "title": "DP3:Peer Review",
+    "section": "",
+    "text": "In this experiment, we analyzed citrate synthase activity in different subcellular fractions of healthy and diseased cell lines. Cells were disrupted and fractionated via centrifugation into cytosolic and mitochondrial compartments. We quantified enzyme activity using a spectrophotometric method based on TNB production and calculated specific activity using protein concentration data. Results showed clear differences in activity between the two fractions, with mitochondrial activity being highest. Notably, diseased cells demonstrated significantly reduced activity in both fractions. These results strongly support a hypothesis of mitochondrial enzyme impairment in disease and reinforce the method’s effectiveness for subcellular analysis.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer",
+    "crumbs": [
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP3/DP3.html#optional-extension",
+    "href": "pages/DP3/DP3.html#optional-extension",
+    "title": "DP3:Peer Review",
+    "section": "",
+    "text": "GenAI Prompt for Self-Assessment\n\n\n\nUse the following prompt with ChatGPT or another generative AI tool:\n\nYou are an expert in higher education assessment. Below are four student-written abstracts for a biochemistry lab. Each one is meant to represent one of four rubric categories: Outstanding, Excellent, Fair, and Developing. Please assign a category to each abstract and explain your reasoning based on writing clarity, scientific voice, structure, and detail. Here are the abstracts: [Insert Abstracts Here]."
+  },
+  {
+    "objectID": "pages/DP3/DP3.html#test-your-results",
+    "href": "pages/DP3/DP3.html#test-your-results",
+    "title": "DP3:Peer Review",
+    "section": "",
+    "text": "GenAI Prompt for Self-Assessment\n\n\n\nUse the following prompt with ChatGPT or another generative AI tool:\n\nYou are an expert in higher education assessment. Below are four student-written abstracts for a biochemistry lab. Each one is meant to represent one of four rubric categories: Outstanding, Excellent, Fair, and Developing. Please assign a category to each abstract and explain your reasoning based on writing clarity, scientific voice, structure, and detail. Here are the abstracts: [Insert Abstracts Here].",
+    "crumbs": [
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP3/DP3.html#abstract-5",
+    "href": "pages/DP3/DP3.html#abstract-5",
+    "title": "DP3:Peer Review",
+    "section": "",
+    "text": "This experiment aimed to investigate citrate synthase activity in cell fractions from healthy and diseased cells. Cells were prepared and divided into cytosolic and mitochondrial fractions using standard lab procedures. Enzyme activity was assessed with a colorimetric method, and we compared levels across the fractions and cell types. While mitochondrial activity appeared higher, details about the data or significance were limited. The abstract touches on all sections but lacks depth in interpreting results and establishing relevance.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer",
+    "crumbs": [
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP3/DP3.html#javascript",
+    "href": "pages/DP3/DP3.html#javascript",
+    "title": "DP3:Peer Review",
+    "section": "",
+    "text": "```{=html}"
+  },
+  {
+    "objectID": "pages/DP3/DP3.html#abstract",
+    "href": "pages/DP3/DP3.html#abstract",
+    "title": "DP3:Peer Review",
+    "section": "Abstract",
+    "text": "Abstract\nCitrate synthase SA was quantified in MT and CYT subfractions isolated from immortalized mammalian CLs of divergent physiological states (i.e., HL and DL).\nFractionation was executed via DC and analyzed through TNB-based spectrophotometric methodologies.\nComparative SA metrics were demonstrated to be variably reduced across conditions, though significance thresholds were not consistently upheld.\nInterpretation was limited by inconsistent normalization to TP content and variability in the enzymatic assay kinetics.\nIt is inferred that mitochondrial biogenesis or bioenergetic perturbation may be implicated, although further ELISA and qPCR corroboration would be recommended.\n\nWhat rubric level best fits this abstract?\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\nWhy this is Fair (but feels advanced)\n\n\n\n\n\n\n\nProblem Area\nWhat’s Wrong\n\n\n\n\nPassive voice\nObscures who did what; lacks clarity and accountability\n\n\nExcessive jargon & acronyms\nUses unexplained abbreviations: SA, MT, CYT, CLs, HL/DL, DC, TP, ELISA, qPCR\n\n\nTense inconsistency\nShifts from past (“was quantified”) to present (“is inferred”)\n\n\nSuperficial complexity\nComplex phrasing covers weak experimental interpretation\n\n\nLack of clarity\nThe results and implications are muddled or speculative",
+    "crumbs": [
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP3/DP3.html#use-genai-to-reflect-and-revise",
+    "href": "pages/DP3/DP3.html#use-genai-to-reflect-and-revise",
+    "title": "DP3:Peer Review",
+    "section": "Use GenAI to Reflect and Revise",
+    "text": "Use GenAI to Reflect and Revise\n\n\n\n\n\n\nRequired Follow-up Task\n\n\n\nIf your answer was incorrect or if you’re unsure why this abstract is difficult to evaluate, copy and paste the prompt below into ChatGPT or another GenAI tool:\n\nYou are an expert in scientific communication and higher education assessment.\nI am learning how to identify weaknesses in scientific abstracts, especially those that sound complex but are not clear.\nBelow is an abstract I was given. Please review it and identify specific problems in clarity, structure, grammar, or scientific communication.\nThen suggest how I could revise it to improve readability and better match an “Excellent” or “Outstanding” level according to a university rubric.\n\nAbstract:\n&gt; Citrate synthase SA was quantified in MT and CYT subfractions isolated from immortalized mammalian CLs of divergent physiological states…",
+    "crumbs": [
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP3/DP3.html#javascript-1",
+    "href": "pages/DP3/DP3.html#javascript-1",
+    "title": "DP3:Peer Review",
+    "section": "JavaScript",
+    "text": "JavaScript"
   }
 ]
