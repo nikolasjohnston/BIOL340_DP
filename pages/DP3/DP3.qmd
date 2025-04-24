@@ -154,7 +154,7 @@ It is inferred that mitochondrial biogenesis or bioenergetic perturbation may be
 <div id="fair_feedback" style="margin-top: 8px;"></div>
 
 <div id="fair_explanation" style="display: none; margin-top: 20px;">
-### Why this is *Fair* (but feels advanced)
+### Abstract grade explaination
 
 | Problem Area                | What's Wrong                                                                 |
 |----------------------------|------------------------------------------------------------------------------|
