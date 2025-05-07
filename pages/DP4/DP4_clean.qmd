@@ -15,27 +15,14 @@ This session will guide you through using GenAI to improve your scientific writi
 
 ------------------------------------------------------------------------
 
-## :dart: Learning Objectives
-
-> By the end of this lab, you will:
->
-> :white_check_mark: Use 3 types of GenAI prompts to revise a scientific report\
-> :white_check_mark: Compare and reflect on AI vs. human feedback\
-> :white_check_mark: Practice ethical and responsible use of GenAI tools
-
-------------------------------------------------------------------------
-
-## :rocket: Getting Started {.callout-note}
-
-::: {.callout-tip title="How to Complete This Lab"}
-As you work through this page, open a new Microsoft Word document to record your answers. Use the checkboxes here to tick off each step as you complete it. This will help keep you on track and ensure you've answered everything before submission.
-:::
+## Getting Started {.callout-note}
 
 Before you begin:
 
--   :white_check_mark: Have your draft scientific report ready (ideally with comments from a peer)
--   :white_check_mark: Access a GenAI tool like **Copilot** (or other approved platform)
--   :white_check_mark: Use Microsoft Word or Google Docs with **tracked changes enabled**
+-   Open a new Microsoft Word document to record your answers.
+-   Have your draft scientific report ready (ideally with comments from a peer)
+-   Access a GenAI tool like **Copilot** (or other approved platform)
+-   Use Microsoft Word or Google Docs with **tracked changes enabled**
 
 ::: {.callout-important title="Launch Copilot"}
 Use the link below to open Microsoft Copilot in a new tab. You'll need to be logged in with your UOW or institutional account.
@@ -56,7 +43,7 @@ Choose a paragraph from your own writing and paste it in your notes. Now try usi
 > **Prompt:** "Please rewrite the following paragraph to be more concise and clear, suitable for a scientific audience."
 
 **Example AI Output:**\
-\> "The experiment investigated the effect of temperature on enzyme activity. Results showed a steady increase in activity up to 37°C, after which it declined rapidly, suggesting denaturation."
+"The experiment investigated the effect of temperature on enzyme activity. Results showed a steady increase in activity up to 37°C, after which it declined rapidly, suggesting denaturation."
 
 ------------------------------------------------------------------------
 
@@ -65,23 +52,19 @@ Choose a paragraph from your own writing and paste it in your notes. Now try usi
 > **Prompt:** "Rewrite the paragraph in a way that explains the concept clearly to someone without a science background."
 
 **Example AI Output:**\
-\> "We tested how heat affects enzymes—the tiny machines inside cells. They worked faster when it was warm, but too much heat made them break down."
+"We tested how heat affects enzymes—the tiny machines inside cells. They worked faster when it was warm, but too much heat made them break down."
 
 ------------------------------------------------------------------------
 
 **Now try your own prompts and note the results using the below guide:**
 
-**Prompt 1 (concise/scientific):**\
-...
+**Prompt 1 (concise/scientific):**
 
 **AI Output 1:**\
-...
 
 **Prompt 2 (general audience):**\
-...
 
 **AI Output 2:**\
-...
 
 ------------------------------------------------------------------------
 
@@ -95,11 +78,9 @@ Share your prompts and output with the group next to you, and use the following 
 -   [ ] Introduced an error or hallucination\
 -   [ ] Was suitable for the intended audience
 
-**Which output was better and why?**\
-...
+[**Which output was better and why?**]{style="color:red"}\
 
-**Did anything surprise or confuse you?**\
-...
+[**Did anything surprise or confuse you?**]{style="color:red"}\
 
 ------------------------------------------------------------------------
 
@@ -110,14 +91,14 @@ A student pastes their full assignment into ChatGPT, accepts the rewritten versi
 
 **Discussion Questions:**
 
--   What are the risks in this scenario?\
--   When is it okay to use AI in writing? When is it not?
+-   [What are the risks in this scenario?]{style="color:red"}\
+-   [When is it okay to use AI in writing? When is it not?]{style="color:red"}
 
 **Ethical checklist you can apply and think about when using these tools:**
 
 -   [ ] I used AI to assist, not replace my work\
 -   [ ] I reviewed and edited all AI-generated text\
--   [ ] I remain the author of my submission
+-   [ ] I remain the author of my submission\
 
 ------------------------------------------------------------------------
 
@@ -146,23 +127,23 @@ Choose one paragraph as a group and go through these steps:
 
 Record your most effective prompt from your work today and its benefit.
 
-**Best Prompt:**\
+[**Best Prompt:**]{style="color:red"}\
 ...
 
-**What it helped improve:**\
+[**What it helped improve:**]{style="color:red"}\
 ...
 
 ------------------------------------------------------------------------
 
 ## Class Reflection
 
-**Today I learned:**\
+[**Today I learned:**]{style="color:red"}\
 ...
 
-**One thing I’ll do differently in my writing is:**\
+[**One thing I’ll do differently in my writing is:**]{style="color:red"}\
 ...
 
-**One thing to remember when using AI:**\
+[**One thing to remember when using AI:**]{style="color:red"}\
 ...
 
 > **Final Thought**: AI is a tool — you are the scientist. Own your writing, use tools wisely, and always verify what you say!
