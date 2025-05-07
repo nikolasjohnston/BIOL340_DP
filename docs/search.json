@@ -800,5 +800,554 @@
       "Dry Prac 3",
       "Dry Prac 3 Notes"
     ]
+  },
+  {
+    "objectID": "pages/DP4/genai_final_practical (1).html",
+    "href": "pages/DP4/genai_final_practical (1).html",
+    "title": "Student Practical: Using AI in Scientific Writing",
+    "section": "",
+    "text": "Today you’ll explore how to use Generative AI (like ChatGPT) to revise and improve your scientific writing. You’ll work in groups, build better prompts, and reflect on ethical and effective AI use.\nComplete each section in order. When you finish one, move on to the next. All activities are interactive.\n\n\n\n\n\n\nWhat do you hope AI can help you improve in your writing?\n\nUse the textbox below to note your ideas:\nI want AI to help me with...\n\n\n\nChoose a paragraph from your own writing (e.g., an essay or report draft) that you want to revise. Paste it here:\nMy original paragraph:\n\n\n\n\n\n\n\nWrite two different prompts to improve your paragraph.\nPrompt 1: Make it more concise. Prompt 2: Change the tone (e.g., public vs. academic).\nPrompt 1 (conciseness):\n\nPrompt 2 (tone adjustment):\nPaste the AI outputs for both below:\nAI output from Prompt 1:\n\nAI output from Prompt 2:\n\n\n\n- [ ] The AI preserved the meaning.\n- [ ] The AI introduced errors.\n- [ ] I prefer one version over the other.\n\n\n\n\n\n\n\nReflect on the outputs. Fill in the summary below:\nBest improvement made by AI:\n\nBiggest issue or error:\n\nWhat surprised me:\n\n\n\n- [ ] Tried 3+ prompt versions\n- [ ] Asked for a tone change\n- [ ] Identified an error or hallucination\n- [ ] Ignored a bad suggestion\n- [ ] Improved clarity or flow\n- [ ] Got a weird or funny result\n\n\n\n\n\n\n\n- [ ] Did I use AI as a helper, not a replacement?\n- [ ] Did I review AI suggestions for accuracy?\n- [ ] Am I still the author of my writing?\n\n\n\nWhen is it OK to use AI in writing?\n\nWhen is it NOT OK?\n\n\n\n\n\n\n\nPick one paragraph to revise together. Document the full workflow:\nOriginal paragraph:\n\nPrompt used:\n\nAI output:\n\nFinal version after human edits:\n\nNotes on what you changed and why:\n\n\n\n\n\n\n\nRead this polished paragraph. What prompt might have generated it?\nThe mitochondria, often referred to as the \"powerhouse\" of the cell, are essential organelles responsible for generating ATP through oxidative phosphorylation. Their role in cell metabolism and signaling is critical to both normal function and disease processes.\nYour reverse-engineered prompt:\n\n\n\n\n\n\n\nWhat was the most effective or creative prompt you used today?\nBest prompt:\n\nWhat it helped improve:\n\n\n\n\n\n\n\nToday I learned...\n\nIn future, I’ll use AI to...\n\nOne ethical consideration I’ll remember is...\n\n🎓 Remember: AI can support your voice, but not replace your judgement."
+  },
+  {
+    "objectID": "pages/DP4/genai_final_practical (1).html#step-1-introduction-writing-warm-up",
+    "href": "pages/DP4/genai_final_practical (1).html#step-1-introduction-writing-warm-up",
+    "title": "Student Practical: Using AI in Scientific Writing",
+    "section": "",
+    "text": "What do you hope AI can help you improve in your writing?\n\nUse the textbox below to note your ideas:\nI want AI to help me with...\n\n\n\nChoose a paragraph from your own writing (e.g., an essay or report draft) that you want to revise. Paste it here:\nMy original paragraph:"
+  },
+  {
+    "objectID": "pages/DP4/genai_final_practical (1).html#step-2-prompt-design",
+    "href": "pages/DP4/genai_final_practical (1).html#step-2-prompt-design",
+    "title": "Student Practical: Using AI in Scientific Writing",
+    "section": "",
+    "text": "Write two different prompts to improve your paragraph.\nPrompt 1: Make it more concise. Prompt 2: Change the tone (e.g., public vs. academic).\nPrompt 1 (conciseness):\n\nPrompt 2 (tone adjustment):\nPaste the AI outputs for both below:\nAI output from Prompt 1:\n\nAI output from Prompt 2:\n\n\n\n- [ ] The AI preserved the meaning.\n- [ ] The AI introduced errors.\n- [ ] I prefer one version over the other."
+  },
+  {
+    "objectID": "pages/DP4/genai_final_practical (1).html#step-3-compare-evaluate",
+    "href": "pages/DP4/genai_final_practical (1).html#step-3-compare-evaluate",
+    "title": "Student Practical: Using AI in Scientific Writing",
+    "section": "",
+    "text": "Reflect on the outputs. Fill in the summary below:\nBest improvement made by AI:\n\nBiggest issue or error:\n\nWhat surprised me:\n\n\n\n- [ ] Tried 3+ prompt versions\n- [ ] Asked for a tone change\n- [ ] Identified an error or hallucination\n- [ ] Ignored a bad suggestion\n- [ ] Improved clarity or flow\n- [ ] Got a weird or funny result"
+  },
+  {
+    "objectID": "pages/DP4/genai_final_practical (1).html#step-4-ai-ethics-check",
+    "href": "pages/DP4/genai_final_practical (1).html#step-4-ai-ethics-check",
+    "title": "Student Practical: Using AI in Scientific Writing",
+    "section": "",
+    "text": "- [ ] Did I use AI as a helper, not a replacement?\n- [ ] Did I review AI suggestions for accuracy?\n- [ ] Am I still the author of my writing?\n\n\n\nWhen is it OK to use AI in writing?\n\nWhen is it NOT OK?"
+  },
+  {
+    "objectID": "pages/DP4/genai_final_practical (1).html#step-5-collaborative-revision",
+    "href": "pages/DP4/genai_final_practical (1).html#step-5-collaborative-revision",
+    "title": "Student Practical: Using AI in Scientific Writing",
+    "section": "",
+    "text": "Pick one paragraph to revise together. Document the full workflow:\nOriginal paragraph:\n\nPrompt used:\n\nAI output:\n\nFinal version after human edits:\n\nNotes on what you changed and why:"
+  },
+  {
+    "objectID": "pages/DP4/genai_final_practical (1).html#step-6-reverse-prompting",
+    "href": "pages/DP4/genai_final_practical (1).html#step-6-reverse-prompting",
+    "title": "Student Practical: Using AI in Scientific Writing",
+    "section": "",
+    "text": "Read this polished paragraph. What prompt might have generated it?\nThe mitochondria, often referred to as the \"powerhouse\" of the cell, are essential organelles responsible for generating ATP through oxidative phosphorylation. Their role in cell metabolism and signaling is critical to both normal function and disease processes.\nYour reverse-engineered prompt:"
+  },
+  {
+    "objectID": "pages/DP4/genai_final_practical (1).html#step-7-prompt-vault-share",
+    "href": "pages/DP4/genai_final_practical (1).html#step-7-prompt-vault-share",
+    "title": "Student Practical: Using AI in Scientific Writing",
+    "section": "",
+    "text": "What was the most effective or creative prompt you used today?\nBest prompt:\n\nWhat it helped improve:"
+  },
+  {
+    "objectID": "pages/DP4/genai_final_practical (1).html#final-reflection",
+    "href": "pages/DP4/genai_final_practical (1).html#final-reflection",
+    "title": "Student Practical: Using AI in Scientific Writing",
+    "section": "",
+    "text": "Today I learned...\n\nIn future, I’ll use AI to...\n\nOne ethical consideration I’ll remember is...\n\n🎓 Remember: AI can support your voice, but not replace your judgement."
+  },
+  {
+    "objectID": "pages/DP4/DP4.html",
+    "href": "pages/DP4/DP4.html",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "In this hands-on session, you’ll explore how to use Generative AI (like ChatGPT or Copilot) to refine your scientific writing. You’ll work in groups and use your own writing as material. Along the way, we’ll reflect on ethics and effectiveness in prompting.\n\n🧭 Mode: In pairs, bring your scientific report and be ready to collaborate.\n\nThis session will guide you through using GenAI to improve your scientific writing and reflect on how AI compares to human feedback.\n\n\n\n\nBy the end of this lab, you will:\n✅ Use 3 types of GenAI prompts to revise a scientific report\n✅ Compare and reflect on AI vs. human feedback\n✅ Practice ethical and responsible use of GenAI tools\n✅ Submit a revised report with tracked changes\n\n\n\n\n\n\n\n\n\n\n\nHow to Complete This Lab\n\n\n\nAs you work through this page, open a new Microsoft Word document to record your answers. Use the checkboxes here to tick off each step as you complete it. This will help keep you on track and ensure you’ve answered everything before submission.\n\n\nBefore you begin:\n\n✅ Have your draft scientific report ready (ideally with comments from a peer)\n✅ Access a GenAI tool like Copilot (or other approved platform)\n✅ Use Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nLaunch Copilot\n\n\n\nUse the link below to open Microsoft Copilot in a new tab. You’ll need to be logged in with your UOW or institutional account.\n👉 Launch Microsoft Copilot\n\n⚠️ Make sure to copy/paste your prompts and results into your worksheet as you go!"
+  },
+  {
+    "objectID": "pages/DP4/DP4.html#learning-objectives",
+    "href": "pages/DP4/DP4.html#learning-objectives",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "By the end of this lab, you will:\n✅ Use 3 types of GenAI prompts to revise a scientific report\n✅ Compare and reflect on AI vs. human feedback\n✅ Practice ethical and responsible use of GenAI tools\n✅ Submit a revised report with tracked changes"
+  },
+  {
+    "objectID": "pages/DP4/DP4.html#getting-started",
+    "href": "pages/DP4/DP4.html#getting-started",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "How to Complete This Lab\n\n\n\nAs you work through this page, open a new Microsoft Word document to record your answers. Use the checkboxes here to tick off each step as you complete it. This will help keep you on track and ensure you’ve answered everything before submission.\n\n\nBefore you begin:\n\n✅ Have your draft scientific report ready (ideally with comments from a peer)\n✅ Access a GenAI tool like Copilot (or other approved platform)\n✅ Use Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nLaunch Copilot\n\n\n\nUse the link below to open Microsoft Copilot in a new tab. You’ll need to be logged in with your UOW or institutional account.\n👉 Launch Microsoft Copilot\n\n⚠️ Make sure to copy/paste your prompts and results into your worksheet as you go!"
+  },
+  {
+    "objectID": "pages/DP4/DP4.html#step-1-human-feedback-summary",
+    "href": "pages/DP4/DP4.html#step-1-human-feedback-summary",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Task Instructions\n\n\n\nWith your partner, summarise the feedback you received from a peer or tutor.\n- Be specific and use your own words\n- Add how you plan to respond to this feedback\n\n\n\n\nList 1–3 points of feedback you received on your report. Be specific.\n\n\n1.\n\n2.\n\n3.\n\n💬 Great — being specific helps with revision targeting!\n\n\n\nDescribe one way you’ll apply this feedback to your report.\n\n\nAction plan:\n\n💬 Nice plan! Make sure to track the change clearly in your document."
+  },
+  {
+    "objectID": "pages/DP4/DP4.html#step-2-revising-with-genai",
+    "href": "pages/DP4/DP4.html#step-2-revising-with-genai",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Prompt Engineering Guide\n\n\n\nYou will now use three types of prompts to revise your report using Microsoft Copilot:\n\n🧠 Context prompt (who the AI is)\n\n🔧 “Do for me”\n\n🔍 “Evaluate”\n\n🎓 “Teach me”\n\nWork through each one, copy the AI output, and explain how it helped.\n\n\n\n\nWrite a prompt that tells Copilot who it is (e.g., “You are an expert editor of a scientific journal…”)\n\n\nYour prompt:\n\n💬 Well done! Giving AI context helps it produce better responses.\n\n\n\nShare a prompt you used to get Copilot to rewrite or revise a section for you.\n\n\nYour prompt:\n\n💬 Nice! Save the output and compare it to your original.\n\nHow did you use the Copilot output to change your report?\n\n\nDescription of change:\n\n💬 Awesome — this shows thoughtful revision.\n\n\n\nAsk Copilot to review a section. What prompt did you use?\n\n\nYour prompt:\n\n💬 Great — feedback prompts help improve clarity.\n\nWhat change did you make based on Copilot’s evaluation?\n\n\nDescription of change:\n\n💬 Excellent — critical review improves structure.\n\n\n\nShare a “teach me” prompt you used with Copilot (e.g., “How can I improve clarity in my methods section?”)\n\n\nYour prompt:\n\n💬 Nice! Teaching prompts help build your writing skills.\n\nWhat did you learn from Copilot’s response?\n\n\nKey takeaway:\n\n💬 Good — understanding the ‘why’ builds long-term skills."
+  },
+  {
+    "objectID": "pages/DP4/DP4.html#step-3-reflection",
+    "href": "pages/DP4/DP4.html#step-3-reflection",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Answer the following questions in 100–150 words each.\n\n\nHow did the AI-generated feedback compare to the feedback provided by your peer?\n\n\n\nWhich type of prompt did you find most useful for improving your writing? Why?\n\n\n\nDid using Copilot influence how you approach writing or editing in science?\n\n\n\nWhat are the strengths and weaknesses of using GenAI tools in scientific writing?"
+  },
+  {
+    "objectID": "pages/DP4/DP4.html#final-checklist",
+    "href": "pages/DP4/DP4.html#final-checklist",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Before submitting:\n✅ Tracked changes enabled in your revised report\n✅ Completed Pro Forma with feedback summary, prompts, and reflection\n✅ Screenshots or transcripts of Copilot interactions in Appendix\n\n📤 Upload to Moodle by Friday Week X, 11:59pm"
+  },
+  {
+    "objectID": "pages/DP4/DP4.html#bonus-discussion",
+    "href": "pages/DP4/DP4.html#bonus-discussion",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "With your partner, reflect on this:\n\n✨ What would be an inappropriate use of GenAI like Copilot in this context?\n\nWrite 2–3 examples and include them in your Appendix."
+  },
+  {
+    "objectID": "pages/DP4/DP4_test.html",
+    "href": "pages/DP4/DP4_test.html",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "🧭 Mode: In pairs, bring your scientific report and be ready to collaborate.\n\nThis session will guide you through using GenAI to improve your scientific writing and reflect on how AI compares to human feedback.\n\n\n\n\nBy the end of this lab, you will:\n✅ Use 3 types of GenAI prompts to revise a scientific report\n✅ Compare and reflect on AI vs. human feedback\n✅ Practice ethical and responsible use of GenAI tools\n✅ Submit a revised report with tracked changes\n\n\n\n\n\n\n\n\n\n\n\nHow to Complete This Lab\n\n\n\nAs you work through this page, open a new Microsoft Word document to record your answers. Use the checkboxes here to tick off each step as you complete it. This will help keep you on track and ensure you’ve answered everything before submission.\n\n\nBefore you begin:\n\n✅ Have your draft scientific report ready (ideally with comments from a peer)\n✅ Access a GenAI tool like Copilot (or other approved platform)\n✅ Use Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nLaunch Copilot\n\n\n\nUse the link below to open Microsoft Copilot in a new tab. You’ll need to be logged in with your UOW or institutional account.\n👉 Launch Microsoft Copilot\n\n⚠️ Make sure to copy/paste your prompts and results into your worksheet as you go!\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask Instructions\n\n\n\nWith your partner, summarise the feedback you received from a peer or tutor.\n- Be specific and use your own words\n- Add how you plan to respond to this feedback\n\n\n\n\nList 1–3 points of feedback you received on your report. Be specific.\n\n\n1.\n\n2.\n\n3.\n\n💬 Great — being specific helps with revision targeting!\n\n\n\nDescribe one way you’ll apply this feedback to your report.\n\n\nAction plan:\n\n💬 Nice plan! Make sure to track the change clearly in your document.\n\n\n\n\n\n\n\n\n\n\n\nPrompt Engineering Guide\n\n\n\nYou will now use three types of prompts to revise your report using Microsoft Copilot:\n\n🧠 Context prompt (who the AI is)\n\n🔧 “Do for me”\n\n🔍 “Evaluate”\n\n🎓 “Teach me”\n\nWork through each one, copy the AI output, and explain how it helped.\n\n\n\n\nWrite a prompt that tells Copilot who it is (e.g., “You are an expert editor of a scientific journal…”)\n\n\nYour prompt:\n\n💬 Well done! Giving AI context helps it produce better responses.\n\n\n\nShare a prompt you used to get Copilot to rewrite or revise a section for you.\n\n\nYour prompt:\n\n💬 Nice! Save the output and compare it to your original.\n\nHow did you use the Copilot output to change your report?\n\n\nDescription of change:\n\n💬 Awesome — this shows thoughtful revision.\n\n\n\nAsk Copilot to review a section. What prompt did you use?\n\n\nYour prompt:\n\n💬 Great — feedback prompts help improve clarity.\n\nWhat change did you make based on Copilot’s evaluation?\n\n\nDescription of change:\n\n💬 Excellent — critical review improves structure.\n\n\n\nShare a “teach me” prompt you used with Copilot (e.g., “How can I improve clarity in my methods section?”)\n\n\nYour prompt:\n\n💬 Nice! Teaching prompts help build your writing skills.\n\nWhat did you learn from Copilot’s response?\n\n\nKey takeaway:\n\n💬 Good — understanding the ‘why’ builds long-term skills.\n\n\n\n\n\n\n\n\n\n\n\n📝 Reflection Questions\n\n\n\nAnswer each question below in 100–150 words. These reflections are worth 8 marks.\n\n\n\n\nHow did Copilot feedback compare with the feedback from your peer?\n\n\nWrite your response here…\n\n💬 Nice analysis — think about tone, specificity, and usefulness.\n\n\n\nWhich type of Copilot prompt helped most? Why?\n\n\nWrite your response here…\n\n💬 Well reasoned — it’s great to find what works for you.\n\n\n\nDid using Copilot change how you approach writing or editing?\n\n\nWrite your response here…\n\n💬 Good insight — self-awareness is key to skill growth.\n\n\n\nWhat are the benefits and risks of using GenAI like Copilot in science writing?\n\n\nWrite your response here…\n\n💬 Well balanced — keep ethics in mind.\n\n\n\n\n\n\nBefore submitting:\n✅ Tracked changes enabled in your revised report\n✅ Completed Pro Forma with feedback summary, prompts, and reflection\n✅ Screenshots or transcripts of Copilot interactions in Appendix\n\n📤 Upload to Moodle by Friday Week X, 11:59pm\n\n\n\n\nWith your partner, reflect on this:\n\n✨ What would be an inappropriate use of GenAI like Copilot in this context?\n\nWrite 2–3 examples and include them in your Appendix."
+  },
+  {
+    "objectID": "pages/DP4/DP4_test.html#learning-objectives",
+    "href": "pages/DP4/DP4_test.html#learning-objectives",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "By the end of this lab, you will:\n✅ Use 3 types of GenAI prompts to revise a scientific report\n✅ Compare and reflect on AI vs. human feedback\n✅ Practice ethical and responsible use of GenAI tools\n✅ Submit a revised report with tracked changes"
+  },
+  {
+    "objectID": "pages/DP4/DP4_test.html#getting-started",
+    "href": "pages/DP4/DP4_test.html#getting-started",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "How to Complete This Lab\n\n\n\nAs you work through this page, open a new Microsoft Word document to record your answers. Use the checkboxes here to tick off each step as you complete it. This will help keep you on track and ensure you’ve answered everything before submission.\n\n\nBefore you begin:\n\n✅ Have your draft scientific report ready (ideally with comments from a peer)\n✅ Access a GenAI tool like Copilot (or other approved platform)\n✅ Use Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nLaunch Copilot\n\n\n\nUse the link below to open Microsoft Copilot in a new tab. You’ll need to be logged in with your UOW or institutional account.\n👉 Launch Microsoft Copilot\n\n⚠️ Make sure to copy/paste your prompts and results into your worksheet as you go!"
+  },
+  {
+    "objectID": "pages/DP4/DP4_test.html#step-1-human-feedback-summary",
+    "href": "pages/DP4/DP4_test.html#step-1-human-feedback-summary",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Task Instructions\n\n\n\nWith your partner, summarise the feedback you received from a peer or tutor.\n- Be specific and use your own words\n- Add how you plan to respond to this feedback\n\n\n\n\nList 1–3 points of feedback you received on your report. Be specific.\n\n\n1.\n\n2.\n\n3.\n\n💬 Great — being specific helps with revision targeting!\n\n\n\nDescribe one way you’ll apply this feedback to your report.\n\n\nAction plan:\n\n💬 Nice plan! Make sure to track the change clearly in your document."
+  },
+  {
+    "objectID": "pages/DP4/DP4_test.html#step-2-revising-with-genai",
+    "href": "pages/DP4/DP4_test.html#step-2-revising-with-genai",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Prompt Engineering Guide\n\n\n\nYou will now use three types of prompts to revise your report using Microsoft Copilot:\n\n🧠 Context prompt (who the AI is)\n\n🔧 “Do for me”\n\n🔍 “Evaluate”\n\n🎓 “Teach me”\n\nWork through each one, copy the AI output, and explain how it helped.\n\n\n\n\nWrite a prompt that tells Copilot who it is (e.g., “You are an expert editor of a scientific journal…”)\n\n\nYour prompt:\n\n💬 Well done! Giving AI context helps it produce better responses.\n\n\n\nShare a prompt you used to get Copilot to rewrite or revise a section for you.\n\n\nYour prompt:\n\n💬 Nice! Save the output and compare it to your original.\n\nHow did you use the Copilot output to change your report?\n\n\nDescription of change:\n\n💬 Awesome — this shows thoughtful revision.\n\n\n\nAsk Copilot to review a section. What prompt did you use?\n\n\nYour prompt:\n\n💬 Great — feedback prompts help improve clarity.\n\nWhat change did you make based on Copilot’s evaluation?\n\n\nDescription of change:\n\n💬 Excellent — critical review improves structure.\n\n\n\nShare a “teach me” prompt you used with Copilot (e.g., “How can I improve clarity in my methods section?”)\n\n\nYour prompt:\n\n💬 Nice! Teaching prompts help build your writing skills.\n\nWhat did you learn from Copilot’s response?\n\n\nKey takeaway:\n\n💬 Good — understanding the ‘why’ builds long-term skills."
+  },
+  {
+    "objectID": "pages/DP4/DP4_test.html#step-3-reflection",
+    "href": "pages/DP4/DP4_test.html#step-3-reflection",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "📝 Reflection Questions\n\n\n\nAnswer each question below in 100–150 words. These reflections are worth 8 marks.\n\n\n\n\nHow did Copilot feedback compare with the feedback from your peer?\n\n\nWrite your response here…\n\n💬 Nice analysis — think about tone, specificity, and usefulness.\n\n\n\nWhich type of Copilot prompt helped most? Why?\n\n\nWrite your response here…\n\n💬 Well reasoned — it’s great to find what works for you.\n\n\n\nDid using Copilot change how you approach writing or editing?\n\n\nWrite your response here…\n\n💬 Good insight — self-awareness is key to skill growth.\n\n\n\nWhat are the benefits and risks of using GenAI like Copilot in science writing?\n\n\nWrite your response here…\n\n💬 Well balanced — keep ethics in mind."
+  },
+  {
+    "objectID": "pages/DP4/DP4_test.html#final-checklist",
+    "href": "pages/DP4/DP4_test.html#final-checklist",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Before submitting:\n✅ Tracked changes enabled in your revised report\n✅ Completed Pro Forma with feedback summary, prompts, and reflection\n✅ Screenshots or transcripts of Copilot interactions in Appendix\n\n📤 Upload to Moodle by Friday Week X, 11:59pm"
+  },
+  {
+    "objectID": "pages/DP4/DP4_test.html#bonus-discussion",
+    "href": "pages/DP4/DP4_test.html#bonus-discussion",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "With your partner, reflect on this:\n\n✨ What would be an inappropriate use of GenAI like Copilot in this context?\n\nWrite 2–3 examples and include them in your Appendix."
+  },
+  {
+    "objectID": "pages/DP4/DP4.html#step-1-summarise-peer-feedback",
+    "href": "pages/DP4/DP4.html#step-1-summarise-peer-feedback",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Instructions\n\n\n\nWith your partner, discuss the feedback you received on your scientific report. Summarise this feedback in your own words and outline how you plan to address it.\n\n\n\n\nList 1–3 points of feedback you received on your report. Be specific.\n\n\n1.\n\n2.\n\n3.\n\n\n\n\nExplain how you will address this feedback in your revised report.\n\n\nAction plan:"
+  },
+  {
+    "objectID": "pages/DP4/DP4.html#step-2-use-genai-to-improve-your-writing",
+    "href": "pages/DP4/DP4.html#step-2-use-genai-to-improve-your-writing",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Instructions\n\n\n\nYou will now interact with Microsoft Copilot using four types of prompts. For each one, record what you asked the AI, what output you received, and how you applied it to your report.\n\n\n\n\nWrite a prompt that clearly defines Copilot’s role (e.g., “You are an expert editor of a scientific journal…”).\n\n\n\nGive Copilot a section of your writing and ask it to rewrite or improve it. Record the prompt and explain how you used the AI’s response.\n\n\n\nAsk Copilot to evaluate a paragraph or section for clarity, tone, or scientific accuracy. Record the prompt and describe how you used the feedback.\n\n\n\nAsk Copilot to explain how you could improve a section of your report. Write the prompt and summarise what you learned."
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html",
+    "href": "pages/DP4/DP4_clean.html",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "🧭 Mode: In pairs, bring your scientific report and be ready to collaborate.\n\nThis session will guide you through using GenAI to improve your scientific writing and reflect on how AI compares to human feedback.\n\n\n\n\nBy the end of this lab, you will:\n✅ Use 3 types of GenAI prompts to revise a scientific report\n✅ Compare and reflect on AI vs. human feedback\n✅ Practice ethical and responsible use of GenAI tools\n✅ Submit a revised report with tracked changes\n\n\n\n\n\n\n\n\n\n\n\nHow to Complete This Lab\n\n\n\nAs you work through this page, open a new Microsoft Word document to record your answers. Use the checkboxes here to tick off each step as you complete it. This will help keep you on track and ensure you’ve answered everything before submission.\n\n\nBefore you begin:\n\n✅ Have your draft scientific report ready (ideally with comments from a peer)\n✅ Access a GenAI tool like Copilot (or other approved platform)\n✅ Use Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nLaunch Copilot\n\n\n\nUse the link below to open Microsoft Copilot in a new tab. You’ll need to be logged in with your UOW or institutional account.\n👉 Launch Microsoft Copilot\n\n⚠️ Make sure to copy/paste your prompts and results into your worksheet as you go!\n\n\n\n\n\n\n\nChoose a paragraph from your own writing and paste it in your notes. Now try using the below types of prompts.\n\n\n\nPrompt: “Please rewrite the following paragraph to be more concise and clear, suitable for a scientific audience.”\n\nExample AI Output:\n&gt; “The experiment investigated the effect of temperature on enzyme activity. Results showed a steady increase in activity up to 37°C, after which it declined rapidly, suggesting denaturation.”\n\n\n\n\n\nPrompt: “Rewrite the paragraph in a way that explains the concept clearly to someone without a science background.”\n\nExample AI Output:\n&gt; “We tested how heat affects enzymes—the tiny machines inside cells. They worked faster when it was warm, but too much heat made them break down.”\n\nNow try your own prompts and note the results using the below guide:\nPrompt 1 (concise/scientific):\n…\nAI Output 1:\n…\nPrompt 2 (general audience):\n…\nAI Output 2:\n…\n\n\n\n\n\nShare your prompts and output with the group next to you, and use the following checklist to evaluate AI responses:\n\nPreserved scientific meaning\n\nImproved clarity or tone\n\nRemoved critical information\n\nIntroduced an error or hallucination\n\nWas suitable for the intended audience\n\nWhich output was better and why?\n…\nDid anything surprise or confuse you?\n…\n\n\n\n\nScenario:\nA student pastes their full assignment into ChatGPT, accepts the rewritten version, and submits it without reading it. The AI fabricated citations and misunderstood the conclusion.\nDiscussion Questions:\n\nWhat are the risks in this scenario?\n\nWhen is it okay to use AI in writing? When is it not?\n\nEthical checklist you can apply and think about when using these tools:\n\nI used AI to assist, not replace my work\n\nI reviewed and edited all AI-generated text\n\nI remain the author of my submission\n\n\n\n\n\nChoose one paragraph as a group and go through these steps:\nOriginal Paragraph:\n…\nRevision Prompt Used:\n…\nAI Output:\n…\nFinal Human-Edited Version:\n…\nWhat we changed and why:\n…\n\n\n\n\nRecord your most effective prompt from your work today and its benefit.\nBest Prompt:\n…\nWhat it helped improve:\n…\n\n\n\n\nToday I learned:\n…\nOne thing I’ll do differently in my writing is:\n…\nOne thing to remember when using AI:\n…\n\nFinal Thought: AI is a tool — you are the scientist. Own your writing, use tools wisely, and always verify what you say!",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#learning-objectives",
+    "href": "pages/DP4/DP4_clean.html#learning-objectives",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "By the end of this lab, you will:\n✅ Use 3 types of GenAI prompts to revise a scientific report\n✅ Compare and reflect on AI vs. human feedback\n✅ Practice ethical and responsible use of GenAI tools\n✅ Submit a revised report with tracked changes",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#getting-started",
+    "href": "pages/DP4/DP4_clean.html#getting-started",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "How to Complete This Lab\n\n\n\nAs you work through this page, open a new Microsoft Word document to record your answers. Use the checkboxes here to tick off each step as you complete it. This will help keep you on track and ensure you’ve answered everything before submission.\n\n\nBefore you begin:\n\n✅ Have your draft scientific report ready (ideally with comments from a peer)\n✅ Access a GenAI tool like Copilot (or other approved platform)\n✅ Use Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nLaunch Copilot\n\n\n\nUse the link below to open Microsoft Copilot in a new tab. You’ll need to be logged in with your UOW or institutional account.\n👉 Launch Microsoft Copilot\n\n⚠️ Make sure to copy/paste your prompts and results into your worksheet as you go!",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#sparkles-activity-1-prompt-design-output-exploration",
+    "href": "pages/DP4/DP4_clean.html#sparkles-activity-1-prompt-design-output-exploration",
+    "title": "AI Reflection & Writing Lab",
+    "section": ":sparkles: Activity 1: Prompt Design & Output Exploration",
+    "text": ":sparkles: Activity 1: Prompt Design & Output Exploration\nChoose a paragraph from your own writing and paste it in your notes. Now try using the below types of prompts.\n\n:speech_balloon: Example Prompt 1 – Clarity & Conciseness\n\nPrompt: “Please rewrite the following paragraph to be more concise and clear, suitable for a scientific audience.”\n\nExample AI Output:\n&gt; “The experiment investigated the effect of temperature on enzyme activity. Results showed a steady increase in activity up to 37°C, after which it declined rapidly, suggesting denaturation.”\n\n\n\n:speech_balloon: Example Prompt 2 – Tone for a General Audience\n\nPrompt: “Rewrite the paragraph in a way that explains the concept clearly to someone without a science background.”\n\nExample AI Output:\n&gt; “We tested how heat affects enzymes—the tiny machines inside cells. They worked faster when it was warm, but too much heat made them break down.”\n\nNow try your own prompts and note the results below:\nPrompt 1 (concise/scientific):\n…\nAI Output 1:\n…\nPrompt 2 (general audience):\n…\nAI Output 2:\n…"
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#bar_chart-activity-2-compare-evaluate",
+    "href": "pages/DP4/DP4_clean.html#bar_chart-activity-2-compare-evaluate",
+    "title": "AI Reflection & Writing Lab",
+    "section": ":bar_chart: Activity 2: Compare & Evaluate",
+    "text": ":bar_chart: Activity 2: Compare & Evaluate\nShare your prompts and output with the group next to you, and use the followin checklist to evaluate AI responses:\n\nPreserved scientific meaning\n\nImproved clarity or tone\n\nRemoved critical information\n\nIntroduced an error or hallucination\n\nWas suitable for the intended audience\n\nWhich output was better and why?\n…\nDid anything surprise or confuse you?\n…"
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#brain-activity-3-ethics-in-action",
+    "href": "pages/DP4/DP4_clean.html#brain-activity-3-ethics-in-action",
+    "title": "AI Reflection & Writing Lab",
+    "section": ":brain: Activity 3: Ethics in Action",
+    "text": ":brain: Activity 3: Ethics in Action\nScenario:\nA student pastes their full assignment into ChatGPT, accepts the rewritten version, and submits it without reading it. The AI fabricated citations and misunderstood the conclusion.\nDiscussion Questions:\n\nWhat are the risks in this scenario?\n\nWhen is it okay to use AI in writing? When is it not?\n\nEthical checklist you can apply:\n\nI used AI to assist, not replace my work\n\nI reviewed and edited all AI-generated text\n\nI remain the author of my submission"
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#repeat-activity-4-collaborative-rewrite",
+    "href": "pages/DP4/DP4_clean.html#repeat-activity-4-collaborative-rewrite",
+    "title": "AI Reflection & Writing Lab",
+    "section": ":repeat: Activity 4: Collaborative Rewrite",
+    "text": ":repeat: Activity 4: Collaborative Rewrite\nChoose one paragraph as a group and go through these steps:\nOriginal Paragraph:\n…\nRevision Prompt Used:\n…\nAI Output:\n…\nFinal Human-Edited Version:\n…\nWhat we changed and why:\n…"
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#test_tube-challenge-reverse-prompting",
+    "href": "pages/DP4/DP4_clean.html#test_tube-challenge-reverse-prompting",
+    "title": "AI Reflection & Writing Lab",
+    "section": ":test_tube: Challenge: Reverse Prompting",
+    "text": ":test_tube: Challenge: Reverse Prompting\nAI Output:\n&gt; “Mitochondria, often called the powerhouses of cells, generate energy by converting food molecules into ATP through a process called oxidative phosphorylation.”\nYour Reverse-Engineered Prompt:\n…"
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#prompt-vault",
+    "href": "pages/DP4/DP4_clean.html#prompt-vault",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Record your most effective prompt from your work today and its benefit.\nBest Prompt:\n…\nWhat it helped improve:\n…",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#class-reflection",
+    "href": "pages/DP4/DP4_clean.html#class-reflection",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Today I learned:\n…\nOne thing I’ll do differently in my writing is:\n…\nOne thing to remember when using AI:\n…\n\nFinal Thought: AI is a tool — you are the scientist. Own your writing, use tools wisely, and always verify what you say!",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#step-1-human-feedback-summary",
+    "href": "pages/DP4/DP4_clean.html#step-1-human-feedback-summary",
+    "title": "AI Reflection & Writing Lab",
+    "section": "🔹 Step 1: Human Feedback Summary",
+    "text": "🔹 Step 1: Human Feedback Summary\n\n🔎 What were the key points of feedback?\n\nList 1–3 points of feedback you received on your report. Be specific.\n\n\n1.\n2.\n3.\n\n\n\n📌 How will you address this feedback?\n\nDescribe one way you’ll apply this feedback to your report.\n\n\nNote down your action plan",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#step-2-revising-with-genai",
+    "href": "pages/DP4/DP4_clean.html#step-2-revising-with-genai",
+    "title": "AI Reflection & Writing Lab",
+    "section": "🔹 Step 2: Revising with GenAI",
+    "text": "🔹 Step 2: Revising with GenAI\n\n\n\n\n\n\nPrompt Engineering Guide\n\n\n\nYou will now use four types of prompts with Microsoft Copilot to revise your scientific report. Each prompt serves a different purpose and helps you interact with AI in more effective ways. Understanding how and why these prompts work differently is an important part of responsibly using GenAI tools.\nUse the Pro Forma to guide your progress. For each prompt type, copy the AI’s output into your worksheet and then reflect on how it helped improve your work—or if it didn’t help, explain why. This reflection is just as important as the output.\n\n\n🧠 Context Prompt (who the AI is)\nThis prompt sets the “role” or “persona” of the AI—you’re telling it who it should pretend to be. For example:\n&gt; “You are a biology lecturer marking third-year scientific reports.”\nThis helps the AI tailor its feedback in a way that’s appropriate for your audience, tone, and discipline. By setting context, you’re more likely to receive feedback that aligns with academic expectations in biology, such as clarity, structure, and use of evidence.\n\n\n\n🔧 “Do for me” Prompt\nThis is a direct instruction where you ask the AI to perform a task on your behalf. For example:\n&gt; “Rewrite this paragraph to be more concise.”\n&gt; “Add a stronger topic sentence to this paragraph.”\nThis prompt is about delegation—you’re giving the AI a task and seeing how well it can help streamline or improve your writing. It’s useful when you know what needs to be fixed but want help doing it efficiently. However, it is very important to evaluate the result critically to ensure it is correct, does not plagiarise and is of an appropriate scientific standard.\n\n\n\n🔍 “Evaluate” Prompt\nIn this prompt, you’re asking the AI to critique or assess a section of your writing. For example:\n&gt; “What are the strengths and weaknesses of this paragraph?”\n&gt; “Does this argument make logical sense?”\nThis approach encourages metacognition—thinking about your own thinking. It helps you view your writing from another perspective, identify gaps, and reflect on your structure and clarity. In scientific writing, this skill is crucial for presenting arguments and evidence effectively.\n\n\n\n🎓 “Teach Me” Prompt\nThis prompt is used to deepen your understanding. You’re asking the AI to explain a concept or technique. For example:\n&gt; “Explain what makes a good scientific discussion section.”\n&gt; “Why is passive voice often discouraged in scientific writing?”\nThis type of prompt supports learning and skill-building. It’s helpful when you’re unsure about a rule or principle in scientific communication and want to strengthen your knowledge. Rather than fixing the text for you, the AI helps you understand how to make good writing choices.\n\n\n\n\n2.1 Contextualise the AI\n\nWrite a prompt that tells Copilot who it is (e.g., “You are an expert editor of a scientific journal…”)\n\n\nNote down your prompt\n\n\n\n2.2 ‘Do for me’ Prompt\n\nShare a prompt you used to get Copilot to rewrite or revise a section for you.\n\n\nNote down your prompt\n\n\nHow did you use the Copilot output to change your report?\n\n\nNote description of change\n\n\n\n2.3 ‘Evaluate’ Prompt\n\nAsk Copilot to review a section. What prompt did you use?\n\n\nNote down your prompt\n\n\nWhat change did you make based on Copilot’s evaluation?\n\n\nNote description of change\n\n\n\n2.4 ‘Teach me’ Prompt\n\nShare a “teach me” prompt you used with Copilot (e.g., “How can I improve clarity in my methods section?”)\n\n\nNote down your prompt\n\n\nWhat did you learn from Copilot’s response?\n\n\nNote key takeaway",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#part-3-reflection",
+    "href": "pages/DP4/DP4_clean.html#part-3-reflection",
+    "title": "AI Reflection & Writing Lab",
+    "section": "🔹 Part 3: Reflection",
+    "text": "🔹 Part 3: Reflection\nFollowing the Pro Forma answer each question below in 100–150 words. The total reflection should not exceed 600 words\n\n3.1 Compare AI & Human Feedback\n\nHow did Copilot feedback compare with the feedback from your peer?\n\n\nNote down your response…\n\n\n\n3.2 Most Effective Prompt\n\nWhich type of Copilot prompt helped most? Why?\n\n\nNote down your response…\n\n\n\n3.3 Impact on Your Writing\n\nDid using Copilot change how you approach writing or editing?\n\n\nNote down your response…\n\n\n\n3.4 AI Pros & Cons\n\nWhat are the benefits and risks of using GenAI like Copilot in science writing?\n\n\nNote down your response…",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#final-checklist",
+    "href": "pages/DP4/DP4_clean.html#final-checklist",
+    "title": "AI Reflection & Writing Lab",
+    "section": "📦 Final Checklist",
+    "text": "📦 Final Checklist\n\nBefore submitting:\n✅ Tracked changes enabled in your revised report\n✅ Completed Pro Forma with feedback summary, prompts, and reflection\n✅ Screenshots or transcripts of Copilot interactions in Appendix\n\n📤 Upload to Moodle by Monday 26th of May, 11:59pm",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4.html#part-2-use-genai-to-improve-your-writing",
+    "href": "pages/DP4/DP4.html#part-2-use-genai-to-improve-your-writing",
+    "title": "AI Reflection & Writing Lab",
+    "section": "Part 2: Use GenAI to Improve Your Writing",
+    "text": "Part 2: Use GenAI to Improve Your Writing\n\n\n\n\n\n\nInstructions\n\n\n\nYou will now interact with Microsoft Copilot using four types of prompts. For each one, record what you asked the AI, what output you received, and how you applied it to your report.\n\n\n\n2.1 Context Prompt\nWrite a prompt that clearly defines Copilot’s role (e.g., “You are an expert editor of a scientific journal…”).\n\n\n2.2 “Do for Me” Prompt\nGive Copilot a section of your writing and ask it to rewrite or improve it. Record the prompt and explain how you used the AI’s response.\n\n\n2.3 “Evaluate” Prompt\nAsk Copilot to evaluate a paragraph or section for clarity, tone, or scientific accuracy. Record the prompt and describe how you used the feedback.\n\n\n2.4 “Teach Me” Prompt\nAsk Copilot to explain how you could improve a section of your report. Write the prompt and summarise what you learned."
+  },
+  {
+    "objectID": "pages/DP4/DP4.html#part-3-reflection",
+    "href": "pages/DP4/DP4.html#part-3-reflection",
+    "title": "AI Reflection & Writing Lab",
+    "section": "Part 3: Reflection",
+    "text": "Part 3: Reflection\nAnswer the following questions in 100–150 words each.\n\nCompare Feedback\nHow did the AI-generated feedback compare to the feedback provided by your peer?\n\n\nMost Useful Prompt\nWhich type of prompt did you find most useful for improving your writing? Why?\n\n\nImpact on Writing\nDid using Copilot influence how you approach writing or editing in science?\n\n\nBenefits and Limitations\nWhat are the strengths and weaknesses of using GenAI tools in scientific writing?"
+  },
+  {
+    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html",
+    "href": "pages/DP4/genai_reflection_lab_clean_final.html",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "This dry practical session introduces a structured approach to using generative AI tools, such as Microsoft Copilot, to improve scientific writing. Students will critically reflect on AI-generated suggestions, compare them to human feedback, and revise their report accordingly.\n\n\n\nBy the end of this session, you will:\n\nApply structured prompts to revise scientific writing using a GenAI tool\nReflect on the differences between human and AI feedback\nPractise ethical use of generative AI tools\nPrepare and submit a revised scientific report\n\n\n\n\n\nBefore you begin:\n\nEnsure you have a draft version of your scientific report (ideally with peer feedback)\nOpen Microsoft Copilot (or another approved AI tool)\nUse Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nHow to Complete This Lab\n\n\n\nAs you work through each section, open a Word document to record your responses. Use the text prompts as a guide. You may wish to print or save this file for your records.\n\n\n\n\n\n\n\n\n\n\n\n\nInstructions\n\n\n\nWith your partner, discuss the feedback you received on your scientific report. Summarise this feedback in your own words and outline how you plan to address it.\n\n\n\n\nRecord 1–3 key points of feedback.\n\n\n\nExplain how you will address this feedback in your revised report.\n\n\n\n\n\n\n\n\n\n\n\nInstructions\n\n\n\nYou will now interact with Microsoft Copilot using four types of prompts. For each one, record what you asked the AI, what output you received, and how you applied it to your report.\n\n\n\n\nWrite a prompt that clearly defines Copilot’s role (e.g., “You are an expert editor of a scientific journal…”).\n\n\n\nGive Copilot a section of your writing and ask it to rewrite or improve it. Record the prompt and explain how you used the AI’s response.\n\n\n\nAsk Copilot to evaluate a paragraph or section for clarity, tone, or scientific accuracy. Record the prompt and describe how you used the feedback.\n\n\n\nAsk Copilot to explain how you could improve a section of your report. Write the prompt and summarise what you learned.\n\n\n\n\n\nAnswer the following questions in 100–150 words each.\n\n\nHow did the AI-generated feedback compare to the feedback provided by your peer?\n\n\n\nWhich type of prompt did you find most useful for improving your writing? Why?\n\n\n\nDid using Copilot influence how you approach writing or editing in science?\n\n\n\nWhat are the strengths and weaknesses of using GenAI tools in scientific writing?\n\n\n\n\n\nBefore submitting your work:\n\nEnsure tracked changes are turned on in your revised scientific report\nComplete your response worksheet with peer feedback and GenAI prompts\nInclude any relevant screenshots or transcripts of Copilot interactions in an appendix\n\nSubmit your materials via Moodle by the due date.\n\n\n\n\nReflect with your partner on ethical concerns:\nWhat would be considered an inappropriate use of Copilot in the context of scientific writing? List 2–3 examples and include them in your appendix."
+  },
+  {
+    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html#learning-objectives",
+    "href": "pages/DP4/genai_reflection_lab_clean_final.html#learning-objectives",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "By the end of this session, you will:\n\nApply structured prompts to revise scientific writing using a GenAI tool\nReflect on the differences between human and AI feedback\nPractise ethical use of generative AI tools\nPrepare and submit a revised scientific report"
+  },
+  {
+    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html#getting-started",
+    "href": "pages/DP4/genai_reflection_lab_clean_final.html#getting-started",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Before you begin:\n\nEnsure you have a draft version of your scientific report (ideally with peer feedback)\nOpen Microsoft Copilot (or another approved AI tool)\nUse Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nHow to Complete This Lab\n\n\n\nAs you work through each section, open a Word document to record your responses. Use the text prompts as a guide. You may wish to print or save this file for your records."
+  },
+  {
+    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html#step-1-summarise-peer-feedback",
+    "href": "pages/DP4/genai_reflection_lab_clean_final.html#step-1-summarise-peer-feedback",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Instructions\n\n\n\nWith your partner, discuss the feedback you received on your scientific report. Summarise this feedback in your own words and outline how you plan to address it.\n\n\n\n\nRecord 1–3 key points of feedback.\n\n\n\nExplain how you will address this feedback in your revised report."
+  },
+  {
+    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html#step-2-use-genai-to-improve-your-writing",
+    "href": "pages/DP4/genai_reflection_lab_clean_final.html#step-2-use-genai-to-improve-your-writing",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Instructions\n\n\n\nYou will now interact with Microsoft Copilot using four types of prompts. For each one, record what you asked the AI, what output you received, and how you applied it to your report.\n\n\n\n\nWrite a prompt that clearly defines Copilot’s role (e.g., “You are an expert editor of a scientific journal…”).\n\n\n\nGive Copilot a section of your writing and ask it to rewrite or improve it. Record the prompt and explain how you used the AI’s response.\n\n\n\nAsk Copilot to evaluate a paragraph or section for clarity, tone, or scientific accuracy. Record the prompt and describe how you used the feedback.\n\n\n\nAsk Copilot to explain how you could improve a section of your report. Write the prompt and summarise what you learned."
+  },
+  {
+    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html#step-3-reflection",
+    "href": "pages/DP4/genai_reflection_lab_clean_final.html#step-3-reflection",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Answer the following questions in 100–150 words each.\n\n\nHow did the AI-generated feedback compare to the feedback provided by your peer?\n\n\n\nWhich type of prompt did you find most useful for improving your writing? Why?\n\n\n\nDid using Copilot influence how you approach writing or editing in science?\n\n\n\nWhat are the strengths and weaknesses of using GenAI tools in scientific writing?"
+  },
+  {
+    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html#submission-checklist",
+    "href": "pages/DP4/genai_reflection_lab_clean_final.html#submission-checklist",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Before submitting your work:\n\nEnsure tracked changes are turned on in your revised scientific report\nComplete your response worksheet with peer feedback and GenAI prompts\nInclude any relevant screenshots or transcripts of Copilot interactions in an appendix\n\nSubmit your materials via Moodle by the due date."
+  },
+  {
+    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html#optional-extension",
+    "href": "pages/DP4/genai_reflection_lab_clean_final.html#optional-extension",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Reflect with your partner on ethical concerns:\nWhat would be considered an inappropriate use of Copilot in the context of scientific writing? List 2–3 examples and include them in your appendix."
+  },
+  {
+    "objectID": "pages/DP4/genai_student_practical_static.html",
+    "href": "pages/DP4/genai_student_practical_static.html",
+    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
+    "section": "",
+    "text": "In this hands-on session, you’ll explore how to use Generative AI (like ChatGPT or Copilot) to refine your scientific writing. You’ll work in groups and use your own writing as material. Along the way, we’ll reflect on ethics and effectiveness in prompting.\n\n📝 Bring: a paragraph or short section from your research report or assignment.\n\n\n\n\nChoose a paragraph from your own writing and paste it in your notes. Now try using the below types of prompts.\n\n\n\nPrompt: “Please rewrite the following paragraph to be more concise and clear, suitable for a scientific audience.”\n\nExample AI Output:\n&gt; “The experiment investigated the effect of temperature on enzyme activity. Results showed a steady increase in activity up to 37°C, after which it declined rapidly, suggesting denaturation.”\n\n\n\n\n\nPrompt: “Rewrite the paragraph in a way that explains the concept clearly to someone without a science background.”\n\nExample AI Output:\n&gt; “We tested how heat affects enzymes—the tiny machines inside cells. They worked faster when it was warm, but too much heat made them break down.”\n\nNow try your own prompts and note the results below:\nPrompt 1 (concise/scientific):\n…\nAI Output 1:\n…\nPrompt 2 (general audience):\n…\nAI Output 2:\n…\n\n\n\n\n\nShare your prompts and output with the group next to you, and use the followin checklist to evaluate AI responses:\n\nPreserved scientific meaning\n\nImproved clarity or tone\n\nRemoved critical information\n\nIntroduced an error or hallucination\n\nWas suitable for the intended audience\n\nWhich output was better and why?\n…\nDid anything surprise or confuse you?\n…\n\n\n\n\nScenario:\nA student pastes their full assignment into ChatGPT, accepts the rewritten version, and submits it without reading it. The AI fabricated citations and misunderstood the conclusion.\nDiscussion Questions:\n\nWhat are the risks in this scenario?\n\nWhen is it okay to use AI in writing? When is it not?\n\nEthical checklist you can apply:\n\nI used AI to assist, not replace my work\n\nI reviewed and edited all AI-generated text\n\nI remain the author of my submission\n\n\n\n\n\nChoose one paragraph as a group and go through these steps:\nOriginal Paragraph:\n…\nRevision Prompt Used:\n…\nAI Output:\n…\nFinal Human-Edited Version:\n…\nWhat we changed and why:\n…\n\n\n\n\nAI Output:\n&gt; “Mitochondria, often called the powerhouses of cells, generate energy by converting food molecules into ATP through a process called oxidative phosphorylation.”\nYour Reverse-Engineered Prompt:\n…\n\n\n\n\nRecord your most effective prompt and its benefit.\nBest Prompt:\n…\nWhat it helped improve:\n…\n\n\n\n\nToday I learned:\n…\nOne thing I’ll do differently in my writing is:\n…\nOne thing to remember when using AI:\n…\n\n🎓 Final Thought: AI is a tool — you are the scientist. Own your writing, use tools wisely, and always verify your facts!"
+  },
+  {
+    "objectID": "pages/DP4/genai_student_practical_static.html#activity-1-prompt-design-output-exploration",
+    "href": "pages/DP4/genai_student_practical_static.html#activity-1-prompt-design-output-exploration",
+    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
+    "section": "",
+    "text": "Choose a paragraph from your own writing and paste it in your notes. Now try using the below types of prompts.\n\n\n\nPrompt: “Please rewrite the following paragraph to be more concise and clear, suitable for a scientific audience.”\n\nExample AI Output:\n&gt; “The experiment investigated the effect of temperature on enzyme activity. Results showed a steady increase in activity up to 37°C, after which it declined rapidly, suggesting denaturation.”\n\n\n\n\n\nPrompt: “Rewrite the paragraph in a way that explains the concept clearly to someone without a science background.”\n\nExample AI Output:\n&gt; “We tested how heat affects enzymes—the tiny machines inside cells. They worked faster when it was warm, but too much heat made them break down.”\n\nNow try your own prompts and note the results below:\nPrompt 1 (concise/scientific):\n…\nAI Output 1:\n…\nPrompt 2 (general audience):\n…\nAI Output 2:\n…"
+  },
+  {
+    "objectID": "pages/DP4/genai_student_practical_static.html#activity-2-compare-evaluate",
+    "href": "pages/DP4/genai_student_practical_static.html#activity-2-compare-evaluate",
+    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
+    "section": "",
+    "text": "Share your prompts and output with the group next to you, and use the followin checklist to evaluate AI responses:\n\nPreserved scientific meaning\n\nImproved clarity or tone\n\nRemoved critical information\n\nIntroduced an error or hallucination\n\nWas suitable for the intended audience\n\nWhich output was better and why?\n…\nDid anything surprise or confuse you?\n…"
+  },
+  {
+    "objectID": "pages/DP4/genai_student_practical_static.html#activity-3-ethics-in-action",
+    "href": "pages/DP4/genai_student_practical_static.html#activity-3-ethics-in-action",
+    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
+    "section": "",
+    "text": "Scenario:\nA student pastes their full assignment into ChatGPT, accepts the rewritten version, and submits it without reading it. The AI fabricated citations and misunderstood the conclusion.\nDiscussion Questions:\n\nWhat are the risks in this scenario?\n\nWhen is it okay to use AI in writing? When is it not?\n\nEthical checklist you can apply:\n\nI used AI to assist, not replace my work\n\nI reviewed and edited all AI-generated text\n\nI remain the author of my submission"
+  },
+  {
+    "objectID": "pages/DP4/genai_student_practical_static.html#activity-4-collaborative-rewrite",
+    "href": "pages/DP4/genai_student_practical_static.html#activity-4-collaborative-rewrite",
+    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
+    "section": "",
+    "text": "Choose one paragraph as a group and go through these steps:\nOriginal Paragraph:\n…\nRevision Prompt Used:\n…\nAI Output:\n…\nFinal Human-Edited Version:\n…\nWhat we changed and why:\n…"
+  },
+  {
+    "objectID": "pages/DP4/genai_student_practical_static.html#bonus-challenge-reverse-prompting",
+    "href": "pages/DP4/genai_student_practical_static.html#bonus-challenge-reverse-prompting",
+    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
+    "section": "",
+    "text": "AI Output:\n&gt; “Mitochondria, often called the powerhouses of cells, generate energy by converting food molecules into ATP through a process called oxidative phosphorylation.”\nYour Reverse-Engineered Prompt:\n…"
+  },
+  {
+    "objectID": "pages/DP4/genai_student_practical_static.html#prompt-vault",
+    "href": "pages/DP4/genai_student_practical_static.html#prompt-vault",
+    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
+    "section": "",
+    "text": "Record your most effective prompt and its benefit.\nBest Prompt:\n…\nWhat it helped improve:\n…"
+  },
+  {
+    "objectID": "pages/DP4/genai_student_practical_static.html#final-reflection",
+    "href": "pages/DP4/genai_student_practical_static.html#final-reflection",
+    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
+    "section": "",
+    "text": "Today I learned:\n…\nOne thing I’ll do differently in my writing is:\n…\nOne thing to remember when using AI:\n…\n\n🎓 Final Thought: AI is a tool — you are the scientist. Own your writing, use tools wisely, and always verify your facts!"
+  },
+  {
+    "objectID": "pages/DP4/genai_full_lesson.html",
+    "href": "pages/DP4/genai_full_lesson.html",
+    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
+    "section": "",
+    "text": "Title: Refining Scientific Writing with AI: Ethical and Effective Practices\nDuration: 2 hours\nDelivery: Group-based computer practical via Quarto website\nFocus: Prompt engineering, ethical AI use, iterative writing revision, collaboration"
+  },
+  {
+    "objectID": "pages/DP4/genai_full_lesson.html#lesson-overview",
+    "href": "pages/DP4/genai_full_lesson.html#lesson-overview",
+    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
+    "section": "",
+    "text": "Title: Refining Scientific Writing with AI: Ethical and Effective Practices\nDuration: 2 hours\nDelivery: Group-based computer practical via Quarto website\nFocus: Prompt engineering, ethical AI use, iterative writing revision, collaboration"
+  },
+  {
+    "objectID": "pages/DP4/genai_full_lesson.html#learning-outcomes",
+    "href": "pages/DP4/genai_full_lesson.html#learning-outcomes",
+    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
+    "section": "🎯 Learning Outcomes",
+    "text": "🎯 Learning Outcomes\nBy the end of the session, students will be able to:\n\nDesign and test effective prompts to improve their scientific writing.\nIdentify limitations, biases, and ethical considerations in AI-generated content.\nReflect critically on AI suggestions and apply human judgement to revisions.\nCollaborate to iteratively revise writing using AI as a tool."
+  },
+  {
+    "objectID": "pages/DP4/genai_full_lesson.html#pre-class-preparation",
+    "href": "pages/DP4/genai_full_lesson.html#pre-class-preparation",
+    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
+    "section": "🔧 Pre-class Preparation",
+    "text": "🔧 Pre-class Preparation\nFor Students: - Bring a draft of a piece of scientific writing (e.g., from an assessment). - Ensure access to your Quarto class site and ChatGPT or a similar tool.\nFor Facilitator: - Load this practical session into the class Quarto site. - Provide sample prompts, ethical scenarios, and example outputs."
+  },
+  {
+    "objectID": "pages/DP4/genai_full_lesson.html#session-schedule",
+    "href": "pages/DP4/genai_full_lesson.html#session-schedule",
+    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
+    "section": "⏱️ Session Schedule",
+    "text": "⏱️ Session Schedule\n\n00:00–00:10 — Introduction & Framing the Problem\n\nBrief welcome and overview of session goals\nPresent two short writing examples: one AI-improved, one worsened\nClass discussion: “What did AI get right or wrong?”\nPose key question: “Can AI help make your writing clearer without losing your voice?”\n\n\n\n\n00:10–00:25 — Activity 1: Prompt Design in Pairs\n\nIn pairs, students choose a paragraph from their own drafts.\nEach pair writes two prompts:\n\nPrompt 1: Make the paragraph more concise\nPrompt 2: Adjust tone for a different audience (e.g., lay vs. academic)\n\nRun both prompts through ChatGPT or similar and observe outputs.\n\n::: prompt-design\n**Try this:**\n- Revise for clarity or brevity\n- Ask for audience-specific rewriting\n- Request grammar correction without changing meaning\n:::\n\n\n\n00:25–00:45 — Activity 2: Compare Outputs & Evaluate\n\nIn groups, students share results and compare AI responses.\nUse this checklist for discussion:\n\n::: checklist-compare\n- [ ] Preserved scientific accuracy?\n- [ ] Improved tone or clarity?\n- [ ] Removed essential meaning?\n- [ ] Introduced factual error?\n:::\n\n\n\n🟩 BONUS: Prompt Engineering Bingo\nDistribute or display the following bingo tasks:\n✅ Asked AI to simplify a paragraph\n✅ Tried 3+ variations of a prompt\n✅ Caught an AI hallucination\n✅ Rejected a poor suggestion\n✅ Got a funny or strange result\n✅ Successfully improved clarity\n\n\n\n00:45–01:00 — Mini-Discussion: Ethics in Action\nFacilitate discussion around these prompts: - Is it ethical to use AI for academic writing support? - What responsibilities do you still hold? - How do you verify accuracy?\nReflection prompt: &gt; What’s the difference between using AI to help vs. to replace your thinking?\n\n\n\n01:00–01:30 — Activity 3: Collaborative Revision\nEach group collaboratively selects a paragraph and documents their AI-revision process:\n\n\n\nStep\nContent\n\n\n\n\nOriginal\nPaste your original paragraph\n\n\nPrompt Used\nInsert your prompt\n\n\nAI Output\nPaste AI-generated result\n\n\nFinal Version\nHuman-revised version\n\n\nNotes on Edits\nWhat was changed and why\n\n\n\n\n\n\n01:30–01:45 — Activity 4: Reverse Prompting (Optional)\nChallenge: Write a prompt that would generate this output:\nThe mitochondria, often referred to as the \"powerhouse\" of the cell, are essential organelles responsible for generating ATP through oxidative phosphorylation. Their role in cell metabolism and signaling is critical to both normal function and disease processes.\nGroups write their reverse-engineered prompt and compare.\n\n\n\n🟨 BONUS: Prompt Vault Challenge\nShow three versions of a paragraph rewritten by AI. - Students guess the prompts - Rank the effectiveness - Contribute their best prompt to a class vault (Google Doc, Padlet, etc.)\n\n\n\n01:45–02:00 — Wrap-Up & Reflection\nAsk each group to share one thing they learned.\nIndividual reflection prompts: - What did I learn about how I write? - How will I use AI differently after today? - What is my responsibility when using these tools?\n\n🎓 AI can support your voice, but not replace your judgement."
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#activity-1-prompt-design-output-exploration",
+    "href": "pages/DP4/DP4_clean.html#activity-1-prompt-design-output-exploration",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Choose a paragraph from your own writing and paste it in your notes. Now try using the below types of prompts.\n\n\n\nPrompt: “Please rewrite the following paragraph to be more concise and clear, suitable for a scientific audience.”\n\nExample AI Output:\n&gt; “The experiment investigated the effect of temperature on enzyme activity. Results showed a steady increase in activity up to 37°C, after which it declined rapidly, suggesting denaturation.”\n\n\n\n\n\nPrompt: “Rewrite the paragraph in a way that explains the concept clearly to someone without a science background.”\n\nExample AI Output:\n&gt; “We tested how heat affects enzymes—the tiny machines inside cells. They worked faster when it was warm, but too much heat made them break down.”\n\nNow try your own prompts and note the results using the below guide:\nPrompt 1 (concise/scientific):\n…\nAI Output 1:\n…\nPrompt 2 (general audience):\n…\nAI Output 2:\n…",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#activity-2-compare-evaluate",
+    "href": "pages/DP4/DP4_clean.html#activity-2-compare-evaluate",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Share your prompts and output with the group next to you, and use the following checklist to evaluate AI responses:\n\nPreserved scientific meaning\n\nImproved clarity or tone\n\nRemoved critical information\n\nIntroduced an error or hallucination\n\nWas suitable for the intended audience\n\nWhich output was better and why?\n…\nDid anything surprise or confuse you?\n…",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#activity-3-ethics-in-action",
+    "href": "pages/DP4/DP4_clean.html#activity-3-ethics-in-action",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Scenario:\nA student pastes their full assignment into ChatGPT, accepts the rewritten version, and submits it without reading it. The AI fabricated citations and misunderstood the conclusion.\nDiscussion Questions:\n\nWhat are the risks in this scenario?\n\nWhen is it okay to use AI in writing? When is it not?\n\nEthical checklist you can apply and think about when using these tools:\n\nI used AI to assist, not replace my work\n\nI reviewed and edited all AI-generated text\n\nI remain the author of my submission",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#activity-4-collaborative-rewrite",
+    "href": "pages/DP4/DP4_clean.html#activity-4-collaborative-rewrite",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Choose one paragraph as a group and go through these steps:\nOriginal Paragraph:\n…\nRevision Prompt Used:\n…\nAI Output:\n…\nFinal Human-Edited Version:\n…\nWhat we changed and why:\n…",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#challenge-reverse-prompting",
+    "href": "pages/DP4/DP4_clean.html#challenge-reverse-prompting",
+    "title": "AI Reflection & Writing Lab",
+    "section": "🧪 Challenge: Reverse Prompting",
+    "text": "🧪 Challenge: Reverse Prompting\nAI Output:\n&gt; “Mitochondria, often called the powerhouses of cells, generate energy by converting food molecules into ATP through a process called oxidative phosphorylation.”\nYour Reverse-Engineered Prompt:\n…"
+  },
+  {
+    "objectID": "pages/DP4/genai_student_practical_static.html#challenge-reverse-prompting",
+    "href": "pages/DP4/genai_student_practical_static.html#challenge-reverse-prompting",
+    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
+    "section": "",
+    "text": "AI Output:\n&gt; “Mitochondria, often called the powerhouses of cells, generate energy by converting food molecules into ATP through a process called oxidative phosphorylation.”\nYour Reverse-Engineered Prompt:\n…"
+  },
+  {
+    "objectID": "pages/DP4/genai_student_practical_static.html#class-reflection",
+    "href": "pages/DP4/genai_student_practical_static.html#class-reflection",
+    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
+    "section": "",
+    "text": "Today I learned:\n…\nOne thing I’ll do differently in my writing is:\n…\nOne thing to remember when using AI:\n…\n\n🎓 Final Thought: AI is a tool — you are the scientist. Own your writing, use tools wisely, and always verify your facts!"
   }
 ]
