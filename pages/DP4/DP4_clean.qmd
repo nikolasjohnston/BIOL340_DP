@@ -7,7 +7,7 @@ format:
     from: markdown+emoji
 ---
 
-# :test_tube: BIOL341/982 – GenAI Reflection & Scientific Writing Lab
+# GenAI Reflection & Scientific Writing Lab
 
 > **:compass: Mode**: In pairs, bring your scientific report and be ready to collaborate.
 
@@ -21,8 +21,7 @@ This session will guide you through using GenAI to improve your scientific writi
 >
 > :white_check_mark: Use 3 types of GenAI prompts to revise a scientific report\
 > :white_check_mark: Compare and reflect on AI vs. human feedback\
-> :white_check_mark: Practice ethical and responsible use of GenAI tools\
-> :white_check_mark: Submit a revised report with tracked changes
+> :white_check_mark: Practice ethical and responsible use of GenAI tools
 
 ------------------------------------------------------------------------
 
