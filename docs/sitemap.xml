@@ -37,76 +37,80 @@
     <lastmod>2025-04-24T00:46:01.740Z</lastmod>
   </url>
   <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/supplementary/cheetsheet.html</loc>
-    <lastmod>2025-03-13T04:29:58.478Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/1_rename.html</loc>
-    <lastmod>2025-03-31T05:01:55.142Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/2_viewingdata.html</loc>
-    <lastmod>2025-03-13T10:32:26.461Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/5_joins.html</loc>
-    <lastmod>2025-03-17T22:22:03.674Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/3_columns.html</loc>
-    <lastmod>2025-03-31T05:06:59.804Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/8_pipe.html</loc>
-    <lastmod>2025-03-17T22:21:25.546Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/introduction/01_R-studio-and-the-coding-environment.html</loc>
-    <lastmod>2025-03-13T05:03:44.339Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/introduction/02_Setting-up-your-workspace.html</loc>
-    <lastmod>2025-03-13T05:03:44.383Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/index.html</loc>
-    <lastmod>2025-03-13T04:13:03.887Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/introduction/03_Creating-a-project.html</loc>
-    <lastmod>2025-03-13T04:55:59.497Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/introduction/4_notebooks.html</loc>
-    <lastmod>2025-03-17T22:51:43.686Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/1_packages.html</loc>
-    <lastmod>2025-03-31T05:06:23.932Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/4_select.html</loc>
-    <lastmod>2025-04-01T05:12:32.947Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/3_filter.html</loc>
-    <lastmod>2025-03-31T00:52:05.478Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/7_summarise.html</loc>
-    <lastmod>2025-03-31T05:08:08.702Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/2_mutate.html</loc>
-    <lastmod>2025-03-31T05:06:11.696Z</lastmod>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/DP3/DP3.html</loc>
+    <lastmod>2025-05-02T03:31:00.515Z</lastmod>
   </url>
   <url>
     <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/DP1/DP1_Final.html</loc>
     <lastmod>2025-04-01T05:27:08.563Z</lastmod>
   </url>
   <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/DP3/DP3.html</loc>
-    <lastmod>2025-04-24T06:11:04.896Z</lastmod>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/2_mutate.html</loc>
+    <lastmod>2025-03-31T05:06:11.696Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/7_summarise.html</loc>
+    <lastmod>2025-03-31T05:08:08.702Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/3_filter.html</loc>
+    <lastmod>2025-03-31T00:52:05.478Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/4_select.html</loc>
+    <lastmod>2025-04-01T05:12:32.947Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/1_packages.html</loc>
+    <lastmod>2025-03-31T05:06:23.932Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/introduction/4_notebooks.html</loc>
+    <lastmod>2025-03-17T22:51:43.686Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/introduction/03_Creating-a-project.html</loc>
+    <lastmod>2025-03-13T04:55:59.497Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/index.html</loc>
+    <lastmod>2025-03-13T04:13:03.887Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/introduction/02_Setting-up-your-workspace.html</loc>
+    <lastmod>2025-03-13T05:03:44.383Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/introduction/01_R-studio-and-the-coding-environment.html</loc>
+    <lastmod>2025-03-13T05:03:44.339Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/8_pipe.html</loc>
+    <lastmod>2025-03-17T22:21:25.546Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/3_columns.html</loc>
+    <lastmod>2025-03-31T05:06:59.804Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/5_joins.html</loc>
+    <lastmod>2025-03-17T22:22:03.674Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/2_viewingdata.html</loc>
+    <lastmod>2025-03-13T10:32:26.461Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/1/1_rename.html</loc>
+    <lastmod>2025-03-31T05:01:55.142Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/supplementary/cheetsheet.html</loc>
+    <lastmod>2025-03-13T04:29:58.478Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/DP4/DP4_clean.html</loc>
+    <lastmod>2025-05-07T05:56:33.963Z</lastmod>
   </url>
   <url>
     <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/2/Scatter-plots/3_logisticregression.html</loc>
@@ -139,33 +143,5 @@
   <url>
     <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/2/Themes/4_gridsbackground.html</loc>
     <lastmod>2024-02-06T21:38:22.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/DP4/genai_final_practical (1).html</loc>
-    <lastmod>2025-05-07T00:26:41.096Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/DP4/DP4.html</loc>
-    <lastmod>2025-05-07T04:35:27.339Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/DP4/DP4_test.html</loc>
-    <lastmod>2025-05-07T01:26:44.912Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/DP4/DP4_clean.html</loc>
-    <lastmod>2025-05-07T05:53:06.552Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/DP4/genai_reflection_lab_clean_final.html</loc>
-    <lastmod>2025-05-07T01:26:45.056Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/DP4/genai_student_practical_static.html</loc>
-    <lastmod>2025-05-07T05:48:19.529Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nikolasjohnston.github.io/BIOL340_DP/pages/DP4/genai_full_lesson.html</loc>
-    <lastmod>2025-05-07T01:26:45.235Z</lastmod>
   </url>
 </urlset>

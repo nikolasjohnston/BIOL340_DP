@@ -200,193 +200,113 @@
     ]
   },
   {
-    "objectID": "pages/supplementary/cheetsheet.html",
-    "href": "pages/supplementary/cheetsheet.html",
-    "title": "ggplot_cheatsheet",
+    "objectID": "pages/DP3/DP3.html",
+    "href": "pages/DP3/DP3.html",
+    "title": "DP3:Peer Review",
     "section": "",
-    "text": "#Graphing cheat sheets\nPosit, the company that marks Rstudio has created some really fantastic resources to help leverage the most out of ggplot2. Access cheatsheet documents for ggplot2. They are available here.\nIn particular I recommend looking at the PDF available on this website. PDF link.",
+    "text": "Below are four unlabeled scientific abstracts describing the same experiment: measuring citrate synthase activity in subcellular fractions of healthy and diseased cell lines.\nEach abstract is written to align with one of the four rubric categories: Outstanding, Excellent, Fair, and Developing.\nAll abstracts are approximately six sentences long and presented in random order.\n\n\n\n\n\n\nTask Instructions\n\n\n\n\nCarefully read each abstract.\nUse the provided rubric to evaluate each one.\nScore them independently from 1 (Developing) to 4 (Outstanding).\nWrite brief notes explaining the score for each abstract.\n\n\n\n\n\n\n\n\n\nCitrate synthase activity was investigated in healthy and diseased mammalian cell lines by measuring enzymatic function in cytosolic and mitochondrial fractions. Cells were lysed and separated using differential centrifugation, and activity was measured using a spectrophotometric assay. The mitochondrial fractions consistently showed higher activity, confirming the expected localization. Diseased cells exhibited lower activity overall, especially in the mitochondrial fraction. These results suggest mitochondrial function is compromised in the diseased condition. The experiment provides insight into cellular metabolic changes associated with disease.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\nWe tested citrate synthase activity in different parts of the cell. Healthy and diseased cells were used in the study. We broke the cells up and spun them to get different parts, like mitochondria and cytosol. Then we measured enzyme activity with a color test. There were some differences between the samples. It looks like mitochondria might be involved in this, but it’s not totally clear from the results.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\nThe purpose of this experiment was to analyze the specific activity of citrate synthase in subcellular fractions of two mammalian cell lines. Healthy and diseased cells were lysed and processed to separate mitochondria and cytosol using centrifugation. Enzyme activity was measured using a colorimetric assay and normalized to total protein content. Mitochondrial fractions had greater activity, and diseased cells showed lower activity in both compartments. These findings support the hypothesis that mitochondrial dysfunction contributes to disease. Clear trends were observed, although further validation and controls would strengthen the results.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\nIn this experiment, we analyzed citrate synthase activity in different subcellular fractions of healthy and diseased cell lines. Cells were disrupted and fractionated via centrifugation into cytosolic and mitochondrial compartments. We quantified enzyme activity using a spectrophotometric method based on TNB production and calculated specific activity using protein concentration data. Results showed clear differences in activity between the two fractions, with mitochondrial activity being highest. Notably, diseased cells demonstrated significantly reduced activity in both fractions. These results strongly support a hypothesis of mitochondrial enzyme impairment in disease and reinforce the method’s effectiveness for subcellular analysis.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\nThis experiment aimed to investigate citrate synthase activity in cell fractions from healthy and diseased cells. Cells were prepared and divided into cytosolic and mitochondrial fractions using standard lab procedures. Enzyme activity was assessed with a colorimetric method, and we compared levels across the fractions and cell types. While mitochondrial activity appeared higher, details about the data or significance were limited. The abstract touches on all sections but lacks depth in interpreting results and establishing relevance.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\n\n\n\n\n\n\nGenAI Prompt for Self-Assessment\n\n\n\nUse the following prompt with ChatGPT or another generative AI tool:\n\nYou are an expert in higher education assessment. Below are four student-written abstracts for a biochemistry lab. Each one is meant to represent one of four rubric categories: Outstanding, Excellent, Fair, and Developing. Please assign a category to each abstract and explain your reasoning based on writing clarity, scientific voice, structure, and detail. Here are the abstracts: [Insert Abstracts Here].",
     "crumbs": [
-      "Extra help with Graphics",
-      "Additional ggplot2 support"
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
     ]
   },
   {
-    "objectID": "pages/1/1_rename.html",
-    "href": "pages/1/1_rename.html",
-    "title": "The Rename Function",
+    "objectID": "pages/DP3/DP3.html#abstract-1",
+    "href": "pages/DP3/DP3.html#abstract-1",
+    "title": "DP3:Peer Review",
     "section": "",
-    "text": "You will often need to rename data you enter or obtain from others, as R converts any spaces to fullstops and people tend to capitilise most words. The rename() function allows us to simply rename a column name within our data frame.\n\nPersonally, this is my favourite function in R as I hate captials, fullstops and other annoying column name problems that slow down coding or generate errors. Trust me, when you spend an hour trying to fix a line of code only to find a single capital letter is missing, you will understand.\nTo do this with dplyr (a tidyverse package) we simply use the following command:\n\nweeds &lt;- rename(weeds, flowers = flowers.m3)\n# In the brackets we need to specify our data frame (weeds) followed by a second argument specifying the name we want for our column = the name we already have.\n# Again, if you run this by itself it will not save to your data frame, unless you direct it to your data frame variable using the &lt;- \n\nPretty simple and straightforward.\nIf you want to rename multiple columns, this is a pretty simple addition. For demonstrating purposes, I am going to rename all the columns of weeds to nonsensical crap.\n\ngrocerylist &lt;- rename(weeds, coopers = \"flowers\", asahi = \"species\", vb = \"soil\", littlecreatures = \"weeds\")\n# to specify multiple variables/columns, we simply add a comma after the first rename and keep going.",
+    "text": "Citrate synthase activity was investigated in healthy and diseased mammalian cell lines by measuring enzymatic function in cytosolic and mitochondrial fractions. Cells were lysed and separated using differential centrifugation, and activity was measured using a spectrophotometric assay. The mitochondrial fractions consistently showed higher activity, confirming the expected localization. Diseased cells exhibited lower activity overall, especially in the mitochondrial fraction. These results suggest mitochondrial function is compromised in the diseased condition. The experiment provides insight into cellular metabolic changes associated with disease.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer",
     "crumbs": [
-      "Pre-Lab 2 - Data manipulation",
-      "The Rename function"
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
     ]
   },
   {
-    "objectID": "pages/1/2_viewingdata.html",
-    "href": "pages/1/2_viewingdata.html",
-    "title": "Viewing your data",
+    "objectID": "pages/DP3/DP3.html#abstract-2",
+    "href": "pages/DP3/DP3.html#abstract-2",
+    "title": "DP3:Peer Review",
     "section": "",
-    "text": "Now we have become acquainted with our working directories and the R environment, its time to explore our newely imported data. For this, we will be using the weeds dataset. Ensure your data is loaded in and then either use the View() command:\n\nweeds &lt;- read.csv(\"weeds.csv\")\nView(weeds)\n# This will open up a new tab to view your data\n\nor click the variable name in the environment window.\n\nThis should bring up a separate tab in Rstudio which you should be able to see the 4 columns (weeds, soil, species & flowers.m3).\nNow we can see our data, we can investigate the way R has input our data. The best thing to do is to ensure your categorical variables are categorical, and our continuous are continuous, much like we do in programs like JMP.\n\nIn JMP, we have the icons to identify categorical/nominal, ordinal or continuous. In R, all we do is run a single line of code to view the same thing across the different columns.\n\nstr(weeds)\n\n'data.frame':   48 obs. of  4 variables:\n $ weeds     : chr  \"weed\" \"weed\" \"weed\" \"weed\" ...\n $ soil      : chr  \"sandstone\" \"sandstone\" \"sandstone\" \"sandstone\" ...\n $ species   : chr  \"Coprosma\" \"Coprosma\" \"Coprosma\" \"Coprosma\" ...\n $ flowers.m3: int  14 17 23 26 35 45 36 28 28 39 ...\n\n# str stands for \"structure\" and will tell us the formats of each data column, as well as the number of levels when we have a factor (categorical) column\n\nstr() also shows us the number of levels we have in a factor. So if we put in a bad dataset with different capitalisations or misspellings on factor levels, we can identify here how many we want vs. how many we have. Its a quick and easy way to assess your data.\nAs you can see in the weeds example, we have weeds, soil & species as factors (categorical) and flowers.m3 as an integer (one of many continuous data types, in this case, whole numbers).\nWe will follow up on how to fix an incorrect column shortly\nOther data viewing commands can be used to view certain aspects of your data without bringing up the entire data set in a new tab. These are as follows:\n\nhead(weeds) # This will show the top few rows of your data so you can check it without loading the entire table\n\n  weeds      soil   species flowers.m3\n1  weed sandstone  Coprosma         14\n2  weed sandstone  Coprosma         17\n3  weed sandstone  Coprosma         23\n4  weed sandstone  Coprosma         26\n5  weed sandstone Pultenaea         35\n6  weed sandstone Pultenaea         45\n\ntail(weeds) # The same as head() but shows the bottom rows\n\n    weeds  soil   species flowers.m3\n43 native shale Pultenaea         49\n44 native shale Pultenaea         20\n45 native shale   Olearia         32\n46 native shale   Olearia         51\n47 native shale   Olearia         47\n48 native shale   Olearia         55\n\ndim(weeds) # This gives you the number of rows and columns\n\n[1] 48  4\n\n# You can also use nrow(weeds) or ncol(weeds) to get them separately\n\nnames(weeds) # Gives you the column names. \n\n[1] \"weeds\"      \"soil\"       \"species\"    \"flowers.m3\"\n\n# I use this when I want the exact name for a column when I am writing analyses (you will see later how useful this can be)\n\nsummary(weeds) # Gives you summary statistics for each column\n\n    weeds               soil             species            flowers.m3   \n Length:48          Length:48          Length:48          Min.   :13.00  \n Class :character   Class :character   Class :character   1st Qu.:22.50  \n Mode  :character   Mode  :character   Mode  :character   Median :33.00  \n                                                          Mean   :33.81  \n                                                          3rd Qu.:45.50  \n                                                          Max.   :57.00  \n\n# This will also come in handy later for statistical analysis \n\nAs you can see, there are many ways to view data within R. Some of these are useful for huge datasets (&gt; 10k rows) as the view() command can put strain on your computer. Using head() or tail() to view aspects of the data is useful as it reduces how much is displayed.\n::: callout After reading in dataset, use the summary() command with the “insecticide”” dataset to answer the following questions:\nQuestion: What is the minimum value for species richness? :::\n{{% expand Answer %}} 1 {{% /expand %}}\n\n\n\n\n\n\nQuestion: What is the maximum value for species richness?\n\n\n\n{{% expand Answer %}} 20 {{% /expand %}}",
+    "text": "We tested citrate synthase activity in different parts of the cell. Healthy and diseased cells were used in the study. We broke the cells up and spun them to get different parts, like mitochondria and cytosol. Then we measured enzyme activity with a color test. There were some differences between the samples. It looks like mitochondria might be involved in this, but it’s not totally clear from the results.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer",
     "crumbs": [
-      "Pre-Lab - Data exploration",
-      "Viewing Data"
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
     ]
   },
   {
-    "objectID": "pages/1/5_joins.html",
-    "href": "pages/1/5_joins.html",
-    "title": "Joining Data",
+    "objectID": "pages/DP3/DP3.html#abstract-3",
+    "href": "pages/DP3/DP3.html#abstract-3",
+    "title": "DP3:Peer Review",
     "section": "",
-    "text": "One of the most frequent data manipulations for working within R is joining multiple data sets together. The most common example of this is combining species abundance (or some other variable of interest) with external sources on the environmental conditions, such as BOM data (temperature, precipitation etc.) or GPS data.\nTo do most statistical analyses, data needs to be in the same data frame. So joining the datasets is an “easy” way to do so outside of excel.\n\n\n\n\n\n\nFor this exercise, we will be working with the BIOL365 Frog Data to combine the species matrix with environmental data.\nDownload the “frogs.csv” and “frog_environmental.csv”” files and read them in to R without the row.names argument\n\n\n\n\nfrogsp&lt;-read.csv(\"frogs.csv\", header=TRUE)\nenviro&lt;-read.csv(\"frog_environmental.csv\", header=TRUE)\n\nFor a complete join of both datasets, when there are the same number of rows in the exact same order, we can use the bind_cols() function.\n\nfrogcombine &lt;- bind_cols(frogsp, enviro) # In this example the \"site\" column has been added twice\n\nThere is a bind_rows() that will add rows to the bottom of a dataset, using the same syntax.\nWhile bind_cols() and bind_rows() are “cool”, they are limited in their usefulness. I find the most useful function is left_join().\n\nfrogjoin &lt;- left_join(frogsp, enviro, by=\"Site\") # This will join two datasets by a similar column (Site). \n\nThis will join the second dataset (enviro) to the first data set based on the shared column. right_join() will do the opposite, joining frogsp to enviro. Its pretty useless, just use left_join() remember to always put the data frame you want to keep first.\n\n# We can use the dim() to view the dimensions of the data\ndim(frogsp) # 11 columns\n\n[1] 42 11\n\ndim(enviro) # 16 columns\n\n[1] 42 16\n\ndim(frogjoin) # 26 colums (11 + 16 minus the 1 in common)\n\n[1] 42 26\n\n\nBoth of these examples so far have required the same rows for each dataset. Sometimes we might have more information in one dataset then we do in the other. For this dataset we don’t have this issue, so lets quickly create the issue to demonstrate.\nWe will simply use the filter() command to filter for rows that contain a value in the “Temp” column. We have 4 rows that have an NA in “Temp” so we will use a != (not equal to) to select all rows that are not equal to NA\n\nenviro_filter &lt;- filter(enviro, Temp != \"NA\") # This removes sites 14, 15, 35 & 36\ndim(enviro_filter)\n\n[1] 38 16\n\n# Now we can try the two new join types\n\nfroginner &lt;- inner_join(frogsp, enviro_filter, by=\"Site\") # Join data. Retain only rows that occur in both data sets\ndim(froginner) # 38 rows\n\n[1] 38 26\n\nfrogfull &lt;- full_join(frogsp, enviro_filter, by=\"Site\") # Join data. Retain all values, all rows\ndim(frogfull)\n\n[1] 42 26\n\n\nYou can also use semi_join() to combine all rows that have a match in the second dataset, or anti_join() to combine all rows that do not match have a match in the second dataset (this ones a little weird).\nI still find myself using left_join 90% of the time though."
-  },
-  {
-    "objectID": "pages/1/3_columns.html",
-    "href": "pages/1/3_columns.html",
-    "title": "Columns",
-    "section": "",
-    "text": "Another important aspect of R coding syntax is refering to specific columns. This is done by using a $ sign after specifying our dataset and then calling the column. Like so:\n\nhead(weeds$flowers.m3) # This says to run the head() command but only on the flowers.m3 column\n\n[1] 14 17 23 26 35 45\n\n\nTry this with some of the other commands above. Note: Some of them will not work and will show NULL. This is because these are designed to view aspects of the data frame (e.g. names() )\nNow we know how to refer to a column, we can fix any issues with importing incorrect data\nPretend for a moment our data was input incorrectly:\n\nweeds$species&lt;-factor(weeds$species)\n\nThis would simply save the command factor() on the column species to our weeds object.\nIf we wanted an ordered factor, e.g. small &lt; medium &lt; large we can use the following\n\n## example dataset ##\nsizes &lt;- factor(c(\"small\", \"large\", \"large\", \"small\", \"medium\", \"medium\")) # creating a single column factor with 3 levels\nsizes\n\n[1] small  large  large  small  medium medium\nLevels: large medium small\n\n\nHere we have just created a new example dataset which consists of a single column, containing the words: small, large and medium in a random order.\nWe can order these into a logical order, so R will know that medium is bigger than small and large is bigger than medium\n\nsizes &lt;- ordered(sizes, levels = c(\"small\", \"medium\", \"large\")) # ordering levels from small through to large.\n# Note: I did not need to specify column as this is a single column dataset. \nsizes # Now the factor is ordered.\n\n[1] small  large  large  small  medium medium\nLevels: small &lt; medium &lt; large\n\n\nWe can then do this with our weeds dataset, ordering them in a nonsensical order.\n\nweeds$species&lt;-ordered(weeds$species, levels=c(\"Pultenaea\", \"Olearia\", \"Coprosma\"))\n\nThis is useful when the dataset you are working with has an ordered factor.\nThe main use for this is in graphing\nBy default, R will always sort in alphabetical order, which can be a pain when graphing. If you want ordered factors, or want to present factors along an X axis in a more logical order then the ordered() command or even factor() command where you specify levels is a good option.\n\n\n\n\n\n\nI recommend using the factor() command and specifying the levels using the same syntax as the ordered() command unless your factor is truely ordered. This way we just sort the factor the way we want, but are not messing with the way R views our variable (as an ordinal variable rather than a logically ordered factor).\n\n\n\nIf you want to change something to a continuous (numeric, integer etc.) its a little more complicated, but in general R shouldn’t mess this up too often. A quick google search or ?numeric will help answer this.",
+    "text": "The purpose of this experiment was to analyze the specific activity of citrate synthase in subcellular fractions of two mammalian cell lines. Healthy and diseased cells were lysed and processed to separate mitochondria and cytosol using centrifugation. Enzyme activity was measured using a colorimetric assay and normalized to total protein content. Mitochondrial fractions had greater activity, and diseased cells showed lower activity in both compartments. These findings support the hypothesis that mitochondrial dysfunction contributes to disease. Clear trends were observed, although further validation and controls would strengthen the results.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer",
     "crumbs": [
-      "Pre-Lab - Data exploration",
-      "Columns"
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
     ]
   },
   {
-    "objectID": "pages/1/8_pipe.html",
-    "href": "pages/1/8_pipe.html",
-    "title": "The Pipe Function",
+    "objectID": "pages/DP3/DP3.html#abstract-4",
+    "href": "pages/DP3/DP3.html#abstract-4",
+    "title": "DP3:Peer Review",
     "section": "",
-    "text": "This lets you run multiple different functions on one dataset without having to use the intermediate steps you would have to use in base R.\nYou start with the data you want to apply the functions to, followed by a pipe %&gt;%. After each pipe you must go to the next line.\nThis is useful for large messy functions with multiple nested parts. It separates everything out and makes it easier to follow.\nA pipe is simply a &gt; nested within two percentage, %, symbols. The keyboard shortcut for this is Ctrl + SHIFT + M\n\nsum_data &lt;- weeds %&gt;% \n  group_by(species, soil) %&gt;% \n  summarise(max(flowers))\n\nYou simply start with the data you want to apply the functions to, followed by a pipe. After each pipe you must go to the next line (sorta).\nIn this example, we grouped the data by species and soil, then performed the summarise function to generate the max number for each combination\n\n\n\n\n\n\nYou will notice, that because we specified the data in the first line, we did not have to specify the data in the other lines, only the columns\n\n\n\n\nnew_data &lt;- weeds %&gt;% \n  mutate(binary = soil == \"sandstone\") %&gt;% \n  filter(weeds == \"native\")\n\nAs you can see, we can do this with most of the functions we have already learnt. This above example will generate a binary outcome (true/false) for soil with TRUE as “sandstone”. Followed by filtering for “native” weeds. This will generate a a dataset with native weeds that have a true/false outcome based on soil.\nPiping is incredibly useful and much easier to read. It is a function I keep forgetting to use, until I look at my code later on, full of regrets. It shortens and simplifies code alot.",
+    "text": "In this experiment, we analyzed citrate synthase activity in different subcellular fractions of healthy and diseased cell lines. Cells were disrupted and fractionated via centrifugation into cytosolic and mitochondrial compartments. We quantified enzyme activity using a spectrophotometric method based on TNB production and calculated specific activity using protein concentration data. Results showed clear differences in activity between the two fractions, with mitochondrial activity being highest. Notably, diseased cells demonstrated significantly reduced activity in both fractions. These results strongly support a hypothesis of mitochondrial enzyme impairment in disease and reinforce the method’s effectiveness for subcellular analysis.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer",
     "crumbs": [
-      "Pre-Lab 2 - Data manipulation",
-      "The Pipe function"
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
     ]
   },
   {
-    "objectID": "pages/introduction/01_R-studio-and-the-coding-environment.html",
-    "href": "pages/introduction/01_R-studio-and-the-coding-environment.html",
-    "title": "R Studio & Coding Environment",
+    "objectID": "pages/DP3/DP3.html#abstract-5",
+    "href": "pages/DP3/DP3.html#abstract-5",
+    "title": "DP3:Peer Review",
     "section": "",
-    "text": "This module will provide an introduction into the R statisitical environment, going through the basics of data analysis and graphing for publication quality results. By the end of this module, you should be able to:\n\nUnderstand and use the R studio working environment\nImport and manipulate data files\nUndertake linear (ANOVA, regression) and generalised linear (logistic regression) models and associated assumptions/comparisons\nUndertake basic multivariate techniques (PCA, MDS)\nConstruct bar plots and scatterplots in ggplot\n\n\n\nR is a language and environment for statistical computing and graphics. R is free/open source software and as a result, has a community of dedicated statisticans, coders and developers increasing the capabilities and usability of the platform. R primarily runs as a command-line program.\nThis is a big entry barrier to many starting to learn R, so most people have turned to “R Studio”.\n\n\n\nBase R\n\n\n\n\n\nSince R is free and open source, it is a program and skill that can be carried with you across many institutions and jobs and is for many, the single solution for statistical analysis, graphing and even GIS/spatial analysis. Programs like JMP, SPSS and ARCGIS cost 100s if not 1000s of dollars and are quickly outdated by new versions.\nHowever, the biggest uses of R come from its sharability and openness. Collaborating and sharing data analysis with R requires only the script and raw data. All data manipulations are done within R, requiring no editing or manipulating of your raw excel data.\n\n\n\n\n\n\nThe R Studio Environment\n\n\nR studio “reskins” the standard R environment, giving space for script writing, help, graphics output and tracking of data files. Due to the ease of working in R studio, thats what we will be using. R studio can provide an array of functions from statistical analysis and graphing, GIS/spatial analysis, presentations, document preparation (all of these tutorials are written in R) and even novel functions like interacive graphs and tweeting.\n\n\n\nR studio is separated into 4 panels:\n\nThe top-left panel (blue) is the editor (or script window) where you can view and write your R script. This is a saveable document of code. Running code is as simple as Ctrl+Enter on a line of code or pressing the run button in the top-right of this window.\nThe bottom-left (red) is the console. This is the standard R environment where you can run code directly, or view the output of your script as you run it.\nThe top-right (green) is your workspace. This lists each “object” as you create them through your analyses. Clicking a data-frame object will allow you to view it.\nThe bottom-left (black) has lists of files and packages as well as the help window (quickly access by typing ? before any command) and plots which shows any graphical output.\n\nNow we have an idea of what R is, it is time to install R & R Studio onto your computer.\n\nInstall Instructions\n1. Click Here to visit the R webpage and select one of the Australian mirrors to download (CSIRO, University of Melbourne etc.)\n2. Select your version (Windows or Mac), then download the base subdirectory\n3. Once installed, visit R studio to download R studio desktop.\n\nOnce both of those are installed, you can now proceed to open up Rstudio",
+    "text": "This experiment aimed to investigate citrate synthase activity in cell fractions from healthy and diseased cells. Cells were prepared and divided into cytosolic and mitochondrial fractions using standard lab procedures. Enzyme activity was assessed with a colorimetric method, and we compared levels across the fractions and cell types. While mitochondrial activity appeared higher, details about the data or significance were limited. The abstract touches on all sections but lacks depth in interpreting results and establishing relevance.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer",
     "crumbs": [
-      "Pre-Lab - Introduction",
-      "R studio and the coding environment"
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
     ]
   },
   {
-    "objectID": "pages/introduction/01_R-studio-and-the-coding-environment.html#introduction",
-    "href": "pages/introduction/01_R-studio-and-the-coding-environment.html#introduction",
-    "title": "R Studio & Coding Environment",
+    "objectID": "pages/DP3/DP3.html#test-your-results",
+    "href": "pages/DP3/DP3.html#test-your-results",
+    "title": "DP3:Peer Review",
     "section": "",
-    "text": "This module will provide an introduction into the R statisitical environment, going through the basics of data analysis and graphing for publication quality results. By the end of this module, you should be able to:\n\nUnderstand and use the R studio working environment\nImport and manipulate data files\nUndertake linear (ANOVA, regression) and generalised linear (logistic regression) models and associated assumptions/comparisons\nUndertake basic multivariate techniques (PCA, MDS)\nConstruct bar plots and scatterplots in ggplot\n\n\n\nR is a language and environment for statistical computing and graphics. R is free/open source software and as a result, has a community of dedicated statisticans, coders and developers increasing the capabilities and usability of the platform. R primarily runs as a command-line program.\nThis is a big entry barrier to many starting to learn R, so most people have turned to “R Studio”.\n\n\n\nBase R\n\n\n\n\n\nSince R is free and open source, it is a program and skill that can be carried with you across many institutions and jobs and is for many, the single solution for statistical analysis, graphing and even GIS/spatial analysis. Programs like JMP, SPSS and ARCGIS cost 100s if not 1000s of dollars and are quickly outdated by new versions.\nHowever, the biggest uses of R come from its sharability and openness. Collaborating and sharing data analysis with R requires only the script and raw data. All data manipulations are done within R, requiring no editing or manipulating of your raw excel data.\n\n\n\n\n\n\nThe R Studio Environment\n\n\nR studio “reskins” the standard R environment, giving space for script writing, help, graphics output and tracking of data files. Due to the ease of working in R studio, thats what we will be using. R studio can provide an array of functions from statistical analysis and graphing, GIS/spatial analysis, presentations, document preparation (all of these tutorials are written in R) and even novel functions like interacive graphs and tweeting.\n\n\n\nR studio is separated into 4 panels:\n\nThe top-left panel (blue) is the editor (or script window) where you can view and write your R script. This is a saveable document of code. Running code is as simple as Ctrl+Enter on a line of code or pressing the run button in the top-right of this window.\nThe bottom-left (red) is the console. This is the standard R environment where you can run code directly, or view the output of your script as you run it.\nThe top-right (green) is your workspace. This lists each “object” as you create them through your analyses. Clicking a data-frame object will allow you to view it.\nThe bottom-left (black) has lists of files and packages as well as the help window (quickly access by typing ? before any command) and plots which shows any graphical output.\n\nNow we have an idea of what R is, it is time to install R & R Studio onto your computer.\n\nInstall Instructions\n1. Click Here to visit the R webpage and select one of the Australian mirrors to download (CSIRO, University of Melbourne etc.)\n2. Select your version (Windows or Mac), then download the base subdirectory\n3. Once installed, visit R studio to download R studio desktop.\n\nOnce both of those are installed, you can now proceed to open up Rstudio",
+    "text": "GenAI Prompt for Self-Assessment\n\n\n\nUse the following prompt with ChatGPT or another generative AI tool:\n\nYou are an expert in higher education assessment. Below are four student-written abstracts for a biochemistry lab. Each one is meant to represent one of four rubric categories: Outstanding, Excellent, Fair, and Developing. Please assign a category to each abstract and explain your reasoning based on writing clarity, scientific voice, structure, and detail. Here are the abstracts: [Insert Abstracts Here].",
     "crumbs": [
-      "Pre-Lab - Introduction",
-      "R studio and the coding environment"
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
     ]
   },
   {
-    "objectID": "pages/introduction/02_Setting-up-your-workspace.html",
-    "href": "pages/introduction/02_Setting-up-your-workspace.html",
-    "title": "Setting up your workspace",
-    "section": "",
-    "text": "There are very quick ways to open R and begin coding, however, having an organised, well-structured working directory in your computer can save you hours of hassle and make your code much easier to share. As biology and data science are becoming increasingly complex many are turning to computer intensive, coding based software (like you!). With this movement in data science and open access, having our code reproducible, transparent and understandable is key. So why not start off like that.",
+    "objectID": "pages/DP3/DP3.html#abstract",
+    "href": "pages/DP3/DP3.html#abstract",
+    "title": "DP3:Peer Review",
+    "section": "Abstract",
+    "text": "Abstract\nCitrate synthase SA was quantified in MT and CYT subfractions isolated from immortalized mammalian CLs of divergent physiological states (i.e., HL and DL).\nFractionation was executed via DC and analyzed through TNB-based spectrophotometric methodologies.\nComparative SA metrics were demonstrated to be variably reduced across conditions, though significance thresholds were not consistently upheld.\nInterpretation was limited by inconsistent normalization to TP content and variability in the enzymatic assay kinetics.\nIt is inferred that mitochondrial biogenesis or bioenergetic perturbation may be implicated, although further ELISA and qPCR corroboration would be recommended.\n\nWhat rubric level best fits this abstract?\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\nAbstract grade explaination\n\n\n\n\n\n\n\nProblem Area\nWhat’s Wrong\n\n\n\n\nPassive voice\nObscures who did what; lacks clarity and accountability\n\n\nExcessive jargon & acronyms\nUses unexplained abbreviations: SA, MT, CYT, CLs, HL/DL, DC, TP, ELISA, qPCR\n\n\nTense inconsistency\nShifts from past (“was quantified”) to present (“is inferred”)\n\n\nSuperficial complexity\nComplex phrasing covers weak experimental interpretation\n\n\nLack of clarity\nThe results and implications are muddled or speculative",
     "crumbs": [
-      "Pre-Lab - Introduction",
-      "Setting up your workspace"
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
     ]
   },
   {
-    "objectID": "pages/introduction/02_Setting-up-your-workspace.html#file-system",
-    "href": "pages/introduction/02_Setting-up-your-workspace.html#file-system",
-    "title": "Setting up your workspace",
-    "section": "File system",
-    "text": "File system\nBefore we jump into R, we are going to create a clean and managable folder system.\n\n\n\n\n\n\nCreate a new folder in a location of your choosing (e.g. My Documents or Desktop) called R-tutorials\n\n\n\n\nThis can be named anything you like, but try to keep it relevant and understandable (for future you).\n\n\n\n\n\n\nIn this new folder, create a series of new folders called:\n- data\n- doc\n- figs\n- output\n- R\n\n\n\nHere is the basic outline for these folders:\n\n\n\nThe data folder if where you store your raw/input data\n\n\nThe doc folder is where you store the manuscript for the project\n\n\nThe figs folder is where all of your figures will be stored from the analyses\n\n\nThe output folder is where you keep any intermediate datasets generated by your analysis, result reports etc.\n\n\nThe R folder is pretty self-explanatory but it is where we will store all of our R scripts, notebooks etc.\n\n\nNow, let’s move on to the next step. ::::",
+    "objectID": "pages/DP3/DP3.html#use-genai-to-reflect-and-revise",
+    "href": "pages/DP3/DP3.html#use-genai-to-reflect-and-revise",
+    "title": "DP3:Peer Review",
+    "section": "Use GenAI to Reflect and Revise",
+    "text": "Use GenAI to Reflect and Revise\n\n\n\n\n\n\nRequired Follow-up Task\n\n\n\nIf your answer was incorrect or if you’re unsure why this abstract is difficult to evaluate, copy and paste the prompt below into ChatGPT or another GenAI tool:\n\nYou are an expert in scientific communication and higher education assessment.\nI am learning how to identify weaknesses in scientific abstracts, especially those that sound complex but are not clear.\nBelow is an abstract I was given. Please review it and identify specific problems in clarity, structure, grammar, or scientific communication.\nThen suggest how I could revise it to improve readability and better match an “Excellent” or “Outstanding” level according to a university rubric.\n\nAbstract:\n&gt; Citrate synthase SA was quantified in MT and CYT subfractions isolated from immortalized mammalian CLs of divergent physiological states…",
     "crumbs": [
-      "Pre-Lab - Introduction",
-      "Setting up your workspace"
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BIOL340_DP",
-    "section": "",
-    "text": "Welcome to Biol340 Dry Practicals for 2025\n\n\nStaring At R\nThis site is a series of tutorials on using the R statistical package for data manipulation, analysis and visualisation including the following:\n\nSetting up your file system and working environment in a reproducable manner\n\nViewing and manipulating your data\nStatistical analysis, covering analysis of variance, linear regressions and generalised linear models (more to come!)\n\nVisualisation of your results using an iterative graphing approach\n\nSpatial analysis and map creation (work in progress)\n\nIt also includes specific tutorials to complete within the Dry Practical timeslot during session.\nI am entirely self-taught through online tutorials, textbooks and advice from colleagues. The best advice I can give is to put in the time and effort. Force yourself to work through problems in R, rather than resorting to excel or your known statistical package. Spending the time to learn R and using it frequently will reinforce lessons and how to utilise code, this goes for all coding languages.\nThis site has been large developed as an offshot and extension of staringatr.com created by Dr. Mitchell Stares. The initial focus of this site is data science techniques for biology based research, however, this will hopefully improve in scope in the future. Tutorials have been developed as part of a teaching module for undergraduate students in the School of science at the University of Wollongong but have been expanded beyond that initial development.\nThis website was created using Quarto. To learn more about Quarto websites visit https://quarto.org/docs/websites.\nSite administrator: Dr. Nikolas Johnston Last updated: March 2025."
-  },
-  {
-    "objectID": "pages/introduction/03_Creating-a-project.html",
-    "href": "pages/introduction/03_Creating-a-project.html",
-    "title": "Creating a project",
-    "section": "",
-    "text": "Now that we have our folder setup, lets move into R studio and create our project.\nIn R, a project file stores your current Rstudio working environment in a file within your file system. This means, if you finish your work for the day halfway through an analysis, you can open up your project file the next day and continue straight from where you left off. The other major benefit is that a project file sets your default working directory. This means, when you need to open a file, you only need to do so from the place of your project file. This will make sense in a moment.\n\nCreating your project\n\n\n\n\n\n\nTo create a project, click file &gt; new project and select existing directory\n\n\n\n\n\n\n\n\n\n\nThen, browse to your new file system we just created and save the project into the base/root of that directory.\n\n\n\nThe real advantage to using project files is simplifying file opening and saving. We will cover this in more detail in the next page, but essentially, when reading data into R we normally have to specify the entire filepath\n\nsurveydata &lt;- read.csv(\"C:/Users/Mitch/Documents/surveydata.csv\")\n\nor, set a working directory\n\nsetwd(\"C:/Users/Mitch/Documents\")\nsurveydata &lt;- read.csv(\"surveydata.csv\")\n\nThe creation of a project cuts out this step by setting our working directory. This means, anytime we want to open a file, we just need to specify the folders within our project directory. So using our new filing system, we would just need to specify the following:\n\nsurveydata &lt;- read.csv(\"Data/surveydata.csv\")\n\nIf you have multiple projects, or want to close the current one, simply click the project name in the top right of R studio",
+    "objectID": "pages/DP3/DP3.html#now-apply-what-you-have-learnt-by-completing-formal-peer-reviews-of-your-fellow-students-scientific-reports.-you-must-complete-one-review-before-leaving.",
+    "href": "pages/DP3/DP3.html#now-apply-what-you-have-learnt-by-completing-formal-peer-reviews-of-your-fellow-students-scientific-reports.-you-must-complete-one-review-before-leaving.",
+    "title": "DP3:Peer Review",
+    "section": "Now apply what you have learnt by completing formal peer reviews of your fellow students scientific reports. You must complete one review before leaving.",
+    "text": "Now apply what you have learnt by completing formal peer reviews of your fellow students scientific reports. You must complete one review before leaving.",
     "crumbs": [
-      "Pre-Lab - Introduction",
-      "Creating a project"
-    ]
-  },
-  {
-    "objectID": "pages/introduction/4_notebooks.html",
-    "href": "pages/introduction/4_notebooks.html",
-    "title": "Notebooks and Markdown",
-    "section": "",
-    "text": "The first step when opening a new R studio environment or project is creating a script or notebook for working in. Scripts are basic text files where all code is executable. Writing non-code in a script requires the use of #’s (which can look messy and confusing) like so:\n\nread.csv(\"datafile.csv\") \n# this code reads a csv (data) file into R. The command read.csv requires brackets with the filepath to the file in quotations. \n# in this code, none of the #'s will run. so if I # the read.csv command, it will not run. like so:\n# read.csv(\"datafile.csv\")\n\nA whole document of the above example can get messy and hard to understand.\nIn a notebook, we separate normal text from code by inserting “code chunks” (insert &gt; R in the top right of the window). Chunks are specialised areas in the notebook for code only. Chunks separate code from text, making it easier to write notes and read. These tutorials have been written in a notebook.\n\n\n\n\n\n\n\nTo create a notebook or script, simply use the pulldown menus file &gt; new file and select either a script, markdown or notebook one. Then save the document by hitting the disk icon (or file &gt; save)\n\nR studio will prompt you to install some packages to use a notebook. Do so and then read the text in the notebook. Once you understand, then clear everything below the “output:” — area.\n\nAs stated above, click the insert pulldown menu in the script window and click R to insert a code chunk. All code in a notebook must be written in a chunk\n\n\n\n\n\nIMPORTANT!\n\nWhen working in a project, wherever you save your project will become the default “directory”. R will look here for files first. If you want to set your working directory elsewhere, use the below code.\n\n\n# Only if you have not created a project\n\nsetwd(\"Drive:/Folder1/Folder2\")\n\n# insert your folders path in the brackets\n# this will tell R to look here for files and \"generally\" save things here as well.\n# e.g. C:/Users/Mitch/Documents/R/\n\n\n\n\n\n\n\nAfter writing your code, you can click run, run selected line(s), run current chunk or press Ctrl + Enter on the line your cursor is on\n\n\n\nGet used to this, you will do this A LOT",
-    "crumbs": [
-      "Pre-Lab - Introduction",
-      "Notbooks in R studio"
-    ]
-  },
-  {
-    "objectID": "pages/1/1_packages.html",
-    "href": "pages/1/1_packages.html",
-    "title": "Packages",
-    "section": "",
-    "text": "Now that you have setup your R environment and read in your first data set, we can begin to modify and add to our data as necessary.\nNow for the majority of this module, we will be working with a package called Tidyverse. Packages are collections of data, R functions and complied code to add extra features outside of the general base R environment. Packages are central to expanding the possibilities of R. The ability to do advanced graphing, GIS, complicated analyses, multivariate analyses etc. are all due to contributed packages.\nTidyverse is a unique case as it is a collection of R packages that all use similar coding syntax\n\nTo install a package into R there are two options:\nOption 1 is to select the packages tab in the help/viewer window & click the install button.\n\nThen type the package name in the packages box (note: ensure that it is installing from Repository/CRAN)\n\nOption 2 is to use the following code, replacing the “tidyverse” with the package of your choice. This should be used in the console, rather than the script window as you only need to install the package once.\n\ninstall.packages(\"tidyverse\")\n\nOnce you have installed tidyverse, simply load it into your current workspace with the following command (in your script)\n\nlibrary(tidyverse)\n\n\n\n\n\n\n\nIn general, it is good practice to place the library() commands for your whole document at the top before anything else. This allows people reading your code to load in any packages they will need at the beginning before anything else.\n\n\n\nFor example, here is the first few lines of one of my own scripts:\n\nThis shows the reader of my code what packages need to be installed to run my analysis. I also write notes to myself to remind myself what specific packages are for. Once you start accumulating packages, its hard to remember what each one does. I find this particularly useful for packages I only use for a particular function (such as the agricolae package which I use for tukeys letter reports).",
-    "crumbs": [
-      "Pre-Lab - Data exploration",
-      "Packages"
-    ]
-  },
-  {
-    "objectID": "pages/1/4_select.html",
-    "href": "pages/1/4_select.html",
-    "title": "The Select Function",
-    "section": "",
-    "text": "The select() function is used to select specific columns within your data and save them as a new data frame. You can use this if you have a large dataset and only want to use a few of the columns, to keep it simple and tidy. Or, you may want to take a column or two from multiple different datasets and combine them.\n\nweeds_select &lt;- select(weeds, soil) \n\nThis simply creates the weeds_select dataset, seleting one column - “soil”. As with most tidyverse functions we need to specify the dataset immediately after writing the select function. From here, its simple changes to do use select in new ways\n\nweeds_select &lt;- select(weeds,c(soil, species)) # select two columns, \"soil\" and \"species\"\n\nweeds_select &lt;- select(weeds,c(2:4)) # select columns using numbers. In this case, select columns 2 through to 4.\n\nweeds_select &lt;- select(weeds, c(soil:flowers)) # select columns \"soil\" through to \"flowers\"\n\nweeds_select &lt;- select(weeds, -soil) # remove \"soil\"\n# similar syntax applys for removing multiple columns, just place a - infront e.g. select(weeds, -c(2:4))\n\nweeds_select &lt;- select(weeds, starts_with(\"s\")) # select any column whose name starts with S. \n\nThere are many more like this above example, like “ends_with”, “contains” and “matches” all which refer to the column names.\n\n\n\n\n\n\nuse the help window ?select for more useful functions with select()",
-    "crumbs": [
-      "Pre-Lab 2 - Data manipulation",
-      "The Select function"
-    ]
-  },
-  {
-    "objectID": "pages/1/3_filter.html",
-    "href": "pages/1/3_filter.html",
-    "title": "The Filter Function",
-    "section": "",
-    "text": "The filter() command is used to remove rows from your data. This can be useful for removing zeros or “no data/NA’s”, or for restricting certain variables in a dataset for an analysis.\nThis follows the similar syntax as mutate() whereby we specify what dataset we want to filter, followed by how we want to filter.\n\n#The following examples will just keep overwriting the new object \"weeds_filtered\"\n\nweeds_filtered &lt;- filter(weeds, weeds == \"native\") \n# Gives us only the rows which are exactly \"native\" in the weeds column. \n\nweeds_filtered &lt;- filter(weeds, weeds != \"weed\") \n# This gives us the same result as their are only two levels of that column. The != means \"not equal to\"\n\nweeds_filtered &lt;- filter(weeds ,flowers &gt; 20) \n# Flowers greater than 20 m3\n\nSo far, we have covered renaming columns, adding new columns and filtering by rows. The next two commands are focused on selecting specific columns and creating new data tables.",
-    "crumbs": [
-      "Pre-Lab 2 - Data manipulation",
-      "The Filter function"
-    ]
-  },
-  {
-    "objectID": "pages/1/7_summarise.html",
-    "href": "pages/1/7_summarise.html",
-    "title": "The Summarise Function",
-    "section": "",
-    "text": "This is an extremely useful function that lets you create different summaries of columns. You can also nest other functions within it to apply them to your columns.\n\nsum_data &lt;- summarise(weeds, mean(flowers))  # We'll start simple. Generates the mean of the flower column\n\nsum_data &lt;- summarise(group_by(weeds, species), mean(flowers)) \n# Using the group_by() function within summarise lets you get summaries for groups, in this case \"species\"\n\nsum_data &lt;- summarise(group_by(weeds,species, soil), mean(flowers), sd(flowers), se=sd(flowers/sqrt(n())))\n# Grouped by with species & soil, generating mean, standard deviation & standard error of flowers\n\nThe last example generates the mean, sd and se for each factor combination in our dataset. This is pretty useful, particularly for generating bar graphs.\nHowever, its a little complex and can be in a much nicer format.",
-    "crumbs": [
-      "Pre-Lab 2 - Data manipulation",
-      "The Summarise function"
-    ]
-  },
-  {
-    "objectID": "pages/1/2_mutate.html",
-    "href": "pages/1/2_mutate.html",
-    "title": "The Mutate Function",
-    "section": "",
-    "text": "One of the most common data manipulations is adding a new column to your dataset. This is great for transforming data, while also keeping the original. This could be used to combine multiple columns into one or perform mathematical calculations involving multiple columns with the results in a separate column.\nWe will start out with a few simple methods in base R, and then move to the dplyr method.\n\n##Log Transformation##\n\nweeds$log_flowers &lt;- log(weeds$flowers) # Base R\n\nweeds &lt;- mutate(weeds, log_flowers = log(flowers)) # Dplyr\n\n# Each of these creates a new column which is the log of the flowers column.\n\n## Basic math functions##\n\nweeds_mutate &lt;- mutate(weeds, flowers2 = flowers*2) \n# Simple multiplication of the flowers column by 2\n\nweeds_mutate &lt;- mutate(weeds_mutate, flowers_combined = flowers + flowers2) \n# This is a useless example but its just to show you how to combine multiple columns. \n\nweeds_mutate &lt;- mutate(weeds_mutate, binary = soil == \"sandstone\") \n# Using boolean logic to create a column called \"binary\" where soil is exactly (hence double ='s) sandstone. \n\nweeds_mutate &lt;- mutate(weeds, flowers2 = flowers*2,\n                      binary = soil == \"sandstone\") \n# You can also perform the functions multiple times on the same data within one line. \n\nThe arguments of mutate() are simply the name of the data frame followed by any number of expressions that create new variables.\nYou will notice throughout the mutate() commands that we have performed functions, creating new columns, while preserving the original. If you wish to drop/remove the original column, simply use the transmute() command.",
-    "crumbs": [
-      "Pre-Lab 2 - Data manipulation",
-      "The Mutate function"
+      "Dry Prac 3",
+      "Dry Prac 3 Notes"
     ]
   },
   {
@@ -621,102 +541,336 @@
     ]
   },
   {
-    "objectID": "pages/DP3/DP3.html",
-    "href": "pages/DP3/DP3.html",
-    "title": "DP3:Peer Review",
+    "objectID": "pages/1/2_mutate.html",
+    "href": "pages/1/2_mutate.html",
+    "title": "The Mutate Function",
     "section": "",
-    "text": "Below are four unlabeled scientific abstracts describing the same experiment: measuring citrate synthase activity in subcellular fractions of healthy and diseased cell lines.\nEach abstract is written to align with one of the four rubric categories: Outstanding, Excellent, Fair, and Developing.\nAll abstracts are approximately six sentences long and presented in random order.\n\n\n\n\n\n\nTask Instructions\n\n\n\n\nCarefully read each abstract.\nUse the provided rubric to evaluate each one.\nScore them independently from 1 (Developing) to 4 (Outstanding).\nWrite brief notes explaining the score for each abstract.\n\n\n\n\n\n\n\n\n\nCitrate synthase activity was investigated in healthy and diseased mammalian cell lines by measuring enzymatic function in cytosolic and mitochondrial fractions. Cells were lysed and separated using differential centrifugation, and activity was measured using a spectrophotometric assay. The mitochondrial fractions consistently showed higher activity, confirming the expected localization. Diseased cells exhibited lower activity overall, especially in the mitochondrial fraction. These results suggest mitochondrial function is compromised in the diseased condition. The experiment provides insight into cellular metabolic changes associated with disease.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\nWe tested citrate synthase activity in different parts of the cell. Healthy and diseased cells were used in the study. We broke the cells up and spun them to get different parts, like mitochondria and cytosol. Then we measured enzyme activity with a color test. There were some differences between the samples. It looks like mitochondria might be involved in this, but it’s not totally clear from the results.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\nThe purpose of this experiment was to analyze the specific activity of citrate synthase in subcellular fractions of two mammalian cell lines. Healthy and diseased cells were lysed and processed to separate mitochondria and cytosol using centrifugation. Enzyme activity was measured using a colorimetric assay and normalized to total protein content. Mitochondrial fractions had greater activity, and diseased cells showed lower activity in both compartments. These findings support the hypothesis that mitochondrial dysfunction contributes to disease. Clear trends were observed, although further validation and controls would strengthen the results.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\nIn this experiment, we analyzed citrate synthase activity in different subcellular fractions of healthy and diseased cell lines. Cells were disrupted and fractionated via centrifugation into cytosolic and mitochondrial compartments. We quantified enzyme activity using a spectrophotometric method based on TNB production and calculated specific activity using protein concentration data. Results showed clear differences in activity between the two fractions, with mitochondrial activity being highest. Notably, diseased cells demonstrated significantly reduced activity in both fractions. These results strongly support a hypothesis of mitochondrial enzyme impairment in disease and reinforce the method’s effectiveness for subcellular analysis.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\nThis experiment aimed to investigate citrate synthase activity in cell fractions from healthy and diseased cells. Cells were prepared and divided into cytosolic and mitochondrial fractions using standard lab procedures. Enzyme activity was assessed with a colorimetric method, and we compared levels across the fractions and cell types. While mitochondrial activity appeared higher, details about the data or significance were limited. The abstract touches on all sections but lacks depth in interpreting results and establishing relevance.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\n\n\n\n\n\n\nGenAI Prompt for Self-Assessment\n\n\n\nUse the following prompt with ChatGPT or another generative AI tool:\n\nYou are an expert in higher education assessment. Below are four student-written abstracts for a biochemistry lab. Each one is meant to represent one of four rubric categories: Outstanding, Excellent, Fair, and Developing. Please assign a category to each abstract and explain your reasoning based on writing clarity, scientific voice, structure, and detail. Here are the abstracts: [Insert Abstracts Here].",
+    "text": "One of the most common data manipulations is adding a new column to your dataset. This is great for transforming data, while also keeping the original. This could be used to combine multiple columns into one or perform mathematical calculations involving multiple columns with the results in a separate column.\nWe will start out with a few simple methods in base R, and then move to the dplyr method.\n\n##Log Transformation##\n\nweeds$log_flowers &lt;- log(weeds$flowers) # Base R\n\nweeds &lt;- mutate(weeds, log_flowers = log(flowers)) # Dplyr\n\n# Each of these creates a new column which is the log of the flowers column.\n\n## Basic math functions##\n\nweeds_mutate &lt;- mutate(weeds, flowers2 = flowers*2) \n# Simple multiplication of the flowers column by 2\n\nweeds_mutate &lt;- mutate(weeds_mutate, flowers_combined = flowers + flowers2) \n# This is a useless example but its just to show you how to combine multiple columns. \n\nweeds_mutate &lt;- mutate(weeds_mutate, binary = soil == \"sandstone\") \n# Using boolean logic to create a column called \"binary\" where soil is exactly (hence double ='s) sandstone. \n\nweeds_mutate &lt;- mutate(weeds, flowers2 = flowers*2,\n                      binary = soil == \"sandstone\") \n# You can also perform the functions multiple times on the same data within one line. \n\nThe arguments of mutate() are simply the name of the data frame followed by any number of expressions that create new variables.\nYou will notice throughout the mutate() commands that we have performed functions, creating new columns, while preserving the original. If you wish to drop/remove the original column, simply use the transmute() command.",
     "crumbs": [
-      "Dry Prac 3",
-      "Dry Prac 3 Notes"
+      "Pre-Lab 2 - Data manipulation",
+      "The Mutate function"
     ]
   },
   {
-    "objectID": "pages/DP3/DP3.html#abstract-1",
-    "href": "pages/DP3/DP3.html#abstract-1",
-    "title": "DP3:Peer Review",
+    "objectID": "pages/1/7_summarise.html",
+    "href": "pages/1/7_summarise.html",
+    "title": "The Summarise Function",
     "section": "",
-    "text": "Citrate synthase activity was investigated in healthy and diseased mammalian cell lines by measuring enzymatic function in cytosolic and mitochondrial fractions. Cells were lysed and separated using differential centrifugation, and activity was measured using a spectrophotometric assay. The mitochondrial fractions consistently showed higher activity, confirming the expected localization. Diseased cells exhibited lower activity overall, especially in the mitochondrial fraction. These results suggest mitochondrial function is compromised in the diseased condition. The experiment provides insight into cellular metabolic changes associated with disease.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer",
+    "text": "This is an extremely useful function that lets you create different summaries of columns. You can also nest other functions within it to apply them to your columns.\n\nsum_data &lt;- summarise(weeds, mean(flowers))  # We'll start simple. Generates the mean of the flower column\n\nsum_data &lt;- summarise(group_by(weeds, species), mean(flowers)) \n# Using the group_by() function within summarise lets you get summaries for groups, in this case \"species\"\n\nsum_data &lt;- summarise(group_by(weeds,species, soil), mean(flowers), sd(flowers), se=sd(flowers/sqrt(n())))\n# Grouped by with species & soil, generating mean, standard deviation & standard error of flowers\n\nThe last example generates the mean, sd and se for each factor combination in our dataset. This is pretty useful, particularly for generating bar graphs.\nHowever, its a little complex and can be in a much nicer format.",
     "crumbs": [
-      "Dry Prac 3",
-      "Dry Prac 3 Notes"
+      "Pre-Lab 2 - Data manipulation",
+      "The Summarise function"
     ]
   },
   {
-    "objectID": "pages/DP3/DP3.html#abstract-2",
-    "href": "pages/DP3/DP3.html#abstract-2",
-    "title": "DP3:Peer Review",
+    "objectID": "pages/1/3_filter.html",
+    "href": "pages/1/3_filter.html",
+    "title": "The Filter Function",
     "section": "",
-    "text": "We tested citrate synthase activity in different parts of the cell. Healthy and diseased cells were used in the study. We broke the cells up and spun them to get different parts, like mitochondria and cytosol. Then we measured enzyme activity with a color test. There were some differences between the samples. It looks like mitochondria might be involved in this, but it’s not totally clear from the results.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer",
+    "text": "The filter() command is used to remove rows from your data. This can be useful for removing zeros or “no data/NA’s”, or for restricting certain variables in a dataset for an analysis.\nThis follows the similar syntax as mutate() whereby we specify what dataset we want to filter, followed by how we want to filter.\n\n#The following examples will just keep overwriting the new object \"weeds_filtered\"\n\nweeds_filtered &lt;- filter(weeds, weeds == \"native\") \n# Gives us only the rows which are exactly \"native\" in the weeds column. \n\nweeds_filtered &lt;- filter(weeds, weeds != \"weed\") \n# This gives us the same result as their are only two levels of that column. The != means \"not equal to\"\n\nweeds_filtered &lt;- filter(weeds ,flowers &gt; 20) \n# Flowers greater than 20 m3\n\nSo far, we have covered renaming columns, adding new columns and filtering by rows. The next two commands are focused on selecting specific columns and creating new data tables.",
     "crumbs": [
-      "Dry Prac 3",
-      "Dry Prac 3 Notes"
+      "Pre-Lab 2 - Data manipulation",
+      "The Filter function"
     ]
   },
   {
-    "objectID": "pages/DP3/DP3.html#abstract-3",
-    "href": "pages/DP3/DP3.html#abstract-3",
-    "title": "DP3:Peer Review",
+    "objectID": "pages/1/4_select.html",
+    "href": "pages/1/4_select.html",
+    "title": "The Select Function",
     "section": "",
-    "text": "The purpose of this experiment was to analyze the specific activity of citrate synthase in subcellular fractions of two mammalian cell lines. Healthy and diseased cells were lysed and processed to separate mitochondria and cytosol using centrifugation. Enzyme activity was measured using a colorimetric assay and normalized to total protein content. Mitochondrial fractions had greater activity, and diseased cells showed lower activity in both compartments. These findings support the hypothesis that mitochondrial dysfunction contributes to disease. Clear trends were observed, although further validation and controls would strengthen the results.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer",
+    "text": "The select() function is used to select specific columns within your data and save them as a new data frame. You can use this if you have a large dataset and only want to use a few of the columns, to keep it simple and tidy. Or, you may want to take a column or two from multiple different datasets and combine them.\n\nweeds_select &lt;- select(weeds, soil) \n\nThis simply creates the weeds_select dataset, seleting one column - “soil”. As with most tidyverse functions we need to specify the dataset immediately after writing the select function. From here, its simple changes to do use select in new ways\n\nweeds_select &lt;- select(weeds,c(soil, species)) # select two columns, \"soil\" and \"species\"\n\nweeds_select &lt;- select(weeds,c(2:4)) # select columns using numbers. In this case, select columns 2 through to 4.\n\nweeds_select &lt;- select(weeds, c(soil:flowers)) # select columns \"soil\" through to \"flowers\"\n\nweeds_select &lt;- select(weeds, -soil) # remove \"soil\"\n# similar syntax applys for removing multiple columns, just place a - infront e.g. select(weeds, -c(2:4))\n\nweeds_select &lt;- select(weeds, starts_with(\"s\")) # select any column whose name starts with S. \n\nThere are many more like this above example, like “ends_with”, “contains” and “matches” all which refer to the column names.\n\n\n\n\n\n\nuse the help window ?select for more useful functions with select()",
     "crumbs": [
-      "Dry Prac 3",
-      "Dry Prac 3 Notes"
+      "Pre-Lab 2 - Data manipulation",
+      "The Select function"
     ]
   },
   {
-    "objectID": "pages/DP3/DP3.html#abstract-4",
-    "href": "pages/DP3/DP3.html#abstract-4",
-    "title": "DP3:Peer Review",
+    "objectID": "pages/1/1_packages.html",
+    "href": "pages/1/1_packages.html",
+    "title": "Packages",
     "section": "",
-    "text": "In this experiment, we analyzed citrate synthase activity in different subcellular fractions of healthy and diseased cell lines. Cells were disrupted and fractionated via centrifugation into cytosolic and mitochondrial compartments. We quantified enzyme activity using a spectrophotometric method based on TNB production and calculated specific activity using protein concentration data. Results showed clear differences in activity between the two fractions, with mitochondrial activity being highest. Notably, diseased cells demonstrated significantly reduced activity in both fractions. These results strongly support a hypothesis of mitochondrial enzyme impairment in disease and reinforce the method’s effectiveness for subcellular analysis.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer",
+    "text": "Now that you have setup your R environment and read in your first data set, we can begin to modify and add to our data as necessary.\nNow for the majority of this module, we will be working with a package called Tidyverse. Packages are collections of data, R functions and complied code to add extra features outside of the general base R environment. Packages are central to expanding the possibilities of R. The ability to do advanced graphing, GIS, complicated analyses, multivariate analyses etc. are all due to contributed packages.\nTidyverse is a unique case as it is a collection of R packages that all use similar coding syntax\n\nTo install a package into R there are two options:\nOption 1 is to select the packages tab in the help/viewer window & click the install button.\n\nThen type the package name in the packages box (note: ensure that it is installing from Repository/CRAN)\n\nOption 2 is to use the following code, replacing the “tidyverse” with the package of your choice. This should be used in the console, rather than the script window as you only need to install the package once.\n\ninstall.packages(\"tidyverse\")\n\nOnce you have installed tidyverse, simply load it into your current workspace with the following command (in your script)\n\nlibrary(tidyverse)\n\n\n\n\n\n\n\nIn general, it is good practice to place the library() commands for your whole document at the top before anything else. This allows people reading your code to load in any packages they will need at the beginning before anything else.\n\n\n\nFor example, here is the first few lines of one of my own scripts:\n\nThis shows the reader of my code what packages need to be installed to run my analysis. I also write notes to myself to remind myself what specific packages are for. Once you start accumulating packages, its hard to remember what each one does. I find this particularly useful for packages I only use for a particular function (such as the agricolae package which I use for tukeys letter reports).",
     "crumbs": [
-      "Dry Prac 3",
-      "Dry Prac 3 Notes"
+      "Pre-Lab - Data exploration",
+      "Packages"
     ]
   },
   {
-    "objectID": "pages/DP3/DP3.html#abstract-5",
-    "href": "pages/DP3/DP3.html#abstract-5",
-    "title": "DP3:Peer Review",
+    "objectID": "pages/introduction/4_notebooks.html",
+    "href": "pages/introduction/4_notebooks.html",
+    "title": "Notebooks and Markdown",
     "section": "",
-    "text": "This experiment aimed to investigate citrate synthase activity in cell fractions from healthy and diseased cells. Cells were prepared and divided into cytosolic and mitochondrial fractions using standard lab procedures. Enzyme activity was assessed with a colorimetric method, and we compared levels across the fractions and cell types. While mitochondrial activity appeared higher, details about the data or significance were limited. The abstract touches on all sections but lacks depth in interpreting results and establishing relevance.\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer",
+    "text": "The first step when opening a new R studio environment or project is creating a script or notebook for working in. Scripts are basic text files where all code is executable. Writing non-code in a script requires the use of #’s (which can look messy and confusing) like so:\n\nread.csv(\"datafile.csv\") \n# this code reads a csv (data) file into R. The command read.csv requires brackets with the filepath to the file in quotations. \n# in this code, none of the #'s will run. so if I # the read.csv command, it will not run. like so:\n# read.csv(\"datafile.csv\")\n\nA whole document of the above example can get messy and hard to understand.\nIn a notebook, we separate normal text from code by inserting “code chunks” (insert &gt; R in the top right of the window). Chunks are specialised areas in the notebook for code only. Chunks separate code from text, making it easier to write notes and read. These tutorials have been written in a notebook.\n\n\n\n\n\n\n\nTo create a notebook or script, simply use the pulldown menus file &gt; new file and select either a script, markdown or notebook one. Then save the document by hitting the disk icon (or file &gt; save)\n\nR studio will prompt you to install some packages to use a notebook. Do so and then read the text in the notebook. Once you understand, then clear everything below the “output:” — area.\n\nAs stated above, click the insert pulldown menu in the script window and click R to insert a code chunk. All code in a notebook must be written in a chunk\n\n\n\n\n\nIMPORTANT!\n\nWhen working in a project, wherever you save your project will become the default “directory”. R will look here for files first. If you want to set your working directory elsewhere, use the below code.\n\n\n# Only if you have not created a project\n\nsetwd(\"Drive:/Folder1/Folder2\")\n\n# insert your folders path in the brackets\n# this will tell R to look here for files and \"generally\" save things here as well.\n# e.g. C:/Users/Mitch/Documents/R/\n\n\n\n\n\n\n\nAfter writing your code, you can click run, run selected line(s), run current chunk or press Ctrl + Enter on the line your cursor is on\n\n\n\nGet used to this, you will do this A LOT",
     "crumbs": [
-      "Dry Prac 3",
-      "Dry Prac 3 Notes"
+      "Pre-Lab - Introduction",
+      "Notbooks in R studio"
     ]
   },
   {
-    "objectID": "pages/DP3/DP3.html#test-your-results",
-    "href": "pages/DP3/DP3.html#test-your-results",
-    "title": "DP3:Peer Review",
+    "objectID": "pages/introduction/03_Creating-a-project.html",
+    "href": "pages/introduction/03_Creating-a-project.html",
+    "title": "Creating a project",
     "section": "",
-    "text": "GenAI Prompt for Self-Assessment\n\n\n\nUse the following prompt with ChatGPT or another generative AI tool:\n\nYou are an expert in higher education assessment. Below are four student-written abstracts for a biochemistry lab. Each one is meant to represent one of four rubric categories: Outstanding, Excellent, Fair, and Developing. Please assign a category to each abstract and explain your reasoning based on writing clarity, scientific voice, structure, and detail. Here are the abstracts: [Insert Abstracts Here].",
+    "text": "Now that we have our folder setup, lets move into R studio and create our project.\nIn R, a project file stores your current Rstudio working environment in a file within your file system. This means, if you finish your work for the day halfway through an analysis, you can open up your project file the next day and continue straight from where you left off. The other major benefit is that a project file sets your default working directory. This means, when you need to open a file, you only need to do so from the place of your project file. This will make sense in a moment.\n\nCreating your project\n\n\n\n\n\n\nTo create a project, click file &gt; new project and select existing directory\n\n\n\n\n\n\n\n\n\n\nThen, browse to your new file system we just created and save the project into the base/root of that directory.\n\n\n\nThe real advantage to using project files is simplifying file opening and saving. We will cover this in more detail in the next page, but essentially, when reading data into R we normally have to specify the entire filepath\n\nsurveydata &lt;- read.csv(\"C:/Users/Mitch/Documents/surveydata.csv\")\n\nor, set a working directory\n\nsetwd(\"C:/Users/Mitch/Documents\")\nsurveydata &lt;- read.csv(\"surveydata.csv\")\n\nThe creation of a project cuts out this step by setting our working directory. This means, anytime we want to open a file, we just need to specify the folders within our project directory. So using our new filing system, we would just need to specify the following:\n\nsurveydata &lt;- read.csv(\"Data/surveydata.csv\")\n\nIf you have multiple projects, or want to close the current one, simply click the project name in the top right of R studio",
     "crumbs": [
-      "Dry Prac 3",
-      "Dry Prac 3 Notes"
+      "Pre-Lab - Introduction",
+      "Creating a project"
     ]
   },
   {
-    "objectID": "pages/DP3/DP3.html#abstract",
-    "href": "pages/DP3/DP3.html#abstract",
-    "title": "DP3:Peer Review",
-    "section": "Abstract",
-    "text": "Abstract\nCitrate synthase SA was quantified in MT and CYT subfractions isolated from immortalized mammalian CLs of divergent physiological states (i.e., HL and DL).\nFractionation was executed via DC and analyzed through TNB-based spectrophotometric methodologies.\nComparative SA metrics were demonstrated to be variably reduced across conditions, though significance thresholds were not consistently upheld.\nInterpretation was limited by inconsistent normalization to TP content and variability in the enzymatic assay kinetics.\nIt is inferred that mitochondrial biogenesis or bioenergetic perturbation may be implicated, although further ELISA and qPCR corroboration would be recommended.\n\nWhat rubric level best fits this abstract?\n – Select rubric level – Outstanding Excellent Fair Developing  Check Answer\n\n\n\n\n\n\nAbstract grade explaination\n\n\n\n\n\n\n\nProblem Area\nWhat’s Wrong\n\n\n\n\nPassive voice\nObscures who did what; lacks clarity and accountability\n\n\nExcessive jargon & acronyms\nUses unexplained abbreviations: SA, MT, CYT, CLs, HL/DL, DC, TP, ELISA, qPCR\n\n\nTense inconsistency\nShifts from past (“was quantified”) to present (“is inferred”)\n\n\nSuperficial complexity\nComplex phrasing covers weak experimental interpretation\n\n\nLack of clarity\nThe results and implications are muddled or speculative",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BIOL340_DP",
+    "section": "",
+    "text": "Welcome to Biol340 Dry Practicals for 2025\n\n\nStaring At R\nThis site is a series of tutorials on using the R statistical package for data manipulation, analysis and visualisation including the following:\n\nSetting up your file system and working environment in a reproducable manner\n\nViewing and manipulating your data\nStatistical analysis, covering analysis of variance, linear regressions and generalised linear models (more to come!)\n\nVisualisation of your results using an iterative graphing approach\n\nSpatial analysis and map creation (work in progress)\n\nIt also includes specific tutorials to complete within the Dry Practical timeslot during session.\nI am entirely self-taught through online tutorials, textbooks and advice from colleagues. The best advice I can give is to put in the time and effort. Force yourself to work through problems in R, rather than resorting to excel or your known statistical package. Spending the time to learn R and using it frequently will reinforce lessons and how to utilise code, this goes for all coding languages.\nThis site has been large developed as an offshot and extension of staringatr.com created by Dr. Mitchell Stares. The initial focus of this site is data science techniques for biology based research, however, this will hopefully improve in scope in the future. Tutorials have been developed as part of a teaching module for undergraduate students in the School of science at the University of Wollongong but have been expanded beyond that initial development.\nThis website was created using Quarto. To learn more about Quarto websites visit https://quarto.org/docs/websites.\nSite administrator: Dr. Nikolas Johnston Last updated: March 2025."
+  },
+  {
+    "objectID": "pages/introduction/02_Setting-up-your-workspace.html",
+    "href": "pages/introduction/02_Setting-up-your-workspace.html",
+    "title": "Setting up your workspace",
+    "section": "",
+    "text": "There are very quick ways to open R and begin coding, however, having an organised, well-structured working directory in your computer can save you hours of hassle and make your code much easier to share. As biology and data science are becoming increasingly complex many are turning to computer intensive, coding based software (like you!). With this movement in data science and open access, having our code reproducible, transparent and understandable is key. So why not start off like that.",
     "crumbs": [
-      "Dry Prac 3",
-      "Dry Prac 3 Notes"
+      "Pre-Lab - Introduction",
+      "Setting up your workspace"
     ]
   },
   {
-    "objectID": "pages/DP3/DP3.html#use-genai-to-reflect-and-revise",
-    "href": "pages/DP3/DP3.html#use-genai-to-reflect-and-revise",
-    "title": "DP3:Peer Review",
-    "section": "Use GenAI to Reflect and Revise",
-    "text": "Use GenAI to Reflect and Revise\n\n\n\n\n\n\nRequired Follow-up Task\n\n\n\nIf your answer was incorrect or if you’re unsure why this abstract is difficult to evaluate, copy and paste the prompt below into ChatGPT or another GenAI tool:\n\nYou are an expert in scientific communication and higher education assessment.\nI am learning how to identify weaknesses in scientific abstracts, especially those that sound complex but are not clear.\nBelow is an abstract I was given. Please review it and identify specific problems in clarity, structure, grammar, or scientific communication.\nThen suggest how I could revise it to improve readability and better match an “Excellent” or “Outstanding” level according to a university rubric.\n\nAbstract:\n&gt; Citrate synthase SA was quantified in MT and CYT subfractions isolated from immortalized mammalian CLs of divergent physiological states…",
+    "objectID": "pages/introduction/02_Setting-up-your-workspace.html#file-system",
+    "href": "pages/introduction/02_Setting-up-your-workspace.html#file-system",
+    "title": "Setting up your workspace",
+    "section": "File system",
+    "text": "File system\nBefore we jump into R, we are going to create a clean and managable folder system.\n\n\n\n\n\n\nCreate a new folder in a location of your choosing (e.g. My Documents or Desktop) called R-tutorials\n\n\n\n\nThis can be named anything you like, but try to keep it relevant and understandable (for future you).\n\n\n\n\n\n\nIn this new folder, create a series of new folders called:\n- data\n- doc\n- figs\n- output\n- R\n\n\n\nHere is the basic outline for these folders:\n\n\n\nThe data folder if where you store your raw/input data\n\n\nThe doc folder is where you store the manuscript for the project\n\n\nThe figs folder is where all of your figures will be stored from the analyses\n\n\nThe output folder is where you keep any intermediate datasets generated by your analysis, result reports etc.\n\n\nThe R folder is pretty self-explanatory but it is where we will store all of our R scripts, notebooks etc.\n\n\nNow, let’s move on to the next step. ::::",
     "crumbs": [
-      "Dry Prac 3",
-      "Dry Prac 3 Notes"
+      "Pre-Lab - Introduction",
+      "Setting up your workspace"
+    ]
+  },
+  {
+    "objectID": "pages/introduction/01_R-studio-and-the-coding-environment.html",
+    "href": "pages/introduction/01_R-studio-and-the-coding-environment.html",
+    "title": "R Studio & Coding Environment",
+    "section": "",
+    "text": "This module will provide an introduction into the R statisitical environment, going through the basics of data analysis and graphing for publication quality results. By the end of this module, you should be able to:\n\nUnderstand and use the R studio working environment\nImport and manipulate data files\nUndertake linear (ANOVA, regression) and generalised linear (logistic regression) models and associated assumptions/comparisons\nUndertake basic multivariate techniques (PCA, MDS)\nConstruct bar plots and scatterplots in ggplot\n\n\n\nR is a language and environment for statistical computing and graphics. R is free/open source software and as a result, has a community of dedicated statisticans, coders and developers increasing the capabilities and usability of the platform. R primarily runs as a command-line program.\nThis is a big entry barrier to many starting to learn R, so most people have turned to “R Studio”.\n\n\n\nBase R\n\n\n\n\n\nSince R is free and open source, it is a program and skill that can be carried with you across many institutions and jobs and is for many, the single solution for statistical analysis, graphing and even GIS/spatial analysis. Programs like JMP, SPSS and ARCGIS cost 100s if not 1000s of dollars and are quickly outdated by new versions.\nHowever, the biggest uses of R come from its sharability and openness. Collaborating and sharing data analysis with R requires only the script and raw data. All data manipulations are done within R, requiring no editing or manipulating of your raw excel data.\n\n\n\n\n\n\nThe R Studio Environment\n\n\nR studio “reskins” the standard R environment, giving space for script writing, help, graphics output and tracking of data files. Due to the ease of working in R studio, thats what we will be using. R studio can provide an array of functions from statistical analysis and graphing, GIS/spatial analysis, presentations, document preparation (all of these tutorials are written in R) and even novel functions like interacive graphs and tweeting.\n\n\n\nR studio is separated into 4 panels:\n\nThe top-left panel (blue) is the editor (or script window) where you can view and write your R script. This is a saveable document of code. Running code is as simple as Ctrl+Enter on a line of code or pressing the run button in the top-right of this window.\nThe bottom-left (red) is the console. This is the standard R environment where you can run code directly, or view the output of your script as you run it.\nThe top-right (green) is your workspace. This lists each “object” as you create them through your analyses. Clicking a data-frame object will allow you to view it.\nThe bottom-left (black) has lists of files and packages as well as the help window (quickly access by typing ? before any command) and plots which shows any graphical output.\n\nNow we have an idea of what R is, it is time to install R & R Studio onto your computer.\n\nInstall Instructions\n1. Click Here to visit the R webpage and select one of the Australian mirrors to download (CSIRO, University of Melbourne etc.)\n2. Select your version (Windows or Mac), then download the base subdirectory\n3. Once installed, visit R studio to download R studio desktop.\n\nOnce both of those are installed, you can now proceed to open up Rstudio",
+    "crumbs": [
+      "Pre-Lab - Introduction",
+      "R studio and the coding environment"
+    ]
+  },
+  {
+    "objectID": "pages/introduction/01_R-studio-and-the-coding-environment.html#introduction",
+    "href": "pages/introduction/01_R-studio-and-the-coding-environment.html#introduction",
+    "title": "R Studio & Coding Environment",
+    "section": "",
+    "text": "This module will provide an introduction into the R statisitical environment, going through the basics of data analysis and graphing for publication quality results. By the end of this module, you should be able to:\n\nUnderstand and use the R studio working environment\nImport and manipulate data files\nUndertake linear (ANOVA, regression) and generalised linear (logistic regression) models and associated assumptions/comparisons\nUndertake basic multivariate techniques (PCA, MDS)\nConstruct bar plots and scatterplots in ggplot\n\n\n\nR is a language and environment for statistical computing and graphics. R is free/open source software and as a result, has a community of dedicated statisticans, coders and developers increasing the capabilities and usability of the platform. R primarily runs as a command-line program.\nThis is a big entry barrier to many starting to learn R, so most people have turned to “R Studio”.\n\n\n\nBase R\n\n\n\n\n\nSince R is free and open source, it is a program and skill that can be carried with you across many institutions and jobs and is for many, the single solution for statistical analysis, graphing and even GIS/spatial analysis. Programs like JMP, SPSS and ARCGIS cost 100s if not 1000s of dollars and are quickly outdated by new versions.\nHowever, the biggest uses of R come from its sharability and openness. Collaborating and sharing data analysis with R requires only the script and raw data. All data manipulations are done within R, requiring no editing or manipulating of your raw excel data.\n\n\n\n\n\n\nThe R Studio Environment\n\n\nR studio “reskins” the standard R environment, giving space for script writing, help, graphics output and tracking of data files. Due to the ease of working in R studio, thats what we will be using. R studio can provide an array of functions from statistical analysis and graphing, GIS/spatial analysis, presentations, document preparation (all of these tutorials are written in R) and even novel functions like interacive graphs and tweeting.\n\n\n\nR studio is separated into 4 panels:\n\nThe top-left panel (blue) is the editor (or script window) where you can view and write your R script. This is a saveable document of code. Running code is as simple as Ctrl+Enter on a line of code or pressing the run button in the top-right of this window.\nThe bottom-left (red) is the console. This is the standard R environment where you can run code directly, or view the output of your script as you run it.\nThe top-right (green) is your workspace. This lists each “object” as you create them through your analyses. Clicking a data-frame object will allow you to view it.\nThe bottom-left (black) has lists of files and packages as well as the help window (quickly access by typing ? before any command) and plots which shows any graphical output.\n\nNow we have an idea of what R is, it is time to install R & R Studio onto your computer.\n\nInstall Instructions\n1. Click Here to visit the R webpage and select one of the Australian mirrors to download (CSIRO, University of Melbourne etc.)\n2. Select your version (Windows or Mac), then download the base subdirectory\n3. Once installed, visit R studio to download R studio desktop.\n\nOnce both of those are installed, you can now proceed to open up Rstudio",
+    "crumbs": [
+      "Pre-Lab - Introduction",
+      "R studio and the coding environment"
+    ]
+  },
+  {
+    "objectID": "pages/1/8_pipe.html",
+    "href": "pages/1/8_pipe.html",
+    "title": "The Pipe Function",
+    "section": "",
+    "text": "This lets you run multiple different functions on one dataset without having to use the intermediate steps you would have to use in base R.\nYou start with the data you want to apply the functions to, followed by a pipe %&gt;%. After each pipe you must go to the next line.\nThis is useful for large messy functions with multiple nested parts. It separates everything out and makes it easier to follow.\nA pipe is simply a &gt; nested within two percentage, %, symbols. The keyboard shortcut for this is Ctrl + SHIFT + M\n\nsum_data &lt;- weeds %&gt;% \n  group_by(species, soil) %&gt;% \n  summarise(max(flowers))\n\nYou simply start with the data you want to apply the functions to, followed by a pipe. After each pipe you must go to the next line (sorta).\nIn this example, we grouped the data by species and soil, then performed the summarise function to generate the max number for each combination\n\n\n\n\n\n\nYou will notice, that because we specified the data in the first line, we did not have to specify the data in the other lines, only the columns\n\n\n\n\nnew_data &lt;- weeds %&gt;% \n  mutate(binary = soil == \"sandstone\") %&gt;% \n  filter(weeds == \"native\")\n\nAs you can see, we can do this with most of the functions we have already learnt. This above example will generate a binary outcome (true/false) for soil with TRUE as “sandstone”. Followed by filtering for “native” weeds. This will generate a a dataset with native weeds that have a true/false outcome based on soil.\nPiping is incredibly useful and much easier to read. It is a function I keep forgetting to use, until I look at my code later on, full of regrets. It shortens and simplifies code alot.",
+    "crumbs": [
+      "Pre-Lab 2 - Data manipulation",
+      "The Pipe function"
+    ]
+  },
+  {
+    "objectID": "pages/1/3_columns.html",
+    "href": "pages/1/3_columns.html",
+    "title": "Columns",
+    "section": "",
+    "text": "Another important aspect of R coding syntax is refering to specific columns. This is done by using a $ sign after specifying our dataset and then calling the column. Like so:\n\nhead(weeds$flowers.m3) # This says to run the head() command but only on the flowers.m3 column\n\n[1] 14 17 23 26 35 45\n\n\nTry this with some of the other commands above. Note: Some of them will not work and will show NULL. This is because these are designed to view aspects of the data frame (e.g. names() )\nNow we know how to refer to a column, we can fix any issues with importing incorrect data\nPretend for a moment our data was input incorrectly:\n\nweeds$species&lt;-factor(weeds$species)\n\nThis would simply save the command factor() on the column species to our weeds object.\nIf we wanted an ordered factor, e.g. small &lt; medium &lt; large we can use the following\n\n## example dataset ##\nsizes &lt;- factor(c(\"small\", \"large\", \"large\", \"small\", \"medium\", \"medium\")) # creating a single column factor with 3 levels\nsizes\n\n[1] small  large  large  small  medium medium\nLevels: large medium small\n\n\nHere we have just created a new example dataset which consists of a single column, containing the words: small, large and medium in a random order.\nWe can order these into a logical order, so R will know that medium is bigger than small and large is bigger than medium\n\nsizes &lt;- ordered(sizes, levels = c(\"small\", \"medium\", \"large\")) # ordering levels from small through to large.\n# Note: I did not need to specify column as this is a single column dataset. \nsizes # Now the factor is ordered.\n\n[1] small  large  large  small  medium medium\nLevels: small &lt; medium &lt; large\n\n\nWe can then do this with our weeds dataset, ordering them in a nonsensical order.\n\nweeds$species&lt;-ordered(weeds$species, levels=c(\"Pultenaea\", \"Olearia\", \"Coprosma\"))\n\nThis is useful when the dataset you are working with has an ordered factor.\nThe main use for this is in graphing\nBy default, R will always sort in alphabetical order, which can be a pain when graphing. If you want ordered factors, or want to present factors along an X axis in a more logical order then the ordered() command or even factor() command where you specify levels is a good option.\n\n\n\n\n\n\nI recommend using the factor() command and specifying the levels using the same syntax as the ordered() command unless your factor is truely ordered. This way we just sort the factor the way we want, but are not messing with the way R views our variable (as an ordinal variable rather than a logically ordered factor).\n\n\n\nIf you want to change something to a continuous (numeric, integer etc.) its a little more complicated, but in general R shouldn’t mess this up too often. A quick google search or ?numeric will help answer this.",
+    "crumbs": [
+      "Pre-Lab - Data exploration",
+      "Columns"
+    ]
+  },
+  {
+    "objectID": "pages/1/5_joins.html",
+    "href": "pages/1/5_joins.html",
+    "title": "Joining Data",
+    "section": "",
+    "text": "One of the most frequent data manipulations for working within R is joining multiple data sets together. The most common example of this is combining species abundance (or some other variable of interest) with external sources on the environmental conditions, such as BOM data (temperature, precipitation etc.) or GPS data.\nTo do most statistical analyses, data needs to be in the same data frame. So joining the datasets is an “easy” way to do so outside of excel.\n\n\n\n\n\n\nFor this exercise, we will be working with the BIOL365 Frog Data to combine the species matrix with environmental data.\nDownload the “frogs.csv” and “frog_environmental.csv”” files and read them in to R without the row.names argument\n\n\n\n\nfrogsp&lt;-read.csv(\"frogs.csv\", header=TRUE)\nenviro&lt;-read.csv(\"frog_environmental.csv\", header=TRUE)\n\nFor a complete join of both datasets, when there are the same number of rows in the exact same order, we can use the bind_cols() function.\n\nfrogcombine &lt;- bind_cols(frogsp, enviro) # In this example the \"site\" column has been added twice\n\nThere is a bind_rows() that will add rows to the bottom of a dataset, using the same syntax.\nWhile bind_cols() and bind_rows() are “cool”, they are limited in their usefulness. I find the most useful function is left_join().\n\nfrogjoin &lt;- left_join(frogsp, enviro, by=\"Site\") # This will join two datasets by a similar column (Site). \n\nThis will join the second dataset (enviro) to the first data set based on the shared column. right_join() will do the opposite, joining frogsp to enviro. Its pretty useless, just use left_join() remember to always put the data frame you want to keep first.\n\n# We can use the dim() to view the dimensions of the data\ndim(frogsp) # 11 columns\n\n[1] 42 11\n\ndim(enviro) # 16 columns\n\n[1] 42 16\n\ndim(frogjoin) # 26 colums (11 + 16 minus the 1 in common)\n\n[1] 42 26\n\n\nBoth of these examples so far have required the same rows for each dataset. Sometimes we might have more information in one dataset then we do in the other. For this dataset we don’t have this issue, so lets quickly create the issue to demonstrate.\nWe will simply use the filter() command to filter for rows that contain a value in the “Temp” column. We have 4 rows that have an NA in “Temp” so we will use a != (not equal to) to select all rows that are not equal to NA\n\nenviro_filter &lt;- filter(enviro, Temp != \"NA\") # This removes sites 14, 15, 35 & 36\ndim(enviro_filter)\n\n[1] 38 16\n\n# Now we can try the two new join types\n\nfroginner &lt;- inner_join(frogsp, enviro_filter, by=\"Site\") # Join data. Retain only rows that occur in both data sets\ndim(froginner) # 38 rows\n\n[1] 38 26\n\nfrogfull &lt;- full_join(frogsp, enviro_filter, by=\"Site\") # Join data. Retain all values, all rows\ndim(frogfull)\n\n[1] 42 26\n\n\nYou can also use semi_join() to combine all rows that have a match in the second dataset, or anti_join() to combine all rows that do not match have a match in the second dataset (this ones a little weird).\nI still find myself using left_join 90% of the time though."
+  },
+  {
+    "objectID": "pages/1/2_viewingdata.html",
+    "href": "pages/1/2_viewingdata.html",
+    "title": "Viewing your data",
+    "section": "",
+    "text": "Now we have become acquainted with our working directories and the R environment, its time to explore our newely imported data. For this, we will be using the weeds dataset. Ensure your data is loaded in and then either use the View() command:\n\nweeds &lt;- read.csv(\"weeds.csv\")\nView(weeds)\n# This will open up a new tab to view your data\n\nor click the variable name in the environment window.\n\nThis should bring up a separate tab in Rstudio which you should be able to see the 4 columns (weeds, soil, species & flowers.m3).\nNow we can see our data, we can investigate the way R has input our data. The best thing to do is to ensure your categorical variables are categorical, and our continuous are continuous, much like we do in programs like JMP.\n\nIn JMP, we have the icons to identify categorical/nominal, ordinal or continuous. In R, all we do is run a single line of code to view the same thing across the different columns.\n\nstr(weeds)\n\n'data.frame':   48 obs. of  4 variables:\n $ weeds     : chr  \"weed\" \"weed\" \"weed\" \"weed\" ...\n $ soil      : chr  \"sandstone\" \"sandstone\" \"sandstone\" \"sandstone\" ...\n $ species   : chr  \"Coprosma\" \"Coprosma\" \"Coprosma\" \"Coprosma\" ...\n $ flowers.m3: int  14 17 23 26 35 45 36 28 28 39 ...\n\n# str stands for \"structure\" and will tell us the formats of each data column, as well as the number of levels when we have a factor (categorical) column\n\nstr() also shows us the number of levels we have in a factor. So if we put in a bad dataset with different capitalisations or misspellings on factor levels, we can identify here how many we want vs. how many we have. Its a quick and easy way to assess your data.\nAs you can see in the weeds example, we have weeds, soil & species as factors (categorical) and flowers.m3 as an integer (one of many continuous data types, in this case, whole numbers).\nWe will follow up on how to fix an incorrect column shortly\nOther data viewing commands can be used to view certain aspects of your data without bringing up the entire data set in a new tab. These are as follows:\n\nhead(weeds) # This will show the top few rows of your data so you can check it without loading the entire table\n\n  weeds      soil   species flowers.m3\n1  weed sandstone  Coprosma         14\n2  weed sandstone  Coprosma         17\n3  weed sandstone  Coprosma         23\n4  weed sandstone  Coprosma         26\n5  weed sandstone Pultenaea         35\n6  weed sandstone Pultenaea         45\n\ntail(weeds) # The same as head() but shows the bottom rows\n\n    weeds  soil   species flowers.m3\n43 native shale Pultenaea         49\n44 native shale Pultenaea         20\n45 native shale   Olearia         32\n46 native shale   Olearia         51\n47 native shale   Olearia         47\n48 native shale   Olearia         55\n\ndim(weeds) # This gives you the number of rows and columns\n\n[1] 48  4\n\n# You can also use nrow(weeds) or ncol(weeds) to get them separately\n\nnames(weeds) # Gives you the column names. \n\n[1] \"weeds\"      \"soil\"       \"species\"    \"flowers.m3\"\n\n# I use this when I want the exact name for a column when I am writing analyses (you will see later how useful this can be)\n\nsummary(weeds) # Gives you summary statistics for each column\n\n    weeds               soil             species            flowers.m3   \n Length:48          Length:48          Length:48          Min.   :13.00  \n Class :character   Class :character   Class :character   1st Qu.:22.50  \n Mode  :character   Mode  :character   Mode  :character   Median :33.00  \n                                                          Mean   :33.81  \n                                                          3rd Qu.:45.50  \n                                                          Max.   :57.00  \n\n# This will also come in handy later for statistical analysis \n\nAs you can see, there are many ways to view data within R. Some of these are useful for huge datasets (&gt; 10k rows) as the view() command can put strain on your computer. Using head() or tail() to view aspects of the data is useful as it reduces how much is displayed.\n::: callout After reading in dataset, use the summary() command with the “insecticide”” dataset to answer the following questions:\nQuestion: What is the minimum value for species richness? :::\n{{% expand Answer %}} 1 {{% /expand %}}\n\n\n\n\n\n\nQuestion: What is the maximum value for species richness?\n\n\n\n{{% expand Answer %}} 20 {{% /expand %}}",
+    "crumbs": [
+      "Pre-Lab - Data exploration",
+      "Viewing Data"
+    ]
+  },
+  {
+    "objectID": "pages/1/1_rename.html",
+    "href": "pages/1/1_rename.html",
+    "title": "The Rename Function",
+    "section": "",
+    "text": "You will often need to rename data you enter or obtain from others, as R converts any spaces to fullstops and people tend to capitilise most words. The rename() function allows us to simply rename a column name within our data frame.\n\nPersonally, this is my favourite function in R as I hate captials, fullstops and other annoying column name problems that slow down coding or generate errors. Trust me, when you spend an hour trying to fix a line of code only to find a single capital letter is missing, you will understand.\nTo do this with dplyr (a tidyverse package) we simply use the following command:\n\nweeds &lt;- rename(weeds, flowers = flowers.m3)\n# In the brackets we need to specify our data frame (weeds) followed by a second argument specifying the name we want for our column = the name we already have.\n# Again, if you run this by itself it will not save to your data frame, unless you direct it to your data frame variable using the &lt;- \n\nPretty simple and straightforward.\nIf you want to rename multiple columns, this is a pretty simple addition. For demonstrating purposes, I am going to rename all the columns of weeds to nonsensical crap.\n\ngrocerylist &lt;- rename(weeds, coopers = \"flowers\", asahi = \"species\", vb = \"soil\", littlecreatures = \"weeds\")\n# to specify multiple variables/columns, we simply add a comma after the first rename and keep going.",
+    "crumbs": [
+      "Pre-Lab 2 - Data manipulation",
+      "The Rename function"
+    ]
+  },
+  {
+    "objectID": "pages/supplementary/cheetsheet.html",
+    "href": "pages/supplementary/cheetsheet.html",
+    "title": "ggplot_cheatsheet",
+    "section": "",
+    "text": "#Graphing cheat sheets\nPosit, the company that marks Rstudio has created some really fantastic resources to help leverage the most out of ggplot2. Access cheatsheet documents for ggplot2. They are available here.\nIn particular I recommend looking at the PDF available on this website. PDF link.",
+    "crumbs": [
+      "Extra help with Graphics",
+      "Additional ggplot2 support"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html",
+    "href": "pages/DP4/DP4_clean.html",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "🧭 Mode: In pairs, bring your scientific report and be ready to collaborate.\n\nThis session will guide you through using GenAI to improve your scientific writing and reflect on how AI compares to human feedback.\n\n\n\n\nBy the end of this lab, you will:\n✅ Use 3 types of GenAI prompts to revise a scientific report\n✅ Compare and reflect on AI vs. human feedback\n✅ Practice ethical and responsible use of GenAI tools\n✅ Submit a revised report with tracked changes\n\n\n\n\n\n\n\n\n\n\n\nHow to Complete This Lab\n\n\n\nAs you work through this page, open a new Microsoft Word document to record your answers. Use the checkboxes here to tick off each step as you complete it. This will help keep you on track and ensure you’ve answered everything before submission.\n\n\nBefore you begin:\n\n✅ Have your draft scientific report ready (ideally with comments from a peer)\n✅ Access a GenAI tool like Copilot (or other approved platform)\n✅ Use Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nLaunch Copilot\n\n\n\nUse the link below to open Microsoft Copilot in a new tab. You’ll need to be logged in with your UOW or institutional account.\n👉 Launch Microsoft Copilot\n\n⚠️ Make sure to copy/paste your prompts and results into your worksheet as you go!\n\n\n\n\n\n\n\nChoose a paragraph from your own writing and paste it in your notes. Now try using the below types of prompts.\n\n\n\nPrompt: “Please rewrite the following paragraph to be more concise and clear, suitable for a scientific audience.”\n\nExample AI Output:\n&gt; “The experiment investigated the effect of temperature on enzyme activity. Results showed a steady increase in activity up to 37°C, after which it declined rapidly, suggesting denaturation.”\n\n\n\n\n\nPrompt: “Rewrite the paragraph in a way that explains the concept clearly to someone without a science background.”\n\nExample AI Output:\n&gt; “We tested how heat affects enzymes—the tiny machines inside cells. They worked faster when it was warm, but too much heat made them break down.”\n\nNow try your own prompts and note the results using the below guide:\nPrompt 1 (concise/scientific):\n…\nAI Output 1:\n…\nPrompt 2 (general audience):\n…\nAI Output 2:\n…\n\n\n\n\n\nShare your prompts and output with the group next to you, and use the following checklist to evaluate AI responses:\n\nPreserved scientific meaning\n\nImproved clarity or tone\n\nRemoved critical information\n\nIntroduced an error or hallucination\n\nWas suitable for the intended audience\n\nWhich output was better and why?\n…\nDid anything surprise or confuse you?\n…\n\n\n\n\nScenario:\nA student pastes their full assignment into ChatGPT, accepts the rewritten version, and submits it without reading it. The AI fabricated citations and misunderstood the conclusion.\nDiscussion Questions:\n\nWhat are the risks in this scenario?\n\nWhen is it okay to use AI in writing? When is it not?\n\nEthical checklist you can apply and think about when using these tools:\n\nI used AI to assist, not replace my work\n\nI reviewed and edited all AI-generated text\n\nI remain the author of my submission\n\n\n\n\n\nChoose one paragraph as a group and go through these steps:\nOriginal Paragraph:\n…\nRevision Prompt Used:\n…\nAI Output:\n…\nFinal Human-Edited Version:\n…\nWhat we changed and why:\n…\n\n\n\n\nRecord your most effective prompt from your work today and its benefit.\nBest Prompt:\n…\nWhat it helped improve:\n…\n\n\n\n\nToday I learned:\n…\nOne thing I’ll do differently in my writing is:\n…\nOne thing to remember when using AI:\n…\n\nFinal Thought: AI is a tool — you are the scientist. Own your writing, use tools wisely, and always verify what you say!",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#learning-objectives",
+    "href": "pages/DP4/DP4_clean.html#learning-objectives",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "By the end of this lab, you will:\n✅ Use 3 types of GenAI prompts to revise a scientific report\n✅ Compare and reflect on AI vs. human feedback\n✅ Practice ethical and responsible use of GenAI tools\n✅ Submit a revised report with tracked changes",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#getting-started",
+    "href": "pages/DP4/DP4_clean.html#getting-started",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "How to Complete This Lab\n\n\n\nAs you work through this page, open a new Microsoft Word document to record your answers. Use the checkboxes here to tick off each step as you complete it. This will help keep you on track and ensure you’ve answered everything before submission.\n\n\nBefore you begin:\n\n✅ Have your draft scientific report ready (ideally with comments from a peer)\n✅ Access a GenAI tool like Copilot (or other approved platform)\n✅ Use Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nLaunch Copilot\n\n\n\nUse the link below to open Microsoft Copilot in a new tab. You’ll need to be logged in with your UOW or institutional account.\n👉 Launch Microsoft Copilot\n\n⚠️ Make sure to copy/paste your prompts and results into your worksheet as you go!",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#activity-1-prompt-design-output-exploration",
+    "href": "pages/DP4/DP4_clean.html#activity-1-prompt-design-output-exploration",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Choose a paragraph from your own writing and paste it in your notes. Now try using the below types of prompts.\n\n\n\nPrompt: “Please rewrite the following paragraph to be more concise and clear, suitable for a scientific audience.”\n\nExample AI Output:\n&gt; “The experiment investigated the effect of temperature on enzyme activity. Results showed a steady increase in activity up to 37°C, after which it declined rapidly, suggesting denaturation.”\n\n\n\n\n\nPrompt: “Rewrite the paragraph in a way that explains the concept clearly to someone without a science background.”\n\nExample AI Output:\n&gt; “We tested how heat affects enzymes—the tiny machines inside cells. They worked faster when it was warm, but too much heat made them break down.”\n\nNow try your own prompts and note the results using the below guide:\nPrompt 1 (concise/scientific):\n…\nAI Output 1:\n…\nPrompt 2 (general audience):\n…\nAI Output 2:\n…",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#activity-2-compare-evaluate",
+    "href": "pages/DP4/DP4_clean.html#activity-2-compare-evaluate",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Share your prompts and output with the group next to you, and use the following checklist to evaluate AI responses:\n\nPreserved scientific meaning\n\nImproved clarity or tone\n\nRemoved critical information\n\nIntroduced an error or hallucination\n\nWas suitable for the intended audience\n\nWhich output was better and why?\n…\nDid anything surprise or confuse you?\n…",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#activity-3-ethics-in-action",
+    "href": "pages/DP4/DP4_clean.html#activity-3-ethics-in-action",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Scenario:\nA student pastes their full assignment into ChatGPT, accepts the rewritten version, and submits it without reading it. The AI fabricated citations and misunderstood the conclusion.\nDiscussion Questions:\n\nWhat are the risks in this scenario?\n\nWhen is it okay to use AI in writing? When is it not?\n\nEthical checklist you can apply and think about when using these tools:\n\nI used AI to assist, not replace my work\n\nI reviewed and edited all AI-generated text\n\nI remain the author of my submission",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#activity-4-collaborative-rewrite",
+    "href": "pages/DP4/DP4_clean.html#activity-4-collaborative-rewrite",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Choose one paragraph as a group and go through these steps:\nOriginal Paragraph:\n…\nRevision Prompt Used:\n…\nAI Output:\n…\nFinal Human-Edited Version:\n…\nWhat we changed and why:\n…",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#prompt-vault",
+    "href": "pages/DP4/DP4_clean.html#prompt-vault",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Record your most effective prompt from your work today and its benefit.\nBest Prompt:\n…\nWhat it helped improve:\n…",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#class-reflection",
+    "href": "pages/DP4/DP4_clean.html#class-reflection",
+    "title": "AI Reflection & Writing Lab",
+    "section": "",
+    "text": "Today I learned:\n…\nOne thing I’ll do differently in my writing is:\n…\nOne thing to remember when using AI:\n…\n\nFinal Thought: AI is a tool — you are the scientist. Own your writing, use tools wisely, and always verify what you say!",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#step-1-human-feedback-summary",
+    "href": "pages/DP4/DP4_clean.html#step-1-human-feedback-summary",
+    "title": "AI Reflection & Writing Lab",
+    "section": "🔹 Step 1: Human Feedback Summary",
+    "text": "🔹 Step 1: Human Feedback Summary\n\n🔎 What were the key points of feedback?\n\nList 1–3 points of feedback you received on your report. Be specific.\n\n\n1.\n2.\n3.\n\n\n\n📌 How will you address this feedback?\n\nDescribe one way you’ll apply this feedback to your report.\n\n\nNote down your action plan",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#step-2-revising-with-genai",
+    "href": "pages/DP4/DP4_clean.html#step-2-revising-with-genai",
+    "title": "AI Reflection & Writing Lab",
+    "section": "🔹 Step 2: Revising with GenAI",
+    "text": "🔹 Step 2: Revising with GenAI\n\n\n\n\n\n\nPrompt Engineering Guide\n\n\n\nYou will now use four types of prompts with Microsoft Copilot to revise your scientific report. Each prompt serves a different purpose and helps you interact with AI in more effective ways. Understanding how and why these prompts work differently is an important part of responsibly using GenAI tools.\nUse the Pro Forma to guide your progress. For each prompt type, copy the AI’s output into your worksheet and then reflect on how it helped improve your work—or if it didn’t help, explain why. This reflection is just as important as the output.\n\n\n🧠 Context Prompt (who the AI is)\nThis prompt sets the “role” or “persona” of the AI—you’re telling it who it should pretend to be. For example:\n&gt; “You are a biology lecturer marking third-year scientific reports.”\nThis helps the AI tailor its feedback in a way that’s appropriate for your audience, tone, and discipline. By setting context, you’re more likely to receive feedback that aligns with academic expectations in biology, such as clarity, structure, and use of evidence.\n\n\n\n🔧 “Do for me” Prompt\nThis is a direct instruction where you ask the AI to perform a task on your behalf. For example:\n&gt; “Rewrite this paragraph to be more concise.”\n&gt; “Add a stronger topic sentence to this paragraph.”\nThis prompt is about delegation—you’re giving the AI a task and seeing how well it can help streamline or improve your writing. It’s useful when you know what needs to be fixed but want help doing it efficiently. However, it is very important to evaluate the result critically to ensure it is correct, does not plagiarise and is of an appropriate scientific standard.\n\n\n\n🔍 “Evaluate” Prompt\nIn this prompt, you’re asking the AI to critique or assess a section of your writing. For example:\n&gt; “What are the strengths and weaknesses of this paragraph?”\n&gt; “Does this argument make logical sense?”\nThis approach encourages metacognition—thinking about your own thinking. It helps you view your writing from another perspective, identify gaps, and reflect on your structure and clarity. In scientific writing, this skill is crucial for presenting arguments and evidence effectively.\n\n\n\n🎓 “Teach Me” Prompt\nThis prompt is used to deepen your understanding. You’re asking the AI to explain a concept or technique. For example:\n&gt; “Explain what makes a good scientific discussion section.”\n&gt; “Why is passive voice often discouraged in scientific writing?”\nThis type of prompt supports learning and skill-building. It’s helpful when you’re unsure about a rule or principle in scientific communication and want to strengthen your knowledge. Rather than fixing the text for you, the AI helps you understand how to make good writing choices.\n\n\n\n\n2.1 Contextualise the AI\n\nWrite a prompt that tells Copilot who it is (e.g., “You are an expert editor of a scientific journal…”)\n\n\nNote down your prompt\n\n\n\n2.2 ‘Do for me’ Prompt\n\nShare a prompt you used to get Copilot to rewrite or revise a section for you.\n\n\nNote down your prompt\n\n\nHow did you use the Copilot output to change your report?\n\n\nNote description of change\n\n\n\n2.3 ‘Evaluate’ Prompt\n\nAsk Copilot to review a section. What prompt did you use?\n\n\nNote down your prompt\n\n\nWhat change did you make based on Copilot’s evaluation?\n\n\nNote description of change\n\n\n\n2.4 ‘Teach me’ Prompt\n\nShare a “teach me” prompt you used with Copilot (e.g., “How can I improve clarity in my methods section?”)\n\n\nNote down your prompt\n\n\nWhat did you learn from Copilot’s response?\n\n\nNote key takeaway",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#part-3-reflection",
+    "href": "pages/DP4/DP4_clean.html#part-3-reflection",
+    "title": "AI Reflection & Writing Lab",
+    "section": "🔹 Part 3: Reflection",
+    "text": "🔹 Part 3: Reflection\nFollowing the Pro Forma answer each question below in 100–150 words. The total reflection should not exceed 600 words\n\n3.1 Compare AI & Human Feedback\n\nHow did Copilot feedback compare with the feedback from your peer?\n\n\nNote down your response…\n\n\n\n3.2 Most Effective Prompt\n\nWhich type of Copilot prompt helped most? Why?\n\n\nNote down your response…\n\n\n\n3.3 Impact on Your Writing\n\nDid using Copilot change how you approach writing or editing?\n\n\nNote down your response…\n\n\n\n3.4 AI Pros & Cons\n\nWhat are the benefits and risks of using GenAI like Copilot in science writing?\n\n\nNote down your response…",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
+    ]
+  },
+  {
+    "objectID": "pages/DP4/DP4_clean.html#final-checklist",
+    "href": "pages/DP4/DP4_clean.html#final-checklist",
+    "title": "AI Reflection & Writing Lab",
+    "section": "📦 Final Checklist",
+    "text": "📦 Final Checklist\n\nBefore submitting:\n✅ Tracked changes enabled in your revised report\n✅ Completed Pro Forma with feedback summary, prompts, and reflection\n✅ Screenshots or transcripts of Copilot interactions in Appendix\n\n📤 Upload to Moodle by Monday 26th of May, 11:59pm",
+    "crumbs": [
+      "Dry Prac 4",
+      "Dry Prac 4 Notes"
     ]
   },
   {
@@ -789,565 +943,5 @@
       "Themes a customisation in ggplot2",
       "Backgrounds"
     ]
-  },
-  {
-    "objectID": "pages/DP3/DP3.html#now-apply-what-you-have-learnt-by-completing-formal-peer-reviews-of-your-fellow-students-scientific-reports.-you-must-complete-one-review-before-leaving.",
-    "href": "pages/DP3/DP3.html#now-apply-what-you-have-learnt-by-completing-formal-peer-reviews-of-your-fellow-students-scientific-reports.-you-must-complete-one-review-before-leaving.",
-    "title": "DP3:Peer Review",
-    "section": "Now apply what you have learnt by completing formal peer reviews of your fellow students scientific reports. You must complete one review before leaving.",
-    "text": "Now apply what you have learnt by completing formal peer reviews of your fellow students scientific reports. You must complete one review before leaving.",
-    "crumbs": [
-      "Dry Prac 3",
-      "Dry Prac 3 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP4/genai_final_practical (1).html",
-    "href": "pages/DP4/genai_final_practical (1).html",
-    "title": "Student Practical: Using AI in Scientific Writing",
-    "section": "",
-    "text": "Today you’ll explore how to use Generative AI (like ChatGPT) to revise and improve your scientific writing. You’ll work in groups, build better prompts, and reflect on ethical and effective AI use.\nComplete each section in order. When you finish one, move on to the next. All activities are interactive.\n\n\n\n\n\n\nWhat do you hope AI can help you improve in your writing?\n\nUse the textbox below to note your ideas:\nI want AI to help me with...\n\n\n\nChoose a paragraph from your own writing (e.g., an essay or report draft) that you want to revise. Paste it here:\nMy original paragraph:\n\n\n\n\n\n\n\nWrite two different prompts to improve your paragraph.\nPrompt 1: Make it more concise. Prompt 2: Change the tone (e.g., public vs. academic).\nPrompt 1 (conciseness):\n\nPrompt 2 (tone adjustment):\nPaste the AI outputs for both below:\nAI output from Prompt 1:\n\nAI output from Prompt 2:\n\n\n\n- [ ] The AI preserved the meaning.\n- [ ] The AI introduced errors.\n- [ ] I prefer one version over the other.\n\n\n\n\n\n\n\nReflect on the outputs. Fill in the summary below:\nBest improvement made by AI:\n\nBiggest issue or error:\n\nWhat surprised me:\n\n\n\n- [ ] Tried 3+ prompt versions\n- [ ] Asked for a tone change\n- [ ] Identified an error or hallucination\n- [ ] Ignored a bad suggestion\n- [ ] Improved clarity or flow\n- [ ] Got a weird or funny result\n\n\n\n\n\n\n\n- [ ] Did I use AI as a helper, not a replacement?\n- [ ] Did I review AI suggestions for accuracy?\n- [ ] Am I still the author of my writing?\n\n\n\nWhen is it OK to use AI in writing?\n\nWhen is it NOT OK?\n\n\n\n\n\n\n\nPick one paragraph to revise together. Document the full workflow:\nOriginal paragraph:\n\nPrompt used:\n\nAI output:\n\nFinal version after human edits:\n\nNotes on what you changed and why:\n\n\n\n\n\n\n\nRead this polished paragraph. What prompt might have generated it?\nThe mitochondria, often referred to as the \"powerhouse\" of the cell, are essential organelles responsible for generating ATP through oxidative phosphorylation. Their role in cell metabolism and signaling is critical to both normal function and disease processes.\nYour reverse-engineered prompt:\n\n\n\n\n\n\n\nWhat was the most effective or creative prompt you used today?\nBest prompt:\n\nWhat it helped improve:\n\n\n\n\n\n\n\nToday I learned...\n\nIn future, I’ll use AI to...\n\nOne ethical consideration I’ll remember is...\n\n🎓 Remember: AI can support your voice, but not replace your judgement."
-  },
-  {
-    "objectID": "pages/DP4/genai_final_practical (1).html#step-1-introduction-writing-warm-up",
-    "href": "pages/DP4/genai_final_practical (1).html#step-1-introduction-writing-warm-up",
-    "title": "Student Practical: Using AI in Scientific Writing",
-    "section": "",
-    "text": "What do you hope AI can help you improve in your writing?\n\nUse the textbox below to note your ideas:\nI want AI to help me with...\n\n\n\nChoose a paragraph from your own writing (e.g., an essay or report draft) that you want to revise. Paste it here:\nMy original paragraph:"
-  },
-  {
-    "objectID": "pages/DP4/genai_final_practical (1).html#step-2-prompt-design",
-    "href": "pages/DP4/genai_final_practical (1).html#step-2-prompt-design",
-    "title": "Student Practical: Using AI in Scientific Writing",
-    "section": "",
-    "text": "Write two different prompts to improve your paragraph.\nPrompt 1: Make it more concise. Prompt 2: Change the tone (e.g., public vs. academic).\nPrompt 1 (conciseness):\n\nPrompt 2 (tone adjustment):\nPaste the AI outputs for both below:\nAI output from Prompt 1:\n\nAI output from Prompt 2:\n\n\n\n- [ ] The AI preserved the meaning.\n- [ ] The AI introduced errors.\n- [ ] I prefer one version over the other."
-  },
-  {
-    "objectID": "pages/DP4/genai_final_practical (1).html#step-3-compare-evaluate",
-    "href": "pages/DP4/genai_final_practical (1).html#step-3-compare-evaluate",
-    "title": "Student Practical: Using AI in Scientific Writing",
-    "section": "",
-    "text": "Reflect on the outputs. Fill in the summary below:\nBest improvement made by AI:\n\nBiggest issue or error:\n\nWhat surprised me:\n\n\n\n- [ ] Tried 3+ prompt versions\n- [ ] Asked for a tone change\n- [ ] Identified an error or hallucination\n- [ ] Ignored a bad suggestion\n- [ ] Improved clarity or flow\n- [ ] Got a weird or funny result"
-  },
-  {
-    "objectID": "pages/DP4/genai_final_practical (1).html#step-4-ai-ethics-check",
-    "href": "pages/DP4/genai_final_practical (1).html#step-4-ai-ethics-check",
-    "title": "Student Practical: Using AI in Scientific Writing",
-    "section": "",
-    "text": "- [ ] Did I use AI as a helper, not a replacement?\n- [ ] Did I review AI suggestions for accuracy?\n- [ ] Am I still the author of my writing?\n\n\n\nWhen is it OK to use AI in writing?\n\nWhen is it NOT OK?"
-  },
-  {
-    "objectID": "pages/DP4/genai_final_practical (1).html#step-5-collaborative-revision",
-    "href": "pages/DP4/genai_final_practical (1).html#step-5-collaborative-revision",
-    "title": "Student Practical: Using AI in Scientific Writing",
-    "section": "",
-    "text": "Pick one paragraph to revise together. Document the full workflow:\nOriginal paragraph:\n\nPrompt used:\n\nAI output:\n\nFinal version after human edits:\n\nNotes on what you changed and why:"
-  },
-  {
-    "objectID": "pages/DP4/genai_final_practical (1).html#step-6-reverse-prompting",
-    "href": "pages/DP4/genai_final_practical (1).html#step-6-reverse-prompting",
-    "title": "Student Practical: Using AI in Scientific Writing",
-    "section": "",
-    "text": "Read this polished paragraph. What prompt might have generated it?\nThe mitochondria, often referred to as the \"powerhouse\" of the cell, are essential organelles responsible for generating ATP through oxidative phosphorylation. Their role in cell metabolism and signaling is critical to both normal function and disease processes.\nYour reverse-engineered prompt:"
-  },
-  {
-    "objectID": "pages/DP4/genai_final_practical (1).html#step-7-prompt-vault-share",
-    "href": "pages/DP4/genai_final_practical (1).html#step-7-prompt-vault-share",
-    "title": "Student Practical: Using AI in Scientific Writing",
-    "section": "",
-    "text": "What was the most effective or creative prompt you used today?\nBest prompt:\n\nWhat it helped improve:"
-  },
-  {
-    "objectID": "pages/DP4/genai_final_practical (1).html#final-reflection",
-    "href": "pages/DP4/genai_final_practical (1).html#final-reflection",
-    "title": "Student Practical: Using AI in Scientific Writing",
-    "section": "",
-    "text": "Today I learned...\n\nIn future, I’ll use AI to...\n\nOne ethical consideration I’ll remember is...\n\n🎓 Remember: AI can support your voice, but not replace your judgement."
-  },
-  {
-    "objectID": "pages/DP4/DP4.html",
-    "href": "pages/DP4/DP4.html",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "In this hands-on session, you’ll explore how to use Generative AI (like ChatGPT or Copilot) to refine your scientific writing. You’ll work in groups and use your own writing as material. Along the way, we’ll reflect on ethics and effectiveness in prompting.\n\n🧭 Mode: In pairs, bring your scientific report and be ready to collaborate.\n\nThis session will guide you through using GenAI to improve your scientific writing and reflect on how AI compares to human feedback.\n\n\n\n\nBy the end of this lab, you will:\n✅ Use 3 types of GenAI prompts to revise a scientific report\n✅ Compare and reflect on AI vs. human feedback\n✅ Practice ethical and responsible use of GenAI tools\n✅ Submit a revised report with tracked changes\n\n\n\n\n\n\n\n\n\n\n\nHow to Complete This Lab\n\n\n\nAs you work through this page, open a new Microsoft Word document to record your answers. Use the checkboxes here to tick off each step as you complete it. This will help keep you on track and ensure you’ve answered everything before submission.\n\n\nBefore you begin:\n\n✅ Have your draft scientific report ready (ideally with comments from a peer)\n✅ Access a GenAI tool like Copilot (or other approved platform)\n✅ Use Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nLaunch Copilot\n\n\n\nUse the link below to open Microsoft Copilot in a new tab. You’ll need to be logged in with your UOW or institutional account.\n👉 Launch Microsoft Copilot\n\n⚠️ Make sure to copy/paste your prompts and results into your worksheet as you go!"
-  },
-  {
-    "objectID": "pages/DP4/DP4.html#learning-objectives",
-    "href": "pages/DP4/DP4.html#learning-objectives",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "By the end of this lab, you will:\n✅ Use 3 types of GenAI prompts to revise a scientific report\n✅ Compare and reflect on AI vs. human feedback\n✅ Practice ethical and responsible use of GenAI tools\n✅ Submit a revised report with tracked changes"
-  },
-  {
-    "objectID": "pages/DP4/DP4.html#getting-started",
-    "href": "pages/DP4/DP4.html#getting-started",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "How to Complete This Lab\n\n\n\nAs you work through this page, open a new Microsoft Word document to record your answers. Use the checkboxes here to tick off each step as you complete it. This will help keep you on track and ensure you’ve answered everything before submission.\n\n\nBefore you begin:\n\n✅ Have your draft scientific report ready (ideally with comments from a peer)\n✅ Access a GenAI tool like Copilot (or other approved platform)\n✅ Use Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nLaunch Copilot\n\n\n\nUse the link below to open Microsoft Copilot in a new tab. You’ll need to be logged in with your UOW or institutional account.\n👉 Launch Microsoft Copilot\n\n⚠️ Make sure to copy/paste your prompts and results into your worksheet as you go!"
-  },
-  {
-    "objectID": "pages/DP4/DP4.html#step-1-human-feedback-summary",
-    "href": "pages/DP4/DP4.html#step-1-human-feedback-summary",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Task Instructions\n\n\n\nWith your partner, summarise the feedback you received from a peer or tutor.\n- Be specific and use your own words\n- Add how you plan to respond to this feedback\n\n\n\n\nList 1–3 points of feedback you received on your report. Be specific.\n\n\n1.\n\n2.\n\n3.\n\n💬 Great — being specific helps with revision targeting!\n\n\n\nDescribe one way you’ll apply this feedback to your report.\n\n\nAction plan:\n\n💬 Nice plan! Make sure to track the change clearly in your document."
-  },
-  {
-    "objectID": "pages/DP4/DP4.html#step-2-revising-with-genai",
-    "href": "pages/DP4/DP4.html#step-2-revising-with-genai",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Prompt Engineering Guide\n\n\n\nYou will now use three types of prompts to revise your report using Microsoft Copilot:\n\n🧠 Context prompt (who the AI is)\n\n🔧 “Do for me”\n\n🔍 “Evaluate”\n\n🎓 “Teach me”\n\nWork through each one, copy the AI output, and explain how it helped.\n\n\n\n\nWrite a prompt that tells Copilot who it is (e.g., “You are an expert editor of a scientific journal…”)\n\n\nYour prompt:\n\n💬 Well done! Giving AI context helps it produce better responses.\n\n\n\nShare a prompt you used to get Copilot to rewrite or revise a section for you.\n\n\nYour prompt:\n\n💬 Nice! Save the output and compare it to your original.\n\nHow did you use the Copilot output to change your report?\n\n\nDescription of change:\n\n💬 Awesome — this shows thoughtful revision.\n\n\n\nAsk Copilot to review a section. What prompt did you use?\n\n\nYour prompt:\n\n💬 Great — feedback prompts help improve clarity.\n\nWhat change did you make based on Copilot’s evaluation?\n\n\nDescription of change:\n\n💬 Excellent — critical review improves structure.\n\n\n\nShare a “teach me” prompt you used with Copilot (e.g., “How can I improve clarity in my methods section?”)\n\n\nYour prompt:\n\n💬 Nice! Teaching prompts help build your writing skills.\n\nWhat did you learn from Copilot’s response?\n\n\nKey takeaway:\n\n💬 Good — understanding the ‘why’ builds long-term skills."
-  },
-  {
-    "objectID": "pages/DP4/DP4.html#step-3-reflection",
-    "href": "pages/DP4/DP4.html#step-3-reflection",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Answer the following questions in 100–150 words each.\n\n\nHow did the AI-generated feedback compare to the feedback provided by your peer?\n\n\n\nWhich type of prompt did you find most useful for improving your writing? Why?\n\n\n\nDid using Copilot influence how you approach writing or editing in science?\n\n\n\nWhat are the strengths and weaknesses of using GenAI tools in scientific writing?"
-  },
-  {
-    "objectID": "pages/DP4/DP4.html#final-checklist",
-    "href": "pages/DP4/DP4.html#final-checklist",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Before submitting:\n✅ Tracked changes enabled in your revised report\n✅ Completed Pro Forma with feedback summary, prompts, and reflection\n✅ Screenshots or transcripts of Copilot interactions in Appendix\n\n📤 Upload to Moodle by Friday Week X, 11:59pm"
-  },
-  {
-    "objectID": "pages/DP4/DP4.html#bonus-discussion",
-    "href": "pages/DP4/DP4.html#bonus-discussion",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "With your partner, reflect on this:\n\n✨ What would be an inappropriate use of GenAI like Copilot in this context?\n\nWrite 2–3 examples and include them in your Appendix."
-  },
-  {
-    "objectID": "pages/DP4/DP4_test.html",
-    "href": "pages/DP4/DP4_test.html",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "🧭 Mode: In pairs, bring your scientific report and be ready to collaborate.\n\nThis session will guide you through using GenAI to improve your scientific writing and reflect on how AI compares to human feedback.\n\n\n\n\nBy the end of this lab, you will:\n✅ Use 3 types of GenAI prompts to revise a scientific report\n✅ Compare and reflect on AI vs. human feedback\n✅ Practice ethical and responsible use of GenAI tools\n✅ Submit a revised report with tracked changes\n\n\n\n\n\n\n\n\n\n\n\nHow to Complete This Lab\n\n\n\nAs you work through this page, open a new Microsoft Word document to record your answers. Use the checkboxes here to tick off each step as you complete it. This will help keep you on track and ensure you’ve answered everything before submission.\n\n\nBefore you begin:\n\n✅ Have your draft scientific report ready (ideally with comments from a peer)\n✅ Access a GenAI tool like Copilot (or other approved platform)\n✅ Use Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nLaunch Copilot\n\n\n\nUse the link below to open Microsoft Copilot in a new tab. You’ll need to be logged in with your UOW or institutional account.\n👉 Launch Microsoft Copilot\n\n⚠️ Make sure to copy/paste your prompts and results into your worksheet as you go!\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask Instructions\n\n\n\nWith your partner, summarise the feedback you received from a peer or tutor.\n- Be specific and use your own words\n- Add how you plan to respond to this feedback\n\n\n\n\nList 1–3 points of feedback you received on your report. Be specific.\n\n\n1.\n\n2.\n\n3.\n\n💬 Great — being specific helps with revision targeting!\n\n\n\nDescribe one way you’ll apply this feedback to your report.\n\n\nAction plan:\n\n💬 Nice plan! Make sure to track the change clearly in your document.\n\n\n\n\n\n\n\n\n\n\n\nPrompt Engineering Guide\n\n\n\nYou will now use three types of prompts to revise your report using Microsoft Copilot:\n\n🧠 Context prompt (who the AI is)\n\n🔧 “Do for me”\n\n🔍 “Evaluate”\n\n🎓 “Teach me”\n\nWork through each one, copy the AI output, and explain how it helped.\n\n\n\n\nWrite a prompt that tells Copilot who it is (e.g., “You are an expert editor of a scientific journal…”)\n\n\nYour prompt:\n\n💬 Well done! Giving AI context helps it produce better responses.\n\n\n\nShare a prompt you used to get Copilot to rewrite or revise a section for you.\n\n\nYour prompt:\n\n💬 Nice! Save the output and compare it to your original.\n\nHow did you use the Copilot output to change your report?\n\n\nDescription of change:\n\n💬 Awesome — this shows thoughtful revision.\n\n\n\nAsk Copilot to review a section. What prompt did you use?\n\n\nYour prompt:\n\n💬 Great — feedback prompts help improve clarity.\n\nWhat change did you make based on Copilot’s evaluation?\n\n\nDescription of change:\n\n💬 Excellent — critical review improves structure.\n\n\n\nShare a “teach me” prompt you used with Copilot (e.g., “How can I improve clarity in my methods section?”)\n\n\nYour prompt:\n\n💬 Nice! Teaching prompts help build your writing skills.\n\nWhat did you learn from Copilot’s response?\n\n\nKey takeaway:\n\n💬 Good — understanding the ‘why’ builds long-term skills.\n\n\n\n\n\n\n\n\n\n\n\n📝 Reflection Questions\n\n\n\nAnswer each question below in 100–150 words. These reflections are worth 8 marks.\n\n\n\n\nHow did Copilot feedback compare with the feedback from your peer?\n\n\nWrite your response here…\n\n💬 Nice analysis — think about tone, specificity, and usefulness.\n\n\n\nWhich type of Copilot prompt helped most? Why?\n\n\nWrite your response here…\n\n💬 Well reasoned — it’s great to find what works for you.\n\n\n\nDid using Copilot change how you approach writing or editing?\n\n\nWrite your response here…\n\n💬 Good insight — self-awareness is key to skill growth.\n\n\n\nWhat are the benefits and risks of using GenAI like Copilot in science writing?\n\n\nWrite your response here…\n\n💬 Well balanced — keep ethics in mind.\n\n\n\n\n\n\nBefore submitting:\n✅ Tracked changes enabled in your revised report\n✅ Completed Pro Forma with feedback summary, prompts, and reflection\n✅ Screenshots or transcripts of Copilot interactions in Appendix\n\n📤 Upload to Moodle by Friday Week X, 11:59pm\n\n\n\n\nWith your partner, reflect on this:\n\n✨ What would be an inappropriate use of GenAI like Copilot in this context?\n\nWrite 2–3 examples and include them in your Appendix."
-  },
-  {
-    "objectID": "pages/DP4/DP4_test.html#learning-objectives",
-    "href": "pages/DP4/DP4_test.html#learning-objectives",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "By the end of this lab, you will:\n✅ Use 3 types of GenAI prompts to revise a scientific report\n✅ Compare and reflect on AI vs. human feedback\n✅ Practice ethical and responsible use of GenAI tools\n✅ Submit a revised report with tracked changes"
-  },
-  {
-    "objectID": "pages/DP4/DP4_test.html#getting-started",
-    "href": "pages/DP4/DP4_test.html#getting-started",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "How to Complete This Lab\n\n\n\nAs you work through this page, open a new Microsoft Word document to record your answers. Use the checkboxes here to tick off each step as you complete it. This will help keep you on track and ensure you’ve answered everything before submission.\n\n\nBefore you begin:\n\n✅ Have your draft scientific report ready (ideally with comments from a peer)\n✅ Access a GenAI tool like Copilot (or other approved platform)\n✅ Use Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nLaunch Copilot\n\n\n\nUse the link below to open Microsoft Copilot in a new tab. You’ll need to be logged in with your UOW or institutional account.\n👉 Launch Microsoft Copilot\n\n⚠️ Make sure to copy/paste your prompts and results into your worksheet as you go!"
-  },
-  {
-    "objectID": "pages/DP4/DP4_test.html#step-1-human-feedback-summary",
-    "href": "pages/DP4/DP4_test.html#step-1-human-feedback-summary",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Task Instructions\n\n\n\nWith your partner, summarise the feedback you received from a peer or tutor.\n- Be specific and use your own words\n- Add how you plan to respond to this feedback\n\n\n\n\nList 1–3 points of feedback you received on your report. Be specific.\n\n\n1.\n\n2.\n\n3.\n\n💬 Great — being specific helps with revision targeting!\n\n\n\nDescribe one way you’ll apply this feedback to your report.\n\n\nAction plan:\n\n💬 Nice plan! Make sure to track the change clearly in your document."
-  },
-  {
-    "objectID": "pages/DP4/DP4_test.html#step-2-revising-with-genai",
-    "href": "pages/DP4/DP4_test.html#step-2-revising-with-genai",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Prompt Engineering Guide\n\n\n\nYou will now use three types of prompts to revise your report using Microsoft Copilot:\n\n🧠 Context prompt (who the AI is)\n\n🔧 “Do for me”\n\n🔍 “Evaluate”\n\n🎓 “Teach me”\n\nWork through each one, copy the AI output, and explain how it helped.\n\n\n\n\nWrite a prompt that tells Copilot who it is (e.g., “You are an expert editor of a scientific journal…”)\n\n\nYour prompt:\n\n💬 Well done! Giving AI context helps it produce better responses.\n\n\n\nShare a prompt you used to get Copilot to rewrite or revise a section for you.\n\n\nYour prompt:\n\n💬 Nice! Save the output and compare it to your original.\n\nHow did you use the Copilot output to change your report?\n\n\nDescription of change:\n\n💬 Awesome — this shows thoughtful revision.\n\n\n\nAsk Copilot to review a section. What prompt did you use?\n\n\nYour prompt:\n\n💬 Great — feedback prompts help improve clarity.\n\nWhat change did you make based on Copilot’s evaluation?\n\n\nDescription of change:\n\n💬 Excellent — critical review improves structure.\n\n\n\nShare a “teach me” prompt you used with Copilot (e.g., “How can I improve clarity in my methods section?”)\n\n\nYour prompt:\n\n💬 Nice! Teaching prompts help build your writing skills.\n\nWhat did you learn from Copilot’s response?\n\n\nKey takeaway:\n\n💬 Good — understanding the ‘why’ builds long-term skills."
-  },
-  {
-    "objectID": "pages/DP4/DP4_test.html#step-3-reflection",
-    "href": "pages/DP4/DP4_test.html#step-3-reflection",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "📝 Reflection Questions\n\n\n\nAnswer each question below in 100–150 words. These reflections are worth 8 marks.\n\n\n\n\nHow did Copilot feedback compare with the feedback from your peer?\n\n\nWrite your response here…\n\n💬 Nice analysis — think about tone, specificity, and usefulness.\n\n\n\nWhich type of Copilot prompt helped most? Why?\n\n\nWrite your response here…\n\n💬 Well reasoned — it’s great to find what works for you.\n\n\n\nDid using Copilot change how you approach writing or editing?\n\n\nWrite your response here…\n\n💬 Good insight — self-awareness is key to skill growth.\n\n\n\nWhat are the benefits and risks of using GenAI like Copilot in science writing?\n\n\nWrite your response here…\n\n💬 Well balanced — keep ethics in mind."
-  },
-  {
-    "objectID": "pages/DP4/DP4_test.html#final-checklist",
-    "href": "pages/DP4/DP4_test.html#final-checklist",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Before submitting:\n✅ Tracked changes enabled in your revised report\n✅ Completed Pro Forma with feedback summary, prompts, and reflection\n✅ Screenshots or transcripts of Copilot interactions in Appendix\n\n📤 Upload to Moodle by Friday Week X, 11:59pm"
-  },
-  {
-    "objectID": "pages/DP4/DP4_test.html#bonus-discussion",
-    "href": "pages/DP4/DP4_test.html#bonus-discussion",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "With your partner, reflect on this:\n\n✨ What would be an inappropriate use of GenAI like Copilot in this context?\n\nWrite 2–3 examples and include them in your Appendix."
-  },
-  {
-    "objectID": "pages/DP4/DP4.html#step-1-summarise-peer-feedback",
-    "href": "pages/DP4/DP4.html#step-1-summarise-peer-feedback",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Instructions\n\n\n\nWith your partner, discuss the feedback you received on your scientific report. Summarise this feedback in your own words and outline how you plan to address it.\n\n\n\n\nList 1–3 points of feedback you received on your report. Be specific.\n\n\n1.\n\n2.\n\n3.\n\n\n\n\nExplain how you will address this feedback in your revised report.\n\n\nAction plan:"
-  },
-  {
-    "objectID": "pages/DP4/DP4.html#step-2-use-genai-to-improve-your-writing",
-    "href": "pages/DP4/DP4.html#step-2-use-genai-to-improve-your-writing",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Instructions\n\n\n\nYou will now interact with Microsoft Copilot using four types of prompts. For each one, record what you asked the AI, what output you received, and how you applied it to your report.\n\n\n\n\nWrite a prompt that clearly defines Copilot’s role (e.g., “You are an expert editor of a scientific journal…”).\n\n\n\nGive Copilot a section of your writing and ask it to rewrite or improve it. Record the prompt and explain how you used the AI’s response.\n\n\n\nAsk Copilot to evaluate a paragraph or section for clarity, tone, or scientific accuracy. Record the prompt and describe how you used the feedback.\n\n\n\nAsk Copilot to explain how you could improve a section of your report. Write the prompt and summarise what you learned."
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html",
-    "href": "pages/DP4/DP4_clean.html",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "🧭 Mode: In pairs, bring your scientific report and be ready to collaborate.\n\nThis session will guide you through using GenAI to improve your scientific writing and reflect on how AI compares to human feedback.\n\n\n\n\nBy the end of this lab, you will:\n✅ Use 3 types of GenAI prompts to revise a scientific report\n✅ Compare and reflect on AI vs. human feedback\n✅ Practice ethical and responsible use of GenAI tools\n✅ Submit a revised report with tracked changes\n\n\n\n\n\n\n\n\n\n\n\nHow to Complete This Lab\n\n\n\nAs you work through this page, open a new Microsoft Word document to record your answers. Use the checkboxes here to tick off each step as you complete it. This will help keep you on track and ensure you’ve answered everything before submission.\n\n\nBefore you begin:\n\n✅ Have your draft scientific report ready (ideally with comments from a peer)\n✅ Access a GenAI tool like Copilot (or other approved platform)\n✅ Use Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nLaunch Copilot\n\n\n\nUse the link below to open Microsoft Copilot in a new tab. You’ll need to be logged in with your UOW or institutional account.\n👉 Launch Microsoft Copilot\n\n⚠️ Make sure to copy/paste your prompts and results into your worksheet as you go!\n\n\n\n\n\n\n\nChoose a paragraph from your own writing and paste it in your notes. Now try using the below types of prompts.\n\n\n\nPrompt: “Please rewrite the following paragraph to be more concise and clear, suitable for a scientific audience.”\n\nExample AI Output:\n&gt; “The experiment investigated the effect of temperature on enzyme activity. Results showed a steady increase in activity up to 37°C, after which it declined rapidly, suggesting denaturation.”\n\n\n\n\n\nPrompt: “Rewrite the paragraph in a way that explains the concept clearly to someone without a science background.”\n\nExample AI Output:\n&gt; “We tested how heat affects enzymes—the tiny machines inside cells. They worked faster when it was warm, but too much heat made them break down.”\n\nNow try your own prompts and note the results using the below guide:\nPrompt 1 (concise/scientific):\n…\nAI Output 1:\n…\nPrompt 2 (general audience):\n…\nAI Output 2:\n…\n\n\n\n\n\nShare your prompts and output with the group next to you, and use the following checklist to evaluate AI responses:\n\nPreserved scientific meaning\n\nImproved clarity or tone\n\nRemoved critical information\n\nIntroduced an error or hallucination\n\nWas suitable for the intended audience\n\nWhich output was better and why?\n…\nDid anything surprise or confuse you?\n…\n\n\n\n\nScenario:\nA student pastes their full assignment into ChatGPT, accepts the rewritten version, and submits it without reading it. The AI fabricated citations and misunderstood the conclusion.\nDiscussion Questions:\n\nWhat are the risks in this scenario?\n\nWhen is it okay to use AI in writing? When is it not?\n\nEthical checklist you can apply and think about when using these tools:\n\nI used AI to assist, not replace my work\n\nI reviewed and edited all AI-generated text\n\nI remain the author of my submission\n\n\n\n\n\nChoose one paragraph as a group and go through these steps:\nOriginal Paragraph:\n…\nRevision Prompt Used:\n…\nAI Output:\n…\nFinal Human-Edited Version:\n…\nWhat we changed and why:\n…\n\n\n\n\nRecord your most effective prompt from your work today and its benefit.\nBest Prompt:\n…\nWhat it helped improve:\n…\n\n\n\n\nToday I learned:\n…\nOne thing I’ll do differently in my writing is:\n…\nOne thing to remember when using AI:\n…\n\nFinal Thought: AI is a tool — you are the scientist. Own your writing, use tools wisely, and always verify what you say!",
-    "crumbs": [
-      "Dry Prac 4",
-      "Dry Prac 4 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#learning-objectives",
-    "href": "pages/DP4/DP4_clean.html#learning-objectives",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "By the end of this lab, you will:\n✅ Use 3 types of GenAI prompts to revise a scientific report\n✅ Compare and reflect on AI vs. human feedback\n✅ Practice ethical and responsible use of GenAI tools\n✅ Submit a revised report with tracked changes",
-    "crumbs": [
-      "Dry Prac 4",
-      "Dry Prac 4 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#getting-started",
-    "href": "pages/DP4/DP4_clean.html#getting-started",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "How to Complete This Lab\n\n\n\nAs you work through this page, open a new Microsoft Word document to record your answers. Use the checkboxes here to tick off each step as you complete it. This will help keep you on track and ensure you’ve answered everything before submission.\n\n\nBefore you begin:\n\n✅ Have your draft scientific report ready (ideally with comments from a peer)\n✅ Access a GenAI tool like Copilot (or other approved platform)\n✅ Use Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nLaunch Copilot\n\n\n\nUse the link below to open Microsoft Copilot in a new tab. You’ll need to be logged in with your UOW or institutional account.\n👉 Launch Microsoft Copilot\n\n⚠️ Make sure to copy/paste your prompts and results into your worksheet as you go!",
-    "crumbs": [
-      "Dry Prac 4",
-      "Dry Prac 4 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#sparkles-activity-1-prompt-design-output-exploration",
-    "href": "pages/DP4/DP4_clean.html#sparkles-activity-1-prompt-design-output-exploration",
-    "title": "AI Reflection & Writing Lab",
-    "section": ":sparkles: Activity 1: Prompt Design & Output Exploration",
-    "text": ":sparkles: Activity 1: Prompt Design & Output Exploration\nChoose a paragraph from your own writing and paste it in your notes. Now try using the below types of prompts.\n\n:speech_balloon: Example Prompt 1 – Clarity & Conciseness\n\nPrompt: “Please rewrite the following paragraph to be more concise and clear, suitable for a scientific audience.”\n\nExample AI Output:\n&gt; “The experiment investigated the effect of temperature on enzyme activity. Results showed a steady increase in activity up to 37°C, after which it declined rapidly, suggesting denaturation.”\n\n\n\n:speech_balloon: Example Prompt 2 – Tone for a General Audience\n\nPrompt: “Rewrite the paragraph in a way that explains the concept clearly to someone without a science background.”\n\nExample AI Output:\n&gt; “We tested how heat affects enzymes—the tiny machines inside cells. They worked faster when it was warm, but too much heat made them break down.”\n\nNow try your own prompts and note the results below:\nPrompt 1 (concise/scientific):\n…\nAI Output 1:\n…\nPrompt 2 (general audience):\n…\nAI Output 2:\n…"
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#bar_chart-activity-2-compare-evaluate",
-    "href": "pages/DP4/DP4_clean.html#bar_chart-activity-2-compare-evaluate",
-    "title": "AI Reflection & Writing Lab",
-    "section": ":bar_chart: Activity 2: Compare & Evaluate",
-    "text": ":bar_chart: Activity 2: Compare & Evaluate\nShare your prompts and output with the group next to you, and use the followin checklist to evaluate AI responses:\n\nPreserved scientific meaning\n\nImproved clarity or tone\n\nRemoved critical information\n\nIntroduced an error or hallucination\n\nWas suitable for the intended audience\n\nWhich output was better and why?\n…\nDid anything surprise or confuse you?\n…"
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#brain-activity-3-ethics-in-action",
-    "href": "pages/DP4/DP4_clean.html#brain-activity-3-ethics-in-action",
-    "title": "AI Reflection & Writing Lab",
-    "section": ":brain: Activity 3: Ethics in Action",
-    "text": ":brain: Activity 3: Ethics in Action\nScenario:\nA student pastes their full assignment into ChatGPT, accepts the rewritten version, and submits it without reading it. The AI fabricated citations and misunderstood the conclusion.\nDiscussion Questions:\n\nWhat are the risks in this scenario?\n\nWhen is it okay to use AI in writing? When is it not?\n\nEthical checklist you can apply:\n\nI used AI to assist, not replace my work\n\nI reviewed and edited all AI-generated text\n\nI remain the author of my submission"
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#repeat-activity-4-collaborative-rewrite",
-    "href": "pages/DP4/DP4_clean.html#repeat-activity-4-collaborative-rewrite",
-    "title": "AI Reflection & Writing Lab",
-    "section": ":repeat: Activity 4: Collaborative Rewrite",
-    "text": ":repeat: Activity 4: Collaborative Rewrite\nChoose one paragraph as a group and go through these steps:\nOriginal Paragraph:\n…\nRevision Prompt Used:\n…\nAI Output:\n…\nFinal Human-Edited Version:\n…\nWhat we changed and why:\n…"
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#test_tube-challenge-reverse-prompting",
-    "href": "pages/DP4/DP4_clean.html#test_tube-challenge-reverse-prompting",
-    "title": "AI Reflection & Writing Lab",
-    "section": ":test_tube: Challenge: Reverse Prompting",
-    "text": ":test_tube: Challenge: Reverse Prompting\nAI Output:\n&gt; “Mitochondria, often called the powerhouses of cells, generate energy by converting food molecules into ATP through a process called oxidative phosphorylation.”\nYour Reverse-Engineered Prompt:\n…"
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#prompt-vault",
-    "href": "pages/DP4/DP4_clean.html#prompt-vault",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Record your most effective prompt from your work today and its benefit.\nBest Prompt:\n…\nWhat it helped improve:\n…",
-    "crumbs": [
-      "Dry Prac 4",
-      "Dry Prac 4 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#class-reflection",
-    "href": "pages/DP4/DP4_clean.html#class-reflection",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Today I learned:\n…\nOne thing I’ll do differently in my writing is:\n…\nOne thing to remember when using AI:\n…\n\nFinal Thought: AI is a tool — you are the scientist. Own your writing, use tools wisely, and always verify what you say!",
-    "crumbs": [
-      "Dry Prac 4",
-      "Dry Prac 4 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#step-1-human-feedback-summary",
-    "href": "pages/DP4/DP4_clean.html#step-1-human-feedback-summary",
-    "title": "AI Reflection & Writing Lab",
-    "section": "🔹 Step 1: Human Feedback Summary",
-    "text": "🔹 Step 1: Human Feedback Summary\n\n🔎 What were the key points of feedback?\n\nList 1–3 points of feedback you received on your report. Be specific.\n\n\n1.\n2.\n3.\n\n\n\n📌 How will you address this feedback?\n\nDescribe one way you’ll apply this feedback to your report.\n\n\nNote down your action plan",
-    "crumbs": [
-      "Dry Prac 4",
-      "Dry Prac 4 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#step-2-revising-with-genai",
-    "href": "pages/DP4/DP4_clean.html#step-2-revising-with-genai",
-    "title": "AI Reflection & Writing Lab",
-    "section": "🔹 Step 2: Revising with GenAI",
-    "text": "🔹 Step 2: Revising with GenAI\n\n\n\n\n\n\nPrompt Engineering Guide\n\n\n\nYou will now use four types of prompts with Microsoft Copilot to revise your scientific report. Each prompt serves a different purpose and helps you interact with AI in more effective ways. Understanding how and why these prompts work differently is an important part of responsibly using GenAI tools.\nUse the Pro Forma to guide your progress. For each prompt type, copy the AI’s output into your worksheet and then reflect on how it helped improve your work—or if it didn’t help, explain why. This reflection is just as important as the output.\n\n\n🧠 Context Prompt (who the AI is)\nThis prompt sets the “role” or “persona” of the AI—you’re telling it who it should pretend to be. For example:\n&gt; “You are a biology lecturer marking third-year scientific reports.”\nThis helps the AI tailor its feedback in a way that’s appropriate for your audience, tone, and discipline. By setting context, you’re more likely to receive feedback that aligns with academic expectations in biology, such as clarity, structure, and use of evidence.\n\n\n\n🔧 “Do for me” Prompt\nThis is a direct instruction where you ask the AI to perform a task on your behalf. For example:\n&gt; “Rewrite this paragraph to be more concise.”\n&gt; “Add a stronger topic sentence to this paragraph.”\nThis prompt is about delegation—you’re giving the AI a task and seeing how well it can help streamline or improve your writing. It’s useful when you know what needs to be fixed but want help doing it efficiently. However, it is very important to evaluate the result critically to ensure it is correct, does not plagiarise and is of an appropriate scientific standard.\n\n\n\n🔍 “Evaluate” Prompt\nIn this prompt, you’re asking the AI to critique or assess a section of your writing. For example:\n&gt; “What are the strengths and weaknesses of this paragraph?”\n&gt; “Does this argument make logical sense?”\nThis approach encourages metacognition—thinking about your own thinking. It helps you view your writing from another perspective, identify gaps, and reflect on your structure and clarity. In scientific writing, this skill is crucial for presenting arguments and evidence effectively.\n\n\n\n🎓 “Teach Me” Prompt\nThis prompt is used to deepen your understanding. You’re asking the AI to explain a concept or technique. For example:\n&gt; “Explain what makes a good scientific discussion section.”\n&gt; “Why is passive voice often discouraged in scientific writing?”\nThis type of prompt supports learning and skill-building. It’s helpful when you’re unsure about a rule or principle in scientific communication and want to strengthen your knowledge. Rather than fixing the text for you, the AI helps you understand how to make good writing choices.\n\n\n\n\n2.1 Contextualise the AI\n\nWrite a prompt that tells Copilot who it is (e.g., “You are an expert editor of a scientific journal…”)\n\n\nNote down your prompt\n\n\n\n2.2 ‘Do for me’ Prompt\n\nShare a prompt you used to get Copilot to rewrite or revise a section for you.\n\n\nNote down your prompt\n\n\nHow did you use the Copilot output to change your report?\n\n\nNote description of change\n\n\n\n2.3 ‘Evaluate’ Prompt\n\nAsk Copilot to review a section. What prompt did you use?\n\n\nNote down your prompt\n\n\nWhat change did you make based on Copilot’s evaluation?\n\n\nNote description of change\n\n\n\n2.4 ‘Teach me’ Prompt\n\nShare a “teach me” prompt you used with Copilot (e.g., “How can I improve clarity in my methods section?”)\n\n\nNote down your prompt\n\n\nWhat did you learn from Copilot’s response?\n\n\nNote key takeaway",
-    "crumbs": [
-      "Dry Prac 4",
-      "Dry Prac 4 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#part-3-reflection",
-    "href": "pages/DP4/DP4_clean.html#part-3-reflection",
-    "title": "AI Reflection & Writing Lab",
-    "section": "🔹 Part 3: Reflection",
-    "text": "🔹 Part 3: Reflection\nFollowing the Pro Forma answer each question below in 100–150 words. The total reflection should not exceed 600 words\n\n3.1 Compare AI & Human Feedback\n\nHow did Copilot feedback compare with the feedback from your peer?\n\n\nNote down your response…\n\n\n\n3.2 Most Effective Prompt\n\nWhich type of Copilot prompt helped most? Why?\n\n\nNote down your response…\n\n\n\n3.3 Impact on Your Writing\n\nDid using Copilot change how you approach writing or editing?\n\n\nNote down your response…\n\n\n\n3.4 AI Pros & Cons\n\nWhat are the benefits and risks of using GenAI like Copilot in science writing?\n\n\nNote down your response…",
-    "crumbs": [
-      "Dry Prac 4",
-      "Dry Prac 4 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#final-checklist",
-    "href": "pages/DP4/DP4_clean.html#final-checklist",
-    "title": "AI Reflection & Writing Lab",
-    "section": "📦 Final Checklist",
-    "text": "📦 Final Checklist\n\nBefore submitting:\n✅ Tracked changes enabled in your revised report\n✅ Completed Pro Forma with feedback summary, prompts, and reflection\n✅ Screenshots or transcripts of Copilot interactions in Appendix\n\n📤 Upload to Moodle by Monday 26th of May, 11:59pm",
-    "crumbs": [
-      "Dry Prac 4",
-      "Dry Prac 4 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP4/DP4.html#part-2-use-genai-to-improve-your-writing",
-    "href": "pages/DP4/DP4.html#part-2-use-genai-to-improve-your-writing",
-    "title": "AI Reflection & Writing Lab",
-    "section": "Part 2: Use GenAI to Improve Your Writing",
-    "text": "Part 2: Use GenAI to Improve Your Writing\n\n\n\n\n\n\nInstructions\n\n\n\nYou will now interact with Microsoft Copilot using four types of prompts. For each one, record what you asked the AI, what output you received, and how you applied it to your report.\n\n\n\n2.1 Context Prompt\nWrite a prompt that clearly defines Copilot’s role (e.g., “You are an expert editor of a scientific journal…”).\n\n\n2.2 “Do for Me” Prompt\nGive Copilot a section of your writing and ask it to rewrite or improve it. Record the prompt and explain how you used the AI’s response.\n\n\n2.3 “Evaluate” Prompt\nAsk Copilot to evaluate a paragraph or section for clarity, tone, or scientific accuracy. Record the prompt and describe how you used the feedback.\n\n\n2.4 “Teach Me” Prompt\nAsk Copilot to explain how you could improve a section of your report. Write the prompt and summarise what you learned."
-  },
-  {
-    "objectID": "pages/DP4/DP4.html#part-3-reflection",
-    "href": "pages/DP4/DP4.html#part-3-reflection",
-    "title": "AI Reflection & Writing Lab",
-    "section": "Part 3: Reflection",
-    "text": "Part 3: Reflection\nAnswer the following questions in 100–150 words each.\n\nCompare Feedback\nHow did the AI-generated feedback compare to the feedback provided by your peer?\n\n\nMost Useful Prompt\nWhich type of prompt did you find most useful for improving your writing? Why?\n\n\nImpact on Writing\nDid using Copilot influence how you approach writing or editing in science?\n\n\nBenefits and Limitations\nWhat are the strengths and weaknesses of using GenAI tools in scientific writing?"
-  },
-  {
-    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html",
-    "href": "pages/DP4/genai_reflection_lab_clean_final.html",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "This dry practical session introduces a structured approach to using generative AI tools, such as Microsoft Copilot, to improve scientific writing. Students will critically reflect on AI-generated suggestions, compare them to human feedback, and revise their report accordingly.\n\n\n\nBy the end of this session, you will:\n\nApply structured prompts to revise scientific writing using a GenAI tool\nReflect on the differences between human and AI feedback\nPractise ethical use of generative AI tools\nPrepare and submit a revised scientific report\n\n\n\n\n\nBefore you begin:\n\nEnsure you have a draft version of your scientific report (ideally with peer feedback)\nOpen Microsoft Copilot (or another approved AI tool)\nUse Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nHow to Complete This Lab\n\n\n\nAs you work through each section, open a Word document to record your responses. Use the text prompts as a guide. You may wish to print or save this file for your records.\n\n\n\n\n\n\n\n\n\n\n\n\nInstructions\n\n\n\nWith your partner, discuss the feedback you received on your scientific report. Summarise this feedback in your own words and outline how you plan to address it.\n\n\n\n\nRecord 1–3 key points of feedback.\n\n\n\nExplain how you will address this feedback in your revised report.\n\n\n\n\n\n\n\n\n\n\n\nInstructions\n\n\n\nYou will now interact with Microsoft Copilot using four types of prompts. For each one, record what you asked the AI, what output you received, and how you applied it to your report.\n\n\n\n\nWrite a prompt that clearly defines Copilot’s role (e.g., “You are an expert editor of a scientific journal…”).\n\n\n\nGive Copilot a section of your writing and ask it to rewrite or improve it. Record the prompt and explain how you used the AI’s response.\n\n\n\nAsk Copilot to evaluate a paragraph or section for clarity, tone, or scientific accuracy. Record the prompt and describe how you used the feedback.\n\n\n\nAsk Copilot to explain how you could improve a section of your report. Write the prompt and summarise what you learned.\n\n\n\n\n\nAnswer the following questions in 100–150 words each.\n\n\nHow did the AI-generated feedback compare to the feedback provided by your peer?\n\n\n\nWhich type of prompt did you find most useful for improving your writing? Why?\n\n\n\nDid using Copilot influence how you approach writing or editing in science?\n\n\n\nWhat are the strengths and weaknesses of using GenAI tools in scientific writing?\n\n\n\n\n\nBefore submitting your work:\n\nEnsure tracked changes are turned on in your revised scientific report\nComplete your response worksheet with peer feedback and GenAI prompts\nInclude any relevant screenshots or transcripts of Copilot interactions in an appendix\n\nSubmit your materials via Moodle by the due date.\n\n\n\n\nReflect with your partner on ethical concerns:\nWhat would be considered an inappropriate use of Copilot in the context of scientific writing? List 2–3 examples and include them in your appendix."
-  },
-  {
-    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html#learning-objectives",
-    "href": "pages/DP4/genai_reflection_lab_clean_final.html#learning-objectives",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "By the end of this session, you will:\n\nApply structured prompts to revise scientific writing using a GenAI tool\nReflect on the differences between human and AI feedback\nPractise ethical use of generative AI tools\nPrepare and submit a revised scientific report"
-  },
-  {
-    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html#getting-started",
-    "href": "pages/DP4/genai_reflection_lab_clean_final.html#getting-started",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Before you begin:\n\nEnsure you have a draft version of your scientific report (ideally with peer feedback)\nOpen Microsoft Copilot (or another approved AI tool)\nUse Microsoft Word or Google Docs with tracked changes enabled\n\n\n\n\n\n\n\nHow to Complete This Lab\n\n\n\nAs you work through each section, open a Word document to record your responses. Use the text prompts as a guide. You may wish to print or save this file for your records."
-  },
-  {
-    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html#step-1-summarise-peer-feedback",
-    "href": "pages/DP4/genai_reflection_lab_clean_final.html#step-1-summarise-peer-feedback",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Instructions\n\n\n\nWith your partner, discuss the feedback you received on your scientific report. Summarise this feedback in your own words and outline how you plan to address it.\n\n\n\n\nRecord 1–3 key points of feedback.\n\n\n\nExplain how you will address this feedback in your revised report."
-  },
-  {
-    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html#step-2-use-genai-to-improve-your-writing",
-    "href": "pages/DP4/genai_reflection_lab_clean_final.html#step-2-use-genai-to-improve-your-writing",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Instructions\n\n\n\nYou will now interact with Microsoft Copilot using four types of prompts. For each one, record what you asked the AI, what output you received, and how you applied it to your report.\n\n\n\n\nWrite a prompt that clearly defines Copilot’s role (e.g., “You are an expert editor of a scientific journal…”).\n\n\n\nGive Copilot a section of your writing and ask it to rewrite or improve it. Record the prompt and explain how you used the AI’s response.\n\n\n\nAsk Copilot to evaluate a paragraph or section for clarity, tone, or scientific accuracy. Record the prompt and describe how you used the feedback.\n\n\n\nAsk Copilot to explain how you could improve a section of your report. Write the prompt and summarise what you learned."
-  },
-  {
-    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html#step-3-reflection",
-    "href": "pages/DP4/genai_reflection_lab_clean_final.html#step-3-reflection",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Answer the following questions in 100–150 words each.\n\n\nHow did the AI-generated feedback compare to the feedback provided by your peer?\n\n\n\nWhich type of prompt did you find most useful for improving your writing? Why?\n\n\n\nDid using Copilot influence how you approach writing or editing in science?\n\n\n\nWhat are the strengths and weaknesses of using GenAI tools in scientific writing?"
-  },
-  {
-    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html#submission-checklist",
-    "href": "pages/DP4/genai_reflection_lab_clean_final.html#submission-checklist",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Before submitting your work:\n\nEnsure tracked changes are turned on in your revised scientific report\nComplete your response worksheet with peer feedback and GenAI prompts\nInclude any relevant screenshots or transcripts of Copilot interactions in an appendix\n\nSubmit your materials via Moodle by the due date."
-  },
-  {
-    "objectID": "pages/DP4/genai_reflection_lab_clean_final.html#optional-extension",
-    "href": "pages/DP4/genai_reflection_lab_clean_final.html#optional-extension",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Reflect with your partner on ethical concerns:\nWhat would be considered an inappropriate use of Copilot in the context of scientific writing? List 2–3 examples and include them in your appendix."
-  },
-  {
-    "objectID": "pages/DP4/genai_student_practical_static.html",
-    "href": "pages/DP4/genai_student_practical_static.html",
-    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
-    "section": "",
-    "text": "In this hands-on session, you’ll explore how to use Generative AI (like ChatGPT or Copilot) to refine your scientific writing. You’ll work in groups and use your own writing as material. Along the way, we’ll reflect on ethics and effectiveness in prompting.\n\n📝 Bring: a paragraph or short section from your research report or assignment.\n\n\n\n\nChoose a paragraph from your own writing and paste it in your notes. Now try using the below types of prompts.\n\n\n\nPrompt: “Please rewrite the following paragraph to be more concise and clear, suitable for a scientific audience.”\n\nExample AI Output:\n&gt; “The experiment investigated the effect of temperature on enzyme activity. Results showed a steady increase in activity up to 37°C, after which it declined rapidly, suggesting denaturation.”\n\n\n\n\n\nPrompt: “Rewrite the paragraph in a way that explains the concept clearly to someone without a science background.”\n\nExample AI Output:\n&gt; “We tested how heat affects enzymes—the tiny machines inside cells. They worked faster when it was warm, but too much heat made them break down.”\n\nNow try your own prompts and note the results below:\nPrompt 1 (concise/scientific):\n…\nAI Output 1:\n…\nPrompt 2 (general audience):\n…\nAI Output 2:\n…\n\n\n\n\n\nShare your prompts and output with the group next to you, and use the followin checklist to evaluate AI responses:\n\nPreserved scientific meaning\n\nImproved clarity or tone\n\nRemoved critical information\n\nIntroduced an error or hallucination\n\nWas suitable for the intended audience\n\nWhich output was better and why?\n…\nDid anything surprise or confuse you?\n…\n\n\n\n\nScenario:\nA student pastes their full assignment into ChatGPT, accepts the rewritten version, and submits it without reading it. The AI fabricated citations and misunderstood the conclusion.\nDiscussion Questions:\n\nWhat are the risks in this scenario?\n\nWhen is it okay to use AI in writing? When is it not?\n\nEthical checklist you can apply:\n\nI used AI to assist, not replace my work\n\nI reviewed and edited all AI-generated text\n\nI remain the author of my submission\n\n\n\n\n\nChoose one paragraph as a group and go through these steps:\nOriginal Paragraph:\n…\nRevision Prompt Used:\n…\nAI Output:\n…\nFinal Human-Edited Version:\n…\nWhat we changed and why:\n…\n\n\n\n\nAI Output:\n&gt; “Mitochondria, often called the powerhouses of cells, generate energy by converting food molecules into ATP through a process called oxidative phosphorylation.”\nYour Reverse-Engineered Prompt:\n…\n\n\n\n\nRecord your most effective prompt and its benefit.\nBest Prompt:\n…\nWhat it helped improve:\n…\n\n\n\n\nToday I learned:\n…\nOne thing I’ll do differently in my writing is:\n…\nOne thing to remember when using AI:\n…\n\n🎓 Final Thought: AI is a tool — you are the scientist. Own your writing, use tools wisely, and always verify your facts!"
-  },
-  {
-    "objectID": "pages/DP4/genai_student_practical_static.html#activity-1-prompt-design-output-exploration",
-    "href": "pages/DP4/genai_student_practical_static.html#activity-1-prompt-design-output-exploration",
-    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
-    "section": "",
-    "text": "Choose a paragraph from your own writing and paste it in your notes. Now try using the below types of prompts.\n\n\n\nPrompt: “Please rewrite the following paragraph to be more concise and clear, suitable for a scientific audience.”\n\nExample AI Output:\n&gt; “The experiment investigated the effect of temperature on enzyme activity. Results showed a steady increase in activity up to 37°C, after which it declined rapidly, suggesting denaturation.”\n\n\n\n\n\nPrompt: “Rewrite the paragraph in a way that explains the concept clearly to someone without a science background.”\n\nExample AI Output:\n&gt; “We tested how heat affects enzymes—the tiny machines inside cells. They worked faster when it was warm, but too much heat made them break down.”\n\nNow try your own prompts and note the results below:\nPrompt 1 (concise/scientific):\n…\nAI Output 1:\n…\nPrompt 2 (general audience):\n…\nAI Output 2:\n…"
-  },
-  {
-    "objectID": "pages/DP4/genai_student_practical_static.html#activity-2-compare-evaluate",
-    "href": "pages/DP4/genai_student_practical_static.html#activity-2-compare-evaluate",
-    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
-    "section": "",
-    "text": "Share your prompts and output with the group next to you, and use the followin checklist to evaluate AI responses:\n\nPreserved scientific meaning\n\nImproved clarity or tone\n\nRemoved critical information\n\nIntroduced an error or hallucination\n\nWas suitable for the intended audience\n\nWhich output was better and why?\n…\nDid anything surprise or confuse you?\n…"
-  },
-  {
-    "objectID": "pages/DP4/genai_student_practical_static.html#activity-3-ethics-in-action",
-    "href": "pages/DP4/genai_student_practical_static.html#activity-3-ethics-in-action",
-    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
-    "section": "",
-    "text": "Scenario:\nA student pastes their full assignment into ChatGPT, accepts the rewritten version, and submits it without reading it. The AI fabricated citations and misunderstood the conclusion.\nDiscussion Questions:\n\nWhat are the risks in this scenario?\n\nWhen is it okay to use AI in writing? When is it not?\n\nEthical checklist you can apply:\n\nI used AI to assist, not replace my work\n\nI reviewed and edited all AI-generated text\n\nI remain the author of my submission"
-  },
-  {
-    "objectID": "pages/DP4/genai_student_practical_static.html#activity-4-collaborative-rewrite",
-    "href": "pages/DP4/genai_student_practical_static.html#activity-4-collaborative-rewrite",
-    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
-    "section": "",
-    "text": "Choose one paragraph as a group and go through these steps:\nOriginal Paragraph:\n…\nRevision Prompt Used:\n…\nAI Output:\n…\nFinal Human-Edited Version:\n…\nWhat we changed and why:\n…"
-  },
-  {
-    "objectID": "pages/DP4/genai_student_practical_static.html#bonus-challenge-reverse-prompting",
-    "href": "pages/DP4/genai_student_practical_static.html#bonus-challenge-reverse-prompting",
-    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
-    "section": "",
-    "text": "AI Output:\n&gt; “Mitochondria, often called the powerhouses of cells, generate energy by converting food molecules into ATP through a process called oxidative phosphorylation.”\nYour Reverse-Engineered Prompt:\n…"
-  },
-  {
-    "objectID": "pages/DP4/genai_student_practical_static.html#prompt-vault",
-    "href": "pages/DP4/genai_student_practical_static.html#prompt-vault",
-    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
-    "section": "",
-    "text": "Record your most effective prompt and its benefit.\nBest Prompt:\n…\nWhat it helped improve:\n…"
-  },
-  {
-    "objectID": "pages/DP4/genai_student_practical_static.html#final-reflection",
-    "href": "pages/DP4/genai_student_practical_static.html#final-reflection",
-    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
-    "section": "",
-    "text": "Today I learned:\n…\nOne thing I’ll do differently in my writing is:\n…\nOne thing to remember when using AI:\n…\n\n🎓 Final Thought: AI is a tool — you are the scientist. Own your writing, use tools wisely, and always verify your facts!"
-  },
-  {
-    "objectID": "pages/DP4/genai_full_lesson.html",
-    "href": "pages/DP4/genai_full_lesson.html",
-    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
-    "section": "",
-    "text": "Title: Refining Scientific Writing with AI: Ethical and Effective Practices\nDuration: 2 hours\nDelivery: Group-based computer practical via Quarto website\nFocus: Prompt engineering, ethical AI use, iterative writing revision, collaboration"
-  },
-  {
-    "objectID": "pages/DP4/genai_full_lesson.html#lesson-overview",
-    "href": "pages/DP4/genai_full_lesson.html#lesson-overview",
-    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
-    "section": "",
-    "text": "Title: Refining Scientific Writing with AI: Ethical and Effective Practices\nDuration: 2 hours\nDelivery: Group-based computer practical via Quarto website\nFocus: Prompt engineering, ethical AI use, iterative writing revision, collaboration"
-  },
-  {
-    "objectID": "pages/DP4/genai_full_lesson.html#learning-outcomes",
-    "href": "pages/DP4/genai_full_lesson.html#learning-outcomes",
-    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
-    "section": "🎯 Learning Outcomes",
-    "text": "🎯 Learning Outcomes\nBy the end of the session, students will be able to:\n\nDesign and test effective prompts to improve their scientific writing.\nIdentify limitations, biases, and ethical considerations in AI-generated content.\nReflect critically on AI suggestions and apply human judgement to revisions.\nCollaborate to iteratively revise writing using AI as a tool."
-  },
-  {
-    "objectID": "pages/DP4/genai_full_lesson.html#pre-class-preparation",
-    "href": "pages/DP4/genai_full_lesson.html#pre-class-preparation",
-    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
-    "section": "🔧 Pre-class Preparation",
-    "text": "🔧 Pre-class Preparation\nFor Students: - Bring a draft of a piece of scientific writing (e.g., from an assessment). - Ensure access to your Quarto class site and ChatGPT or a similar tool.\nFor Facilitator: - Load this practical session into the class Quarto site. - Provide sample prompts, ethical scenarios, and example outputs."
-  },
-  {
-    "objectID": "pages/DP4/genai_full_lesson.html#session-schedule",
-    "href": "pages/DP4/genai_full_lesson.html#session-schedule",
-    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
-    "section": "⏱️ Session Schedule",
-    "text": "⏱️ Session Schedule\n\n00:00–00:10 — Introduction & Framing the Problem\n\nBrief welcome and overview of session goals\nPresent two short writing examples: one AI-improved, one worsened\nClass discussion: “What did AI get right or wrong?”\nPose key question: “Can AI help make your writing clearer without losing your voice?”\n\n\n\n\n00:10–00:25 — Activity 1: Prompt Design in Pairs\n\nIn pairs, students choose a paragraph from their own drafts.\nEach pair writes two prompts:\n\nPrompt 1: Make the paragraph more concise\nPrompt 2: Adjust tone for a different audience (e.g., lay vs. academic)\n\nRun both prompts through ChatGPT or similar and observe outputs.\n\n::: prompt-design\n**Try this:**\n- Revise for clarity or brevity\n- Ask for audience-specific rewriting\n- Request grammar correction without changing meaning\n:::\n\n\n\n00:25–00:45 — Activity 2: Compare Outputs & Evaluate\n\nIn groups, students share results and compare AI responses.\nUse this checklist for discussion:\n\n::: checklist-compare\n- [ ] Preserved scientific accuracy?\n- [ ] Improved tone or clarity?\n- [ ] Removed essential meaning?\n- [ ] Introduced factual error?\n:::\n\n\n\n🟩 BONUS: Prompt Engineering Bingo\nDistribute or display the following bingo tasks:\n✅ Asked AI to simplify a paragraph\n✅ Tried 3+ variations of a prompt\n✅ Caught an AI hallucination\n✅ Rejected a poor suggestion\n✅ Got a funny or strange result\n✅ Successfully improved clarity\n\n\n\n00:45–01:00 — Mini-Discussion: Ethics in Action\nFacilitate discussion around these prompts: - Is it ethical to use AI for academic writing support? - What responsibilities do you still hold? - How do you verify accuracy?\nReflection prompt: &gt; What’s the difference between using AI to help vs. to replace your thinking?\n\n\n\n01:00–01:30 — Activity 3: Collaborative Revision\nEach group collaboratively selects a paragraph and documents their AI-revision process:\n\n\n\nStep\nContent\n\n\n\n\nOriginal\nPaste your original paragraph\n\n\nPrompt Used\nInsert your prompt\n\n\nAI Output\nPaste AI-generated result\n\n\nFinal Version\nHuman-revised version\n\n\nNotes on Edits\nWhat was changed and why\n\n\n\n\n\n\n01:30–01:45 — Activity 4: Reverse Prompting (Optional)\nChallenge: Write a prompt that would generate this output:\nThe mitochondria, often referred to as the \"powerhouse\" of the cell, are essential organelles responsible for generating ATP through oxidative phosphorylation. Their role in cell metabolism and signaling is critical to both normal function and disease processes.\nGroups write their reverse-engineered prompt and compare.\n\n\n\n🟨 BONUS: Prompt Vault Challenge\nShow three versions of a paragraph rewritten by AI. - Students guess the prompts - Rank the effectiveness - Contribute their best prompt to a class vault (Google Doc, Padlet, etc.)\n\n\n\n01:45–02:00 — Wrap-Up & Reflection\nAsk each group to share one thing they learned.\nIndividual reflection prompts: - What did I learn about how I write? - How will I use AI differently after today? - What is my responsibility when using these tools?\n\n🎓 AI can support your voice, but not replace your judgement."
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#activity-1-prompt-design-output-exploration",
-    "href": "pages/DP4/DP4_clean.html#activity-1-prompt-design-output-exploration",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Choose a paragraph from your own writing and paste it in your notes. Now try using the below types of prompts.\n\n\n\nPrompt: “Please rewrite the following paragraph to be more concise and clear, suitable for a scientific audience.”\n\nExample AI Output:\n&gt; “The experiment investigated the effect of temperature on enzyme activity. Results showed a steady increase in activity up to 37°C, after which it declined rapidly, suggesting denaturation.”\n\n\n\n\n\nPrompt: “Rewrite the paragraph in a way that explains the concept clearly to someone without a science background.”\n\nExample AI Output:\n&gt; “We tested how heat affects enzymes—the tiny machines inside cells. They worked faster when it was warm, but too much heat made them break down.”\n\nNow try your own prompts and note the results using the below guide:\nPrompt 1 (concise/scientific):\n…\nAI Output 1:\n…\nPrompt 2 (general audience):\n…\nAI Output 2:\n…",
-    "crumbs": [
-      "Dry Prac 4",
-      "Dry Prac 4 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#activity-2-compare-evaluate",
-    "href": "pages/DP4/DP4_clean.html#activity-2-compare-evaluate",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Share your prompts and output with the group next to you, and use the following checklist to evaluate AI responses:\n\nPreserved scientific meaning\n\nImproved clarity or tone\n\nRemoved critical information\n\nIntroduced an error or hallucination\n\nWas suitable for the intended audience\n\nWhich output was better and why?\n…\nDid anything surprise or confuse you?\n…",
-    "crumbs": [
-      "Dry Prac 4",
-      "Dry Prac 4 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#activity-3-ethics-in-action",
-    "href": "pages/DP4/DP4_clean.html#activity-3-ethics-in-action",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Scenario:\nA student pastes their full assignment into ChatGPT, accepts the rewritten version, and submits it without reading it. The AI fabricated citations and misunderstood the conclusion.\nDiscussion Questions:\n\nWhat are the risks in this scenario?\n\nWhen is it okay to use AI in writing? When is it not?\n\nEthical checklist you can apply and think about when using these tools:\n\nI used AI to assist, not replace my work\n\nI reviewed and edited all AI-generated text\n\nI remain the author of my submission",
-    "crumbs": [
-      "Dry Prac 4",
-      "Dry Prac 4 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#activity-4-collaborative-rewrite",
-    "href": "pages/DP4/DP4_clean.html#activity-4-collaborative-rewrite",
-    "title": "AI Reflection & Writing Lab",
-    "section": "",
-    "text": "Choose one paragraph as a group and go through these steps:\nOriginal Paragraph:\n…\nRevision Prompt Used:\n…\nAI Output:\n…\nFinal Human-Edited Version:\n…\nWhat we changed and why:\n…",
-    "crumbs": [
-      "Dry Prac 4",
-      "Dry Prac 4 Notes"
-    ]
-  },
-  {
-    "objectID": "pages/DP4/DP4_clean.html#challenge-reverse-prompting",
-    "href": "pages/DP4/DP4_clean.html#challenge-reverse-prompting",
-    "title": "AI Reflection & Writing Lab",
-    "section": "🧪 Challenge: Reverse Prompting",
-    "text": "🧪 Challenge: Reverse Prompting\nAI Output:\n&gt; “Mitochondria, often called the powerhouses of cells, generate energy by converting food molecules into ATP through a process called oxidative phosphorylation.”\nYour Reverse-Engineered Prompt:\n…"
-  },
-  {
-    "objectID": "pages/DP4/genai_student_practical_static.html#challenge-reverse-prompting",
-    "href": "pages/DP4/genai_student_practical_static.html#challenge-reverse-prompting",
-    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
-    "section": "",
-    "text": "AI Output:\n&gt; “Mitochondria, often called the powerhouses of cells, generate energy by converting food molecules into ATP through a process called oxidative phosphorylation.”\nYour Reverse-Engineered Prompt:\n…"
-  },
-  {
-    "objectID": "pages/DP4/genai_student_practical_static.html#class-reflection",
-    "href": "pages/DP4/genai_student_practical_static.html#class-reflection",
-    "title": "GenAI Final Practical: Ethical and Effective Scientific Writing",
-    "section": "",
-    "text": "Today I learned:\n…\nOne thing I’ll do differently in my writing is:\n…\nOne thing to remember when using AI:\n…\n\n🎓 Final Thought: AI is a tool — you are the scientist. Own your writing, use tools wisely, and always verify your facts!"
   }
 ]
