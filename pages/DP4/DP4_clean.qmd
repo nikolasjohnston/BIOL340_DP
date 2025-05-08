@@ -125,7 +125,9 @@ Choose one paragraph as a group and go through these steps:
 
 ## Prompt Vault
 
-Record your most effective prompt from your work today and its benefit.
+Record your most effective prompt from your work today and its benefit. <https://padlet.com/nikolas58/prompt-vault-91492p0ab0lx1fyl>
+
+These prompts will be stored across the class and act as a shared vault for the class.
 
 [**Best Prompt:**]{style="color:red"}\
 ...
