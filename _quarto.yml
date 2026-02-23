@@ -16,10 +16,10 @@ website:
   page-footer:
     right: "This page is built with [Quarto](https://quarto.org/)."
     left: "&copy; Copyright 2025, Nikolas Johnston"
-    background: "#1d7507"
+    background: "#27521d"
 
   sidebar:
-    background: "#1d7507"
+    background: "#27521d"
     logo: "images/2026_header.png"
     pinned: true
     align: center
