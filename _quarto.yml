@@ -4,8 +4,8 @@ project:
 
 website:
   page-navigation: true
-  title: "BIOL340 - Autumn 2025"
-  description: "Homepage for BIOL340 Dry Pracs, University of Wollongong, Autumn 2025."
+  title: "BIOL340 - Autumn 2026"
+  description: "Homepage for BIOL340 Dry Pracs, University of Wollongong, Autumn 2026."
   site-url: "https://nikolasjohnston.github.io/BIOL340_DP/"
 
   repo-url: https://github.com/nikolasjohnston/BIOL340_DP
@@ -16,11 +16,11 @@ website:
   page-footer:
     right: "This page is built with [Quarto](https://quarto.org/)."
     left: "&copy; Copyright 2025, Nikolas Johnston"
-    background: "#960e0c"
+    background: "#1d7507"
 
   sidebar:
-    background: "#960e0c"
-    logo: "images/2025_header.png"
+    background: "#1d7507"
+    logo: "images/2026_header.png"
     pinned: true
     align: center
  
