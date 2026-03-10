@@ -1,0 +1,529 @@
+Group,Row,Column,signal,well,condition,Class
+G1 & G6,A,1,34627,A1,Healthy,AM
+G1 & G6,A,2,17927,A2,Diseased,AM
+G1 & G6,A,3,22004,A3,Treated cells - 10 uM Respiranox,AM
+G1 & G6,A,4,13550,A4,Treated cells - 20 uM Respiranox,AM
+G1 & G6,A,5,7932,A5,Non-viable cells,AM
+G1 & G6,A,6,7512,A6,Media / blank,AM
+G1 & G6,B,1,24504,B1,Healthy,AM
+G1 & G6,B,2,12180,B2,Diseased,AM
+G1 & G6,B,3,30102,B3,Treated cells - 10 uM Respiranox,AM
+G1 & G6,B,4,11015,B4,Treated cells - 20 uM Respiranox,AM
+G1 & G6,B,5,7575,B5,Non-viable cells,AM
+G1 & G6,B,6,7570,B6,Media / blank,AM
+G1 & G6,C,1,16659,C1,Healthy,AM
+G1 & G6,C,2,15837,C2,Diseased,AM
+G1 & G6,C,3,14547,C3,Treated cells - 10 uM Respiranox,AM
+G1 & G6,C,4,14389,C4,Treated cells - 20 uM Respiranox,AM
+G1 & G6,C,5,7566,C5,Non-viable cells,AM
+G1 & G6,C,6,7510,C6,Media / blank,AM
+G3 & G4,A,1,23791,A1,Healthy,AM
+G3 & G4,A,2,11493,A2,Diseased,AM
+G3 & G4,A,3,25966,A3,Treated cells - 10 uM Respiranox,AM
+G3 & G4,A,4,16296,A4,Treated cells - 20 uM Respiranox,AM
+G3 & G4,A,5,18072,A5,Non-viable cells,AM
+G3 & G4,A,6,8405,A6,Media / blank,AM
+G3 & G4,B,1,12869,B1,Healthy,AM
+G3 & G4,B,2,15759,B2,Diseased,AM
+G3 & G4,B,3,13060,B3,Treated cells - 10 uM Respiranox,AM
+G3 & G4,B,4,12352,B4,Treated cells - 20 uM Respiranox,AM
+G3 & G4,B,5,8089,B5,Non-viable cells,AM
+G3 & G4,B,6,7355,B6,Media / blank,AM
+G3 & G4,C,1,13439,C1,Healthy,AM
+G3 & G4,C,2,14451,C2,Diseased,AM
+G3 & G4,C,3,11052,C3,Treated cells - 10 uM Respiranox,AM
+G3 & G4,C,4,21344,C4,Treated cells - 20 uM Respiranox,AM
+G3 & G4,C,5,7808,C5,Non-viable cells,AM
+G3 & G4,C,6,7759,C6,Media / blank,AM
+G2 & G5,A,1,18450,A1,Healthy,AM
+G2 & G5,A,2,8419,A2,Diseased,AM
+G2 & G5,A,3,8353,A3,Treated cells - 10 uM Respiranox,AM
+G2 & G5,A,4,11064,A4,Treated cells - 20 uM Respiranox,AM
+G2 & G5,A,5,7853,A5,Non-viable cells,AM
+G2 & G5,A,6,7576,A6,Media / blank,AM
+G2 & G5,B,1,17330,B1,Healthy,AM
+G2 & G5,B,2,8895,B2,Diseased,AM
+G2 & G5,B,3,11415,B3,Treated cells - 10 uM Respiranox,AM
+G2 & G5,B,4,10611,B4,Treated cells - 20 uM Respiranox,AM
+G2 & G5,B,5,6872,B5,Non-viable cells,AM
+G2 & G5,B,6,6924,B6,Media / blank,AM
+G2 & G5,C,1,18825,C1,Healthy,AM
+G2 & G5,C,2,9208,C2,Diseased,AM
+G2 & G5,C,3,13273,C3,Treated cells - 10 uM Respiranox,AM
+G2 & G5,C,4,11576,C4,Treated cells - 20 uM Respiranox,AM
+G2 & G5,C,5,7602,C5,Non-viable cells,AM
+G2 & G5,C,6,7059,C6,Media / blank,AM
+G7 & G8,A,1,30321,A1,Healthy,AM
+G7 & G8,A,2,26294,A2,Diseased,AM
+G7 & G8,A,3,31229,A3,Treated cells - 10 uM Respiranox,AM
+G7 & G8,A,4,24610,A4,Treated cells - 20 uM Respiranox,AM
+G7 & G8,A,5,16760,A5,Non-viable cells,AM
+G7 & G8,A,6,16966,A6,Media / blank,AM
+G7 & G8,B,1,26109,B1,Healthy,AM
+G7 & G8,B,2,24648,B2,Diseased,AM
+G7 & G8,B,3,33692,B3,Treated cells - 10 uM Respiranox,AM
+G7 & G8,B,4,24298,B4,Treated cells - 20 uM Respiranox,AM
+G7 & G8,B,5,16466,B5,Non-viable cells,AM
+G7 & G8,B,6,16576,B6,Media / blank,AM
+G7 & G8,C,1,25884,C1,Healthy,AM
+G7 & G8,C,2,26032,C2,Diseased,AM
+G7 & G8,C,3,31368,C3,Treated cells - 10 uM Respiranox,AM
+G7 & G8,C,4,10747,C4,Treated cells - 20 uM Respiranox,AM
+G7 & G8,C,5,25180,C5,Non-viable cells,AM
+G7 & G8,C,6,16600,C6,Media / blank,AM
+G9 & G10,A,1,36458,A1,Healthy,AM
+G9 & G10,A,2,36458,A2,Diseased,AM
+G9 & G10,A,3,30636,A3,Treated cells - 10 uM Respiranox,AM
+G9 & G10,A,4,33722,A4,Treated cells - 20 uM Respiranox,AM
+G9 & G10,A,5,18428,A5,Non-viable cells,AM
+G9 & G10,A,6,15796,A6,Media / blank,AM
+G9 & G10,B,1,30636,B1,Healthy,AM
+G9 & G10,B,2,27238,B2,Diseased,AM
+G9 & G10,B,3,26653,B3,Treated cells - 10 uM Respiranox,AM
+G9 & G10,B,4,24840,B4,Treated cells - 20 uM Respiranox,AM
+G9 & G10,B,5,15677,B5,Non-viable cells,AM
+G9 & G10,B,6,15732,B6,Media / blank,AM
+G9 & G10,C,1,33722,C1,Healthy,AM
+G9 & G10,C,2,24679,C2,Diseased,AM
+G9 & G10,C,3,27440,C3,Treated cells - 10 uM Respiranox,AM
+G9 & G10,C,4,29576,C4,Treated cells - 20 uM Respiranox,AM
+G9 & G10,C,5,17636,C5,Non-viable cells,AM
+G9 & G10,C,6,16029,C6,Media / blank,AM
+G11 & G12,A,1,11604,A1,Healthy,AM
+G11 & G12,A,2,7627,A2,Diseased,AM
+G11 & G12,A,3,9244,A3,Treated cells - 10 uM Respiranox,AM
+G11 & G12,A,4,21260,A4,Treated cells - 20 uM Respiranox,AM
+G11 & G12,A,5,7823,A5,Non-viable cells,AM
+G11 & G12,A,6,7518,A6,Media / blank,AM
+G11 & G12,B,1,9389,B1,Healthy,AM
+G11 & G12,B,2,10029,B2,Diseased,AM
+G11 & G12,B,3,11389,B3,Treated cells - 10 uM Respiranox,AM
+G11 & G12,B,4,10121,B4,Treated cells - 20 uM Respiranox,AM
+G11 & G12,B,5,7126,B5,Non-viable cells,AM
+G11 & G12,B,6,7083,B6,Media / blank,AM
+G11 & G12,C,1,11896,C1,Healthy,AM
+G11 & G12,C,2,9730,C2,Diseased,AM
+G11 & G12,C,3,11513,C3,Treated cells - 10 uM Respiranox,AM
+G11 & G12,C,4,12816,C4,Treated cells - 20 uM Respiranox,AM
+G11 & G12,C,5,7340,C5,Non-viable cells,AM
+G11 & G12,C,6,6366,C6,Media / blank,AM
+G13 & G14,A,1,38457,A1,Healthy,AM
+G13 & G14,A,2,24272,A2,Diseased,AM
+G13 & G14,A,3,41539,A3,Treated cells - 10 uM Respiranox,AM
+G13 & G14,A,4,27435,A4,Treated cells - 20 uM Respiranox,AM
+G13 & G14,A,5,17136,A5,Non-viable cells,AM
+G13 & G14,A,6,15793,A6,Media / blank,AM
+G13 & G14,B,1,35900,B1,Healthy,AM
+G13 & G14,B,2,22928,B2,Diseased,AM
+G13 & G14,B,3,35579,B3,Treated cells - 10 uM Respiranox,AM
+G13 & G14,B,4,24536,B4,Treated cells - 20 uM Respiranox,AM
+G13 & G14,B,5,16373,B5,Non-viable cells,AM
+G13 & G14,B,6,15785,B6,Media / blank,AM
+G13 & G14,C,1,40204,C1,Healthy,AM
+G13 & G14,C,2,26195,C2,Diseased,AM
+G13 & G14,C,3,31280,C3,Treated cells - 10 uM Respiranox,AM
+G13 & G14,C,4,25451,C4,Treated cells - 20 uM Respiranox,AM
+G13 & G14,C,5,15912,C5,Non-viable cells,AM
+G13 & G14,C,6,15925,C6,Media / blank,AM
+G15 & G16,A,1,23613,A1,Healthy,AM
+G15 & G16,A,2,22379,A2,Diseased,AM
+G15 & G16,A,3,21610,A3,Treated cells - 10 uM Respiranox,AM
+G15 & G16,A,4,20943,A4,Treated cells - 20 uM Respiranox,AM
+G15 & G16,A,5,16700,A5,Non-viable cells,AM
+G15 & G16,A,6,16714,A6,Media / blank,AM
+G15 & G16,B,1,29290,B1,Healthy,AM
+G15 & G16,B,2,18784,B2,Diseased,AM
+G15 & G16,B,3,25709,B3,Treated cells - 10 uM Respiranox,AM
+G15 & G16,B,4,16865,B4,Treated cells - 20 uM Respiranox,AM
+G15 & G16,B,5,15339,B5,Non-viable cells,AM
+G15 & G16,B,6,15493,B6,Media / blank,AM
+G15 & G16,C,1,29640,C1,Healthy,AM
+G15 & G16,C,2,18268,C2,Diseased,AM
+G15 & G16,C,3,22490,C3,Treated cells - 10 uM Respiranox,AM
+G15 & G16,C,4,20906,C4,Treated cells - 20 uM Respiranox,AM
+G15 & G16,C,5,17248,C5,Non-viable cells,AM
+G15 & G16,C,6,15835,C6,Media / blank,AM
+G17 & G18,A,1,14487,A1,Healthy,AM
+G17 & G18,A,2,17877,A2,Diseased,AM
+G17 & G18,A,3,19027,A3,Treated cells - 10 uM Respiranox,AM
+G17 & G18,A,4,13374,A4,Treated cells - 20 uM Respiranox,AM
+G17 & G18,A,5,6962,A5,Non-viable cells,AM
+G17 & G18,A,6,7154,A6,Media / blank,AM
+G17 & G18,B,1,20929,B1,Healthy,AM
+G17 & G18,B,2,19935,B2,Diseased,AM
+G17 & G18,B,3,15365,B3,Treated cells - 10 uM Respiranox,AM
+G17 & G18,B,4,11442,B4,Treated cells - 20 uM Respiranox,AM
+G17 & G18,B,5,6320,B5,Non-viable cells,AM
+G17 & G18,B,6,7438,B6,Media / blank,AM
+G17 & G18,C,1,17078,C1,Healthy,AM
+G17 & G18,C,2,10637,C2,Diseased,AM
+G17 & G18,C,3,11140,C3,Treated cells - 10 uM Respiranox,AM
+G17 & G18,C,4,8964,C4,Treated cells - 20 uM Respiranox,AM
+G17 & G18,C,5,6585,C5,Non-viable cells,AM
+G17 & G18,C,6,6312,C6,Media / blank,AM
+G19 & G20,A,1,38524,A1,Healthy,AM
+G19 & G20,A,2,28845,A2,Diseased,AM
+G19 & G20,A,3,33288,A3,Treated cells - 10 uM Respiranox,AM
+G19 & G20,A,4,24640,A4,Treated cells - 20 uM Respiranox,AM
+G19 & G20,A,5,16856,A5,Non-viable cells,AM
+G19 & G20,A,6,16700,A6,Media / blank,AM
+G19 & G20,B,1,32210,B1,Healthy,AM
+G19 & G20,B,2,26978,B2,Diseased,AM
+G19 & G20,B,3,32359,B3,Treated cells - 10 uM Respiranox,AM
+G19 & G20,B,4,26345,B4,Treated cells - 20 uM Respiranox,AM
+G19 & G20,B,5,15576,B5,Non-viable cells,AM
+G19 & G20,B,6,15843,B6,Media / blank,AM
+G19 & G20,C,1,36740,C1,Healthy,AM
+G19 & G20,C,2,23263,C2,Diseased,AM
+G19 & G20,C,3,30560,C3,Treated cells - 10 uM Respiranox,AM
+G19 & G20,C,4,26397,C4,Treated cells - 20 uM Respiranox,AM
+G19 & G20,C,5,14521,C5,Non-viable cells,AM
+G19 & G20,C,6,15643,C6,Media / blank,AM
+G21 & G22,A,1,29612,A1,Healthy,AM
+G21 & G22,A,2,21300,A2,Diseased,AM
+G21 & G22,A,3,27843,A3,Treated cells - 10 uM Respiranox,AM
+G21 & G22,A,4,22330,A4,Treated cells - 20 uM Respiranox,AM
+G21 & G22,A,5,21828,A5,Non-viable cells,AM
+G21 & G22,A,6,17076,A6,Media / blank,AM
+G21 & G22,B,1,61966,B1,Healthy,AM
+G21 & G22,B,2,20445,B2,Diseased,AM
+G21 & G22,B,3,27854,B3,Treated cells - 10 uM Respiranox,AM
+G21 & G22,B,4,21036,B4,Treated cells - 20 uM Respiranox,AM
+G21 & G22,B,5,19489,B5,Non-viable cells,AM
+G21 & G22,B,6,15672,B6,Media / blank,AM
+G21 & G22,C,1,28479,C1,Healthy,AM
+G21 & G22,C,2,20168,C2,Diseased,AM
+G21 & G22,C,3,26171,C3,Treated cells - 10 uM Respiranox,AM
+G21 & G22,C,4,20796,C4,Treated cells - 20 uM Respiranox,AM
+G21 & G22,C,5,20669,C5,Non-viable cells,AM
+G21 & G22,C,6,16046,C6,Media / blank,AM
+G23 & G24,A,1,17008,A1,Healthy,AM
+G23 & G24,A,2,35911,A2,Diseased,AM
+G23 & G24,A,3,19686,A3,Treated cells - 10 uM Respiranox,AM
+G23 & G24,A,4,15014,A4,Treated cells - 20 uM Respiranox,AM
+G23 & G24,A,5,8990,A5,Non-viable cells,AM
+G23 & G24,A,6,8880,A6,Media / blank,AM
+G23 & G24,B,1,16622,B1,Healthy,AM
+G23 & G24,B,2,20215,B2,Diseased,AM
+G23 & G24,B,3,16652,B3,Treated cells - 10 uM Respiranox,AM
+G23 & G24,B,4,12436,B4,Treated cells - 20 uM Respiranox,AM
+G23 & G24,B,5,8731,B5,Non-viable cells,AM
+G23 & G24,B,6,8547,B6,Media / blank,AM
+G23 & G24,C,1,24113,C1,Healthy,AM
+G23 & G24,C,2,14631,C2,Diseased,AM
+G23 & G24,C,3,13966,C3,Treated cells - 10 uM Respiranox,AM
+G23 & G24,C,4,12738,C4,Treated cells - 20 uM Respiranox,AM
+G23 & G24,C,5,8739,C5,Non-viable cells,AM
+G23 & G24,C,6,8610,C6,Media / blank,AM
+G25 & G26,A,1,14492,A1,Healthy,AM
+G25 & G26,A,2,10840,A2,Diseased,AM
+G25 & G26,A,3,12788,A3,Treated cells - 10 uM Respiranox,AM
+G25 & G26,A,4,9831,A4,Treated cells - 20 uM Respiranox,AM
+G25 & G26,A,5,7804,A5,Non-viable cells,AM
+G25 & G26,A,6,7115,A6,Media / blank,AM
+G25 & G26,B,1,23512,B1,Healthy,AM
+G25 & G26,B,2,11316,B2,Diseased,AM
+G25 & G26,B,3,11282,B3,Treated cells - 10 uM Respiranox,AM
+G25 & G26,B,4,8790,B4,Treated cells - 20 uM Respiranox,AM
+G25 & G26,B,5,7223,B5,Non-viable cells,AM
+G25 & G26,B,6,7047,B6,Media / blank,AM
+G25 & G26,C,1,16175,C1,Healthy,AM
+G25 & G26,C,2,11909,C2,Diseased,AM
+G25 & G26,C,3,11855,C3,Treated cells - 10 uM Respiranox,AM
+G25 & G26,C,4,9657,C4,Treated cells - 20 uM Respiranox,AM
+G25 & G26,C,5,7580,C5,Non-viable cells,AM
+G25 & G26,C,6,7080,C6,Media / blank,AM
+G31 & G32,A,1,NA,A1,Healthy,AM
+G31 & G32,A,2,NA,A2,Diseased,AM
+G31 & G32,A,3,NA,A3,Treated cells - 10 uM Respiranox,AM
+G31 & G32,A,4,NA,A4,Treated cells - 20 uM Respiranox,AM
+G31 & G32,A,5,NA,A5,Non-viable cells,AM
+G31 & G32,A,6,NA,A6,Media / blank,AM
+G31 & G32,B,1,NA,B1,Healthy,AM
+G31 & G32,B,2,NA,B2,Diseased,AM
+G31 & G32,B,3,NA,B3,Treated cells - 10 uM Respiranox,AM
+G31 & G32,B,4,NA,B4,Treated cells - 20 uM Respiranox,AM
+G31 & G32,B,5,NA,B5,Non-viable cells,AM
+G31 & G32,B,6,NA,B6,Media / blank,AM
+G31 & G32,C,1,NA,C1,Healthy,AM
+G31 & G32,C,2,NA,C2,Diseased,AM
+G31 & G32,C,3,NA,C3,Treated cells - 10 uM Respiranox,AM
+G31 & G32,C,4,NA,C4,Treated cells - 20 uM Respiranox,AM
+G31 & G32,C,5,NA,C5,Non-viable cells,AM
+G31 & G32,C,6,NA,C6,Media / blank,AM
+G33 & G34,A,1,NA,A1,Healthy,AM
+G33 & G34,A,2,NA,A2,Diseased,AM
+G33 & G34,A,3,NA,A3,Treated cells - 10 uM Respiranox,AM
+G33 & G34,A,4,NA,A4,Treated cells - 20 uM Respiranox,AM
+G33 & G34,A,5,NA,A5,Non-viable cells,AM
+G33 & G34,A,6,NA,A6,Media / blank,AM
+G33 & G34,B,1,NA,B1,Healthy,AM
+G33 & G34,B,2,NA,B2,Diseased,AM
+G33 & G34,B,3,NA,B3,Treated cells - 10 uM Respiranox,AM
+G33 & G34,B,4,NA,B4,Treated cells - 20 uM Respiranox,AM
+G33 & G34,B,5,NA,B5,Non-viable cells,AM
+G33 & G34,B,6,NA,B6,Media / blank,AM
+G33 & G34,C,1,NA,C1,Healthy,AM
+G33 & G34,C,2,NA,C2,Diseased,AM
+G33 & G34,C,3,NA,C3,Treated cells - 10 uM Respiranox,AM
+G33 & G34,C,4,NA,C4,Treated cells - 20 uM Respiranox,AM
+G33 & G34,C,5,NA,C5,Non-viable cells,AM
+G33 & G34,C,6,NA,C6,Media / blank,AM
+G35 & G36,A,1,NA,A1,Healthy,AM
+G35 & G36,A,2,NA,A2,Diseased,AM
+G35 & G36,A,3,NA,A3,Treated cells - 10 uM Respiranox,AM
+G35 & G36,A,4,NA,A4,Treated cells - 20 uM Respiranox,AM
+G35 & G36,A,5,NA,A5,Non-viable cells,AM
+G35 & G36,A,6,NA,A6,Media / blank,AM
+G35 & G36,B,1,NA,B1,Healthy,AM
+G35 & G36,B,2,NA,B2,Diseased,AM
+G35 & G36,B,3,NA,B3,Treated cells - 10 uM Respiranox,AM
+G35 & G36,B,4,NA,B4,Treated cells - 20 uM Respiranox,AM
+G35 & G36,B,5,NA,B5,Non-viable cells,AM
+G35 & G36,B,6,NA,B6,Media / blank,AM
+G35 & G36,C,1,NA,C1,Healthy,AM
+G35 & G36,C,2,NA,C2,Diseased,AM
+G35 & G36,C,3,NA,C3,Treated cells - 10 uM Respiranox,AM
+G35 & G36,C,4,NA,C4,Treated cells - 20 uM Respiranox,AM
+G35 & G36,C,5,NA,C5,Non-viable cells,AM
+G35 & G36,C,6,NA,C6,Media / blank,AM
+G37 & G38,A,1,12014,A1,Healthy,AM
+G37 & G38,A,2,11877,A2,Diseased,AM
+G37 & G38,A,3,12123,A3,Treated cells - 10 uM Respiranox,AM
+G37 & G38,A,4,13094,A4,Treated cells - 20 uM Respiranox,AM
+G37 & G38,A,5,7513,A5,Non-viable cells,AM
+G37 & G38,A,6,7600,A6,Media / blank,AM
+G37 & G38,B,1,11904,B1,Healthy,AM
+G37 & G38,B,2,10802,B2,Diseased,AM
+G37 & G38,B,3,12475,B3,Treated cells - 10 uM Respiranox,AM
+G37 & G38,B,4,8618,B4,Treated cells - 20 uM Respiranox,AM
+G37 & G38,B,5,6792,B5,Non-viable cells,AM
+G37 & G38,B,6,7092,B6,Media / blank,AM
+G37 & G38,C,1,11092,C1,Healthy,AM
+G37 & G38,C,2,11772,C2,Diseased,AM
+G37 & G38,C,3,10353,C3,Treated cells - 10 uM Respiranox,AM
+G37 & G38,C,4,12608,C4,Treated cells - 20 uM Respiranox,AM
+G37 & G38,C,5,7295,C5,Non-viable cells,AM
+G37 & G38,C,6,7268,C6,Media / blank,AM
+G39 & G40,A,1,38561,A1,Healthy,AM
+G39 & G40,A,2,28336,A2,Diseased,AM
+G39 & G40,A,3,30145,A3,Treated cells - 10 uM Respiranox,AM
+G39 & G40,A,4,23671,A4,Treated cells - 20 uM Respiranox,AM
+G39 & G40,A,5,17463,A5,Non-viable cells,AM
+G39 & G40,A,6,17759,A6,Media / blank,AM
+G39 & G40,B,1,37367,B1,Healthy,AM
+G39 & G40,B,2,26027,B2,Diseased,AM
+G39 & G40,B,3,31724,B3,Treated cells - 10 uM Respiranox,AM
+G39 & G40,B,4,21644,B4,Treated cells - 20 uM Respiranox,AM
+G39 & G40,B,5,15728,B5,Non-viable cells,AM
+G39 & G40,B,6,16666,B6,Media / blank,AM
+G39 & G40,C,1,39881,C1,Healthy,AM
+G39 & G40,C,2,25238,C2,Diseased,AM
+G39 & G40,C,3,29331,C3,Treated cells - 10 uM Respiranox,AM
+G39 & G40,C,4,29749,C4,Treated cells - 20 uM Respiranox,AM
+G39 & G40,C,5,16550,C5,Non-viable cells,AM
+G39 & G40,C,6,16428,C6,Media / blank,AM
+G41 & G42,A,1,NA,A1,Healthy,AM
+G41 & G42,A,2,NA,A2,Diseased,AM
+G41 & G42,A,3,NA,A3,Treated cells - 10 uM Respiranox,AM
+G41 & G42,A,4,NA,A4,Treated cells - 20 uM Respiranox,AM
+G41 & G42,A,5,NA,A5,Non-viable cells,AM
+G41 & G42,A,6,NA,A6,Media / blank,AM
+G41 & G42,B,1,NA,B1,Healthy,AM
+G41 & G42,B,2,NA,B2,Diseased,AM
+G41 & G42,B,3,NA,B3,Treated cells - 10 uM Respiranox,AM
+G41 & G42,B,4,NA,B4,Treated cells - 20 uM Respiranox,AM
+G41 & G42,B,5,NA,B5,Non-viable cells,AM
+G41 & G42,B,6,NA,B6,Media / blank,AM
+G41 & G42,C,1,NA,C1,Healthy,AM
+G41 & G42,C,2,NA,C2,Diseased,AM
+G41 & G42,C,3,NA,C3,Treated cells - 10 uM Respiranox,AM
+G41 & G42,C,4,NA,C4,Treated cells - 20 uM Respiranox,AM
+G41 & G42,C,5,NA,C5,Non-viable cells,AM
+G41 & G42,C,6,NA,C6,Media / blank,AM
+G43 & G44,A,1,8815,A1,Healthy,AM
+G43 & G44,A,2,9190,A2,Diseased,AM
+G43 & G44,A,3,15488,A3,Treated cells - 10 uM Respiranox,AM
+G43 & G44,A,4,10082,A4,Treated cells - 20 uM Respiranox,AM
+G43 & G44,A,5,7132,A5,Non-viable cells,AM
+G43 & G44,A,6,7292,A6,Media / blank,AM
+G43 & G44,B,1,10984,B1,Healthy,AM
+G43 & G44,B,2,8587,B2,Diseased,AM
+G43 & G44,B,3,39905,B3,Treated cells - 10 uM Respiranox,AM
+G43 & G44,B,4,8853,B4,Treated cells - 20 uM Respiranox,AM
+G43 & G44,B,5,6625,B5,Non-viable cells,AM
+G43 & G44,B,6,7056,B6,Media / blank,AM
+G43 & G44,C,1,12752,C1,Healthy,AM
+G43 & G44,C,2,9593,C2,Diseased,AM
+G43 & G44,C,3,10451,C3,Treated cells - 10 uM Respiranox,AM
+G43 & G44,C,4,10062,C4,Treated cells - 20 uM Respiranox,AM
+G43 & G44,C,5,6917,C5,Non-viable cells,AM
+G43 & G44,C,6,6992,C6,Media / blank,AM
+G45 & G46,A,1,19650,A1,Healthy,AM
+G45 & G46,A,2,16800,A2,Diseased,AM
+G45 & G46,A,3,19412,A3,Treated cells - 10 uM Respiranox,AM
+G45 & G46,A,4,16200,A4,Treated cells - 20 uM Respiranox,AM
+G45 & G46,A,5,9407,A5,Non-viable cells,AM
+G45 & G46,A,6,10162,A6,Media / blank,AM
+G45 & G46,B,1,13877,B1,Healthy,AM
+G45 & G46,B,2,25228,B2,Diseased,AM
+G45 & G46,B,3,15710,B3,Treated cells - 10 uM Respiranox,AM
+G45 & G46,B,4,12262,B4,Treated cells - 20 uM Respiranox,AM
+G45 & G46,B,5,8557,B5,Non-viable cells,AM
+G45 & G46,B,6,9172,B6,Media / blank,AM
+G45 & G46,C,1,38372,C1,Healthy,AM
+G45 & G46,C,2,13592,C2,Diseased,AM
+G45 & G46,C,3,13745,C3,Treated cells - 10 uM Respiranox,AM
+G45 & G46,C,4,12570,C4,Treated cells - 20 uM Respiranox,AM
+G45 & G46,C,5,8727,C5,Non-viable cells,AM
+G45 & G46,C,6,8335,C6,Media / blank,AM
+G47 & G48,A,1,14123,A1,Healthy,AM
+G47 & G48,A,2,13472,A2,Diseased,AM
+G47 & G48,A,3,12156,A3,Treated cells - 10 uM Respiranox,AM
+G47 & G48,A,4,9709,A4,Treated cells - 20 uM Respiranox,AM
+G47 & G48,A,5,7772,A5,Non-viable cells,AM
+G47 & G48,A,6,7869,A6,Media / blank,AM
+G47 & G48,B,1,11464,B1,Healthy,AM
+G47 & G48,B,2,14216,B2,Diseased,AM
+G47 & G48,B,3,12207,B3,Treated cells - 10 uM Respiranox,AM
+G47 & G48,B,4,8944,B4,Treated cells - 20 uM Respiranox,AM
+G47 & G48,B,5,7203,B5,Non-viable cells,AM
+G47 & G48,B,6,7318,B6,Media / blank,AM
+G47 & G48,C,1,12448,C1,Healthy,AM
+G47 & G48,C,2,12931,C2,Diseased,AM
+G47 & G48,C,3,11744,C3,Treated cells - 10 uM Respiranox,AM
+G47 & G48,C,4,9034,C4,Treated cells - 20 uM Respiranox,AM
+G47 & G48,C,5,7401,C5,Non-viable cells,AM
+G47 & G48,C,6,7463,C6,Media / blank,AM
+G49 & G50,A,1,23613,A1,Healthy,AM
+G49 & G50,A,2,19479,A2,Diseased,AM
+G49 & G50,A,3,24812,A3,Treated cells - 10 uM Respiranox,AM
+G49 & G50,A,4,14636,A4,Treated cells - 20 uM Respiranox,AM
+G49 & G50,A,5,12403,A5,Non-viable cells,AM
+G49 & G50,A,6,13661,A6,Media / blank,AM
+G49 & G50,B,1,25132,B1,Healthy,AM
+G49 & G50,B,2,14314,B2,Diseased,AM
+G49 & G50,B,3,23496,B3,Treated cells - 10 uM Respiranox,AM
+G49 & G50,B,4,13515,B4,Treated cells - 20 uM Respiranox,AM
+G49 & G50,B,5,11352,B5,Non-viable cells,AM
+G49 & G50,B,6,12438,B6,Media / blank,AM
+G49 & G50,C,1,28418,C1,Healthy,AM
+G49 & G50,C,2,15320,C2,Diseased,AM
+G49 & G50,C,3,19620,C3,Treated cells - 10 uM Respiranox,AM
+G49 & G50,C,4,17090,C4,Treated cells - 20 uM Respiranox,AM
+G49 & G50,C,5,11132,C5,Non-viable cells,AM
+G49 & G50,C,6,12882,C6,Media / blank,AM
+G51 & G52,A,1,15186,A1,Healthy,AM
+G51 & G52,A,2,14556,A2,Diseased,AM
+G51 & G52,A,3,14245,A3,Treated cells - 10 uM Respiranox,AM
+G51 & G52,A,4,9579,A4,Treated cells - 20 uM Respiranox,AM
+G51 & G52,A,5,8041,A5,Non-viable cells,AM
+G51 & G52,A,6,7595,A6,Media / blank,AM
+G51 & G52,B,1,13372,B1,Healthy,AM
+G51 & G52,B,2,32334,B2,Diseased,AM
+G51 & G52,B,3,13273,B3,Treated cells - 10 uM Respiranox,AM
+G51 & G52,B,4,8648,B4,Treated cells - 20 uM Respiranox,AM
+G51 & G52,B,5,7285,B5,Non-viable cells,AM
+G51 & G52,B,6,7625,B6,Media / blank,AM
+G51 & G52,C,1,14874,C1,Healthy,AM
+G51 & G52,C,2,12532,C2,Diseased,AM
+G51 & G52,C,3,12771,C3,Treated cells - 10 uM Respiranox,AM
+G51 & G52,C,4,8290,C4,Treated cells - 20 uM Respiranox,AM
+G51 & G52,C,5,7320,C5,Non-viable cells,AM
+G51 & G52,C,6,7424,C6,Media / blank,AM
+G53 & G54,A,1,20704,A1,Healthy,AM
+G53 & G54,A,2,26892,A2,Diseased,AM
+G53 & G54,A,3,30094,A3,Treated cells - 10 uM Respiranox,AM
+G53 & G54,A,4,19245,A4,Treated cells - 20 uM Respiranox,AM
+G53 & G54,A,5,18405,A5,Non-viable cells,AM
+G53 & G54,A,6,15172,A6,Media / blank,AM
+G53 & G54,B,1,20100,B1,Healthy,AM
+G53 & G54,B,2,24175,B2,Diseased,AM
+G53 & G54,B,3,21015,B3,Treated cells - 10 uM Respiranox,AM
+G53 & G54,B,4,18925,B4,Treated cells - 20 uM Respiranox,AM
+G53 & G54,B,5,15552,B5,Non-viable cells,AM
+G53 & G54,B,6,15439,B6,Media / blank,AM
+G53 & G54,C,1,31532,C1,Healthy,AM
+G53 & G54,C,2,22428,C2,Diseased,AM
+G53 & G54,C,3,20990,C3,Treated cells - 10 uM Respiranox,AM
+G53 & G54,C,4,25060,C4,Treated cells - 20 uM Respiranox,AM
+G53 & G54,C,5,15256,C5,Non-viable cells,AM
+G53 & G54,C,6,15349,C6,Media / blank,AM
+G55 & G56,A,1,30313,A1,Healthy,AM
+G55 & G56,A,2,22457,A2,Diseased,AM
+G55 & G56,A,3,24683,A3,Treated cells - 10 uM Respiranox,AM
+G55 & G56,A,4,16209,A4,Treated cells - 20 uM Respiranox,AM
+G55 & G56,A,5,14963,A5,Non-viable cells,AM
+G55 & G56,A,6,15068,A6,Media / blank,AM
+G55 & G56,B,1,23831,B1,Healthy,AM
+G55 & G56,B,2,19824,B2,Diseased,AM
+G55 & G56,B,3,21874,B3,Treated cells - 10 uM Respiranox,AM
+G55 & G56,B,4,19026,B4,Treated cells - 20 uM Respiranox,AM
+G55 & G56,B,5,14141,B5,Non-viable cells,AM
+G55 & G56,B,6,14078,B6,Media / blank,AM
+G55 & G56,C,1,27767,C1,Healthy,AM
+G55 & G56,C,2,20124,C2,Diseased,AM
+G55 & G56,C,3,24080,C3,Treated cells - 10 uM Respiranox,AM
+G55 & G56,C,4,15563,C4,Treated cells - 20 uM Respiranox,AM
+G55 & G56,C,5,14305,C5,Non-viable cells,AM
+G55 & G56,C,6,14457,C6,Media / blank,AM
+G57 & G58,A,1,25136,A1,Healthy,AM
+G57 & G58,A,2,21756,A2,Diseased,AM
+G57 & G58,A,3,24562,A3,Treated cells - 10 uM Respiranox,AM
+G57 & G58,A,4,18727,A4,Treated cells - 20 uM Respiranox,AM
+G57 & G58,A,5,15656,A5,Non-viable cells,AM
+G57 & G58,A,6,15598,A6,Media / blank,AM
+G57 & G58,B,1,22160,B1,Healthy,AM
+G57 & G58,B,2,17079,B2,Diseased,AM
+G57 & G58,B,3,21649,B3,Treated cells - 10 uM Respiranox,AM
+G57 & G58,B,4,16378,B4,Treated cells - 20 uM Respiranox,AM
+G57 & G58,B,5,14252,B5,Non-viable cells,AM
+G57 & G58,B,6,13883,B6,Media / blank,AM
+G57 & G58,C,1,20552,C1,Healthy,AM
+G57 & G58,C,2,19958,C2,Diseased,AM
+G57 & G58,C,3,24584,C3,Treated cells - 10 uM Respiranox,AM
+G57 & G58,C,4,16688,C4,Treated cells - 20 uM Respiranox,AM
+G57 & G58,C,5,14897,C5,Non-viable cells,AM
+G57 & G58,C,6,13786,C6,Media / blank,AM
+G59 & G60,A,1,45236,A1,Healthy,AM
+G59 & G60,A,2,19156,A2,Diseased,AM
+G59 & G60,A,3,32423,A3,Treated cells - 10 uM Respiranox,AM
+G59 & G60,A,4,21377,A4,Treated cells - 20 uM Respiranox,AM
+G59 & G60,A,5,14514,A5,Non-viable cells,AM
+G59 & G60,A,6,13899,A6,Media / blank,AM
+G59 & G60,B,1,34437,B1,Healthy,AM
+G59 & G60,B,2,22837,B2,Diseased,AM
+G59 & G60,B,3,24484,B3,Treated cells - 10 uM Respiranox,AM
+G59 & G60,B,4,20526,B4,Treated cells - 20 uM Respiranox,AM
+G59 & G60,B,5,13766,B5,Non-viable cells,AM
+G59 & G60,B,6,12955,B6,Media / blank,AM
+G59 & G60,C,1,32430,C1,Healthy,AM
+G59 & G60,C,2,25044,C2,Diseased,AM
+G59 & G60,C,3,31453,C3,Treated cells - 10 uM Respiranox,AM
+G59 & G60,C,4,21336,C4,Treated cells - 20 uM Respiranox,AM
+G59 & G60,C,5,13931,C5,Non-viable cells,AM
+G59 & G60,C,6,13259,C6,Media / blank,AM
+,,1,NA,1,Healthy,AM
+,,2,NA,2,Diseased,AM
+,,3,NA,3,Treated cells - 10 uM Respiranox,AM
+,,4,NA,4,Treated cells - 20 uM Respiranox,AM
+,,5,NA,5,Non-viable cells,AM
+,,6,NA,6,Media / blank,AM
+,,1,NA,1,Healthy,AM
+,,2,NA,2,Diseased,AM
+,,3,NA,3,Treated cells - 10 uM Respiranox,AM
+,,4,NA,4,Treated cells - 20 uM Respiranox,AM
+,,5,NA,5,Non-viable cells,AM
+,,6,NA,6,Media / blank,AM
+,,1,NA,1,Healthy,AM
+,,2,NA,2,Diseased,AM
+,,3,NA,3,Treated cells - 10 uM Respiranox,AM
+,,4,NA,4,Treated cells - 20 uM Respiranox,AM
+,,5,NA,5,Non-viable cells,AM
+,,6,NA,6,Media / blank,AM
+,,1,NA,1,Healthy,AM
+,,2,NA,2,Diseased,AM
+,,3,NA,3,Treated cells - 10 uM Respiranox,AM
+,,4,NA,4,Treated cells - 20 uM Respiranox,AM
+,,5,NA,5,Non-viable cells,AM
+,,6,NA,6,Media / blank,AM

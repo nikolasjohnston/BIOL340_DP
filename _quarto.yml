@@ -53,7 +53,10 @@ website:
         contents: 
         - href: pages/DP1/DP1_Final.qmd
           text: Dry Prac 1 Notes
-
+        - href: pages/supplementary/cheetsheet.qmd
+          text: Additional ggplot2 support
+        - href: pages/supplementary/function_glossary.qmd
+          text: Function glossary and examples
 
       - section: "Pre-Lab 2 - Data manipulation"
         contents:
@@ -86,7 +89,7 @@ website:
       #       text: Dry Prac 4 Notes
       #       
             
-      - section: "Extra help with Graphics"
+      - section: "Extra help and useful info"
         contents:
         - href: pages/2/1_ggplotgrammar.qmd
           text: Graphics in ggplot2
@@ -94,6 +97,9 @@ website:
           text: Basic plots
         - href: pages/supplementary/cheetsheet.qmd
           text: Additional ggplot2 support
+        - href: pages/supplementary/function_glossary.qmd
+          text: Function glossary and examples
+
             
         - section: "Themes a customisation in ggplot2"
           contents:        

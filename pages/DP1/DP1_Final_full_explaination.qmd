@@ -8,7 +8,7 @@ date: "March, 2026"
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
-# Part 1: Introduction and Welcome to R!
+# Introduction and Welcome to R!
 
 In this dry prac we will learn how to use **R**, **tidyverse**, and **ggplot2** to analyse the datasets you generated during the BIOL340 wet labs.
 
@@ -180,7 +180,7 @@ library(ggpubr)
 
 We are now set up to start looking at our data from **Wet Lab 1**
 
-# Part 2: Visualising Cell Counts and Concentration from Wet Lab 1
+# Visualizing Cell Counts and Concentration from Wet Lab 1
 
 In Wet Practical 1, you determined cell concentration and the number of live and dead cells for *healthy* and *diseased* samples.
 
@@ -209,7 +209,7 @@ head(Class_data)
 Class_data <- read.csv("~/git/BIOL340_DP/pages/DP1/cell_data.csv")
 ```
 
-If you are curious the functions in the above code chunk do the following: `read.csv()` imports a CSV file. `head(Class_data)` prints the first 6 rows, so you can quickly inspect your dataset.
+If you are curious the functions in the above code chunk do the following: - `setwd()` sets your working directory. - `read.csv()` imports a CSV file. - `mutate()` modifies or adds columns. - `head(Class_data)` prints the first 6 rows, so you can quickly inspect your dataset.
 
 ## Making a Boxplot
 
@@ -266,7 +266,7 @@ p
 
 > Make a custom graph with interesting aesthetics. Use generative AI (e.g., ChatGPT or Copilot) to get ideas on what to change (colors, theme, legend placement, etc.). You can copy and paste your code into co-pilot and chatGTP and ask for it to change things based on what you would like to see.
 
-# Part 3: Analysing Wet Lab 2 Data in R
+# Analysing Wet Lab 2 Data in R
 
 In this section we will work through the analysis of the **MTS and Calcein-AM microplate assay data** from Wet Lab 2.
 
@@ -292,88 +292,194 @@ In the wet lab, each treatment was measured in **triplicate wells**. This is imp
 7.  **Calculate relative viability compared with the healthy control**
 8.  **Make plots to visualise the results**
 
-Prior to this dry lab we have run through the data analysis in Excel, we are now going to try importing the data into R and graphing using the skills you have developed in ggplot2
-
-## Question 2 {style="color: red"}
-
-> **Reflect:** What do you think a barrier to analysis the Excel processed data in R will be? What do you think the advantages of using R could be?
-
-## Thinking outside the cell, reading and formatting your data
-
-So far you have been working with your data in cells, using the tools available in Excel and the tables provided in your prac manual. When it comes to importing data into R we have to think a little differently as we no longer work with the data *visually* using a Graphical User Interface (i.e. a GUI).
-
-::: callout-note
-### ACTION REQUIRED {style="color: red"}
-
-First we need to convert our excel data from a spreadsheet (or .xls) file to a comma seperated text file (or csv.).
-
-Open the class data from wetlab 2 and open it in Excel. You can now use `save as` in Excel and choose the option to save as a comma separated file.
-
-This should save your data with the file extension `.csv`. Now open the data in `Visual Studio Code` on your computer, you will see that all our 'nice' formatting we did to make the data easier to understand actually makes it very confusing for the computer to interpret what each data point means.
-:::
-
-We need to simplify things so that the software can distinguish between our different variables.
-
-I.e. we need to make it clear what each cell represents in terms of **treatment**, **cell concentration** and **signal.**
-
-The easiest way to do this is to make each of these variables the headings of the columns in your data, then input the information for each data point. This is also sometimes referred to as "long format" data. For todays dry prac, we have done this for you.
-
-::: callout-note
-### ACTION REQUIRED {style="color: red"}
-
-Download the plate data .csv files for both assays from moodle. This data has already been formatted into "long format" for you.
-
-Open the data for both assays in R and store them as seperate variables using the code below. Remember to change the location in `read.csv()` to where the file is stored on your computer.
-:::
-
 # Import the data
+
+The assay data should be saved as a two seperate `.csv` files available on Moodle.
+
+### ACTION REQUIRED {style="color: red"}
+
+Download the .csv files for the MTS and calcein-AM assays from Moodle. Then load them into R studio.
 
 ## IMPORTANT! {style="color: red"}
 
 > **To help make you more familiar with manipulating code blocks the instructions below will be given only for the Calcein-AM assay. Please make sure you repeat the instructions for MTS as well. This will usually only require changing the names of different objects from cam to MTS and making sure you read in the data correctly.**
-
-We will now import the downloaded plate data into RStudio.
-
-```{r include=FALSE}
-# This hidden chunk is used only so the Quarto document can render online.
-# It loads a copy of the dataset stored inside the project folder.
-plate_data_cAM <- read.csv("~/git/BIOL340_DP/pages/DP1/filtered_camassay_class_data")
-```
 
 ```{r eval=FALSE}
 # Import the Calcein-AM plate data
 # file.choose() lets you manually select the file from your computer
 
 plate_data_cAM <- read.csv(file.choose(), check.names = FALSE)
+plate_data_MTS <- read.csv(file.choose(), check.names = FALSE)
 
-# View the first few rows of the imported data
-head(plate_data_cAM)
-
-# Check the column names
-names(plate_data_cAM)
 
 
 ##now repeat this for Calcein AM
 ```
 
+```{r include=FALSE}
+# This hidden chunk is used only so the Quarto document can render online.
+# It loads a copy of the dataset stored inside the project folder.
+plate_data_cAM <- read.csv("~/git/BIOL340_DP/pages/DP1/cam_plate.csv")
+```
+
+### Practical note {style="color: red"}
+
 At this stage it is always a good idea to inspect the file carefully. You can do that by clicking on the name of the object in the data window on right of the RStudio Window:
 
 ![](images/clipboard-294577816.png)
+
+You should see something like this:\
+![](images/clipboard-2970986192.png)
 
 Ask yourself:
 
 -   Does the data look like the plate layout from the practical?
 -   Are the first columns storing the group and row information?
--   What are the measurement columns called?
+-   Are the measurement columns named `1`, `2`, `3`, etc. or `X1`, `X2`, `X3`?
 
 Different `.csv` files can import slightly differently into R, so checking the structure of the data is an important habit.
 
+------------------------------------------------------------------------
+
+# Reshape the plate data into long format
+
+Right now the data is still arranged like a plate, which is easy for humans to read but not ideal for R.
+
+Our plate currently looks like a spreadsheet. Each column represents a well.
+
+R works better when each row is one measurement.
+
+`pivot_longer()` converts the spreadsheet format into this structure
+
+```{r}
+# Convert the raw plate data into long format
+
+cam_long <- plate_data_cAM %>%   # Start with the imported Calcein-AM dataset
+
+  select(1:8) %>%                # Keep only the first 8 columns
+                                 # column 1 = Group
+                                 # column 2 = Plate row (A–D)
+                                 # columns 3–8 = measurement columns
+
+  rename(
+    Group = 1,                   # Rename column 1 to "Group"
+    Row = 2                      # Rename column 2 to "Row"
+  ) %>%
+
+  pivot_longer(
+    cols = 3:8,                  # Convert Columns 3-8  into rows
+    names_to = "Column",
+    values_to = "signal"
+  ) %>%
+
+  mutate(
+    
+# Convert the column labels to text
+# Sometimes R imports column names like 1,2,3 as numbers or factors.
+# Converting them to characters ensures they behave consistently when we compare them later.
+
+    Column = as.character(Column),
+    
+# Create well ID that joins togeather the row letter with the column number
+# Example: Row = "A" and Column = "1" becomes "A1"
+    well = paste0(Row, Column),  
+
+
+# Create a new column called "condition"
+# This assigns each well to its treatment condition
+# based on which plate column it came from
+    condition = case_when(
+      Column %in% c("1","X1") ~ "Healthy",
+      Column %in% c("2","X2") ~ "Diseased",
+      Column %in% c("3","X3") ~ "Treated cells - 10 uM Respiranox",
+      Column %in% c("4","X4") ~ "Treated cells - 20 uM Respiranox",
+      Column %in% c("5","X5") ~ "Non-viable cells",
+      Column %in% c("6","X6") ~ "Media / blank"
+    )
+  )
+
+head(cam_long)
+
+
+mts_long <- plate_data_MTS %>%   # Start with the imported Calcein-AM dataset
+
+  select(1:8) %>%                # Keep only the first 8 columns
+                                 # column 1 = Group
+                                 # column 2 = Plate row (A–D)
+                                 # columns 3–8 = measurement columns
+
+  rename(
+    Group = 1,                   # Rename column 1 to "Group"
+    Row = 2                      # Rename column 2 to "Row"
+  ) %>%
+
+  pivot_longer(
+    cols = 3:8,                  # Convert Columns 3-8  into rows
+    names_to = "Column",
+    values_to = "signal"
+  ) %>%
+
+  mutate(
+    
+# Convert the column labels to text
+# Sometimes R imports column names like 1,2,3 as numbers or factors.
+# Converting them to characters ensures they behave consistently when we compare them later.
+
+    Column = as.character(Column),
+    
+# Create well ID that joins togeather the row letter with the column number
+# Example: Row = "A" and Column = "1" becomes "A1"
+    well = paste0(Row, Column),  
+
+
+# Create a new column called "condition"
+# This assigns each well to its treatment condition
+# based on which plate column it came from
+    condition = case_when(
+      Column %in% c("1","X1") ~ "Healthy",
+      Column %in% c("2","X2") ~ "Diseased",
+      Column %in% c("3","X3") ~ "Treated cells - 10 uM Respiranox",
+      Column %in% c("4","X4") ~ "Treated cells - 20 uM Respiranox",
+      Column %in% c("5","X5") ~ "Non-viable cells",
+      Column %in% c("6","X6") ~ "Media / blank"
+    )
+  )
+
+head(cam_long)
+head(mts_long)
+
+```
+
 ### Practical note {style="color: red"}
 
-> At this point each row represents **one well measurement** and Row 'D' has been removed\
-> This structure is much easier for R to analyse and plot.
+At this point each row represents **one well measurement**.\
+This structure is much easier for R to analyse and plot.
 
-## Average the triplicate wells
+------------------------------------------------------------------------
+
+# Remove row D
+
+For this analysis we only use rows **A–C**. So we are going to remove row **D** before we make any calculations.
+
+```{r}
+cam_filtered <- cam_long %>%
+#the fuction filter will remove data
+  filter(Row != "D")
+
+write_csv(cam_filtered, 'filtered_camassay_class_data')
+
+mts_filtered <- mts_long
+
+write_csv(mts_filtered, 'filtered_mtsassay_class_data')
+```
+
+### Practical note {style="color: red"}
+
+Filtering row D **before calculating means** ensures that row D does not influence the averages.
+
+------------------------------------------------------------------------
+
+# Average the triplicate wells
 
 Each treatment was measured in triplicate wells.\
 We now calculate the **mean signal** for each treatment.
@@ -382,7 +488,7 @@ We now calculate the **mean signal** for each treatment.
 # Create a new dataset called cam_summary that contains
 # the average signal for each treatment within each group
 
-cam_summary <- plate_data_cAM %>%     # Start with the filtered dataset (rows A–C only)
+cam_summary <- cam_filtered %>%     # Start with the filtered dataset (rows A–C only)
 
   # group_by() tells R to split the data into groups
   # Here we separate the data by:
@@ -405,7 +511,9 @@ cam_summary
 
 Each treatment now has **one average signal value per group**.
 
-## Calculate blank signal
+------------------------------------------------------------------------
+
+# Calculate blank signal
 
 Blank wells measure background fluorescence from the media and assay reagents.
 
@@ -426,7 +534,9 @@ cam_blank_values <- cam_summary %>%     # Start with the dataset that contains
   select(Group, blank_mean = mean_signal)
 ```
 
-## Background correction
+------------------------------------------------------------------------
+
+# Background correction
 
 Now we subtract the background signal.
 
@@ -467,7 +577,9 @@ Raw fluorescence contains:
 
 Subtracting the blank removes this background.
 
-## Calculate relative viability
+------------------------------------------------------------------------
+
+# Calculate relative viability
 
 Healthy cells are defined as **100% viability**.
 
@@ -504,7 +616,9 @@ relative viability (%) =
 (sample signal / healthy signal) × 100
 ```
 
-## Plot class relative viability
+------------------------------------------------------------------------
+
+# Plot class relative viability
 
 we can now make a simple plot of the entire class data, this will allow us to visualise means and outliers. We will use boxplots as we have before but also make use of another type of geom called `geom_jitter()`. This type of plot will show every single data point from your data and move it (or jitter it) a little bit left or right so you can see multiple data of the same value. This is really good for visualising the density of data around a particular point. To help with visualising this much data at once we will also use a low `alpha` value within `geom_jitter()`, this will increase the transparency with **alpha = 1** being fully opaque and **alpha = 0** being invisible.
 
@@ -552,7 +666,9 @@ Here we will:
 2.  Use **pairwise t-tests** to compare between treatments
 3.  Visualise these statistics on our **boxplots**
 
-## Statistical analysis of treatment effects
+------------------------------------------------------------------------
+
+# Statistical analysis of treatment effects
 
 So far we have visualised individual datapoints.
 
@@ -563,7 +679,9 @@ However, to determine whether these differences are **statistically significant*
 
 Because we are comparing **more than two treatments**, we use a method called **Analysis of Variance (ANOVA)**. You should have learnt about this kind of statistical test in 2nd year.
 
-### Step 1 — Run a one-way ANOVA
+------------------------------------------------------------------------
+
+# Step 1 — Run a one-way ANOVA
 
 ANOVA tests whether the **means of multiple groups are different from each other**.
 
@@ -575,7 +693,7 @@ anova_model <- aov(relative_viability ~ condition, data = viability_cam)
 summary(anova_model)
 ```
 
-#### Interpretation
+## Interpretation
 
 Look at the **p-value** in the ANOVA output.
 
@@ -583,7 +701,9 @@ If the p-value is **less than 0.05**, this suggests that **at least one treatmen
 
 However, ANOVA does not tell us **which treatments differ**.
 
-### Step 2 — Perform pairwise comparisons
+------------------------------------------------------------------------
+
+# Step 2 — Perform pairwise comparisons
 
 To determine which treatments differ from each other, we perform **post-hoc comparisons**.
 
@@ -604,7 +724,9 @@ pairwise_table
 
 This table shows the **adjusted p-values** for each pair of treatments.
 
-### Step 3 — Visualise the results on the figure
+------------------------------------------------------------------------
+
+# Step 3 — Visualise the results on the figure
 
 We can now add these statistical results directly to our boxplot. Will make use of a new package called `ggpubr`.
 
@@ -670,7 +792,9 @@ ggplot(viability_cam, aes(x = condition, y = relative_viability, colour = condit
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-#### What this figure shows
+------------------------------------------------------------------------
+
+# What this figure shows
 
 This final figure includes:
 
@@ -679,7 +803,7 @@ This final figure includes:
 -   the **ANOVA result**
 -   the **pairwise statistical comparisons**
 
-#### Significance labels
+### Significance labels
 
 -   `ns` = not significant\
 -   `*` = p \< 0.05\
@@ -687,6 +811,18 @@ This final figure includes:
 -   `***` = p \< 0.001
 
 These comparisons help determine which treatments have significantly different effects on cell viability.Interpretation
+
+------------------------------------------------------------------------
+
+# Activities and questions
+
+## Activity 2 {style="color: red"}
+
+> Customize your plot to improve its appearance. - Adjust point size and color - Modify or remove legends - Evaluate whether you need to show all data labels or tick marks - Explore other themes (e.g., `theme_bw()`, `theme_classic()`). Feel free to look at the ggplot2 cheat sheet available on the dry prac website, we have also provided extra information for plotting under "extra help with graphics"
+
+## Activity 3 {style="color: red"}
+
+> Repeat this plot for the MTS dataset. This should be simple as you will only need to change what variable is plotted by code you already have! The code should remain the same. This is one powerful aspect of R, reproducibility!
 
 ## Exporting Plots
 
@@ -698,29 +834,19 @@ Example:
 ggsave("myplot.png", plot = p, width = 6, height = 4)
 ```
 
-## Activities and questions
-
-### Activity 2 {style="color: red"}
-
-> Customize your plot to improve its appearance. - Adjust point size and color - Modify or remove legends - Evaluate whether you need to show all data labels or tick marks - Explore other themes (e.g., `theme_bw()`, `theme_classic()`). Feel free to look at the ggplot2 cheat sheet available on the dry prac website, we have also provided extra information for plotting under "extra help with graphics"
-
-### Activity 3 {style="color: red"}
-
-> Repeat this plot for the MTS dataset. This should be simple as you will only need to change what variable is plotted by code you already have! The code should remain the same. This is one powerful aspect of R, reproducibility!
-
-### Activity 4 {style="color: red"}
+## Activity 4 {style="color: red"}
 
 > Export your final R-generated figures for the MTS and Calcein-AM assays as PNG files. Try setting the file dimensions to 600×400.
 
-### Question 4 {style="color: red"}
+## Question 4 {style="color: red"}
 
 > Where do these files save on your computer? Why is that location used?
 
-### Question 5 {style="color: red"}
+## Question 5 {style="color: red"}
 
 > Write a brief comparison of the two assays you performed. Which was faster, more reproducible, or more sensitive?
 
-### Question 6 {style="color: red"}
+## Question 6 {style="color: red"}
 
 > Based on the statistical results:
 >
@@ -732,7 +858,7 @@ ggsave("myplot.png", plot = p, width = 6, height = 4)
 
 \newpage
 
-## Common Errors and How to Fix Them
+# Common Errors and How to Fix Them
 
 Some commonly encountered errors include:
 
@@ -743,11 +869,490 @@ Some commonly encountered errors include:
 
 \newpage
 
-## Conclusion
+# Conclusion
 
 In this Dry Practical, we:
 
 -   Learned how to import and analyse data in both Excel and R.
 -   Learnt how to generate **box** and **scatter** plots in R
 -   Learnt how to complete some basic data manipulation and cleaning
--   Calculated **relative viability** for different cell treatments across two assay types.
+-   Calculated **relative viability** for different cell treatments.
+
+# Function Glossary
+
+During this practical you used a range of different **R functions** to import data, inspect it, clean it, graph it, and run basic statistics.
+
+A **function** is simply a command that tells R to do something.
+
+This glossary includes **all of the main functions used in this practical**, along with a short explanation and a simple example.
+
+------------------------------------------------------------------------
+
+#### Setup and document functions
+
+`knitr::opts_chunk$set()`
+
+Sets global options for code chunks in an R Markdown or Quarto document.
+
+In this practical it was used to control whether code, warnings, and messages are shown.
+
+knitr::opts_chunk\$set(echo = TRUE, message = FALSE, warning = FALSE)
+
+------------------------------------------------------------------------
+
+#### Installing and loading packages
+
+`install.packages()`
+
+Installs a package so it can be used in R.
+
+You only need to do this once per computer.
+
+install.packages("tidyverse")
+
+------------------------------------------------------------------------
+
+`library()`
+
+Loads a package into your current R session.
+
+You usually need to run this each time you open RStudio.
+
+library(tidyverse) library(plotly) library(ggpubr)
+
+------------------------------------------------------------------------
+
+#### Basic R functions
+
+`sqrt()`
+
+Calculates the square root of a number.
+
+sqrt(4)
+
+------------------------------------------------------------------------
+
+`round()`
+
+Rounds a number to a chosen number of decimal places.
+
+round(3.14159, digits = 2)
+
+------------------------------------------------------------------------
+
+`c()`
+
+Combines multiple values into a single vector.
+
+c("flies", "beetles", "katydids")
+
+------------------------------------------------------------------------
+
+#### Importing and inspecting data
+
+#### `read.csv()`
+
+Imports a `.csv` file into R as a dataset.
+
+data \<- read.csv(file.choose())
+
+------------------------------------------------------------------------
+
+`file.choose()`
+
+Opens a file browser so you can select a file from your computer.
+
+read.csv(file.choose())
+
+------------------------------------------------------------------------
+
+`head()`
+
+Shows the first few rows of a dataset.
+
+Useful for checking whether your file imported correctly.
+
+head(data)
+
+------------------------------------------------------------------------
+
+`names()`
+
+Displays the column names of a dataset.
+
+names(data)
+
+------------------------------------------------------------------------
+
+`unique()`
+
+Shows the unique values in a column.
+
+Useful for checking whether filtering worked correctly.
+
+unique(cam_filtered\$Row)
+
+------------------------------------------------------------------------
+
+`as.numeric()`
+
+Converts values into numeric form.
+
+This is useful when a column has been imported as text instead of numbers.
+
+as.numeric(Class_data\$CellConcentration)
+
+------------------------------------------------------------------------
+
+`as.character()`
+
+Converts values into text.
+
+This is useful when you want to compare column names or labels as text.
+
+as.character(cam_long\$Column)
+
+------------------------------------------------------------------------
+
+#### Data manipulation functions from tidyverse
+
+`select()`
+
+Keeps only selected columns from a dataset.
+
+select(data, Group, Row)
+
+Example from this practical:
+
+select(1:8)
+
+------------------------------------------------------------------------
+
+`rename()`
+
+Changes the names of columns.
+
+rename(data, Group = 1, Row = 2)
+
+------------------------------------------------------------------------
+
+`pivot_longer()`
+
+Converts data from a wide spreadsheet layout into long format.
+
+This is useful when you want each row to represent one measurement.
+
+pivot_longer(data, cols = 3:8, names_to = "Column", values_to = "signal")
+
+------------------------------------------------------------------------
+
+`mutate()`
+
+Creates a new column or changes an existing column.
+
+mutate(data, doubled_value = value \* 2)
+
+Example from this practical:
+
+mutate(corrected_signal = mean_signal - blank_mean)
+
+------------------------------------------------------------------------
+
+`case_when()`
+
+Creates values based on a set of rules.
+
+This is useful when assigning labels such as treatment conditions.
+
+case_when( Column == "1" \~ "Healthy", Column == "2" \~ "Diseased" )
+
+------------------------------------------------------------------------
+
+`filter()`
+
+Keeps only rows that meet a condition.
+
+filter(data, Row != "D")
+
+Example:
+
+filter(condition == "Media / blank")
+
+------------------------------------------------------------------------
+
+`group_by()`
+
+Groups the data so later calculations are done separately within each group.
+
+group_by(data, Group, condition)
+
+------------------------------------------------------------------------
+
+`summarise()`
+
+Calculates summary statistics such as means.
+
+summarise(data, mean_signal = mean(signal))
+
+Example from this practical:
+
+summarise(mean_signal = mean(signal, na.rm = TRUE))
+
+------------------------------------------------------------------------
+
+`left_join()`
+
+Combines two datasets using a shared column.
+
+This was used to add blank values back onto the treatment table.
+
+left_join(dataset1, dataset2, by = "Group")
+
+------------------------------------------------------------------------
+
+#### Other functions
+
+`mean()`
+
+Calculates the average value.
+
+mean(c(2, 4, 6))
+
+Example from this practical:
+
+mean(signal, na.rm = TRUE)
+
+------------------------------------------------------------------------
+
+`paste0()`
+
+Joins pieces of text together with no spaces.
+
+This was used to create well IDs such as `A1` or `B3`.
+
+paste0("A", "1")
+
+------------------------------------------------------------------------
+
+`list()`
+
+Creates a list.
+
+In this practical it was used to define pairs of treatments for statistical comparisons.
+
+list( c("Healthy", "Diseased"), c("Diseased", "Treated cells - 10 uM Respiranox") )
+
+------------------------------------------------------------------------
+
+#### Plotting functions from ggplot2
+
+`ggplot()`
+
+Starts a graph.
+
+You give it a dataset and then add layers.
+
+ggplot(data, aes(x = Treatment, y = viability))
+
+------------------------------------------------------------------------
+
+`aes()`
+
+Short for aesthetics.
+
+This tells ggplot which variables to use for the x-axis, y-axis, colour, and so on.
+
+aes(x = condition, y = relative_viability, colour = condition)
+
+------------------------------------------------------------------------
+
+`geom_boxplot()`
+
+Adds a boxplot layer to a graph.
+
+geom_boxplot()
+
+------------------------------------------------------------------------
+
+`geom_jitter()`
+
+Adds individual points with a little horizontal spread so they do not overlap too much.
+
+geom_jitter(width = 0.15, size = 3)
+
+------------------------------------------------------------------------
+
+`labs()`
+
+Adds a title and axis labels to a graph.
+
+labs( title = "Relative viability of treatments", x = "Condition", y = "Relative viability (%)" )
+
+------------------------------------------------------------------------
+
+`theme_minimal()`
+
+Applies a clean visual style to the plot.
+
+theme_minimal()
+
+------------------------------------------------------------------------
+
+`theme_classic()`
+
+Applies another simple visual style to the plot.
+
+theme_classic()
+
+------------------------------------------------------------------------
+
+`theme()`
+
+Allows you to customise smaller visual details of a plot.
+
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+------------------------------------------------------------------------
+
+`element_text()`
+
+Controls the appearance of text in a plot, such as angle or size.
+
+element_text(angle = 45, hjust = 1)
+
+------------------------------------------------------------------------
+
+`scale_y_continuous()`
+
+Controls the y-axis scale.
+
+In this practical it was used to create extra space above the plot for significance labels.
+
+scale_y_continuous(expand = expansion(mult = c(0.05, 0.25)))
+
+------------------------------------------------------------------------
+
+`expansion()`
+
+Adds extra space around an axis.
+
+expansion(mult = c(0.05, 0.25))
+
+------------------------------------------------------------------------
+
+`ggsave()`
+
+Saves a plot to a file such as PNG or PDF.
+
+ggsave("myplot.png", width = 6, height = 4)
+
+Example from this practical:
+
+ggsave("stat_plot.png", final_plot_cam, width = 6, height = 6)
+
+------------------------------------------------------------------------
+
+Statistical functions
+
+`aov()`
+
+Runs an ANOVA model.
+
+This tests whether there is a difference between the means of multiple groups.
+
+anova_model \<- aov(relative_viability \~ condition, data = viability_cam)
+
+------------------------------------------------------------------------
+
+`summary()`
+
+Displays the results of a model or dataset summary.
+
+Example with ANOVA:
+
+summary(anova_model)
+
+------------------------------------------------------------------------
+
+`pairwise.t.test()`
+
+Performs pairwise t-tests between groups.
+
+This is useful after ANOVA when you want to see which pairs of treatments differ.
+
+pairwise.t.test( viability_cam\$relative_viability, viability_cam\$condition, p.adjust.method = "bonferroni" )
+
+------------------------------------------------------------------------
+
+`as.data.frame()`
+
+Converts an object into a data frame.
+
+This was used to display the pairwise p-values as a table.
+
+as.data.frame(pairwise_results\$p.value)
+
+------------------------------------------------------------------------
+
+Statistical annotation functions from ggpubr
+
+`stat_compare_means()`
+
+Adds statistical comparison results directly onto a ggplot.
+
+It can display a global ANOVA result or pairwise comparison labels.
+
+Example for ANOVA:
+
+stat_compare_means(method = "anova", label.y = 140)
+
+Example for pairwise comparisons:
+
+stat_compare_means( comparisons = comparisons, method = "t.test", p.adjust.method = "bonferroni", label = "p.signif" )
+
+------------------------------------------------------------------------
+
+#### Interactive plotting functions from plotly
+
+`ggplotly()`
+
+Converts a ggplot graph into an interactive plot.
+
+ggplotly(cam_plot)
+
+Interactive plots allow you to hover over points and inspect the data in more detail.
+
+------------------------------------------------------------------------
+
+A very short cheat sheet
+
+Here are the most important functions from this practical:
+
+| Function            | What it does              |
+|---------------------|---------------------------|
+| `read.csv()`        | imports a dataset         |
+| `head()`            | previews the first rows   |
+| `filter()`          | removes rows              |
+| `group_by()`        | splits data into groups   |
+| `summarise()`       | calculates averages       |
+| `mutate()`          | creates new columns       |
+| `ggplot()`          | starts a graph            |
+| `geom_boxplot()`    | draws boxplots            |
+| `geom_jitter()`     | plots individual points   |
+| `aov()`             | runs ANOVA                |
+| `pairwise.t.test()` | compares groups           |
+| `ggplotly()`        | makes a graph interactive |
+
+------------------------------------------------------------------------
+
+Final note
+
+You do **not** need to memorise every function in this glossary.
+
+The goal of this practical is to help you:
+
+-   recognise common R commands
+-   understand how biological data is analysed
+-   build confidence using computational tools in cell biology
+
+###### 

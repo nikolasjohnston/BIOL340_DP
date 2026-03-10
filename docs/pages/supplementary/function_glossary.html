@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Dr Nikolas Johnston, University of Wollongong">
+<meta name="dcterms.date" content="2026-03-01">
 
-<title>ggplot_cheatsheet – BIOL340 - Autumn 2026</title>
+<title>Dry Prac function glossary – BIOL340 - Autumn 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../pages/supplementary/function_glossary.html" rel="next">
-<link href="../../pages/DP1/DP1_Final.html" rel="prev">
+<link href="../../pages/1/1_rename.html" rel="next">
+<link href="../../pages/supplementary/cheetsheet.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -94,7 +96,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<meta property="og:title" content="ggplot_cheatsheet – BIOL340 - Autumn 2026">
+<meta property="og:title" content="Dry Prac function glossary – BIOL340 - Autumn 2026">
 <meta property="og:description" content="Homepage for BIOL340 Dry Pracs, University of Wollongong, Autumn 2026.">
 <meta property="og:site_name" content="BIOL340 - Autumn 2026">
 </head>
@@ -270,7 +272,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/DP1/DP1_Final.html">Dry Prac 1</a></li><li class="breadcrumb-item"><a href="../../pages/supplementary/cheetsheet.html">Additional ggplot2 support</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/DP1/DP1_Final.html">Dry Prac 1</a></li><li class="breadcrumb-item"><a href="../../pages/supplementary/function_glossary.html">Function glossary and examples</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -380,13 +382,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/supplementary/cheetsheet.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../pages/supplementary/cheetsheet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Additional ggplot2 support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/supplementary/function_glossary.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/supplementary/function_glossary.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Function glossary and examples</span></a>
   </div>
 </li>
@@ -526,23 +528,41 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#function-glossary" id="toc-function-glossary" class="nav-link active" data-scroll-target="#function-glossary">Function Glossary</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/edit/main/pages/supplementary/function_glossary.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/DP1/DP1_Final.html">Dry Prac 1</a></li><li class="breadcrumb-item"><a href="../../pages/supplementary/cheetsheet.html">Additional ggplot2 support</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/DP1/DP1_Final.html">Dry Prac 1</a></li><li class="breadcrumb-item"><a href="../../pages/supplementary/function_glossary.html">Function glossary and examples</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">ggplot_cheatsheet</h1>
+<h1 class="title">Dry Prac function glossary</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dr Nikolas Johnston, University of Wollongong </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 1, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -552,11 +572,323 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>#Graphing cheat sheets</p>
-<p>Posit, the company that marks Rstudio has created some really fantastic resources to help leverage the most out of ggplot2. Access cheatsheet documents for ggplot2. They are available <a href="https://rstudio.github.io/cheatsheets/html/data-visualization.html">here</a>.</p>
-<p>In particular I recommend looking at the PDF available on this website. <a href="https://rstudio.github.io/cheatsheets/data-visualization.pdf">PDF link</a>.</p>
+<section id="function-glossary" class="level1">
+<h1>Function Glossary</h1>
+<p>During this practical you used a range of different <strong>R functions</strong> to import data, inspect it, clean it, graph it, and run basic statistics.</p>
+<p>A <strong>function</strong> is simply a command that tells R to do something.</p>
+<p>This glossary includes <strong>all of the main functions used in this practical</strong>, along with a short explanation and a simple example.</p>
+<hr>
+<section id="setup-and-document-functions" class="level4">
+<h4 class="anchored" data-anchor-id="setup-and-document-functions">Setup and document functions</h4>
+<p><code>knitr::opts_chunk$set()</code></p>
+<p>Sets global options for code chunks in an R Markdown or Quarto document.</p>
+<p>In this practical it was used to control whether code, warnings, and messages are shown.</p>
+<p>knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)</p>
+<hr>
+</section>
+<section id="installing-and-loading-packages" class="level4">
+<h4 class="anchored" data-anchor-id="installing-and-loading-packages">Installing and loading packages</h4>
+<p><code>install.packages()</code></p>
+<p>Installs a package so it can be used in R.</p>
+<p>You only need to do this once per computer.</p>
+<p>install.packages(“tidyverse”)</p>
+<hr>
+<p><code>library()</code></p>
+<p>Loads a package into your current R session.</p>
+<p>You usually need to run this each time you open RStudio.</p>
+<p>library(tidyverse) library(plotly) library(ggpubr)</p>
+<hr>
+</section>
+<section id="basic-r-functions" class="level4">
+<h4 class="anchored" data-anchor-id="basic-r-functions">Basic R functions</h4>
+<p><code>sqrt()</code></p>
+<p>Calculates the square root of a number.</p>
+<p>sqrt(4)</p>
+<hr>
+<p><code>round()</code></p>
+<p>Rounds a number to a chosen number of decimal places.</p>
+<p>round(3.14159, digits = 2)</p>
+<hr>
+<p><code>c()</code></p>
+<p>Combines multiple values into a single vector.</p>
+<p>c(“flies”, “beetles”, “katydids”)</p>
+<hr>
+</section>
+<section id="importing-and-inspecting-data" class="level4">
+<h4 class="anchored" data-anchor-id="importing-and-inspecting-data">Importing and inspecting data</h4>
+</section>
+<section id="read.csv" class="level4">
+<h4 class="anchored" data-anchor-id="read.csv"><code>read.csv()</code></h4>
+<p>Imports a <code>.csv</code> file into R as a dataset.</p>
+<p>data &lt;- read.csv(file.choose())</p>
+<hr>
+<p><code>file.choose()</code></p>
+<p>Opens a file browser so you can select a file from your computer.</p>
+<p>read.csv(file.choose())</p>
+<hr>
+<p><code>head()</code></p>
+<p>Shows the first few rows of a dataset.</p>
+<p>Useful for checking whether your file imported correctly.</p>
+<p>head(data)</p>
+<hr>
+<p><code>names()</code></p>
+<p>Displays the column names of a dataset.</p>
+<p>names(data)</p>
+<hr>
+<p><code>unique()</code></p>
+<p>Shows the unique values in a column.</p>
+<p>Useful for checking whether filtering worked correctly.</p>
+<p>unique(cam_filtered$Row)</p>
+<hr>
+<p><code>as.numeric()</code></p>
+<p>Converts values into numeric form.</p>
+<p>This is useful when a column has been imported as text instead of numbers.</p>
+<p>as.numeric(Class_data$CellConcentration)</p>
+<hr>
+<p><code>as.character()</code></p>
+<p>Converts values into text.</p>
+<p>This is useful when you want to compare column names or labels as text.</p>
+<p>as.character(cam_long$Column)</p>
+<hr>
+</section>
+<section id="data-manipulation-functions-from-tidyverse" class="level4">
+<h4 class="anchored" data-anchor-id="data-manipulation-functions-from-tidyverse">Data manipulation functions from tidyverse</h4>
+<p><code>select()</code></p>
+<p>Keeps only selected columns from a dataset.</p>
+<p>select(data, Group, Row)</p>
+<p>Example from this practical:</p>
+<p>select(1:8)</p>
+<hr>
+<p><code>rename()</code></p>
+<p>Changes the names of columns.</p>
+<p>rename(data, Group = 1, Row = 2)</p>
+<hr>
+<p><code>pivot_longer()</code></p>
+<p>Converts data from a wide spreadsheet layout into long format.</p>
+<p>This is useful when you want each row to represent one measurement.</p>
+<p>pivot_longer(data, cols = 3:8, names_to = “Column”, values_to = “signal”)</p>
+<hr>
+<p><code>mutate()</code></p>
+<p>Creates a new column or changes an existing column.</p>
+<p>mutate(data, doubled_value = value * 2)</p>
+<p>Example from this practical:</p>
+<p>mutate(corrected_signal = mean_signal - blank_mean)</p>
+<hr>
+<p><code>case_when()</code></p>
+<p>Creates values based on a set of rules.</p>
+<p>This is useful when assigning labels such as treatment conditions.</p>
+<p>case_when( Column == “1” ~ “Healthy”, Column == “2” ~ “Diseased” )</p>
+<hr>
+<p><code>filter()</code></p>
+<p>Keeps only rows that meet a condition.</p>
+<p>filter(data, Row != “D”)</p>
+<p>Example:</p>
+<p>filter(condition == “Media / blank”)</p>
+<hr>
+<p><code>group_by()</code></p>
+<p>Groups the data so later calculations are done separately within each group.</p>
+<p>group_by(data, Group, condition)</p>
+<hr>
+<p><code>summarise()</code></p>
+<p>Calculates summary statistics such as means.</p>
+<p>summarise(data, mean_signal = mean(signal))</p>
+<p>Example from this practical:</p>
+<p>summarise(mean_signal = mean(signal, na.rm = TRUE))</p>
+<hr>
+<p><code>left_join()</code></p>
+<p>Combines two datasets using a shared column.</p>
+<p>This was used to add blank values back onto the treatment table.</p>
+<p>left_join(dataset1, dataset2, by = “Group”)</p>
+<hr>
+</section>
+<section id="other-functions" class="level4">
+<h4 class="anchored" data-anchor-id="other-functions">Other functions</h4>
+<p><code>mean()</code></p>
+<p>Calculates the average value.</p>
+<p>mean(c(2, 4, 6))</p>
+<p>Example from this practical:</p>
+<p>mean(signal, na.rm = TRUE)</p>
+<hr>
+<p><code>paste0()</code></p>
+<p>Joins pieces of text together with no spaces.</p>
+<p>This was used to create well IDs such as <code>A1</code> or <code>B3</code>.</p>
+<p>paste0(“A”, “1”)</p>
+<hr>
+<p><code>list()</code></p>
+<p>Creates a list.</p>
+<p>In this practical it was used to define pairs of treatments for statistical comparisons.</p>
+<p>list( c(“Healthy”, “Diseased”), c(“Diseased”, “Treated cells - 10 uM Respiranox”) )</p>
+<hr>
+</section>
+<section id="plotting-functions-from-ggplot2" class="level4">
+<h4 class="anchored" data-anchor-id="plotting-functions-from-ggplot2">Plotting functions from ggplot2</h4>
+<p><code>ggplot()</code></p>
+<p>Starts a graph.</p>
+<p>You give it a dataset and then add layers.</p>
+<p>ggplot(data, aes(x = Treatment, y = viability))</p>
+<hr>
+<p><code>aes()</code></p>
+<p>Short for aesthetics.</p>
+<p>This tells ggplot which variables to use for the x-axis, y-axis, colour, and so on.</p>
+<p>aes(x = condition, y = relative_viability, colour = condition)</p>
+<hr>
+<p><code>geom_boxplot()</code></p>
+<p>Adds a boxplot layer to a graph.</p>
+<p>geom_boxplot()</p>
+<hr>
+<p><code>geom_jitter()</code></p>
+<p>Adds individual points with a little horizontal spread so they do not overlap too much.</p>
+<p>geom_jitter(width = 0.15, size = 3)</p>
+<hr>
+<p><code>labs()</code></p>
+<p>Adds a title and axis labels to a graph.</p>
+<p>labs( title = “Relative viability of treatments”, x = “Condition”, y = “Relative viability (%)” )</p>
+<hr>
+<p><code>theme_minimal()</code></p>
+<p>Applies a clean visual style to the plot.</p>
+<p>theme_minimal()</p>
+<hr>
+<p><code>theme_classic()</code></p>
+<p>Applies another simple visual style to the plot.</p>
+<p>theme_classic()</p>
+<hr>
+<p><code>theme()</code></p>
+<p>Allows you to customise smaller visual details of a plot.</p>
+<p>theme(axis.text.x = element_text(angle = 45, hjust = 1))</p>
+<hr>
+<p><code>element_text()</code></p>
+<p>Controls the appearance of text in a plot, such as angle or size.</p>
+<p>element_text(angle = 45, hjust = 1)</p>
+<hr>
+<p><code>scale_y_continuous()</code></p>
+<p>Controls the y-axis scale.</p>
+<p>In this practical it was used to create extra space above the plot for significance labels.</p>
+<p>scale_y_continuous(expand = expansion(mult = c(0.05, 0.25)))</p>
+<hr>
+<p><code>expansion()</code></p>
+<p>Adds extra space around an axis.</p>
+<p>expansion(mult = c(0.05, 0.25))</p>
+<hr>
+<p><code>ggsave()</code></p>
+<p>Saves a plot to a file such as PNG or PDF.</p>
+<p>ggsave(“myplot.png”, width = 6, height = 4)</p>
+<p>Example from this practical:</p>
+<p>ggsave(“stat_plot.png”, final_plot_cam, width = 6, height = 6)</p>
+<hr>
+<p>Statistical functions</p>
+<p><code>aov()</code></p>
+<p>Runs an ANOVA model.</p>
+<p>This tests whether there is a difference between the means of multiple groups.</p>
+<p>anova_model &lt;- aov(relative_viability ~ condition, data = viability_cam)</p>
+<hr>
+<p><code>summary()</code></p>
+<p>Displays the results of a model or dataset summary.</p>
+<p>Example with ANOVA:</p>
+<p>summary(anova_model)</p>
+<hr>
+<p><code>pairwise.t.test()</code></p>
+<p>Performs pairwise t-tests between groups.</p>
+<p>This is useful after ANOVA when you want to see which pairs of treatments differ.</p>
+<p>pairwise.t.test( viability_cam$relative_viability, viability_cam$condition, p.adjust.method = “bonferroni” )</p>
+<hr>
+<p><code>as.data.frame()</code></p>
+<p>Converts an object into a data frame.</p>
+<p>This was used to display the pairwise p-values as a table.</p>
+<p>as.data.frame(pairwise_results$p.value)</p>
+<hr>
+<p>Statistical annotation functions from ggpubr</p>
+<p><code>stat_compare_means()</code></p>
+<p>Adds statistical comparison results directly onto a ggplot.</p>
+<p>It can display a global ANOVA result or pairwise comparison labels.</p>
+<p>Example for ANOVA:</p>
+<p>stat_compare_means(method = “anova”, label.y = 140)</p>
+<p>Example for pairwise comparisons:</p>
+<p>stat_compare_means( comparisons = comparisons, method = “t.test”, p.adjust.method = “bonferroni”, label = “p.signif” )</p>
+<hr>
+</section>
+<section id="interactive-plotting-functions-from-plotly" class="level4">
+<h4 class="anchored" data-anchor-id="interactive-plotting-functions-from-plotly">Interactive plotting functions from plotly</h4>
+<p><code>ggplotly()</code></p>
+<p>Converts a ggplot graph into an interactive plot.</p>
+<p>ggplotly(cam_plot)</p>
+<p>Interactive plots allow you to hover over points and inspect the data in more detail.</p>
+<hr>
+<p>A very short cheat sheet</p>
+<p>Here are the most important functions from this practical:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>read.csv()</code></td>
+<td>imports a dataset</td>
+</tr>
+<tr class="even">
+<td><code>head()</code></td>
+<td>previews the first rows</td>
+</tr>
+<tr class="odd">
+<td><code>filter()</code></td>
+<td>removes rows</td>
+</tr>
+<tr class="even">
+<td><code>group_by()</code></td>
+<td>splits data into groups</td>
+</tr>
+<tr class="odd">
+<td><code>summarise()</code></td>
+<td>calculates averages</td>
+</tr>
+<tr class="even">
+<td><code>mutate()</code></td>
+<td>creates new columns</td>
+</tr>
+<tr class="odd">
+<td><code>ggplot()</code></td>
+<td>starts a graph</td>
+</tr>
+<tr class="even">
+<td><code>geom_boxplot()</code></td>
+<td>draws boxplots</td>
+</tr>
+<tr class="odd">
+<td><code>geom_jitter()</code></td>
+<td>plots individual points</td>
+</tr>
+<tr class="even">
+<td><code>aov()</code></td>
+<td>runs ANOVA</td>
+</tr>
+<tr class="odd">
+<td><code>pairwise.t.test()</code></td>
+<td>compares groups</td>
+</tr>
+<tr class="even">
+<td><code>ggplotly()</code></td>
+<td>makes a graph interactive</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>Final note</p>
+<p>You do <strong>not</strong> need to memorise every function in this glossary.</p>
+<p>The goal of this practical is to help you:</p>
+<ul>
+<li>recognise common R commands</li>
+<li>understand how biological data is analysed</li>
+<li>build confidence using computational tools in cell biology</li>
+</ul>
+<section id="section" class="level6">
+<h6 class="anchored" data-anchor-id="section"></h6>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -974,13 +1306,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../pages/DP1/DP1_Final.html" class="pagination-link" aria-label="Dry Prac 1 Notes">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Dry Prac 1 Notes</span>
+      <a href="../../pages/supplementary/cheetsheet.html" class="pagination-link" aria-label="Additional ggplot2 support">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Additional ggplot2 support</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../pages/supplementary/function_glossary.html" class="pagination-link" aria-label="Function glossary and examples">
-        <span class="nav-page-text">Function glossary and examples</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../pages/1/1_rename.html" class="pagination-link" aria-label="The Rename function">
+        <span class="nav-page-text">The Rename function</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -992,7 +1324,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/edit/main/pages/supplementary/cheetsheet.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/edit/main/pages/supplementary/function_glossary.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

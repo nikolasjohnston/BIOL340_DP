@@ -1,0 +1,484 @@
+---
+title: "Dry Prac function glossary"
+author: "Dr Nikolas Johnston, University of Wollongong"
+date: "March, 2026"
+---
+
+# Function Glossary
+
+During this practical you used a range of different **R functions** to import data, inspect it, clean it, graph it, and run basic statistics.
+
+A **function** is simply a command that tells R to do something.
+
+This glossary includes **all of the main functions used in this practical**, along with a short explanation and a simple example.
+
+------------------------------------------------------------------------
+
+#### Setup and document functions
+
+`knitr::opts_chunk$set()`
+
+Sets global options for code chunks in an R Markdown or Quarto document.
+
+In this practical it was used to control whether code, warnings, and messages are shown.
+
+knitr::opts_chunk\$set(echo = TRUE, message = FALSE, warning = FALSE)
+
+------------------------------------------------------------------------
+
+#### Installing and loading packages
+
+`install.packages()`
+
+Installs a package so it can be used in R.
+
+You only need to do this once per computer.
+
+install.packages("tidyverse")
+
+------------------------------------------------------------------------
+
+`library()`
+
+Loads a package into your current R session.
+
+You usually need to run this each time you open RStudio.
+
+library(tidyverse) library(plotly) library(ggpubr)
+
+------------------------------------------------------------------------
+
+#### Basic R functions
+
+`sqrt()`
+
+Calculates the square root of a number.
+
+sqrt(4)
+
+------------------------------------------------------------------------
+
+`round()`
+
+Rounds a number to a chosen number of decimal places.
+
+round(3.14159, digits = 2)
+
+------------------------------------------------------------------------
+
+`c()`
+
+Combines multiple values into a single vector.
+
+c("flies", "beetles", "katydids")
+
+------------------------------------------------------------------------
+
+#### Importing and inspecting data
+
+#### `read.csv()`
+
+Imports a `.csv` file into R as a dataset.
+
+data \<- read.csv(file.choose())
+
+------------------------------------------------------------------------
+
+`file.choose()`
+
+Opens a file browser so you can select a file from your computer.
+
+read.csv(file.choose())
+
+------------------------------------------------------------------------
+
+`head()`
+
+Shows the first few rows of a dataset.
+
+Useful for checking whether your file imported correctly.
+
+head(data)
+
+------------------------------------------------------------------------
+
+`names()`
+
+Displays the column names of a dataset.
+
+names(data)
+
+------------------------------------------------------------------------
+
+`unique()`
+
+Shows the unique values in a column.
+
+Useful for checking whether filtering worked correctly.
+
+unique(cam_filtered\$Row)
+
+------------------------------------------------------------------------
+
+`as.numeric()`
+
+Converts values into numeric form.
+
+This is useful when a column has been imported as text instead of numbers.
+
+as.numeric(Class_data\$CellConcentration)
+
+------------------------------------------------------------------------
+
+`as.character()`
+
+Converts values into text.
+
+This is useful when you want to compare column names or labels as text.
+
+as.character(cam_long\$Column)
+
+------------------------------------------------------------------------
+
+#### Data manipulation functions from tidyverse
+
+`select()`
+
+Keeps only selected columns from a dataset.
+
+select(data, Group, Row)
+
+Example from this practical:
+
+select(1:8)
+
+------------------------------------------------------------------------
+
+`rename()`
+
+Changes the names of columns.
+
+rename(data, Group = 1, Row = 2)
+
+------------------------------------------------------------------------
+
+`pivot_longer()`
+
+Converts data from a wide spreadsheet layout into long format.
+
+This is useful when you want each row to represent one measurement.
+
+pivot_longer(data, cols = 3:8, names_to = "Column", values_to = "signal")
+
+------------------------------------------------------------------------
+
+`mutate()`
+
+Creates a new column or changes an existing column.
+
+mutate(data, doubled_value = value \* 2)
+
+Example from this practical:
+
+mutate(corrected_signal = mean_signal - blank_mean)
+
+------------------------------------------------------------------------
+
+`case_when()`
+
+Creates values based on a set of rules.
+
+This is useful when assigning labels such as treatment conditions.
+
+case_when( Column == "1" \~ "Healthy", Column == "2" \~ "Diseased" )
+
+------------------------------------------------------------------------
+
+`filter()`
+
+Keeps only rows that meet a condition.
+
+filter(data, Row != "D")
+
+Example:
+
+filter(condition == "Media / blank")
+
+------------------------------------------------------------------------
+
+`group_by()`
+
+Groups the data so later calculations are done separately within each group.
+
+group_by(data, Group, condition)
+
+------------------------------------------------------------------------
+
+`summarise()`
+
+Calculates summary statistics such as means.
+
+summarise(data, mean_signal = mean(signal))
+
+Example from this practical:
+
+summarise(mean_signal = mean(signal, na.rm = TRUE))
+
+------------------------------------------------------------------------
+
+`left_join()`
+
+Combines two datasets using a shared column.
+
+This was used to add blank values back onto the treatment table.
+
+left_join(dataset1, dataset2, by = "Group")
+
+------------------------------------------------------------------------
+
+#### Other functions
+
+`mean()`
+
+Calculates the average value.
+
+mean(c(2, 4, 6))
+
+Example from this practical:
+
+mean(signal, na.rm = TRUE)
+
+------------------------------------------------------------------------
+
+`paste0()`
+
+Joins pieces of text together with no spaces.
+
+This was used to create well IDs such as `A1` or `B3`.
+
+paste0("A", "1")
+
+------------------------------------------------------------------------
+
+`list()`
+
+Creates a list.
+
+In this practical it was used to define pairs of treatments for statistical comparisons.
+
+list( c("Healthy", "Diseased"), c("Diseased", "Treated cells - 10 uM Respiranox") )
+
+------------------------------------------------------------------------
+
+#### Plotting functions from ggplot2
+
+`ggplot()`
+
+Starts a graph.
+
+You give it a dataset and then add layers.
+
+ggplot(data, aes(x = Treatment, y = viability))
+
+------------------------------------------------------------------------
+
+`aes()`
+
+Short for aesthetics.
+
+This tells ggplot which variables to use for the x-axis, y-axis, colour, and so on.
+
+aes(x = condition, y = relative_viability, colour = condition)
+
+------------------------------------------------------------------------
+
+`geom_boxplot()`
+
+Adds a boxplot layer to a graph.
+
+geom_boxplot()
+
+------------------------------------------------------------------------
+
+`geom_jitter()`
+
+Adds individual points with a little horizontal spread so they do not overlap too much.
+
+geom_jitter(width = 0.15, size = 3)
+
+------------------------------------------------------------------------
+
+`labs()`
+
+Adds a title and axis labels to a graph.
+
+labs( title = "Relative viability of treatments", x = "Condition", y = "Relative viability (%)" )
+
+------------------------------------------------------------------------
+
+`theme_minimal()`
+
+Applies a clean visual style to the plot.
+
+theme_minimal()
+
+------------------------------------------------------------------------
+
+`theme_classic()`
+
+Applies another simple visual style to the plot.
+
+theme_classic()
+
+------------------------------------------------------------------------
+
+`theme()`
+
+Allows you to customise smaller visual details of a plot.
+
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+------------------------------------------------------------------------
+
+`element_text()`
+
+Controls the appearance of text in a plot, such as angle or size.
+
+element_text(angle = 45, hjust = 1)
+
+------------------------------------------------------------------------
+
+`scale_y_continuous()`
+
+Controls the y-axis scale.
+
+In this practical it was used to create extra space above the plot for significance labels.
+
+scale_y_continuous(expand = expansion(mult = c(0.05, 0.25)))
+
+------------------------------------------------------------------------
+
+`expansion()`
+
+Adds extra space around an axis.
+
+expansion(mult = c(0.05, 0.25))
+
+------------------------------------------------------------------------
+
+`ggsave()`
+
+Saves a plot to a file such as PNG or PDF.
+
+ggsave("myplot.png", width = 6, height = 4)
+
+Example from this practical:
+
+ggsave("stat_plot.png", final_plot_cam, width = 6, height = 6)
+
+------------------------------------------------------------------------
+
+Statistical functions
+
+`aov()`
+
+Runs an ANOVA model.
+
+This tests whether there is a difference between the means of multiple groups.
+
+anova_model \<- aov(relative_viability \~ condition, data = viability_cam)
+
+------------------------------------------------------------------------
+
+`summary()`
+
+Displays the results of a model or dataset summary.
+
+Example with ANOVA:
+
+summary(anova_model)
+
+------------------------------------------------------------------------
+
+`pairwise.t.test()`
+
+Performs pairwise t-tests between groups.
+
+This is useful after ANOVA when you want to see which pairs of treatments differ.
+
+pairwise.t.test( viability_cam\$relative_viability, viability_cam\$condition, p.adjust.method = "bonferroni" )
+
+------------------------------------------------------------------------
+
+`as.data.frame()`
+
+Converts an object into a data frame.
+
+This was used to display the pairwise p-values as a table.
+
+as.data.frame(pairwise_results\$p.value)
+
+------------------------------------------------------------------------
+
+Statistical annotation functions from ggpubr
+
+`stat_compare_means()`
+
+Adds statistical comparison results directly onto a ggplot.
+
+It can display a global ANOVA result or pairwise comparison labels.
+
+Example for ANOVA:
+
+stat_compare_means(method = "anova", label.y = 140)
+
+Example for pairwise comparisons:
+
+stat_compare_means( comparisons = comparisons, method = "t.test", p.adjust.method = "bonferroni", label = "p.signif" )
+
+------------------------------------------------------------------------
+
+#### Interactive plotting functions from plotly
+
+`ggplotly()`
+
+Converts a ggplot graph into an interactive plot.
+
+ggplotly(cam_plot)
+
+Interactive plots allow you to hover over points and inspect the data in more detail.
+
+------------------------------------------------------------------------
+
+A very short cheat sheet
+
+Here are the most important functions from this practical:
+
+| Function            | What it does              |
+|---------------------|---------------------------|
+| `read.csv()`        | imports a dataset         |
+| `head()`            | previews the first rows   |
+| `filter()`          | removes rows              |
+| `group_by()`        | splits data into groups   |
+| `summarise()`       | calculates averages       |
+| `mutate()`          | creates new columns       |
+| `ggplot()`          | starts a graph            |
+| `geom_boxplot()`    | draws boxplots            |
+| `geom_jitter()`     | plots individual points   |
+| `aov()`             | runs ANOVA                |
+| `pairwise.t.test()` | compares groups           |
+| `ggplotly()`        | makes a graph interactive |
+
+------------------------------------------------------------------------
+
+Final note
+
+You do **not** need to memorise every function in this glossary.
+
+The goal of this practical is to help you:
+
+-   recognise common R commands
+-   understand how biological data is analysed
+-   build confidence using computational tools in cell biology
+
+###### 

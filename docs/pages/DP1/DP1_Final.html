@@ -66,7 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../pages/1/1_rename.html" rel="next">
+<link href="../../pages/supplementary/cheetsheet.html" rel="next">
 <link href="../../pages/1/3_columns.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -418,6 +418,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Dry Prac 1 Notes</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/supplementary/cheetsheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Additional ggplot2 support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/supplementary/function_glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Function glossary and examples</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -470,7 +482,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
- <span class="menu-text">Extra help with Graphics</span></a>
+ <span class="menu-text">Extra help and useful info</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -492,6 +504,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../../pages/supplementary/cheetsheet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Additional ggplot2 support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/supplementary/function_glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Function glossary and examples</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
@@ -553,7 +571,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-and-welcome-to-r" id="toc-introduction-and-welcome-to-r" class="nav-link active" data-scroll-target="#introduction-and-welcome-to-r">Introduction and Welcome to R!</a></li>
+  <li><a href="#part-1-introduction-and-welcome-to-r" id="toc-part-1-introduction-and-welcome-to-r" class="nav-link active" data-scroll-target="#part-1-introduction-and-welcome-to-r">Part 1: Introduction and Welcome to R!</a></li>
   <li><a href="#class-objectives" id="toc-class-objectives" class="nav-link" data-scroll-target="#class-objectives">Class Objectives</a>
   <ul class="collapse">
   <li><a href="#how-to-read-this-guide" id="toc-how-to-read-this-guide" class="nav-link" data-scroll-target="#how-to-read-this-guide">How to Read This Guide</a></li>
@@ -566,60 +584,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#fun-with-functions" id="toc-fun-with-functions" class="nav-link" data-scroll-target="#fun-with-functions">Fun with functions</a></li>
   <li><a href="#visualizing-data-and-installing-and-loading-packages" id="toc-visualizing-data-and-installing-and-loading-packages" class="nav-link" data-scroll-target="#visualizing-data-and-installing-and-loading-packages">Visualizing Data and Installing and Loading Packages</a></li>
   </ul></li>
-  <li><a href="#visualizing-cell-counts-and-concentration-from-wet-lab-1" id="toc-visualizing-cell-counts-and-concentration-from-wet-lab-1" class="nav-link" data-scroll-target="#visualizing-cell-counts-and-concentration-from-wet-lab-1">Visualizing Cell Counts and Concentration from Wet Lab 1</a>
+  <li><a href="#part-2-visualising-cell-counts-and-concentration-from-wet-lab-1" id="toc-part-2-visualising-cell-counts-and-concentration-from-wet-lab-1" class="nav-link" data-scroll-target="#part-2-visualising-cell-counts-and-concentration-from-wet-lab-1">Part 2: Visualising Cell Counts and Concentration from Wet Lab 1</a>
   <ul class="collapse">
   <li><a href="#making-a-boxplot" id="toc-making-a-boxplot" class="nav-link" data-scroll-target="#making-a-boxplot">Making a Boxplot</a></li>
   <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
   <li><a href="#activity-1" id="toc-activity-1" class="nav-link" data-scroll-target="#activity-1">Activity 1</a></li>
   </ul></li>
-  <li><a href="#analysing-wet-lab-2-data-in-r" id="toc-analysing-wet-lab-2-data-in-r" class="nav-link" data-scroll-target="#analysing-wet-lab-2-data-in-r">Analysing Wet Lab 2 Data in R</a></li>
+  <li><a href="#part-3-analysing-wet-lab-2-data-in-r" id="toc-part-3-analysing-wet-lab-2-data-in-r" class="nav-link" data-scroll-target="#part-3-analysing-wet-lab-2-data-in-r">Part 3: Analysing Wet Lab 2 Data in R</a>
+  <ul class="collapse">
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#thinking-outside-the-cell-reading-and-formatting-your-data" id="toc-thinking-outside-the-cell-reading-and-formatting-your-data" class="nav-link" data-scroll-target="#thinking-outside-the-cell-reading-and-formatting-your-data">Thinking outside the cell, reading and formatting your data</a></li>
+  </ul></li>
   <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data">Import the data</a>
   <ul class="collapse">
-  <li><a href="#action-required-2" id="toc-action-required-2" class="nav-link" data-scroll-target="#action-required-2">ACTION REQUIRED</a></li>
   <li><a href="#important" id="toc-important" class="nav-link" data-scroll-target="#important">IMPORTANT!</a>
   <ul class="collapse">
   <li><a href="#practical-note" id="toc-practical-note" class="nav-link" data-scroll-target="#practical-note">Practical note</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#reshape-the-plate-data-into-long-format" id="toc-reshape-the-plate-data-into-long-format" class="nav-link" data-scroll-target="#reshape-the-plate-data-into-long-format">Reshape the plate data into long format</a>
-  <ul class="collapse">
-  <li><a href="#practical-note-1" id="toc-practical-note-1" class="nav-link" data-scroll-target="#practical-note-1">Practical note</a></li>
-  </ul></li>
-  <li><a href="#remove-row-d" id="toc-remove-row-d" class="nav-link" data-scroll-target="#remove-row-d">Remove row D</a>
-  <ul class="collapse">
-  <li><a href="#practical-note-2" id="toc-practical-note-2" class="nav-link" data-scroll-target="#practical-note-2">Practical note</a></li>
-  </ul></li>
   <li><a href="#average-the-triplicate-wells" id="toc-average-the-triplicate-wells" class="nav-link" data-scroll-target="#average-the-triplicate-wells">Average the triplicate wells</a>
   <ul class="collapse">
-  <li><a href="#practical-note-3" id="toc-practical-note-3" class="nav-link" data-scroll-target="#practical-note-3">Practical note</a></li>
+  <li><a href="#practical-note-1" id="toc-practical-note-1" class="nav-link" data-scroll-target="#practical-note-1">Practical note</a></li>
   </ul></li>
   <li><a href="#calculate-blank-signal" id="toc-calculate-blank-signal" class="nav-link" data-scroll-target="#calculate-blank-signal">Calculate blank signal</a></li>
   <li><a href="#background-correction" id="toc-background-correction" class="nav-link" data-scroll-target="#background-correction">Background correction</a>
   <ul class="collapse">
-  <li><a href="#practical-note-4" id="toc-practical-note-4" class="nav-link" data-scroll-target="#practical-note-4">Practical note</a></li>
+  <li><a href="#practical-note-2" id="toc-practical-note-2" class="nav-link" data-scroll-target="#practical-note-2">Practical note</a></li>
   </ul></li>
   <li><a href="#calculate-relative-viability" id="toc-calculate-relative-viability" class="nav-link" data-scroll-target="#calculate-relative-viability">Calculate relative viability</a></li>
   <li><a href="#plot-class-relative-viability" id="toc-plot-class-relative-viability" class="nav-link" data-scroll-target="#plot-class-relative-viability">Plot class relative viability</a>
   <ul class="collapse">
-  <li><a href="#action-required-3" id="toc-action-required-3" class="nav-link" data-scroll-target="#action-required-3">ACTION REQUIRED</a></li>
+  <li><a href="#action-required-4" id="toc-action-required-4" class="nav-link" data-scroll-target="#action-required-4">ACTION REQUIRED</a></li>
   </ul></li>
-  <li><a href="#preparing-data-for-publication-quality-analysis" id="toc-preparing-data-for-publication-quality-analysis" class="nav-link" data-scroll-target="#preparing-data-for-publication-quality-analysis">Preparing data for publication-quality analysis</a></li>
-  <li><a href="#statistical-analysis-of-treatment-effects" id="toc-statistical-analysis-of-treatment-effects" class="nav-link" data-scroll-target="#statistical-analysis-of-treatment-effects">Statistical analysis of treatment effects</a></li>
-  <li><a href="#step-1-run-a-one-way-anova" id="toc-step-1-run-a-one-way-anova" class="nav-link" data-scroll-target="#step-1-run-a-one-way-anova">Step 1 — Run a one-way ANOVA</a>
+  </ul></li>
+  <li><a href="#preparing-data-for-publication-quality-analysis" id="toc-preparing-data-for-publication-quality-analysis" class="nav-link" data-scroll-target="#preparing-data-for-publication-quality-analysis">Preparing data for publication-quality analysis</a>
   <ul class="collapse">
-  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
-  </ul></li>
+  <li><a href="#statistical-analysis-of-treatment-effects" id="toc-statistical-analysis-of-treatment-effects" class="nav-link" data-scroll-target="#statistical-analysis-of-treatment-effects">Statistical analysis of treatment effects</a>
+  <ul class="collapse">
+  <li><a href="#step-1-run-a-one-way-anova" id="toc-step-1-run-a-one-way-anova" class="nav-link" data-scroll-target="#step-1-run-a-one-way-anova">Step 1 — Run a one-way ANOVA</a></li>
   <li><a href="#step-2-perform-pairwise-comparisons" id="toc-step-2-perform-pairwise-comparisons" class="nav-link" data-scroll-target="#step-2-perform-pairwise-comparisons">Step 2 — Perform pairwise comparisons</a></li>
   <li><a href="#step-3-visualise-the-results-on-the-figure" id="toc-step-3-visualise-the-results-on-the-figure" class="nav-link" data-scroll-target="#step-3-visualise-the-results-on-the-figure">Step 3 — Visualise the results on the figure</a></li>
-  <li><a href="#what-this-figure-shows" id="toc-what-this-figure-shows" class="nav-link" data-scroll-target="#what-this-figure-shows">What this figure shows</a>
-  <ul class="collapse">
-  <li><a href="#significance-labels" id="toc-significance-labels" class="nav-link" data-scroll-target="#significance-labels">Significance labels</a></li>
   </ul></li>
+  <li><a href="#exporting-plots" id="toc-exporting-plots" class="nav-link" data-scroll-target="#exporting-plots">Exporting Plots</a></li>
   <li><a href="#activities-and-questions" id="toc-activities-and-questions" class="nav-link" data-scroll-target="#activities-and-questions">Activities and questions</a>
   <ul class="collapse">
   <li><a href="#activity-2" id="toc-activity-2" class="nav-link" data-scroll-target="#activity-2">Activity 2</a></li>
   <li><a href="#activity-3" id="toc-activity-3" class="nav-link" data-scroll-target="#activity-3">Activity 3</a></li>
-  <li><a href="#exporting-plots" id="toc-exporting-plots" class="nav-link" data-scroll-target="#exporting-plots">Exporting Plots</a></li>
   <li><a href="#activity-4" id="toc-activity-4" class="nav-link" data-scroll-target="#activity-4">Activity 4</a></li>
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
@@ -627,7 +636,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#common-errors-and-how-to-fix-them" id="toc-common-errors-and-how-to-fix-them" class="nav-link" data-scroll-target="#common-errors-and-how-to-fix-them">Common Errors and How to Fix Them</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  <li><a href="#function-glossary" id="toc-function-glossary" class="nav-link" data-scroll-target="#function-glossary">Function Glossary</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/edit/main/pages/DP1/DP1_Final.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -666,8 +675,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction-and-welcome-to-r" class="level1">
-<h1>Introduction and Welcome to R!</h1>
+<section id="part-1-introduction-and-welcome-to-r" class="level1">
+<h1>Part 1: Introduction and Welcome to R!</h1>
 <p>In this dry prac we will learn how to use <strong>R</strong>, <strong>tidyverse</strong>, and <strong>ggplot2</strong> to analyse the datasets you generated during the BIOL340 wet labs.</p>
 <p>Across the practical sequence you have been working on a <strong>mini research project</strong> investigating whether a new experimental drug <strong>Respiranox™</strong> can improve the viability of cells affected by mitochondrial disease.</p>
 <p>The project progresses across several stages:</p>
@@ -864,8 +873,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We are now set up to start looking at our data from <strong>Wet Lab 1</strong></p>
 </section>
 </section>
-<section id="visualizing-cell-counts-and-concentration-from-wet-lab-1" class="level1">
-<h1>Visualizing Cell Counts and Concentration from Wet Lab 1</h1>
+<section id="part-2-visualising-cell-counts-and-concentration-from-wet-lab-1" class="level1">
+<h1>Part 2: Visualising Cell Counts and Concentration from Wet Lab 1</h1>
 <p>In Wet Practical 1, you determined cell concentration and the number of live and dead cells for <em>healthy</em> and <em>diseased</em> samples.</p>
 <p>We can now import this data for the entire class and visualize it using <strong>ggplot2</strong>. Remember, <em>working directories</em> are important in R.</p>
 <p>Remember for this class it’s not important to understand everything that is happening in the code, just to be able to run it and use Gen AI to edit it.</p>
@@ -890,7 +899,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Class_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>If you are curious the functions in the above code chunk do the following: - <code>setwd()</code> sets your working directory. - <code>read.csv()</code> imports a CSV file. - <code>mutate()</code> modifies or adds columns. - <code>head(Class_data)</code> prints the first 6 rows, so you can quickly inspect your dataset.</p>
+<p>If you are curious the functions in the above code chunk do the following: <code>read.csv()</code> imports a CSV file. <code>head(Class_data)</code> prints the first 6 rows, so you can quickly inspect your dataset.</p>
 <section id="making-a-boxplot" class="level2">
 <h2 class="anchored" data-anchor-id="making-a-boxplot">Making a Boxplot</h2>
 <p>Now we can analyse this data in interesting ways using ggplot2 a package specifically for graphing included in <code>tidyverse</code>. Feel free to play around with labels, colours and themes.</p>
@@ -971,8 +980,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 </section>
 </section>
-<section id="analysing-wet-lab-2-data-in-r" class="level1">
-<h1>Analysing Wet Lab 2 Data in R</h1>
+<section id="part-3-analysing-wet-lab-2-data-in-r" class="level1">
+<h1>Part 3: Analysing Wet Lab 2 Data in R</h1>
 <p>In this section we will work through the analysis of the <strong>MTS and Calcein-AM microplate assay data</strong> from Wet Lab 2.</p>
 <p>The aim of this analysis is to determine how the different treatments affected cell viability. In particular, we want to compare:</p>
 <ul>
@@ -996,20 +1005,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Calculate relative viability compared with the healthy control</strong></li>
 <li><strong>Make plots to visualise the results</strong></li>
 </ol>
+<p>Prior to this dry lab we have run through the data analysis in Excel, we are now going to try importing the data into R and graphing using the skills you have developed in ggplot2</p>
+</section>
+<section id="question-2" class="level2" style="color: red">
+<h2 style="color: red" class="anchored" data-anchor-id="question-2">Question 2</h2>
+<blockquote class="blockquote">
+<p><strong>Reflect:</strong> What do you think a barrier to analysis the Excel processed data in R will be? What do you think the advantages of using R could be?</p>
+</blockquote>
+</section>
+<section id="thinking-outside-the-cell-reading-and-formatting-your-data" class="level2">
+<h2 class="anchored" data-anchor-id="thinking-outside-the-cell-reading-and-formatting-your-data">Thinking outside the cell, reading and formatting your data</h2>
+<p>So far you have been working with your data in cells, using the tools available in Excel and the tables provided in your prac manual. When it comes to importing data into R we have to think a little differently as we no longer work with the data <em>visually</em> using a Graphical User Interface (i.e.&nbsp;a GUI).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>ACTION REQUIRED
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>First we need to convert our excel data from a spreadsheet (or .xls) file to a comma seperated text file (or csv.).</p>
+<p>Open the class data from wetlab 2 and open it in Excel. You can now use <code>save as</code> in Excel and choose the option to save as a comma separated file.</p>
+<p>This should save your data with the file extension <code>.csv</code>. Now open the data in <code>Visual Studio Code</code> on your computer, you will see that all our ‘nice’ formatting we did to make the data easier to understand actually makes it very confusing for the computer to interpret what each data point means.</p>
+</div>
+</div>
+<p>We need to simplify things so that the software can distinguish between our different variables.</p>
+<p>I.e. we need to make it clear what each cell represents in terms of <strong>treatment</strong>, <strong>cell concentration</strong> and <strong>signal.</strong></p>
+<p>The easiest way to do this is to make each of these variables the headings of the columns in your data, then input the information for each data point. This is also sometimes referred to as “long format” data. For todays dry prac, we have done this for you.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>ACTION REQUIRED
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Download the plate data .csv files for both assays from moodle. This data has already been formatted into “long format” for you.</p>
+<p>Open the data for both assays in R and store them as seperate variables using the code below. Remember to change the location in <code>read.csv()</code> to where the file is stored on your computer.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="import-the-data" class="level1">
 <h1>Import the data</h1>
-<p>The assay data should be saved as a two seperate <code>.csv</code> files available on Moodle.</p>
-<section id="action-required-2" class="level3" style="color: red">
-<h3 style="color: red" class="anchored" data-anchor-id="action-required-2">ACTION REQUIRED</h3>
-<p>Download the .csv files for the MTS and calcein-AM assays from Moodle. Then load them into R studio.</p>
-</section>
 <section id="important" class="level2" style="color: red">
 <h2 style="color: red" class="anchored" data-anchor-id="important">IMPORTANT!</h2>
 <blockquote class="blockquote">
 <p><strong>To help make you more familiar with manipulating code blocks the instructions below will be given only for the Calcein-AM assay. Please make sure you repeat the instructions for MTS as well. This will usually only require changing the names of different objects from cam to MTS and making sure you read in the data correctly.</strong></p>
 </blockquote>
+<p>We will now import the downloaded plate data into RStudio.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the Calcein-AM plate data</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># file.choose() lets you manually select the file from your computer</span></span>
@@ -1025,330 +1073,240 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="do">##now repeat this for Calcein AM</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="practical-note" class="level3" style="color: red">
-<h3 style="color: red" class="anchored" data-anchor-id="practical-note">Practical note</h3>
 <p>At this stage it is always a good idea to inspect the file carefully. You can do that by clicking on the name of the object in the data window on right of the RStudio Window:</p>
 <p><img src="images/clipboard-294577816.png" class="img-fluid"></p>
-<p>You should see something like this:<br>
-<img src="images/clipboard-2970986192.png" class="img-fluid"></p>
 <p>Ask yourself:</p>
 <ul>
 <li>Does the data look like the plate layout from the practical?</li>
 <li>Are the first columns storing the group and row information?</li>
-<li>Are the measurement columns named <code>1</code>, <code>2</code>, <code>3</code>, etc. or <code>X1</code>, <code>X2</code>, <code>X3</code>?</li>
+<li>What are the measurement columns called?</li>
 </ul>
 <p>Different <code>.csv</code> files can import slightly differently into R, so checking the structure of the data is an important habit.</p>
-<hr>
+<section id="practical-note" class="level3" style="color: red">
+<h3 style="color: red" class="anchored" data-anchor-id="practical-note">Practical note</h3>
+<blockquote class="blockquote">
+<p>At this point each row represents <strong>one well measurement</strong> and Row ‘D’ has been removed<br>
+This structure is much easier for R to analyse and plot.</p>
+</blockquote>
 </section>
 </section>
-</section>
-<section id="reshape-the-plate-data-into-long-format" class="level1">
-<h1>Reshape the plate data into long format</h1>
-<p>Right now the data is still arranged like a plate, which is easy for humans to read but not ideal for R.</p>
-<p>Our plate currently looks like a spreadsheet. Each column represents a well.</p>
-<p>R works better when each row is one measurement.</p>
-<p><code>pivot_longer()</code> converts the spreadsheet format into this structure</p>
+<section id="average-the-triplicate-wells" class="level2">
+<h2 class="anchored" data-anchor-id="average-the-triplicate-wells">Average the triplicate wells</h2>
+<p>Each treatment was measured in triplicate wells.<br>
+We now calculate the <strong>mean signal</strong> for each treatment.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the raw plate data into long format</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>cam_long <span class="ot">&lt;-</span> plate_data_cAM <span class="sc">%&gt;%</span>   <span class="co"># Start with the imported Calcein-AM dataset</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) <span class="sc">%&gt;%</span>                <span class="co"># Keep only the first 8 columns</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                                 <span class="co"># column 1 = Group</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="co"># column 2 = Plate row (A–D)</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="co"># columns 3–8 = measurement columns</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">Group =</span> <span class="dv">1</span>,                   <span class="co"># Rename column 1 to "Group"</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">Row =</span> <span class="dv">2</span>                      <span class="co"># Rename column 2 to "Row"</span></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>,                  <span class="co"># Convert Columns 3-8  into rows</span></span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"Column"</span>,</span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"signal"</span></span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the column labels to text</span></span>
-<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Sometimes R imports column names like 1,2,3 as numbers or factors.</span></span>
-<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Converting them to characters ensures they behave consistently when we compare them later.</span></span>
-<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">Column =</span> <span class="fu">as.character</span>(Column),</span>
-<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Create well ID that joins togeather the row letter with the column number</span></span>
-<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Row = "A" and Column = "1" becomes "A1"</span></span>
-<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">well =</span> <span class="fu">paste0</span>(Row, Column),  </span>
-<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new column called "condition"</span></span>
-<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a><span class="co"># This assigns each well to its treatment condition</span></span>
-<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a><span class="co"># based on which plate column it came from</span></span>
-<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">condition =</span> <span class="fu">case_when</span>(</span>
-<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a>      Column <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"1"</span>,<span class="st">"X1"</span>) <span class="sc">~</span> <span class="st">"Healthy"</span>,</span>
-<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a>      Column <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"2"</span>,<span class="st">"X2"</span>) <span class="sc">~</span> <span class="st">"Diseased"</span>,</span>
-<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a>      Column <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"3"</span>,<span class="st">"X3"</span>) <span class="sc">~</span> <span class="st">"Treated cells - 10 uM Respiranox"</span>,</span>
-<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>      Column <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"4"</span>,<span class="st">"X4"</span>) <span class="sc">~</span> <span class="st">"Treated cells - 20 uM Respiranox"</span>,</span>
-<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>      Column <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"5"</span>,<span class="st">"X5"</span>) <span class="sc">~</span> <span class="st">"Non-viable cells"</span>,</span>
-<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>      Column <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"6"</span>,<span class="st">"X6"</span>) <span class="sc">~</span> <span class="st">"Media / blank"</span></span>
-<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cam_long)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new dataset called cam_summary that contains</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the average signal for each treatment within each group</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>cam_summary <span class="ot">&lt;-</span> plate_data_cAM <span class="sc">%&gt;%</span>     <span class="co"># Start with the filtered dataset (rows A–C only)</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># group_by() tells R to split the data into groups</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Here we separate the data by:</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   1. Group (student group)</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   2. condition (treatment type)</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This means calculations will be done separately</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># for each treatment within each group</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Group, condition) <span class="sc">%&gt;%</span>   </span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the average signal for each group/treatment combination</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># mean() finds the average value</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># na.rm = TRUE tells R to ignore missing values (NA) if they exist</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_signal =</span> <span class="fu">mean</span>(signal, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>cam_summary</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 6
-  Group   Row   Column signal well  condition                       
-  &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;                           
-1 G1 &amp; G6 A     X1      34627 AX1   Healthy                         
-2 G1 &amp; G6 A     X2      17927 AX2   Diseased                        
-3 G1 &amp; G6 A     X3      22004 AX3   Treated cells - 10 uM Respiranox
-4 G1 &amp; G6 A     X4      13550 AX4   Treated cells - 20 uM Respiranox
-5 G1 &amp; G6 A     X5       7932 AX5   Non-viable cells                
-6 G1 &amp; G6 A     X6       7512 AX6   Media / blank                   </code></pre>
+<pre><code># A tibble: 204 × 3
+# Groups:   Group [34]
+   Group        condition                        mean_signal
+   &lt;chr&gt;        &lt;chr&gt;                                  &lt;dbl&gt;
+ 1 AM_G1 &amp; G6   Diseased                              15315.
+ 2 AM_G1 &amp; G6   Healthy                               25263.
+ 3 AM_G1 &amp; G6   Media / blank                          7531.
+ 4 AM_G1 &amp; G6   Non-viable cells                       7691 
+ 5 AM_G1 &amp; G6   Treated cells - 10 uM Respiranox      22218.
+ 6 AM_G1 &amp; G6   Treated cells - 20 uM Respiranox      12985.
+ 7 AM_G11 &amp; G12 Diseased                               9129.
+ 8 AM_G11 &amp; G12 Healthy                               10963 
+ 9 AM_G11 &amp; G12 Media / blank                          6989 
+10 AM_G11 &amp; G12 Non-viable cells                       7430.
+# ℹ 194 more rows</code></pre>
 </div>
 </div>
 <section id="practical-note-1" class="level3" style="color: red">
 <h3 style="color: red" class="anchored" data-anchor-id="practical-note-1">Practical note</h3>
-<p>At this point each row represents <strong>one well measurement</strong>.<br>
-This structure is much easier for R to analyse and plot.</p>
-<hr>
+<p>Each treatment now has <strong>one average signal value per group</strong>.</p>
 </section>
 </section>
-<section id="remove-row-d" class="level1">
-<h1>Remove row D</h1>
-<p>For this analysis we only use rows <strong>A–C</strong>. So we are going to remove row <strong>D</strong> before we make any calculations.</p>
+<section id="calculate-blank-signal" class="level2">
+<h2 class="anchored" data-anchor-id="calculate-blank-signal">Calculate blank signal</h2>
+<p>Blank wells measure background fluorescence from the media and assay reagents.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>cam_filtered <span class="ot">&lt;-</span> cam_long <span class="sc">%&gt;%</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the fuction filter will remove data</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Row <span class="sc">!=</span> <span class="st">"D"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataset containing the background (blank) signal for each group</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>cam_blank_values <span class="ot">&lt;-</span> cam_summary <span class="sc">%&gt;%</span>     <span class="co"># Start with the dataset that contains</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="co"># the average signal for each treatment</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Keep only the rows corresponding to the blank wells</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># These wells contain media but no cells</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># and therefore measure background fluorescence</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"Media / blank"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Rename the column mean_signal to blank_mean</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This makes it clear that this value represents</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the average background signal for each group</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Group, <span class="at">blank_mean =</span> mean_signal)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="background-correction" class="level2">
+<h2 class="anchored" data-anchor-id="background-correction">Background correction</h2>
+<p>Now we subtract the background signal.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new dataset called cam_corrected that contains</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the background-corrected signal for each treatment</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>cam_corrected <span class="ot">&lt;-</span> cam_summary <span class="sc">%&gt;%</span>        <span class="co"># Start with the dataset that contains</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="co"># the average signal for each treatment</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove the blank rows because we only want to correct</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the treatment conditions (not the blank itself)</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">!=</span> <span class="st">"Media / blank"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Join the blank values back onto the dataset</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># left_join() matches rows using the "Group" column</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This means each treatment row will now also contain</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the blank_mean value from the same group</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(cam_blank_values, <span class="at">by =</span> <span class="st">"Group"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create a new column called corrected_signal</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This subtracts the background fluorescence</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># from the treatment signal</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">corrected_signal =</span> mean_signal <span class="sc">-</span> blank_mean</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the corrected dataset</span></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>cam_corrected</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 170 × 5
+# Groups:   Group [34]
+   Group        condition                mean_signal blank_mean corrected_signal
+   &lt;chr&gt;        &lt;chr&gt;                          &lt;dbl&gt;      &lt;dbl&gt;            &lt;dbl&gt;
+ 1 AM_G1 &amp; G6   Diseased                      15315.      7531.            7784 
+ 2 AM_G1 &amp; G6   Healthy                       25263.      7531.           17733.
+ 3 AM_G1 &amp; G6   Non-viable cells               7691       7531.             160.
+ 4 AM_G1 &amp; G6   Treated cells - 10 uM R…      22218.      7531.           14687 
+ 5 AM_G1 &amp; G6   Treated cells - 20 uM R…      12985.      7531.            5454 
+ 6 AM_G11 &amp; G12 Diseased                       9129.      6989             2140.
+ 7 AM_G11 &amp; G12 Healthy                       10963       6989             3974 
+ 8 AM_G11 &amp; G12 Non-viable cells               7430.      6989              441.
+ 9 AM_G11 &amp; G12 Treated cells - 10 uM R…      10715.      6989             3726.
+10 AM_G11 &amp; G12 Treated cells - 20 uM R…      14732.      6989             7743.
+# ℹ 160 more rows</code></pre>
+</div>
 </div>
 <section id="practical-note-2" class="level3" style="color: red">
 <h3 style="color: red" class="anchored" data-anchor-id="practical-note-2">Practical note</h3>
-<p>Filtering row D <strong>before calculating means</strong> ensures that row D does not influence the averages.</p>
-<hr>
-</section>
-</section>
-<section id="average-the-triplicate-wells" class="level1">
-<h1>Average the triplicate wells</h1>
-<p>Each treatment was measured in triplicate wells.<br>
-We now calculate the <strong>mean signal</strong> for each treatment.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new dataset called cam_summary that contains</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the average signal for each treatment within each group</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>cam_summary <span class="ot">&lt;-</span> cam_filtered <span class="sc">%&gt;%</span>     <span class="co"># Start with the filtered dataset (rows A–C only)</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># group_by() tells R to split the data into groups</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Here we separate the data by:</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   1. Group (student group)</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   2. condition (treatment type)</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This means calculations will be done separately</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># for each treatment within each group</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Group, condition) <span class="sc">%&gt;%</span>   </span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the average signal for each group/treatment combination</span></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># mean() finds the average value</span></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># na.rm = TRUE tells R to ignore missing values (NA) if they exist</span></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_signal =</span> <span class="fu">mean</span>(signal, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>cam_summary</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 174 × 3
-# Groups:   Group [29]
-   Group     condition                        mean_signal
-   &lt;chr&gt;     &lt;chr&gt;                                  &lt;dbl&gt;
- 1 ""        Diseased                                NaN 
- 2 ""        Healthy                                 NaN 
- 3 ""        Media / blank                           NaN 
- 4 ""        Non-viable cells                        NaN 
- 5 ""        Treated cells - 10 uM Respiranox        NaN 
- 6 ""        Treated cells - 20 uM Respiranox        NaN 
- 7 "G1 &amp; G6" Diseased                              15315.
- 8 "G1 &amp; G6" Healthy                               25263.
- 9 "G1 &amp; G6" Media / blank                          7531.
-10 "G1 &amp; G6" Non-viable cells                       7691 
-# ℹ 164 more rows</code></pre>
-</div>
-</div>
-<section id="practical-note-3" class="level3" style="color: red">
-<h3 style="color: red" class="anchored" data-anchor-id="practical-note-3">Practical note</h3>
-<p>Each treatment now has <strong>one average signal value per group</strong>.</p>
-<hr>
-</section>
-</section>
-<section id="calculate-blank-signal" class="level1">
-<h1>Calculate blank signal</h1>
-<p>Blank wells measure background fluorescence from the media and assay reagents.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataset containing the background (blank) signal for each group</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>cam_blank_values <span class="ot">&lt;-</span> cam_summary <span class="sc">%&gt;%</span>     <span class="co"># Start with the dataset that contains</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="co"># the average signal for each treatment</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Keep only the rows corresponding to the blank wells</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># These wells contain media but no cells</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># and therefore measure background fluorescence</span></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"Media / blank"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Rename the column mean_signal to blank_mean</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This makes it clear that this value represents</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the average background signal for each group</span></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Group, <span class="at">blank_mean =</span> mean_signal)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<hr>
-</section>
-<section id="background-correction" class="level1">
-<h1>Background correction</h1>
-<p>Now we subtract the background signal.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new dataset called cam_corrected that contains</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the background-corrected signal for each treatment</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>cam_corrected <span class="ot">&lt;-</span> cam_summary <span class="sc">%&gt;%</span>        <span class="co"># Start with the dataset that contains</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="co"># the average signal for each treatment</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove the blank rows because we only want to correct</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the treatment conditions (not the blank itself)</span></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">!=</span> <span class="st">"Media / blank"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Join the blank values back onto the dataset</span></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># left_join() matches rows using the "Group" column</span></span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This means each treatment row will now also contain</span></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the blank_mean value from the same group</span></span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(cam_blank_values, <span class="at">by =</span> <span class="st">"Group"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create a new column called corrected_signal</span></span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This subtracts the background fluorescence</span></span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># from the treatment signal</span></span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">corrected_signal =</span> mean_signal <span class="sc">-</span> blank_mean</span>
-<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the corrected dataset</span></span>
-<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>cam_corrected</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 145 × 5
-# Groups:   Group [29]
-   Group     condition                   mean_signal blank_mean corrected_signal
-   &lt;chr&gt;     &lt;chr&gt;                             &lt;dbl&gt;      &lt;dbl&gt;            &lt;dbl&gt;
- 1 ""        Diseased                           NaN        NaN              NaN 
- 2 ""        Healthy                            NaN        NaN              NaN 
- 3 ""        Non-viable cells                   NaN        NaN              NaN 
- 4 ""        Treated cells - 10 uM Resp…        NaN        NaN              NaN 
- 5 ""        Treated cells - 20 uM Resp…        NaN        NaN              NaN 
- 6 "G1 &amp; G6" Diseased                         15315.      7531.            7784 
- 7 "G1 &amp; G6" Healthy                          25263.      7531.           17733.
- 8 "G1 &amp; G6" Non-viable cells                  7691       7531.             160.
- 9 "G1 &amp; G6" Treated cells - 10 uM Resp…      22218.      7531.           14687 
-10 "G1 &amp; G6" Treated cells - 20 uM Resp…      12985.      7531.            5454 
-# ℹ 135 more rows</code></pre>
-</div>
-</div>
-<section id="practical-note-4" class="level3" style="color: red">
-<h3 style="color: red" class="anchored" data-anchor-id="practical-note-4">Practical note</h3>
 <p>Raw fluorescence contains:</p>
 <ul>
 <li>cell fluorescence</li>
 <li>background fluorescence</li>
 </ul>
 <p>Subtracting the blank removes this background.</p>
-<hr>
 </section>
 </section>
-<section id="calculate-relative-viability" class="level1">
-<h1>Calculate relative viability</h1>
+<section id="calculate-relative-viability" class="level2">
+<h2 class="anchored" data-anchor-id="calculate-relative-viability">Calculate relative viability</h2>
 <p>Healthy cells are defined as <strong>100% viability</strong>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate relative cell viability for each treatment</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a> <span class="co"># Start with the dataset that contains the background-corrected signals</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>viability_cam <span class="ot">&lt;-</span> cam_corrected <span class="sc">%&gt;%</span>     </span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># group_by() separates the data by student group</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Each group performed their own experiment, so we calculate</span></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># viability relative to the healthy control within each group</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Group) <span class="sc">%&gt;%</span></span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a new column called relative_viability</span></span>
-<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This compares each treatment signal to the healthy control signal</span></span>
-<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># from the same group and expresses it as a percentage</span></span>
-<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">relative_viability =</span></span>
-<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>      corrected_signal <span class="sc">/</span></span>
-<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>      corrected_signal[condition <span class="sc">==</span> <span class="st">"Healthy"</span>] <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="co"># View the resulting dataset</span></span>
-<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>viability_cam</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate relative cell viability for each treatment</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a> <span class="co"># Start with the dataset that contains the background-corrected signals</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>viability_cam <span class="ot">&lt;-</span> cam_corrected <span class="sc">%&gt;%</span>     </span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># group_by() separates the data by student group</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Each group performed their own experiment, so we calculate</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># viability relative to the healthy control within each group</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Group) <span class="sc">%&gt;%</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a new column called relative_viability</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This compares each treatment signal to the healthy control signal</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># from the same group and expresses it as a percentage</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">relative_viability =</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>      corrected_signal <span class="sc">/</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>      corrected_signal[condition <span class="sc">==</span> <span class="st">"Healthy"</span>] <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="co"># View the resulting dataset</span></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>viability_cam</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 145 × 6
-# Groups:   Group [29]
+<pre><code># A tibble: 170 × 6
+# Groups:   Group [34]
    Group    condition mean_signal blank_mean corrected_signal relative_viability
    &lt;chr&gt;    &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;            &lt;dbl&gt;              &lt;dbl&gt;
- 1 ""       Diseased         NaN        NaN              NaN             NaN    
- 2 ""       Healthy          NaN        NaN              NaN             NaN    
- 3 ""       Non-viab…        NaN        NaN              NaN             NaN    
- 4 ""       Treated …        NaN        NaN              NaN             NaN    
- 5 ""       Treated …        NaN        NaN              NaN             NaN    
- 6 "G1 &amp; G… Diseased       15315.      7531.            7784              43.9  
- 7 "G1 &amp; G… Healthy        25263.      7531.           17733.            100    
- 8 "G1 &amp; G… Non-viab…       7691       7531.             160.              0.904
- 9 "G1 &amp; G… Treated …      22218.      7531.           14687              82.8  
-10 "G1 &amp; G… Treated …      12985.      7531.            5454              30.8  
-# ℹ 135 more rows</code></pre>
+ 1 AM_G1 &amp;… Diseased       15315.      7531.            7784              43.9  
+ 2 AM_G1 &amp;… Healthy        25263.      7531.           17733.            100    
+ 3 AM_G1 &amp;… Non-viab…       7691       7531.             160.              0.904
+ 4 AM_G1 &amp;… Treated …      22218.      7531.           14687              82.8  
+ 5 AM_G1 &amp;… Treated …      12985.      7531.            5454              30.8  
+ 6 AM_G11 … Diseased        9129.      6989             2140.             53.8  
+ 7 AM_G11 … Healthy        10963       6989             3974             100    
+ 8 AM_G11 … Non-viab…       7430.      6989              441.             11.1  
+ 9 AM_G11 … Treated …      10715.      6989             3726.             93.8  
+10 AM_G11 … Treated …      14732.      6989             7743.            195.   
+# ℹ 160 more rows</code></pre>
 </div>
 </div>
 <p>Conceptually:</p>
 <pre><code>relative viability (%) =
 (sample signal / healthy signal) × 100</code></pre>
-<hr>
 </section>
-<section id="plot-class-relative-viability" class="level1">
-<h1>Plot class relative viability</h1>
+<section id="plot-class-relative-viability" class="level2">
+<h2 class="anchored" data-anchor-id="plot-class-relative-viability">Plot class relative viability</h2>
 <p>we can now make a simple plot of the entire class data, this will allow us to visualise means and outliers. We will use boxplots as we have before but also make use of another type of geom called <code>geom_jitter()</code>. This type of plot will show every single data point from your data and move it (or jitter it) a little bit left or right so you can see multiple data of the same value. This is really good for visualising the density of data around a particular point. To help with visualising this much data at once we will also use a low <code>alpha</code> value within <code>geom_jitter()</code>, this will increase the transparency with <strong>alpha = 1</strong> being fully opaque and <strong>alpha = 0</strong> being invisible.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot relative viability for each treatment, we are also going to add some text into the plot we can refer to later so we know which group made which data.</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>cam_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(viability_cam, <span class="fu">aes</span>(<span class="at">x =</span> condition, <span class="at">y =</span> relative_viability, <span class="at">colour =</span> condition,)</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Plot each student group's data point over the top</span></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.15</span>, <span class="at">alpha=</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add labels to the plot</span></span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Relative viability of treatments (Calcein-AM)"</span>,</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Condition"</span>,</span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Relative viability (%)"</span></span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Use a clean theme for the plot</span></span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Rotate the x-axis labels so they are easier to read</span></span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
-<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>cam_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot relative viability for each treatment, we are also going to add some text into the plot we can refer to later so we know which group made which data.</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>cam_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(viability_cam, <span class="fu">aes</span>(<span class="at">x =</span> condition, <span class="at">y =</span> relative_viability, <span class="at">colour =</span> condition,)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Plot each student group's data point over the top</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.15</span>, <span class="at">alpha=</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add labels to the plot</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Relative viability of treatments (Calcein-AM)"</span>,</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Condition"</span>,</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Relative viability (%)"</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Use a clean theme for the plot</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Rotate the x-axis labels so they are easier to read</span></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>cam_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DP1_Final_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="DP1_Final_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<section id="action-required-3" class="level3" style="color: red">
-<h3 style="color: red" class="anchored" data-anchor-id="action-required-3">ACTION REQUIRED</h3>
+<section id="action-required-4" class="level3" style="color: red">
+<h3 style="color: red" class="anchored" data-anchor-id="action-required-4">ACTION REQUIRED</h3>
 <blockquote class="blockquote">
 <p>If there is an obvious outlier in the data see if you can determine which group it came from.</p>
 </blockquote>
+</section>
 </section>
 </section>
 <section id="preparing-data-for-publication-quality-analysis" class="level1">
@@ -1361,148 +1319,140 @@ We now calculate the <strong>mean signal</strong> for each treatment.</p>
 <li>Use <strong>pairwise t-tests</strong> to compare between treatments</li>
 <li>Visualise these statistics on our <strong>boxplots</strong></li>
 </ol>
-<hr>
-</section>
-<section id="statistical-analysis-of-treatment-effects" class="level1">
-<h1>Statistical analysis of treatment effects</h1>
+<section id="statistical-analysis-of-treatment-effects" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-analysis-of-treatment-effects">Statistical analysis of treatment effects</h2>
 <p>So far we have visualised individual datapoints.</p>
 <p><br>
 This helps us see whether the treatments appear to affect cell viability.</p>
 <p>However, to determine whether these differences are <strong>statistically significant</strong>, we need to perform a statistical test.</p>
 <p>Because we are comparing <strong>more than two treatments</strong>, we use a method called <strong>Analysis of Variance (ANOVA)</strong>. You should have learnt about this kind of statistical test in 2nd year.</p>
-<hr>
-</section>
-<section id="step-1-run-a-one-way-anova" class="level1">
-<h1>Step 1 — Run a one-way ANOVA</h1>
+<section id="step-1-run-a-one-way-anova" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-run-a-one-way-anova">Step 1 — Run a one-way ANOVA</h3>
 <p>ANOVA tests whether the <strong>means of multiple groups are different from each other</strong>.</p>
 <p>In this experiment, the factor we are testing is the <strong>treatment condition</strong>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>anova_model <span class="ot">&lt;-</span> <span class="fu">aov</span>(relative_viability <span class="sc">~</span> condition, <span class="at">data =</span> viability_cam)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>anova_model <span class="ot">&lt;-</span> <span class="fu">aov</span>(relative_viability <span class="sc">~</span> condition, <span class="at">data =</span> viability_cam)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
-condition     4 140211   35053   22.11 1.48e-13 ***
-Residuals   115 182327    1585                     
+<pre><code>             Df Sum Sq Mean Sq F value Pr(&gt;F)    
+condition     4 173260   43315    31.5 &lt;2e-16 ***
+Residuals   150 206238    1375                   
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-25 observations deleted due to missingness</code></pre>
+15 observations deleted due to missingness</code></pre>
 </div>
 </div>
-<section id="interpretation" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
+<section id="interpretation" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation">Interpretation</h4>
 <p>Look at the <strong>p-value</strong> in the ANOVA output.</p>
 <p>If the p-value is <strong>less than 0.05</strong>, this suggests that <strong>at least one treatment differs significantly from the others</strong>.</p>
 <p>However, ANOVA does not tell us <strong>which treatments differ</strong>.</p>
-<hr>
 </section>
 </section>
-<section id="step-2-perform-pairwise-comparisons" class="level1">
-<h1>Step 2 — Perform pairwise comparisons</h1>
+<section id="step-2-perform-pairwise-comparisons" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-perform-pairwise-comparisons">Step 2 — Perform pairwise comparisons</h3>
 <p>To determine which treatments differ from each other, we perform <strong>post-hoc comparisons</strong>.</p>
 <p>One commonly used approach is <strong>pairwise t-tests with multiple testing correction</strong>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>pairwise_results <span class="ot">&lt;-</span> <span class="fu">pairwise.t.test</span>(</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  viability_cam<span class="sc">$</span>relative_viability,</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  viability_cam<span class="sc">$</span>condition,</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">p.adjust.method =</span> <span class="st">"bonferroni"</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the p-value matrix to a table</span></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>pairwise_table <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(pairwise_results<span class="sc">$</span>p.value)</span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>pairwise_table</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>pairwise_results <span class="ot">&lt;-</span> <span class="fu">pairwise.t.test</span>(</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  viability_cam<span class="sc">$</span>relative_viability,</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  viability_cam<span class="sc">$</span>condition,</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">p.adjust.method =</span> <span class="st">"bonferroni"</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the p-value matrix to a table</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>pairwise_table <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(pairwise_results<span class="sc">$</span>p.value)</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>pairwise_table</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                     Diseased      Healthy Non-viable cells
-Healthy                          3.669601e-02           NA               NA
-Non-viable cells                 4.705497e-06 2.177482e-12               NA
-Treated cells - 10 uM Respiranox 2.500622e-01 1.000000e+00     8.126026e-11
-Treated cells - 20 uM Respiranox 1.000000e+00 1.895226e-04     1.983376e-03
+Healthy                          4.226252e-03           NA               NA
+Non-viable cells                 6.885956e-09 6.968890e-18               NA
+Treated cells - 10 uM Respiranox 2.031805e-01 1.000000e+00     1.343480e-14
+Treated cells - 20 uM Respiranox 1.000000e+00 1.925598e-05     5.254789e-06
                                  Treated cells - 10 uM Respiranox
 Healthy                                                        NA
 Non-viable cells                                               NA
 Treated cells - 10 uM Respiranox                               NA
-Treated cells - 20 uM Respiranox                      0.002611249</code></pre>
+Treated cells - 20 uM Respiranox                      0.003077436</code></pre>
 </div>
 </div>
 <p>This table shows the <strong>adjusted p-values</strong> for each pair of treatments.</p>
-<hr>
 </section>
-<section id="step-3-visualise-the-results-on-the-figure" class="level1">
-<h1>Step 3 — Visualise the results on the figure</h1>
+<section id="step-3-visualise-the-results-on-the-figure" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-visualise-the-results-on-the-figure">Step 3 — Visualise the results on the figure</h3>
 <p>We can now add these statistical results directly to our boxplot. Will make use of a new package called <code>ggpubr</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define which treatment groups we want to statistically compare</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Each pair represents two conditions that will be tested against each other</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># for a significant difference in viability</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>comparisons <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Healthy"</span>, <span class="st">"Diseased"</span>),</span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Diseased"</span>, <span class="st">"Treated cells - 10 uM Respiranox"</span>),</span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Diseased"</span>, <span class="st">"Treated cells - 20 uM Respiranox"</span>),</span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Treated cells - 10 uM Respiranox"</span>, <span class="st">"Treated cells - 20 uM Respiranox"</span>),</span>
-<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Healthy"</span>, <span class="st">"Treated cells - 10 uM Respiranox"</span>),</span>
-<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Healthy"</span>, <span class="st">"Treated cells - 20 uM Respiranox"</span>)</span>
-<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Start creating the plot using ggplot</span></span>
-<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="co"># The dataset used is "viability_cam"</span></span>
-<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a><span class="co"># x-axis = treatment condition</span></span>
-<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a><span class="co"># y-axis = relative viability</span></span>
-<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(viability_cam, <span class="fu">aes</span>(<span class="at">x =</span> condition, <span class="at">y =</span> relative_viability, <span class="at">colour =</span> condition)) <span class="sc">+</span></span>
-<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a> <span class="co"># Add a boxplot to show the distribution of values for each treatment</span></span>
-<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># outlier.shape = NA hides the default outlier points so they don't overlap</span></span>
-<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># with the jittered datapoints we add later</span></span>
-<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape =</span> <span class="cn">NA</span>, <span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Perform a global ANOVA test comparing all treatment groups</span></span>
-<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This tests whether there is ANY difference between the conditions</span></span>
-<span id="cb34-29"><a href="#cb34-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># label.y controls where the p-value text appears on the plot</span></span>
-<span id="cb34-30"><a href="#cb34-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_compare_means</span>(<span class="at">method =</span> <span class="st">"anova"</span>, <span class="at">label.y =</span> <span class="dv">140</span>) <span class="sc">+</span></span>
-<span id="cb34-31"><a href="#cb34-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-32"><a href="#cb34-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Perform pairwise statistical comparisons between specific groups</span></span>
-<span id="cb34-33"><a href="#cb34-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># comparisons = the list we created above</span></span>
-<span id="cb34-34"><a href="#cb34-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># method = "t.test" performs pairwise t-tests</span></span>
-<span id="cb34-35"><a href="#cb34-35" aria-hidden="true" tabindex="-1"></a>  <span class="co"># p.adjust.method = "bonferroni" corrects for multiple comparisons</span></span>
-<span id="cb34-36"><a href="#cb34-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># label = "p.signif" shows results as significance symbols (*, **, etc.)</span></span>
-<span id="cb34-37"><a href="#cb34-37" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb34-38"><a href="#cb34-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_compare_means</span>(</span>
-<span id="cb34-39"><a href="#cb34-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">comparisons =</span> comparisons,</span>
-<span id="cb34-40"><a href="#cb34-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"t.test"</span>,</span>
-<span id="cb34-41"><a href="#cb34-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">p.adjust.method =</span> <span class="st">"bonferroni"</span>,</span>
-<span id="cb34-42"><a href="#cb34-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="st">"p.signif"</span></span>
-<span id="cb34-43"><a href="#cb34-43" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb34-44"><a href="#cb34-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-45"><a href="#cb34-45" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Expand the y-axis slightly so there is room to display the statistical labels</span></span>
-<span id="cb34-46"><a href="#cb34-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.25</span>))) <span class="sc">+</span></span>
-<span id="cb34-47"><a href="#cb34-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-48"><a href="#cb34-48" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add plot titles and axis labels</span></span>
-<span id="cb34-49"><a href="#cb34-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb34-50"><a href="#cb34-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Effect of Respiranox treatment on cell viability"</span>,</span>
-<span id="cb34-51"><a href="#cb34-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Treatment condition"</span>,</span>
-<span id="cb34-52"><a href="#cb34-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Relative viability (%)"</span></span>
-<span id="cb34-53"><a href="#cb34-53" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb34-54"><a href="#cb34-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-55"><a href="#cb34-55" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Use a clean publication-style theme</span></span>
-<span id="cb34-56"><a href="#cb34-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb34-57"><a href="#cb34-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-58"><a href="#cb34-58" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Rotate the x-axis labels so long treatment names fit better</span></span>
-<span id="cb34-59"><a href="#cb34-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define which treatment groups we want to statistically compare</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Each pair represents two conditions that will be tested against each other</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co"># for a significant difference in viability</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>comparisons <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Healthy"</span>, <span class="st">"Diseased"</span>),</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Diseased"</span>, <span class="st">"Treated cells - 10 uM Respiranox"</span>),</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Diseased"</span>, <span class="st">"Treated cells - 20 uM Respiranox"</span>),</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Treated cells - 10 uM Respiranox"</span>, <span class="st">"Treated cells - 20 uM Respiranox"</span>),</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Healthy"</span>, <span class="st">"Treated cells - 10 uM Respiranox"</span>),</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Healthy"</span>, <span class="st">"Treated cells - 20 uM Respiranox"</span>)</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Start creating the plot using ggplot</span></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="co"># The dataset used is "viability_cam"</span></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="co"># x-axis = treatment condition</span></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="co"># y-axis = relative viability</span></span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(viability_cam, <span class="fu">aes</span>(<span class="at">x =</span> condition, <span class="at">y =</span> relative_viability, <span class="at">colour =</span> condition)) <span class="sc">+</span></span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a> <span class="co"># Add a boxplot to show the distribution of values for each treatment</span></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># outlier.shape = NA hides the default outlier points so they don't overlap</span></span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># with the jittered datapoints we add later</span></span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape =</span> <span class="cn">NA</span>, <span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Perform a global ANOVA test comparing all treatment groups</span></span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This tests whether there is ANY difference between the conditions</span></span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># label.y controls where the p-value text appears on the plot</span></span>
+<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_compare_means</span>(<span class="at">method =</span> <span class="st">"anova"</span>, <span class="at">label.y =</span> <span class="dv">140</span>) <span class="sc">+</span></span>
+<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Perform pairwise statistical comparisons between specific groups</span></span>
+<span id="cb31-33"><a href="#cb31-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># comparisons = the list we created above</span></span>
+<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># method = "t.test" performs pairwise t-tests</span></span>
+<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a>  <span class="co"># p.adjust.method = "bonferroni" corrects for multiple comparisons</span></span>
+<span id="cb31-36"><a href="#cb31-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># label = "p.signif" shows results as significance symbols (*, **, etc.)</span></span>
+<span id="cb31-37"><a href="#cb31-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_compare_means</span>(</span>
+<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">comparisons =</span> comparisons,</span>
+<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"t.test"</span>,</span>
+<span id="cb31-41"><a href="#cb31-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">p.adjust.method =</span> <span class="st">"bonferroni"</span>,</span>
+<span id="cb31-42"><a href="#cb31-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="st">"p.signif"</span></span>
+<span id="cb31-43"><a href="#cb31-43" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb31-44"><a href="#cb31-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-45"><a href="#cb31-45" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Expand the y-axis slightly so there is room to display the statistical labels</span></span>
+<span id="cb31-46"><a href="#cb31-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.25</span>))) <span class="sc">+</span></span>
+<span id="cb31-47"><a href="#cb31-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-48"><a href="#cb31-48" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add plot titles and axis labels</span></span>
+<span id="cb31-49"><a href="#cb31-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-50"><a href="#cb31-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Effect of Respiranox treatment on cell viability"</span>,</span>
+<span id="cb31-51"><a href="#cb31-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Treatment condition"</span>,</span>
+<span id="cb31-52"><a href="#cb31-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Relative viability (%)"</span></span>
+<span id="cb31-53"><a href="#cb31-53" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb31-54"><a href="#cb31-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-55"><a href="#cb31-55" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Use a clean publication-style theme</span></span>
+<span id="cb31-56"><a href="#cb31-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb31-57"><a href="#cb31-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-58"><a href="#cb31-58" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Rotate the x-axis labels so long treatment names fit better</span></span>
+<span id="cb31-59"><a href="#cb31-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DP1_Final_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="DP1_Final_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<hr>
-</section>
-<section id="what-this-figure-shows" class="level1">
-<h1>What this figure shows</h1>
+<section id="what-this-figure-shows" class="level4">
+<h4 class="anchored" data-anchor-id="what-this-figure-shows">What this figure shows</h4>
 <p>This final figure includes:</p>
 <ul>
 <li>the <strong>distribution of the data (boxplots)</strong></li>
@@ -1510,8 +1460,9 @@ Treated cells - 20 uM Respiranox                      0.002611249</code></pre>
 <li>the <strong>ANOVA result</strong></li>
 <li>the <strong>pairwise statistical comparisons</strong></li>
 </ul>
-<section id="significance-labels" class="level3">
-<h3 class="anchored" data-anchor-id="significance-labels">Significance labels</h3>
+</section>
+<section id="significance-labels" class="level4">
+<h4 class="anchored" data-anchor-id="significance-labels">Significance labels</h4>
 <ul>
 <li><code>ns</code> = not significant<br>
 </li>
@@ -1522,51 +1473,51 @@ Treated cells - 20 uM Respiranox                      0.002611249</code></pre>
 <li><code>***</code> = p &lt; 0.001</li>
 </ul>
 <p>These comparisons help determine which treatments have significantly different effects on cell viability.Interpretation</p>
-<hr>
 </section>
 </section>
-<section id="activities-and-questions" class="level1">
-<h1>Activities and questions</h1>
-<section id="activity-2" class="level2" style="color: red">
-<h2 style="color: red" class="anchored" data-anchor-id="activity-2">Activity 2</h2>
-<blockquote class="blockquote">
-<p>Customize your plot to improve its appearance. - Adjust point size and color - Modify or remove legends - Evaluate whether you need to show all data labels or tick marks - Explore other themes (e.g., <code>theme_bw()</code>, <code>theme_classic()</code>). Feel free to look at the ggplot2 cheat sheet available on the dry prac website, we have also provided extra information for plotting under “extra help with graphics”</p>
-</blockquote>
-</section>
-<section id="activity-3" class="level2" style="color: red">
-<h2 style="color: red" class="anchored" data-anchor-id="activity-3">Activity 3</h2>
-<blockquote class="blockquote">
-<p>Repeat this plot for the MTS dataset. This should be simple as you will only need to change what variable is plotted by code you already have! The code should remain the same. This is one powerful aspect of R, reproducibility!</p>
-</blockquote>
 </section>
 <section id="exporting-plots" class="level2">
 <h2 class="anchored" data-anchor-id="exporting-plots">Exporting Plots</h2>
 <p>In RStudio, use the <strong>Plots</strong> pane (bottom-right) and click <strong>Export</strong> to save your plots as an image (PNG, JPEG) or PDF. You can also programmatically export using <code>ggsave()</code>.</p>
 <p>Example:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"myplot.png"</span>, <span class="at">plot =</span> p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"myplot.png"</span>, <span class="at">plot =</span> p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="activity-4" class="level2" style="color: red">
-<h2 style="color: red" class="anchored" data-anchor-id="activity-4">Activity 4</h2>
+<section id="activities-and-questions" class="level2">
+<h2 class="anchored" data-anchor-id="activities-and-questions">Activities and questions</h2>
+<section id="activity-2" class="level3" style="color: red">
+<h3 style="color: red" class="anchored" data-anchor-id="activity-2">Activity 2</h3>
+<blockquote class="blockquote">
+<p>Customize your plot to improve its appearance. - Adjust point size and color - Modify or remove legends - Evaluate whether you need to show all data labels or tick marks - Explore other themes (e.g., <code>theme_bw()</code>, <code>theme_classic()</code>). Feel free to look at the ggplot2 cheat sheet available on the dry prac website, we have also provided extra information for plotting under “extra help with graphics”</p>
+</blockquote>
+</section>
+<section id="activity-3" class="level3" style="color: red">
+<h3 style="color: red" class="anchored" data-anchor-id="activity-3">Activity 3</h3>
+<blockquote class="blockquote">
+<p>Repeat this plot for the MTS dataset. This should be simple as you will only need to change what variable is plotted by code you already have! The code should remain the same. This is one powerful aspect of R, reproducibility!</p>
+</blockquote>
+</section>
+<section id="activity-4" class="level3" style="color: red">
+<h3 style="color: red" class="anchored" data-anchor-id="activity-4">Activity 4</h3>
 <blockquote class="blockquote">
 <p>Export your final R-generated figures for the MTS and Calcein-AM assays as PNG files. Try setting the file dimensions to 600×400.</p>
 </blockquote>
 </section>
-<section id="question-4" class="level2" style="color: red">
-<h2 style="color: red" class="anchored" data-anchor-id="question-4">Question 4</h2>
+<section id="question-4" class="level3" style="color: red">
+<h3 style="color: red" class="anchored" data-anchor-id="question-4">Question 4</h3>
 <blockquote class="blockquote">
 <p>Where do these files save on your computer? Why is that location used?</p>
 </blockquote>
 </section>
-<section id="question-5" class="level2" style="color: red">
-<h2 style="color: red" class="anchored" data-anchor-id="question-5">Question 5</h2>
+<section id="question-5" class="level3" style="color: red">
+<h3 style="color: red" class="anchored" data-anchor-id="question-5">Question 5</h3>
 <blockquote class="blockquote">
 <p>Write a brief comparison of the two assays you performed. Which was faster, more reproducible, or more sensitive?</p>
 </blockquote>
 </section>
-<section id="question-6" class="level2" style="color: red">
-<h2 style="color: red" class="anchored" data-anchor-id="question-6">Question 6</h2>
+<section id="question-6" class="level3" style="color: red">
+<h3 style="color: red" class="anchored" data-anchor-id="question-6">Question 6</h3>
 <blockquote class="blockquote">
 <p>Based on the statistical results:</p>
 <ul>
@@ -1579,8 +1530,8 @@ Treated cells - 20 uM Respiranox                      0.002611249</code></pre>
 <div style="page-break-after: always;"></div>
 </section>
 </section>
-<section id="common-errors-and-how-to-fix-them" class="level1">
-<h1>Common Errors and How to Fix Them</h1>
+<section id="common-errors-and-how-to-fix-them" class="level2">
+<h2 class="anchored" data-anchor-id="common-errors-and-how-to-fix-them">Common Errors and How to Fix Them</h2>
 <p>Some commonly encountered errors include:</p>
 <ul>
 <li><strong>Package not found</strong> → Make sure you’ve installed and loaded the package.</li>
@@ -1590,331 +1541,17 @@ Treated cells - 20 uM Respiranox                      0.002611249</code></pre>
 </ul>
 <div style="page-break-after: always;"></div>
 </section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>In this Dry Practical, we:</p>
 <ul>
 <li>Learned how to import and analyse data in both Excel and R.</li>
 <li>Learnt how to generate <strong>box</strong> and <strong>scatter</strong> plots in R</li>
 <li>Learnt how to complete some basic data manipulation and cleaning</li>
-<li>Calculated <strong>relative viability</strong> for different cell treatments.</li>
+<li>Calculated <strong>relative viability</strong> for different cell treatments across two assay types.</li>
 </ul>
-</section>
-<section id="function-glossary" class="level1">
-<h1>Function Glossary</h1>
-<p>During this practical you used a range of different <strong>R functions</strong> to import data, inspect it, clean it, graph it, and run basic statistics.</p>
-<p>A <strong>function</strong> is simply a command that tells R to do something.</p>
-<p>This glossary includes <strong>all of the main functions used in this practical</strong>, along with a short explanation and a simple example.</p>
-<hr>
-<section id="setup-and-document-functions" class="level4">
-<h4 class="anchored" data-anchor-id="setup-and-document-functions">Setup and document functions</h4>
-<p><code>knitr::opts_chunk$set()</code></p>
-<p>Sets global options for code chunks in an R Markdown or Quarto document.</p>
-<p>In this practical it was used to control whether code, warnings, and messages are shown.</p>
-<p>knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)</p>
-<hr>
-</section>
-<section id="installing-and-loading-packages" class="level4">
-<h4 class="anchored" data-anchor-id="installing-and-loading-packages">Installing and loading packages</h4>
-<p><code>install.packages()</code></p>
-<p>Installs a package so it can be used in R.</p>
-<p>You only need to do this once per computer.</p>
-<p>install.packages(“tidyverse”)</p>
-<hr>
-<p><code>library()</code></p>
-<p>Loads a package into your current R session.</p>
-<p>You usually need to run this each time you open RStudio.</p>
-<p>library(tidyverse) library(plotly) library(ggpubr)</p>
-<hr>
-</section>
-<section id="basic-r-functions" class="level4">
-<h4 class="anchored" data-anchor-id="basic-r-functions">Basic R functions</h4>
-<p><code>sqrt()</code></p>
-<p>Calculates the square root of a number.</p>
-<p>sqrt(4)</p>
-<hr>
-<p><code>round()</code></p>
-<p>Rounds a number to a chosen number of decimal places.</p>
-<p>round(3.14159, digits = 2)</p>
-<hr>
-<p><code>c()</code></p>
-<p>Combines multiple values into a single vector.</p>
-<p>c(“flies”, “beetles”, “katydids”)</p>
-<hr>
-</section>
-<section id="importing-and-inspecting-data" class="level4">
-<h4 class="anchored" data-anchor-id="importing-and-inspecting-data">Importing and inspecting data</h4>
-</section>
-<section id="read.csv" class="level4">
-<h4 class="anchored" data-anchor-id="read.csv"><code>read.csv()</code></h4>
-<p>Imports a <code>.csv</code> file into R as a dataset.</p>
-<p>data &lt;- read.csv(file.choose())</p>
-<hr>
-<p><code>file.choose()</code></p>
-<p>Opens a file browser so you can select a file from your computer.</p>
-<p>read.csv(file.choose())</p>
-<hr>
-<p><code>head()</code></p>
-<p>Shows the first few rows of a dataset.</p>
-<p>Useful for checking whether your file imported correctly.</p>
-<p>head(data)</p>
-<hr>
-<p><code>names()</code></p>
-<p>Displays the column names of a dataset.</p>
-<p>names(data)</p>
-<hr>
-<p><code>unique()</code></p>
-<p>Shows the unique values in a column.</p>
-<p>Useful for checking whether filtering worked correctly.</p>
-<p>unique(cam_filtered$Row)</p>
-<hr>
-<p><code>as.numeric()</code></p>
-<p>Converts values into numeric form.</p>
-<p>This is useful when a column has been imported as text instead of numbers.</p>
-<p>as.numeric(Class_data$CellConcentration)</p>
-<hr>
-<p><code>as.character()</code></p>
-<p>Converts values into text.</p>
-<p>This is useful when you want to compare column names or labels as text.</p>
-<p>as.character(cam_long$Column)</p>
-<hr>
-</section>
-<section id="data-manipulation-functions-from-tidyverse" class="level4">
-<h4 class="anchored" data-anchor-id="data-manipulation-functions-from-tidyverse">Data manipulation functions from tidyverse</h4>
-<p><code>select()</code></p>
-<p>Keeps only selected columns from a dataset.</p>
-<p>select(data, Group, Row)</p>
-<p>Example from this practical:</p>
-<p>select(1:8)</p>
-<hr>
-<p><code>rename()</code></p>
-<p>Changes the names of columns.</p>
-<p>rename(data, Group = 1, Row = 2)</p>
-<hr>
-<p><code>pivot_longer()</code></p>
-<p>Converts data from a wide spreadsheet layout into long format.</p>
-<p>This is useful when you want each row to represent one measurement.</p>
-<p>pivot_longer(data, cols = 3:8, names_to = “Column”, values_to = “signal”)</p>
-<hr>
-<p><code>mutate()</code></p>
-<p>Creates a new column or changes an existing column.</p>
-<p>mutate(data, doubled_value = value * 2)</p>
-<p>Example from this practical:</p>
-<p>mutate(corrected_signal = mean_signal - blank_mean)</p>
-<hr>
-<p><code>case_when()</code></p>
-<p>Creates values based on a set of rules.</p>
-<p>This is useful when assigning labels such as treatment conditions.</p>
-<p>case_when( Column == “1” ~ “Healthy”, Column == “2” ~ “Diseased” )</p>
-<hr>
-<p><code>filter()</code></p>
-<p>Keeps only rows that meet a condition.</p>
-<p>filter(data, Row != “D”)</p>
-<p>Example:</p>
-<p>filter(condition == “Media / blank”)</p>
-<hr>
-<p><code>group_by()</code></p>
-<p>Groups the data so later calculations are done separately within each group.</p>
-<p>group_by(data, Group, condition)</p>
-<hr>
-<p><code>summarise()</code></p>
-<p>Calculates summary statistics such as means.</p>
-<p>summarise(data, mean_signal = mean(signal))</p>
-<p>Example from this practical:</p>
-<p>summarise(mean_signal = mean(signal, na.rm = TRUE))</p>
-<hr>
-<p><code>left_join()</code></p>
-<p>Combines two datasets using a shared column.</p>
-<p>This was used to add blank values back onto the treatment table.</p>
-<p>left_join(dataset1, dataset2, by = “Group”)</p>
-<hr>
-</section>
-<section id="other-functions" class="level4">
-<h4 class="anchored" data-anchor-id="other-functions">Other functions</h4>
-<p><code>mean()</code></p>
-<p>Calculates the average value.</p>
-<p>mean(c(2, 4, 6))</p>
-<p>Example from this practical:</p>
-<p>mean(signal, na.rm = TRUE)</p>
-<hr>
-<p><code>paste0()</code></p>
-<p>Joins pieces of text together with no spaces.</p>
-<p>This was used to create well IDs such as <code>A1</code> or <code>B3</code>.</p>
-<p>paste0(“A”, “1”)</p>
-<hr>
-<p><code>list()</code></p>
-<p>Creates a list.</p>
-<p>In this practical it was used to define pairs of treatments for statistical comparisons.</p>
-<p>list( c(“Healthy”, “Diseased”), c(“Diseased”, “Treated cells - 10 uM Respiranox”) )</p>
-<hr>
-</section>
-<section id="plotting-functions-from-ggplot2" class="level4">
-<h4 class="anchored" data-anchor-id="plotting-functions-from-ggplot2">Plotting functions from ggplot2</h4>
-<p><code>ggplot()</code></p>
-<p>Starts a graph.</p>
-<p>You give it a dataset and then add layers.</p>
-<p>ggplot(data, aes(x = Treatment, y = viability))</p>
-<hr>
-<p><code>aes()</code></p>
-<p>Short for aesthetics.</p>
-<p>This tells ggplot which variables to use for the x-axis, y-axis, colour, and so on.</p>
-<p>aes(x = condition, y = relative_viability, colour = condition)</p>
-<hr>
-<p><code>geom_boxplot()</code></p>
-<p>Adds a boxplot layer to a graph.</p>
-<p>geom_boxplot()</p>
-<hr>
-<p><code>geom_jitter()</code></p>
-<p>Adds individual points with a little horizontal spread so they do not overlap too much.</p>
-<p>geom_jitter(width = 0.15, size = 3)</p>
-<hr>
-<p><code>labs()</code></p>
-<p>Adds a title and axis labels to a graph.</p>
-<p>labs( title = “Relative viability of treatments”, x = “Condition”, y = “Relative viability (%)” )</p>
-<hr>
-<p><code>theme_minimal()</code></p>
-<p>Applies a clean visual style to the plot.</p>
-<p>theme_minimal()</p>
-<hr>
-<p><code>theme_classic()</code></p>
-<p>Applies another simple visual style to the plot.</p>
-<p>theme_classic()</p>
-<hr>
-<p><code>theme()</code></p>
-<p>Allows you to customise smaller visual details of a plot.</p>
-<p>theme(axis.text.x = element_text(angle = 45, hjust = 1))</p>
-<hr>
-<p><code>element_text()</code></p>
-<p>Controls the appearance of text in a plot, such as angle or size.</p>
-<p>element_text(angle = 45, hjust = 1)</p>
-<hr>
-<p><code>scale_y_continuous()</code></p>
-<p>Controls the y-axis scale.</p>
-<p>In this practical it was used to create extra space above the plot for significance labels.</p>
-<p>scale_y_continuous(expand = expansion(mult = c(0.05, 0.25)))</p>
-<hr>
-<p><code>expansion()</code></p>
-<p>Adds extra space around an axis.</p>
-<p>expansion(mult = c(0.05, 0.25))</p>
-<hr>
-<p><code>ggsave()</code></p>
-<p>Saves a plot to a file such as PNG or PDF.</p>
-<p>ggsave(“myplot.png”, width = 6, height = 4)</p>
-<p>Example from this practical:</p>
-<p>ggsave(“stat_plot.png”, final_plot_cam, width = 6, height = 6)</p>
-<hr>
-<p>Statistical functions</p>
-<p><code>aov()</code></p>
-<p>Runs an ANOVA model.</p>
-<p>This tests whether there is a difference between the means of multiple groups.</p>
-<p>anova_model &lt;- aov(relative_viability ~ condition, data = viability_cam)</p>
-<hr>
-<p><code>summary()</code></p>
-<p>Displays the results of a model or dataset summary.</p>
-<p>Example with ANOVA:</p>
-<p>summary(anova_model)</p>
-<hr>
-<p><code>pairwise.t.test()</code></p>
-<p>Performs pairwise t-tests between groups.</p>
-<p>This is useful after ANOVA when you want to see which pairs of treatments differ.</p>
-<p>pairwise.t.test( viability_cam$relative_viability, viability_cam$condition, p.adjust.method = “bonferroni” )</p>
-<hr>
-<p><code>as.data.frame()</code></p>
-<p>Converts an object into a data frame.</p>
-<p>This was used to display the pairwise p-values as a table.</p>
-<p>as.data.frame(pairwise_results$p.value)</p>
-<hr>
-<p>Statistical annotation functions from ggpubr</p>
-<p><code>stat_compare_means()</code></p>
-<p>Adds statistical comparison results directly onto a ggplot.</p>
-<p>It can display a global ANOVA result or pairwise comparison labels.</p>
-<p>Example for ANOVA:</p>
-<p>stat_compare_means(method = “anova”, label.y = 140)</p>
-<p>Example for pairwise comparisons:</p>
-<p>stat_compare_means( comparisons = comparisons, method = “t.test”, p.adjust.method = “bonferroni”, label = “p.signif” )</p>
-<hr>
-</section>
-<section id="interactive-plotting-functions-from-plotly" class="level4">
-<h4 class="anchored" data-anchor-id="interactive-plotting-functions-from-plotly">Interactive plotting functions from plotly</h4>
-<p><code>ggplotly()</code></p>
-<p>Converts a ggplot graph into an interactive plot.</p>
-<p>ggplotly(cam_plot)</p>
-<p>Interactive plots allow you to hover over points and inspect the data in more detail.</p>
-<hr>
-<p>A very short cheat sheet</p>
-<p>Here are the most important functions from this practical:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Function</th>
-<th>What it does</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>read.csv()</code></td>
-<td>imports a dataset</td>
-</tr>
-<tr class="even">
-<td><code>head()</code></td>
-<td>previews the first rows</td>
-</tr>
-<tr class="odd">
-<td><code>filter()</code></td>
-<td>removes rows</td>
-</tr>
-<tr class="even">
-<td><code>group_by()</code></td>
-<td>splits data into groups</td>
-</tr>
-<tr class="odd">
-<td><code>summarise()</code></td>
-<td>calculates averages</td>
-</tr>
-<tr class="even">
-<td><code>mutate()</code></td>
-<td>creates new columns</td>
-</tr>
-<tr class="odd">
-<td><code>ggplot()</code></td>
-<td>starts a graph</td>
-</tr>
-<tr class="even">
-<td><code>geom_boxplot()</code></td>
-<td>draws boxplots</td>
-</tr>
-<tr class="odd">
-<td><code>geom_jitter()</code></td>
-<td>plots individual points</td>
-</tr>
-<tr class="even">
-<td><code>aov()</code></td>
-<td>runs ANOVA</td>
-</tr>
-<tr class="odd">
-<td><code>pairwise.t.test()</code></td>
-<td>compares groups</td>
-</tr>
-<tr class="even">
-<td><code>ggplotly()</code></td>
-<td>makes a graph interactive</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p>Final note</p>
-<p>You do <strong>not</strong> need to memorise every function in this glossary.</p>
-<p>The goal of this practical is to help you:</p>
-<ul>
-<li>recognise common R commands</li>
-<li>understand how biological data is analysed</li>
-<li>build confidence using computational tools in cell biology</li>
-</ul>
-<section id="section" class="level6">
-<h6 class="anchored" data-anchor-id="section"></h6>
 
 
-</section>
 </section>
 </section>
 
@@ -2339,8 +1976,8 @@ Treated cells - 20 uM Respiranox                      0.002611249</code></pre>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../pages/1/1_rename.html" class="pagination-link" aria-label="The Rename function">
-        <span class="nav-page-text">The Rename function</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../pages/supplementary/cheetsheet.html" class="pagination-link" aria-label="Additional ggplot2 support">
+        <span class="nav-page-text">Additional ggplot2 support</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
