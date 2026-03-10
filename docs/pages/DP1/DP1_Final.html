@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr Nikolas Johnston, University of Wollongong">
-<meta name="dcterms.date" content="2025-03-01">
+<meta name="dcterms.date" content="2026-03-01">
 
 <title>Dry Prac 1 — Data analysis in R – BIOL340 - Autumn 2026</title>
 <style>
@@ -23,8 +23,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -35,7 +36,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -67,17 +68,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../">
 <link href="../../pages/1/1_rename.html" rel="next">
 <link href="../../pages/1/3_columns.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-e8424a475a48c7ae01057e9325786fec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-1e96a592c619e9013cbac7c44fa59237.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-5f0e8e8f368b20abb810f6e37aabf96e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-3f6fe90bd4d33e32f5d0ed27de4d4263.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-5f0e8e8f368b20abb810f6e37aabf96e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -134,7 +139,169 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:image:width" content="187">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -158,7 +325,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../../index.html" class="sidebar-logo-link">
-      <img src="../../images/2026_header.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../../images/2026_header.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../../images/2026_header.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -455,31 +623,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
   <li><a href="#activity-1" id="toc-activity-1" class="nav-link" data-scroll-target="#activity-1">Activity 1</a></li>
   </ul></li>
-  <li><a href="#graphing-wet-lab-2-microplate-data-in-r" id="toc-graphing-wet-lab-2-microplate-data-in-r" class="nav-link" data-scroll-target="#graphing-wet-lab-2-microplate-data-in-r">Graphing Wet Lab 2 Microplate Data in R</a>
+  <li><a href="#analysing-wet-lab-2-data-in-r" id="toc-analysing-wet-lab-2-data-in-r" class="nav-link" data-scroll-target="#analysing-wet-lab-2-data-in-r">Analysing Wet Lab 2 Data in R</a></li>
+  <li><a href="#import-the-data" id="toc-import-the-data" class="nav-link" data-scroll-target="#import-the-data">Import the data</a>
   <ul class="collapse">
-  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
-  <li><a href="#thinking-outside-the-cell-reading-and-formatting-your-data" id="toc-thinking-outside-the-cell-reading-and-formatting-your-data" class="nav-link" data-scroll-target="#thinking-outside-the-cell-reading-and-formatting-your-data">Thinking outside the cell, reading and formatting your data</a></li>
-  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
-  <li><a href="#plotting-the-results" id="toc-plotting-the-results" class="nav-link" data-scroll-target="#plotting-the-results">Plotting the Results</a>
+  <li><a href="#action-required-2" id="toc-action-required-2" class="nav-link" data-scroll-target="#action-required-2">ACTION REQUIRED</a></li>
+  <li><a href="#important" id="toc-important" class="nav-link" data-scroll-target="#important">IMPORTANT!</a>
   <ul class="collapse">
-  <li><a href="#adding-a-trendline" id="toc-adding-a-trendline" class="nav-link" data-scroll-target="#adding-a-trendline">Adding a trendline</a></li>
-  <li><a href="#log-scale-example" id="toc-log-scale-example" class="nav-link" data-scroll-target="#log-scale-example">Log Scale Example</a></li>
+  <li><a href="#practical-note" id="toc-practical-note" class="nav-link" data-scroll-target="#practical-note">Practical note</a></li>
   </ul></li>
-  <li><a href="#estimating-the-linear-range" id="toc-estimating-the-linear-range" class="nav-link" data-scroll-target="#estimating-the-linear-range">Estimating the Linear Range</a></li>
+  </ul></li>
+  <li><a href="#reshape-the-plate-data-into-long-format" id="toc-reshape-the-plate-data-into-long-format" class="nav-link" data-scroll-target="#reshape-the-plate-data-into-long-format">Reshape the plate data into long format</a>
+  <ul class="collapse">
+  <li><a href="#practical-note-1" id="toc-practical-note-1" class="nav-link" data-scroll-target="#practical-note-1">Practical note</a></li>
+  </ul></li>
+  <li><a href="#remove-row-d" id="toc-remove-row-d" class="nav-link" data-scroll-target="#remove-row-d">Remove row D</a>
+  <ul class="collapse">
+  <li><a href="#practical-note-2" id="toc-practical-note-2" class="nav-link" data-scroll-target="#practical-note-2">Practical note</a></li>
+  </ul></li>
+  <li><a href="#average-the-triplicate-wells" id="toc-average-the-triplicate-wells" class="nav-link" data-scroll-target="#average-the-triplicate-wells">Average the triplicate wells</a>
+  <ul class="collapse">
+  <li><a href="#practical-note-3" id="toc-practical-note-3" class="nav-link" data-scroll-target="#practical-note-3">Practical note</a></li>
+  </ul></li>
+  <li><a href="#calculate-blank-signal" id="toc-calculate-blank-signal" class="nav-link" data-scroll-target="#calculate-blank-signal">Calculate blank signal</a></li>
+  <li><a href="#background-correction" id="toc-background-correction" class="nav-link" data-scroll-target="#background-correction">Background correction</a>
+  <ul class="collapse">
+  <li><a href="#practical-note-4" id="toc-practical-note-4" class="nav-link" data-scroll-target="#practical-note-4">Practical note</a></li>
+  </ul></li>
+  <li><a href="#calculate-relative-viability" id="toc-calculate-relative-viability" class="nav-link" data-scroll-target="#calculate-relative-viability">Calculate relative viability</a></li>
+  <li><a href="#plot-class-relative-viability" id="toc-plot-class-relative-viability" class="nav-link" data-scroll-target="#plot-class-relative-viability">Plot class relative viability</a>
+  <ul class="collapse">
+  <li><a href="#action-required-3" id="toc-action-required-3" class="nav-link" data-scroll-target="#action-required-3">ACTION REQUIRED</a></li>
+  </ul></li>
+  <li><a href="#preparing-data-for-publication-quality-analysis" id="toc-preparing-data-for-publication-quality-analysis" class="nav-link" data-scroll-target="#preparing-data-for-publication-quality-analysis">Preparing data for publication-quality analysis</a></li>
+  <li><a href="#statistical-analysis-of-treatment-effects" id="toc-statistical-analysis-of-treatment-effects" class="nav-link" data-scroll-target="#statistical-analysis-of-treatment-effects">Statistical analysis of treatment effects</a></li>
+  <li><a href="#step-1-run-a-one-way-anova" id="toc-step-1-run-a-one-way-anova" class="nav-link" data-scroll-target="#step-1-run-a-one-way-anova">Step 1 — Run a one-way ANOVA</a>
+  <ul class="collapse">
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#step-2-perform-pairwise-comparisons" id="toc-step-2-perform-pairwise-comparisons" class="nav-link" data-scroll-target="#step-2-perform-pairwise-comparisons">Step 2 — Perform pairwise comparisons</a></li>
+  <li><a href="#step-3-visualise-the-results-on-the-figure" id="toc-step-3-visualise-the-results-on-the-figure" class="nav-link" data-scroll-target="#step-3-visualise-the-results-on-the-figure">Step 3 — Visualise the results on the figure</a></li>
+  <li><a href="#what-this-figure-shows" id="toc-what-this-figure-shows" class="nav-link" data-scroll-target="#what-this-figure-shows">What this figure shows</a>
+  <ul class="collapse">
+  <li><a href="#significance-labels" id="toc-significance-labels" class="nav-link" data-scroll-target="#significance-labels">Significance labels</a></li>
+  </ul></li>
+  <li><a href="#activities-and-questions" id="toc-activities-and-questions" class="nav-link" data-scroll-target="#activities-and-questions">Activities and questions</a>
+  <ul class="collapse">
   <li><a href="#activity-2" id="toc-activity-2" class="nav-link" data-scroll-target="#activity-2">Activity 2</a></li>
   <li><a href="#activity-3" id="toc-activity-3" class="nav-link" data-scroll-target="#activity-3">Activity 3</a></li>
   <li><a href="#exporting-plots" id="toc-exporting-plots" class="nav-link" data-scroll-target="#exporting-plots">Exporting Plots</a></li>
   <li><a href="#activity-4" id="toc-activity-4" class="nav-link" data-scroll-target="#activity-4">Activity 4</a></li>
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
   </ul></li>
   <li><a href="#common-errors-and-how-to-fix-them" id="toc-common-errors-and-how-to-fix-them" class="nav-link" data-scroll-target="#common-errors-and-how-to-fix-them">Common Errors and How to Fix Them</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#function-glossary" id="toc-function-glossary" class="nav-link" data-scroll-target="#function-glossary">Function Glossary</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/edit/main/pages/DP1/DP1_Final.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/DP1/DP1_Final.html">Dry Prac 1</a></li><li class="breadcrumb-item"><a href="../../pages/DP1/DP1_Final.html">Dry Prac 1 Notes</a></li></ol></nav>
 <div class="quarto-title">
@@ -500,7 +705,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 1, 2025</p>
+      <p class="date">March 1, 2026</p>
     </div>
   </div>
   
@@ -514,7 +719,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction-and-welcome-to-r" class="level1">
 <h1>Introduction and Welcome to R!</h1>
-<p>In this dry prac, we will learn how to use the <code>ggplot2</code> and <code>tidyverse</code> packages to create publication-quality bar and scatter plots from the data you generated in Wet Lab 1 &amp; 2. Along the way, we will practice data manipulation, such as removing background absorbance and reshaping data for analysis.</p>
+<p>In this dry prac we will learn how to use <strong>R</strong>, <strong>tidyverse</strong>, and <strong>ggplot2</strong> to analyse the datasets you generated during the BIOL340 wet labs.</p>
+<p>Across the practical sequence you have been working on a <strong>mini research project</strong> investigating whether a new experimental drug <strong>Respiranox™</strong> can improve the viability of cells affected by mitochondrial disease.</p>
+<p>The project progresses across several stages:</p>
+<ul>
+<li><strong>Wet Lab 1:</strong> manual cell counting using a haemocytometer and Trypan Blue staining.</li>
+<li><strong>Wet Lab 2:</strong> microplate assays (MTS and Calcein‑AM) used to measure cell viability.</li>
+<li><strong>Dry Practical:</strong> analysis of the class dataset using <strong>R</strong> and data visualisation.</li>
+</ul>
+<p>The key question we want to answer is:</p>
+<blockquote class="blockquote">
+<p><strong>Does Respiranox restore viability in diseased cells, and which concentration appears most effective?</strong></p>
+</blockquote>
+<p>In this dry prac, we will learn how to use the <code>ggplot2</code> and <code>tidyverse</code> packages to create publication-quality plots from the data you generated in Wet Lab 1 &amp; 2. Along the way, we will practice data manipulation, such as removing background absorbance and reshaping data for analysis.</p>
 <p>R is a powerful tool for analyzing data, creating visualizations, and performing statistical tests. In cell biology, you can use R to analyze experimental results, such as cell growth rates, gene expression levels, or protein abundance.</p>
 <p>Let’s dive into the basics of R, starting with something fun: exploring cells and their data!</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -523,7 +740,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-ACTION REQUIRED
+<span class="screen-reader-only">Note</span>ACTION REQUIRED
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -544,7 +761,7 @@ ACTION REQUIRED
 <h2 class="anchored" data-anchor-id="how-to-read-this-guide">How to Read This Guide</h2>
 <p>In the instructions below, there will be chunks of code for you to read and copy into RStudio. The code chunks look like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Just a poor empty chunk with no code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Just a poor empty chunk with no code</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Anything following a <code>#</code> in an R code chunk is a <strong>comment</strong>, which means R will ignore it. These comments are there to help explain what the code is doing.</p>
 <section id="we-encourage-you-to-copy-and-paste-the-code-we-provide-in-these-blocks-into-r-studio-on-your-computer." class="level4" style="color: red">
@@ -573,8 +790,8 @@ ACTION REQUIRED
 <p>Or by pressing <code>control + enter</code> on your keyboard.</p>
 <p>When you run this code in R, you should see the result, <strong>4</strong>, printed beneath.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This calculates a simple sum</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This calculates a simple sum</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
@@ -586,7 +803,7 @@ ACTION REQUIRED
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Test your understanding
+<span class="screen-reader-only">Note</span>Test your understanding
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -604,7 +821,7 @@ Test your understanding
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Test your understanding
+<span class="screen-reader-only">Note</span>Test your understanding
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -612,10 +829,10 @@ Test your understanding
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Size of the nucleus</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Size of the nucleus</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>calc <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span>  <span class="co"># in micrometers</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>calc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>calc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
@@ -624,11 +841,11 @@ Test your understanding
 <p>You’ll notice that i do not use a space between the words ‘cool’ and ‘bugs’, in general spaces are not read well by your computer, it doesn’t know what to do with them and it will cause your code to fail.</p>
 <p>It is best practice to never use spaces in any of your file names or code if possible.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#List Nik's favourite bugs</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#List Nik's favourite bugs</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>cool_bugs<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'flies'</span>, <span class="st">'katydids'</span>, <span class="st">'beetles'</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#if we list the variable again remeber it will tell us what it contains. </span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>cool_bugs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>cool_bugs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "flies"    "katydids" "beetles" </code></pre>
 </div>
@@ -639,7 +856,7 @@ Test your understanding
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Test your understanding
+<span class="screen-reader-only">Note</span>Test your understanding
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -652,14 +869,14 @@ Test your understanding
 <p>Functions are one of the most powerful tools in R. They allow us to perform tasks without having to write the same code over and over. A function takes an <strong>input</strong>, does something with it, and then gives back an <strong>output</strong>. You’ve already used one function without realizing it— <strong><code>+</code></strong>, which is the addition function!</p>
 <p>For example, let’s use the function <code>sqrt()</code> to calculate the square root of our <code>calc</code> variable.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(calc)  <span class="co"># This finds the square root of 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(calc)  <span class="co"># This finds the square root of 4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
 </div>
 <p>Many functions take arguments that you can customize. For example, the <code>round()</code> function rounds numbers to a specified number of decimal places:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.14159</span>, <span class="at">digits =</span> <span class="dv">2</span>)  <span class="co"># Rounds to 2 decimal places</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.14159</span>, <span class="at">digits =</span> <span class="dv">2</span>)  <span class="co"># Rounds to 2 decimal places</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.14</code></pre>
 </div>
@@ -671,7 +888,7 @@ Test your understanding
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Test your understanding
+<span class="screen-reader-only">Note</span>Test your understanding
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -682,13 +899,18 @@ Test your understanding
 <section id="visualizing-data-and-installing-and-loading-packages" class="level2">
 <h2 class="anchored" data-anchor-id="visualizing-data-and-installing-and-loading-packages">Visualizing Data and Installing and Loading Packages</h2>
 <p>R can make many types of plots. Let’s plot our nucleus sizes using <strong>ggplot2</strong>, which is included in the <strong>tidyverse</strong>.</p>
-<p>If you haven’t installed the <strong>tidyverse</strong> package yet, you can do so via copying and running:</p>
+<p>If you haven’t installed the <strong>tidyverse</strong> package yet, you can do so via copying and running the below code. We will also install two other useful packages that we will use later in the prac.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install packages (only run this once)</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"plotly"</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggpubr"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>We also have to load the library by copying and running this line of code:</p>
+<p>We also have to load the libraries by copying and running this line of code:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)  <span class="co"># Loads ggplot2, dplyr, tidyr, and more</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)  <span class="co"># Loads ggplot2, dplyr, tidyr, and more</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We are now set up to start looking at our data from <strong>Wet Lab 1</strong></p>
 </section>
@@ -704,7 +926,7 @@ Test your understanding
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Action required
+<span class="screen-reader-only">Note</span>Action required
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -712,43 +934,25 @@ Action required
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Setting working directory</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># e.g. for pc: setwd("C:/Users/.../Biol340_981/2025/Practicals/Dry_Pracs")</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load your data using read.csv().</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># file.choose() opens a window so you can select the file on your computer.</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load your data using read.csv e.g. from a mac:</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>Class_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Library/CloudStorage/OneDrive-Personal/Research/Teaching/Biol340_981/2025/Practicals and Prac manual/Dry practicals/DP_1_data_analysis/cell_count_data.csv"</span>)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Class_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  group      treatment raw_counts cell_concentration X20ul_cell_number
-1 G1_G2 healthy, alive       94.5            1890000             37800
-2 G1_G2  healthy, dead        4.5              90000              1800
-3 G1_G2 disease, alive      94.25            1885000             37700
-4 G3_G4 healthy, alive         47             940000             18800
-5 G3_G4  healthy, dead       1.25              25000               500
-6 G3_G4 disease, alive     107.75            2155000             43100
-  proportion_total_cells
-1                  95.24
-2                   4.76
-3                    100
-4                   97.4
-5                    2.6
-6                   96.4</code></pre>
-</div>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>Class_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.choose</span>())</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Class_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If you are curious the functions in the above code chunk do the following: - <code>setwd()</code> sets your working directory. - <code>read.csv()</code> imports a CSV file. - <code>mutate()</code> modifies or adds columns. - <code>head(Class_data)</code> prints the first 6 rows, so you can quickly inspect your dataset.</p>
 <section id="making-a-boxplot" class="level2">
 <h2 class="anchored" data-anchor-id="making-a-boxplot">Making a Boxplot</h2>
 <p>Now we can analyse this data in interesting ways using ggplot2 a package specifically for graphing included in <code>tidyverse</code>. Feel free to play around with labels, colours and themes.</p>
 <p>A boxplot helps compare data distributions across categories.</p>
-<p>The below packge function <code>ggplot()</code> required a few things first we give it our data variable also known as the data frame <code>ggplot(Class_data)</code>. Then we need to tell it what we actually want plotted from this data set, or the asthetics of the graph, this is shortened to list <code>aes()</code>, i.e.&nbsp;<code>ggplot(Class_data, aes(x = x-axis, y = y axis)</code>. In the below we also tell it to treat the column <code>cell_concentration</code> in our data as a numeric factor this just means it will plot it correctly.</p>
+<p>The below package ggplot() builds graphs in layers.</p>
+<p>First we tell R which dataset to use <code>ggplot(Class_data)</code>. Then we need to tell it what we actually want plotted from this data set, or the asthetics of the graph, this is shortened to list <code>aes()</code>, i.e.&nbsp;<code>ggplot(Class_data, aes(x = x-axis, y = y axis)</code>. In the below we also tell it to treat the column <code>cell_concentration</code> in our data as a numeric factor this just means it will plot it correctly.</p>
 <p>We also will add a <strong>geom</strong> to our plot, this is short for a geometric object - which basically means dots, lines, curves or any other thing we might like to plot. For now we will add a boxplot geom using <code>geom_boxplot</code>. &gt;Data scientists are not very creative when it comes to naming things, but this means with a bit of thinking, googling or AI searching we can pretty quickly work out what a function or option is doing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(Class_data, <span class="fu">aes</span>(<span class="at">x =</span> treatment, <span class="at">y =</span> <span class="fu">as.numeric</span>(cell_concentration))) <span class="sc">+</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Class_data, <span class="fu">aes</span>(<span class="at">x =</span> Treatment, <span class="at">y =</span> <span class="fu">as.numeric</span>(CellConcentration))) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -763,30 +967,43 @@ Action required
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Test your understanding
+<span class="screen-reader-only">Note</span>Test your understanding
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>If you are curious, try changing the aesthetics for the y axis to just be y = cell_concentration to see how it tries to plot the data. What is going on?</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Test your understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Look at your result from week 1, was you groups data an outlier?</p>
+</div>
+</div>
 <p>We can also tidy up this graph and improve how it looks by using options under <code>labels()</code> which allows us to add axes and figure labels. We can also use <code>theme()</code> which allows us to manipulate different visuals in the graph, in this instance I will use theme_minimal which is a theme included with ggplot, but there are a huge number of customisations you can do by manipulating options within <code>theme()</code>. Observe the below changes.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#coloured boxplot</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(Class_data, <span class="fu">aes</span>(<span class="at">x =</span> treatment, <span class="at">y =</span> <span class="fu">as.numeric</span>(cell_concentration), <span class="at">color =</span> treatment)) <span class="sc">+</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Concentration of viable vs. treatment"</span>,</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"treatment"</span>,</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Cell concentration"</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plot</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#coloured boxplot</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(Class_data, <span class="fu">aes</span>(<span class="at">x =</span> Treatment, <span class="at">y =</span> <span class="fu">as.numeric</span>(CellConcentration), <span class="at">color =</span> Treatment)) <span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Concentration of viable vs. treatment"</span>,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Treatment"</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Cell concentration"</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plot</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DP1_Final_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="DP1_Final_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -805,256 +1022,562 @@ Test your understanding
 </blockquote>
 </section>
 </section>
-<section id="graphing-wet-lab-2-microplate-data-in-r" class="level1">
-<h1>Graphing Wet Lab 2 Microplate Data in R</h1>
-<p>Prior to this dry lab we have run through the data analysis in Excel, we are now going to try importing the data into R and graphing using the skills you have developed in ggplot2</p>
-<section id="question-2" class="level2" style="color: red">
-<h2 style="color: red" class="anchored" data-anchor-id="question-2">Question 2</h2>
-<blockquote class="blockquote">
-<p><strong>Reflect:</strong> What do you think a barrier to analysis the Excel processed data in R will be? What do you think the advantages of using R could be?</p>
-</blockquote>
+<section id="analysing-wet-lab-2-data-in-r" class="level1">
+<h1>Analysing Wet Lab 2 Data in R</h1>
+<p>In this section we will work through the analysis of the <strong>MTS and Calcein-AM microplate assay data</strong> from Wet Lab 2.</p>
+<p>The aim of this analysis is to determine how the different treatments affected cell viability. In particular, we want to compare:</p>
+<ul>
+<li>Healthy cells</li>
+<li>Diseased cells</li>
+<li>Treated cells – 10 µM Respiranox</li>
+<li>Treated cells – 20 µM Respiranox</li>
+<li>Non-viable cells</li>
+<li>Media / blank wells</li>
+</ul>
+<p>In the wet lab, each treatment was measured in <strong>triplicate wells</strong>. This is important because it allows us to average replicate measurements and reduce the effect of random error.</p>
+<section id="our-overall-workflow-will-be" class="level4">
+<h4 class="anchored" data-anchor-id="our-overall-workflow-will-be"><strong>Our overall workflow will be:</strong></h4>
+<ol type="1">
+<li><strong>Import the raw plate data</strong></li>
+<li><strong>Reshape the plate layout into long format</strong></li>
+<li><strong>Label each well with its treatment condition</strong></li>
+<li><strong>Average the triplicate wells for each treatment</strong></li>
+<li><strong>Average the blank wells for each group</strong></li>
+<li><strong>Subtract the blank signal from each treatment mean</strong></li>
+<li><strong>Calculate relative viability compared with the healthy control</strong></li>
+<li><strong>Make plots to visualise the results</strong></li>
+</ol>
 </section>
-<section id="thinking-outside-the-cell-reading-and-formatting-your-data" class="level2">
-<h2 class="anchored" data-anchor-id="thinking-outside-the-cell-reading-and-formatting-your-data">Thinking outside the cell, reading and formatting your data</h2>
-<p>So far you have been working with your data in cells, using the tools available in Excel and the tables provided in your prac manual. When it comes to importing data into R we have to think a little differently as we no longer work with the data <em>visually</em> using a Graphical User Interface (i.e.&nbsp;a GUI).</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-ACTION REQUIRED
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>First we need to convert our excel data from a spreadsheet (or .xls) file to a comma seperated text file (or csv.).</p>
-<p>Open the class data from wetlab 2 and open it in Excel. You can now use <code>save as</code> in Excel and choose the option to save as a comma separated file.</p>
-<p>This should save your data with the file extension <code>.csv</code>. Now open the data in <code>Visual Studio Code</code> on your computer, you will see that all our ‘nice’ formatting we did to make the data easier to understand actually makes it very confusing for the computer to interpret what each data point means.</p>
-</div>
-</div>
-<p>We need to simplify things so that the software can distinguish between our different variables.</p>
-<p>I.e. we need to make it clear what each cell represents in terms of <strong>treatment</strong>, <strong>cell concentration</strong> and <strong>absorbance</strong>. We should also remove our <strong>background</strong> from our absorbance as well.</p>
-<p>The easiest way to do this is to make each of these variables the headings of the columns in your data, then input the information for each data point. This is also sometimes referred to as “long format” data. For todays dry prac, we have done this for you.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-ACTION REQUIRED
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Download the plate data .csv filea for both assays from moodle. This data has already been formatted into “long format” for you.</p>
-<p>Open the data for both assays in R and store them as seperate variables using the code below. Remember to change the location in <code>read.csv()</code> to where the file is stored on your computer.</p>
-</div>
-</div>
+</section>
+<section id="import-the-data" class="level1">
+<h1>Import the data</h1>
+<p>The assay data should be saved as a two seperate <code>.csv</code> files available on Moodle.</p>
+<section id="action-required-2" class="level3" style="color: red">
+<h3 style="color: red" class="anchored" data-anchor-id="action-required-2">ACTION REQUIRED</h3>
+<p>Download the .csv files for the MTS and calcein-AM assays from Moodle. Then load them into R studio.</p>
+</section>
+<section id="important" class="level2" style="color: red">
+<h2 style="color: red" class="anchored" data-anchor-id="important">IMPORTANT!</h2>
+<blockquote class="blockquote">
+<p><strong>To help make you more familiar with manipulating code blocks the instructions below will be given only for the Calcein-AM assay. Please make sure you repeat the instructions for MTS as well. This will usually only require changing the names of different objects from cam to MTS and making sure you read in the data correctly.</strong></p>
+</blockquote>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>plate_data_cAM <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Library/CloudStorage/OneDrive-Personal/Research/Teaching/Biol340_981/2025/Practicals and Prac manual/Dry practicals/DP_1_data_analysis/corrected_class_data_cAM.csv"</span>, <span class="at">row.names =</span> <span class="dv">1</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the Calcein-AM plate data</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># file.choose() lets you manually select the file from your computer</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>plate_data_cAM <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.choose</span>(), <span class="at">check.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first few rows of the imported data</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(plate_data_cAM)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the column names</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(plate_data_cAM)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="do">##now repeat this for Calcein AM</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="practical-note" class="level3" style="color: red">
+<h3 style="color: red" class="anchored" data-anchor-id="practical-note">Practical note</h3>
+<p>At this stage it is always a good idea to inspect the file carefully. You can do that by clicking on the name of the object in the data window on right of the RStudio Window:</p>
+<p><img src="images/clipboard-294577816.png" class="img-fluid"></p>
+<p>You should see something like this:<br>
+<img src="images/clipboard-2970986192.png" class="img-fluid"></p>
+<p>Ask yourself:</p>
+<ul>
+<li>Does the data look like the plate layout from the practical?</li>
+<li>Are the first columns storing the group and row information?</li>
+<li>Are the measurement columns named <code>1</code>, <code>2</code>, <code>3</code>, etc. or <code>X1</code>, <code>X2</code>, <code>X3</code>?</li>
+</ul>
+<p>Different <code>.csv</code> files can import slightly differently into R, so checking the structure of the data is an important habit.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="reshape-the-plate-data-into-long-format" class="level1">
+<h1>Reshape the plate data into long format</h1>
+<p>Right now the data is still arranged like a plate, which is easy for humans to read but not ideal for R.</p>
+<p>Our plate currently looks like a spreadsheet. Each column represents a well.</p>
+<p>R works better when each row is one measurement.</p>
+<p><code>pivot_longer()</code> converts the spreadsheet format into this structure</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the raw plate data into long format</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>plate_data_MTS <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Library/CloudStorage/OneDrive-Personal/Research/Teaching/Biol340_981/2025/Practicals and Prac manual/Dry practicals/DP_1_data_analysis/corrected_class_data_MTS.csv"</span>, <span class="at">row.names =</span> <span class="dv">1</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>cam_long <span class="ot">&lt;-</span> plate_data_cAM <span class="sc">%&gt;%</span>   <span class="co"># Start with the imported Calcein-AM dataset</span></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(plate_data_cAM)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) <span class="sc">%&gt;%</span>                <span class="co"># Keep only the first 8 columns</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                                 <span class="co"># column 1 = Group</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="co"># column 2 = Plate row (A–D)</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="co"># columns 3–8 = measurement columns</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">Group =</span> <span class="dv">1</span>,                   <span class="co"># Rename column 1 to "Group"</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">Row =</span> <span class="dv">2</span>                      <span class="co"># Rename column 2 to "Row"</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>,                  <span class="co"># Convert Columns 3-8  into rows</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"Column"</span>,</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"signal"</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the column labels to text</span></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Sometimes R imports column names like 1,2,3 as numbers or factors.</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Converting them to characters ensures they behave consistently when we compare them later.</span></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">Column =</span> <span class="fu">as.character</span>(Column),</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Create well ID that joins togeather the row letter with the column number</span></span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Row = "A" and Column = "1" becomes "A1"</span></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">well =</span> <span class="fu">paste0</span>(Row, Column),  </span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new column called "condition"</span></span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a><span class="co"># This assigns each well to its treatment condition</span></span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a><span class="co"># based on which plate column it came from</span></span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">condition =</span> <span class="fu">case_when</span>(</span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a>      Column <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"1"</span>,<span class="st">"X1"</span>) <span class="sc">~</span> <span class="st">"Healthy"</span>,</span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a>      Column <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"2"</span>,<span class="st">"X2"</span>) <span class="sc">~</span> <span class="st">"Diseased"</span>,</span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a>      Column <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"3"</span>,<span class="st">"X3"</span>) <span class="sc">~</span> <span class="st">"Treated cells - 10 uM Respiranox"</span>,</span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>      Column <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"4"</span>,<span class="st">"X4"</span>) <span class="sc">~</span> <span class="st">"Treated cells - 20 uM Respiranox"</span>,</span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>      Column <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"5"</span>,<span class="st">"X5"</span>) <span class="sc">~</span> <span class="st">"Non-viable cells"</span>,</span>
+<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>      Column <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"6"</span>,<span class="st">"X6"</span>) <span class="sc">~</span> <span class="st">"Media / blank"</span></span>
+<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cam_long)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  Well Absorbance Cell_Type Dilution
-1   A1  45634.083   Healthy  2000000
-2   A2  27520.083   Healthy  1000000
-3   A3  15916.083   Healthy   500000
-4   A4  13197.083   Healthy   250000
-5   A5   9155.083   Healthy   125000
-6   A6   6470.083   Healthy    62500</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(plate_data_MTS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Well Absorbance Cell_Type Dilution GROUP ID
-1   A1    2.49175   Healthy  2000000  G1 &amp; G2
-2   A2    1.96275   Healthy  1000000  G1 &amp; G2
-3   A3    1.23175   Healthy   500000  G1 &amp; G2
-4   A4    0.81075   Healthy   250000  G1 &amp; G2
-5   A5    0.26875   Healthy   125000  G1 &amp; G2
-6   A6    0.14275   Healthy    62500  G1 &amp; G2</code></pre>
+<pre><code># A tibble: 6 × 6
+  Group   Row   Column signal well  condition                       
+  &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;                           
+1 G1 &amp; G6 A     X1      34627 AX1   Healthy                         
+2 G1 &amp; G6 A     X2      17927 AX2   Diseased                        
+3 G1 &amp; G6 A     X3      22004 AX3   Treated cells - 10 uM Respiranox
+4 G1 &amp; G6 A     X4      13550 AX4   Treated cells - 20 uM Respiranox
+5 G1 &amp; G6 A     X5       7932 AX5   Non-viable cells                
+6 G1 &amp; G6 A     X6       7512 AX6   Media / blank                   </code></pre>
 </div>
 </div>
+<section id="practical-note-1" class="level3" style="color: red">
+<h3 style="color: red" class="anchored" data-anchor-id="practical-note-1">Practical note</h3>
+<p>At this point each row represents <strong>one well measurement</strong>.<br>
+This structure is much easier for R to analyse and plot.</p>
+<hr>
 </section>
-<section id="question-3" class="level2" style="color: red">
-<h2 style="color: red" class="anchored" data-anchor-id="question-3">Question 3</h2>
+</section>
+<section id="remove-row-d" class="level1">
+<h1>Remove row D</h1>
+<p>For this analysis we only use rows <strong>A–C</strong>. So we are going to remove row <strong>D</strong> before we make any calculations.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>cam_filtered <span class="ot">&lt;-</span> cam_long <span class="sc">%&gt;%</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the fuction filter will remove data</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Row <span class="sc">!=</span> <span class="st">"D"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="practical-note-2" class="level3" style="color: red">
+<h3 style="color: red" class="anchored" data-anchor-id="practical-note-2">Practical note</h3>
+<p>Filtering row D <strong>before calculating means</strong> ensures that row D does not influence the averages.</p>
+<hr>
+</section>
+</section>
+<section id="average-the-triplicate-wells" class="level1">
+<h1>Average the triplicate wells</h1>
+<p>Each treatment was measured in triplicate wells.<br>
+We now calculate the <strong>mean signal</strong> for each treatment.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new dataset called cam_summary that contains</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the average signal for each treatment within each group</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>cam_summary <span class="ot">&lt;-</span> cam_filtered <span class="sc">%&gt;%</span>     <span class="co"># Start with the filtered dataset (rows A–C only)</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># group_by() tells R to split the data into groups</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Here we separate the data by:</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   1. Group (student group)</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   2. condition (treatment type)</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This means calculations will be done separately</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># for each treatment within each group</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Group, condition) <span class="sc">%&gt;%</span>   </span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the average signal for each group/treatment combination</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># mean() finds the average value</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># na.rm = TRUE tells R to ignore missing values (NA) if they exist</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_signal =</span> <span class="fu">mean</span>(signal, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>cam_summary</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 174 × 3
+# Groups:   Group [29]
+   Group     condition                        mean_signal
+   &lt;chr&gt;     &lt;chr&gt;                                  &lt;dbl&gt;
+ 1 ""        Diseased                                NaN 
+ 2 ""        Healthy                                 NaN 
+ 3 ""        Media / blank                           NaN 
+ 4 ""        Non-viable cells                        NaN 
+ 5 ""        Treated cells - 10 uM Respiranox        NaN 
+ 6 ""        Treated cells - 20 uM Respiranox        NaN 
+ 7 "G1 &amp; G6" Diseased                              15315.
+ 8 "G1 &amp; G6" Healthy                               25263.
+ 9 "G1 &amp; G6" Media / blank                          7531.
+10 "G1 &amp; G6" Non-viable cells                       7691 
+# ℹ 164 more rows</code></pre>
+</div>
+</div>
+<section id="practical-note-3" class="level3" style="color: red">
+<h3 style="color: red" class="anchored" data-anchor-id="practical-note-3">Practical note</h3>
+<p>Each treatment now has <strong>one average signal value per group</strong>.</p>
+<hr>
+</section>
+</section>
+<section id="calculate-blank-signal" class="level1">
+<h1>Calculate blank signal</h1>
+<p>Blank wells measure background fluorescence from the media and assay reagents.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataset containing the background (blank) signal for each group</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>cam_blank_values <span class="ot">&lt;-</span> cam_summary <span class="sc">%&gt;%</span>     <span class="co"># Start with the dataset that contains</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="co"># the average signal for each treatment</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Keep only the rows corresponding to the blank wells</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># These wells contain media but no cells</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># and therefore measure background fluorescence</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"Media / blank"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Rename the column mean_signal to blank_mean</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This makes it clear that this value represents</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the average background signal for each group</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Group, <span class="at">blank_mean =</span> mean_signal)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+<section id="background-correction" class="level1">
+<h1>Background correction</h1>
+<p>Now we subtract the background signal.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new dataset called cam_corrected that contains</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the background-corrected signal for each treatment</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>cam_corrected <span class="ot">&lt;-</span> cam_summary <span class="sc">%&gt;%</span>        <span class="co"># Start with the dataset that contains</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="co"># the average signal for each treatment</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove the blank rows because we only want to correct</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the treatment conditions (not the blank itself)</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">!=</span> <span class="st">"Media / blank"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Join the blank values back onto the dataset</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># left_join() matches rows using the "Group" column</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This means each treatment row will now also contain</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the blank_mean value from the same group</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(cam_blank_values, <span class="at">by =</span> <span class="st">"Group"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create a new column called corrected_signal</span></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This subtracts the background fluorescence</span></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># from the treatment signal</span></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">corrected_signal =</span> mean_signal <span class="sc">-</span> blank_mean</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the corrected dataset</span></span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>cam_corrected</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 145 × 5
+# Groups:   Group [29]
+   Group     condition                   mean_signal blank_mean corrected_signal
+   &lt;chr&gt;     &lt;chr&gt;                             &lt;dbl&gt;      &lt;dbl&gt;            &lt;dbl&gt;
+ 1 ""        Diseased                           NaN        NaN              NaN 
+ 2 ""        Healthy                            NaN        NaN              NaN 
+ 3 ""        Non-viable cells                   NaN        NaN              NaN 
+ 4 ""        Treated cells - 10 uM Resp…        NaN        NaN              NaN 
+ 5 ""        Treated cells - 20 uM Resp…        NaN        NaN              NaN 
+ 6 "G1 &amp; G6" Diseased                         15315.      7531.            7784 
+ 7 "G1 &amp; G6" Healthy                          25263.      7531.           17733.
+ 8 "G1 &amp; G6" Non-viable cells                  7691       7531.             160.
+ 9 "G1 &amp; G6" Treated cells - 10 uM Resp…      22218.      7531.           14687 
+10 "G1 &amp; G6" Treated cells - 20 uM Resp…      12985.      7531.            5454 
+# ℹ 135 more rows</code></pre>
+</div>
+</div>
+<section id="practical-note-4" class="level3" style="color: red">
+<h3 style="color: red" class="anchored" data-anchor-id="practical-note-4">Practical note</h3>
+<p>Raw fluorescence contains:</p>
+<ul>
+<li>cell fluorescence</li>
+<li>background fluorescence</li>
+</ul>
+<p>Subtracting the blank removes this background.</p>
+<hr>
+</section>
+</section>
+<section id="calculate-relative-viability" class="level1">
+<h1>Calculate relative viability</h1>
+<p>Healthy cells are defined as <strong>100% viability</strong>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate relative cell viability for each treatment</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a> <span class="co"># Start with the dataset that contains the background-corrected signals</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>viability_cam <span class="ot">&lt;-</span> cam_corrected <span class="sc">%&gt;%</span>     </span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># group_by() separates the data by student group</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Each group performed their own experiment, so we calculate</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># viability relative to the healthy control within each group</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Group) <span class="sc">%&gt;%</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a new column called relative_viability</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This compares each treatment signal to the healthy control signal</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># from the same group and expresses it as a percentage</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">relative_viability =</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>      corrected_signal <span class="sc">/</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>      corrected_signal[condition <span class="sc">==</span> <span class="st">"Healthy"</span>] <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="co"># View the resulting dataset</span></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>viability_cam</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 145 × 6
+# Groups:   Group [29]
+   Group    condition mean_signal blank_mean corrected_signal relative_viability
+   &lt;chr&gt;    &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;            &lt;dbl&gt;              &lt;dbl&gt;
+ 1 ""       Diseased         NaN        NaN              NaN             NaN    
+ 2 ""       Healthy          NaN        NaN              NaN             NaN    
+ 3 ""       Non-viab…        NaN        NaN              NaN             NaN    
+ 4 ""       Treated …        NaN        NaN              NaN             NaN    
+ 5 ""       Treated …        NaN        NaN              NaN             NaN    
+ 6 "G1 &amp; G… Diseased       15315.      7531.            7784              43.9  
+ 7 "G1 &amp; G… Healthy        25263.      7531.           17733.            100    
+ 8 "G1 &amp; G… Non-viab…       7691       7531.             160.              0.904
+ 9 "G1 &amp; G… Treated …      22218.      7531.           14687              82.8  
+10 "G1 &amp; G… Treated …      12985.      7531.            5454              30.8  
+# ℹ 135 more rows</code></pre>
+</div>
+</div>
+<p>Conceptually:</p>
+<pre><code>relative viability (%) =
+(sample signal / healthy signal) × 100</code></pre>
+<hr>
+</section>
+<section id="plot-class-relative-viability" class="level1">
+<h1>Plot class relative viability</h1>
+<p>we can now make a simple plot of the entire class data, this will allow us to visualise means and outliers. We will use boxplots as we have before but also make use of another type of geom called <code>geom_jitter()</code>. This type of plot will show every single data point from your data and move it (or jitter it) a little bit left or right so you can see multiple data of the same value. This is really good for visualising the density of data around a particular point. To help with visualising this much data at once we will also use a low <code>alpha</code> value within <code>geom_jitter()</code>, this will increase the transparency with <strong>alpha = 1</strong> being fully opaque and <strong>alpha = 0</strong> being invisible.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot relative viability for each treatment, we are also going to add some text into the plot we can refer to later so we know which group made which data.</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>cam_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(viability_cam, <span class="fu">aes</span>(<span class="at">x =</span> condition, <span class="at">y =</span> relative_viability, <span class="at">colour =</span> condition,)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Plot each student group's data point over the top</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.15</span>, <span class="at">alpha=</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add labels to the plot</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Relative viability of treatments (Calcein-AM)"</span>,</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Condition"</span>,</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Relative viability (%)"</span></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Use a clean theme for the plot</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Rotate the x-axis labels so they are easier to read</span></span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>cam_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DP1_Final_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="action-required-3" class="level3" style="color: red">
+<h3 style="color: red" class="anchored" data-anchor-id="action-required-3">ACTION REQUIRED</h3>
 <blockquote class="blockquote">
-<p>What can you notice is different between how your data was formatted in excel compared to the data we have prepared for you to import into R? Why might this be important.</p>
+<p>If there is an obvious outlier in the data see if you can determine which group it came from.</p>
 </blockquote>
 </section>
-<section id="plotting-the-results" class="level2">
-<h2 class="anchored" data-anchor-id="plotting-the-results">Plotting the Results</h2>
-<p>Now lets make a different type of plot. Let’s create a scatter plot of *<strong>the calcein-AM</strong> using <strong>ggplot2</strong> to visualize how Adjusted Absorbance changes with Cell Concentration.</p>
-<p>In the below plot: - <code>geom_point()</code> adds scatter plot points. - <code>labs()</code> adds titles and axis labels. - <code>theme_minimal()</code> is a clean, modern theme that removes a lot of unnecessary formating.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You will notice that we have some options within <code>geom_point()</code> play around with them and see what happens. Why not check other options you could include here by googling or asking AI. You can do some pretty crazy things with custom points or by using <code>jitter</code>.</p>
-</div>
-</div>
+</section>
+<section id="preparing-data-for-publication-quality-analysis" class="level1">
+<h1>Preparing data for publication-quality analysis</h1>
+<p>So far we have explored the data using jitter and box plots. This is useful for identifying trends and potential outliers.</p>
+<p>However, when presenting results in a <strong>scientific report or publication</strong>, we usually summarise the data and perform statistical tests to determine whether treatments differ significantly.</p>
+<p>Here we will:</p>
+<ol type="1">
+<li>Perform a <strong>one-way ANOVA</strong> to test for treatment effects</li>
+<li>Use <strong>pairwise t-tests</strong> to compare between treatments</li>
+<li>Visualise these statistics on our <strong>boxplots</strong></li>
+</ol>
+<hr>
+</section>
+<section id="statistical-analysis-of-treatment-effects" class="level1">
+<h1>Statistical analysis of treatment effects</h1>
+<p>So far we have visualised individual datapoints.</p>
+<p><br>
+This helps us see whether the treatments appear to affect cell viability.</p>
+<p>However, to determine whether these differences are <strong>statistically significant</strong>, we need to perform a statistical test.</p>
+<p>Because we are comparing <strong>more than two treatments</strong>, we use a method called <strong>Analysis of Variance (ANOVA)</strong>. You should have learnt about this kind of statistical test in 2nd year.</p>
+<hr>
+</section>
+<section id="step-1-run-a-one-way-anova" class="level1">
+<h1>Step 1 — Run a one-way ANOVA</h1>
+<p>ANOVA tests whether the <strong>means of multiple groups are different from each other</strong>.</p>
+<p>In this experiment, the factor we are testing is the <strong>treatment condition</strong>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot of Adjusted Absorbance vs. Dilution</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Colored by Cell_Type</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plate_data_cAM, <span class="fu">aes</span>(<span class="at">x =</span> Dilution, <span class="at">y =</span> Absorbance)) <span class="sc">+</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Standard Curve of Absorbance vs Cell Concentration"</span>,</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cell Concentration (cells/mL)"</span>,</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adjusted Absorbance"</span>,</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cell Type"</span></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>anova_model <span class="ot">&lt;-</span> <span class="fu">aov</span>(relative_viability <span class="sc">~</span> condition, <span class="at">data =</span> viability_cam)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+condition     4 140211   35053   22.11 1.48e-13 ***
+Residuals   115 182327    1585                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+25 observations deleted due to missingness</code></pre>
+</div>
+</div>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
+<p>Look at the <strong>p-value</strong> in the ANOVA output.</p>
+<p>If the p-value is <strong>less than 0.05</strong>, this suggests that <strong>at least one treatment differs significantly from the others</strong>.</p>
+<p>However, ANOVA does not tell us <strong>which treatments differ</strong>.</p>
+<hr>
+</section>
+</section>
+<section id="step-2-perform-pairwise-comparisons" class="level1">
+<h1>Step 2 — Perform pairwise comparisons</h1>
+<p>To determine which treatments differ from each other, we perform <strong>post-hoc comparisons</strong>.</p>
+<p>One commonly used approach is <strong>pairwise t-tests with multiple testing correction</strong>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>pairwise_results <span class="ot">&lt;-</span> <span class="fu">pairwise.t.test</span>(</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  viability_cam<span class="sc">$</span>relative_viability,</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  viability_cam<span class="sc">$</span>condition,</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">p.adjust.method =</span> <span class="st">"bonferroni"</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the p-value matrix to a table</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>pairwise_table <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(pairwise_results<span class="sc">$</span>p.value)</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>pairwise_table</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                     Diseased      Healthy Non-viable cells
+Healthy                          3.669601e-02           NA               NA
+Non-viable cells                 4.705497e-06 2.177482e-12               NA
+Treated cells - 10 uM Respiranox 2.500622e-01 1.000000e+00     8.126026e-11
+Treated cells - 20 uM Respiranox 1.000000e+00 1.895226e-04     1.983376e-03
+                                 Treated cells - 10 uM Respiranox
+Healthy                                                        NA
+Non-viable cells                                               NA
+Treated cells - 10 uM Respiranox                               NA
+Treated cells - 20 uM Respiranox                      0.002611249</code></pre>
+</div>
+</div>
+<p>This table shows the <strong>adjusted p-values</strong> for each pair of treatments.</p>
+<hr>
+</section>
+<section id="step-3-visualise-the-results-on-the-figure" class="level1">
+<h1>Step 3 — Visualise the results on the figure</h1>
+<p>We can now add these statistical results directly to our boxplot. Will make use of a new package called <code>ggpubr</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define which treatment groups we want to statistically compare</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Each pair represents two conditions that will be tested against each other</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># for a significant difference in viability</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>comparisons <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Healthy"</span>, <span class="st">"Diseased"</span>),</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Diseased"</span>, <span class="st">"Treated cells - 10 uM Respiranox"</span>),</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Diseased"</span>, <span class="st">"Treated cells - 20 uM Respiranox"</span>),</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Treated cells - 10 uM Respiranox"</span>, <span class="st">"Treated cells - 20 uM Respiranox"</span>),</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Healthy"</span>, <span class="st">"Treated cells - 10 uM Respiranox"</span>),</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"Healthy"</span>, <span class="st">"Treated cells - 20 uM Respiranox"</span>)</span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Start creating the plot using ggplot</span></span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="co"># The dataset used is "viability_cam"</span></span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a><span class="co"># x-axis = treatment condition</span></span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a><span class="co"># y-axis = relative viability</span></span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(viability_cam, <span class="fu">aes</span>(<span class="at">x =</span> condition, <span class="at">y =</span> relative_viability, <span class="at">colour =</span> condition)) <span class="sc">+</span></span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a> <span class="co"># Add a boxplot to show the distribution of values for each treatment</span></span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># outlier.shape = NA hides the default outlier points so they don't overlap</span></span>
+<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># with the jittered datapoints we add later</span></span>
+<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape =</span> <span class="cn">NA</span>, <span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Perform a global ANOVA test comparing all treatment groups</span></span>
+<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This tests whether there is ANY difference between the conditions</span></span>
+<span id="cb34-29"><a href="#cb34-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># label.y controls where the p-value text appears on the plot</span></span>
+<span id="cb34-30"><a href="#cb34-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_compare_means</span>(<span class="at">method =</span> <span class="st">"anova"</span>, <span class="at">label.y =</span> <span class="dv">140</span>) <span class="sc">+</span></span>
+<span id="cb34-31"><a href="#cb34-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-32"><a href="#cb34-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Perform pairwise statistical comparisons between specific groups</span></span>
+<span id="cb34-33"><a href="#cb34-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># comparisons = the list we created above</span></span>
+<span id="cb34-34"><a href="#cb34-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># method = "t.test" performs pairwise t-tests</span></span>
+<span id="cb34-35"><a href="#cb34-35" aria-hidden="true" tabindex="-1"></a>  <span class="co"># p.adjust.method = "bonferroni" corrects for multiple comparisons</span></span>
+<span id="cb34-36"><a href="#cb34-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># label = "p.signif" shows results as significance symbols (*, **, etc.)</span></span>
+<span id="cb34-37"><a href="#cb34-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-38"><a href="#cb34-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_compare_means</span>(</span>
+<span id="cb34-39"><a href="#cb34-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">comparisons =</span> comparisons,</span>
+<span id="cb34-40"><a href="#cb34-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"t.test"</span>,</span>
+<span id="cb34-41"><a href="#cb34-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">p.adjust.method =</span> <span class="st">"bonferroni"</span>,</span>
+<span id="cb34-42"><a href="#cb34-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="st">"p.signif"</span></span>
+<span id="cb34-43"><a href="#cb34-43" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb34-44"><a href="#cb34-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-45"><a href="#cb34-45" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Expand the y-axis slightly so there is room to display the statistical labels</span></span>
+<span id="cb34-46"><a href="#cb34-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.25</span>))) <span class="sc">+</span></span>
+<span id="cb34-47"><a href="#cb34-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-48"><a href="#cb34-48" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add plot titles and axis labels</span></span>
+<span id="cb34-49"><a href="#cb34-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb34-50"><a href="#cb34-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Effect of Respiranox treatment on cell viability"</span>,</span>
+<span id="cb34-51"><a href="#cb34-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Treatment condition"</span>,</span>
+<span id="cb34-52"><a href="#cb34-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Relative viability (%)"</span></span>
+<span id="cb34-53"><a href="#cb34-53" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb34-54"><a href="#cb34-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-55"><a href="#cb34-55" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Use a clean publication-style theme</span></span>
+<span id="cb34-56"><a href="#cb34-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb34-57"><a href="#cb34-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-58"><a href="#cb34-58" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Rotate the x-axis labels so long treatment names fit better</span></span>
+<span id="cb34-59"><a href="#cb34-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DP1_Final_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="DP1_Final_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Our plot now has points! But it would also be great to colour by the cell line type.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-ACTION REQUIRED
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Based on the code you made for boxplots above, how would you colour the data in this plot by cell type?</p>
-</div>
-</div>
-<section id="adding-a-trendline" class="level3">
-<h3 class="anchored" data-anchor-id="adding-a-trendline">Adding a trendline</h3>
-<p>Our plot could also be improved by adding in a trendline to visualise the data. We can do this using the function <code>geom_smooth()</code>. Here we are going to apply a linear model or <strong>‘lm’</strong> as our method because we want a straight line. We will also set the option <code>se</code> or standard error to = <strong>FALSE</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot of Adjusted Absorbance vs. Dilution</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Colored by Cell_Type</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plate_data_cAM, <span class="fu">aes</span>(<span class="at">x =</span> Dilution, <span class="at">y =</span> Absorbance, <span class="at">color =</span> Cell_Type)) <span class="sc">+</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span><span class="st">'lm'</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Standard Curve of Absorbance vs Cell Concentration"</span>,</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cell Concentration (cells/mL)"</span>,</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adjusted Absorbance"</span>,</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cell Type"</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="DP1_Final_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Test your understanding
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Have a look (using google or AI) at some of the other types of methods you can use to add a line geom to your plots. One to get you started is <code>method = "loess"</code></p>
-</div>
-</div>
+<hr>
 </section>
-<section id="log-scale-example" class="level3">
-<h3 class="anchored" data-anchor-id="log-scale-example">Log Scale Example</h3>
-<p>Our plot looks pretty squashed in the left hand side (lower concentrations). Let’s fix that by making it a log graph. This is very easy to do!</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-ACTION REQUIRED
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let’s add in a lione of code for <code>scale_x_log10()</code>. Don’t forget to put a <code>+</code> at the end so that the computer reads it as part of you graph function. You will notice I also changed the geom for the line below to dashed, because <em>why not</em>. Feel free to change it back or look at other options.</p>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plate_data_cAM, <span class="fu">aes</span>(<span class="at">x =</span> Dilution, <span class="at">y =</span> Absorbance, <span class="at">color =</span> Cell_Type)) <span class="sc">+</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Standard Curve of Absorbance vs Cell Concentration (Log Scale)"</span>,</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cell Concentration (cells/mL)"</span>,</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adjusted Absorbance"</span>,</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cell Type"</span></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="DP1_Final_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="what-this-figure-shows" class="level1">
+<h1>What this figure shows</h1>
+<p>This final figure includes:</p>
+<ul>
+<li>the <strong>distribution of the data (boxplots)</strong></li>
+<li>the <strong>individual measurements</strong></li>
+<li>the <strong>ANOVA result</strong></li>
+<li>the <strong>pairwise statistical comparisons</strong></li>
+</ul>
+<section id="significance-labels" class="level3">
+<h3 class="anchored" data-anchor-id="significance-labels">Significance labels</h3>
+<ul>
+<li><code>ns</code> = not significant<br>
+</li>
+<li><code>*</code> = p &lt; 0.05<br>
+</li>
+<li><code>**</code> = p &lt; 0.01<br>
+</li>
+<li><code>***</code> = p &lt; 0.001</li>
+</ul>
+<p>These comparisons help determine which treatments have significantly different effects on cell viability.Interpretation</p>
+<hr>
 </section>
 </section>
-<section id="estimating-the-linear-range" class="level2">
-<h2 class="anchored" data-anchor-id="estimating-the-linear-range">Estimating the Linear Range</h2>
-<p>We can also further improve our standard curves by finding the linear portion of the trendline to determine the sensitivity range of the assays. Let’s do this by filtering our data for specific dilutions using the function <code>filter()</code>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-ACTION REQUIRED
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Copy the below code and change the filtering range to something suitable for your data.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>linear_data_cAM <span class="ot">&lt;-</span> plate_data_cAM <span class="sc">%&gt;%</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Dilution <span class="sc">&gt;=</span> <span class="dv">1000</span> <span class="sc">&amp;</span> Dilution <span class="sc">&lt;=</span> <span class="dv">500000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<p>Now let’s try reploting our graph using the new <code>linear_data_cAM</code> variable.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot linear region</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(linear_data_cAM, <span class="fu">aes</span>(<span class="at">x =</span> Dilution, <span class="at">y =</span> Absorbance, <span class="at">color =</span> Cell_Type)) <span class="sc">+</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Linear Region of Standard Curve"</span>,</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cell Concentration (cells/mL)"</span>,</span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adjusted Absorbance"</span>,</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cell Type"</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="DP1_Final_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+<section id="activities-and-questions" class="level1">
+<h1>Activities and questions</h1>
 <section id="activity-2" class="level2" style="color: red">
 <h2 style="color: red" class="anchored" data-anchor-id="activity-2">Activity 2</h2>
 <blockquote class="blockquote">
@@ -1072,7 +1595,7 @@ ACTION REQUIRED
 <p>In RStudio, use the <strong>Plots</strong> pane (bottom-right) and click <strong>Export</strong> to save your plots as an image (PNG, JPEG) or PDF. You can also programmatically export using <code>ggsave()</code>.</p>
 <p>Example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"myplot.png"</span>, <span class="at">plot =</span> p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"myplot.png"</span>, <span class="at">plot =</span> p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="activity-4" class="level2" style="color: red">
@@ -1091,6 +1614,18 @@ ACTION REQUIRED
 <h2 style="color: red" class="anchored" data-anchor-id="question-5">Question 5</h2>
 <blockquote class="blockquote">
 <p>Write a brief comparison of the two assays you performed. Which was faster, more reproducible, or more sensitive?</p>
+</blockquote>
+</section>
+<section id="question-6" class="level2" style="color: red">
+<h2 style="color: red" class="anchored" data-anchor-id="question-6">Question 6</h2>
+<blockquote class="blockquote">
+<p>Based on the statistical results:</p>
+<ul>
+<li>Does <strong>Respiranox treatment improve viability compared to diseased cells?</strong></li>
+<li>Is the <strong>20 µM dose more effective than 10 µM?</strong></li>
+<li>Do treated cells recover to levels similar to <strong>healthy cells</strong>?</li>
+</ul>
+<p>These statistical tools help researchers determine whether the observed differences are likely due to the <strong>drug treatment rather than random variation</strong>.</p>
 </blockquote>
 <div style="page-break-after: always;"></div>
 </section>
@@ -1112,390 +1647,580 @@ ACTION REQUIRED
 <ul>
 <li>Learned how to import and analyse data in both Excel and R.</li>
 <li>Learnt how to generate <strong>box</strong> and <strong>scatter</strong> plots in R</li>
-<li>Constructed <strong>standard curves</strong> in Excel and R.</li>
-<li>Determined the <strong>linear range</strong> using regression.</li>
-<li>Calculated <strong>cell viability</strong> for diseased vs.&nbsp;healthy cells.</li>
+<li>Learnt how to complete some basic data manipulation and cleaning</li>
+<li>Calculated <strong>relative viability</strong> for different cell treatments.</li>
 </ul>
+</section>
+<section id="function-glossary" class="level1">
+<h1>Function Glossary</h1>
+<p>During this practical you used a range of different <strong>R functions</strong> to import data, inspect it, clean it, graph it, and run basic statistics.</p>
+<p>A <strong>function</strong> is simply a command that tells R to do something.</p>
+<p>This glossary includes <strong>all of the main functions used in this practical</strong>, along with a short explanation and a simple example.</p>
+<hr>
+<section id="setup-and-document-functions" class="level4">
+<h4 class="anchored" data-anchor-id="setup-and-document-functions">Setup and document functions</h4>
+<p><code>knitr::opts_chunk$set()</code></p>
+<p>Sets global options for code chunks in an R Markdown or Quarto document.</p>
+<p>In this practical it was used to control whether code, warnings, and messages are shown.</p>
+<p>knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)</p>
+<hr>
+</section>
+<section id="installing-and-loading-packages" class="level4">
+<h4 class="anchored" data-anchor-id="installing-and-loading-packages">Installing and loading packages</h4>
+<p><code>install.packages()</code></p>
+<p>Installs a package so it can be used in R.</p>
+<p>You only need to do this once per computer.</p>
+<p>install.packages(“tidyverse”)</p>
+<hr>
+<p><code>library()</code></p>
+<p>Loads a package into your current R session.</p>
+<p>You usually need to run this each time you open RStudio.</p>
+<p>library(tidyverse) library(plotly) library(ggpubr)</p>
+<hr>
+</section>
+<section id="basic-r-functions" class="level4">
+<h4 class="anchored" data-anchor-id="basic-r-functions">Basic R functions</h4>
+<p><code>sqrt()</code></p>
+<p>Calculates the square root of a number.</p>
+<p>sqrt(4)</p>
+<hr>
+<p><code>round()</code></p>
+<p>Rounds a number to a chosen number of decimal places.</p>
+<p>round(3.14159, digits = 2)</p>
+<hr>
+<p><code>c()</code></p>
+<p>Combines multiple values into a single vector.</p>
+<p>c(“flies”, “beetles”, “katydids”)</p>
+<hr>
+</section>
+<section id="importing-and-inspecting-data" class="level4">
+<h4 class="anchored" data-anchor-id="importing-and-inspecting-data">Importing and inspecting data</h4>
+</section>
+<section id="read.csv" class="level4">
+<h4 class="anchored" data-anchor-id="read.csv"><code>read.csv()</code></h4>
+<p>Imports a <code>.csv</code> file into R as a dataset.</p>
+<p>data &lt;- read.csv(file.choose())</p>
+<hr>
+<p><code>file.choose()</code></p>
+<p>Opens a file browser so you can select a file from your computer.</p>
+<p>read.csv(file.choose())</p>
+<hr>
+<p><code>head()</code></p>
+<p>Shows the first few rows of a dataset.</p>
+<p>Useful for checking whether your file imported correctly.</p>
+<p>head(data)</p>
+<hr>
+<p><code>names()</code></p>
+<p>Displays the column names of a dataset.</p>
+<p>names(data)</p>
+<hr>
+<p><code>unique()</code></p>
+<p>Shows the unique values in a column.</p>
+<p>Useful for checking whether filtering worked correctly.</p>
+<p>unique(cam_filtered$Row)</p>
+<hr>
+<p><code>as.numeric()</code></p>
+<p>Converts values into numeric form.</p>
+<p>This is useful when a column has been imported as text instead of numbers.</p>
+<p>as.numeric(Class_data$CellConcentration)</p>
+<hr>
+<p><code>as.character()</code></p>
+<p>Converts values into text.</p>
+<p>This is useful when you want to compare column names or labels as text.</p>
+<p>as.character(cam_long$Column)</p>
+<hr>
+</section>
+<section id="data-manipulation-functions-from-tidyverse" class="level4">
+<h4 class="anchored" data-anchor-id="data-manipulation-functions-from-tidyverse">Data manipulation functions from tidyverse</h4>
+<p><code>select()</code></p>
+<p>Keeps only selected columns from a dataset.</p>
+<p>select(data, Group, Row)</p>
+<p>Example from this practical:</p>
+<p>select(1:8)</p>
+<hr>
+<p><code>rename()</code></p>
+<p>Changes the names of columns.</p>
+<p>rename(data, Group = 1, Row = 2)</p>
+<hr>
+<p><code>pivot_longer()</code></p>
+<p>Converts data from a wide spreadsheet layout into long format.</p>
+<p>This is useful when you want each row to represent one measurement.</p>
+<p>pivot_longer(data, cols = 3:8, names_to = “Column”, values_to = “signal”)</p>
+<hr>
+<p><code>mutate()</code></p>
+<p>Creates a new column or changes an existing column.</p>
+<p>mutate(data, doubled_value = value * 2)</p>
+<p>Example from this practical:</p>
+<p>mutate(corrected_signal = mean_signal - blank_mean)</p>
+<hr>
+<p><code>case_when()</code></p>
+<p>Creates values based on a set of rules.</p>
+<p>This is useful when assigning labels such as treatment conditions.</p>
+<p>case_when( Column == “1” ~ “Healthy”, Column == “2” ~ “Diseased” )</p>
+<hr>
+<p><code>filter()</code></p>
+<p>Keeps only rows that meet a condition.</p>
+<p>filter(data, Row != “D”)</p>
+<p>Example:</p>
+<p>filter(condition == “Media / blank”)</p>
+<hr>
+<p><code>group_by()</code></p>
+<p>Groups the data so later calculations are done separately within each group.</p>
+<p>group_by(data, Group, condition)</p>
+<hr>
+<p><code>summarise()</code></p>
+<p>Calculates summary statistics such as means.</p>
+<p>summarise(data, mean_signal = mean(signal))</p>
+<p>Example from this practical:</p>
+<p>summarise(mean_signal = mean(signal, na.rm = TRUE))</p>
+<hr>
+<p><code>left_join()</code></p>
+<p>Combines two datasets using a shared column.</p>
+<p>This was used to add blank values back onto the treatment table.</p>
+<p>left_join(dataset1, dataset2, by = “Group”)</p>
+<hr>
+</section>
+<section id="other-functions" class="level4">
+<h4 class="anchored" data-anchor-id="other-functions">Other functions</h4>
+<p><code>mean()</code></p>
+<p>Calculates the average value.</p>
+<p>mean(c(2, 4, 6))</p>
+<p>Example from this practical:</p>
+<p>mean(signal, na.rm = TRUE)</p>
+<hr>
+<p><code>paste0()</code></p>
+<p>Joins pieces of text together with no spaces.</p>
+<p>This was used to create well IDs such as <code>A1</code> or <code>B3</code>.</p>
+<p>paste0(“A”, “1”)</p>
+<hr>
+<p><code>list()</code></p>
+<p>Creates a list.</p>
+<p>In this practical it was used to define pairs of treatments for statistical comparisons.</p>
+<p>list( c(“Healthy”, “Diseased”), c(“Diseased”, “Treated cells - 10 uM Respiranox”) )</p>
+<hr>
+</section>
+<section id="plotting-functions-from-ggplot2" class="level4">
+<h4 class="anchored" data-anchor-id="plotting-functions-from-ggplot2">Plotting functions from ggplot2</h4>
+<p><code>ggplot()</code></p>
+<p>Starts a graph.</p>
+<p>You give it a dataset and then add layers.</p>
+<p>ggplot(data, aes(x = Treatment, y = viability))</p>
+<hr>
+<p><code>aes()</code></p>
+<p>Short for aesthetics.</p>
+<p>This tells ggplot which variables to use for the x-axis, y-axis, colour, and so on.</p>
+<p>aes(x = condition, y = relative_viability, colour = condition)</p>
+<hr>
+<p><code>geom_boxplot()</code></p>
+<p>Adds a boxplot layer to a graph.</p>
+<p>geom_boxplot()</p>
+<hr>
+<p><code>geom_jitter()</code></p>
+<p>Adds individual points with a little horizontal spread so they do not overlap too much.</p>
+<p>geom_jitter(width = 0.15, size = 3)</p>
+<hr>
+<p><code>labs()</code></p>
+<p>Adds a title and axis labels to a graph.</p>
+<p>labs( title = “Relative viability of treatments”, x = “Condition”, y = “Relative viability (%)” )</p>
+<hr>
+<p><code>theme_minimal()</code></p>
+<p>Applies a clean visual style to the plot.</p>
+<p>theme_minimal()</p>
+<hr>
+<p><code>theme_classic()</code></p>
+<p>Applies another simple visual style to the plot.</p>
+<p>theme_classic()</p>
+<hr>
+<p><code>theme()</code></p>
+<p>Allows you to customise smaller visual details of a plot.</p>
+<p>theme(axis.text.x = element_text(angle = 45, hjust = 1))</p>
+<hr>
+<p><code>element_text()</code></p>
+<p>Controls the appearance of text in a plot, such as angle or size.</p>
+<p>element_text(angle = 45, hjust = 1)</p>
+<hr>
+<p><code>scale_y_continuous()</code></p>
+<p>Controls the y-axis scale.</p>
+<p>In this practical it was used to create extra space above the plot for significance labels.</p>
+<p>scale_y_continuous(expand = expansion(mult = c(0.05, 0.25)))</p>
+<hr>
+<p><code>expansion()</code></p>
+<p>Adds extra space around an axis.</p>
+<p>expansion(mult = c(0.05, 0.25))</p>
+<hr>
+<p><code>ggsave()</code></p>
+<p>Saves a plot to a file such as PNG or PDF.</p>
+<p>ggsave(“myplot.png”, width = 6, height = 4)</p>
+<p>Example from this practical:</p>
+<p>ggsave(“stat_plot.png”, final_plot_cam, width = 6, height = 6)</p>
+<hr>
+<p>Statistical functions</p>
+<p><code>aov()</code></p>
+<p>Runs an ANOVA model.</p>
+<p>This tests whether there is a difference between the means of multiple groups.</p>
+<p>anova_model &lt;- aov(relative_viability ~ condition, data = viability_cam)</p>
+<hr>
+<p><code>summary()</code></p>
+<p>Displays the results of a model or dataset summary.</p>
+<p>Example with ANOVA:</p>
+<p>summary(anova_model)</p>
+<hr>
+<p><code>pairwise.t.test()</code></p>
+<p>Performs pairwise t-tests between groups.</p>
+<p>This is useful after ANOVA when you want to see which pairs of treatments differ.</p>
+<p>pairwise.t.test( viability_cam$relative_viability, viability_cam$condition, p.adjust.method = “bonferroni” )</p>
+<hr>
+<p><code>as.data.frame()</code></p>
+<p>Converts an object into a data frame.</p>
+<p>This was used to display the pairwise p-values as a table.</p>
+<p>as.data.frame(pairwise_results$p.value)</p>
+<hr>
+<p>Statistical annotation functions from ggpubr</p>
+<p><code>stat_compare_means()</code></p>
+<p>Adds statistical comparison results directly onto a ggplot.</p>
+<p>It can display a global ANOVA result or pairwise comparison labels.</p>
+<p>Example for ANOVA:</p>
+<p>stat_compare_means(method = “anova”, label.y = 140)</p>
+<p>Example for pairwise comparisons:</p>
+<p>stat_compare_means( comparisons = comparisons, method = “t.test”, p.adjust.method = “bonferroni”, label = “p.signif” )</p>
+<hr>
+</section>
+<section id="interactive-plotting-functions-from-plotly" class="level4">
+<h4 class="anchored" data-anchor-id="interactive-plotting-functions-from-plotly">Interactive plotting functions from plotly</h4>
+<p><code>ggplotly()</code></p>
+<p>Converts a ggplot graph into an interactive plot.</p>
+<p>ggplotly(cam_plot)</p>
+<p>Interactive plots allow you to hover over points and inspect the data in more detail.</p>
+<hr>
+<p>A very short cheat sheet</p>
+<p>Here are the most important functions from this practical:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>read.csv()</code></td>
+<td>imports a dataset</td>
+</tr>
+<tr class="even">
+<td><code>head()</code></td>
+<td>previews the first rows</td>
+</tr>
+<tr class="odd">
+<td><code>filter()</code></td>
+<td>removes rows</td>
+</tr>
+<tr class="even">
+<td><code>group_by()</code></td>
+<td>splits data into groups</td>
+</tr>
+<tr class="odd">
+<td><code>summarise()</code></td>
+<td>calculates averages</td>
+</tr>
+<tr class="even">
+<td><code>mutate()</code></td>
+<td>creates new columns</td>
+</tr>
+<tr class="odd">
+<td><code>ggplot()</code></td>
+<td>starts a graph</td>
+</tr>
+<tr class="even">
+<td><code>geom_boxplot()</code></td>
+<td>draws boxplots</td>
+</tr>
+<tr class="odd">
+<td><code>geom_jitter()</code></td>
+<td>plots individual points</td>
+</tr>
+<tr class="even">
+<td><code>aov()</code></td>
+<td>runs ANOVA</td>
+</tr>
+<tr class="odd">
+<td><code>pairwise.t.test()</code></td>
+<td>compares groups</td>
+</tr>
+<tr class="even">
+<td><code>ggplotly()</code></td>
+<td>makes a graph interactive</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>Final note</p>
+<p>You do <strong>not</strong> need to memorise every function in this glossary.</p>
+<p>The goal of this practical is to help you:</p>
+<ul>
+<li>recognise common R commands</li>
+<li>understand how biological data is analysed</li>
+<li>build confidence using computational tools in cell biology</li>
+</ul>
+<section id="section" class="level6">
+<h6 class="anchored" data-anchor-id="section"></h6>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-      }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
-        }
-      });
-    }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
       return false;
     }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/nikolasjohnston\.github\.io\/BIOL340_DP\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/nikolasjohnston\.github\.io\/BIOL340_DP\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1503,185 +2228,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../pages/1/3_columns.html" class="pagination-link" aria-label="Columns">
