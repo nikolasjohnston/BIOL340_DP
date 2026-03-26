@@ -12,12 +12,12 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 In Dry Practical 1, you were introduced to the basics of handling biological data in R, using tidyverse functions and `ggplot2` to visualise simple trends. That session was designed to help you become comfortable navigating RStudio, working with tabular data, and generating figures that communicate biological patterns clearly.
 
-In this second dry practical, we’ll extend those skills by working with **experimental data** that you generated in the wet lab. Specifically, we’ll use your results from the **subcellular fractionation practical**, where you separated healthy and diseased cells into mitochondrial and cytosolic fractions, then measured protein concentration and enzyme activity.
+In this second dry practical, we’ll extend those skills by working with **experimental data** that you generated in the wet lab. Specifically, we’ll use your results from the **subcellular fractionation practical**, where you separated treated and untreated diseased cells into mitochondrial and cytosolic fractions, then measured protein concentration and enzyme activity.
 
 This practical will focus on:
 
 -   Calculating **specific enzyme activity** for each sample
--   Comparing the mitochondrial and cytosolic fractions from healthy vs diseased cells
+-   Comparing the mitochondrial and cytosolic fractions from treated and untreated diseased cells
 -   Using `dplyr` tools to filter, summarise, and interpret biological data
 -   Visualising patterns across individual and class-wide datasets
 
@@ -65,11 +65,26 @@ You should have two types of experimental data.
 **Task:** Load the class dataset and view the column names.
 :::
 
-```{r}
-data <- read_csv("frac_data.csv")
+```{r eval=FALSE}
+data <- read_csv(file.choose())
 head(data)
-```
 
+
+# your data may also have a lot of missing data, in which case we can clean this up by omitting all of the NA's
+
+data <- data %>%
+  na.omit()
+```
+```{r include=FALSE}
+# This hidden chunk is used only so the Quarto document can render online.
+# It loads a copy of the dataset stored inside the project folder.
+data <- read_csv("~/git/BIOL340_DP/pages/DP2/simplified_BSA_cleaned.csv")
+
+# your data may also have a lot of missing data, in which case we can clean this up by omitting all of the NA's
+
+data <- data %>%
+  na.omit()
+```
 ## Plot the Absorbance Over Time
 
 This shows how absorbance (A412) changes during the reaction. It helps us understand how fast the reaction is happening.
@@ -110,7 +125,8 @@ Specific activity = Amount TNB / min / mg protein
 
 ```{r}
 data <- data %>%
-  mutate(`concentration change(ΔC/s)` = `rate of change` / 13600)
+  mutate(`rate of change` = as.numeric(`rate of change`),
+         `concentration change(ΔC/s)` = `rate of change` / 13600)
 ```
 
 3.  We can then convert this to an amount (in mole) of TNB produced/min. `Use A = C * V (note: 1 ml = 0.001 L)`
@@ -131,21 +147,17 @@ data <- data %>%
 
 ```{r}
 data <- data %>%
-  mutate(`amount TNB/min(nM))` = `amount TNB/s(nM)` * 60)
+  mutate(`amount TNB/min(nM)` = `amount TNB/s(nM)` * 60)
 ```
 
-6.  Now to get to specific activity we need to tie this amount value back to the protein concentration in our samples. This we calculated using a standard curve as `mg/mL`. So to get to amount in `mg` we need to times by the volume added, which in our case was 50 uL or 0.05 mL.
+6.  Now to get to specific activity we need to tie this amount value back to the protein concentration in our samples. This we calculated using a standard curve as `mg/mL`. So to get to amount in `mg` we need to times by the volume added, which in our case was 50 uL or 0.05 mL. This column has been prepared for you in the dataset. 
 
-```{r}
-data <- data %>%
-  mutate(`protein amount` = as.numeric(`protein concentration`) * 0.05)
-```
 
 7.  Finally we can devide dividing your final Amount TNB(nm) data by the Protein amount (mg) column. This means your new column will be Amount TNB/min/mg.
 
 ```{r}
 data <- data %>%
-  mutate(specific_activity = `amount TNB/s(nM)` / `protein amount`)
+  mutate(specific_activity = `amount TNB/min(nM)` / `protein amount`)
 ```
 
 Here the code is dividing your final Amount TNB/min data by the Protein amount (mg) column. This means your new column will be Amount TNB/min/mg.
