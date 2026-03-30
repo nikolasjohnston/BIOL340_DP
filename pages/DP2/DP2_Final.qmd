@@ -68,22 +68,29 @@ You should have two types of experimental data.
 ```{r eval=FALSE}
 data <- read_csv(file.choose())
 head(data)
+<<<<<<< HEAD
 
 
 # your data may also have a lot of missing data, in which case we can clean this up by omitting all of the NA's
 
 data <- data %>%
   na.omit()
+=======
+>>>>>>> refs/remotes/origin/main
 ```
 ```{r include=FALSE}
 # This hidden chunk is used only so the Quarto document can render online.
 # It loads a copy of the dataset stored inside the project folder.
+<<<<<<< HEAD
 data <- read_csv("~/git/BIOL340_DP/pages/DP2/simplified_BSA_cleaned.csv")
 
 # your data may also have a lot of missing data, in which case we can clean this up by omitting all of the NA's
 
 data <- data %>%
   na.omit()
+=======
+data <- read_csv("~/git/BIOL340_DP/pages/DP2/simplified_BSA.csv")
+>>>>>>> refs/remotes/origin/main
 ```
 ## Plot the Absorbance Over Time
 
