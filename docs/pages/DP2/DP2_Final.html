@@ -713,17 +713,12 @@ Note
 </div>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">file.choose</span>())</span>
-<<<<<<< HEAD
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># your data may also have a lot of missing data, in which case we can clean this up by omitting all of the NA's</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-=======
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
->>>>>>> refs/remotes/origin/main
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># your data may also have a lot of missing data, in which case we can clean this up by omitting all of the NA's</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="plot-the-absorbance-over-time" class="level2">
@@ -799,11 +794,7 @@ Note
 </ol>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<<<<<<< HEAD
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">amount TNB/min(nM)</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">amount TNB/s(nM)</span><span class="st">`</span> <span class="sc">*</span> <span class="dv">60</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-=======
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">amount TNB/min(nM))</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">amount TNB/s(nM)</span><span class="st">`</span> <span class="sc">*</span> <span class="dv">60</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
->>>>>>> refs/remotes/origin/main
 </div>
 <ol start="6" type="1">
 <li><p>Now to get to specific activity we need to tie this amount value back to the protein concentration in our samples. This we calculated using a standard curve as <code>mg/mL</code>. So to get to amount in <code>mg</code> we need to times by the volume added, which in our case was 50 uL or 0.05 mL. This column has been prepared for you in the dataset.</p></li>
@@ -811,11 +802,7 @@ Note
 </ol>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<<<<<<< HEAD
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">specific_activity =</span> <span class="st">`</span><span class="at">amount TNB/min(nM)</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">protein amount</span><span class="st">`</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-=======
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">specific_activity =</span> <span class="st">`</span><span class="at">amount TNB/s(nM)</span><span class="st">`</span> <span class="sc">/</span> <span class="st">`</span><span class="at">protein amount</span><span class="st">`</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
->>>>>>> refs/remotes/origin/main
 </div>
 <p>Here the code is dividing your final Amount TNB/min data by the Protein amount (mg) column. This means your new column will be Amount TNB/min/mg.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -925,7 +912,6 @@ Note
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(specific_activity), <span class="at">sd =</span> <span class="fu">sd</span>(specific_activity))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
-<<<<<<< HEAD
   Sample                                                      mean    sd
   &lt;chr&gt;                                                      &lt;dbl&gt; &lt;dbl&gt;
 1 Diseased cells - cytosolic fraction                         146.  178.
@@ -934,16 +920,6 @@ Note
 4 Diseased – 10 μM Respiranox cells - mitochondrial fraction  653.  332.
 5 Negative control                                              0     0 
 6 Positive control                                           1113.  903.</code></pre>
-=======
-  Sample                                                           mean       sd
-  &lt;chr&gt;                                                           &lt;dbl&gt;    &lt;dbl&gt;
-1 Diseased cells - cytosolic fraction                           1.56e-3  0.00176
-2 Diseased cells - mitochondrial fraction                      NA       NA      
-3 Diseased – 10 μM Respiranox cells - cytosolic fraction        7.99e-5  0.00780
-4 Diseased – 10 μM Respiranox cells - mitochondrial fraction   -6.41e-3  0.0227 
-5 Negative control                                            NaN       NA      
-6 Positive control                                              1.46e-2  0.0105 </code></pre>
->>>>>>> refs/remotes/origin/main
 </div>
 </div>
 <section id="question-what-sample-had-the-highest-enzyme-activity" class="level3">
