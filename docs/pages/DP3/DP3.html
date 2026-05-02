@@ -38,10 +38,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-969ddfa49e00a70eb3423444dbc81f6c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b6bb486a29c15e8920d957f8a03d5d72.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1d307eb61b1cc2aaa1f618301e0d7c6a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-1c1845d25ea93495c20a843d14c48393.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-1d307eb61b1cc2aaa1f618301e0d7c6a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,7 +73,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<style>html{ scroll-behavior: smooth; }</style>
 <style type="text/css">
 .quarto-reader-toggle .bi::before, .quarto-color-scheme-toggle .bi::before {
   display: flex;
@@ -96,7 +99,169 @@ ul.task-list li input[type="checkbox"] {
 <meta property="og:site_name" content="BIOL340 - Autumn 2026">
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -123,6 +288,9 @@ ul.task-list li input[type="checkbox"] {
       <img src="../../images/2026_header.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
       <img src="../../images/2026_header.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
+      <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -394,26 +562,49 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Activity Outline</h2>
+    <h2 id="toc-title">On this page</h2>
    
-  <ul class="collapse">
+  <ul>
   <li><a href="#welcome-to-dry-practical-3" id="toc-welcome-to-dry-practical-3" class="nav-link active" data-scroll-target="#welcome-to-dry-practical-3">Welcome to Dry Practical 3</a></li>
   <li><a href="#part1" id="toc-part1" class="nav-link" data-scroll-target="#part1">Part 1: Rubric Calibration</a>
   <ul class="collapse">
   <li><a href="#the-rubric-abstract-criteria" id="toc-the-rubric-abstract-criteria" class="nav-link" data-scroll-target="#the-rubric-abstract-criteria">The Rubric: Abstract Criteria</a></li>
-  <li><a href="#task-rate-each-abstract" id="toc-task-rate-each-abstract" class="nav-link" data-scroll-target="#task-rate-each-abstract">Task: Rate Each Abstract</a></li>
-  <li><a href="#tricky-abstract-when-complexity-masks-weakness" id="toc-tricky-abstract-when-complexity-masks-weakness" class="nav-link" data-scroll-target="#tricky-abstract-when-complexity-masks-weakness">Tricky Abstract: When Complexity Masks Weakness</a></li>
+  <li><a href="#task-rate-each-abstract" id="toc-task-rate-each-abstract" class="nav-link" data-scroll-target="#task-rate-each-abstract">Task: Rate Each Abstract</a>
+  <ul class="collapse">
+  <li><a href="#abstract-a" id="toc-abstract-a" class="nav-link" data-scroll-target="#abstract-a">Abstract A</a></li>
+  <li><a href="#abstract-b" id="toc-abstract-b" class="nav-link" data-scroll-target="#abstract-b">Abstract B</a></li>
+  <li><a href="#abstract-c" id="toc-abstract-c" class="nav-link" data-scroll-target="#abstract-c">Abstract C</a></li>
+  <li><a href="#abstract-d" id="toc-abstract-d" class="nav-link" data-scroll-target="#abstract-d">Abstract D</a></li>
+  </ul></li>
+  <li><a href="#tricky-abstract-when-complexity-masks-weakness" id="toc-tricky-abstract-when-complexity-masks-weakness" class="nav-link" data-scroll-target="#tricky-abstract-when-complexity-masks-weakness">Tricky Abstract: When Complexity Masks Weakness</a>
+  <ul class="collapse">
+  <li><a href="#abstract-e" id="toc-abstract-e" class="nav-link" data-scroll-target="#abstract-e">Abstract E</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#part2" id="toc-part2" class="nav-link" data-scroll-target="#part2">Part 2: What Type of Feedback <em>Actually</em> Leads to Revision?</a>
   <ul class="collapse">
   <li><a href="#the-research-feedback-features-that-matter" id="toc-the-research-feedback-features-that-matter" class="nav-link" data-scroll-target="#the-research-feedback-features-that-matter">The Research: Feedback Features That Matter</a></li>
   <li><a href="#the-des-framework" id="toc-the-des-framework" class="nav-link" data-scroll-target="#the-des-framework">The DES Framework</a></li>
   <li><a href="#the-problem-with-hedges" id="toc-the-problem-with-hedges" class="nav-link" data-scroll-target="#the-problem-with-hedges">The Problem with Hedges</a></li>
-  <li><a href="#task-rate-these-reviewer-comments" id="toc-task-rate-these-reviewer-comments" class="nav-link" data-scroll-target="#task-rate-these-reviewer-comments">Task: Rate These Reviewer Comments</a></li>
+  <li><a href="#task-rate-these-reviewer-comments" id="toc-task-rate-these-reviewer-comments" class="nav-link" data-scroll-target="#task-rate-these-reviewer-comments">Task: Rate These Reviewer Comments</a>
+  <ul class="collapse">
+  <li><a href="#comment-1" id="toc-comment-1" class="nav-link" data-scroll-target="#comment-1">Comment 1</a></li>
+  <li><a href="#comment-2" id="toc-comment-2" class="nav-link" data-scroll-target="#comment-2">Comment 2</a></li>
+  <li><a href="#comment-3" id="toc-comment-3" class="nav-link" data-scroll-target="#comment-3">Comment 3</a></li>
+  <li><a href="#comment-4" id="toc-comment-4" class="nav-link" data-scroll-target="#comment-4">Comment 4</a></li>
+  <li><a href="#comment-5" id="toc-comment-5" class="nav-link" data-scroll-target="#comment-5">Comment 5</a></li>
+  <li><a href="#comment-6" id="toc-comment-6" class="nav-link" data-scroll-target="#comment-6">Comment 6</a></li>
+  <li><a href="#comment-7" id="toc-comment-7" class="nav-link" data-scroll-target="#comment-7">Comment 7</a></li>
+  <li><a href="#comment-8" id="toc-comment-8" class="nav-link" data-scroll-target="#comment-8">Comment 8</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#part3" id="toc-part3" class="nav-link" data-scroll-target="#part3">Part 3: Beyond the Abstract — Practising on Results and Figures</a>
   <ul class="collapse">
-  <li><a href="#results-text-describing-vs.-discussing" id="toc-results-text-describing-vs.-discussing" class="nav-link" data-scroll-target="#results-text-describing-vs.-discussing">Results Text: Describing vs.&nbsp;Discussing</a></li>
+  <li><a href="#results-text-describing-vs.-discussing" id="toc-results-text-describing-vs.-discussing" class="nav-link" data-scroll-target="#results-text-describing-vs.-discussing">Results Text: Describing vs.&nbsp;Discussing</a>
+  <ul class="collapse">
+  <li><a href="#version-x" id="toc-version-x" class="nav-link" data-scroll-target="#version-x">Version X</a></li>
+  <li><a href="#version-y" id="toc-version-y" class="nav-link" data-scroll-target="#version-y">Version Y</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#part5" id="toc-part5" class="nav-link" data-scroll-target="#part5">Part 3: Live Peer Review in FeedbackFruits (~50 min)</a>
   <ul class="collapse">
@@ -422,10 +613,11 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/edit/main/pages/DP3/DP3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/edit/main/pages/DP3/DP3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/DP3/DP3.html">Dry Prac 3</a></li><li class="breadcrumb-item"><a href="../../pages/DP3/DP3.html">Dry Prac 3 Notes</a></li></ol></nav>
 <div class="quarto-title">
@@ -1073,6 +1265,19 @@ ul.task-list li input[type="checkbox"] {
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -1501,5 +1706,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
