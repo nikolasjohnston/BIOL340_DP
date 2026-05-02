@@ -1,0 +1,364 @@
+---
+title: "DP3: Peer Review – Learning to Evaluate and Improve Scientific Writing"
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    toc-title: "Activity Outline"
+    theme: flatly
+    smooth-scroll: true
+---
+
+```{=html}
+<style>
+  .rubric-table table { font-size: 0.9em; border-collapse: collapse; width: 100%; }
+  .rubric-table th, .rubric-table td { border: 1px solid #ccc; padding: 8px; vertical-align: top; }
+  .rubric-table th { background: #2c3e50; color: white; }
+  .feedback-example { border-left: 4px solid #3498db; padding: 10px 15px; margin: 10px 0; background: #f0f7ff; }
+  .feedback-poor { border-left-color: #e74c3c; background: #fdf0f0; }
+  .feedback-good { border-left-color: #27ae60; background: #f0fdf4; }
+  .practice-box { border: 2px dashed #8e44ad; padding: 15px; margin: 15px 0; border-radius: 8px; background: #faf5ff; }
+  .quiz-btn { background: #2c3e50; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin: 4px 2px; }
+  .quiz-btn:hover { background: #3498db; }
+  select.quiz-select { padding: 6px 10px; border-radius: 4px; border: 1px solid #ccc; font-size: 1em; }
+  .step-badge { display: inline-block; background: #2c3e50; color: white; border-radius: 50%; width: 28px; height: 28px; text-align: center; line-height: 28px; font-weight: bold; margin-right: 8px; }
+  .timer-box { background: #ffeaa7; padding: 10px 15px; border-radius: 6px; font-weight: bold; margin: 10px 0; }
+</style>
+```
+
+# Welcome to Dry Practical 3
+
+::: {.callout-note title="Learning Objectives"}
+By the end of this session, you will be able to:
+
+1.  **Calibrate** your understanding of the marking rubric by evaluating sample abstracts and report sections
+2.  **Distinguish** between ineffective and constructive peer feedback
+3.  **Write** specific, actionable review comments using a structured feedback framework
+4.  **Use** Generative AI to assist in revising writing in response to peer feedback
+5.  **Complete** formal peer reviews of your classmates' scientific reports in FeedbackFruits
+:::
+
+::: {.callout-important title="Why does peer review matter?"}
+Peer review is not just a university exercise — it is the cornerstone of how science works. Every published scientific paper has been scrutinised by other scientists before it appears in a journal. Learning to critically evaluate others' writing, and to receive and respond to feedback on your own, are core professional skills in science and beyond.
+
+When you review a peer's work, you are practising the same skill set used by working scientists, journal editors, and grant assessors. Good peer review benefits **both** the reviewer and the author: reviewers develop sharper critical reading skills, and authors receive feedback they can act on to improve their work.
+
+Today's session prepares you for **Assessment 4**, where you will revise your own scientific report using both human peer feedback and Generative AI tools, and reflect on that process.
+:::
+
+::: timer-box
+⏱ **Estimated session time:** 2 hours \| Parts 1–4 are training activities (\~70 min) \| Part 5 is live peer review (\~50 min)
+:::
+
+------------------------------------------------------------------------
+
+# Part 1: Rubric Calibration {#part1}
+
+Before you can give useful feedback, you need to **internalise the standards**. In this section, you will read sample abstracts describing the same experiment and match each to a rubric level.
+
+::: {.callout-tip title="The Experiment"}
+All abstracts below describe the same study: measuring **citrate synthase activity** in subcellular fractions (mitochondrial and cytosolic) of healthy and diseased mammalian cell lines. This mirrors the work you completed in Wet Labs 1–3.
+:::
+
+## The Rubric: Abstract Criteria
+
+Refer to the abstract section of your full marking rubric. In summary, an abstract should include:
+
+| Component           | What to look for                                     |
+|---------------------|------------------------------------------------------|
+| Purpose             | 1–2 lines stating the question or aim                |
+| Experimental design | 1–2 lines summarising the approach                   |
+| Major results       | Brief description of key findings or trends          |
+| Interpretation      | 1–2 lines of conclusions drawn from the data         |
+| Scientific style    | Appropriate voice, tense, precision, and conciseness |
+
+## Task: Rate Each Abstract
+
+Read each abstract carefully. Use the rubric to assign a level, then check your answer. **Write brief notes** in your notebook explaining your reasoning — you will need this skill shortly.
+
+### Abstract A
+
+Citrate synthase activity was investigated in healthy and diseased mammalian cell lines by measuring enzymatic function in cytosolic and mitochondrial fractions. Cells were lysed and separated using differential centrifugation, and activity was measured using a spectrophotometric assay. The mitochondrial fractions consistently showed higher activity, confirming the expected localization. Diseased cells exhibited lower activity overall, especially in the mitochondrial fraction. These results suggest mitochondrial function is compromised in the diseased condition. The experiment provides insight into cellular metabolic changes associated with disease.
+
+<select id="q1" class="quiz-select"> <option value="">-- Select rubric level --</option> <option value="Outstanding">Outstanding (3)</option> <option value="Excellent">Excellent (2)</option> <option value="Fair">Fair (1)</option> <option value="Developing">Developing (0)</option> </select> <button class="quiz-btn" onclick="checkAnswer('q1', 'Excellent', 'feedback1')">Check Answer</button>
+
+::: {#feedback1 style="margin-top: 8px;"}
+:::
+
+### Abstract B
+
+We tested citrate synthase activity in different parts of the cell. Healthy and diseased cells were used in the study. We broke the cells up and spun them to get different parts, like mitochondria and cytosol. Then we measured enzyme activity with a color test. There were some differences between the samples. It looks like mitochondria might be involved in this, but it's not totally clear from the results.
+
+<select id="q2" class="quiz-select"> <option value="">-- Select rubric level --</option> <option value="Outstanding">Outstanding (3)</option> <option value="Excellent">Excellent (2)</option> <option value="Fair">Fair (1)</option> <option value="Developing">Developing (0)</option> </select> <button class="quiz-btn" onclick="checkAnswer('q2', 'Developing', 'feedback2')">Check Answer</button>
+
+::: {#feedback2 style="margin-top: 8px;"}
+:::
+
+### Abstract C
+
+The purpose of this experiment was to analyze the specific activity of citrate synthase in subcellular fractions of two mammalian cell lines. Healthy and diseased cells were lysed and processed to separate mitochondria and cytosol using centrifugation. Enzyme activity was measured using a colorimetric assay and normalized to total protein content. Mitochondrial fractions had greater activity, and diseased cells showed lower activity in both compartments. These findings support the hypothesis that mitochondrial dysfunction contributes to disease. Clear trends were observed, although further validation and controls would strengthen the results.
+
+<select id="q3" class="quiz-select"> <option value="">-- Select rubric level --</option> <option value="Outstanding">Outstanding (3)</option> <option value="Excellent">Excellent (2)</option> <option value="Fair">Fair (1)</option> <option value="Developing">Developing (0)</option> </select> <button class="quiz-btn" onclick="checkAnswer('q3', 'Outstanding', 'feedback3')">Check Answer</button>
+
+::: {#feedback3 style="margin-top: 8px;"}
+:::
+
+### Abstract D
+
+This experiment aimed to investigate citrate synthase activity in cell fractions from healthy and diseased cells. Cells were prepared and divided into cytosolic and mitochondrial fractions using standard lab procedures. Enzyme activity was assessed with a colorimetric method, and we compared levels across the fractions and cell types. While mitochondrial activity appeared higher, details about the data or significance were limited. The abstract touches on all sections but lacks depth in interpreting results and establishing relevance.
+
+<select id="q4" class="quiz-select"> <option value="">-- Select rubric level --</option> <option value="Outstanding">Outstanding (3)</option> <option value="Excellent">Excellent (2)</option> <option value="Fair">Fair (1)</option> <option value="Developing">Developing (0)</option> </select> <button class="quiz-btn" onclick="checkAnswer('q4', 'Fair', 'feedback4')">Check Answer</button>
+
+::: {#feedback4 style="margin-top: 8px;"}
+:::
+
+## Tricky Abstract: When Complexity Masks Weakness
+
+This abstract may *sound* advanced but contains significant flaws. Your task is to see past the jargon.
+
+### Abstract E
+
+Citrate synthase SA was quantified in MT and CYT subfractions isolated from immortalized mammalian CLs of divergent physiological states (i.e., HL and DL). Fractionation was executed via DC and analyzed through TNB-based spectrophotometric methodologies. Comparative SA metrics were demonstrated to be variably reduced across conditions, though significance thresholds were not consistently upheld. Interpretation was limited by inconsistent normalization to TP content and variability in the enzymatic assay kinetics. It is inferred that mitochondrial biogenesis or bioenergetic perturbation may be implicated, although further ELISA and qPCR corroboration would be recommended.
+
+<select id="q_tricky" class="quiz-select"> <option value="">-- Select rubric level --</option> <option value="Outstanding">Outstanding (3)</option> <option value="Excellent">Excellent (2)</option> <option value="Fair">Fair (1)</option> <option value="Developing">Developing (0)</option> </select> <button class="quiz-btn" onclick="checkTrickyAnswer()">Check Answer</button>
+
+::: {#tricky_feedback style="margin-top: 8px;"}
+:::
+
+:::: {#tricky_explanation style="display: none; margin-top: 15px;"}
+::: {.callout-warning title="Why this abstract is 'Fair' despite sounding complex"}
+| Problem | Explanation |
+|----|----|
+| Unexplained acronyms | SA, MT, CYT, CLs, HL/DL, DC, TP — a reader shouldn't need a decoder ring |
+| Passive voice throughout | Obscures who did what; reduces clarity and accountability |
+| Tense inconsistency | Shifts from past ("was quantified") to present ("is inferred") |
+| Superficial complexity | Complex phrasing disguises weak interpretation of results |
+| Vague conclusions | "May be implicated" and "would be recommended" are hedged to the point of saying nothing |
+
+**Key lesson:** Good scientific writing is *clear*, not complex. If a reader has to re-read a sentence three times, the writing has failed — no matter how many technical terms it contains.
+:::
+::::
+
+::: {.callout-tip title="Discuss with your neighbour"}
+Compare your scores across all five abstracts. Where did you agree? Where did you disagree? What rubric criteria helped you resolve disagreements?
+:::
+
+------------------------------------------------------------------------
+
+# Part 2: Learning to Give Feedback {#part2}
+
+You can now *evaluate* writing — but can you *help someone improve it*? Giving constructive feedback is a different skill. In this section, you will learn to distinguish useful feedback from unhelpful feedback, and practise writing your own.
+
+## What Makes Feedback Useful?
+
+::: {.callout-note title="The DES Framework: Describe → Evaluate → Suggest"}
+Every piece of feedback you write should follow three steps:
+
+[D]{.step-badge} **Describe** — Point to the specific part of the text you are commenting on. Quote or paraphrase it so the author knows exactly what you mean.
+
+[E]{.step-badge} **Evaluate** — Explain *why* this is a strength or a problem, using the rubric language where possible. Don't just say "this is wrong" — say what standard it falls short of.
+
+[S]{.step-badge} **Suggest** — Offer a concrete, actionable revision or direction. The author should be able to read your comment and know what to do next.
+:::
+
+## Task: Rate These Reviewer Comments
+
+Below are six example reviewer comments responding to **Abstract A** (the "Excellent" abstract from Part 1). Rate each comment as **Unhelpful**, **Adequate**, or **Excellent** feedback.
+
+### Comment 1
+
+> "Looks good overall."
+
+<select id="fc1" class="quiz-select"> <option value="">-- Rate this feedback --</option> <option value="Unhelpful">Unhelpful</option> <option value="Adequate">Adequate</option> <option value="Excellent">Excellent feedback</option> </select> <button class="quiz-btn" onclick="checkFeedback('fc1', 'Unhelpful', 'fc1_fb')">Check</button>
+
+::: {#fc1_fb style="margin-top: 6px;"}
+:::
+
+### Comment 2
+
+> "The abstract doesn't mention specific activity or protein normalisation. Since the rubric asks for enough information to understand the experiments, adding that enzyme activity was normalised to protein content would strengthen the methods description and move this toward Outstanding."
+
+<select id="fc2" class="quiz-select"> <option value="">-- Rate this feedback --</option> <option value="Unhelpful">Unhelpful</option> <option value="Adequate">Adequate</option> <option value="Excellent">Excellent feedback</option> </select> <button class="quiz-btn" onclick="checkFeedback('fc2', 'Excellent', 'fc2_fb')">Check</button>
+
+::: {#fc2_fb style="margin-top: 6px;"}
+:::
+
+### Comment 3
+
+> "This is wrong. You need to fix the abstract."
+
+<select id="fc3" class="quiz-select"> <option value="">-- Rate this feedback --</option> <option value="Unhelpful">Unhelpful</option> <option value="Adequate">Adequate</option> <option value="Excellent">Excellent feedback</option> </select> <button class="quiz-btn" onclick="checkFeedback('fc3', 'Unhelpful', 'fc3_fb')">Check</button>
+
+::: {#fc3_fb style="margin-top: 6px;"}
+:::
+
+### Comment 4
+
+> "The last sentence ('The experiment provides insight into cellular metabolic changes associated with disease') is quite vague. Consider specifying *what kind* of metabolic change — e.g., reduced mitochondrial enzyme activity — to make the conclusion more informative."
+
+<select id="fc4" class="quiz-select"> <option value="">-- Rate this feedback --</option> <option value="Unhelpful">Unhelpful</option> <option value="Adequate">Adequate</option> <option value="Excellent">Excellent feedback</option> </select> <button class="quiz-btn" onclick="checkFeedback('fc4', 'Excellent', 'fc4_fb')">Check</button>
+
+::: {#fc4_fb style="margin-top: 6px;"}
+:::
+
+### Comment 5
+
+> "The abstract covers the main points but could be improved."
+
+<select id="fc5" class="quiz-select"> <option value="">-- Rate this feedback --</option> <option value="Unhelpful">Unhelpful</option> <option value="Adequate">Adequate</option> <option value="Excellent">Excellent feedback</option> </select> <button class="quiz-btn" onclick="checkFeedback('fc5', 'Adequate', 'fc5_fb')">Check</button>
+
+::: {#fc5_fb style="margin-top: 6px;"}
+:::
+
+### Comment 6
+
+> "Good clear structure. The aim, method, results and conclusion are all present, which matches the rubric criteria for a strong abstract. One strength is that you describe the direction of results (diseased cells had lower activity), not just that differences existed."
+
+<select id="fc6" class="quiz-select"> <option value="">-- Rate this feedback --</option> <option value="Unhelpful">Unhelpful</option> <option value="Adequate">Adequate</option> <option value="Excellent">Excellent feedback</option> </select> <button class="quiz-btn" onclick="checkFeedback('fc6', 'Excellent', 'fc6_fb')">Check</button>
+
+::: {#fc6_fb style="margin-top: 6px;"}
+:::
+
+::: {.callout-tip title="Key Patterns"}
+Notice what the **excellent** comments have in common:
+
+-   They **point to specific text** (not generalities)
+-   They **explain why** something is strong or weak (often referencing the rubric)
+-   They **suggest a concrete action** the author could take
+-   Positive feedback is just as specific as critical feedback — "good structure" is vague; explaining *which* structural elements work and why is useful
+
+What the **unhelpful** comments have in common:
+
+-   They are vague ("looks good", "needs work")
+-   They offer no direction for improvement
+-   They may be dismissive or discouraging without being constructive
+:::
+
+## Practice: Write Your Own Feedback
+
+::: practice-box
+**Your task:** Go back to **Abstract D** (the "Fair" abstract from Part 1). Using the **DES framework**, write **two** feedback comments in your notebook or a text document:
+
+1.  **One comment on a strength** — identify something the abstract does reasonably well. Be specific about what and why.
+2.  **One comment on an area for improvement** — identify a specific weakness, explain why it matters (connect to the rubric), and suggest how the author could fix it.
+
+**Time:** 5 minutes
+
+When you're done, **share your comments with the person next to you**. Discuss: Are your comments specific enough that the author would know exactly what to change?
+:::
+
+------------------------------------------------------------------------
+
+# Part 3: Beyond the Abstract — Practising on Results {#part3}
+
+Your peer reviews will cover **entire reports**, not just abstracts. This section extends your calibration to results sections and data presentation — areas where students often find it harder to give feedback.
+
+## Results Text: Describing vs. Discussing
+
+A common mistake in results sections is **discussing the results instead of describing them**. The rubric explicitly penalises this. Read the two versions below and decide which one correctly handles the boundary between Results and Discussion.
+
+### Version X
+
+> Citrate synthase specific activity was higher in the mitochondrial fraction compared to the cytosolic fraction in both cell lines (Figure 1). The healthy cell line showed a mean mitochondrial specific activity of 42.3 ± 3.1 nmol/min/mg, while the diseased cell line showed 28.7 ± 4.2 nmol/min/mg. This difference was statistically significant (p \< 0.05). The lower activity in diseased cells likely reflects impaired mitochondrial biogenesis, consistent with previous reports of metabolic dysfunction in this disease model (Smith et al., 2021).
+
+### Version Y
+
+> Citrate synthase specific activity was higher in the mitochondrial fraction compared to the cytosolic fraction in both cell lines (Figure 1). The healthy cell line showed a mean mitochondrial specific activity of 42.3 ± 3.1 nmol/min/mg, while the diseased cell line showed 28.7 ± 4.2 nmol/min/mg. This difference was statistically significant (p \< 0.05). These data indicate that enzyme activity was concentrated in the mitochondrial compartment, and that the diseased cell line had reduced mitochondrial citrate synthase activity relative to the healthy control.
+
+<select id="qr1" class="quiz-select"> <option value="">-- Which version correctly stays in "Results" mode? --</option> <option value="X">Version X</option> <option value="Y">Version Y</option> </select> <button class="quiz-btn" onclick="checkResults('qr1', 'Y', 'results_fb1')">Check</button>
+
+::: {#results_fb1 style="margin-top: 8px;"}
+:::
+
+## 
+
+------------------------------------------------------------------------
+
+# Part 5: Live Peer Review in FeedbackFruits (\~50 min) {#part5}
+
+You are now ready to review your classmates' scientific reports. Everything you have practised — rubric calibration, the DES framework, evaluating different report sections — comes together here.
+
+::: {.callout-important title="What You Must Complete"}
+-   You must complete **at least one full peer review** before leaving today's session
+-   The rubric awards marks for completing **up to three** peer reviews with marks and comments
+-   Each review must include **both numerical scores AND written comments** for all rubric criteria
+:::
+
+## Before You Start: Review Checklist
+
+Use this checklist as you work through each peer review. For every criterion in the rubric, your review should include:
+
+```{=html}
+<div style="background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; margin: 15px 0;">
+<p style="margin-top:0;"><strong>For each rubric criterion, your review comment should:</strong></p>
+<label style="display:block; margin: 8px 0;"><input type="checkbox" style="margin-right: 8px;"> Identify something the author did <strong>well</strong> (be specific)</label>
+<label style="display:block; margin: 8px 0;"><input type="checkbox" style="margin-right: 8px;"> Point to a <strong>specific</strong> part of the text, figure, or section you are commenting on</label>
+<label style="display:block; margin: 8px 0;"><input type="checkbox" style="margin-right: 8px;"> Explain <strong>why</strong> something is strong or needs improvement (connect to the rubric)</label>
+<label style="display:block; margin: 8px 0;"><input type="checkbox" style="margin-right: 8px;"> Offer a <strong>concrete suggestion</strong> for improvement where relevant</label>
+<label style="display:block; margin: 8px 0;"><input type="checkbox" style="margin-right: 8px;"> Award a <strong>score</strong> that is consistent with your written feedback</label>
+</div>
+```
+
+## Quick Reference: DES Framework Sentence Starters
+
+If you're stuck on how to phrase feedback, these sentence starters can help:
+
+```{=html}
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 15px 0;">
+  <div style="background: #d5f5e3; padding: 12px; border-radius: 6px;">
+    <strong style="color: #1e8449;">Describe</strong><br>
+    "In the section where you write…"<br>
+    "Figure X shows…"<br>
+    "Your discussion of [topic]…"<br>
+    "The caption for Figure X states…"
+  </div>
+  <div style="background: #d6eaf8; padding: 12px; border-radius: 6px;">
+    <strong style="color: #2874a6;">Evaluate</strong><br>
+    "This works well because…"<br>
+    "According to the rubric, this would benefit from…"<br>
+    "This is strong because it clearly shows…"<br>
+    "The issue here is that the reader cannot…"
+  </div>
+  <div style="background: #f9ebea; padding: 12px; border-radius: 6px;">
+    <strong style="color: #a93226;">Suggest</strong><br>
+    "Consider revising this to include…"<br>
+    "One way to improve this would be…"<br>
+    "Adding [specific detail] would strengthen…"<br>
+    "Try reorganising so that…"
+  </div>
+</div>
+```
+
+## Begin Your Reviews
+
+::: {.callout-note title="Accessing FeedbackFruits"}
+1.  Navigate to the **BIOL340 Moodle site**
+2.  Open the **DP3 Peer Review activity** under this week's section
+3.  FeedbackFruits will assign you reports to review
+4.  Complete all rubric criteria with scores **and** written comments
+5.  Submit each review when complete
+:::
+
+::: practice-box
+**As you review, keep these questions in mind:**
+
+-   Am I being specific enough that the author knows exactly what I mean?
+-   Am I connecting my feedback to the rubric criteria?
+-   Have I acknowledged strengths as well as areas for improvement?
+-   Would I find this feedback useful if I received it about my own report?
+-   Is my score consistent with what I've written?
+:::
+
+------------------------------------------------------------------------
+
+# Before You Leave
+
+::: {.callout-important title="Session Completion Requirements"}
+**Minimum:** Submit at least **one complete peer review** (all criteria scored with written comments) in FeedbackFruits before you leave.
+
+**For full marks on Assessment 4 peer review component:** Complete up to **three** peer reviews including marks and comments.
+
+**Coming up in Assessment 4:** You will receive peer feedback on your own report. You will then use that feedback, combined with GenAI tools, to revise your report and submit a reflection on the process. Today's practice with the DES framework and GenAI-assisted revision directly prepares you for that task.
+:::
+
+------------------------------------------------------------------------
