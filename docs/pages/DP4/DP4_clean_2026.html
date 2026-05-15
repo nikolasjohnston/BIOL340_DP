@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dr.&nbsp;Nikolas Johnston">
+<meta name="dcterms.date" content="2026-05-01">
+
+<title>DP4: GenAI Literacy – BIOL340 - Autumn 2026</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../pages/2/1_ggplotgrammar.html" rel="next">
+<link href="../../pages/DP3/DP3.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-969ddfa49e00a70eb3423444dbc81f6c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-1d307eb61b1cc2aaa1f618301e0d7c6a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-1c1845d25ea93495c20a843d14c48393.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-1d307eb61b1cc2aaa1f618301e0d7c6a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style type="text/css">
+.quarto-reader-toggle .bi::before, .quarto-color-scheme-toggle .bi::before {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  gap: 0.5rem;
+  background-size: 2rem 2rem;
+  font-size: 1rem;
+  font-family: sans-serif;
+  display: inline-block;
+}
+
+.quarto-reader-toggle::before, .quarto-color-scheme-toggle::before {
+    content: "Dark Mode";
+    display: flex;
+    font-size: 1rem;
+    gap: 0.5rem;
+    font-family: Atkinson Hyperlegible, sans-serif;
+</style>
+
+
+<meta property="og:title" content="DP4: GenAI Literacy – BIOL340 - Autumn 2026">
+<meta property="og:description" content="Homepage for BIOL340 Dry Pracs, University of Wollongong, Autumn 2026.">
+<meta property="og:site_name" content="BIOL340 - Autumn 2026">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/DP4/DP4_clean_2026.html">Dry Prac 4</a></li><li class="breadcrumb-item"><a href="../../pages/DP4/DP4_clean_2026.html">Dry Prac 4 Notes</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/2026_header.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../../images/2026_header.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Pre-Lab - Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/introduction/01_R-studio-and-the-coding-environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R studio and the coding environment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/introduction/02_Setting-up-your-workspace.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting up your workspace</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/introduction/03_Creating-a-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating a project</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/introduction/4_notebooks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notbooks in R studio</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Pre-Lab - Data exploration</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/1/1_packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Packages</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/1/2_viewingdata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Viewing Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/1/3_columns.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Columns</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Dry Prac 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/DP1/DP1_Final.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dry Prac 1 Notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/supplementary/cheetsheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Additional ggplot2 support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/supplementary/function_glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Function glossary and examples</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Pre-Lab 2 - Data manipulation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/1/1_rename.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Rename function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/1/2_mutate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Mutate function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/1/3_filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Filter function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/1/4_select.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Select function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/1/7_summarise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Summarise function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/1/8_pipe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Pipe function</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Dry Prac 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/DP2/DP2_Final.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dry Prac 2 Notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Dry Prac 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/DP3/DP3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dry Prac 3 Notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Dry Prac 4</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/DP4/DP4_clean_2026.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Dry Prac 4 Notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Extra help and useful info</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/2/1_ggplotgrammar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Graphics in ggplot2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/2/2_basicplots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic plots</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/supplementary/cheetsheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Additional ggplot2 support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/supplementary/function_glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Function glossary and examples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Themes a customisation in ggplot2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/2/Themes/3_themes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Themes introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/2/Themes/4_gridsbackground.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Backgrounds</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/2/Themes/5_axislines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Axis lines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/2/Themes/6_grids.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grids</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/2/Themes/7_axislabels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Axis labels</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/2/Themes/8_properexamples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#welcome-to-dry-practical-4" id="toc-welcome-to-dry-practical-4" class="nav-link active" data-scroll-target="#welcome-to-dry-practical-4">Welcome to Dry Practical 4</a></li>
+  <li><a href="#part1" id="toc-part1" class="nav-link" data-scroll-target="#part1">Part 1: The authorship line — when does AI use become misconduct?</a>
+  <ul class="collapse">
+  <li><a href="#the-authorship-spectrum" id="toc-the-authorship-spectrum" class="nav-link" data-scroll-target="#the-authorship-spectrum">The Authorship Spectrum</a></li>
+  <li><a href="#task-where-does-each-scenario-fall" id="toc-task-where-does-each-scenario-fall" class="nav-link" data-scroll-target="#task-where-does-each-scenario-fall">Task: Where Does Each Scenario Fall?</a>
+  <ul class="collapse">
+  <li><a href="#scenario-1" id="toc-scenario-1" class="nav-link" data-scroll-target="#scenario-1">Scenario 1</a></li>
+  <li><a href="#scenario-2" id="toc-scenario-2" class="nav-link" data-scroll-target="#scenario-2">Scenario 2</a></li>
+  <li><a href="#scenario-3" id="toc-scenario-3" class="nav-link" data-scroll-target="#scenario-3">Scenario 3</a></li>
+  <li><a href="#scenario-4" id="toc-scenario-4" class="nav-link" data-scroll-target="#scenario-4">Scenario 4</a></li>
+  <li><a href="#scenario-5" id="toc-scenario-5" class="nav-link" data-scroll-target="#scenario-5">Scenario 5</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#part5" id="toc-part5" class="nav-link" data-scroll-target="#part5">Part 2: Catching AI errors</a>
+  <ul class="collapse">
+  <li><a href="#task-spot-the-problem" id="toc-task-spot-the-problem" class="nav-link" data-scroll-target="#task-spot-the-problem">Task: Spot the Problem</a>
+  <ul class="collapse">
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1:</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2:</a></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example 3:</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#part2" id="toc-part2" class="nav-link" data-scroll-target="#part2">Part 3: Prompt engineering for scientific writing and hands on report revision</a>
+  <ul class="collapse">
+  <li><a href="#the-four-prompt-types" id="toc-the-four-prompt-types" class="nav-link" data-scroll-target="#the-four-prompt-types">The Four Prompt Types</a></li>
+  <li><a href="#step-1-set-the-context" id="toc-step-1-set-the-context" class="nav-link" data-scroll-target="#step-1-set-the-context">Step 1: Set the Context</a></li>
+  <li><a href="#step-2-do-for-me-targeted-revision" id="toc-step-2-do-for-me-targeted-revision" class="nav-link" data-scroll-target="#step-2-do-for-me-targeted-revision">Step 2: “Do for me” — Targeted Revision</a></li>
+  <li><a href="#step-3-evaluate-getting-a-critique" id="toc-step-3-evaluate-getting-a-critique" class="nav-link" data-scroll-target="#step-3-evaluate-getting-a-critique">Step 3: “Evaluate” — Getting a Critique</a></li>
+  <li><a href="#step-4-teach-me-building-your-understanding" id="toc-step-4-teach-me-building-your-understanding" class="nav-link" data-scroll-target="#step-4-teach-me-building-your-understanding">Step 4: “Teach me” — Building Your Understanding</a></li>
+  </ul></li>
+  <li><a href="#part6" id="toc-part6" class="nav-link" data-scroll-target="#part6">Part 4: Assessment 5 Walkthrough</a>
+  <ul class="collapse">
+  <li><a href="#human-feedback-summary" id="toc-human-feedback-summary" class="nav-link" data-scroll-target="#human-feedback-summary"><span class="step-badge">1</span> Human Feedback Summary</a></li>
+  <li><a href="#ai-assisted-revision" id="toc-ai-assisted-revision" class="nav-link" data-scroll-target="#ai-assisted-revision"><span class="step-badge">2</span> AI-Assisted Revision</a>
+  <ul class="collapse">
+  <li><a href="#context-prompt" id="toc-context-prompt" class="nav-link" data-scroll-target="#context-prompt">2.1 Context Prompt</a></li>
+  <li><a href="#do-for-me-prompt" id="toc-do-for-me-prompt" class="nav-link" data-scroll-target="#do-for-me-prompt">2.2 “Do for me” Prompt</a></li>
+  <li><a href="#evaluate-prompt" id="toc-evaluate-prompt" class="nav-link" data-scroll-target="#evaluate-prompt">2.3 “Evaluate” Prompt</a></li>
+  <li><a href="#teach-me-prompt" id="toc-teach-me-prompt" class="nav-link" data-scroll-target="#teach-me-prompt">2.4 “Teach me” Prompt</a></li>
+  </ul></li>
+  <li><a href="#reflection-100150-words-each-600-words-max" id="toc-reflection-100150-words-each-600-words-max" class="nav-link" data-scroll-target="#reflection-100150-words-each-600-words-max"><span class="step-badge">3</span> Reflection (100–150 words each, 600 words max)</a>
+  <ul class="collapse">
+  <li><a href="#compare-ai-human-feedback" id="toc-compare-ai-human-feedback" class="nav-link" data-scroll-target="#compare-ai-human-feedback">3.1 Compare AI &amp; Human Feedback</a></li>
+  <li><a href="#most-effective-prompt-type" id="toc-most-effective-prompt-type" class="nav-link" data-scroll-target="#most-effective-prompt-type">3.2 Most Effective Prompt Type</a></li>
+  <li><a href="#impact-on-your-writing-process" id="toc-impact-on-your-writing-process" class="nav-link" data-scroll-target="#impact-on-your-writing-process">3.3 Impact on Your Writing Process</a></li>
+  <li><a href="#benefits-and-risks" id="toc-benefits-and-risks" class="nav-link" data-scroll-target="#benefits-and-risks">3.4 Benefits and Risks</a></li>
+  </ul></li>
+  <li><a href="#final-checklist" id="toc-final-checklist" class="nav-link" data-scroll-target="#final-checklist">Final Checklist</a></li>
+  <li><a href="#prompt-vault" id="toc-prompt-vault" class="nav-link" data-scroll-target="#prompt-vault">Prompt Vault</a></li>
+  </ul></li>
+  <li><a href="#useful-references" id="toc-useful-references" class="nav-link" data-scroll-target="#useful-references">Useful References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/edit/main/pages/DP4/DP4_clean_2026.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/DP4/DP4_clean_2026.html">Dry Prac 4</a></li><li class="breadcrumb-item"><a href="../../pages/DP4/DP4_clean_2026.html">Dry Prac 4 Notes</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">DP4: GenAI Literacy</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dr.&nbsp;Nikolas Johnston </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 1, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<style>
+  .rubric-table table { font-size: 0.9em; border-collapse: collapse; width: 100%; }
+  .rubric-table th, .rubric-table td { border: 1px solid #ccc; padding: 8px; vertical-align: top; }
+  .rubric-table th { background: #2c3e50; color: white; }
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .compare-box { padding: 12px; border-radius: 6px; }
+  .compare-weak { background: #fdf0f0; border-left: 4px solid #e74c3c; }
+  .compare-strong { background: #f0fdf4; border-left: 4px solid #27ae60; }
+  .compare-ai { background: #f0f7ff; border-left: 4px solid #3498db; }
+  .compare-human { background: #faf5ff; border-left: 4px solid #8e44ad; }
+  .prompt-type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
+  .prompt-card { border-radius: 8px; padding: 15px; }
+  .prompt-context { background: #eaf2f8; border: 1px solid #2874a6; }
+  .prompt-do { background: #e8f8f5; border: 1px solid #1abc9c; }
+  .prompt-evaluate { background: #fef9e7; border: 1px solid #b7950b; }
+  .prompt-teach { background: #f5eef8; border: 1px solid #7d3c98; }
+  .scenario-box { border: 2px solid #e74c3c; padding: 15px; margin: 15px 0; border-radius: 8px; background: #fdf0f0; }
+  .ethical-check { background: #f0fdf4; border: 1px solid #27ae60; padding: 15px; border-radius: 8px; margin: 10px 0; }
+  .practice-box { border: 2px dashed #8e44ad; padding: 15px; margin: 15px 0; border-radius: 8px; background: #faf5ff; }
+  .quiz-btn { background: #2c3e50; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin: 4px 2px; }
+  .quiz-btn:hover { background: #3498db; }
+  select.quiz-select { padding: 6px 10px; border-radius: 4px; border: 1px solid #ccc; font-size: 1em; }
+  .step-badge { display: inline-block; background: #2c3e50; color: white; border-radius: 50%; width: 28px; height: 28px; text-align: center; line-height: 28px; font-weight: bold; margin-right: 8px; }
+  .timer-box { background: #ffeaa7; padding: 10px 15px; border-radius: 6px; font-weight: bold; margin: 10px 0; }
+  .authorship-spectrum { display: flex; margin: 15px 0; border-radius: 6px; overflow: hidden; font-size: 0.85em; }
+  .spectrum-zone { padding: 12px 8px; text-align: center; flex: 1; }
+  .zone-green { background: #d5f5e3; border-right: 2px solid white; }
+  .zone-amber { background: #fdebd0; border-right: 2px solid white; }
+  .zone-red { background: #fadbd8; }
+</style>
+<section id="welcome-to-dry-practical-4" class="level1">
+<h1>Welcome to Dry Practical 4</h1>
+<div class="callout callout-style-default callout-note callout-titled" title="Learning Objectives">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this session, you will be able to:</p>
+<ol type="1">
+<li><strong>Distinguish</strong> between AI use that supports your learning and AI use that replaces it</li>
+<li><strong>Construct</strong> effective prompts using four prompt types (Context, Do-for-me, Evaluate, Teach-me) tailored to scientific writing</li>
+<li><strong>Revise</strong> your own scientific writing using AI as a tool while retaining your voice and accountability</li>
+<li><strong>Reflect</strong> critically on the differences between human peer feedback and AI feedback</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Why does this matter?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Why does this matter?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Generative AI tools like Microsoft Copilot, ChatGPT, and Google Gemini are now part of the scientific landscape. Researchers use them to refine drafts, check logic, and brainstorm — but they also produce confident-sounding text that is sometimes factually wrong, structurally misleading, or scientifically shallow.</p>
+<p>Meanwhile, research shows students often struggle to identify where acceptable AI use ends and misconduct begins. <a href="https://link.springer.com/article/10.1007/s10639-024-13151-7">Chan (2024)</a> surveyed 393 university students and found a clear gradient: students readily identified direct AI copy-paste as misconduct, but when scenarios involved editing, verifying, and rewriting AI output, agreement dropped sharply. This practical is designed to help you navigate that uncertain middle ground — developing your understanding of the ethical use of AI so you can make those judgements with confidence.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Before you begin">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Before you begin
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Have the following ready:</p>
+<ol type="1">
+<li>Your draft scientific report (ideally with peer review comments from DP3)</li>
+<li>A new Microsoft Word document to record your answers</li>
+<li>Microsoft Copilot or another AI tool of your choice open in a browser tab (link below)</li>
+<li><strong>Tracked changes</strong> enabled in Word or Google Docs</li>
+</ol>
+</div>
+</div>
+<hr>
+</section>
+<section id="part1" class="level1">
+<h1>Part 1: The authorship line — when does AI use become misconduct?</h1>
+<p>Before you touch a prompt, you need a framework for thinking about <em>when</em> AI use is appropriate and when it crosses a line. This is not a simple binary — it is a spectrum, and where you fall on it depends on whether you maintained intellectual control over the work.</p>
+<section id="the-authorship-spectrum" class="level2">
+<h2 class="anchored" data-anchor-id="the-authorship-spectrum">The Authorship Spectrum</h2>
+<p>Chan (2024) developed a 12-point AI-giarism scale that maps AI use scenarios from fully original work down to direct copy-paste. Her data from 393 students revealed behaviours at the extremes were easy to judge, but scenarios in the middle <em>grey</em> zone were much more uncertain.</p>
+<p>Below we have prepared a spectrum that groups these scenarios into three zones. As you work through the tasks that follow, you are practising your evaluative judgement of the type of use that is often the most difficult to classify as ethical or not.</p>
+<div style="margin: 20px 0;">
+
+  <!-- GREEN ZONE -->
+  <div style="background: #d5f5e3; border-radius: 8px 8px 0 0; padding: 16px; border-bottom: 3px solid #27ae60;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+      <strong style="font-size: 1.1em; color: #1e8449;">✓ AI supports your thinking — YOU ARE THE AUTHOR</strong>
+      <span style="background: #27ae60; color: white; padding: 4px 10px; border-radius: 12px; font-size: 0.8em;">Chan's F8–F12 · Students generally agree not misconduct</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.88em;">
+      <div style="background: rgba(255,255,255,0.6); padding: 10px; border-radius: 6px;">
+        <strong> F12.</strong> You completed the assessment without the use of any AI tools. 
+      </div>
+      <div style="background: rgba(255,255,255,0.6); padding: 10px; border-radius: 6px;">
+        <strong>F10–F11.</strong> You use AI to check grammar, or as a search engine for relevant sources— no AI  generated text appears in your submission.
+      </div>
+      <div style="background: rgba(255,255,255,0.6); padding: 10px; border-radius: 6px;">
+        <strong>F9.</strong> You write your own draft, seek feedback from AI, and make improvements based on its suggestions. You acknowledged AI use.
+      </div>
+      <div style="background: rgba(255,255,255,0.6); padding: 10px; border-radius: 6px;">
+        <strong>F8.</strong> You use AI to rephrase some of your own written content to improve writing quality. You acknowledged AI use.
+      </div>
+    </div>
+  </div>
+
+  <!-- AMBER ZONE -->
+  <div style="background: #fdebd0; padding: 16px; border-bottom: 3px solid #e67e22;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+      <strong style="font-size: 1.1em; color: #b7950b;">⚠ Grey zone — support or substitution? — CAUTION</strong>
+      <span style="background: #e67e22; color: white; padding: 4px 10px; border-radius: 12px; font-size: 0.8em;">Chan's F3–F7 · Students are uncertain if misconduct</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.88em;">
+      <div style="background: rgba(255,255,255,0.6); padding: 10px; border-radius: 6px;">
+        <strong>F7.</strong> AI generates initial ideas, you supplement with your own. After verifying facts, you <em>rewrote most sections</em> and submitted the work as your own. You acknowledged AI use.
+      </div>
+      <div style="background: rgba(255,255,255,0.6); padding: 10px; border-radius: 6px;">
+        <strong>F6.</strong> AI generates initial ideas, you supplement with your own. After verifying facts, you submitted work <em>with parts generated by AI and parts written by you</em>. You acknowledged AI use.
+      </div>
+      <div style="background: rgba(255,255,255,0.6); padding: 10px; border-radius: 6px;">
+        <strong>F4–F5.</strong> You began with your own ideas, used AI to produce multiple responses, verified facts, then <em>selected the best parts</em>, made edits, and submitted. You acknowledged AI use.
+      </div>
+      <div style="background: rgba(255,255,255,0.6); padding: 10px; border-radius: 6px;">
+        <strong>F3.</strong> You prompted AI, verified all facts, made edits, added references, formatted the response, and submitted it as your own. You acknowledged AI use.<br><em>The question: did you do the thinking, or just the editing?</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- RED ZONE -->
+  <div style="background: #fadbd8; border-radius: 0 0 8px 8px; padding: 16px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+      <strong style="font-size: 1.1em; color: #c0392b;">✗ AI substitutes for your thinking — YOU ARE NOT THE AUTHOR</strong>
+      <span style="background: #e74c3c; color: white; padding: 4px 10px; border-radius: 12px; font-size: 0.8em;">Chan's F1–F2 · Students agree: this is misconduct</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.88em;">
+      <div style="background: rgba(255,255,255,0.6); padding: 10px; border-radius: 6px;">
+        <strong>F1.</strong> You prompted AI, <em>copied the generated response</em>, and submitted it as your own work. You acknowledged AI use.
+      </div>
+      <div style="background: rgba(255,255,255,0.6); padding: 10px; border-radius: 6px;">
+        <strong>F2.</strong> You used AI to <em>paraphrase texts from other sources</em> without acknowledging those sources. You acknowledged AI use.
+      </div>
+    </div>
+    <p style="font-size: 0.88em; margin-top: 10px; margin-bottom: 0;"><strong>Note:</strong> In both cases the student acknowledged using AI — but acknowledgement alone does not make it acceptable. The intellectual work was outsourced, and the student cannot take accountability for content they did not create or verify.</p>
+  </div>
+
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="The accountability test">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>The accountability test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can apply a simple test to any sentence in your report:</p>
+<p><strong>Could you explain and defend this sentence if asked — including why you chose these words, what evidence supports this claim, and where the data came from?</strong></p>
+<p>If the answer is no — if there are sentences you do not fully understand, claims you have not verified, or references you have not read — then you have lost authorship, regardless of how much of the text you technically typed.</p>
+</div>
+</div>
+</section>
+<section id="task-where-does-each-scenario-fall" class="level2">
+<h2 class="anchored" data-anchor-id="task-where-does-each-scenario-fall">Task: Where Does Each Scenario Fall?</h2>
+<p>Read each scenario and decide where it falls on the authorship spectrum. Check your answer, then discuss with your neighbour.</p>
+<section id="scenario-1" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-1">Scenario 1</h3>
+<blockquote class="blockquote">
+<p>A student asks Copilot: “Rewrite my discussion to sound more academic.” The AI produces a polished version. The student reads it, thinks “this sounds much better than mine,” and pastes it into their report with no changes.</p>
+</blockquote>
+<p><select id="s1" class="quiz-select"> <option value="">– Select –</option> <option value="author">You are the author</option> <option value="grey">Grey zone</option> <option value="not_author">NOT the author</option> </select> <button class="quiz-btn" onclick="checkScenario('s1', 'not_author', 'sfb1')">Check</button></p>
+<div id="sfb1" style="margin-top: 8px;">
+
+</div>
+</section>
+<section id="scenario-2" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-2">Scenario 2</h3>
+<blockquote class="blockquote">
+<p>A student asks Copilot: “What are the key features of a strong discussion section in a biology report?” The AI explains that discussions should link results to hypotheses, compare findings with published literature, and acknowledge limitations. The student uses these principles to restructure their own discussion, writing every sentence themselves.</p>
+</blockquote>
+<p><select id="s2" class="quiz-select"> <option value="">– Select –</option> <option value="author">You are the author</option> <option value="grey">Grey zone</option> <option value="not_author">NOT the author</option> </select> <button class="quiz-btn" onclick="checkScenario('s2', 'author', 'sfb2')">Check</button></p>
+<div id="sfb2" style="margin-top: 8px;">
+
+</div>
+</section>
+<section id="scenario-3" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-3">Scenario 3</h3>
+<blockquote class="blockquote">
+<p>A student asks Copilot to “add relevant references” to their discussion. The AI inserts three citations, including “Zhang et al.&nbsp;(2019)” which claims to show mitochondrial dysfunction in a related cell line. The student includes the citation without searching for the paper. The paper does not exist.</p>
+</blockquote>
+<p><select id="s3" class="quiz-select"> <option value="">– Select –</option> <option value="author">You are the author</option> <option value="grey">Grey zone</option> <option value="not_author">NOT the author</option> </select> <button class="quiz-btn" onclick="checkScenario('s3', 'not_author', 'sfb3')">Check</button></p>
+<div id="sfb3" style="margin-top: 8px;">
+
+</div>
+</section>
+<section id="scenario-4" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-4">Scenario 4</h3>
+<blockquote class="blockquote">
+<p>A student pastes their methods section into Copilot and asks: “Is there enough detail here for someone to replicate my experiment?” The AI responds that the centrifugation speed and duration are missing. The student adds those details in their own words.</p>
+</blockquote>
+<p><select id="s4" class="quiz-select"> <option value="">– Select –</option> <option value="author">You are the author</option> <option value="grey">Grey zone</option> <option value="not_author">NOT the author</option> </select> <button class="quiz-btn" onclick="checkScenario('s4', 'author', 'sfb4')">Check</button></p>
+<div id="sfb4" style="margin-top: 8px;">
+
+</div>
+</section>
+<section id="scenario-5" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-5">Scenario 5</h3>
+<blockquote class="blockquote">
+<p>A student asks Copilot to rewrite their results paragraph. The AI version is more concise and better structured. The student compares both versions carefully, takes two phrases from the AI version, rewrites the rest themselves, and checks that all data values match their original spreadsheet.</p>
+</blockquote>
+<p><select id="s5" class="quiz-select"> <option value="">– Select –</option> <option value="author">You are the author</option> <option value="grey">Grey zone</option> <option value="not_author">NOT the author</option> </select> <button class="quiz-btn" onclick="checkScenario('s5', 'grey', 'sfb5')">Check</button></p>
+<div id="sfb5" style="margin-top: 8px;">
+
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Discuss with your neighbour">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Discuss with your neighbour
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Were there any scenarios where you disagreed? What made the difference between “author” and “grey zone”? What is the minimum amount of critical evaluation needed before you can claim authorship of a revised sentence?</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+</section>
+<section id="part5" class="level1">
+<h1>Part 2: Catching AI errors</h1>
+<p>AI tools are fluent but not reliable. They produce text that <em>sounds</em> correct even when it is wrong. This is not a theoretical concern — it is empirically documented at alarming rates.Even elite peer review fails to catch these errors. If expert scientists miss these errors, you should assume you will too — unless you <strong>verify</strong> every AI-generated claim.</p>
+<section id="task-spot-the-problem" class="level2">
+<h2 class="anchored" data-anchor-id="task-spot-the-problem">Task: Spot the Problem</h2>
+<p>Each example below shows AI-generated text produced in response to a student’s prompt. Identify what went wrong.</p>
+<section id="example-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1">Example 1:</h3>
+<blockquote class="blockquote">
+<p><strong>Student prompt:</strong> “Add a reference to support my claim that citrate synthase is a mitochondrial matrix enzyme.”</p>
+<p><strong>AI output:</strong> “Citrate synthase is a well-established marker of the mitochondrial matrix (Hargreaves &amp; Bhatt, 2020). Its activity is commonly used to assess mitochondrial content and integrity in both clinical and research settings.”</p>
+</blockquote>
+<p><select id="e1" class="quiz-select"> <option value="">– What is the problem? –</option> <option value="grammar">Grammar error</option> <option value="hallucination">Hallucinated reference</option> <option value="interpretation">Over-interpretation</option> <option value="none">No problem</option> </select> <button class="quiz-btn" onclick="checkError('e1', 'hallucination', 'efb1')">Check</button></p>
+<div id="efb1" style="margin-top: 8px;">
+
+</div>
+</section>
+<section id="example-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-2">Example 2:</h3>
+<blockquote class="blockquote">
+<p><strong>Student’s original:</strong> “Citrate synthase activity was lower in the diseased cell line compared to the healthy control, which may indicate impaired mitochondrial function in this model.”</p>
+<p><strong>AI rewrite:</strong> “Citrate synthase activity was significantly reduced in diseased cells, confirming mitochondrial dysfunction as a hallmark of this disease.”</p>
+</blockquote>
+<p><select id="e2" class="quiz-select"> <option value="">– What is the problem? –</option> <option value="grammar">Grammar error</option> <option value="hallucination">Hallucinated reference</option> <option value="interpretation">Over-interpretation — cautious language replaced with definitive claims</option> <option value="none">No problem</option> </select> <button class="quiz-btn" onclick="checkError('e2', 'interpretation', 'efb2')">Check</button></p>
+<div id="efb2" style="margin-top: 8px;">
+
+</div>
+</section>
+<section id="example-3" class="level3">
+<h3 class="anchored" data-anchor-id="example-3">Example 3:</h3>
+<blockquote class="blockquote">
+<p><strong>Student prompt:</strong> “Make my results section more detailed. Citrate synthase specific activity in the mitochondrial fraction was increased in healthy cells and decreased in diseased cells (p = 0.003, Student’s t-test).”</p>
+<p><strong>AI output:</strong> “Citrate synthase specific activity in the mitochondrial fraction was 45.2 ± 2.8 nmol/min/mg in healthy cells and 31.6 ± 3.4 nmol/min/mg in diseased cells (p = 0.003, Student’s t-test).”</p>
+</blockquote>
+<p><select id="e3" class="quiz-select"> <option value="">– What is the problem? –</option> <option value="fabrication">AI may have fabricated specific numerical values</option> <option value="structure">Wrong section structure</option> <option value="tone">Inappropriate tone</option> <option value="none">No problem</option> </select> <button class="quiz-btn" onclick="checkError('e3', 'fabrication', 'efb3')">Check</button></p>
+<div id="efb3" style="margin-top: 8px;">
+
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="The verification checklist — accountability in practice">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>The verification checklist — accountability in practice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every time you use AI-generated text in your report, apply the accountability test. Can you defend each of these?</p>
+<ol type="1">
+<li><strong>References</strong> — Search for every citation the AI provides in PubMed or Google Scholar. Does the paper exist? Does it say what the AI claims?</li>
+<li><strong>Data values</strong> — Cross-check every number against your original data.</li>
+<li><strong>Strength of claims</strong> — Has the AI upgraded “may suggest” to “confirms” or “demonstrates”? Your undergraduate experiment with limited replication almost certainly does not support definitive claims.</li>
+<li><strong>Added content</strong> — Has the AI introduced information, mechanisms, or comparisons that were not in your original text? If you cannot verify them against a source you have read, remove them.</li>
+<li><strong>Removed qualifiers</strong> — Has the AI stripped out important caveats like “in this experiment” or “under these conditions”?</li>
+</ol>
+</div>
+</div>
+<hr>
+</section>
+</section>
+</section>
+<section id="part2" class="level1">
+<h1>Part 3: Prompt engineering for scientific writing and hands on report revision</h1>
+<p>Not all prompts are equal. The way you talk to an AI tool determines the quality of what you get back. In this section you will learn four prompt types, practise each one on your own report, and critically evaluate the results.</p>
+<section id="the-four-prompt-types" class="level2">
+<h2 class="anchored" data-anchor-id="the-four-prompt-types">The Four Prompt Types</h2>
+<div class="prompt-type-grid">
+  <div class="prompt-card prompt-context">
+    <h4 style="color: #2874a6; margin-top: 0;" class="anchored">🧠 Context Prompt</h4>
+    <p><strong>Purpose:</strong> Set the AI's role so its output matches your discipline and audience.</p>
+    <p><strong>Example:</strong> <em>"You are a biology lecturer who marks third-year scientific reports on enzyme biochemistry. The reports follow a standard report structure."</em></p>
+    <p style="margin-bottom:0;"><strong>Why it works:</strong> Without context, the AI defaults to generic advice. With it, feedback can be calibrated to your specific task and standard.</p>
+  </div>
+  <div class="prompt-card prompt-do">
+    <h4 style="color: #1abc9c; margin-top: 0;" class="anchored">🔧 "Do for me" Prompt</h4>
+    <p><strong>Purpose:</strong> Delegate a specific writing task to the AI.</p>
+    <p><strong>Example:</strong> <em>"Rewrite the following results paragraph so that it reports only what the data show, without interpretation. Keep all numerical values and statistical tests intact."</em></p>
+    <p style="margin-bottom:0;"><strong>Why it works:</strong> Specific constraints produce better output. <strong>Caution:</strong> You must critically evaluate the result — the AI may alter data, change meaning, or introduce errors. If you cannot articulate <em>why</em> the AI's version is better than yours, you have not learned from the process.</p>
+  </div>
+  <div class="prompt-card prompt-evaluate">
+    <h4 style="color: #b7950b; margin-top: 0;" class="anchored">🔍 "Evaluate" Prompt</h4>
+    <p><strong>Purpose:</strong> Ask the AI to critique your writing rather than rewrite it.</p>
+    <p><strong>Example:</strong> <em>"Read my discussion section. Does my interpretation of the citrate synthase data logically follow from the results I reported? Identify any logical gaps or unsupported claims."</em></p>
+    <p style="margin-bottom:0;"><strong>Why it works:</strong> This supports metacognition — you remain in control of the writing, but gain an external perspective on its logic and structure.</p>
+  </div>
+  <div class="prompt-card prompt-teach">
+    <h4 style="color: #7d3c98; margin-top: 0;" class="anchored">🎓 "Teach me" Prompt</h4>
+    <p><strong>Purpose:</strong> Deepen your understanding of a writing principle or scientific concept.</p>
+    <p><strong>Example:</strong> <em>"Explain the difference between reporting results and interpreting results in a scientific report. Give me an example using citrate synthase activity data."</em></p>
+    <p style="margin-bottom:0;"><strong>Why it works:</strong> This builds your skill rather than outsourcing it. The AI teaches you a principle you then apply yourself.</p>
+  </div>
+</div>
+<p>You will now apply each prompt type to your own scientific report. For each step, record your prompt, the AI output, your evaluation, and what you changed. This forms the basis of your Assessment 5 Pro Forma.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Critical rule">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Critical rule
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Do not paste your entire report into the AI.</strong> Work with one paragraph or section at a time. This gives you more control, makes evaluation easier, and reduces the risk of the AI fabricating connections between sections.</p>
+</div>
+</div>
+</section>
+<section id="step-1-set-the-context" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-set-the-context">Step 1: Set the Context</h2>
+<p>Write a context prompt that tells the AI who it is and what it is reviewing. Use this as your opening message before any other prompts.</p>
+<div class="practice-box">
+<p><strong>Your context prompt:</strong></p>
+<p>Write a prompt that specifies:</p>
+<ul>
+<li>The AI’s role (e.g., biology lecturer, journal reviewer, scientific editor)</li>
+<li>The type of document (third-year scientific report)</li>
+<li>The subject matter (citrate synthase activity in subcellular fractions)</li>
+<li>The assessment criteria (clarity, accuracy, evidence-based reasoning, IMRaD structure)</li>
+</ul>
+<p>Record your prompt in your Word document.</p>
+</div>
+</section>
+<section id="step-2-do-for-me-targeted-revision" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-do-for-me-targeted-revision">Step 2: “Do for me” — Targeted Revision</h2>
+<p>Choose a paragraph from your report that you know needs improvement. Paste it into Copilot with a specific “do for me” prompt.</p>
+<div class="practice-box">
+<p><strong>Before you accept anything the AI returns, check:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox">Are all numerical values (means, SDs, p-values) unchanged?</label></li>
+<li><label><input type="checkbox">Has the AI added any claims or interpretations not in your original?</label></li>
+<li><label><input type="checkbox">Has the AI removed any important qualifying language (e.g., “in this experiment” → “universally”)?</label></li>
+<li><label><input type="checkbox">Does the revised text still mean what <em>you</em> intended it to mean?</label></li>
+<li><label><input type="checkbox">If the AI suggested references, have you verified each one exists?</label></li>
+</ul>
+<p>Record: your prompt, the AI output, what you changed, and what you rejected.</p>
+</div>
+</section>
+<section id="step-3-evaluate-getting-a-critique" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-evaluate-getting-a-critique">Step 3: “Evaluate” — Getting a Critique</h2>
+<p>Choose a different section (ideally your discussion) and ask the AI to evaluate it rather than rewrite it.</p>
+<div class="practice-box">
+<p><strong>Good evaluate prompts for biology reports:</strong></p>
+<ul>
+<li>“Does my interpretation of [specific result] logically follow from the data I presented in my results section?”</li>
+<li>“Are there any claims in this paragraph that are not supported by the data or references I cite?”</li>
+<li>“Does this discussion section address the original hypothesis stated in my introduction?”</li>
+</ul>
+<p>Record: your prompt, the AI’s critique, and what action you took in response.</p>
+</div>
+</section>
+<section id="step-4-teach-me-building-your-understanding" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-teach-me-building-your-understanding">Step 4: “Teach me” — Building Your Understanding</h2>
+<p>Ask the AI to explain a writing or science concept you found difficult during this report.</p>
+<div class="practice-box">
+<p><strong>Example teach-me prompts:</strong></p>
+<ul>
+<li>“What is the difference between a result and an interpretation in a biology report? Give me an example using enzyme activity data.”</li>
+<li>“How should I structure a discussion paragraph that compares my findings to published literature?”</li>
+<li>“Why is it important to normalise enzyme activity to protein content, and how should I explain this in my methods?”</li>
+</ul>
+<p>Record: your prompt, the key insight you gained, and how it changed your approach.</p>
+</div>
+<hr>
+</section>
+</section>
+<section id="part6" class="level1">
+<h1>Part 4: Assessment 5 Walkthrough</h1>
+<p>Everything you have practised today feeds directly into Assessment 5. This section steps you through the Pro Forma requirements.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Download required">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Download required
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Download the Assessment 5 Pro Forma from the BIOL340 Moodle page. The sections below map directly onto the Pro Forma structure.</p>
+</div>
+</div>
+<section id="human-feedback-summary" class="level2">
+<h2 class="anchored" data-anchor-id="human-feedback-summary"><span class="step-badge">1</span> Human Feedback Summary</h2>
+<p>Using the peer review feedback you received in DP3/FeedbackFruits:</p>
+<div class="practice-box">
+<p><strong>List 1–3 key points of feedback from your peer reviewer.</strong> Be specific — quote or paraphrase the feedback and note which section of your report it applies to.</p>
+<ol type="1">
+<li>…</li>
+<li>…</li>
+<li>…</li>
+</ol>
+<p><strong>For each point, describe how you will address it in your revision.</strong></p>
+</div>
+</section>
+<section id="ai-assisted-revision" class="level2">
+<h2 class="anchored" data-anchor-id="ai-assisted-revision"><span class="step-badge">2</span> AI-Assisted Revision</h2>
+<p>Using the four prompt types, revise your report. For each prompt type, record the following in your Pro Forma:</p>
+<section id="context-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="context-prompt">2.1 Context Prompt</h3>
+<ul>
+<li>The prompt you used to set the AI’s role</li>
+<li>Why you chose that framing</li>
+</ul>
+</section>
+<section id="do-for-me-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="do-for-me-prompt">2.2 “Do for me” Prompt</h3>
+<ul>
+<li>The prompt you used</li>
+<li>The AI’s output (paste it in)</li>
+<li>What you changed in your report as a result — and what you rejected</li>
+</ul>
+</section>
+<section id="evaluate-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="evaluate-prompt">2.3 “Evaluate” Prompt</h3>
+<ul>
+<li>The prompt you used</li>
+<li>The AI’s critique</li>
+<li>What action you took in response</li>
+</ul>
+</section>
+<section id="teach-me-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="teach-me-prompt">2.4 “Teach me” Prompt</h3>
+<ul>
+<li>The prompt you used</li>
+<li>The key insight you gained</li>
+<li>How it changed your approach to writing</li>
+</ul>
+</section>
+</section>
+<section id="reflection-100150-words-each-600-words-max" class="level2">
+<h2 class="anchored" data-anchor-id="reflection-100150-words-each-600-words-max"><span class="step-badge">3</span> Reflection (100–150 words each, 600 words max)</h2>
+<p>Answer each question in the Pro Forma:</p>
+<section id="compare-ai-human-feedback" class="level3">
+<h3 class="anchored" data-anchor-id="compare-ai-human-feedback">3.1 Compare AI &amp; Human Feedback</h3>
+<blockquote class="blockquote">
+<p>How did AI feedback compare with your peer’s feedback? Which was more useful for which aspects of your writing?</p>
+</blockquote>
+</section>
+<section id="most-effective-prompt-type" class="level3">
+<h3 class="anchored" data-anchor-id="most-effective-prompt-type">3.2 Most Effective Prompt Type</h3>
+<blockquote class="blockquote">
+<p>Which of the four prompt types helped you most? Why?</p>
+</blockquote>
+</section>
+<section id="impact-on-your-writing-process" class="level3">
+<h3 class="anchored" data-anchor-id="impact-on-your-writing-process">3.3 Impact on Your Writing Process</h3>
+<blockquote class="blockquote">
+<p>Did using AI change how you approach writing or editing? What will you do differently next time?</p>
+</blockquote>
+</section>
+<section id="benefits-and-risks" class="level3">
+<h3 class="anchored" data-anchor-id="benefits-and-risks">3.4 Benefits and Risks</h3>
+<blockquote class="blockquote">
+<p>What are the benefits and risks of using GenAI in scientific writing? What safeguards should a scientist apply?</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="final-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="final-checklist">Final Checklist</h2>
+<div class="callout callout-style-default callout-important callout-titled" title="Before submitting — the accountability check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Before submitting — the accountability check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Confirm each item:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Tracked changes enabled in your revised report showing all modifications</label></li>
+<li><label><input type="checkbox">Completed Pro Forma with feedback summary, all four prompt types, and full reflection</label></li>
+<li><label><input type="checkbox">Screenshots or transcripts of your AI interactions included in the Appendix</label></li>
+<li><label><input type="checkbox">All AI-suggested references independently verified in PubMed or Google Scholar (or removed if unverifiable)</label></li>
+<li><label><input type="checkbox">All numerical values cross-checked against your original data</label></li>
+<li><label><input type="checkbox">Accountability test passed: Every sentence in your final report is one you can explain, defend, and take responsibility for</label></li>
+</ul>
+<p><span class="emoji" data-emoji="outbox_tray">📤</span> <strong>Upload to Moodle using the feedback fruits link for Assessment 5</strong></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="prompt-vault" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-vault">Prompt Vault</h2>
+<p>Record your most effective prompt from today’s session. These will be shared across the class as a collective resource.</p>
+<div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
+<p style="padding:0;margin:0">
+<iframe src="https://padlet.com/embed/91492p0ab0lx1fyl" frameborder="0" allow="camera;microphone;geolocation;display-capture;clipboard-write" style="width:100%;height:608px;display:block;padding:0;margin:0">
+</iframe>
+</p>
+<div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px">
+<p><a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank"></a></p><a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank">
+<div style="display:flex;align-items:center;">
+<p><img src="https://padlet.net/embeds/made_with_padlet_2022.png" alt="Made with Padlet" width="114" height="28" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none"></p>
+</div>
+</a><p><a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank"></a></p>
+</div>
+</div>
+<hr>
+<blockquote class="blockquote">
+<p><strong>Final thought:</strong> AI is a tool — you are the scientist.The value of your degree is not that you can produce polished text. It is that you can <em>think critically, evaluate evidence, and communicate your reasoning</em>. No AI can do that for you. Own your writing, verify your claims, and never submit anything you cannot defend.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="useful-references" class="level1">
+<h1>Useful References</h1>
+<p>Bozkurt, A. (2024). GenAI et al.: Cocreation, authorship, ownership, academic ethics and integrity in a time of generative AI. <em>Open Praxis</em>, 16(1), 1–10. https://doi.org/10.55982/openpraxis.16.1.654</p>
+<p>Chan, C.K.Y. (2024). Students’ perceptions of ‘AI-giarism’: Investigating changes in understandings of academic misconduct. <em>Education and Information Technologies</em>, 30(6), 8087–8108. https://doi.org/10.1007/s10639-024-13151-7</p>
+<p>Jackson, J. (2025). Higher order prompting: Applying Bloom’s revised taxonomy to the use of large language models in higher education. <em>Studies in Technology Enhanced Learning</em>, 4(1), 1–17. https://doi.org/10.21428/8c225f6e.0915c17e</p>
+<script>
+  const scenarioFeedback = {
+    'author': "<strong style='color:#27ae60;'>You are the author — AI supported your thinking.</strong> The student maintained human agency throughout: they did the intellectual work (reasoning, writing, decision-making) themselves. The AI functioned as a support tool — like asking a tutor for advice — not as a substitute for thinking.,
+    'grey': "<strong style='color:#e67e22;'>Grey zone — support or substitution?</strong> The student engaged critically with the AI output — comparing, selecting, editing, and verifying — but some of the final text originated with the AI. It can be acceptable if the student can genuinely defend every sentence, but requires honest self-assessment: did you do the thinking, or did the AI?",
+    'not_author': "<strong style='color:#e74c3c;'>You are NOT the author — AI substituted for your thinking.</strong> The student outsourced the intellectual work to the AI. Whether it was accepting unverified text, including fabricated citations, or submitting AI-written text without critical evaluation.
+  };
+
+  const promptFeedback = {
+    'correct': "<strong style='color:#27ae60;'>✓ Correct!</strong> The stronger prompt provides context, specifies the task precisely, and constrains the AI's output. This reduces hallucination and gives you a result you can actually evaluate critically.",
+    'incorrect': "<strong style='color:#e74c3c;'>✗ Not quite.</strong> Vague prompts give the AI too much freedom, leading to generic output, hallucinated content, and meaning drift. The more specific and constrained your prompt, the more useful and verifiable the output."
+  };
+
+  const errorFeedback = {
+    'hallucination': "<div style='padding:10px; background:#fadbd8; border-radius:6px;'><strong style='color:#e74c3c;'>Hallucinated reference.</strong> AI tools frequently generate citations that look real but do not exist. Naser, 2026 found fabrication rates of 11–57% across models, with even higher rates for specialised topics. \"Hargreaves & Bhatt (2020)\" may sound plausible, but you must search for every reference the AI suggests in PubMed or Google Scholar. If you cannot find it, it was fabricated. <strong>Never include a reference you have not personally located and read.</strong></div>",
+    'interpretation': "<div style='padding:10px; background:#fadbd8; border-radius:6px;'><strong style='color:#e74c3c;'>Over-interpretation.</strong> The student's original used careful language: \"may indicate\" and \"in this model.\" The AI replaced this with \"confirming\" and \"hallmark\" — definitive claims the data do not support. A single experiment showing reduced activity does not <em>confirm</em> dysfunction or establish a <em>hallmark</em>. This kind of subtle meaning shift is one of the most dangerous AI errors because it sounds more confident and therefore \"better.\" If you cannot defend the strength of a claim from your own data, the AI has substituted its confident-sounding language for your scientific judgement.</div>",
+    'fabrication': "<div style='padding:10px; background:#fadbd8; border-radius:6px;'><strong style='color:#e74c3c;'>Likely fabricated data.</strong> The AI cannot access your spreadsheet, your lab notebook, or your statistical output. When asked to \"make results more detailed,\" it may invent plausible-looking numbers, p-values, and statistical tests. This is the AI equivalent of data fabrication — a serious form of research misconduct. <strong>Every number in your results section must come from your actual data.</strong> If you did not calculate it, it does not belong in your report.</div>",
+    'grammar': "<div style='padding:10px; background:#fdebd0; border-radius:6px;'><strong style='color:#e67e22;'>Not the main issue here.</strong> Look again — the problem is more fundamental than grammar.</div>",
+    'structure': "<div style='padding:10px; background:#fdebd0; border-radius:6px;'><strong style='color:#e67e22;'>Not quite.</strong> The structure is fine — the problem is with the content itself.</div>",
+    'tone': "<div style='padding:10px; background:#fdebd0; border-radius:6px;'><strong style='color:#e67e22;'>The tone is appropriate for scientific writing.</strong> Look more carefully at what the AI actually produced.</div>",
+    'none': "<div style='padding:10px; background:#fadbd8; border-radius:6px;'><strong style='color:#e74c3c;'>There is a problem here.</strong> Look again at what the AI produced and ask: can you verify this content against your own data and the published literature?</div>"
+  };
+
+  function checkScenario(selectId, correctAnswer, feedbackId) {
+    const selected = document.getElementById(selectId).value;
+    const box = document.getElementById(feedbackId);
+    if (selected === "") {
+      box.innerHTML = "<em>Please select an answer.</em>";
+    } else if (selected === correctAnswer) {
+      box.innerHTML = "<div style='padding:10px; background:#d5f5e3; border-radius:6px; margin-top:6px;'><strong style='color:#27ae60;'>✓ Correct!</strong> " + scenarioFeedback[selected] + "</div>";
+    } else {
+      box.innerHTML = "<div style='padding:10px; background:#fadbd8; border-radius:6px; margin-top:6px;'><strong style='color:#e74c3c;'>✗ Not quite.</strong> This scenario is best classified as: " + scenarioFeedback[correctAnswer] + "</div>";
+    }
+  }
+
+  function checkPrompt(selectId, correctAnswer, feedbackId) {
+    const selected = document.getElementById(selectId).value;
+    const box = document.getElementById(feedbackId);
+    if (selected === "") {
+      box.innerHTML = "<em>Please select an answer.</em>";
+    } else if (selected === correctAnswer) {
+      box.innerHTML = "<div style='padding:10px; background:#d5f5e3; border-radius:6px;'>" + promptFeedback['correct'] + "</div>";
+    } else {
+      box.innerHTML = "<div style='padding:10px; background:#fadbd8; border-radius:6px;'>" + promptFeedback['incorrect'] + "</div>";
+    }
+  }
+
+  function checkError(selectId, correctAnswer, feedbackId) {
+    const selected = document.getElementById(selectId).value;
+    const box = document.getElementById(feedbackId);
+    if (selected === "") {
+      box.innerHTML = "<em>Please select an answer.</em>";
+    } else if (selected === correctAnswer) {
+      box.innerHTML = "<div style='padding:10px; background:#d5f5e3; border-radius:6px;'><strong style='color:#27ae60;'>✓ Correct!</strong><br>" + errorFeedback[selected] + "</div>";
+    } else {
+      box.innerHTML = errorFeedback[selected] || "<div style='padding:10px; background:#fadbd8; border-radius:6px;'><strong style='color:#e74c3c;'>✗ Not quite.</strong><br>" + errorFeedback[correctAnswer] + "</div>";
+    }
+  }
+</script>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/nikolasjohnston\.github\.io\/BIOL340_DP\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../pages/DP3/DP3.html" class="pagination-link" aria-label="Dry Prac 3 Notes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Dry Prac 3 Notes</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../pages/2/1_ggplotgrammar.html" class="pagination-link" aria-label="Graphics in ggplot2">
+        <span class="nav-page-text">Graphics in ggplot2</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2025, Nikolas Johnston</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/edit/main/pages/DP4/DP4_clean_2026.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nikolasjohnston/BIOL340_DP/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
