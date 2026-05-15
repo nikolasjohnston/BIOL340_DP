@@ -82,12 +82,12 @@ website:
         contents:
           - href: pages/DP3/DP3.qmd
             text: Dry Prac 3 Notes
-      # 
-      # - section: "Dry Prac 4"
-      #   contents: 
-      #     - href: pages/DP4/DP4_clean.qmd
-      #       text: Dry Prac 4 Notes
-      #       
+
+      - section: "Dry Prac 4"
+        contents:
+          - href: pages/DP4/DP4_clean_2026.qmd
+            text: Dry Prac 4 Notes
+
             
       - section: "Extra help and useful info"
         contents:
